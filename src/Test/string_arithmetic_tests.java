@@ -1,7 +1,7 @@
 package Test;
 
 
-import jasen.string_arithmetic;
+import google.string_arithmetic;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
