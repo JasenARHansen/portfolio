@@ -149,7 +149,7 @@ public class RomanNumeralTest {
     // public void
     // test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_List() {
     // System.out.format("Test: %s\n", name.getMethodName());
-    // List<String> numerals = new ArrayList<String>();
+    // List<String> numerals = new ArrayList<>();
     // numerals.add("(XX+CMXCIX)/V");
     // numerals.add("(I+v+X+CM+XC+IX)/V");
     // numerals.add("(XX+CIMXCIX)/V");
