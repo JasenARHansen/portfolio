@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotNull;
 @SuppressWarnings("unchecked")
 public class Edge<X extends Comparable<X>, Y> implements Comparable<Edge<X, Y>> {
 
-    private X id;
+    private final X id;
     private Y edgeData;
 
     public Edge(Object id) {

@@ -13,18 +13,18 @@ import java.util.*;
 
 public class HackerRank {
 
-	private static String querryTemplate = "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s";
-	private static String pageTemplate = "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s&page=%d";
+    private static final String querryTemplate = "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s";
+    private static final String pageTemplate = "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s&page=%d";
 
-	public static List<String> http(String substr) throws IOException, JSONException {
-		// http://chillyfacts.com/java-send-http-getpost-request-and-read-json-response/
-		String initialString = String.format(querryTemplate, substr);
+    public static List<String> http(String substr) throws IOException, JSONException {
+        // http://chillyfacts.com/java-send-http-getpost-request-and-read-json-response/
+        String initialString = String.format(querryTemplate, substr);
 
-		URL url = new URL(initialString);
-		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		connection.setRequestMethod("GET");
+        URL url = new URL(initialString);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
 
-		BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		String inputLine;
 		StringBuffer response = new StringBuffer();
 		while ((inputLine = in.readLine()) != null) {

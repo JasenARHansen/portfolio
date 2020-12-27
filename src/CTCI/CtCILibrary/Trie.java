@@ -2,13 +2,12 @@ package CTCI.CtCILibrary;
 
 import java.util.ArrayList;
 
-
 /* Implements a trie. We store the input list of words in tries so
  * that we can efficiently find words with a given prefix.
  */
 public class Trie {
     // The root of this trie.
-    private TrieNode root;
+    private final TrieNode root;
 
     /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
     public Trie(ArrayList<String> list) {
@@ -17,7 +16,6 @@ public class Trie {
             root.addWord(word);
         }
     }
-
 
     /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
     public Trie(String[] list) {

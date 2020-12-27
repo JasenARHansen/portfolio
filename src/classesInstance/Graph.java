@@ -6,7 +6,7 @@ import java.util.*;
 @SuppressWarnings("unchecked")
 public class Graph<X extends Comparable<X>, Y, Z> {
 
-    private HashMap<X, NodeGraph<X, Y, Z>> mapNodes;
+    private final HashMap<X, NodeGraph<X, Y, Z>> mapNodes;
     private Object id;
 
     public Graph() {

@@ -3,7 +3,7 @@ package classesInstance;
 import java.util.EmptyStackException;
 
 public class Queue<T extends Comparable<T>> {
-    private CustomLinkedList<T> innerList;
+    private final CustomLinkedList<T> innerList;
 
     /**
      * Constructor

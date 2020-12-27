@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class HashMapList<T, E> {
-    private HashMap<T, ArrayList<E>> map = new HashMap<>();
+    private final HashMap<T, ArrayList<E>> map = new HashMap<>();
 
     /* Insert item into list at key. */
     public void put(T key, E item) {

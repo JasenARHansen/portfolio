@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<NodeGraph<X, Y, Z>> {
     private X id;
     private Y data;
-    private Map<X, Edge<X, Z>> adjacent = new HashMap<>();
+    private final Map<X, Edge<X, Z>> adjacent = new HashMap<>();
 
     public NodeGraph(Object id) {
         assertNotNull(id);

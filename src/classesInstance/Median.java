@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Median<T extends Comparable<T>> {
 
-    private Heap<T> larger;
-    private Heap<T> smaller;
-    private List<T> median;
+    private final Heap<T> larger;
+    private final Heap<T> smaller;
+    private final List<T> median;
 
     public Median() {
         //Min heap for larger numbers

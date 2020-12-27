@@ -1,9 +1,9 @@
 package CTCI.CtCILibrary;
 
 public class BitVector {
-    private static int DATA_SIZE = 32;
-    private int length;
-    private int[] vector;
+    private static final int DATA_SIZE = 32;
+    private final int length;
+    private final int[] vector;
 
     public BitVector(int length) {
         this.length = length;

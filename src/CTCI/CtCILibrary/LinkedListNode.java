@@ -44,8 +44,7 @@ public class LinkedListNode {
         }
     }
 
-    public LinkedListNode clone() throws CloneNotSupportedException {
-        LinkedListNode clone = (LinkedListNode) super.clone();
+    public LinkedListNode clone() {
         LinkedListNode next2 = null;
         if (next != null) {
             next2 = next.clone();

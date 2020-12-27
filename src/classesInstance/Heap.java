@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Heap<T extends Comparable<T>> {
 
-    private List<T> heapItems;
+    private final List<T> heapItems;
 
     // Determines heap type: true for minHeap and false for maxHeap
     private boolean heapType = true;

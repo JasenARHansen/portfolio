@@ -1,8 +1,8 @@
 package classesInstance;
 
 public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>> implements Comparable<Tuple<X, Y>> {
-    private X leftData;
-    private Y rightData;
+    private final X leftData;
+    private final Y rightData;
 
     public Tuple(X leftData, Y rightData) {
         this.leftData = leftData;
