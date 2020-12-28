@@ -1,7 +1,5 @@
 package classesInstance;
 
-import static org.junit.Assert.assertNotNull;
-
 @SuppressWarnings("unchecked")
 public class Edge<X extends Comparable<X>, Y> implements Comparable<Edge<X, Y>> {
 
@@ -9,7 +7,7 @@ public class Edge<X extends Comparable<X>, Y> implements Comparable<Edge<X, Y>> 
     private Y edgeData;
 
     public Edge(Object id) {
-        assertNotNull(id);
+        assert id != null;
         this.id = (X) id;
     }
 

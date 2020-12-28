@@ -9,26 +9,26 @@ public class Associativity {
 
     public static void main(String[] args) {
         Associativity associativity = new Associativity();
-        associativity.highestAssocitivity();
+        associativity.highestAssociativity();
     }
 
-    public void highestAssocitivity() {
+    public void highestAssociativity() {
         Scanner scan = new Scanner(System.in);
-        float associtivityThreshold = scan.nextFloat();
+        float associativityThreshold = scan.nextFloat();
         int associationCount = scan.nextInt();
 
-        List<AssociativityNode> associativityNodeList = new ArrayList<AssociativityNode>();
+        List<AssociativityNode> associativityNodeList = new ArrayList<>();
 
         for (int i = 0; i < associationCount; i++) {
             String firstItem = scan.next();
             String secondItem = scan.next();
-            float itemAssocitivity = scan.nextFloat();
+            float itemAssociativity = scan.nextFloat();
 
             /* Create all AssociativityNodes */
             boolean found = false;
             for (AssociativityNode associativityNode : associativityNodeList) {
                 if (associativityNode.getName().equals(firstItem)) {
-                    if (itemAssocitivity > associtivityThreshold) {
+                    if (itemAssociativity > associativityThreshold) {
                         associativityNode.addAssociation(secondItem);
                         found = true;
                         break;
@@ -47,7 +47,7 @@ public class Associativity {
                     continue;
                 }
                 AssociativityNode associativityNode = new AssociativityNode(firstItem);
-                if (itemAssocitivity > associtivityThreshold) {
+                if (itemAssociativity > associativityThreshold) {
                     associativityNode.addAssociation(secondItem);
                 }
                 /* Add to associativityNodeList */
@@ -71,7 +71,7 @@ public class Associativity {
 
         /* Determine AssociativityNode with greatest associativity */
         int associativity = 0;
-        List<String> associativityHeadList = new ArrayList<String>();
+        List<String> associativityHeadList = new ArrayList<>();
         for (AssociativityNode associativityNode : associativityNodeList) {
             List<String> associativityList = associativityNode.getAssociativity();
             if (associativityList.size() > associativity) {
@@ -87,13 +87,13 @@ public class Associativity {
         System.out.println(associativityHeadList.get(0));
     }
 
-    public class AssociativityNode {
+    public static class AssociativityNode {
         private final List<AssociativityNode> associations;
         private final String name;
 
         public AssociativityNode(String name) {
             this.name = name;
-            associations = new ArrayList<AssociativityNode>();
+            associations = new ArrayList<>();
         }
 
         public void addAssociation(String name) {
@@ -136,7 +136,7 @@ public class Associativity {
         }
 
         public List<String> getAssociativity() {
-            List<String> returnList = new ArrayList<String>();
+            List<String> returnList = new ArrayList<>();
             return getAssociationList(returnList);
         }
 
