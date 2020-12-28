@@ -1,6 +1,5 @@
 package Test.google;
 
-
 import google.string_arithmetic;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -18,14 +17,30 @@ public class string_arithmetic_tests {
     @Rule
     public TestName name = new TestName();
 
-    public void print_test(String name, List<String> lvalue, String operation, List<String> rvalue, boolean solution) {
-        System.out.printf("%s: %s %s %s = %s\n", name, string_arithmetic.convert(lvalue), operation,
-                string_arithmetic.convert(rvalue), solution);
+    public void print_test(
+            String name, List<String> lvalue, String operation, List<String> rvalue, boolean solution) {
+        System.out.printf(
+                "%s: %s %s %s = %s\n",
+                name,
+                string_arithmetic.convert(lvalue),
+                operation,
+                string_arithmetic.convert(rvalue),
+                solution);
     }
 
-    public void print_test(String name, List<String> lvalue, String operation, List<String> rvalue, List<String> solution) {
-        System.out.printf("%s: %s %s %s = %s\n", name, string_arithmetic.convert(lvalue), operation,
-                string_arithmetic.convert(rvalue), string_arithmetic.convert(solution));
+    public void print_test(
+            String name,
+            List<String> lvalue,
+            String operation,
+            List<String> rvalue,
+            List<String> solution) {
+        System.out.printf(
+                "%s: %s %s %s = %s\n",
+                name,
+                string_arithmetic.convert(lvalue),
+                operation,
+                string_arithmetic.convert(rvalue),
+                string_arithmetic.convert(solution));
     }
 
     @Test
@@ -503,5 +518,4 @@ public class string_arithmetic_tests {
         Assert.assertEquals(expected, output);
         print_test(name.getMethodName(), lvalue, "/", rvalue, output);
     }
-
 }

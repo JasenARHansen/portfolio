@@ -40,7 +40,7 @@ public class Linked_List {
     return null;
   }
 
-  public static boolean isPalindrome(CustomLinkedList<String> input) {
+  public static <T extends Comparable<T>> boolean isPalindrome(CustomLinkedList<T> input) {
 
     int offset = 0;
     int size = input.getSize();
@@ -53,58 +53,112 @@ public class Linked_List {
     return true;
   }
 
-  @SafeVarargs
-  public static CustomLinkedList<Integer> sumListReverse(CustomLinkedList<Integer>... operands) {
-    int sum = 0;
-    for (CustomLinkedList<Integer> operand : operands) {
-      for (int i = 0; i < operand.getSize(); i++) {
-        sum += (int) (operand.getIndex(i).getData() * Math.pow(10, i));
-      }
-    }
+  public static CustomLinkedList<Integer> sumList(
+          CustomLinkedList<Integer> augend, CustomLinkedList<Integer> addend) {
+    // Addition: Augend + Addend = Sum
+    // Each list represents the digits of a number in forward order.
+    // This method will add the lists together and return a new list representing the sum.
+
+    int augend_size = augend.getSize();
+    int addend_size = addend.getSize();
 
     CustomLinkedList<Integer> sumList = new CustomLinkedList<>();
-    while (sum > 0) {
-      sumList.insert(sum % 10);
-      sum /= 10;
+
+    int carry = 0;
+    int sum;
+    int augend_digit;
+    int addend_digit;
+    for (int index = 0; index < Math.max(augend_size, addend_size); index++) {
+      if (index < augend_size) {
+        augend_digit = augend.getIndex(augend_size - index - 1).getData();
+      } else {
+        augend_digit = 0;
+      }
+      if (index < addend_size) {
+        addend_digit = addend.getIndex(addend_size - index - 1).getData();
+      } else {
+        addend_digit = 0;
+      }
+      sum = augend_digit + addend_digit + carry;
+      if (sum > 9) {
+        sum = sum % 10;
+        carry = 1;
+      } else {
+        carry = 0;
+      }
+      sumList.insertIndex(sum, 0);
+    }
+    if (carry > 0) {
+      sumList.insertIndex(carry, 0);
     }
 
     return sumList;
   }
 
-  @SafeVarargs
-  public static CustomLinkedList<Integer> sumList(CustomLinkedList<Integer>... operands) {
-    int sum = 0;
-    for (CustomLinkedList<Integer> operand : operands) {
-      for (int i = 0; i < operand.getSize(); i++) {
-        sum += (int) (operand.getIndex(i).getData() * Math.pow(10, (operand.getSize() - i - 1)));
-      }
-    }
+  public static CustomLinkedList<Integer> sumListReverse(
+          CustomLinkedList<Integer> augend, CustomLinkedList<Integer> addend) {
+    // Addition: Augend + Addend = Sum
+    // Each list represents the digits of a number in reverse order.
+    // This method will add the lists together and return a new list representing the sum.
+
+    int augend_size = augend.getSize();
+    int addend_size = addend.getSize();
 
     CustomLinkedList<Integer> sumList = new CustomLinkedList<>();
-    while (sum > 0) {
-      sumList.insertIndex(sum % 10, 0);
-      sum /= 10;
+
+    int carry = 0;
+    int sum;
+    int augend_digit;
+    int addend_digit;
+    for (int index = 0; index < Math.max(augend_size, addend_size); index++) {
+      if (index < augend_size) {
+        augend_digit = augend.getIndex(index).getData();
+      } else {
+        augend_digit = 0;
+      }
+      if (index < addend_size) {
+        addend_digit = addend.getIndex(index).getData();
+      } else {
+        addend_digit = 0;
+      }
+      sum = augend_digit + addend_digit + carry;
+      if (sum > 9) {
+        sum = sum % 10;
+        carry = 1;
+      } else {
+        carry = 0;
+      }
+      sumList.insert(sum);
+    }
+    if (carry > 0) {
+      sumList.insert(carry);
     }
 
     return sumList;
   }
 
   public static void partition(CustomLinkedList<Integer> inputList, Integer data) {
+    // This will split the list into 2 partitions.
+    // The left partition will all be smaller than the selector data
+    // The right partition will all be greater than or equal to the data
+    // The partition value does not need to be at the border of the second partition, it can be
+    // anywhere in it.
+
     if (inputList.isEmpty()) {
       return;
     }
 
-    CustomLinkedList<Integer> nextList = new CustomLinkedList<>();
+    CustomLinkedList<Integer> rightPartition = new CustomLinkedList<>();
     int index = 0;
     while (index < inputList.getSize()) {
       if (inputList.getIndex(index).getData() >= data) {
-        nextList.insert(inputList.getIndex(index).getData());
+        rightPartition.insert(inputList.getIndex(index).getData());
         inputList.removeIndex(index);
       } else {
         index++;
       }
     }
-    inputList.insert(nextList);
+    inputList.insert(rightPartition);
   }
 
   public static void removeDuplicateAlt(CustomLinkedList<Integer> input) {

@@ -1,7 +1,7 @@
 package CTCI_SOURCE.Ch_02_Linked_Lists.Q2_02_Return_Kth_To_Last;
 
-import CTCI_SOURCE.CtCILibrary.AssortedMethods;
-import CTCI_SOURCE.CtCILibrary.LinkedListNode;
+import CTCI_SOURCE.other.Introduction.CtCILibrary.AssortedMethods;
+import CTCI_SOURCE.other.Introduction.CtCILibrary.LinkedListNode;
 
 public class QuestionA {
 
@@ -23,5 +23,4 @@ public class QuestionA {
             printKthToLast(head, i);
         }
     }
-
 }

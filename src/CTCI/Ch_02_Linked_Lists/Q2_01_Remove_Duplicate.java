@@ -1,6 +1,6 @@
 package CTCI.Ch_02_Linked_Lists;
 
-import CTCI.CtCILibrary.LinkedListNode;
+import CTCI_SOURCE.other.Introduction.CtCILibrary.LinkedListNode;
 import classesInstance.CustomLinkedList;
 import classesInstance.NodeList;
 
