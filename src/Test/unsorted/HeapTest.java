@@ -1,6 +1,6 @@
 package Test.unsorted;
 
-import classesInstance.Heap;
+import unsorted.classesInstance.Heap;
 
 //import java.util.Scanner;
 

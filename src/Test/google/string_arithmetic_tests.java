@@ -1,6 +1,6 @@
 package Test.google;
 
-import google.string_arithmetic;
+import interview.google.string_arithmetic;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;

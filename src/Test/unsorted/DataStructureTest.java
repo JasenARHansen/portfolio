@@ -1,13 +1,13 @@
 package Test.unsorted;
 
-import classesInstance.BinarySearchTreeHeightBalanced;
-import classesInstance.CustomLinkedList;
-import classesInstance.Median;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classesInstance.BinarySearchTreeHeightBalanced;
+import unsorted.classesInstance.CustomLinkedList;
+import unsorted.classesInstance.Median;
 
 import static org.junit.Assert.*;
 

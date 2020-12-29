@@ -1,9 +1,9 @@
 package Test.unsorted;
 
-import classesStatic.KataStatic;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import unsorted.classesStatic.KataStatic;
 
 import static org.junit.Assert.*;
 

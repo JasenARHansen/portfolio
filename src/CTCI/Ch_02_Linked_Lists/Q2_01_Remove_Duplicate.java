@@ -1,8 +1,8 @@
 package CTCI.Ch_02_Linked_Lists;
 
-import CTCI_SOURCE.other.Introduction.CtCILibrary.LinkedListNode;
-import classesInstance.CustomLinkedList;
-import classesInstance.NodeList;
+import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import unsorted.classesInstance.CustomLinkedList;
+import unsorted.classesInstance.NodeList;
 
 import java.util.HashSet;
 import java.util.Set;

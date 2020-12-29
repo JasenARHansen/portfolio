@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_01_Arrays_and_Strings;
 
-import CTCI.other.Ch_01_Arrays_and_Strings.Q1_09_String_Rotation;
+import CTCI.Ch_01_Arrays_and_Strings.Q1_09_String_Rotation;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

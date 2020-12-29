@@ -1,11 +1,11 @@
 package Test.unsorted;
 
-import CodeChalenge.FirstQuadrant;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.CodeChalenge.FirstQuadrant;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,14 @@
 package CTCI.Ch_02_Linked_Lists.Old;
 
 import CTCI.Ch_02_Linked_Lists.Linked_List;
-import classesInstance.CirularLinkedList;
-import classesInstance.CustomLinkedList;
-import classesInstance.NodeList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classesInstance.CirularLinkedList;
+import unsorted.classesInstance.CustomLinkedList;
+import unsorted.classesInstance.NodeList;
 
 import java.lang.reflect.Field;
 

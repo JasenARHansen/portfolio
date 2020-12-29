@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_01_Arrays_and_Strings;
 
-import CTCI.other.Ch_01_Arrays_and_Strings.Q1_02_Is_Permutation;
+import CTCI.Ch_01_Arrays_and_Strings.Q1_02_Is_Permutation;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

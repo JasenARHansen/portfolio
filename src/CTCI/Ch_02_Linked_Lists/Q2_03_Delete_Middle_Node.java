@@ -1,6 +1,6 @@
 package CTCI.Ch_02_Linked_Lists;
 
-import CTCI_SOURCE.other.Introduction.CtCILibrary.LinkedListNode;
+import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
 public class Q2_03_Delete_Middle_Node {
 
