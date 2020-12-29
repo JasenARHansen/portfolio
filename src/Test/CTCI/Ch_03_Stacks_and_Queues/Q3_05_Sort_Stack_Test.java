@@ -1,10 +1,21 @@
-package CTCI_SOURCE.Ch_03_Stacks_and_Queues.Q3_05_Sort_Stack;
+package Test.CTCI.Ch_03_Stacks_and_Queues;
 
+import CTCI.Ch_03_Stacks_and_Queues.SortableStack;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import org.junit.FixMethodOrder;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestName;
+import org.junit.runners.MethodSorters;
 
 import java.util.Stack;
 
-public class Question {
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class Q3_05_Sort_Stack_Test {
+
+  @Rule
+  public TestName name = new TestName();
+
   public static Stack<Integer> mergesort(Stack<Integer> inStack) {
     if (inStack.size() <= 1) {
       return inStack;
@@ -62,7 +73,26 @@ public class Question {
     }
   }
 
-  public static void main(String[] args) {
+  @Test
+  public void SortableStack() {
+    System.out.format("%s: \n", name.getMethodName());
+    SortableStack<Integer> sortableStack = new SortableStack<>();
+
+    int[] array = new int[]{55, 1, 23, 0, 123, 5};
+    for (int data : array) {
+      sortableStack.push(data);
+      System.out.format("Push '%s' on Stack '%s'\n", data, sortableStack.toString());
+    }
+    sortableStack.sort();
+    System.out.format("Sorted Queue '%s'\n", sortableStack.toString());
+    for (int i = 0; i < array.length; i++) {
+      System.out.format("Pop '%s' on Stack '%s'\n", sortableStack.pop(), sortableStack.toString());
+    }
+  }
+
+  @Test
+  public void sort_stack_solution_1() {
+    System.out.format("%s: \n", name.getMethodName());
     Stack<Integer> s = new Stack<>();
     for (int i = 0; i < 10; i++) {
       int r = AssortedMethods.randomIntInRange(0, 1000);
@@ -70,6 +100,22 @@ public class Question {
     }
 
     sort(s);
+
+    while (!s.isEmpty()) {
+      System.out.println(s.pop());
+    }
+  }
+
+  @Test
+  public void sort_stack_solution_2() {
+    System.out.format("%s: \n", name.getMethodName());
+    Stack<Integer> s = new Stack<>();
+    for (int i = 0; i < 10; i++) {
+      int r = AssortedMethods.randomIntInRange(0, 1000);
+      s.push(r);
+    }
+
+    mergesort(s);
 
     while (!s.isEmpty()) {
       System.out.println(s.pop());

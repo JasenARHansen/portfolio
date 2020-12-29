@@ -2,7 +2,6 @@ package CTCI_SOURCE.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter;
 
 public class Question {
 
-
     public static void main(String[] args) {
         AnimalQueue animals = new AnimalQueue();
         animals.enqueue(new Cat("Callie"));
@@ -25,5 +24,4 @@ public class Question {
             System.out.println(animals.dequeueAny().name());
         }
     }
-
 }
