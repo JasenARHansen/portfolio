@@ -3,18 +3,18 @@ package Test.CTCI.other.Ch_02_Linked_Lists;
 import CTCI.Ch_02_Linked_Lists.Linked_List;
 import CTCI.Ch_02_Linked_Lists.Q2_08_Loop_Detection;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import junit.framework.Assert;
+import classes.NodeList;
+import classes.classesInstance.CirularLinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesInstance.CirularLinkedList;
-import unsorted.classesInstance.NodeList;
 
 import java.lang.reflect.Field;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_08_Loop_Detection_Test {
@@ -26,18 +26,18 @@ public class Q2_08_Loop_Detection_Test {
   public void detectCycle_1() {
     System.out.format("%s: List\n", name.getMethodName());
     CirularLinkedList<String> stringValue = new CirularLinkedList<>();
-    stringValue.insert("a");
-    stringValue.insert("b");
-    stringValue.insert("c");
-    stringValue.insert("d");
-    stringValue.insert("e");
-    stringValue.insert("f");
+      stringValue.insert("a");
+      stringValue.insert("b");
+      stringValue.insert("c");
+      stringValue.insert("d");
+      stringValue.insert("e");
+      stringValue.insert("f");
 
-    stringValue.printList();
+      stringValue.printList();
 
-    NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
-    Assert.assertNull(resultNode);
-    System.out.format("Cycle Node: %s\n", resultNode);
+      NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
+      assertNull(resultNode);
+      System.out.format("Cycle Node: null\n");
   }
 
   @Test

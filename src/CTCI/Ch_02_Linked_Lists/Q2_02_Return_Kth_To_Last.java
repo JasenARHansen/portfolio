@@ -1,8 +1,8 @@
 package CTCI.Ch_02_Linked_Lists;
 
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import unsorted.classesInstance.CustomLinkedList;
-import unsorted.classesInstance.NodeList;
+import classes.CustomLinkedList;
+import classes.NodeList;
 
 public class Q2_02_Return_Kth_To_Last {
 

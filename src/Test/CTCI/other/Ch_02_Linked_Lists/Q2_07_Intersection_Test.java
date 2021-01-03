@@ -4,16 +4,16 @@ import CTCI.Ch_02_Linked_Lists.Linked_List;
 import CTCI.Ch_02_Linked_Lists.Q2_07_Intersection;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import junit.framework.Assert;
+import classes.CustomLinkedList;
+import classes.NodeList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesInstance.CustomLinkedList;
-import unsorted.classesInstance.NodeList;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_07_Intersection_Test {
@@ -63,8 +63,8 @@ public class Q2_07_Intersection_Test {
     stringValue2.printList();
     System.out.println("Test result:");
     NodeList<String> resultNode = Linked_List.intersects(stringValue1, stringValue2);
-    Assert.assertNull(resultNode);
-    System.out.format("List intersects at: %s\n", resultNode);
+    assertNull(resultNode);
+    System.out.format("List intersects at: null\n");
   }
 
   @Test

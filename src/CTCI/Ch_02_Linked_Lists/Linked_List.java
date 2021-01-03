@@ -1,8 +1,8 @@
 package CTCI.Ch_02_Linked_Lists;
 
-import unsorted.classesInstance.CirularLinkedList;
-import unsorted.classesInstance.CustomLinkedList;
-import unsorted.classesInstance.NodeList;
+import classes.CustomLinkedList;
+import classes.NodeList;
+import classes.classesInstance.CirularLinkedList;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;

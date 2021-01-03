@@ -3,12 +3,12 @@ package CTCI.Ch_01_Arrays_and_Strings.Old;
 import CTCI.unsorted.RansomNote;
 import CTCI.unsorted.SubstringPermutationOfLargerString;
 import CTCI.unsorted.SumOfCubes;
+import classes.unsorted.classesStatic.Utilities;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesStatic.Utilities;
 
 import java.util.Set;
 

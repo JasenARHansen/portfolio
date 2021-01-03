@@ -14,6 +14,7 @@ public class AssortedMethods {
     return randomInt(max + 1 - min) + min;
   }
 
+  @SuppressWarnings("unused")
   public static boolean randomBoolean() {
     return randomIntInRange(0, 1) == 0;
   }
@@ -62,6 +63,7 @@ public class AssortedMethods {
     return root;
   }
 
+  @SuppressWarnings("unused")
   public static LinkedListNode linkedListWithValue(int N, int value) {
     LinkedListNode root = new LinkedListNode(value, null, null);
     LinkedListNode prev = root;
@@ -73,11 +75,11 @@ public class AssortedMethods {
     return root;
   }
 
-  public static LinkedListNode createLinkedListFromArray(int[] vals) {
-    LinkedListNode head = new LinkedListNode(vals[0], null, null);
+  public static LinkedListNode createLinkedListFromArray(int[] values) {
+    LinkedListNode head = new LinkedListNode(values[0], null, null);
     LinkedListNode current = head;
-    for (int i = 1; i < vals.length; i++) {
-      current = new LinkedListNode(vals[i], null, current);
+    for (int i = 1; i < values.length; i++) {
+      current = new LinkedListNode(values[i], null, current);
     }
     return head;
   }
@@ -114,6 +116,7 @@ public class AssortedMethods {
     return s.toString();
   }
 
+  @SuppressWarnings("unused")
   public static String toBaseNString(int a, int base) {
 
     StringBuilder s = new StringBuilder();
@@ -175,6 +178,7 @@ public class AssortedMethods {
     return buffer.toString();
   }
 
+  @SuppressWarnings("unused")
   public static String listOfPointsToString(ArrayList<Point> list) {
     StringBuilder buffer = new StringBuilder();
     for (Point p : list) {
@@ -244,7 +248,9 @@ public class AssortedMethods {
     return new HashSet<>(Arrays.asList(wordList));
   }
 
+  @SuppressWarnings("unused")
   public static String getLongSampleText(boolean forceLower) {
+    //noinspection TextBlockMigration
     String text =
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim magna, rhoncus at risus at, tincidunt pretium sapien. Maecenas vitae sagittis urna. Donec egestas, mauris ut porttitor eleifend, lectus felis sollicitudin sapien, luctus tempor ligula lacus sit amet quam. Quisque gravida est dolor, vel cursus lacus cursus vel. Morbi vulputate ligula nec libero ullamcorper iaculis. Sed finibus tincidunt scelerisque. Cras condimentum lectus ac sem ornare, non pellentesque enim bibendum. Quisque tincidunt eget elit ut iaculis. Aliquam purus sapien, tincidunt non imperdiet eu, venenatis quis turpis. Vestibulum finibus porta urna sed consequat. Phasellus at rutrum enim. In euismod tellus nec ligula placerat dapibus. Quisque mauris urna, malesuada sit amet scelerisque at, euismod vitae nulla. Sed cursus lacus vitae leo venenatis, id ultrices ex fermentum.\r\n"
                     + "\r\n"
@@ -1722,7 +1728,7 @@ public class AssortedMethods {
             "beside",
             "daughter",
             "Relatively",
-            "unsorted/classes",
+            "classes/unsorted/classes",
             "explore",
             "stated",
             "German",

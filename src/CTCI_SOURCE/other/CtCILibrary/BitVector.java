@@ -1,10 +1,12 @@
 package CTCI_SOURCE.other.CtCILibrary;
 
+@SuppressWarnings("unused")
 public class BitVector {
     private static final int DATA_SIZE = 32;
     private final int length;
     private final int[] vector;
 
+    @SuppressWarnings("unused")
     public BitVector(int length) {
         this.length = length;
         if (length % DATA_SIZE == 0) {

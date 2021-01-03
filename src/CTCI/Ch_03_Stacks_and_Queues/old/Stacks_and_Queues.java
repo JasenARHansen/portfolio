@@ -1,7 +1,7 @@
 package CTCI.Ch_03_Stacks_and_Queues.old;
 
-import unsorted.classesInstance.CustomLinkedList;
-import unsorted.classesInstance.Tuple;
+import classes.CustomLinkedList;
+import classes.classesInstance.Tuple;
 
 import java.util.*;
 

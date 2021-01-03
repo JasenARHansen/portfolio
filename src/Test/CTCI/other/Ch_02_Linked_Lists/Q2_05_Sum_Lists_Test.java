@@ -3,12 +3,12 @@ package Test.CTCI.other.Ch_02_Linked_Lists;
 import CTCI.Ch_02_Linked_Lists.Linked_List;
 import CTCI.Ch_02_Linked_Lists.Q2_05_Sum_Lists;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesInstance.CustomLinkedList;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_05_Sum_Lists_Test {

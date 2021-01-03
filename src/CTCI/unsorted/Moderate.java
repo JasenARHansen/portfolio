@@ -1,7 +1,7 @@
 package CTCI.unsorted;
 
-import unsorted.classesInstance.Line;
-import unsorted.classesInstance.Tuple;
+import classes.classesInstance.Line;
+import classes.classesInstance.Tuple;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -38,6 +38,7 @@ public class Moderate {
         if ((isBetween(line1.getPoint1X(), valueX, line1.getPoint2X()))
                 && (isBetween(line2.getPoint1X(), valueX, line2.getPoint2X()))) {
             double valueY = line1.getYfromX(valueX);
+            //noinspection SuspiciousNameCombination
             return new Tuple<>(valueX, valueY);
         }
 
@@ -260,7 +261,7 @@ public class Moderate {
                 }
             }
             if (!test) {
-                return !test;
+                return true;
             }
             // diagonal 1
             if (xCoordinate == yCoordinate) {

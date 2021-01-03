@@ -1,6 +1,6 @@
 package CTCI.unsorted;
 
-import unsorted.classesInstance.Tuple;
+import classes.classesInstance.Tuple;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -3,15 +3,16 @@ package Test.CTCI.other.Ch_02_Linked_Lists;
 import CTCI.Ch_02_Linked_Lists.Q2_02_Return_Kth_To_Last;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import classes.CustomLinkedList;
+import classes.NodeList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesInstance.CustomLinkedList;
-import unsorted.classesInstance.NodeList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_02_Return_Kt_To_Last_Test {
@@ -26,20 +27,20 @@ public class Q2_02_Return_Kt_To_Last_Test {
     toSimplify.insert(0);
     toSimplify.insert(1);
     toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(6);
-    toSimplify.insert(6);
-    toSimplify.printList();
-    int from_last = 3;
-    NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
-    System.out.format(
-            "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
-    assert result != null;
-    assertEquals(9, (int) result.getData());
+      toSimplify.insert(9);
+      toSimplify.insert(4);
+      toSimplify.insert(0);
+      toSimplify.insert(6);
+      toSimplify.insert(9);
+      toSimplify.insert(6);
+      toSimplify.insert(6);
+      toSimplify.printList();
+      int from_last = 3;
+      NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
+      assertNotNull(result);
+      System.out.format(
+              "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
+      assertEquals(9, (int) result.getData());
   }
 
   @Test

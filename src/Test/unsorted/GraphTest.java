@@ -1,12 +1,12 @@
 package Test.unsorted;
 
+import classes.classesInstance.Graph;
+import classes.classesInstance.GraphAdjacency;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classesInstance.Graph;
-import unsorted.classesInstance.GraphAdjacency;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GraphTest {
@@ -114,7 +114,7 @@ public class GraphTest {
         graph.addEdge("Fish", "Bird", 1);
         System.out.println(graph.toString());
         for (String key : graph.getNodeIDs()) {
-            graph.printBredthFirst(key);
+            graph.printBreadthFirst(key);
         }
     }
 
