@@ -18,34 +18,6 @@ public class Q4_06_Successor_Test {
     @Rule
     public TestName name = new TestName();
 
-    public static TreeNode inorderSuccessor(TreeNode n) {
-        if (n == null) return null;
-
-        // Found right children -> return left most node of right subtree
-        if (n.parent == null || n.right != null) {
-            return leftMostChild(n.right);
-        } else {
-            TreeNode q = n;
-            TreeNode x = q.parent;
-            // Go up until we're on left instead of right
-            while (x != null && x.left != q) {
-                q = x;
-                x = x.parent;
-            }
-            return x;
-        }
-    }
-
-    public static TreeNode leftMostChild(TreeNode n) {
-        if (n == null) {
-            return null;
-        }
-        while (n.left != null) {
-            n = n.left;
-        }
-        return n;
-    }
-
     @Test
     public void inorderSuccessor_root() {
         System.out.format("%s: \n", name.getMethodName());
@@ -90,5 +62,33 @@ public class Q4_06_Successor_Test {
                 System.out.println(node.data + "->" + null);
             }
         }
+    }
+
+    public static TreeNode inorderSuccessor(TreeNode n) {
+        if (n == null) return null;
+
+        // Found right children -> return left most node of right subtree
+        if (n.parent == null || n.right != null) {
+            return leftMostChild(n.right);
+        } else {
+            TreeNode q = n;
+            TreeNode x = q.parent;
+            // Go up until we're on left instead of right
+            while (x != null && x.left != q) {
+                q = x;
+                x = x.parent;
+            }
+            return x;
+        }
+    }
+
+    public static TreeNode leftMostChild(TreeNode n) {
+        if (n == null) {
+            return null;
+        }
+        while (n.left != null) {
+            n = n.left;
+        }
+        return n;
     }
 }

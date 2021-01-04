@@ -18,5 +18,4 @@ public class Question {
             System.out.println(i + ": " + counts[i]);
         }
     }
-
 }

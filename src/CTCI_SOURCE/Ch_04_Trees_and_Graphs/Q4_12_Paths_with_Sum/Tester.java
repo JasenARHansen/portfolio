@@ -17,7 +17,8 @@ public class Tester {
                 int answerA = QuestionA.countPathsWithSum(root, targetSum);
                 int answerB = QuestionB.countPathsWithSum(root, targetSum);
                 if (answerA > 0 || answerB > 0) {
-                    System.out.println(targetSum + ": " + answerA + ", " + answerB + " | " + (answerA == answerB));
+                    System.out.println(
+                            targetSum + ": " + answerA + ", " + answerB + " | " + (answerA == answerB));
                 }
                 if (answerA != answerB) {
                     isWorking = false;
@@ -26,5 +27,4 @@ public class Tester {
             }
         }
     }
-
 }

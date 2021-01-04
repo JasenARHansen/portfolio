@@ -23,6 +23,16 @@ public class Trees_And_Graphs {
         return tree;
     }
 
+    public static <X extends Comparable<X>, Y, Z> List<X> findPath(
+            Graph<X, Y, Z> graph, NodeGraph<X, Y, Z> start, NodeGraph<X, Y, Z> stop) {
+        return graph.findPathBredthFirstId(start, stop);
+    }
+
+    public static List<ArrayList<NodeTree<Integer>>> listOfDepths(
+            BinarySearchTreeHeightBalanced<Integer> tree) {
+        return tree.listByDepth();
+    }
+
     private static <T extends Comparable<T>> void convertToBST(
             int start, int stop, BinarySearchTreeHeightBalanced<T> tree, T[] array) {
 
@@ -39,15 +49,5 @@ public class Trees_And_Graphs {
                 convertToBST(middle + 1, stop, tree, array);
             }
         }
-    }
-
-    public static <X extends Comparable<X>, Y, Z> List<X> findPath(
-            Graph<X, Y, Z> graph, NodeGraph<X, Y, Z> start, NodeGraph<X, Y, Z> stop) {
-        return graph.findPathBredthFirstId(start, stop);
-    }
-
-    public static List<ArrayList<NodeTree<Integer>>> listOfDepths(
-            BinarySearchTreeHeightBalanced<Integer> tree) {
-        return tree.listByDepth();
     }
 }

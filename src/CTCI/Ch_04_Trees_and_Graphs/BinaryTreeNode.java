@@ -7,17 +7,17 @@ public class BinaryTreeNode<T extends Comparable<T>> {
     private BinaryTreeNode<T> leftChild;
     private BinaryTreeNode<T> rightChild;
 
+    public BinaryTreeNode(T input) {
+        this();
+        this.data = input;
+    }
+
     public BinaryTreeNode() {
         this.leftChild = null;
         this.rightChild = null;
         this.data = null;
         this.height = 0;
         this.weight = 0;
-    }
-
-    public BinaryTreeNode(T input) {
-        this();
-        this.data = input;
     }
 
     public T getData() {
@@ -64,13 +64,13 @@ public class BinaryTreeNode<T extends Comparable<T>> {
         return this.weight;
     }
 
-    public void setWeight(int input) {
-        this.weight = input;
-    }
-
     @Override
     public String toString() {
         return String.format(
                 "(data: %s, height: %d , weight: %d)", this.data.toString(), this.height, this.weight);
+    }
+
+    private void setWeight(int input) {
+        this.weight = input;
     }
 }

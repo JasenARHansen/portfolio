@@ -5,39 +5,39 @@ import java.util.Set;
 
 public class SubstringPermutationOfLargerString {
 
-    public static void findPermutations(String first, String second) {
+  public static void findPermutations(String first, String second) {
 
-        String larger;
-        String smaller;
+      String larger;
+      String smaller;
 
-        if (first.length() > second.length()) {
-            larger = first;
-            smaller = second;
-        } else {
-            smaller = first;
-            larger = second;
-        }
+      if (first.length() > second.length()) {
+          larger = first;
+          smaller = second;
+      } else {
+          smaller = first;
+          larger = second;
+      }
 
-        Set<String> permutations = permuteString(smaller);
+      Set<String> permutations = permuteString(smaller);
 
-        StringBuilder outputBase = new StringBuilder();
-        outputBase.append("-".repeat(larger.length()));
+      StringBuilder outputBase = new StringBuilder();
+      outputBase.append("-".repeat(larger.length()));
 
-        System.out.format("Original String '%s' and substring '%s'\n", larger, smaller);
+      System.out.format("Original String '%s' and substring '%s'\n", larger, smaller);
 
-        for (String permutation : permutations) {
-            for (int i = 0; i < (larger.length() - permutation.length() + 1); i++) {
-                String temp = larger.substring(i, i + permutation.length());
-                if (temp.equals(permutation)) {
-                    String newString =
-                            outputBase.substring(0, i)
-                                    + permutation
-                                    + outputBase.substring(i + permutation.length());
-                    System.out.format("Permutation '%s' found and at '%s'\n", permutation, newString);
-                }
-            }
-        }
-    }
+      for (String permutation : permutations) {
+          for (int i = 0; i < (larger.length() - permutation.length() + 1); i++) {
+              String temp = larger.substring(i, i + permutation.length());
+              if (temp.equals(permutation)) {
+                  String newString =
+                          outputBase.substring(0, i)
+                                  + permutation
+                                  + outputBase.substring(i + permutation.length());
+                  System.out.format("Permutation '%s' found and at '%s'\n", permutation, newString);
+              }
+          }
+      }
+  }
 
     public static void getDescription() {
         System.out.println(

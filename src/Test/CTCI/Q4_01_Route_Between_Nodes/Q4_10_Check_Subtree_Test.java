@@ -1,5 +1,7 @@
 package Test.CTCI.Q4_01_Route_Between_Nodes;
 
+import CTCI.Ch_04_Trees_and_Graphs.BinaryTree;
+import CTCI.Ch_04_Trees_and_Graphs.BinaryTreeNode;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import CTCI_SOURCE.other.CtCILibrary.TreeNode;
 import org.junit.FixMethodOrder;
@@ -7,6 +9,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_10_Check_Subtree_Test {
@@ -69,12 +74,48 @@ public class Q4_10_Check_Subtree_Test {
   }
 
   @Test
-  public void allSequences() {
+  public void containsTree() {
     System.out.format("%s: \n", name.getMethodName());
+
+    BinaryTree<Integer> leftTree = new BinaryTree<>();
+    leftTree.insert(5);
+    leftTree.insert(3);
+    leftTree.insert(1);
+    leftTree.insert(2);
+    leftTree.insert(7);
+    leftTree.insert(6);
+    leftTree.insert(9);
+    BinaryTree<Integer> rightTree = new BinaryTree<>();
+    rightTree.insert(5);
+    rightTree.insert(3);
+    rightTree.insert(1);
+    rightTree.insert(2);
+    rightTree.insert(7);
+    rightTree.insert(6);
+    rightTree.insert(9);
+    rightTree.insert(8);
+
+    int number1 = 2;
+    int number2 = 7;
+    BinaryTreeNode<Integer> leftTreeNode = leftTree.getNode(number1);
+    BinaryTreeNode<Integer> rightTreeNode = rightTree.getNode(number2);
+
+    boolean containsRight = leftTree.containsTree(rightTreeNode);
+    boolean containsLeft = rightTree.containsTree(leftTreeNode);
+
+    System.out.format(
+            "%s: %s and %s share a subtree starting at %d : %b\n",
+            name.getMethodName(), leftTree.toString(), rightTree.toString(), number1, containsRight);
+    System.out.format(
+            "%s: %s and %s share a subtree starting at %d : %b\n",
+            name.getMethodName(), leftTree.toString(), rightTree.toString(), number2, containsLeft);
+
+    assertTrue(containsLeft);
+    assertFalse(containsRight);
   }
 
   @Test
-  public void allSequences_solution_1() {
+  public void containsTree_solution_1() {
     System.out.format("%s: \n", name.getMethodName());
     // t2 is a subtree of t1
     int[] array1 = {1, 2, 1, 3, 1, 1, 5};
@@ -102,7 +143,7 @@ public class Q4_10_Check_Subtree_Test {
   }
 
   @Test
-  public void allSequences_solution_2() {
+  public void containsTree_solution_2() {
     System.out.format("%s: \n", name.getMethodName());
     // t2 is a subtree of t1
     int[] array1 = {1, 2, 1, 3, 1, 1, 5};

@@ -19,6 +19,34 @@ public class Q2_05_Sum_Lists {
     return value;
   }
 
+  public static int linkedListToIntForward(LinkedListNode node) {
+    int value = 0;
+    while (node != null) {
+      value = value * 10 + node.data;
+      node = node.next;
+    }
+    return value;
+  }
+
+  public static LinkedListNode sumLists_solution_2(LinkedListNode l1, LinkedListNode l2) {
+    int len1 = length(l1);
+    int len2 = length(l2);
+    if (len1 < len2) {
+      l1 = padList(l1, len2 - len1);
+    } else {
+      l2 = padList(l2, len1 - len2);
+    }
+    PartialSum sum = sumLists_solution_2_Helper(l1, l2);
+    if (sum.carry == 0) {
+      return sum.sum;
+    } else {
+      return insertBefore(sum.sum, sum.carry);
+    }
+  }
+
+  public static void main(String[] args) {
+  }
+
   private static LinkedListNode sumLists_solution_1(
           LinkedListNode l1, LinkedListNode l2, int carry) {
     if (l1 == null && l2 == null && carry == 0) {
@@ -51,15 +79,6 @@ public class Q2_05_Sum_Lists {
     }
   }
 
-  public static int linkedListToIntForward(LinkedListNode node) {
-    int value = 0;
-    while (node != null) {
-      value = value * 10 + node.data;
-      node = node.next;
-    }
-    return value;
-  }
-
   private static PartialSum sumLists_solution_2_Helper(LinkedListNode l1, LinkedListNode l2) {
     if (l1 == null && l2 == null) {
       return new PartialSum();
@@ -71,22 +90,6 @@ public class Q2_05_Sum_Lists {
     sum.sum = insertBefore(sum.sum, val % 10);
     sum.carry = val / 10;
     return sum;
-  }
-
-  public static LinkedListNode sumLists_solution_2(LinkedListNode l1, LinkedListNode l2) {
-    int len1 = length(l1);
-    int len2 = length(l2);
-    if (len1 < len2) {
-      l1 = padList(l1, len2 - len1);
-    } else {
-      l2 = padList(l2, len1 - len2);
-    }
-    PartialSum sum = sumLists_solution_2_Helper(l1, l2);
-    if (sum.carry == 0) {
-      return sum.sum;
-    } else {
-      return insertBefore(sum.sum, sum.carry);
-    }
   }
 
   private static LinkedListNode padList(LinkedListNode l, int padding) {
@@ -103,10 +106,6 @@ public class Q2_05_Sum_Lists {
       node.next = list;
     }
     return node;
-  }
-
-
-  public static void main(String[] args) {
   }
 
   public static class PartialSum {

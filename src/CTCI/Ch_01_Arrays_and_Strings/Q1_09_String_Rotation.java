@@ -13,10 +13,6 @@ public class Q1_09_String_Rotation {
         return tempString.contains(right);
     }
 
-    public static boolean isSubstring(String big, String small) {
-        return big.contains(small);
-    }
-
     public static boolean isRotation_solution_1(String s1, String s2) {
         int len = s1.length();
         /* check that s1 and s2 are equal length and not empty */
@@ -26,6 +22,10 @@ public class Q1_09_String_Rotation {
             return isSubstring(s1s1, s2);
         }
         return false;
+    }
+
+    public static boolean isSubstring(String big, String small) {
+        return big.contains(small);
     }
 
     public static void main(String[] args) {

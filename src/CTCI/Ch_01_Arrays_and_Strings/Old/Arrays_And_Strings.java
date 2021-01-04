@@ -37,18 +37,18 @@ public class Arrays_And_Strings {
         return (localString.length() < input.length()) ? localString.toString() : input;
     }
 
-    public static String convertAndSort(String input) {
-        char[] content = input.toCharArray();
-        Arrays.sort(content);
-        return new String(content);
-    }
-
     public static void getDescription() {
         System.out.println("Section 1. Arrays and Strings");
     }
 
     public static boolean isPermutation(String left, String right) {
         return convertAndSort(left).equals(convertAndSort(right));
+    }
+
+    public static String convertAndSort(String input) {
+        char[] content = input.toCharArray();
+        Arrays.sort(content);
+        return new String(content);
     }
 
     public static boolean isRotation(String first, String second) {

@@ -8,190 +8,6 @@ public class StairCase {
     static char defaultInscribedSymbol = ' ';
     static boolean defaultInscribed = true;
 
-    private static void diamond(int count, boolean inscribed, char... symbolIn) {
-        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-        if (inscribed) {
-            if (count >= 1) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
-            }
-            if (count > 2) {
-                for (int i = 2; i <= count; i++) {
-                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
-                }
-            }
-
-            if (count > 3) {
-                for (int i = 0; i < count - 2; i++) {
-                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + inscribedLine(2 * (count - 1 - i) - 1, symbolIn));
-                }
-            }
-            if (count >= 2) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
-            }
-        } else {
-            for (int i = 1; i <= count; i++) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + String.valueOf(symbol).repeat(Math.max(0, (2 * i) - 1)));
-            }
-            for (int i = 0; i < count - 1; i++) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + String.valueOf(symbol).repeat(Math.max(0, 2 * (count - 1 - i) - 1)));
-            }
-
-        }
-    }
-
-    private static void diamond(int count, char... symbolIn) {
-        diamond(count, false, symbolIn);
-    }
-
-    private static void hexagon(int count, boolean inscribed, char... symbolIn) {
-        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-        char symbol2 = symbolIn.length > 0 ? symbolIn[1] : defaultInscribedSymbol;
-
-        StringBuilder base = new StringBuilder();
-        StringBuilder baseInner = new StringBuilder();
-        StringBuilder padding = new StringBuilder();
-        StringBuilder step = new StringBuilder();
-
-        if (inscribed) {
-            for (int i = 0; i < count; i++) {
-                base.append(symbol);
-                baseInner.append(symbol2);
-            }
-            padding.append(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)));
-            System.out.println(padding + base.toString());
-            for (int i = 1; i < count; i++) {
-                padding = new StringBuilder();
-                padding.append(String.valueOf(defaultInscribedSymbol).repeat(count - i - 1));
-                step = new StringBuilder();
-                step.append(String.valueOf(symbol2).repeat(i - 1));
-                System.out.println(padding.toString() + symbol + step + baseInner + step + symbol);
-            }
-            for (int i = 1; i < count; i++) {
-                System.out.println(padding.toString() + symbol + step + baseInner + step + symbol);
-            }
-
-            for (int i = 0; i < count - 2; i++) {
-                step = new StringBuilder();
-                step.append(String.valueOf(symbol2).repeat(Math.max(0, count - i - 3)));
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + symbol + step + baseInner + step + symbol);
-            }
-
-            System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)) + base.toString());
-
-        } else {
-            base.append(String.valueOf(symbol).repeat(Math.max(0, count)));
-            padding.append(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)));
-            System.out.println(padding + base.toString());
-            for (int i = 1; i < count; i++) {
-                padding = new StringBuilder();
-                padding.append(String.valueOf(defaultInscribedSymbol).repeat(count - i - 1));
-                step = new StringBuilder();
-                step.append(String.valueOf(symbol).repeat(i));
-                System.out.println(padding + step.toString() + base + step);
-            }
-            for (int i = 1; i < count; i++) {
-                System.out.println(padding + step.toString() + base + step);
-            }
-            for (int i = 0; i < count - 1; i++) {
-                padding = new StringBuilder();
-                padding.append(String.valueOf(defaultInscribedSymbol).repeat(i + 1));
-                step = new StringBuilder();
-                step.append(String.valueOf(symbol).repeat(Math.max(0, count - i - 2)));
-                System.out.println(padding + step.toString() + base + step);
-            }
-
-        }
-    }
-
-    private static void hexagon(int count, char... symbolIn) {
-        hexagon(count, false, symbolIn);
-    }
-
-    private static void hourglass(int count, boolean inscribed, char... symbolIn) {
-        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-        if (inscribed) {
-            StringBuilder step = new StringBuilder();
-            step.append(String.valueOf(symbol).repeat(Math.max(0, (2 * count) - 1)));
-            System.out.println(step);
-            if (count > 2) {
-                for (int i = count - 1; i > 1; i--) {
-                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
-                }
-            }
-            if (count > 1) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
-            }
-            if (count > 2) {
-                for (int i = 2; i <= count - 1; i++) {
-                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
-                }
-            }
-            if (count > 1) {
-                step = new StringBuilder();
-                step.append(String.valueOf(symbol).repeat(Math.max(0, (2 * count) - 1)));
-                System.out.println(step);
-            }
-
-        } else {
-            for (int i = 0; i < count; i++) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i) + String.valueOf(symbol).repeat(Math.max(0, 2 * (count - i) - 1)));
-            }
-
-            for (int i = 2; i <= count; i++) {
-                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + String.valueOf(symbol).repeat(Math.max(0, (2 * i) - 1)));
-            }
-        }
-    }
-
-    private static void hourglass(int count, char... symbolIn) {
-        hourglass(count, false, symbolIn);
-    }
-
-    private static String inscribedLine(int count, char... symbolIn) {
-        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-        char inscribedSymbol = symbolIn.length > 1 ? symbolIn[1] : defaultInscribedSymbol;
-
-        StringBuilder step = new StringBuilder();
-
-        if (count == 0) {
-            return step.toString();
-        } else if (count == 0) {
-            return step.toString() + symbol;
-        }
-        step.append(symbol);
-
-        step.append(String.valueOf(inscribedSymbol).repeat(Math.max(0, count - 2)));
-        step.append(symbol);
-
-        return step.toString();
-    }
-
-    private static void inscribedSquare(int count, boolean inscribed, char... symbolIn) {
-        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-
-        char symbol2;
-        if (inscribed) {
-            symbol2 = defaultInscribedSymbol;
-        } else {
-            symbol2 = symbolIn.length > 1 ? symbolIn[0] : defaultSymbol2;
-        }
-
-        for (int i = 1; i <= count; i++) {
-            StringBuilder padding = new StringBuilder();
-            padding.append(String.valueOf(symbol).repeat(Math.max(0, count - i)));
-            System.out.println(padding.toString() + String.valueOf(symbol2).repeat(Math.max(0, (2 * i) - 1)) + padding);
-        }
-        for (int i = 0; i < count - 1; i++) {
-            StringBuilder padding = new StringBuilder();
-            padding.append(String.valueOf(symbol).repeat(i + 1));
-            System.out.println(padding + String.valueOf(symbol2).repeat(Math.max(0, 2 * (count - 1 - i) - 1)) + padding);
-        }
-    }
-
-    private static void inscribedSquare(int count, char... symbolIn) {
-        inscribedSquare(count, false, symbolIn);
-    }
-
     public static void main(String[] argv) throws Exception {
 
         // Variable Definition and declaration
@@ -549,6 +365,190 @@ public class StairCase {
                 }
                 default -> System.out.format("\nPrint Case %d:Invalid", methodLoopCount);
             }
+        }
+    }
+
+    private static void diamond(int count, char... symbolIn) {
+        diamond(count, false, symbolIn);
+    }
+
+    private static void diamond(int count, boolean inscribed, char... symbolIn) {
+        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+        if (inscribed) {
+            if (count >= 1) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
+            }
+            if (count > 2) {
+                for (int i = 2; i <= count; i++) {
+                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
+                }
+            }
+
+            if (count > 3) {
+                for (int i = 0; i < count - 2; i++) {
+                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + inscribedLine(2 * (count - 1 - i) - 1, symbolIn));
+                }
+            }
+            if (count >= 2) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
+            }
+        } else {
+            for (int i = 1; i <= count; i++) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + String.valueOf(symbol).repeat(Math.max(0, (2 * i) - 1)));
+            }
+            for (int i = 0; i < count - 1; i++) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + String.valueOf(symbol).repeat(Math.max(0, 2 * (count - 1 - i) - 1)));
+            }
+
+        }
+    }
+
+    private static String inscribedLine(int count, char... symbolIn) {
+        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+        char inscribedSymbol = symbolIn.length > 1 ? symbolIn[1] : defaultInscribedSymbol;
+
+        StringBuilder step = new StringBuilder();
+
+        if (count == 0) {
+            return step.toString();
+        } else if (count == 0) {
+            return step.toString() + symbol;
+        }
+        step.append(symbol);
+
+        step.append(String.valueOf(inscribedSymbol).repeat(Math.max(0, count - 2)));
+        step.append(symbol);
+
+        return step.toString();
+    }
+
+    private static void hexagon(int count, char... symbolIn) {
+        hexagon(count, false, symbolIn);
+    }
+
+    private static void hexagon(int count, boolean inscribed, char... symbolIn) {
+        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+        char symbol2 = symbolIn.length > 0 ? symbolIn[1] : defaultInscribedSymbol;
+
+        StringBuilder base = new StringBuilder();
+        StringBuilder baseInner = new StringBuilder();
+        StringBuilder padding = new StringBuilder();
+        StringBuilder step = new StringBuilder();
+
+        if (inscribed) {
+            for (int i = 0; i < count; i++) {
+                base.append(symbol);
+                baseInner.append(symbol2);
+            }
+            padding.append(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)));
+            System.out.println(padding + base.toString());
+            for (int i = 1; i < count; i++) {
+                padding = new StringBuilder();
+                padding.append(String.valueOf(defaultInscribedSymbol).repeat(count - i - 1));
+                step = new StringBuilder();
+                step.append(String.valueOf(symbol2).repeat(i - 1));
+                System.out.println(padding.toString() + symbol + step + baseInner + step + symbol);
+            }
+            for (int i = 1; i < count; i++) {
+                System.out.println(padding.toString() + symbol + step + baseInner + step + symbol);
+            }
+
+            for (int i = 0; i < count - 2; i++) {
+                step = new StringBuilder();
+                step.append(String.valueOf(symbol2).repeat(Math.max(0, count - i - 3)));
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i + 1) + symbol + step + baseInner + step + symbol);
+            }
+
+            System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)) + base.toString());
+
+        } else {
+            base.append(String.valueOf(symbol).repeat(Math.max(0, count)));
+            padding.append(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - 1)));
+            System.out.println(padding + base.toString());
+            for (int i = 1; i < count; i++) {
+                padding = new StringBuilder();
+                padding.append(String.valueOf(defaultInscribedSymbol).repeat(count - i - 1));
+                step = new StringBuilder();
+                step.append(String.valueOf(symbol).repeat(i));
+                System.out.println(padding + step.toString() + base + step);
+            }
+            for (int i = 1; i < count; i++) {
+                System.out.println(padding + step.toString() + base + step);
+            }
+            for (int i = 0; i < count - 1; i++) {
+                padding = new StringBuilder();
+                padding.append(String.valueOf(defaultInscribedSymbol).repeat(i + 1));
+                step = new StringBuilder();
+                step.append(String.valueOf(symbol).repeat(Math.max(0, count - i - 2)));
+                System.out.println(padding + step.toString() + base + step);
+            }
+
+        }
+    }
+
+    private static void hourglass(int count, char... symbolIn) {
+        hourglass(count, false, symbolIn);
+    }
+
+    private static void hourglass(int count, boolean inscribed, char... symbolIn) {
+        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+        if (inscribed) {
+            StringBuilder step = new StringBuilder();
+            step.append(String.valueOf(symbol).repeat(Math.max(0, (2 * count) - 1)));
+            System.out.println(step);
+            if (count > 2) {
+                for (int i = count - 1; i > 1; i--) {
+                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
+                }
+            }
+            if (count > 1) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(count - 1) + symbol);
+            }
+            if (count > 2) {
+                for (int i = 2; i <= count - 1; i++) {
+                    System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + inscribedLine((2 * i) - 1, symbolIn));
+                }
+            }
+            if (count > 1) {
+                step = new StringBuilder();
+                step.append(String.valueOf(symbol).repeat(Math.max(0, (2 * count) - 1)));
+                System.out.println(step);
+            }
+
+        } else {
+            for (int i = 0; i < count; i++) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(i) + String.valueOf(symbol).repeat(Math.max(0, 2 * (count - i) - 1)));
+            }
+
+            for (int i = 2; i <= count; i++) {
+                System.out.println(String.valueOf(defaultInscribedSymbol).repeat(Math.max(0, count - i)) + String.valueOf(symbol).repeat(Math.max(0, (2 * i) - 1)));
+            }
+        }
+    }
+
+    private static void inscribedSquare(int count, char... symbolIn) {
+        inscribedSquare(count, false, symbolIn);
+    }
+
+    private static void inscribedSquare(int count, boolean inscribed, char... symbolIn) {
+        char symbol = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+
+        char symbol2;
+        if (inscribed) {
+            symbol2 = defaultInscribedSymbol;
+        } else {
+            symbol2 = symbolIn.length > 1 ? symbolIn[0] : defaultSymbol2;
+        }
+
+        for (int i = 1; i <= count; i++) {
+            StringBuilder padding = new StringBuilder();
+            padding.append(String.valueOf(symbol).repeat(Math.max(0, count - i)));
+            System.out.println(padding.toString() + String.valueOf(symbol2).repeat(Math.max(0, (2 * i) - 1)) + padding);
+        }
+        for (int i = 0; i < count - 1; i++) {
+            StringBuilder padding = new StringBuilder();
+            padding.append(String.valueOf(symbol).repeat(i + 1));
+            System.out.println(padding + String.valueOf(symbol2).repeat(Math.max(0, 2 * (count - 1 - i) - 1)) + padding);
         }
     }
 

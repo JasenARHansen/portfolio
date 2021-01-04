@@ -66,14 +66,6 @@ public class AnimalShelter {
     }
   }
 
-  public Animal peekCats() {
-    return this.catQueue.peek();
-  }
-
-  public Animal peekDogs() {
-    return this.dogQueue.peek();
-  }
-
   public int size() {
     return this.catQueue.size() + this.dogQueue.size();
   }
@@ -88,24 +80,32 @@ public class AnimalShelter {
     } else {
       returnString.append(this.peekDogs().toString()).append("\n");
     }
-    returnString.append("\tCat: ");
-    if (this.catQueue.isEmpty()) {
-      returnString.append("none\n");
-    } else {
-      returnString.append(this.peekCats().toString()).append("\n");
+      returnString.append("\tCat: ");
+      if (this.catQueue.isEmpty()) {
+          returnString.append("none\n");
+      } else {
+          returnString.append(this.peekCats().toString()).append("\n");
+      }
+      return returnString.toString();
+  }
+
+    public Animal peekCats() {
+        return this.catQueue.peek();
     }
-    return returnString.toString();
-  }
 
-  @Override
-  public String toString() {
-    return "Dogs: " + this.dogQueue.toString() + "\n" + "Cats: " + this.catQueue.toString() + "\n";
-  }
+    public Animal peekDogs() {
+        return this.dogQueue.peek();
+    }
 
-  public abstract static class Animal {
+    @Override
+    public String toString() {
+        return "Dogs: " + this.dogQueue.toString() + "\n" + "Cats: " + this.catQueue.toString() + "\n";
+    }
 
-    protected String name;
-    private int inputID;
+    public abstract static class Animal {
+
+        protected String name;
+        private int inputID;
 
     public Animal(String name) {
       this.name = name;

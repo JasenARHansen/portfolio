@@ -9,7 +9,7 @@ public class Queue<T extends Comparable<T>> {
 
     /**
      * Constructor
-     **/
+     */
     public Queue() {
         this.innerList = new CustomLinkedList<>();
     }

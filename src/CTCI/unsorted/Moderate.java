@@ -13,20 +13,10 @@ public class Moderate {
         System.out.println("Section 16. Moderate");
     }
 
-    private static boolean isBetween(double start, double middle, double end) {
-        if (start > end) {
-            return end <= middle && middle <= start;
-        } else {
-            return start <= middle && middle <= end;
-        }
-    }
-
     public static Tuple<Double, Double> lineIntersection(Line line1, Line line2) {
-
-        Tuple<Double, Double> returnPoint = null;
         // Parallel test
         if (line1.getSlope() == line2.getSlope()) {
-            return returnPoint;
+            return null;
         }
         // Find an intersection point
         // y = mx +b
@@ -45,8 +35,16 @@ public class Moderate {
         return null;
     }
 
-    public static int maxNumber(int left, int right) {
+    private static boolean isBetween(double start, double middle, double end) {
+        if (start > end) {
+            return end <= middle && middle <= start;
+        } else {
+            return start <= middle && middle <= end;
+        }
+    }
 
+    @SuppressWarnings("unused")
+    public static int maxNumber(int left, int right) {
         return 0;
     }
 
@@ -199,17 +197,13 @@ public class Moderate {
         }
     }
 
-    class ProcessBook {
+    static class ProcessBook {
 
         HashMap<String, Integer> table;
 
         public ProcessBook(String[] book) {
             this.table = new HashMap<>();
             this.setWordFrequency(book);
-        }
-
-        public Integer getWordFrequency(String word) {
-            return this.table.get(word.toLowerCase().trim());
         }
 
         private void setWordFrequency(String[] book) {
@@ -225,9 +219,13 @@ public class Moderate {
                 }
             }
         }
+
+        public Integer getWordFrequency(String word) {
+            return this.table.get(word.toLowerCase().trim());
+        }
     }
 
-    class Tic_Tac_Toe {
+    static class Tic_Tac_Toe {
         private final int size;
         private Tic_Tac_Toe_Piece lastPlayer;
         private int moves;
@@ -238,58 +236,6 @@ public class Moderate {
             this.initializeBoard();
             this.moves = size * size;
             this.lastPlayer = Tic_Tac_Toe_Piece.Empty;
-        }
-
-        private boolean evaluateBoard(
-                Tic_Tac_Toe_Piece piece, int xCoordinate, int yCoordinate, Tic_Tac_Toe_Piece[][] board) {
-            boolean test = true;
-            // column
-            for (int index = 0; index < this.size; index++) {
-                if (board[xCoordinate][index] != piece) {
-                    test = false;
-                    break;
-                }
-            }
-            if (test) {
-                return test;
-            }
-            // row
-            for (int index = 0; index < this.size; index++) {
-                if (board[index][yCoordinate] != piece) {
-                    test = true;
-                    break;
-                }
-            }
-            if (!test) {
-                return true;
-            }
-            // diagonal 1
-            if (xCoordinate == yCoordinate) {
-                for (int index = 0; index < this.size; index++) {
-                    if (board[index][index] != piece) {
-                        test = false;
-                        break;
-                    }
-                }
-            } else {
-                test = false;
-            }
-            if (test) {
-                return test;
-            }
-            // diagonal 1
-            if ((xCoordinate + yCoordinate) == this.size) {
-
-                for (int index = 1; index <= this.size; index++) {
-                    if (board[this.size - index][index - 1] != piece) {
-                        test = true;
-                        break;
-                    }
-                }
-            } else {
-                test = true;
-            }
-            return !test;
         }
 
         public void initializeBoard() {
@@ -303,7 +249,7 @@ public class Moderate {
 
         public void placePiece(Tic_Tac_Toe_Piece piece, int xCoordinate, int yCoordinate) {
             if (this.moves == 0) {
-                System.out.format("Sorry, this game is over.\n", piece);
+                System.out.format("Sorry, this game is over.\n");
                 return;
             }
             if ((xCoordinate < 0)
@@ -329,7 +275,7 @@ public class Moderate {
                 this.moves--;
                 this.lastPlayer = piece;
             } else {
-                System.out.format("That space is occupied, place again.\n", piece);
+                System.out.format("That space is occupied, place again.\n");
                 return;
             }
 
@@ -340,14 +286,60 @@ public class Moderate {
             printBoard();
         }
 
-        private void printBoard() {
-            System.out.println(this.toString());
+        private boolean evaluateBoard(
+                Tic_Tac_Toe_Piece piece, int xCoordinate, int yCoordinate, Tic_Tac_Toe_Piece[][] board) {
+            boolean test = true;
+            // column
+            for (int index = 0; index < this.size; index++) {
+                if (board[xCoordinate][index] != piece) {
+                    test = false;
+                    break;
+                }
+            }
+            if (test) {
+                return true;
+            }
+            // row
+            for (int index = 0; index < this.size; index++) {
+                if (board[index][yCoordinate] != piece) {
+                    test = true;
+                    break;
+                }
+            }
+            if (!test) {
+                return true;
+            }
+            // diagonal 1
+            if (xCoordinate == yCoordinate) {
+                for (int index = 0; index < this.size; index++) {
+                    if (board[index][index] != piece) {
+                        test = false;
+                        break;
+                    }
+                }
+            } else {
+                test = false;
+            }
+            if (test) {
+                return true;
+            }
+            // diagonal 1
+            if ((xCoordinate + yCoordinate) == this.size) {
+
+                for (int index = 1; index <= this.size; index++) {
+                    if (board[this.size - index][index - 1] != piece) {
+                        test = true;
+                        break;
+                    }
+                }
+            } else {
+                test = true;
+            }
+            return !test;
         }
 
-        public void resetBoard() {
-            this.initializeBoard();
-            this.moves = size * size;
-            this.lastPlayer = Tic_Tac_Toe_Piece.Empty;
+        private void printBoard() {
+            System.out.println(this.toString());
         }
 
         @Override
@@ -367,6 +359,13 @@ public class Moderate {
                 builder.append("]\n");
             }
             return builder.toString();
+        }
+
+        @SuppressWarnings("unused")
+        public void resetBoard() {
+            this.initializeBoard();
+            this.moves = size * size;
+            this.lastPlayer = Tic_Tac_Toe_Piece.Empty;
         }
     }
 }

@@ -14,19 +14,19 @@ import java.lang.reflect.Field;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Linked_List_Test {
-  private final String testSuite = "Linked List";
-  @Rule
-  public TestName name = new TestName();
+    private final String testSuite = "Linked List";
+    @Rule
+    public TestName name = new TestName();
 
-  @Test
-  public void detectCycle() throws IllegalAccessException {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    CirularLinkedList<String> stringValue3 = new CirularLinkedList<>();
-    stringValue3.insert("a");
-    stringValue3.insert("b");
-    stringValue3.insert("c");
-    stringValue3.insert("d");
-    stringValue3.insert("e");
+    @Test
+    public void detectCycle() throws IllegalAccessException {
+        System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+        CirularLinkedList<String> stringValue3 = new CirularLinkedList<>();
+        stringValue3.insert("a");
+        stringValue3.insert("b");
+        stringValue3.insert("c");
+        stringValue3.insert("d");
+        stringValue3.insert("e");
     stringValue3.insert("f");
 
     System.out.println("Detect Cycle Test 1 source:");

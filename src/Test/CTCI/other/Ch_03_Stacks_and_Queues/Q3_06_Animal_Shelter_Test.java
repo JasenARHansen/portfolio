@@ -30,29 +30,29 @@ public class Q3_06_Animal_Shelter_Test {
     System.out.format("AnimalShelter:\n%s", animalShelter.toString());
     System.out.format("Current Choices:\n%s", animalShelter.printChoice());
     animalShelter.enqueue(teddy);
-    System.out.format("AnimalShelter:\n%s", animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    animalShelter.enqueue(robby);
-    System.out.format("AnimalShelter:\n%s", animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    animalShelter.enqueue(smokey);
-    System.out.format("AnimalShelter:\n%s", animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    animalShelter.enqueue(bandit);
-    System.out.format("AnimalShelter:\n%s", animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    System.out.format(
-            "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueCats(), animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    System.out.format(
-            "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueCats(), animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    System.out.format(
-            "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueDogs(), animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
-    System.out.format(
-            "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueAny(), animalShelter.toString());
-    System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      System.out.format("AnimalShelter:\n%s", animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      animalShelter.enqueue(robby);
+      System.out.format("AnimalShelter:\n%s", animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      animalShelter.enqueue(smokey);
+      System.out.format("AnimalShelter:\n%s", animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      animalShelter.enqueue(bandit);
+      System.out.format("AnimalShelter:\n%s", animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      System.out.format(
+              "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueCats(), animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      System.out.format(
+              "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueCats(), animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      System.out.format(
+              "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueDogs(), animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
+      System.out.format(
+              "AnimalShelter: dequeue '%s'\n%s", animalShelter.dequeueAny(), animalShelter.toString());
+      System.out.format("Current Choices:\n%s", animalShelter.printChoice());
   }
 
   @Test

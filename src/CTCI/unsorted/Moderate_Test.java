@@ -27,7 +27,7 @@ public class Moderate_Test {
             "the", "Lara", "and", "outcropping", "career", "It", "outcropping", "career", "it"
     };
     Moderate container = new Moderate();
-    ProcessBook processBook = container.new ProcessBook(words);
+    ProcessBook processBook = new ProcessBook(words);
 
     for (String word : words) {
       System.out.format(
@@ -70,7 +70,7 @@ public class Moderate_Test {
   public void playTicTacToe() {
     int size = 3;
     Moderate container = new Moderate();
-    Tic_Tac_Toe game = container.new Tic_Tac_Toe(size);
+    Tic_Tac_Toe game = new Tic_Tac_Toe(size);
     game.placePiece(Tic_Tac_Toe_Piece.X, 0, 0);
     game.placePiece(Tic_Tac_Toe_Piece.O, 0, 1);
     game.placePiece(Tic_Tac_Toe_Piece.X, 1, 1);

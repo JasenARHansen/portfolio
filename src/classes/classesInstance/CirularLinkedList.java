@@ -20,6 +20,18 @@ public class CirularLinkedList<T extends Comparable<T>> {
         }
     }
 
+    // This does not work as expected when the data type is integer...
+    public NodeList<T> remove(T data) {
+        NodeList<T> pointerNode = this.head;
+        for (int index = 0; index < this.size; index++) {
+            if (pointerNode.getData().compareTo(data) == 0) {
+                return removeIndex(index);
+            }
+            pointerNode = pointerNode.getNext();
+        }
+        return null;
+    }
+
     public NodeList<T> getFirst() {
         return this.head;
     }
@@ -92,16 +104,22 @@ public class CirularLinkedList<T extends Comparable<T>> {
         System.out.format("List: '%s'\n", toString());
     }
 
-    // This does not work as expected when the data type is integer...
-    public NodeList<T> remove(T data) {
-        NodeList<T> pointerNode = this.head;
-        for (int index = 0; index < this.size; index++) {
-            if (pointerNode.getData().compareTo(data) == 0) {
-                return removeIndex(index);
-            }
-            pointerNode = pointerNode.getNext();
+    @Override
+    public String toString() {
+        if (this.head == null) {
+            return "null";
         }
-        return null;
+
+        StringBuilder stringBuilder = new StringBuilder();
+        NodeList<T> pointerNode = this.head;
+        stringBuilder.append(pointerNode.toString());
+
+        for (int i = 1; i < this.size; i++) {
+            pointerNode = pointerNode.getNext();
+            stringBuilder.append(" <-> ");
+            stringBuilder.append(pointerNode.toString());
+        }
+        return stringBuilder.toString();
     }
 
     public NodeList<T> removeIndex(int index) {
@@ -137,23 +155,4 @@ public class CirularLinkedList<T extends Comparable<T>> {
         }
         return pointerNode;
     }
-
-    @Override
-    public String toString() {
-        if (this.head == null) {
-            return "null";
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        NodeList<T> pointerNode = this.head;
-        stringBuilder.append(pointerNode.toString());
-
-        for (int i = 1; i < this.size; i++) {
-            pointerNode = pointerNode.getNext();
-            stringBuilder.append(" <-> ");
-            stringBuilder.append(pointerNode.toString());
-        }
-        return stringBuilder.toString();
-    }
-
 }

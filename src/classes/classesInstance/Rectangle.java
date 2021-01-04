@@ -15,12 +15,27 @@ public class Rectangle {
         return width() * height();
     }
 
+    public int height() {
+        return this.point2.getRightData() - this.point1.getRightData();
+    }
+
+    public int width() {
+        return this.point2.getLeftData() - this.point1.getLeftData();
+    }
+
     public Tuple<Integer, Integer> getPoint1() {
         return this.point1;
     }
 
     public Tuple<Integer, Integer> getPoint2() {
         return this.point2;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[(%s, %s), (%s, %s)]",
+                this.getXMinimum(), this.getYMinimum(), this.getXMaximum(), this.getYMaximum());
     }
 
     public int getXMaximum() {
@@ -38,19 +53,4 @@ public class Rectangle {
     public int getYMinimum() {
         return Math.min(point1.getRightData(), point2.getRightData());
     }
-
-    public int height() {
-        return this.point2.getRightData() - this.point1.getRightData();
-    }
-
-    @Override
-    public String toString() {
-        return String.format("[(%s, %s), (%s, %s)]", this.getXMinimum(), this.getYMinimum(), this.getXMaximum(),
-                this.getYMaximum());
-    }
-
-    public int width() {
-        return this.point2.getLeftData() - this.point1.getLeftData();
-    }
-
 }

@@ -3,14 +3,14 @@ package CTCI.Ch_01_Arrays_and_Strings;
 import java.util.Arrays;
 
 public class Q1_02_Is_Permutation {
+    public static boolean isPermutation(String left, String right) {
+        return convertAndSort(left).equals(convertAndSort(right));
+    }
+
     public static String convertAndSort(String input) {
         char[] content = input.toCharArray();
         Arrays.sort(content);
         return new String(content);
-    }
-
-    public static boolean isPermutation(String left, String right) {
-        return convertAndSort(left).equals(convertAndSort(right));
     }
 
     public static boolean isPermutation_solution_1(String s, String t) {

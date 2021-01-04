@@ -11,12 +11,16 @@ public class MinStack<T extends Comparable<T>> {
     min = new Stack<>();
   }
 
+  public boolean isEmpty() {
+    return this.getSize() == 0;
+  }
+
   public int getSize() {
     return stack.size();
   }
 
-  public boolean isEmpty() {
-    return this.getSize() == 0;
+  public T min() {
+    return min.peek();
   }
 
   public T peek() {
@@ -29,10 +33,6 @@ public class MinStack<T extends Comparable<T>> {
       min.pop();
     }
     return data;
-  }
-
-  public T min() {
-    return min.peek();
   }
 
   public void push(T data) {

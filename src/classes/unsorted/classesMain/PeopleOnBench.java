@@ -10,26 +10,18 @@ import java.util.Random;
 public class PeopleOnBench {
 
     // Comparator to sort by value
-    static Comparator<Tuple<Integer, Integer>> compareGaps = (o1, o2) -> {
-        Integer v1 = o1.getLeftData() - o1.getRightData();
-        Integer v2 = o2.getLeftData() - o2.getRightData();
-        return v1.compareTo(v2);
-    };
+    static Comparator<Tuple<Integer, Integer>> compareGaps =
+            (o1, o2) -> {
+                Integer v1 = o1.getLeftData() - o1.getRightData();
+                Integer v2 = o2.getLeftData() - o2.getRightData();
+                return v1.compareTo(v2);
+            };
 
     private static int benchSeats = 0;
     private static boolean benchLeftEdge = true;
     private static boolean benchRightEdge = true;
     private static List<Tuple<Integer, Integer>> gaps;
     private static List<Integer> people;
-
-    private static void buildBench(int seats) {
-        benchSeats = seats;
-    }
-
-    private static void getDescription() {
-        System.out.println(
-                "Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum..");
-    }
 
     public static void main(String[] argv) {
         getDescription();
@@ -45,6 +37,15 @@ public class PeopleOnBench {
         personSits();
         personSits();
         personSits();
+    }
+
+    private static void buildBench(int seats) {
+        benchSeats = seats;
+    }
+
+    private static void getDescription() {
+        System.out.println(
+                "Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum..");
     }
 
     private static void personSits() {
@@ -119,7 +120,9 @@ public class PeopleOnBench {
 
             System.out.format(
                     "Person '%d' sits at seat '%d', '%d' spaces from the person to his left and '%d' spaces from the person to his right\n",
-                    people.size(), newSeat, newSeat - origianalGap.getLeftData(),
+                    people.size(),
+                    newSeat,
+                    newSeat - origianalGap.getLeftData(),
                     origianalGap.getRightData() - newSeat);
         }
     }

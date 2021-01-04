@@ -10,93 +10,25 @@ public class Heap<T extends Comparable<T>> {
     // Determines heap type: true for minHeap and false for maxHeap
     private boolean heapType = true;
 
-    /**
-     * Constructor
-     **/
-    public Heap() {
-        this.heapItems = new ArrayList<>();
-    }
-
     public Heap(boolean heapType) {
         this();
         this.heapType = heapType;
     }
 
-    public String getHeapType() {
-        if (this.heapType) {
-            return "MinHeap";
-        } else {
-            return "MaxHeap";
-        }
+    /**
+     * Constructor
+     */
+    public Heap() {
+        this.heapItems = new ArrayList<>();
     }
 
     public void setHeapType(boolean heapType) {
         this.heapType = heapType;
     }
 
-    private T getLeftChild(int index) {
-        return this.heapItems.get(index);
-    }
-
-    private int getLeftChildIndex(int parentIndex) {
-        return (2 * parentIndex) + 1;
-    }
-
-    private T getParent(int index) {
-        return this.heapItems.get(getParentIndex(index));
-    }
-
-    private int getParentIndex(int childIndex) {
-        return (childIndex - 1) / 2;
-    }
-
-    private T getRightChild(int index) {
-        return this.heapItems.get(getRightChildIndex(index));
-    }
-
-    private int getRightChildIndex(int parentIndex) {
-        return (2 * parentIndex) + 2;
-    }
-
-    public int getSize() {
-        return this.heapItems.size();
-    }
-
-    private boolean hasLeftChild(int index) {
-        return (getLeftChildIndex(getLeftChildIndex(index)) < this.heapItems.size());
-    }
-
-    private boolean hasParent(int index) {
-        return (getLeftChildIndex(getParentIndex(index)) >= 0);
-    }
-
-    private boolean hasRightChild(int index) {
-        return (getLeftChildIndex(getRightChildIndex(index)) < this.heapItems.size());
-    }
-
-    private void heapifyDown() {
-        int index = 0;
-
-        while (hasLeftChild(index)) {
-            int childIndex = getLeftChildIndex(index);
-            if (this.heapType && hasRightChild(index) && (getRightChild(index).compareTo(getLeftChild(index)) < 0)) {
-                childIndex = getRightChildIndex(index);
-            } else if (!this.heapType && hasRightChild(index)
-                    && (getRightChild(index).compareTo(getLeftChild(index)) > 0)) {
-                childIndex = getRightChildIndex(index);
-            }
-
-            if (this.heapType && hasRightChild(index)
-                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) < 0)) {
-                break;
-            } else if (!this.heapType && hasRightChild(index)
-                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) > 0)) {
-                break;
-            } else {
-                swapData(childIndex, index);
-                index = childIndex;
-            }
-        }
+    public void insert(T input) {
+        this.heapItems.add(input);
+        heapifyUp();
     }
 
     private void heapifyUp(int... values) {
@@ -119,9 +51,31 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
-    public void insert(T input) {
-        this.heapItems.add(input);
-        heapifyUp();
+    public String getHeapType() {
+        if (this.heapType) {
+            return "MinHeap";
+        } else {
+            return "MaxHeap";
+        }
+    }
+
+    public int getSize() {
+        return this.heapItems.size();
+    }
+
+    public T peek() {
+        if (this.heapItems.size() == 0) {
+            throw new IllegalStateException("Empty Heap");
+        }
+        return this.heapItems.get(0);
+    }
+
+    private T getParent(int index) {
+        return this.heapItems.get(getParentIndex(index));
+    }
+
+    private int getParentIndex(int childIndex) {
+        return (childIndex - 1) / 2;
     }
 
     public boolean isEmpty() {
@@ -132,15 +86,12 @@ public class Heap<T extends Comparable<T>> {
         this.heapItems.clear();
     }
 
-    public T peek() {
-        if (this.heapItems.size() == 0) {
-            throw new IllegalStateException("Empty Heap");
-        }
-        return this.heapItems.get(0);
-    }
-
     public void printHeap() {
         System.out.format("\n%s: '%s'", getHeapType(), this.heapItems.toString());
+    }
+
+    private boolean hasParent(int index) {
+        return (getLeftChildIndex(getParentIndex(index)) >= 0);
     }
 
     public T remove() {
@@ -164,10 +115,63 @@ public class Heap<T extends Comparable<T>> {
         return item;
     }
 
+    private int getLeftChildIndex(int parentIndex) {
+        return (2 * parentIndex) + 1;
+    }
+
+    private void heapifyDown() {
+        int index = 0;
+
+        while (hasLeftChild(index)) {
+            int childIndex = getLeftChildIndex(index);
+            if (this.heapType
+                    && hasRightChild(index)
+                    && (getRightChild(index).compareTo(getLeftChild(index)) < 0)) {
+                childIndex = getRightChildIndex(index);
+            } else if (!this.heapType
+                    && hasRightChild(index)
+                    && (getRightChild(index).compareTo(getLeftChild(index)) > 0)) {
+                childIndex = getRightChildIndex(index);
+            }
+
+            if (this.heapType
+                    && hasRightChild(index)
+                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) < 0)) {
+                break;
+            } else if (!this.heapType
+                    && hasRightChild(index)
+                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) > 0)) {
+                break;
+            } else {
+                swapData(childIndex, index);
+                index = childIndex;
+            }
+        }
+    }
+
     private void swapData(int indexOne, int indexTwo) {
         T tempValue = this.heapItems.get(indexOne);
         this.heapItems.set(indexOne, this.heapItems.get(indexTwo));
         this.heapItems.set(indexTwo, tempValue);
     }
 
+    private T getLeftChild(int index) {
+        return this.heapItems.get(index);
+    }
+
+    private T getRightChild(int index) {
+        return this.heapItems.get(getRightChildIndex(index));
+    }
+
+    private boolean hasLeftChild(int index) {
+        return (getLeftChildIndex(getLeftChildIndex(index)) < this.heapItems.size());
+    }
+
+    private boolean hasRightChild(int index) {
+        return (getLeftChildIndex(getRightChildIndex(index)) < this.heapItems.size());
+    }
+
+    private int getRightChildIndex(int parentIndex) {
+        return (2 * parentIndex) + 2;
+    }
 }

@@ -13,15 +13,15 @@ public class Tree {
         }
     }
 
-    public int size() {
-        return root == null ? 0 : root.size();
-    }
-
     public TreeNode getRandomNode() {
         if (root == null) return null;
 
         Random random = new Random();
         int i = random.nextInt(size());
         return root.getIthNode(i);
+    }
+
+    public int size() {
+        return root == null ? 0 : root.size();
     }
 }

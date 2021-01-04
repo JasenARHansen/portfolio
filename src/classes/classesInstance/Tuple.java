@@ -1,6 +1,7 @@
 package classes.classesInstance;
 
-public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>> implements Comparable<Tuple<X, Y>> {
+public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>>
+        implements Comparable<Tuple<X, Y>> {
     private final X leftData;
     private final Y rightData;
 
@@ -9,7 +10,6 @@ public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>> implements 
         this.rightData = rightData;
     }
 
-
     @Override
     public int compareTo(Tuple<X, Y> target) {
         int leftCompair = this.leftData.compareTo(target.leftData);
@@ -17,7 +17,6 @@ public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>> implements 
             return this.rightData.compareTo(target.rightData);
         }
         return leftCompair;
-
     }
 
     public X getLeftData() {
@@ -32,5 +31,4 @@ public class Tuple<X extends Comparable<X>, Y extends Comparable<Y>> implements 
     public String toString() {
         return String.format("(%s,%s)", this.leftData.toString(), this.rightData.toString());
     }
-
 }

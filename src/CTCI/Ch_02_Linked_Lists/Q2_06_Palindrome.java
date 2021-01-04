@@ -9,42 +9,42 @@ public class Q2_06_Palindrome {
 
   public static boolean isPalindrome(CustomLinkedList<String> input) {
 
-    int offset = 0;
-    int size = input.getSize();
-    while (offset < (size / 2)) {
-      if (!input.getIndex(offset).getData().equals(input.getIndex(size - offset - 1).getData())) {
-        return false;
+      int offset = 0;
+      int size = input.getSize();
+      while (offset < (size / 2)) {
+          if (!input.getIndex(offset).getData().equals(input.getIndex(size - offset - 1).getData())) {
+              return false;
+          }
+          offset++;
       }
-      offset++;
-    }
-    return true;
+      return true;
   }
 
-  public static LinkedListNode reverseAndClone(LinkedListNode node) {
-    LinkedListNode head = null;
-    while (node != null) {
-      LinkedListNode n = new LinkedListNode(node.data); // Clone
-      n.next = head;
-      head = n;
-      node = node.next;
+    public static boolean isPalindrome_solution_1(LinkedListNode head) {
+        LinkedListNode reversed = reverseAndClone(head);
+        return isEqual(head, reversed);
     }
-    return head;
-  }
 
-  public static boolean isEqual(LinkedListNode one, LinkedListNode two) {
-    while (one != null && two != null) {
-      if (one.data != two.data) {
-        return false;
-      }
-      one = one.next;
-      two = two.next;
+    public static LinkedListNode reverseAndClone(LinkedListNode node) {
+        LinkedListNode head = null;
+        while (node != null) {
+            LinkedListNode n = new LinkedListNode(node.data); // Clone
+            n.next = head;
+            head = n;
+            node = node.next;
+        }
+        return head;
     }
+
+    public static boolean isEqual(LinkedListNode one, LinkedListNode two) {
+        while (one != null && two != null) {
+            if (one.data != two.data) {
+                return false;
+            }
+            one = one.next;
+            two = two.next;
+        }
     return one == null && two == null;
-  }
-
-  public static boolean isPalindrome_solution_1(LinkedListNode head) {
-    LinkedListNode reversed = reverseAndClone(head);
-    return isEqual(head, reversed);
   }
 
   public static boolean isPalindrome_solution_2(LinkedListNode head) {
@@ -105,25 +105,25 @@ public class Q2_06_Palindrome {
       size++;
       n = n.next;
     }
-    return size;
+      return size;
   }
 
-  public static boolean isPalindrome_solution_3(LinkedListNode head) {
-    int length = lengthOfList(head);
-    Result p = isPalindrome_solution_3_Recurse(head, length);
-    return p.result;
-  }
-
-  public static void main(String[] args) {
-  }
-
-  public static class Result {
-    public LinkedListNode node;
-    public boolean result;
-
-    public Result(LinkedListNode n, boolean res) {
-      node = n;
-      result = res;
+    public static boolean isPalindrome_solution_3(LinkedListNode head) {
+        int length = lengthOfList(head);
+        Result p = isPalindrome_solution_3_Recurse(head, length);
+        return p.result;
     }
-  }
+
+    public static void main(String[] args) {
+    }
+
+    public static class Result {
+        public LinkedListNode node;
+        public boolean result;
+
+        public Result(LinkedListNode n, boolean res) {
+            node = n;
+            result = res;
+        }
+    }
 }

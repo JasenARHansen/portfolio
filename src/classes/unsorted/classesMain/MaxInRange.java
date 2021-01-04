@@ -7,8 +7,15 @@ import java.util.Random;
 public class MaxInRange {
     static List<Integer> values = new ArrayList<>();
 
-    private static void addValue(int input) {
-        values.add(input);
+    public static void main(String[] argv) {
+        getDescription();
+        populate();
+        highestInRange(values.size(), 5);
+        highestInRange(-1, values.size());
+        highestInRange(-2, -3);
+        highestInRange(2, 3);
+        highestInRange(2, 300);
+        highestInRange(200, 300);
     }
 
     private static void getDescription() {
@@ -20,21 +27,25 @@ public class MaxInRange {
 
         boolean search = true;
         if (start >= values.size()) {
-            System.out.format("The starting value '%d' can not be  greater than or equal to the data size '%d'\n",
+            System.out.format(
+                    "The starting value '%d' can not be  greater than or equal to the data size '%d'\n",
                     start, values.size());
             search = false;
         }
         if (finish >= values.size()) {
-            System.out.format("The finishing value '%d' can not be  greater than or equal to the data size '%d'\n",
+            System.out.format(
+                    "The finishing value '%d' can not be  greater than or equal to the data size '%d'\n",
                     finish, values.size());
             search = false;
         }
         if (start < 0) {
-            System.out.format("The starting value '%d' is below the minimum searchable index '0'\n", start);
+            System.out.format(
+                    "The starting value '%d' is below the minimum searchable index '0'\n", start);
             search = false;
         }
         if (finish < 0) {
-            System.out.format("The finishing value '%d' is below the minimum searchable index '0'\n", start);
+            System.out.format(
+                    "The finishing value '%d' is below the minimum searchable index '0'\n", start);
             search = false;
         }
         if (start > finish) {
@@ -49,20 +60,9 @@ public class MaxInRange {
                     found = values.get(i);
                 }
             }
-            System.out.format("The maximum value between index '%d' and index '%d' is '%d'\n", start, finish, found);
+            System.out.format(
+                    "The maximum value between index '%d' and index '%d' is '%d'\n", start, finish, found);
         }
-
-    }
-
-    public static void main(String[] argv) {
-        getDescription();
-        populate();
-        highestInRange(values.size(), 5);
-        highestInRange(-1, values.size());
-        highestInRange(-2, -3);
-        highestInRange(2, 3);
-        highestInRange(2, 300);
-        highestInRange(200, 300);
     }
 
     private static void populate() {
@@ -72,4 +72,7 @@ public class MaxInRange {
         }
     }
 
+    private static void addValue(int input) {
+        values.add(input);
+    }
 }

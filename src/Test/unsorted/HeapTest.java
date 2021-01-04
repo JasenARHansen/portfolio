@@ -2,12 +2,11 @@ package Test.unsorted;
 
 import classes.classesInstance.Heap;
 
-//import java.util.Scanner;
-
+// import java.util.Scanner;
 
 /**
  * Class BinaryHeapTest
- **/
+ */
 public class HeapTest {
     public static void main(String[] args) {
         // Scanner scan = new Scanner(System.in);

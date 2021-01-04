@@ -9,7 +9,7 @@ public class Stack<T extends Comparable<T>> {
 
     /**
      * Constructor
-     **/
+     */
     public Stack() {
         this.innerList = new CustomLinkedList<>();
     }

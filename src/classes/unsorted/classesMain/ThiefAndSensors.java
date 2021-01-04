@@ -16,32 +16,6 @@ public class ThiefAndSensors {
     private static boolean blockedBottomTop = false;
     private static boolean blockedLeftRight = false;
 
-    private static void add_circle(int x_coordinate, int y_coordinate, int radius) {
-        if (room == null) {
-            System.out.println("The room must be defined before you can add sensors.");
-            return;
-        }
-        // Circle must be in the room
-        if ((room.getXMinimum() <= x_coordinate) && (x_coordinate <= room.getXMaximum())
-                && (room.getYMinimum() <= y_coordinate) && (y_coordinate <= room.getYMaximum())) {
-            if (circles == null) {
-                circles = new ArrayList<>();
-            }
-            circles.add(new Circle(x_coordinate, y_coordinate, radius));
-        } else {
-            System.out.println("The sensor must be in the room.");
-        }
-    }
-
-    private static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
-        room = new Rectangle(lowerRightX, lowerRightY, lowerRightX + width, lowerRightY + height);
-    }
-
-    private static void getDescription() {
-        System.out.println(
-                "Given a room with thief on one side of the room with finite number of sensors. He has to reach on other side missing the sensors. Each sensor is placed at any random point in the room and has its coverage in the radius r. Find out if the thief can reach to the other side without touching the range of any sensor.");
-    }
-
     public static void main(String[] argv) {
         getDescription();
         constructRoom(0, 0, 10, 10);
@@ -64,6 +38,34 @@ public class ThiefAndSensors {
         pathLeftRight();
     }
 
+    private static void add_circle(int x_coordinate, int y_coordinate, int radius) {
+        if (room == null) {
+            System.out.println("The room must be defined before you can add sensors.");
+            return;
+        }
+        // Circle must be in the room
+        if ((room.getXMinimum() <= x_coordinate)
+                && (x_coordinate <= room.getXMaximum())
+                && (room.getYMinimum() <= y_coordinate)
+                && (y_coordinate <= room.getYMaximum())) {
+            if (circles == null) {
+                circles = new ArrayList<>();
+            }
+            circles.add(new Circle(x_coordinate, y_coordinate, radius));
+        } else {
+            System.out.println("The sensor must be in the room.");
+        }
+    }
+
+    private static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
+        room = new Rectangle(lowerRightX, lowerRightY, lowerRightX + width, lowerRightY + height);
+    }
+
+    private static void getDescription() {
+        System.out.println(
+                "Given a room with thief on one side of the room with finite number of sensors. He has to reach on other side missing the sensors. Each sensor is placed at any random point in the room and has its coverage in the radius r. Find out if the thief can reach to the other side without touching the range of any sensor.");
+    }
+
     private static void pathBottomTop() {
         if (!evaluated) {
             processPaths();
@@ -83,17 +85,6 @@ public class ThiefAndSensors {
             System.out.println("There is no path available");
         } else {
             System.out.println("There is a path available");
-        }
-    }
-
-    private static void pathLeftRight() {
-        if (!evaluated) {
-            processPaths();
-        }
-        if (blockedLeftRight) {
-            System.out.println("There is no path from Bottom to Top");
-        } else {
-            System.out.println("There is a path from Bottom to Top");
         }
     }
 
@@ -157,9 +148,19 @@ public class ThiefAndSensors {
             if ((yMinimum <= room.getYMinimum()) && (room.getYMaximum() <= yMaximum)) {
                 blockedBottomTop = true;
             }
-
         }
         evaluated = true;
+    }
+
+    private static void pathLeftRight() {
+        if (!evaluated) {
+            processPaths();
+        }
+        if (blockedLeftRight) {
+            System.out.println("There is no path from Bottom to Top");
+        } else {
+            System.out.println("There is a path from Bottom to Top");
+        }
     }
 
     private static void reset() {
@@ -169,5 +170,4 @@ public class ThiefAndSensors {
         blockedBottomTop = false;
         blockedLeftRight = false;
     }
-
 }

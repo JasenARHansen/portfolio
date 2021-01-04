@@ -26,18 +26,18 @@ public class Q2_08_Loop_Detection_Test {
   public void detectCycle_1() {
     System.out.format("%s: List\n", name.getMethodName());
     CirularLinkedList<String> stringValue = new CirularLinkedList<>();
-      stringValue.insert("a");
-      stringValue.insert("b");
-      stringValue.insert("c");
-      stringValue.insert("d");
-      stringValue.insert("e");
-      stringValue.insert("f");
+    stringValue.insert("a");
+    stringValue.insert("b");
+    stringValue.insert("c");
+    stringValue.insert("d");
+    stringValue.insert("e");
+    stringValue.insert("f");
 
-      stringValue.printList();
+    stringValue.printList();
 
-      NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
-      assertNull(resultNode);
-      System.out.format("Cycle Node: null\n");
+    NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
+    assertNull(resultNode);
+    System.out.format("Cycle Node: null\n");
   }
 
   @Test

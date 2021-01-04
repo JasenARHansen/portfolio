@@ -5,11 +5,6 @@ import java.util.List;
 
 public class PowersOfBase {
 
-    private static void getDescription() {
-        System.out.println(
-                "Given a string of 0 and 1, if possible, tell that how many splits would be required such that each split part is a number which can be represented as power of 5 in binary and tell the least number of splits.");
-    }
-
     public static void main(String[] argv) {
         getDescription();
 
@@ -19,32 +14,40 @@ public class PowersOfBase {
         String input = "101";
         value = splitPowersOfBase(base, input);
         if (value != null) {
-            System.out.format("The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
+            System.out.format(
+                    "The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
         } else {
             System.out.format("The string '%s' does not split\n", input);
         }
         input = "111";
         value = splitPowersOfBase(base, input);
         if (value != null) {
-            System.out.format("The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
+            System.out.format(
+                    "The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
         } else {
             System.out.format("The string '%s' does not split\n", input);
         }
         input = "101011001";
         value = splitPowersOfBase(base, input);
         if (value != null) {
-            System.out.format("The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
+            System.out.format(
+                    "The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
         } else {
             System.out.format("The string '%s' does not split\n", input);
         }
         input = "101011000";
         value = splitPowersOfBase(base, input);
         if (value != null) {
-            System.out.format("The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
+            System.out.format(
+                    "The string '%s' splits '%d' times into  '%s'\n", input, value.size(), value.toString());
         } else {
             System.out.format("The string '%s' does not split\n", input);
         }
+    }
 
+    private static void getDescription() {
+        System.out.println(
+                "Given a string of 0 and 1, if possible, tell that how many splits would be required such that each split part is a number which can be represented as power of 5 in binary and tell the least number of splits.");
     }
 
     private static List<String> splitPowersOfBase(int base, String input) {
@@ -89,5 +92,4 @@ public class PowersOfBase {
         // Test if result is an integer equivalent. If so it is a power.
         return (variable == Math.floor(variable)) && !Double.isInfinite(variable);
     }
-
 }

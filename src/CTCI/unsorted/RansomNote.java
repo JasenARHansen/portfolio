@@ -20,6 +20,20 @@ public class RansomNote {
         return true;
     }
 
+    private static HashMap<String, Integer> permuteLetters(String input) {
+        HashMap<String, Integer> letterMap = new HashMap<>();
+        String temp = input.replaceAll("\\s+", "");
+        for (int i = 0; i < temp.length(); i++) {
+            String letter = temp.substring(i, i + 1);
+            if (letterMap.containsKey(letter)) {
+                letterMap.put(letter, letterMap.get(letter) + 1);
+            } else {
+                letterMap.put(letter, 1);
+            }
+        }
+        return letterMap;
+    }
+
     public static boolean findNoteWords(String note, String source) {
         HashMap<String, Integer> noteMap = permuteWords(note);
         HashMap<String, Integer> sourceMap = permuteWords(source);
@@ -35,25 +49,6 @@ public class RansomNote {
         return true;
     }
 
-    public static void getDescription() {
-        System.out.println(
-                "A ransome note can be formed by cutting words out of a magazine to form a new sentence. How would you figure out is a ransom note (represented as a string) can be formed from a given magazine (String)?");
-    }
-
-    private static HashMap<String, Integer> permuteLetters(String input) {
-        HashMap<String, Integer> letterMap = new HashMap<>();
-        String temp = input.replaceAll("\\s+", "");
-        for (int i = 0; i < temp.length(); i++) {
-            String letter = temp.substring(i, i + 1);
-            if (letterMap.containsKey(letter)) {
-                letterMap.put(letter, letterMap.get(letter) + 1);
-            } else {
-                letterMap.put(letter, 1);
-            }
-        }
-        return letterMap;
-    }
-
     private static HashMap<String, Integer> permuteWords(String input) {
         HashMap<String, Integer> wordMap = new HashMap<>();
 
@@ -66,5 +61,10 @@ public class RansomNote {
             }
         }
         return wordMap;
+    }
+
+    public static void getDescription() {
+        System.out.println(
+                "A ransome note can be formed by cutting words out of a magazine to form a new sentence. How would you figure out is a ransom note (represented as a string) can be formed from a given magazine (String)?");
     }
 }

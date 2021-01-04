@@ -2,8 +2,7 @@ package classes.unsorted.interfaces;
 
 public interface GreetingService {
 
-    String salutation = "Hello! ";
+  String salutation = "Hello! ";
 
     void sayMessage(String message);
-
 }

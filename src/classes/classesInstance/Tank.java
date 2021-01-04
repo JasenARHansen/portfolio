@@ -13,10 +13,6 @@ public class Tank {
         return this.size;
     }
 
-    public boolean isPositive(int value) {
-        return value >= 0;
-    }
-
     public void addValue(int value) {
         this.currentVolume += value;
         if (!isPositive(this.currentVolume)) {
@@ -25,5 +21,9 @@ public class Tank {
         } else if (this.size < this.currentVolume) {
             this.size = this.currentVolume;
         }
+    }
+
+    public boolean isPositive(int value) {
+        return value >= 0;
     }
 }

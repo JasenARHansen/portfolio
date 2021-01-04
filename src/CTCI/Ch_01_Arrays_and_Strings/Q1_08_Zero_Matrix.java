@@ -32,18 +32,6 @@ public class Q1_08_Zero_Matrix {
         }
     }
 
-    public static void nullifyRow(int[][] matrix, int row) {
-        for (int j = 0; j < matrix[0].length; j++) {
-            matrix[row][j] = 0;
-        }
-    }
-
-    public static void nullifyColumn(int[][] matrix, int col) {
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[i][col] = 0;
-        }
-    }
-
     public static void zeroMatrix_solution_1(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];
@@ -70,6 +58,18 @@ public class Q1_08_Zero_Matrix {
             if (column[j]) {
                 nullifyColumn(matrix, j);
             }
+        }
+    }
+
+    public static void nullifyRow(int[][] matrix, int row) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            matrix[row][j] = 0;
+        }
+    }
+
+    public static void nullifyColumn(int[][] matrix, int col) {
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][col] = 0;
         }
     }
 

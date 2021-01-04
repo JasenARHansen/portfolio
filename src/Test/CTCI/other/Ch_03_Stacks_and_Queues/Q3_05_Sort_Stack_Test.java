@@ -48,63 +48,63 @@ public class Q3_05_Sort_Stack_Test {
       }
     }
 
-    Stack<Integer> reverseStack = new Stack<>();
-    while (inStack.size() > 0) {
-      reverseStack.push(inStack.pop());
-    }
-
-    return reverseStack;
-  }
-
-  public static void sort(Stack<Integer> s) {
-    Stack<Integer> r = new Stack<>();
-    while (!s.isEmpty()) {
-      /* Insert each element in s in sorted order into r. */
-      int tmp = s.pop();
-      while (!r.isEmpty() && r.peek() > tmp) {
-        s.push(r.pop());
+      Stack<Integer> reverseStack = new Stack<>();
+      while (inStack.size() > 0) {
+          reverseStack.push(inStack.pop());
       }
-      r.push(tmp);
-    }
 
-    /* Copy the elements back. */
-    while (!r.isEmpty()) {
-      s.push(r.pop());
-    }
+      return reverseStack;
   }
 
-  @Test
-  public void SortableStack() {
-    System.out.format("%s: \n", name.getMethodName());
-    SortableStack<Integer> sortableStack = new SortableStack<>();
+    @Test
+    public void sort_stack_solution_1() {
+        System.out.format("%s: \n", name.getMethodName());
+        Stack<Integer> s = new Stack<>();
+        for (int i = 0; i < 10; i++) {
+            int r = AssortedMethods.randomIntInRange(0, 1000);
+            s.push(r);
+        }
 
-    int[] array = new int[]{55, 1, 23, 0, 123, 5};
-    for (int data : array) {
-      sortableStack.push(data);
-      System.out.format("Push '%s' on Stack '%s'\n", data, sortableStack.toString());
-    }
-    sortableStack.sort();
-    System.out.format("Sorted Queue '%s'\n", sortableStack.toString());
-    for (int i = 0; i < array.length; i++) {
-      System.out.format("Pop '%s' on Stack '%s'\n", sortableStack.pop(), sortableStack.toString());
-    }
-  }
+        sort(s);
 
-  @Test
-  public void sort_stack_solution_1() {
-    System.out.format("%s: \n", name.getMethodName());
-    Stack<Integer> s = new Stack<>();
-    for (int i = 0; i < 10; i++) {
-      int r = AssortedMethods.randomIntInRange(0, 1000);
-      s.push(r);
+        while (!s.isEmpty()) {
+            System.out.println(s.pop());
+        }
     }
 
-    sort(s);
+    public static void sort(Stack<Integer> s) {
+        Stack<Integer> r = new Stack<>();
+        while (!s.isEmpty()) {
+            /* Insert each element in s in sorted order into r. */
+            int tmp = s.pop();
+            while (!r.isEmpty() && r.peek() > tmp) {
+                s.push(r.pop());
+            }
+            r.push(tmp);
+        }
 
-    while (!s.isEmpty()) {
-      System.out.println(s.pop());
+        /* Copy the elements back. */
+        while (!r.isEmpty()) {
+            s.push(r.pop());
+        }
     }
-  }
+
+    @Test
+    public void SortableStack() {
+        System.out.format("%s: \n", name.getMethodName());
+        SortableStack<Integer> sortableStack = new SortableStack<>();
+
+        int[] array = new int[]{55, 1, 23, 0, 123, 5};
+        for (int data : array) {
+            sortableStack.push(data);
+            System.out.format("Push '%s' on Stack '%s'\n", data, sortableStack.toString());
+        }
+        sortableStack.sort();
+        System.out.format("Sorted Queue '%s'\n", sortableStack.toString());
+        for (int i = 0; i < array.length; i++) {
+            System.out.format("Pop '%s' on Stack '%s'\n", sortableStack.pop(), sortableStack.toString());
+        }
+    }
 
   @Test
   public void sort_stack_solution_2() {

@@ -28,16 +28,9 @@ public class Q1_04_Palindrome_Permutation {
         return true;
     }
 
-    public static int getCharNumber(Character c) {
-        int a = Character.getNumericValue('a');
-        int z = Character.getNumericValue('z');
-
-        int val = Character.getNumericValue(c);
-        // Determines the numeric offset from 'a' for character number
-        if (a <= val && val <= z) {
-            return val - a;
-        }
-        return -1;
+    public static boolean palindromePermutation_solution_1(String phrase) {
+        int[] table = buildCharFrequencyTable(phrase);
+        return checkMaxOneOdd(table);
     }
 
     public static int[] buildCharFrequencyTable(String phrase) {
@@ -54,6 +47,12 @@ public class Q1_04_Palindrome_Permutation {
         return table;
     }
 
+    public static boolean palindromePermutation_solution_3(String phrase) {
+        int bitVector = createBitVector(phrase);
+        // if 0 or 1 bit is set, return true
+        return bitVector == 0 || checkExactlyOneBitSet(bitVector);
+    }
+
     public static boolean checkMaxOneOdd(int[] table) {
         boolean foundOdd = false;
         // for each element in array check for odd values
@@ -68,11 +67,6 @@ public class Q1_04_Palindrome_Permutation {
             }
         }
         return true;
-    }
-
-    public static boolean palindromePermutation_solution_1(String phrase) {
-        int[] table = buildCharFrequencyTable(phrase);
-        return checkMaxOneOdd(table);
     }
 
     public static boolean palindromePermutation_solution_2(String phrase) {
@@ -96,6 +90,29 @@ public class Q1_04_Palindrome_Permutation {
         return countOdd <= 1;
     }
 
+    /* Create bit vector for string. For each letter with value i,
+     * toggle the ith bit. */
+    public static int createBitVector(String phrase) {
+        int bitVector = 0;
+        for (char c : phrase.toCharArray()) {
+            int x = getCharNumber(c);
+            bitVector = toggle(bitVector, x);
+        }
+        return bitVector;
+    }
+
+    public static int getCharNumber(Character c) {
+        int a = Character.getNumericValue('a');
+        int z = Character.getNumericValue('z');
+
+        int val = Character.getNumericValue(c);
+        // Determines the numeric offset from 'a' for character number
+        if (a <= val && val <= z) {
+            return val - a;
+        }
+        return -1;
+    }
+
     public static int toggle(int bitVector, int index) {
         // If not in range do nothing
         if (index < 0) return bitVector;
@@ -111,17 +128,6 @@ public class Q1_04_Palindrome_Permutation {
         return bitVector;
     }
 
-    /* Create bit vector for string. For each letter with value i,
-     * toggle the ith bit. */
-    public static int createBitVector(String phrase) {
-        int bitVector = 0;
-        for (char c : phrase.toCharArray()) {
-            int x = getCharNumber(c);
-            bitVector = toggle(bitVector, x);
-        }
-        return bitVector;
-    }
-
     /* Check that exactly one bit is set by subtracting one from the
      * integer and ANDing it with the original integer. */
     public static boolean checkExactlyOneBitSet(int bitVector) {
@@ -130,12 +136,6 @@ public class Q1_04_Palindrome_Permutation {
         // that way: 1001 - 0001 = 1000.  When using and on this you would get 1000 and that is not 0000
         // so this detects single set bits.
         return (bitVector & (bitVector - 1)) == 0;
-    }
-
-    public static boolean palindromePermutation_solution_3(String phrase) {
-        int bitVector = createBitVector(phrase);
-        // if 0 or 1 bit is set, return true
-        return bitVector == 0 || checkExactlyOneBitSet(bitVector);
     }
 
     public static void main(String[] args) {

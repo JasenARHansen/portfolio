@@ -27,20 +27,20 @@ public class Q2_02_Return_Kt_To_Last_Test {
     toSimplify.insert(0);
     toSimplify.insert(1);
     toSimplify.insert(6);
-      toSimplify.insert(9);
-      toSimplify.insert(4);
-      toSimplify.insert(0);
-      toSimplify.insert(6);
-      toSimplify.insert(9);
-      toSimplify.insert(6);
-      toSimplify.insert(6);
-      toSimplify.printList();
-      int from_last = 3;
-      NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
-      assertNotNull(result);
-      System.out.format(
-              "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
-      assertEquals(9, (int) result.getData());
+    toSimplify.insert(9);
+    toSimplify.insert(4);
+    toSimplify.insert(0);
+    toSimplify.insert(6);
+    toSimplify.insert(9);
+    toSimplify.insert(6);
+    toSimplify.insert(6);
+    toSimplify.printList();
+    int from_last = 3;
+    NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
+    assertNotNull(result);
+    System.out.format(
+            "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
+    assertEquals(9, (int) result.getData());
   }
 
   @Test

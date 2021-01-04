@@ -92,7 +92,7 @@ public class Q4_09_BST_Sequences_Test {
     // 13));
     myTree.createMinimalBST(data);
 
-    ArrayList<ArrayList<Integer>> results = myTree.allBuildSequences();
+    ArrayList<ArrayList<Integer>> results = myTree.allBSTBuildSequences();
     assertNotNull(results);
     assertFalse(results.isEmpty());
     for (ArrayList<Integer> result : results) {

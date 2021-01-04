@@ -23,29 +23,29 @@ public class Q3_04_Queue_via_Stacks_Test {
     System.out.format("%s: \n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(0);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    queueFromStack.add(1);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    queueFromStack.add(2);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    queueFromStack.add(3);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    queueFromStack.add(4);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    queueFromStack.add(5);
-    System.out.format("Queue '%s'\n", queueFromStack.toString());
-    System.out.format(
-            "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack.toString());
-    System.out.format(
-            "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
-    System.out.format(
-            "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
-    System.out.format(
-            "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
-    System.out.format(
-            "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
-    System.out.format(
-            "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack.toString());
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      queueFromStack.add(1);
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      queueFromStack.add(2);
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      queueFromStack.add(3);
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      queueFromStack.add(4);
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      queueFromStack.add(5);
+      System.out.format("Queue '%s'\n", queueFromStack.toString());
+      System.out.format(
+              "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack.toString());
+      System.out.format(
+              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
+      System.out.format(
+              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
+      System.out.format(
+              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
+      System.out.format(
+              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack.toString());
+      System.out.format(
+              "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack.toString());
   }
 
   @Test
@@ -74,12 +74,12 @@ public class Q3_04_Queue_via_Stacks_Test {
 
       if (test_queue.size() == my_queue.size()) {
         if (test_queue.size() > 0 && !test_queue.peek().equals(my_queue.peek())) {
-          System.out.println(
-                  "******* FAILURE - DIFFERENT TOPS: "
-                          + test_queue.peek()
-                          + ", "
-                          + my_queue.peek()
-                          + " ******");
+            System.out.println(
+                    "******* FAILURE - DIFFERENT TOPS: "
+                            + test_queue.peek()
+                            + ", "
+                            + my_queue.peek()
+                            + " ******");
         }
       } else {
         System.out.println("******* FAILURE - DIFFERENT SIZES ******");

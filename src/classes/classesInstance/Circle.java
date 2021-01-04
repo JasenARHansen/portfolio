@@ -29,7 +29,7 @@ public class Circle {
     }
 
     public boolean intersects(Circle otherCircle) {
-        //Distance between 2 points = ((x2 - x1)^2 + (y2 - y1)^2)^(1/2)
+        // Distance between 2 points = ((x2 - x1)^2 + (y2 - y1)^2)^(1/2)
         double xValues = Math.pow((this.xCordinate - otherCircle.xCordinate), 2);
         double yValues = Math.pow((this.yCordinate - otherCircle.yCordinate), 2);
         double distance = Math.pow((xValues + yValues), .5);

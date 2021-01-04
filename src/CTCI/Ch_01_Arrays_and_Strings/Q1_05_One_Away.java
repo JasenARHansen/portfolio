@@ -39,6 +39,20 @@ public class Q1_05_One_Away {
         return true;
     }
 
+    public static boolean oneAway_solution_1(String first, String second) {
+        if (first.length() == second.length()) {
+            // If length is the same than it is a replace
+            return oneEditReplace(first, second);
+        } else if (first.length() + 1 == second.length()) {
+            // If first is smaller, insert 1 into first
+            return oneEditInsert(first, second);
+        } else if (first.length() - 1 == second.length()) {
+            // If first is larger, insert 1 into second
+            return oneEditInsert(second, first);
+        }
+        return false;
+    }
+
     public static boolean oneEditReplace(String s1, String s2) {
         boolean foundDifference = false;
         // Iterate through list and find first character that is different
@@ -73,20 +87,6 @@ public class Q1_05_One_Away {
             index2++;
         }
         return true;
-    }
-
-    public static boolean oneAway_solution_1(String first, String second) {
-        if (first.length() == second.length()) {
-            // If length is the same than it is a replace
-            return oneEditReplace(first, second);
-        } else if (first.length() + 1 == second.length()) {
-            // If first is smaller, insert 1 into first
-            return oneEditInsert(first, second);
-        } else if (first.length() - 1 == second.length()) {
-            // If first is larger, insert 1 into second
-            return oneEditInsert(second, first);
-        }
-        return false;
     }
 
     public static boolean oneAway_solution_2(String first, String second) {

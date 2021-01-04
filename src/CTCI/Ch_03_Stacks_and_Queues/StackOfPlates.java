@@ -5,29 +5,26 @@ import java.util.EmptyStackException;
 import java.util.List;
 
 public class StackOfPlates<T extends Comparable<T>> {
-  List<List<T>> stackList;
-  private int currentStack = 0;
+    List<List<T>> stackList;
+    private int currentStack = 0;
 
-  /**
-   * Constructor
-   */
-  public StackOfPlates() {
-    this.stackList = new ArrayList<>();
-  }
-
-  public int getSize() {
-    int size = 0;
-    for (int i = 0; i <= currentStack; i++) {
-      size += this.stackList.get(i).size();
+    public StackOfPlates() {
+        this.stackList = new ArrayList<>();
     }
-    return size;
-  }
 
-  public boolean isEmpty() {
-    return this.getSize() == 0;
-  }
+    public boolean isEmpty() {
+        return this.getSize() == 0;
+    }
 
-  public T peek() {
+    public int getSize() {
+        int size = 0;
+        for (int i = 0; i <= currentStack; i++) {
+            size += this.stackList.get(i).size();
+        }
+        return size;
+    }
+
+    public T peek() {
     // empty stack case
     if ((this.stackList == null)
             || (this.stackList.size() == 0)

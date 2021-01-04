@@ -30,26 +30,6 @@ public class CodeChalenge {
         values.sort(compairRight);
     }
 
-    private static void addQueen(int collumn, List<Tuple<Integer, Integer>> queenList, int[][] board) {
-        if (collumn == board.length) {
-            return;
-        }
-        int row = 0;
-        while ((row < board.length) && (queenList.size() < board.length)) {
-            if (!testThreatened(collumn, row, board)) {
-                Tuple<Integer, Integer> queen = new Tuple<>(collumn, row);
-                queenList.add(queen);
-                board[collumn][row] = 1;
-                addQueen(collumn + 1, queenList, board);
-                if (queenList.size() != board.length) {
-                    board[collumn][row] = 0;
-                    queenList.remove(collumn);
-                }
-            }
-            row++;
-        }
-    }
-
     public static void description() {
 
         System.out.println(
@@ -154,29 +134,6 @@ public class CodeChalenge {
         return returnValues;
     }
 
-    private static int detectCycle(boolean selector, int fastCursor, int slowCursor, int[] values) {
-        // 3 cases
-        if (selector) {
-            if ((values[fastCursor] >= values.length) || (values[fastCursor] < 0)) {
-                // Points out of range so no cycle
-                return -1;
-            }
-        } else {
-            if ((values[slowCursor] >= values.length) || (values[slowCursor] < 0)) {
-                // Points out of range so no cycle
-                return -1;
-            }
-
-        }
-
-        if (fastCursor == slowCursor) {
-            // Cursors are equal so a cycle has been detected
-            return 1;
-        }
-
-        return 0;
-    }
-
     public static boolean detectCycle(int... values) {
         if ((values[0] >= values.length) || (values[0] < 0)) {
             // Points out of range so no cycle
@@ -231,28 +188,34 @@ public class CodeChalenge {
         }
     }
 
+    private static int detectCycle(boolean selector, int fastCursor, int slowCursor, int[] values) {
+        // 3 cases
+        if (selector) {
+            if ((values[fastCursor] >= values.length) || (values[fastCursor] < 0)) {
+                // Points out of range so no cycle
+                return -1;
+            }
+        } else {
+            if ((values[slowCursor] >= values.length) || (values[slowCursor] < 0)) {
+                // Points out of range so no cycle
+                return -1;
+            }
+
+        }
+
+        if (fastCursor == slowCursor) {
+            // Cursors are equal so a cycle has been detected
+            return 1;
+        }
+
+        return 0;
+    }
+
     public static ArrayList<ArrayList<Integer>> findSubsets(int... numbers) {
         ArrayList<ArrayList<Integer>> returnValue = new ArrayList<>();
         ArrayList<Integer> working = new ArrayList<>();
         returnValue.add(working);
         return findSubsets(0, numbers, returnValue);
-    }
-
-    private static ArrayList<ArrayList<Integer>> findSubsets(int index, int[] numbers,
-                                                             ArrayList<ArrayList<Integer>> returnValue) {
-
-        if (index >= numbers.length) {
-            return returnValue;
-        }
-        int counMax = returnValue.size();
-        for (int loop = 0; loop < counMax; loop++) {
-            @SuppressWarnings("unchecked")
-            ArrayList<Integer> working = (ArrayList<Integer>) returnValue.get(loop).clone();
-            working.add(numbers[index]);
-            returnValue.add(working);
-        }
-
-        return findSubsets(index + 1, numbers, returnValue);
     }
 
     public static List<Integer> firstPairSortedList(int sum, int... numbers) {
@@ -325,24 +288,6 @@ public class CodeChalenge {
             }
         }
         return null;
-    }
-
-    private static int[] incrementArrayIndex(int index, int... numbers) {
-        if (numbers.length == 0) {
-            return new int[]{1};
-        }
-        if (index == 0) {
-            int[] newReturn = Arrays.copyOf(numbers, numbers.length + 1);
-            newReturn[0] = 1;
-            System.arraycopy(numbers, 0, newReturn, 1, numbers.length);
-            return newReturn;
-        }
-        numbers[index - 1]++;
-        if (numbers[index - 1] > 9) {
-            numbers[index - 1] = 0;
-            return incrementArrayIndex(index - 1, numbers);
-        }
-        return numbers;
     }
 
     public static int[] incrementArrayValue(int... numbers) {
@@ -518,6 +463,61 @@ public class CodeChalenge {
         // int width = overlapXEnd - overlapXStart;
         // int height = overlapYEnd - overlapYStart;
         // return width * height;
+    }
+
+    private static void addQueen(int collumn, List<Tuple<Integer, Integer>> queenList, int[][] board) {
+        if (collumn == board.length) {
+            return;
+        }
+        int row = 0;
+        while ((row < board.length) && (queenList.size() < board.length)) {
+            if (!testThreatened(collumn, row, board)) {
+                Tuple<Integer, Integer> queen = new Tuple<>(collumn, row);
+                queenList.add(queen);
+                board[collumn][row] = 1;
+                addQueen(collumn + 1, queenList, board);
+                if (queenList.size() != board.length) {
+                    board[collumn][row] = 0;
+                    queenList.remove(collumn);
+                }
+            }
+            row++;
+        }
+    }
+
+    private static ArrayList<ArrayList<Integer>> findSubsets(int index, int[] numbers,
+                                                             ArrayList<ArrayList<Integer>> returnValue) {
+
+        if (index >= numbers.length) {
+            return returnValue;
+        }
+        int counMax = returnValue.size();
+        for (int loop = 0; loop < counMax; loop++) {
+            @SuppressWarnings("unchecked")
+            ArrayList<Integer> working = (ArrayList<Integer>) returnValue.get(loop).clone();
+            working.add(numbers[index]);
+            returnValue.add(working);
+        }
+
+        return findSubsets(index + 1, numbers, returnValue);
+    }
+
+    private static int[] incrementArrayIndex(int index, int... numbers) {
+        if (numbers.length == 0) {
+            return new int[]{1};
+        }
+        if (index == 0) {
+            int[] newReturn = Arrays.copyOf(numbers, numbers.length + 1);
+            newReturn[0] = 1;
+            System.arraycopy(numbers, 0, newReturn, 1, numbers.length);
+            return newReturn;
+        }
+        numbers[index - 1]++;
+        if (numbers[index - 1] > 9) {
+            numbers[index - 1] = 0;
+            return incrementArrayIndex(index - 1, numbers);
+        }
+        return numbers;
     }
 
     private static Boolean testThreatened(int collumn, int row, int[][] board) {
