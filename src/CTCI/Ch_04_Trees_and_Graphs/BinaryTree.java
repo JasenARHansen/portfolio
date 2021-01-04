@@ -287,6 +287,15 @@ public class BinaryTree<T extends Comparable<T>> {
     return maxValue;
   }
 
+  public int countPathsWithSum(int sum) {
+    return this.countPathsWithSum(this.root, sum, 0);
+  }
+
+  @SuppressWarnings("unused")
+  public void outputInorder() {
+    System.out.print(dataInorder());
+  }
+
   @SuppressWarnings("unused")
   public T minValue() {
     return minValue(root);
@@ -304,20 +313,6 @@ public class BinaryTree<T extends Comparable<T>> {
   @SuppressWarnings("unused")
   public void outputBreadth() {
     System.out.print(dataBreadth());
-  }
-
-  @SuppressWarnings("unused")
-  public void outputInorder() {
-    System.out.print(dataInorder());
-  }
-
-  public String dataInorder() {
-    return dataInorder(root).trim();
-  }
-
-  @SuppressWarnings("unused")
-  public void outputPostorder() {
-    System.out.print(dataPostorder());
   }
 
   public String dataBreadth() {
@@ -341,6 +336,51 @@ public class BinaryTree<T extends Comparable<T>> {
       }
     }
     return returnValue.toString();
+  }
+
+  public String dataInorder() {
+    return dataInorder(root).trim();
+  }
+
+  @SuppressWarnings("unused")
+  public void outputPostorder() {
+    System.out.print(dataPostorder());
+  }
+
+  private int countPathsWithSum(BinaryTreeNode<T> data, int sum, int total) {
+    // This class will only work with Integers, Characters, or strings that represent integers
+    int current;
+    if (data.getData().getClass() == Integer.class) {
+      current = Integer.parseInt(data.getData().toString());
+    } else if (data.getData().getClass() == String.class) {
+      try {
+        current = Integer.parseInt(data.getData().toString());
+      } catch (Exception ignored) {
+        return 0;
+      }
+    } else if (data.getData().getClass() == Character.class) {
+      try {
+        current = data.getData().toString().charAt(0);
+      } catch (Exception ignored) {
+        return 0;
+      }
+    } else {
+      return 0;
+    }
+    int countLeft = 0;
+    int countRight = 0;
+    current = total + current;
+    if (data.hasLeftChild()) {
+      countLeft = this.countPathsWithSum(data.getLeftChild(), sum, current);
+    }
+    if (data.hasRightChild()) {
+      countRight = this.countPathsWithSum(data.getRightChild(), sum, current);
+    }
+    int count = 0;
+    if (current == sum) {
+      count++;
+    }
+    return count + countLeft + countRight;
   }
 
   public String dataPostorder() {

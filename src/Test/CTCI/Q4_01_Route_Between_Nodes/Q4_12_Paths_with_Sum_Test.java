@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import static org.junit.Assert.assertEquals;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_12_Paths_with_Sum_Test {
 
@@ -88,45 +90,25 @@ public class Q4_12_Paths_with_Sum_Test {
   }
 
   @Test
-  public void getRandomNode() {
+  public void countPathsWithSum() {
     System.out.format("%s: \n", name.getMethodName());
-
     BinaryTree<Integer> myTree = new BinaryTree<>();
-    ArrayList<Integer> data = new ArrayList<>(Arrays.asList(1, 10, 2, 9, 3, 8, 4, 7, 5, 6, 14));
-    System.out.format("%s: Inputs %s\n", name.getMethodName(), data.toString());
+    ArrayList<Integer> data =
+            new ArrayList<>(Arrays.asList(-2, 4, 0, 2, -1, 3, 3, 1, 0, 1, 1, 3, 0, -1, 2));
+
     myTree.createMinimalBT(data);
+    int sum = 5;
+    int total = myTree.countPathsWithSum(sum);
+    System.out.format(
+            "%s: the tree with values %s has %d paths that have a sum of %d\n",
+            name.getMethodName(), myTree.toString(), total, sum);
 
-    System.out.format("%s: %s\n", name.getMethodName(), myTree.toString());
-
-    int foo = 1;
+    assertEquals(5, total);
   }
 
-  // @Test
+  @Test
   public void countPathsWithSum_solution_1() {
     System.out.format("%s: \n", name.getMethodName());
-    /*
-    TreeNode root = new TreeNode(5);
-    root.left = new TreeNode(3);
-    root.right = new TreeNode(1);
-    root.left.left = new TreeNode(-8);
-    root.left.right = new TreeNode(8);
-    root.right.left = new TreeNode(2);
-    root.right.right = new TreeNode(6);
-    System.out.println(countPathsWithSum(root, 0));*/
-
-    /*TreeNode root = new TreeNode(-7);
-    root.left = new TreeNode(-7);
-    root.left.right = new TreeNode(1);
-    root.left.right.left = new TreeNode(2);
-    root.right = new TreeNode(7);
-    root.right.left = new TreeNode(3);
-    root.right.right = new TreeNode(20);
-    root.right.right.left = new TreeNode(0);
-    root.right.right.left.left = new TreeNode(-3);
-    root.right.right.left.left.right = new TreeNode(2);
-    root.right.right.left.left.right.left = new TreeNode(1);
-    System.out.println(countPathsWithSum(root, -14));*/
-
     TreeNode root = new TreeNode(0);
     root.left = new TreeNode(0);
     root.right = new TreeNode(0);
@@ -137,33 +119,9 @@ public class Q4_12_Paths_with_Sum_Test {
     System.out.println(countPathsWithSum_solution_1(root, 4));
   }
 
-  // @Test
+  @Test
   public void countPathsWithSum_solution_2() {
     System.out.format("%s: \n", name.getMethodName());
-    /*
-    TreeNode root = new TreeNode(5);
-    root.left = new TreeNode(3);
-    root.right = new TreeNode(1);
-    root.left.left = new TreeNode(-8);
-    root.left.right = new TreeNode(8);
-    root.right.left = new TreeNode(2);
-    root.right.right = new TreeNode(6);
-    root.right.left.left = new TreeNode(0);
-    System.out.println(countPathsWithSum(root, 0));
-    */
-
-    /*TreeNode root = new TreeNode(-7);
-    root.left = new TreeNode(-7);
-    root.left.right = new TreeNode(1);
-    root.left.right.left = new TreeNode(2);
-    root.right = new TreeNode(7);
-    root.right.left = new TreeNode(3);
-    root.right.right = new TreeNode(20);
-    root.right.right.left = new TreeNode(0);
-    root.right.right.left.left = new TreeNode(-3);
-    root.right.right.left.left.right = new TreeNode(2);
-    root.right.right.left.left.right.left = new TreeNode(1);
-    System.out.println(countPathsWithSum(root, 0));*/
 
     TreeNode root = new TreeNode(0);
     root.left = new TreeNode(0);
