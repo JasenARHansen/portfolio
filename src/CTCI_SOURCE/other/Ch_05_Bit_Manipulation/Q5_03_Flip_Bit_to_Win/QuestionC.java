@@ -4,22 +4,12 @@ public class QuestionC {
 
     public static int SEQUENCE_LENGTH = 32;
 
-    /* Given set of three sequences ordered as {0s, then 1s, then 0s},
-     * find max sequence that can be formed. */
-    public static int getMaxSequence(int[] sequences) { /* 1s, then 0s, then [old] ones */
-        if (sequences[1] == 1) { // a single 0 -> merge sequences
-            return sequences[0] + sequences[2] + 1;
-        } else if (sequences[1] == 0) { // no 0s -> take one side
-            return Math.max(sequences[0], sequences[2]);
-        } else {  // many 0s -> take side, add 1 (flip a bit)
-            return Math.max(sequences[0], sequences[2]) + 1;
-        }
-    }
+    public static void main(String[] args) {
+        int original_number = Integer.MAX_VALUE;
+        int new_number = longestSequence(original_number);
 
-    public static void shift(int[] sequences) {
-        sequences[2] = sequences[1];
-        sequences[1] = sequences[0];
-        sequences[0] = 0;
+        System.out.println(Integer.toBinaryString(original_number));
+        System.out.println(new_number);
     }
 
     public static int longestSequence(int n) {
@@ -50,12 +40,22 @@ public class QuestionC {
         return maxSequence;
     }
 
-    public static void main(String[] args) {
-        int original_number = Integer.MAX_VALUE;
-        int new_number = longestSequence(original_number);
-
-        System.out.println(Integer.toBinaryString(original_number));
-        System.out.println(new_number);
+    /* Given set of three sequences ordered as {0s, then 1s, then 0s},
+     * find max sequence that can be formed. */
+    public static int getMaxSequence(int[] sequences) {
+        /* 1s, then 0s, then [old] ones */
+        if (sequences[1] == 1) { // a single 0 -> merge sequences
+            return sequences[0] + sequences[2] + 1;
+        } else if (sequences[1] == 0) { // no 0s -> take one side
+            return Math.max(sequences[0], sequences[2]);
+        } else { // many 0s -> take side, add 1 (flip a bit)
+            return Math.max(sequences[0], sequences[2]) + 1;
+        }
     }
 
+    public static void shift(int[] sequences) {
+        sequences[2] = sequences[1];
+        sequences[1] = sequences[0];
+        sequences[0] = 0;
+    }
 }

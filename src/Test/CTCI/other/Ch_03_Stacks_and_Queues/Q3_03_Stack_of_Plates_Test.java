@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.Ch_03_Stacks_and_Queues.StackOfPlates;
+import CTCI.other.Ch_03_Stacks_and_Queues.StackOfPlates;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_03_Stack_of_Plates.SetOfStacks;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;

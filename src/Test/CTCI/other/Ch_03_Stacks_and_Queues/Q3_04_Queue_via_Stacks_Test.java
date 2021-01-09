@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.Ch_03_Stacks_and_Queues.QueueFromStack;
+import CTCI.other.Ch_03_Stacks_and_Queues.QueueFromStack;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks.MyQueue;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;

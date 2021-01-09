@@ -3,6 +3,14 @@ package CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_06_Conversion;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
 public class QuestionB {
+    public static void main(String[] args) {
+        int a = -23432;
+        int b = 512132;
+        System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
+        System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
+        System.out.println("Required number of bits: " + bitSwapRequired(a, b));
+    }
+
     public static int bitSwapRequired(int a, int b) {
         int count = 0;
         int c = a ^ b;
@@ -17,13 +25,5 @@ public class QuestionB {
             System.out.println("****");
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        int a = -23432;
-        int b = 512132;
-        System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
-        System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
-        System.out.println("Required number of bits: " + bitSwapRequired(a, b));
     }
 }

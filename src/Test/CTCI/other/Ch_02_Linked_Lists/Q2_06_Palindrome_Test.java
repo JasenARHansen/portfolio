@@ -1,7 +1,7 @@
 package Test.CTCI.other.Ch_02_Linked_Lists;
 
-import CTCI.Ch_02_Linked_Lists.Linked_List;
-import CTCI.Ch_02_Linked_Lists.Q2_06_Palindrome;
+import CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import CTCI.other.Ch_02_Linked_Lists.Q2_06_Palindrome;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import classes.CustomLinkedList;
 import org.junit.FixMethodOrder;

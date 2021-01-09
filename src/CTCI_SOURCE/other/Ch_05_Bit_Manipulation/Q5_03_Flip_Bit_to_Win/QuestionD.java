@@ -2,6 +2,17 @@ package CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_03_Flip_Bit_to_Win;
 
 public class QuestionD {
 
+    public static void main(String[] args) {
+        int[][] cases = {
+                {-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1}, {1, 2}, {15, 5}, {1775, 8}
+        };
+        for (int[] c : cases) {
+            int x = flipBit(c[0]);
+            boolean r = (c[1] == x);
+            System.out.println(c[0] + ": " + x + ", " + c[1] + " " + r);
+        }
+    }
+
     public static int flipBit(int a) {
         /* If all 1s, this is already the longest sequence. */
         if (~a == 0) return Integer.BYTES * 8;
@@ -22,16 +33,4 @@ public class QuestionD {
         }
         return maxLength;
     }
-
-    public static void main(String[] args) {
-        int[][] cases = {{-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1},
-                {1, 2}, {15, 5}, {1775, 8}};
-        for (int[] c : cases) {
-            int x = flipBit(c[0]);
-            boolean r = (c[1] == x);
-            System.out.println(c[0] + ": " + x + ", " + c[1] + " " + r);
-        }
-
-    }
-
 }

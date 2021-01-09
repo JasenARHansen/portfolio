@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_02_Linked_Lists;
 
-import CTCI.Ch_02_Linked_Lists.Q2_01_Remove_Duplicate;
+import CTCI.other.Ch_02_Linked_Lists.Q2_01_Remove_Duplicate;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import classes.CustomLinkedList;
 import org.junit.FixMethodOrder;

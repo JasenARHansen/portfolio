@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.Ch_03_Stacks_and_Queues.MinStack;
+import CTCI.other.Ch_03_Stacks_and_Queues.MinStack;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_02_Stack_Min.StackWithMin;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_02_Stack_Min.StackWithMin2;
 import org.junit.FixMethodOrder;

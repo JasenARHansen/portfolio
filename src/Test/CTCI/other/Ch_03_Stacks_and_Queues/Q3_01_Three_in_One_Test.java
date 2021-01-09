@@ -1,7 +1,7 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.Ch_03_Stacks_and_Queues.MultiStackArray;
-import CTCI.Ch_03_Stacks_and_Queues.MultiStackArrayList;
+import CTCI.other.Ch_03_Stacks_and_Queues.MultiStackArray;
+import CTCI.other.Ch_03_Stacks_and_Queues.MultiStackArrayList;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FixedMultiStack;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FullStackException;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.MultiStack;

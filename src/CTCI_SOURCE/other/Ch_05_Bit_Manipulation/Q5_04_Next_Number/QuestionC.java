@@ -1,7 +1,19 @@
 package CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_04_Next_Number;
 
 public class QuestionC {
-    public static int getNextArith(int n) {
+    public static void binPrint(int i) {
+        System.out.println(i + ": " + Integer.toBinaryString(i));
+    }
+
+    public static void main(String[] args) {
+        int i = 13948;
+        int p1 = getPrevArithmetic(i);
+        int n1 = getNextArithmetic(i);
+        Tester.binPrint(p1);
+        Tester.binPrint(n1);
+    }
+
+    public static int getNextArithmetic(int n) {
         int c = n;
         int c0 = 0;
         int c1 = 0;
@@ -31,7 +43,7 @@ public class QuestionC {
         return n + (1 << c0) + (1 << (c1 - 1)) - 1;
     }
 
-    public static int getPrevArith(int n) {
+    public static int getPrevArithmetic(int n) {
         int temp = n;
         int c0 = 0;
         int c1 = 0;
@@ -58,17 +70,4 @@ public class QuestionC {
          */
         return n - (1 << c1) - (1 << (c0 - 1)) + 1;
     }
-
-    public static void binPrint(int i) {
-        System.out.println(i + ": " + Integer.toBinaryString(i));
-    }
-
-    public static void main(String[] args) {
-        int i = 13948;
-        int p1 = getPrevArith(i);
-        int n1 = getNextArith(i);
-        Tester.binPrint(p1);
-        Tester.binPrint(n1);
-    }
-
 }

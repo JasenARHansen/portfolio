@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.Ch_03_Stacks_and_Queues.AnimalShelter;
+import CTCI.other.Ch_03_Stacks_and_Queues.AnimalShelter;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.AnimalQueue;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Cat;
 import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Dog;

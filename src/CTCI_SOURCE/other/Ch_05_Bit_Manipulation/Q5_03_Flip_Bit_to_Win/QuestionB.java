@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 public class QuestionB {
 
+    public static void main(String[] args) {
+        int original_number = 1775;
+        int new_number = longestSequence(original_number);
+
+        System.out.println(Integer.toBinaryString(original_number));
+        System.out.println(new_number);
+    }
+
     public static int longestSequence(int n) {
         if (n == -1) return Integer.BYTES * 8;
         ArrayList<Integer> sequences = getAlternatingSequences(n);
@@ -54,13 +62,4 @@ public class QuestionB {
 
         return maxSeq;
     }
-
-    public static void main(String[] args) {
-        int original_number = 1775;
-        int new_number = longestSequence(original_number);
-
-        System.out.println(Integer.toBinaryString(original_number));
-        System.out.println(new_number);
-    }
-
 }
