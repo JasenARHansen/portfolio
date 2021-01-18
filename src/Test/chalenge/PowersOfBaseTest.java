@@ -182,7 +182,8 @@ public class PowersOfBaseTest {
 
     List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
     System.out.format(
-            "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
+            "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d'"
+                    + " '%s'\n",
             name.getMethodName(), input, numberBase, result.size(), powerBase, result.toString());
     assertEquals(expected, result.size());
   }

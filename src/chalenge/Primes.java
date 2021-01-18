@@ -8,6 +8,7 @@ public class Primes {
   }
 
   public static void getDescription() {
+    //noinspection TextBlockMigration
     System.out.println(
             "A natural number (1, 2, 3, 4, 5, 6, etc.) is called a prime number (or a prime) if it is"
                     + " greater than 1 and cannot be written as the product of two smaller natural numbers."
