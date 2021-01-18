@@ -1,6 +1,6 @@
 package CTCI.other.Ch_04_Trees_and_Graphs;
 
-import classes.classesInstance.Tuple;
+import unsorted.classes.classesInstance.Tuple;
 
 import java.util.*;
 

@@ -1,12 +1,12 @@
 package Test.unsorted;
 
-import classes.classesInstance.Graph;
-import classes.classesInstance.GraphAdjacency;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classes.classesInstance.Graph;
+import unsorted.classes.classesInstance.GraphAdjacency;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GraphTest {

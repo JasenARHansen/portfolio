@@ -1,14 +1,14 @@
 package CTCI.other.Ch_04_Trees_and_Graphs.old;
 
-import classes.classesInstance.BinarySearchTreeHeightBalanced;
-import classes.classesInstance.Graph;
-import classes.classesInstance.NodeGraph;
-import classes.classesInstance.NodeTree;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classes.classesInstance.BinarySearchTreeHeightBalanced;
+import unsorted.classes.classesInstance.Graph;
+import unsorted.classes.classesInstance.NodeGraph;
+import unsorted.classes.classesInstance.NodeTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;

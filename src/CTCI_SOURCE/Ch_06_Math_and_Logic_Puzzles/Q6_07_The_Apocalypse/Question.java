@@ -2,6 +2,12 @@ package CTCI_SOURCE.Ch_06_Math_and_Logic_Puzzles.Q6_07_The_Apocalypse;
 
 import java.util.Random;
 
+/*
+
+ *
+ * */
+
+
 public class Question {
     public static int[] runOneFamily() {
         Random random = new Random();

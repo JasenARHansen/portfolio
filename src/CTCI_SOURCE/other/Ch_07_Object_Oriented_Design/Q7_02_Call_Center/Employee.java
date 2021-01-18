@@ -1,12 +1,12 @@
 package CTCI_SOURCE.other.Ch_07_Object_Oriented_Design.Q7_02_Call_Center;
 
-/* Employee is a super class for the Director, Manager, and Respondent classes.unsorted.classes. It is implemented as an
+/* Employee is a super class for the Director, Manager, and Respondent unsorted.unsorted.classes. It is implemented as an
  * abstract class, since there should be no reason to instantiated an Employee type directly.
  */
 abstract class Employee {
     protected Rank rank;
     private Call currentCall = null;
-    private CallHandler callHandler;
+    private final CallHandler callHandler;
 
     public Employee(CallHandler handler) {
         callHandler = handler;

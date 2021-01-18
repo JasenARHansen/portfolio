@@ -1,7 +1,7 @@
 package CTCI.unsorted;
 
-import classes.classesInstance.Line;
-import classes.classesInstance.Tuple;
+import unsorted.classes.classesInstance.Line;
+import unsorted.classes.classesInstance.Tuple;
 
 import java.util.Arrays;
 import java.util.HashMap;

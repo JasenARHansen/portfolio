@@ -4,12 +4,12 @@ import CTCI.unsorted.Moderate.ConvertNumberToString;
 import CTCI.unsorted.Moderate.ProcessBook;
 import CTCI.unsorted.Moderate.Tic_Tac_Toe;
 import CTCI.unsorted.Moderate.Tic_Tac_Toe_Piece;
-import classes.classesInstance.Line;
-import classes.classesInstance.Tuple;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classes.classesInstance.Line;
+import unsorted.classes.classesInstance.Tuple;
 
 import java.util.Arrays;
 

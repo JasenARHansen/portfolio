@@ -3,12 +3,12 @@ package Test.CTCI.other.Ch_02_Linked_Lists;
 import CTCI.other.Ch_02_Linked_Lists.Linked_List;
 import CTCI.other.Ch_02_Linked_Lists.Q2_04_Partition;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classes.CustomLinkedList;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_04_Partition_Test {

@@ -3,13 +3,13 @@ package Test.CTCI.other.Ch_02_Linked_Lists;
 import CTCI.other.Ch_02_Linked_Lists.Q2_02_Return_Kth_To_Last;
 import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import classes.CustomLinkedList;
-import classes.NodeList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+import unsorted.classes.CustomLinkedList;
+import unsorted.classes.NodeList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

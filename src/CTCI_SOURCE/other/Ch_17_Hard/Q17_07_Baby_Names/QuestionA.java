@@ -7,7 +7,7 @@ import java.util.Set;
 public class QuestionA {
 
     /* Read through (name, frequency) pairs and initialize a mapping
-     * of names to NameSets (equivalence classes.unsorted.classes).*/
+     * of names to NameSets (equivalence unsorted.unsorted.classes).*/
     public static HashMap<String, NameSet> constructGroups(HashMap<String, Integer> names) {
         HashMap<String, NameSet> groups = new HashMap<>();
         for (Entry<String, Integer> entry : names.entrySet()) {

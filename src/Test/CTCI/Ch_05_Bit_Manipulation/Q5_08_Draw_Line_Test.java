@@ -14,6 +14,20 @@ public class Q5_08_Draw_Line_Test {
   public TestName name = new TestName();
 
   @Test
+  public void testSwitch() {
+    System.out.format("%s: \n", name.getMethodName());
+    int height = 4;
+    // Width is a byte so if you wanted to know pixel width multiply by 8
+    int width = 2;
+    int y = 3;
+    int startBit = 2;
+    int stopBit = 27;
+    byte[] screen = new byte[height * width];
+
+    BitShift.drawLine(screen, width, startBit, stopBit, y);
+  }
+
+  //@Test
   public void drawLine() {
     System.out.format("%s: \n", name.getMethodName());
     int height = 4;
@@ -27,7 +41,7 @@ public class Q5_08_Draw_Line_Test {
     BitShift.drawLine(screen, width, startBit, stopBit, y);
   }
 
-  @Test
+  //@Test
   public void drawLine_solution_1() {
     System.out.format("%s: \n", name.getMethodName());
     int width = 8;
@@ -104,4 +118,6 @@ public class Q5_08_Draw_Line_Test {
       System.out.print(c);
     }
   }
+
+
 }
