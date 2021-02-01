@@ -1,5 +1,4 @@
-package interview.Google.Jan_14_2021.interview_5; // Write a function that, given a list of strings,
-// returns the
+package interview.Facebook.Feb_1_2021.interview; // Write a function that, given a list of strings, returns the
 // longest common prefix for more than half of the strings.
 
 /*

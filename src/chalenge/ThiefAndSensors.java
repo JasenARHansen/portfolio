@@ -1,4 +1,4 @@
-package unsorted.classesMain;
+package chalenge;
 
 import unsorted.classes.classesInstance.Circle;
 import unsorted.classes.classesInstance.Rectangle;
@@ -63,7 +63,10 @@ public class ThiefAndSensors {
 
     private static void getDescription() {
         System.out.println(
-                "Given a room with thief on one side of the room with finite number of sensors. He has to reach on other side missing the sensors. Each sensor is placed at any random point in the room and has its coverage in the radius r. Find out if the thief can reach to the other side without touching the range of any sensor.");
+                "Given a room with thief on one side of the room with finite number of sensors. He has to reach on other"
+                        + " side missing the sensors. Each sensor is placed at any random point in the room and has its"
+                        + " coverage in the radius r. Find out if the thief can reach to the other side without touching the"
+                        + " range of any sensor.");
     }
 
     private static void pathBottomTop() {
