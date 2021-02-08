@@ -11,7 +11,8 @@ public class PowersOfBase {
 
   private static void getDescription() {
     System.out.println(
-            "Given a string of 0 and 1, if possible, tell that how many splits would be required such that each split part is a number which can be represented as power of 5 in binary and tell the least number of splits.");
+            "Given a string of 0 and 1, if possible, tell that how many splits would be required such that each split part"
+                    + " is a number which can be represented as power of 5 in binary and tell the least number of splits.");
   }
 
   public static List<String> splitPowersOfBase(int numberBase, int powerBase, String input) {

@@ -80,7 +80,7 @@ public class Moderate {
         System.out.println("Finish right: " + right);
     }
 
-    enum Tic_Tac_Toe_Piece {
+    public enum Tic_Tac_Toe_Piece {
         Empty {
             @Override
             public String toString() {
@@ -101,7 +101,7 @@ public class Moderate {
         }
     }
 
-    static class ConvertNumberToString {
+    public static class ConvertNumberToString {
 
         private final String[] smalls = {
                 "Zero",
@@ -197,7 +197,7 @@ public class Moderate {
         }
     }
 
-    static class ProcessBook {
+    public static class ProcessBook {
 
         HashMap<String, Integer> table;
 
@@ -225,7 +225,7 @@ public class Moderate {
         }
     }
 
-    static class Tic_Tac_Toe {
+    public static class Tic_Tac_Toe {
         private final int size;
         private Tic_Tac_Toe_Piece lastPlayer;
         private int moves;

@@ -43,11 +43,6 @@ public class PeopleOnBench {
     benchSeats = seats;
   }
 
-  private static void getDescription() {
-    System.out.println(
-            "Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum.");
-  }
-
   public static void personSits() {
     if (people == null) {
       people = new ArrayList<>();
@@ -124,5 +119,10 @@ public class PeopleOnBench {
               newSeat - originalGap.getLeftData(),
               originalGap.getRightData() - newSeat);
     }
+  }
+
+  private static void getDescription() {
+    System.out.println(
+            "Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum.");
   }
 }

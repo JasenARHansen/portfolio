@@ -1,9 +1,9 @@
 package Test.unsorted;
 
+import HackerRank.HackerRank;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import unsorted.classesStatic.HackerRank;
 
 import java.util.HashMap;
 import java.util.List;

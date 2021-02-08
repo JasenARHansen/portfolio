@@ -1,7 +1,6 @@
 package interview.Facebook.Feb_1_2021.practice;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class SeatingArrangements {
   /*
@@ -47,19 +46,57 @@ public class SeatingArrangements {
     int right = arr.length - 1;
     for (int index = 0; index < arr.length; index++) {
       if ((index % 2) == 0) {
-        working[left] = priorityQueue.poll();
-        left++;
+          // [left] = priorityQueue.poll();
+          working[left] = priorityQueue.remove();
+          left++;
       } else {
-        working[right] = priorityQueue.poll();
-        right--;
+          // working[right] = priorityQueue.poll();
+          working[right] = priorityQueue.remove();
+          right--;
       }
     }
-    for (int seat = 0; seat < arr.length; seat++) {
-      int current = Math.abs(working[seat] - working[(seat + 1) % arr.length]);
-      if (current > awkwardness) {
-        awkwardness = current;
+      for (int seat = 0; seat < arr.length; seat++) {
+          int current = Math.abs(working[seat] - working[(seat + 1) % arr.length]);
+          if (current > awkwardness) {
+              awkwardness = current;
+          }
       }
-    }
-    return awkwardness;
+      return awkwardness;
   }
+
+    public static int minOverallAwkwardness_brute(int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
+        Stack<Integer> seating = new Stack<>();
+        List<Integer> toSeat = new ArrayList<>();
+        for (int person : arr) {
+            toSeat.add(person);
+        }
+        return processPermutations(seating, toSeat);
+    }
+
+    private static int processPermutations(Stack<Integer> seating, List<Integer> toBeSeated) {
+        int awkwardness = Integer.MAX_VALUE;
+        if (!toBeSeated.isEmpty()) {
+            for (int index = 0; index < toBeSeated.size(); index++) {
+                seating.add(toBeSeated.remove(0));
+                int awkwardnessLocal = processPermutations(seating, toBeSeated);
+                toBeSeated.add(seating.pop());
+                if (awkwardnessLocal < awkwardness) {
+                    awkwardness = awkwardnessLocal;
+                }
+            }
+        } else {
+            int running = 0;
+            for (int index = 0; index < seating.size(); index++) {
+                int working = Math.abs(seating.get(index) - seating.get((index + 1) % seating.size()));
+                if (working > running) {
+                    running = working;
+                }
+            }
+            awkwardness = running;
+        }
+        return awkwardness;
+    }
 }
