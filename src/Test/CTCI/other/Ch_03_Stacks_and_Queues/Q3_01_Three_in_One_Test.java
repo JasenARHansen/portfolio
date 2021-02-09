@@ -1,11 +1,11 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FixedMultiStack;
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FullStackException;
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.MultiStack;
+import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Code.CTCI.other.Ch_03_Stacks_and_Queues.MultiStackArray;
 import Code.CTCI.other.Ch_03_Stacks_and_Queues.MultiStackArrayList;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FixedMultiStack;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FullStackException;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.MultiStack;
-import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

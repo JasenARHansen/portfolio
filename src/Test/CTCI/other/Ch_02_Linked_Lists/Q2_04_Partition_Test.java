@@ -1,8 +1,8 @@
 package Test.CTCI.other.Ch_02_Linked_Lists;
 
+import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
 import Code.CTCI.other.Ch_02_Linked_Lists.Q2_04_Partition;
-import Code.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Code.unsorted.classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;

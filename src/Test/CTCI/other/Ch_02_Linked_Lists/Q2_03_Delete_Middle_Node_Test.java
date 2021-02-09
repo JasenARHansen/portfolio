@@ -1,8 +1,8 @@
 package Test.CTCI.other.Ch_02_Linked_Lists;
 
+import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Code.CTCI.other.Ch_02_Linked_Lists.Q2_03_Delete_Middle_Node;
-import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
-import Code.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

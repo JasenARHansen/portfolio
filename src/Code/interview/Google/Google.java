@@ -13,9 +13,10 @@ public class Google {
     // single, complete cycle
     int[] cycle = {2, 2, -1};
 
-    detectCircularArrayCycle(cycle);
+    boolean value = detectCircularArrayCycle(cycle);
     cycle = new int[]{-2, -2, 1};
-    detectCircularArrayCycle(cycle);
+    //noinspection UnusedAssignment
+    value = detectCircularArrayCycle(cycle);
 
     String test = "-123.456";
     Double result = convertNumber(test);
@@ -166,6 +167,7 @@ public class Google {
     Queue<Tuple<Integer, Integer>> floodQueue = new LinkedList<>();
     // A set will help eliminate duplicate processing
     Set<Tuple<Integer, Integer>> pixelSet = new HashSet<>();
+    @SuppressWarnings("SuspiciousNameCombination")
     Tuple<Integer, Integer> startPoint = new Tuple<>(x, y);
     floodQueue.add(startPoint);
     pixelSet.add(startPoint);
@@ -182,13 +184,15 @@ public class Google {
           toModify[newY][newX] = color;
 
           // Pixel right from test
-          @SuppressWarnings("SuspiciousNameCombination") Tuple<Integer, Integer> pixelRight = new Tuple<>(newX + 1, newY);
+          @SuppressWarnings("SuspiciousNameCombination")
+          Tuple<Integer, Integer> pixelRight = new Tuple<>(newX + 1, newY);
           if (!pixelSet.contains(pixelRight)) {
             floodQueue.add(pixelRight);
             pixelSet.add(pixelRight);
           }
 
           // Pixel down from test
+          @SuppressWarnings("SuspiciousNameCombination")
           Tuple<Integer, Integer> pixelLeft = new Tuple<>(newX - 1, newY);
           if (!pixelSet.contains(pixelLeft)) {
             floodQueue.add(pixelLeft);

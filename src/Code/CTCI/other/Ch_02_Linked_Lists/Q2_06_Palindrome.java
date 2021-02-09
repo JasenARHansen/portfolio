@@ -1,6 +1,6 @@
 package Code.CTCI.other.Ch_02_Linked_Lists;
 
-import Code.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Code.unsorted.classes.CustomLinkedList;
 
 import java.util.Stack;

@@ -1,9 +1,9 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.AnimalQueue;
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Cat;
+import Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Dog;
 import Code.CTCI.other.Ch_03_Stacks_and_Queues.AnimalShelter;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.AnimalQueue;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Cat;
-import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter.Dog;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

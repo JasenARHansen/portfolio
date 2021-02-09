@@ -1,7 +1,7 @@
 package Test.CTCI.Ch_05_Bit_Manipulation;
 
+import Code.CTCI.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_04_Next_Number.Tester;
 import Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
-import Code.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_04_Next_Number.Tester;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

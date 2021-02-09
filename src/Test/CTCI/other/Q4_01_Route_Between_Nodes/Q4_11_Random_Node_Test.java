@@ -1,7 +1,7 @@
 package Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
+import Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Node.Tree;
 import Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTree;
-import Code.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Node.Tree;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
