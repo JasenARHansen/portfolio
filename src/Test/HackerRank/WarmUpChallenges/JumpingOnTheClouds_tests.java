@@ -1,6 +1,6 @@
 package Test.HackerRank.WarmUpChallenges;
 
-import HackerRank.WarmUpChallenges.JumpingOnTheClouds;
+import Code.HackerRank.WarmUpChallenges.JumpingOnTheClouds;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

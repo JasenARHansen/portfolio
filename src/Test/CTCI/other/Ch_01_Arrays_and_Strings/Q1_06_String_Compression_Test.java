@@ -1,6 +1,6 @@
 package Test.CTCI.other.Ch_01_Arrays_and_Strings;
 
-import CTCI.other.Ch_01_Arrays_and_Strings.Q1_06_String_Compression;
+import Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_06_String_Compression;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

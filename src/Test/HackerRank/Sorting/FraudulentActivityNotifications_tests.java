@@ -1,6 +1,6 @@
 package Test.HackerRank.Sorting;
 
-import HackerRank.Sorting.FraudulentActivityNotifications;
+import Code.HackerRank.Sorting.FraudulentActivityNotifications;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

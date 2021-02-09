@@ -1,6 +1,6 @@
 package Test.chalenge;
 
-import chalenge.Sequence;
+import Code.chalenge.Sequence;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

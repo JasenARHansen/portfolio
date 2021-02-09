@@ -1,7 +1,7 @@
 package Test.CTCI.other.Ch_01_Arrays_and_Strings;
 
-import CTCI.other.Ch_01_Arrays_and_Strings.Q1_08_Zero_Matrix;
-import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_08_Zero_Matrix;
+import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

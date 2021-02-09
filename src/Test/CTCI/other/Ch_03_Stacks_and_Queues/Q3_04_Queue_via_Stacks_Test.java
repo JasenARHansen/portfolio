@@ -1,8 +1,8 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.other.Ch_03_Stacks_and_Queues.QueueFromStack;
-import CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks.MyQueue;
-import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import Code.CTCI.other.Ch_03_Stacks_and_Queues.QueueFromStack;
+import Code.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks.MyQueue;
+import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package Test.HackerRank.Arrays;
 
-import HackerRank.Arrays.ArrayManipulation;
+import Code.HackerRank.Arrays.ArrayManipulation;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package Test.interview.Google.Jan_14_2021.interview_2;
 
-import interview.Google.Jan_14_2021.interview_2.Scrabble;
+import Code.interview.Google.Jan_14_2021.interview_2.Scrabble;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

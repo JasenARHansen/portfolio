@@ -1,6 +1,6 @@
 package Test.chalenge;
 
-import chalenge.PowersOfBase;
+import Code.chalenge.PowersOfBase;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

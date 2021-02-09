@@ -1,6 +1,6 @@
 package Test.CTCI.Ch_05_Bit_Manipulation;
 
-import CTCI.other.Ch_05_Bit_Manipulation.BitShift;
+import Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

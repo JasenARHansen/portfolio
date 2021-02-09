@@ -1,6 +1,6 @@
 package Test.HackerRank.WarmUpChallenges;
 
-import HackerRank.WarmUpChallenges.RepeatedString;
+import Code.HackerRank.WarmUpChallenges.RepeatedString;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

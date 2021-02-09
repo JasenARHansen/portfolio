@@ -1,6 +1,6 @@
 package Test.chalenge;
 
-import chalenge.PeopleOnBench;
+import Code.chalenge.PeopleOnBench;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

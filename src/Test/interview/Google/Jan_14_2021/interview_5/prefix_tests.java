@@ -1,6 +1,6 @@
 package Test.interview.Google.Jan_14_2021.interview_5;
 
-import interview.Google.Jan_14_2021.interview_5.Prefix;
+import Code.interview.Google.Jan_14_2021.interview_5.Prefix;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class prefix_tests {
     public void longestPrefix_1() throws Exception {
         ArrayList<String> inputs =
                 new ArrayList<>(List.of("abc", "bc", "ab", "abdabz123", "abe", "bz"));
-        String result = interview.Google.Jan_14_2021.interview_5.Prefix.longestPrefix(inputs);
+        String result = Code.interview.Google.Jan_14_2021.interview_5.Prefix.longestPrefix(inputs);
         System.out.format(
                 "%s: list %s has '%s' as its longest prefxes that at least half of the nodes share\n",
                 name.getMethodName(), inputs, result);
@@ -33,7 +33,7 @@ public class prefix_tests {
     @Test
     public void longestPrefix_2() throws Exception {
         ArrayList<String> inputs = new ArrayList<>(List.of("a", "b"));
-        String result = interview.Google.Jan_14_2021.interview_5.Prefix.longestPrefix(inputs);
+        String result = Code.interview.Google.Jan_14_2021.interview_5.Prefix.longestPrefix(inputs);
         System.out.format(
                 "%s: list %s has '%s' as its longest prefxes that at least half of the nodes share\n",
                 name.getMethodName(), inputs, result);

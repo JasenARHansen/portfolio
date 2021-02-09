@@ -1,6 +1,6 @@
 package Test.HackerRank.Arrays;
 
-import HackerRank.Arrays.HourglassArray;
+import Code.HackerRank.Arrays.HourglassArray;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

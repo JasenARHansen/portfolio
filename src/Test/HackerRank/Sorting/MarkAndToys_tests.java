@@ -1,6 +1,6 @@
 package Test.HackerRank.Sorting;
 
-import HackerRank.Sorting.MarkAndToys;
+import Code.HackerRank.Sorting.MarkAndToys;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

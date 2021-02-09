@@ -1,15 +1,15 @@
 package Test.CTCI.other.Ch_02_Linked_Lists;
 
-import CTCI.other.Ch_02_Linked_Lists.Linked_List;
-import CTCI.other.Ch_02_Linked_Lists.Q2_08_Loop_Detection;
-import CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Code.CTCI.other.Ch_02_Linked_Lists.Q2_08_Loop_Detection;
+import Code.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
+import Code.unsorted.classes.NodeList;
+import Code.unsorted.classes.classesInstance.CirularLinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classes.NodeList;
-import unsorted.classes.classesInstance.CirularLinkedList;
 
 import java.lang.reflect.Field;
 

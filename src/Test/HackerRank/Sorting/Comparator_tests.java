@@ -1,7 +1,7 @@
 package Test.HackerRank.Sorting;
 
-import HackerRank.Sorting.Player;
-import HackerRank.Sorting.PlayerComparator;
+import Code.HackerRank.Sorting.Player;
+import Code.HackerRank.Sorting.PlayerComparator;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

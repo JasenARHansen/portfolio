@@ -1,6 +1,6 @@
 package Test.HackerRank.WarmUpChallenges;
 
-import HackerRank.WarmUpChallenges.SalesByMatch;
+import Code.HackerRank.WarmUpChallenges.SalesByMatch;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

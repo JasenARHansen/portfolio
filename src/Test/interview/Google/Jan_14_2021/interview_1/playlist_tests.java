@@ -1,6 +1,6 @@
 package Test.interview.Google.Jan_14_2021.interview_1;
 
-import interview.Google.Jan_14_2021.interview_1.PlayList;
+import Code.interview.Google.Jan_14_2021.interview_1.PlayList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class playlist_tests {
         int k = 2;
         System.out.format("%s: Song List: %s\n", name.getMethodName(), songs);
         System.out.format("%s: K: %d\n", name.getMethodName(), k);
-        interview.Google.Jan_14_2021.interview_1.PlayList playList = new interview.Google.Jan_14_2021.interview_1.PlayList();
+        Code.interview.Google.Jan_14_2021.interview_1.PlayList playList = new Code.interview.Google.Jan_14_2021.interview_1.PlayList();
         playList.setup(k, songs);
         for (int i = 0; i < 6; i++) {
             System.out.format("%s: Song: %s\n", name.getMethodName(), playList.getRandom());
@@ -34,7 +34,7 @@ public class playlist_tests {
         int k = 0;
         System.out.format("%s: Song List: %s\n", name.getMethodName(), songs);
         System.out.format("%s: K: %d\n", name.getMethodName(), k);
-        interview.Google.Jan_14_2021.interview_1.PlayList playList = new interview.Google.Jan_14_2021.interview_1.PlayList();
+        Code.interview.Google.Jan_14_2021.interview_1.PlayList playList = new Code.interview.Google.Jan_14_2021.interview_1.PlayList();
         playList.setup(k, songs);
         for (int i = 0; i < 6; i++) {
             System.out.format("%s: Song: %s\n", name.getMethodName(), playList.getRandom());
@@ -47,7 +47,7 @@ public class playlist_tests {
         int k = 5;
         System.out.format("%s: Song List: %s\n", name.getMethodName(), songs);
         System.out.format("%s: K: %d\n", name.getMethodName(), k);
-        interview.Google.Jan_14_2021.interview_1.PlayList playList = new interview.Google.Jan_14_2021.interview_1.PlayList();
+        Code.interview.Google.Jan_14_2021.interview_1.PlayList playList = new Code.interview.Google.Jan_14_2021.interview_1.PlayList();
         playList.setup(k, songs);
         for (int i = 0; i < 6; i++) {
             System.out.format("%s: Song: %s\n", name.getMethodName(), playList.getRandom());
@@ -60,7 +60,7 @@ public class playlist_tests {
         int k = -1;
         System.out.format("%s: Song List: %s\n", name.getMethodName(), songs);
         System.out.format("%s: K: %d\n", name.getMethodName(), k);
-        interview.Google.Jan_14_2021.interview_1.PlayList playList = new PlayList();
+        Code.interview.Google.Jan_14_2021.interview_1.PlayList playList = new PlayList();
         playList.setup(k, songs);
         for (int i = 0; i < 6; i++) {
             System.out.format("%s: Song: %s\n", name.getMethodName(), playList.getRandom());

@@ -1,6 +1,6 @@
 package Test.HackerRank.Sorting;
 
-import HackerRank.Sorting.BubbleSort;
+import Code.HackerRank.Sorting.BubbleSort;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

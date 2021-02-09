@@ -1,6 +1,6 @@
 package Test.HackerRank.WarmUpChallenges;
 
-import HackerRank.WarmUpChallenges.CountingValleys;
+import Code.HackerRank.WarmUpChallenges.CountingValleys;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

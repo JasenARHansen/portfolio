@@ -1,13 +1,13 @@
 package Test.unsorted;
 
+import Code.unsorted.classes.CodeChalenge;
+import Code.unsorted.classes.classesInstance.Rectangle;
+import Code.unsorted.classes.classesInstance.Tuple;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-import unsorted.classes.CodeChalenge;
-import unsorted.classes.classesInstance.Rectangle;
-import unsorted.classes.classesInstance.Tuple;
 
 import java.util.ArrayList;
 import java.util.List;

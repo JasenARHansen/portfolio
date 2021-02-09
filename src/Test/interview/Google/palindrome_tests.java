@@ -1,7 +1,7 @@
 package Test.interview.Google;
 
 
-import interview.Google.palindrome;
+import Code.interview.Google.palindrome;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;

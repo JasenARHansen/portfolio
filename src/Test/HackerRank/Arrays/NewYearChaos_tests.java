@@ -1,6 +1,6 @@
 package Test.HackerRank.Arrays;
 
-import HackerRank.Arrays.NewYearChaos;
+import Code.HackerRank.Arrays.NewYearChaos;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

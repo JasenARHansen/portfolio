@@ -1,6 +1,6 @@
 package Test.HackerRank.Arrays;
 
-import HackerRank.Arrays.MinimumSwaps2;
+import Code.HackerRank.Arrays.MinimumSwaps2;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

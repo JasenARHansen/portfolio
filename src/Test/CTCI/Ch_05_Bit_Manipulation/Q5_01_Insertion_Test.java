@@ -1,7 +1,7 @@
 package Test.CTCI.Ch_05_Bit_Manipulation;
 
-import CTCI.other.Ch_05_Bit_Manipulation.BitShift;
-import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
+import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

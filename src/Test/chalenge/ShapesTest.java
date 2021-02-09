@@ -1,6 +1,6 @@
 package Test.chalenge;
 
-import chalenge.Shapes;
+import Code.chalenge.Shapes;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

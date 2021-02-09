@@ -1,6 +1,6 @@
 package Test.chalenge;
 
-import chalenge.Primes;
+import Code.chalenge.Primes;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

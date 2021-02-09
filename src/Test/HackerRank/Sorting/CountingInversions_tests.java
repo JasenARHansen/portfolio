@@ -1,6 +1,6 @@
 package Test.HackerRank.Sorting;
 
-import HackerRank.Sorting.CountingInversions;
+import Code.HackerRank.Sorting.CountingInversions;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

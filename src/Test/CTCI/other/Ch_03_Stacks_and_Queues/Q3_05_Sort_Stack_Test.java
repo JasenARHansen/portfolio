@@ -1,7 +1,7 @@
 package Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
-import CTCI.other.Ch_03_Stacks_and_Queues.SortableStack;
-import CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+import Code.CTCI.other.Ch_03_Stacks_and_Queues.SortableStack;
+import Code.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
