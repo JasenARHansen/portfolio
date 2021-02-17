@@ -27,7 +27,7 @@ public class Q5_08_Draw_Line_Test {
     BitShift.drawLine(screen, width, startBit, stopBit, y);
   }
 
-  //@Test
+  @Test
   public void drawLine() {
     System.out.format("%s: \n", name.getMethodName());
     int height = 4;
@@ -41,7 +41,7 @@ public class Q5_08_Draw_Line_Test {
     BitShift.drawLine(screen, width, startBit, stopBit, y);
   }
 
-  //@Test
+  @Test
   public void drawLine_solution_1() {
     System.out.format("%s: \n", name.getMethodName());
     int width = 8;
@@ -118,6 +118,4 @@ public class Q5_08_Draw_Line_Test {
       System.out.print(c);
     }
   }
-
-
 }

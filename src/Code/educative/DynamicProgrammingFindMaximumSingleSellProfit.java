@@ -56,7 +56,7 @@ public class DynamicProgrammingFindMaximumSingleSellProfit {
         }
       }
     }
-    return new int[]{buy, sell};
+    return new int[]{buy, sell, sell - buy};
   }
 
   public static int[] find_sell_profit_stock_prices(int[] prices) {
@@ -75,6 +75,6 @@ public class DynamicProgrammingFindMaximumSingleSellProfit {
         buy = prices[index];
       }
     }
-    return new int[]{profit, sell};
+    return new int[]{sell - profit, sell, profit};
   }
 }
