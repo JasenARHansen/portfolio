@@ -1,4 +1,4 @@
-package Code.interview.Facebook.interview;
+package Code.interview.Amazon.assessment;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -41,7 +41,7 @@ public class Notes {
 
     List<Integer> arrayList = Arrays.stream(array).boxed().collect(Collectors.toList());
     Collections.sort(list);
-    list.sort(Collections.reverseOrder());
+    Collections.sort(list, Collections.reverseOrder());
     int value = arrayList.get(0);
 
     Stack<Character> stack = new Stack<>();
@@ -63,11 +63,10 @@ public class Notes {
     int result = ob.binarySearch(arr, 0, n - 1, x);
     if (result == -1) System.out.println("Element not present");
     else System.out.println("Element found at index " + result);
-
+    System.out.println();
     System.out.format(
         "%s: The after shifting the zeros in array '%s' the array becomes '%s' with %d non zero values\n",
         Arrays.toString(array), result);
-    int foo = 1;
   }
 
   private static boolean isLetterOrDigit_1(char character) {

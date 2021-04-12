@@ -17,7 +17,7 @@ public class MinimumLengthSubstrings {
   Return the minimum length of the substring of s. If it is not possible, return -1
   Example
   s = "dcbefebce"
-  t = "fd"'
+  t = "fd"
   output = 5
   Explanation:
   Substring "dcbef" can be rearranged to "cfdeb", "cefdb", and so on. String t is a substring of "cfdeb". Thus, the
@@ -26,15 +26,10 @@ public class MinimumLengthSubstrings {
 
   public static int minLengthSubstring(String s, String t) {
     int returnValue = -1;
-    if (t.length() > s.length()) {
-      returnValue = -1;
-    } else if (s.isEmpty()) {
-      returnValue = -1;
-    } else {
+    if (!(t.length() > s.length()) && (!s.isEmpty())) {
       List<Character> chars = t.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
       int index = 0;
       while ((index < s.length()) && !chars.isEmpty()) {
-        char temp = s.charAt(index);
         chars.remove(Character.valueOf(s.charAt(index)));
         index++;
       }
