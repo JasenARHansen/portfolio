@@ -25,7 +25,7 @@ public class Trees_And_Graphs {
 
     public static <X extends Comparable<X>, Y, Z> List<X> findPath(
             Graph<X, Y, Z> graph, NodeGraph<X, Y, Z> start, NodeGraph<X, Y, Z> stop) {
-        return graph.findPathBredthFirstId(start, stop);
+        return graph.findPathBreadthFirstId(start, stop);
     }
 
     public static List<ArrayList<NodeTree<Integer>>> listOfDepths(

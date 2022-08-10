@@ -208,12 +208,12 @@ public class myTest {
 
     @Test
     public void test9() {
-        highestAssocitivity();
+        highestAssociativity();
     }
 
-    private void highestAssocitivity() {
+    private void highestAssociativity() {
         Scanner scan = new Scanner(System.in);
-        float associtivityThreshold = scan.nextFloat();
+        float AssociativityThreshold = scan.nextFloat();
         int associationCount = scan.nextInt();
 
         List<AssociativityNode> associativityNodeList = new ArrayList<>();
@@ -221,13 +221,13 @@ public class myTest {
         for (int i = 0; i < associationCount; i++) {
             String firstItem = scan.next();
             String secondItem = scan.next();
-            float itemAssocitivity = scan.nextFloat();
+            float itemAssociativity = scan.nextFloat();
 
             /* Create all AssociativityNodes */
             boolean found = false;
             for (AssociativityNode associativityNode : associativityNodeList) {
                 if (associativityNode.getName().equals(firstItem)) {
-                    if (itemAssocitivity > associtivityThreshold) {
+                    if (itemAssociativity > AssociativityThreshold) {
                         associativityNode.addAssociation(secondItem);
                         found = true;
                         break;
@@ -246,7 +246,7 @@ public class myTest {
                     continue;
                 }
                 AssociativityNode associativityNode = new AssociativityNode(firstItem);
-                if (itemAssocitivity > associtivityThreshold) {
+                if (itemAssociativity > AssociativityThreshold) {
                     associativityNode.addAssociation(secondItem);
                 }
                 /* Add to associativityNodeList */
@@ -269,7 +269,7 @@ public class myTest {
             }
         }
 
-        /* Determine AssociativityNode with greatest associativity */
+        /* Determine AssociativityNode with the greatest associativity */
         int associativity = 0;
         List<String> associativityHeadList = new ArrayList<>();
         for (AssociativityNode associativityNode : associativityNodeList) {

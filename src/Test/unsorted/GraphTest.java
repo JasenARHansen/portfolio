@@ -26,7 +26,7 @@ public class GraphTest {
         graph.addNode(5, "Bug");
         graph.addNode(6, "Can");
         graph.addNode(1, "Apple");
-        System.out.println(graph.toString());
+        System.out.println(graph);
 
         System.out.println("Adjacent Inserts:");
         graph.setAdjacent(1, 2);
@@ -39,36 +39,36 @@ public class GraphTest {
         graph.setAdjacent(3, 4, 4);
         graph.setAdjacent(4, 5);
         graph.setAdjacent(4, 6);
-        System.out.println(graph.toString());
+        System.out.println(graph);
 
         System.out.println("Print BF for all nodes:");
         for (Integer key : graph.getNodes()) {
-            graph.printGraphBredthFirstId(key);
-            graph.printGraphBredthFirstNode(key);
+            graph.printGraphBreadthFirstId(key);
+            graph.printGraphBreadthFirstNode(key);
         }
 
         System.out.println("Assign Graph Id:");
         graph.setId("Animals");
-        System.out.println(graph.toString());
+        System.out.println(graph);
 
-        System.out.println("Print BFS path existance:");
-        System.out.println(graph.pathExistsPathBredthFirst(1, 5));
-        System.out.println(graph.pathExistsPathBredthFirst(4, 1));
+        System.out.println("Print BFS path existence:");
+        System.out.println(graph.pathExistsPathBreadthFirst(1, 5));
+        System.out.println(graph.pathExistsPathBreadthFirst(4, 1));
 
         System.out.println("Print BFS for nodes:");
-        graph.printPathBredthFirstId(1, 3);
-        graph.printPathBredthFirstNode(1, 3);
+        graph.printPathBreadthFirstId(1, 3);
+        graph.printPathBreadthFirstNode(1, 3);
 
-        graph.printPathBredthFirstId(1, 5);
-        graph.printPathBredthFirstNode(1, 5);
+        graph.printPathBreadthFirstId(1, 5);
+        graph.printPathBreadthFirstNode(1, 5);
 
-        graph.printPathBredthFirstId(2, 5);
-        graph.printPathBredthFirstNode(2, 5);
+        graph.printPathBreadthFirstId(2, 5);
+        graph.printPathBreadthFirstNode(2, 5);
 
-        graph.printPathBredthFirstId(5, 2);
-        graph.printPathBredthFirstNode(5, 2);
+        graph.printPathBreadthFirstId(5, 2);
+        graph.printPathBreadthFirstNode(5, 2);
 
-        System.out.println("Print DFS path existance:");
+        System.out.println("Print DFS path existence:");
         System.out.println(graph.pathExistsPathDepthFirst(1, 5));
         System.out.println(graph.pathExistsPathDepthFirst(4, 1));
 
@@ -89,7 +89,7 @@ public class GraphTest {
 
     }
 
-    // @Test
+    @Test
     public void graphAdjacency_Int() {
         GraphAdjacency<Integer, Integer> graph = new GraphAdjacency<>();
         graph.addEdge(1, 2, 1);
@@ -97,10 +97,10 @@ public class GraphTest {
         graph.addEdge(1, 4, 1);
         graph.addEdge(2, 3, 1);
         graph.addEdge(3, 4, 1);
-        System.out.println(graph.toString());
+        System.out.println(graph);
     }
 
-    // @Test
+    @Test
     public void graphAdjacency_String() {
         GraphAdjacency<String, Integer> graph = new GraphAdjacency<>();
         graph.addEdge("Cat", "Dog", 1);
@@ -112,7 +112,7 @@ public class GraphTest {
         graph.addEdge("Bird", "Dog", 1);
         graph.addEdge("Fish", "Cat", 1);
         graph.addEdge("Fish", "Bird", 1);
-        System.out.println(graph.toString());
+        System.out.println(graph);
         for (String key : graph.getNodeIDs()) {
             graph.printBreadthFirst(key);
         }

@@ -10,7 +10,7 @@ public class assessment_1 {
    the item weights (arr) to be packed, divide the item weights into two subsets, A and B, for packing into the
    Associated boxes, while respecting the following conditions:
 
-  The Intersection of A and B is nu..
+  The Intersection of A and B is null
   The Union of A and B is equal to the original array
   The sum of A's weights is greater than the sum of B's weights
   Return the subset A in increasing order where the sum oia A's weights is greater than the sum of B's weights.  If more
@@ -25,27 +25,27 @@ public class assessment_1 {
   A in Minimal (size 2)
   */
 
-  public static List<Integer> minimalHeaviestSetA(List<Integer> arr) {
-    List<Integer> set_A = new ArrayList<>();
-    int sum_A = 0;
-    int sum_B = 0;
+    public static List<Integer> minimalHeaviestSetA(List<Integer> list) {
+        List<Integer> set_A = new ArrayList<>();
+        int sum_A = 0;
+        int sum_B = 0;
 
-    Collections.sort(arr);
-    while (!arr.isEmpty()) {
-      // Set A
-      sum_A += arr.get(arr.size() - 1);
-      set_A.add(0, arr.remove(arr.size() - 1));
-      // Set B
-      while (!arr.isEmpty()) {
-        if (sum_B + arr.get(0) < sum_A) {
-          sum_B += arr.get(0);
-          arr.remove(0);
-        } else {
-          break;
+        Collections.sort(list);
+        while (!list.isEmpty()) {
+            // Set A
+            sum_A += list.get(list.size() - 1);
+            set_A.add(0, list.remove(list.size() - 1));
+            // Set B
+            while (!list.isEmpty()) {
+                if (sum_B + list.get(0) < sum_A) {
+                    sum_B += list.get(0);
+                    list.remove(0);
+                } else {
+                    break;
+                }
+            }
         }
-      }
-    }
 
-    return set_A;
-  }
+        return set_A;
+    }
 }

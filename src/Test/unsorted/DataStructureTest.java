@@ -25,39 +25,39 @@ public class DataStructureTest {
 		for (int index = 0; index < count; index++)
 			HeightBalancedBinarySearchTree.insert(index);
 
-		Integer intTest = HeightBalancedBinarySearchTree.countNodes();
-		System.out.println("Node Count   : " + intTest);
-		assertEquals("Node Count: 10", intTest, Integer.valueOf(count));
+        Integer intTest = HeightBalancedBinarySearchTree.countNodes();
+        System.out.println("Node Count   : " + intTest);
+        assertEquals("Node Count: 10", intTest, Integer.valueOf(count));
 
-		intTest = HeightBalancedBinarySearchTree.rootValue();
-		System.out.println("Root Value   : " + intTest);
-		assertEquals("Root Value: 3", intTest, Integer.valueOf(3));
+        intTest = HeightBalancedBinarySearchTree.rootValue();
+        System.out.println("Root Value   : " + intTest);
+        assertEquals("Root Value: 3", intTest, Integer.valueOf(3));
 
-		intTest = HeightBalancedBinarySearchTree.minValue();
-		System.out.println("Minumum Value   : " + intTest);
-		assertEquals("Minumum Value: 0", intTest, Integer.valueOf(0));
+        intTest = HeightBalancedBinarySearchTree.minValue();
+        System.out.println("Minimum Value   : " + intTest);
+        assertEquals("Minimum Value: 0", intTest, Integer.valueOf(0));
 
-		intTest = HeightBalancedBinarySearchTree.maxValue();
-		System.out.println("Maxumum Value   : " + intTest);
-		assertEquals("Maxumum Value: 0", intTest, Integer.valueOf(count - 1));
+        intTest = HeightBalancedBinarySearchTree.maxValue();
+        System.out.println("Maximum Value   : " + intTest);
+        assertEquals("Maximum Value: 0", intTest, Integer.valueOf(count - 1));
 
-		boolean boolTest = HeightBalancedBinarySearchTree.search(3);
-		System.out.println("Contains 3  : " + boolTest);
-		assertTrue("Contains 3: true", boolTest);
+        boolean boolTest = HeightBalancedBinarySearchTree.search(3);
+        System.out.println("Contains 3  : " + boolTest);
+        assertTrue("Contains 3: true", boolTest);
 
-		boolTest = HeightBalancedBinarySearchTree.search(11);
-		System.out.println("Contains 11  : " + boolTest);
-		assertFalse("Contains 11: false", boolTest);
+        boolTest = HeightBalancedBinarySearchTree.search(11);
+        System.out.println("Contains 11  : " + boolTest);
+        assertFalse("Contains 11: false", boolTest);
 
-		System.out.println("Pre-order  :");
+        System.out.println("Pre-order  :");
 		HeightBalancedBinarySearchTree.outputPreorder();
 		String testValue = HeightBalancedBinarySearchTree.dataPreorder();
 		assertEquals("Pre-order output: 3 1 0 2 7 5 4 6 8 9", testValue, "3 1 0 2 7 5 4 6 8 9");
 
 		System.out.println("\nIn-order   :");
 		HeightBalancedBinarySearchTree.outputInorder();
-		testValue = HeightBalancedBinarySearchTree.dataInorder();
-		assertEquals("In-orde output: 0 1 2 3 4 5 6 7 8 9", testValue, "0 1 2 3 4 5 6 7 8 9");
+        testValue = HeightBalancedBinarySearchTree.dataInorder();
+        assertEquals("In-order output: 0 1 2 3 4 5 6 7 8 9", testValue, "0 1 2 3 4 5 6 7 8 9");
 
 		System.out.println("\nPost-order :");
 		HeightBalancedBinarySearchTree.outputPostorder();
@@ -84,8 +84,8 @@ public class DataStructureTest {
 
 		System.out.println("\nIn-order   :");
 		HeightBalancedBinarySearchTree.outputInorder();
-		testValue = HeightBalancedBinarySearchTree.dataInorder();
-		assertEquals("In-orde output: 0 1 2 3 4 6 7 8 9", testValue, "0 1 2 3 4 6 7 8 9");
+        testValue = HeightBalancedBinarySearchTree.dataInorder();
+        assertEquals("In-order output: 0 1 2 3 4 6 7 8 9", testValue, "0 1 2 3 4 6 7 8 9");
 
 		System.out.println("\nPost-order :");
 		HeightBalancedBinarySearchTree.outputPostorder();
@@ -104,32 +104,32 @@ public class DataStructureTest {
 		int count = 100;
 
 		for (int index = 0; index < count; index++)
-			HeightBalancedBinarySearchTree.insert(index);
+            HeightBalancedBinarySearchTree.insert(index);
 
-		Integer intTest = HeightBalancedBinarySearchTree.countNodes();
-		System.out.println("Node Count   : " + intTest);
-		assertEquals("Node Count: 100", intTest, Integer.valueOf(count));
+        Integer intTest = HeightBalancedBinarySearchTree.countNodes();
+        System.out.println("Node Count   : " + intTest);
+        assertEquals("Node Count: 100", intTest, Integer.valueOf(count));
 
-		intTest = HeightBalancedBinarySearchTree.rootValue();
-		System.out.println("Root Value   : " + intTest);
+        intTest = HeightBalancedBinarySearchTree.rootValue();
+        System.out.println("Root Value   : " + intTest);
 
-		intTest = HeightBalancedBinarySearchTree.minValue();
-		System.out.println("Minumum Value   : " + intTest);
-		assertEquals("Minumum Value: 0", intTest, Integer.valueOf(0));
+        intTest = HeightBalancedBinarySearchTree.minValue();
+        System.out.println("Minimum Value   : " + intTest);
+        assertEquals("Minimum Value: 0", intTest, Integer.valueOf(0));
 
-		intTest = HeightBalancedBinarySearchTree.maxValue();
-		System.out.println("Maxumum Value   : " + intTest);
-		assertEquals("Maxumum Value: 0", intTest, Integer.valueOf(count - 1));
+        intTest = HeightBalancedBinarySearchTree.maxValue();
+        System.out.println("Maximum Value   : " + intTest);
+        assertEquals("Maximum Value: 0", intTest, Integer.valueOf(count - 1));
 
-		boolean boolTest = HeightBalancedBinarySearchTree.search(3);
-		System.out.println("Contains 3  : " + boolTest);
-		assertTrue("Contains 3: true", boolTest);
+        boolean boolTest = HeightBalancedBinarySearchTree.search(3);
+        System.out.println("Contains 3  : " + boolTest);
+        assertTrue("Contains 3: true", boolTest);
 
-		System.out.println("Pre-order  :");
-		HeightBalancedBinarySearchTree.outputPreorder();
+        System.out.println("Pre-order  :");
+        HeightBalancedBinarySearchTree.outputPreorder();
 
-		System.out.println("\nIn-order   :");
-		HeightBalancedBinarySearchTree.outputInorder();
+        System.out.println("\nIn-order   :");
+        HeightBalancedBinarySearchTree.outputInorder();
 
 		System.out.println("\nPost-order :");
 		HeightBalancedBinarySearchTree.outputPostorder();

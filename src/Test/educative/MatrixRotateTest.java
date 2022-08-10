@@ -12,17 +12,18 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MatrixRotate_tests {
+public class MatrixRotateTest {
 
-  @Rule public TestName name = new TestName();
+  @Rule
+  public TestName name = new TestName();
 
   @Test
   public void rotateMatrix_1() {
     int[][] expected = {{1}};
     int[][] source = {{1}};
     System.out.format(
-        "%s: The array with dimensions %dx%d:\n",
-        name.getMethodName(), source.length, source[0].length);
+            "%s: The array with dimensions %dx%d:\n",
+            name.getMethodName(), source.length, source[0].length);
     MatrixRotate.printArray(source);
     MatrixRotate.rotateMatrix_square(source);
     System.out.format(

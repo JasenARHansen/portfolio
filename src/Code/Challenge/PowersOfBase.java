@@ -1,4 +1,4 @@
-package Code.chalenge;
+package Code.Challenge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +9,12 @@ public class PowersOfBase {
     getDescription();
   }
 
-  private static void getDescription() {
-    System.out.println(
-            "Given a string of 0 and 1, if possible, tell that how many splits would be required such that each split part"
-                    + " is a number which can be represented as power of 5 in binary and tell the least number of splits.");
-  }
+    public static void getDescription() {
+        System.out.println(
+                "Given a string of representing a number and a numeric base, if possible, tell that how many splits would" +
+                        " be required such that each split part is a number which can be represented as power of 5 in " +
+                        " the provided numeric base and tell the least number of splits.");
+    }
 
   public static List<String> splitPowersOfBase(int numberBase, int powerBase, String input) {
     List<String> returnList = new ArrayList<>();

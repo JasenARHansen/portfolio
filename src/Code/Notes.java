@@ -1,4 +1,4 @@
-package Code.interview.Amazon.assessment;
+package Code;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -23,9 +23,17 @@ public class Notes {
     String subString = string.substring(0, 3);
 
     int[] array = {1, 2, 3, 4, 5};
+    Arrays.sort(array);
     int[] set = new int[4];
     int[] array2 = array.clone();
     int length = array.length;
+
+
+    Integer[] array3 = {1, 2, 3, 4, 5};
+    List<Integer> targetList = Arrays.asList(array3);
+    List<Integer> sourceList = Arrays.asList(0, 1, 2, 3, 4, 5);
+    Integer[] targetArray = sourceList.toArray(new Integer[0]);
+
 
     // copy a piece of 1 array into a 2nd array.
     // the positions are the start index of the copy from and copy to.  Te length is how many
@@ -41,8 +49,9 @@ public class Notes {
 
     List<Integer> arrayList = Arrays.stream(array).boxed().collect(Collectors.toList());
     Collections.sort(list);
-    Collections.sort(list, Collections.reverseOrder());
+    list.sort(Collections.reverseOrder());
     int value = arrayList.get(0);
+
 
     Stack<Character> stack = new Stack<>();
     int size = stack.size();
@@ -63,10 +72,11 @@ public class Notes {
     int result = ob.binarySearch(arr, 0, n - 1, x);
     if (result == -1) System.out.println("Element not present");
     else System.out.println("Element found at index " + result);
-    System.out.println();
+
     System.out.format(
-        "%s: The after shifting the zeros in array '%s' the array becomes '%s' with %d non zero values\n",
-        Arrays.toString(array), result);
+            "%s: The after shifting the zeros in array '%s' the array becomes '%s' with %d non zero values\n",
+            Arrays.toString(array), result);
+    int foo = 1;
   }
 
   private static boolean isLetterOrDigit_1(char character) {
@@ -75,8 +85,8 @@ public class Notes {
 
   private static boolean isLetterOrDigit_2(char character) {
     return (character >= '0' && character <= '9')
-        || (character >= 'a' && character <= 'z')
-        || (character >= 'A' && character <= 'Z');
+            || (character >= 'a' && character <= 'z')
+            || (character >= 'A' && character <= 'Z');
   }
 
   // Returns index of x if it is present in arr[l..

@@ -1,4 +1,4 @@
-package Code.chalenge;
+package Code.Challenge;
 
 public class Shapes {
 

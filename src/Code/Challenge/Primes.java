@@ -1,4 +1,4 @@
-package Code.chalenge;
+package Code.Challenge;
 
 import java.util.*;
 
@@ -13,7 +13,8 @@ public class Primes {
             "A natural number (1, 2, 3, 4, 5, 6, etc.) is called a prime number (or a prime) if it is"
                     + " greater than 1 and cannot be written as the product of two smaller natural numbers."
                     + "\n\tThe first 25 prime numbers (all the prime numbers less than 100) are:"
-                    + "\n\t2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97");
+                    + "\n\t2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73,"
+                    + " 79, 83, 89, 97");
   }
 
   public static int getNextPrime(int value) {

@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class HackerRank {
 
   private static final String querryTemplate =

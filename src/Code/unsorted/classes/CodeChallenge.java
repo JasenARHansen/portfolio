@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class CodeChalenge {
+public class CodeChallenge {
     // Comparator to sort by value
     static Comparator<Tuple<String, Integer>> compareLeft = (e1, e2) -> {
         String v1 = e1.getLeftData();
@@ -16,7 +16,7 @@ public class CodeChalenge {
     };
 
     // Comparator to sort by value
-    static Comparator<Tuple<String, Integer>> compairRight = (e1, e2) -> {
+    static Comparator<Tuple<String, Integer>> compareRight = (e1, e2) -> {
         Integer v1 = e1.getRightData();
         Integer v2 = e2.getRightData();
         return v1.compareTo(v2);
@@ -27,27 +27,27 @@ public class CodeChalenge {
     }
 
     public static void sortTupelRight(List<Tuple<String, Integer>> values) {
-        values.sort(compairRight);
+        values.sort(compareRight);
     }
 
     public static void description() {
 
         System.out.println(
-                "Chalenge 1: Given an ordered list of numbers find if a pair of numbers exist equal to a target number");
+                "Challenge 1: Given an ordered list of numbers find if a pair of numbers exist equal to a target number");
         System.out.println(
-                "Chalenge 2: Given an ordered list of numbers find a pair of numbers equal to a target number");
-        // System.out.println("Chalenge 3: Given an ordered list of numbers find
+                "Challenge 2: Given an ordered list of numbers find a pair of numbers equal to a target number");
+        // System.out.println("Challenge 3: Given an ordered list of numbers find
         // all pairs of numbers equal to a target number");
-        System.out.println("Chalenge 4: Given an array of numbers find all subsets of thoes numbers");
+        System.out.println("Challenge 4: Given an array of numbers find all subsets of thoes numbers");
         System.out.println(
-                "Chalenge 5: Given an array of numbers representing a single number, increment by 1 and return array");
-        System.out.println("Chalenge 6: Given 2 rectangles return the total area of overlap");
-        System.out.println("Chalenge 7: Place N Queens on a NxN chessboard");
+                "Challenge 5: Given an array of numbers representing a single number, increment by 1 and return array");
+        System.out.println("Challenge 6: Given 2 rectangles return the total area of overlap");
+        System.out.println("Challenge 7: Place N Queens on a NxN chessboard");
         System.out.println(
-                "Chalenge 8: Given an aray if integers where the content of the array at an index, is the next index it navigates to.  Detect cycles.");
-        System.out.println("Chalenge 9: Given 1 or more array, without merging, find the Nth item in the sequence");
-        System.out.println("Chalenge 10: Given 1 or more array, find all values that exist in all arrays");
-        System.out.println("Chalenge 11: Given a list of Tuples, sort by the leftData and sort by .getRightData()");
+                "Challenge 8: Given an aray if integers where the content of the array at an index, is the next index it navigates to.  Detect cycles.");
+        System.out.println("Challenge 9: Given 1 or more array, without merging, find the Nth item in the sequence");
+        System.out.println("Challenge 10: Given 1 or more array, find all values that exist in all arrays");
+        System.out.println("Challenge 11: Given a list of Tuples, sort by the leftData and sort by .getRightData()");
     }
 
     public static int[] mergeAndSort(int[]... sourceArrays) {
@@ -256,7 +256,7 @@ public class CodeChalenge {
                 return new Tuple<>(startValue, endValue);
             } else if (localSum > sum) {
                 endIndex--;
-            } else if (localSum < sum) {
+            } else {
                 startValue++;
             }
         }
@@ -306,7 +306,7 @@ public class CodeChalenge {
                 return true;
             } else if (localSum > sum) {
                 endIndex--;
-            } else if (localSum < sum) {
+            } else {
                 startValue++;
             }
         }
@@ -381,7 +381,7 @@ public class CodeChalenge {
             return 0;
         }
 
-        // For overlap area there must be y axis overlap
+        // For overlap area there must be y-axis overlap
         int firstY1 = firstRectangle.point1.getRightData();
         int firstY2 = firstRectangle.point2.getRightData();
         int secondY1 = secondRectangle.point1.getRightData();

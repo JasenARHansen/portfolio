@@ -1,4 +1,4 @@
-package Code.chalenge;
+package Code.Challenge;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +14,7 @@ public class Sequence {
     System.out.println(
             "The Fibonacci sequence is a series of numbers where a number is the addition of the last two numbers,"
                     + " starting with 0, and 1."
-                    + "\n\tThe Fibonacci Sequence: …, −8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …"
+                    + "\n\tThe Fibonacci Sequence: ..., -8, 5, -3, 2, -1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ..."
                     + "\nWritten as a rule, the expression is:"
                     + "\n\tPositive values of n:\tXn = Xn-1 + Xn-2"
                     + "\n\tNegative values of n:\tXn-2 = Xn - Xn-1");

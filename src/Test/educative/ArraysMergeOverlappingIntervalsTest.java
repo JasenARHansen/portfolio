@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ArraysMergeOverlappingIntervals_tests {
+public class ArraysMergeOverlappingIntervalsTest {
 
   @Rule
   public TestName name = new TestName();

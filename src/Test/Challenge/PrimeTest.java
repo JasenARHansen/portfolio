@@ -1,6 +1,6 @@
-package Test.chalenge;
+package Test.Challenge;
 
-import Code.chalenge.Primes;
+import Code.Challenge.Primes;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,11 +11,17 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("ConstantConditions")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrimeTest {
 
     @Rule
     public TestName name = new TestName();
+
+    @Test
+    public void Primes() {
+        Primes.getDescription();
+    }
 
     @Test
     public void getNPrimes_0() {

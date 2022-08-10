@@ -1,6 +1,6 @@
-package Test.chalenge;
+package Test.Challenge;
 
-import Code.chalenge.Sequence;
+import Code.Challenge.Sequence;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,6 +16,11 @@ public class SequenceTest {
 
     @Rule
     public TestName name = new TestName();
+
+    @Test
+    public void Sequence() {
+        Sequence.getDescriptionFibonacci();
+    }
 
     @Test
     public void getFibonacci_0() {

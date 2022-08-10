@@ -1,6 +1,6 @@
-package Test.chalenge;
+package Test.Challenge;
 
-import Code.chalenge.PeopleOnBench;
+import Code.Challenge.PeopleOnBench;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,6 +15,7 @@ public class PeopleOnBenchTest {
 
     @Test
     public void personSits_0() {
+        PeopleOnBench.getDescription();
         PeopleOnBench.buildBench(5);
         PeopleOnBench.personSits();
         PeopleOnBench.personSits();
@@ -28,8 +29,5 @@ public class PeopleOnBenchTest {
         PeopleOnBench.personSits();
         PeopleOnBench.personSits();
         PeopleOnBench.personSits();
-        //System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
-        //assertEquals(expected, result);
     }
-
 }

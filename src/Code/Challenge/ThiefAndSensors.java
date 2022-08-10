@@ -1,4 +1,4 @@
-package Code.chalenge;
+package Code.Challenge;
 
 import Code.unsorted.classes.classesInstance.Circle;
 import Code.unsorted.classes.classesInstance.Rectangle;
