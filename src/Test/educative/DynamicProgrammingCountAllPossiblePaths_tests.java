@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.DynamicProgrammingCountAllPossiblePaths;
+import Code.Educative.DynamicProgrammingCountAllPossiblePaths;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

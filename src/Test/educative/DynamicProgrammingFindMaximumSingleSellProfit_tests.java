@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.DynamicProgrammingFindMaximumSingleSellProfit;
+import Code.Educative.DynamicProgrammingFindMaximumSingleSellProfit;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

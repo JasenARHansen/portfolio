@@ -11,12 +11,15 @@ import java.util.Random;
 public class PeopleOnBench {
 
     // Comparator to sort by value
-    static Comparator<Tuple<Integer, Integer>> compareGaps =
-            (o1, o2) -> {
-                Integer v1 = o1.getLeftData() - o1.getRightData();
-                Integer v2 = o2.getLeftData() - o2.getRightData();
-                return v1.compareTo(v2);
-            };
+    static Comparator<Tuple<Integer, Integer>> compareGaps = (o1, o2) -> {
+        Integer v1 = o1.getLeftData() - o1.getRightData();
+        Integer v2 = o2.getLeftData() - o2.getRightData();
+        return v1.compareTo(v2);
+    };
+
+    public static void getDescription() {
+        System.out.println("Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum.");
+    }
 
     private static int benchSeats = 0;
     private static boolean benchLeftEdge = true;
@@ -24,7 +27,16 @@ public class PeopleOnBench {
     private static List<Tuple<Integer, Integer>> gaps;
     private static List<Integer> people;
 
+    private static void reset() {
+        benchSeats = 0;
+        benchLeftEdge = true;
+        benchRightEdge = true;
+        gaps = null;
+        people = null;
+    }
+
     public static void buildBench(int seats) {
+        reset();
         benchSeats = seats;
     }
 
@@ -52,16 +64,12 @@ public class PeopleOnBench {
                 benchLeftEdge = false;
                 gaps.add(new Tuple<>(1, firstSeat));
                 people.add(1);
-                System.out.format(
-                        "The 2nd person sits at seat '%d' (the far left edge), '%d' spaces from the person to his right\n",
-                        1, firstSeat - 1);
+                System.out.format("The 2nd person sits at seat '%d' (the far left edge), '%d' spaces from the person to his right\n", 1, firstSeat - 1);
             } else {
                 benchRightEdge = false;
                 gaps.add(new Tuple<>(firstSeat, benchSeats));
                 people.add(benchSeats);
-                System.out.format(
-                        "The 2nd person sits at seat '%d' (the far right edge), '%d' spaces from the person to his left\n",
-                        benchSeats, benchSeats - firstSeat);
+                System.out.format("The 2nd person sits at seat '%d' (the far right edge), '%d' spaces from the person to his left\n", benchSeats, benchSeats - firstSeat);
             }
         } else {
             gaps.sort(compareGaps);
@@ -73,9 +81,7 @@ public class PeopleOnBench {
                     benchLeftEdge = false;
                     gaps.add(new Tuple<>(1, gaps.get(0).getLeftData()));
                     people.add(1);
-                    System.out.format(
-                            "Person '%d' sits at seat '%d' (the far left edge), '%d' spaces from the person to his right n",
-                            people.size(), 1, gap2);
+                    System.out.format("Person '%d' sits at seat '%d' (the far left edge), '%d' spaces from the person to his right n", people.size(), 1, gap2);
                     return;
                 }
             } else if (benchRightEdge) {
@@ -84,9 +90,7 @@ public class PeopleOnBench {
                     benchRightEdge = false;
                     gaps.add(new Tuple<>(gaps.get(0).getRightData(), benchSeats));
                     people.add(benchSeats);
-                    System.out.format(
-                            "Person '%d' sits at seat '%d' (the far right edge), '%d' spaces from the person to his left\n",
-                            people.size(), benchSeats, gap2);
+                    System.out.format("Person '%d' sits at seat '%d' (the far right edge), '%d' spaces from the person to his left\n", people.size(), benchSeats, gap2);
                     return;
                 }
             }
@@ -97,18 +101,8 @@ public class PeopleOnBench {
             gaps.add(new Tuple<>(newSeat, originalGap.getRightData()));
             people.add(newSeat);
 
-            System.out.format(
-                    "Person '%d' sits at seat '%d', '%d' spaces from the person to his left and '%d' spaces from the person to his right\n",
-                    people.size(),
-                    newSeat,
-                    newSeat - originalGap.getLeftData(),
-                    originalGap.getRightData() - newSeat);
+            System.out.format("Person '%d' sits at seat '%d', '%d' spaces from the person to his left and '%d' spaces from the person to his right\n", people.size(), newSeat, newSeat - originalGap.getLeftData(), originalGap.getRightData() - newSeat);
         }
-    }
-
-    public static void getDescription() {
-        System.out.println(
-                "Given a bench with n seats and few people sitting, tell the seat number each time when a new person goes to sit on the bench such that his distance from others is maximum.");
     }
 
     public static void main(String[] argv) {

@@ -1,7 +1,7 @@
 package Test.educative;
 
-import Code.educative.TreesConvertBinaryTreeToDoublyLinkedList;
-import Code.educative.TreesConvertBinaryTreeToDoublyLinkedList.Node;
+import Code.Educative.TreesConvertBinaryTreeToDoublyLinkedList;
+import Code.Educative.TreesConvertBinaryTreeToDoublyLinkedList.Node;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

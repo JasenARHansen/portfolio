@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.DynamicProgrammingLongestIncreasingSubsequenceFromArrayOfIntegers;
+import Code.Educative.DynamicProgrammingLongestIncreasingSubsequenceFromArrayOfIntegers;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

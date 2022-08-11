@@ -1,7 +1,7 @@
 package Test.educative;
 
-import Code.educative.GraphsCloneADirectedGraph;
-import Code.educative.GraphsCloneADirectedGraph.Node;
+import Code.Educative.GraphsCloneADirectedGraph;
+import Code.Educative.GraphsCloneADirectedGraph.Node;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

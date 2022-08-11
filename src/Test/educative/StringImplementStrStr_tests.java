@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.StringImplementStrStr;
+import Code.Educative.StringImplementStrStr;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

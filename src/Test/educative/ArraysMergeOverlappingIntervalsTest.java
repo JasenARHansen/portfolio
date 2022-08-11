@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.ArraysMergeOverlappingIntervals;
+import Code.Educative.ArraysMergeOverlappingIntervals;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

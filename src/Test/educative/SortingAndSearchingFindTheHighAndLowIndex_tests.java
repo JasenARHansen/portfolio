@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.SortingAndSearchingFindTheHighAndLowIndex;
+import Code.Educative.SortingAndSearchingFindTheHighAndLowIndex;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

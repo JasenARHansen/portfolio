@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.StringSubstringWithConcatenationOfAllWords;
+import Code.Educative.StringSubstringWithConcatenationOfAllWords;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

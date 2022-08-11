@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.StringsStringSegmentation;
+import Code.Educative.StringsStringSegmentation;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,7 +27,7 @@ public class StringsStringSegmentation_tests {
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
             "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary.toString(), result);
+            name.getMethodName(), sentence, dictionary, result);
     assertTrue(result);
   }
 
@@ -38,7 +38,7 @@ public class StringsStringSegmentation_tests {
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
             "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary.toString(), result);
+            name.getMethodName(), sentence, dictionary, result);
     assertFalse(result);
   }
 
@@ -49,7 +49,7 @@ public class StringsStringSegmentation_tests {
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
             "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary.toString(), result);
+            name.getMethodName(), sentence, dictionary, result);
     assertTrue(result);
   }
 
@@ -60,7 +60,7 @@ public class StringsStringSegmentation_tests {
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
             "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary.toString(), result);
+            name.getMethodName(), sentence, dictionary, result);
     assertFalse(result);
   }
 }

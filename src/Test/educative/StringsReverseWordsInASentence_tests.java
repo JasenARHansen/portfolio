@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.StringsReverseWordsInASentence;
+import Code.Educative.StringsReverseWordsInASentence;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

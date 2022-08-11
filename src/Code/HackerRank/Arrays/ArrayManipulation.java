@@ -1,6 +1,5 @@
 package Code.HackerRank.Arrays;
 
-@SuppressWarnings("SpellCheckingInspection")
 public class ArrayManipulation {
   /*
   Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each the array
@@ -28,7 +27,7 @@ public class ArrayManipulation {
     Complete the function arrayManipulation in the editor below.
     arrayManipulation has the following parameters:
       int n - the number of elements in the array
-      int queries[q][3] - a two dimensional array of queries where each queries[i] contains three integers, a, b, and k.
+      int queries[q][3] - a two-dimensional array of queries where each queries[i] contains three integers, a, b, and k.
 
   Returns
       int - the maximum value in the resultant array

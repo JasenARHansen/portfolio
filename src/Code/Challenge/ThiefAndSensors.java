@@ -16,38 +16,17 @@ public class ThiefAndSensors {
     private static boolean blockedBottomTop = false;
     private static boolean blockedLeftRight = false;
 
-    public static void main(String[] argv) {
-        getDescription();
-        constructRoom(0, 0, 10, 10);
-        add_circle(1, 1, 1);
-        add_circle(3, 3, 3);
-        add_circle(5, 8, 4);
-        add_circle(8, 8, 2);
-        pathExists();
-        pathBottomTop();
-        pathLeftRight();
-
-        reset();
-        constructRoom(0, 0, 10, 10);
-        add_circle(1, 1, 1);
-        add_circle(3, 3, 1);
-        add_circle(5, 5, 1);
-        add_circle(8, 8, 1);
-        pathExists();
-        pathBottomTop();
-        pathLeftRight();
+    public static void getDescription() {
+        System.out.println("Given a room with thief on one side of the room with finite number of sensors. He has to reach on other side missing the sensors. Each sensor is placed at any random point in the room and has its coverage in the radius r. Find out if the thief can reach to the other side without touching the range of any sensor.");
     }
 
-    private static void add_circle(int x_coordinate, int y_coordinate, int radius) {
+    public static void add_circle(int x_coordinate, int y_coordinate, int radius) {
         if (room == null) {
             System.out.println("The room must be defined before you can add sensors.");
             return;
         }
         // Circle must be in the room
-        if ((room.getXMinimum() <= x_coordinate)
-                && (x_coordinate <= room.getXMaximum())
-                && (room.getYMinimum() <= y_coordinate)
-                && (y_coordinate <= room.getYMaximum())) {
+        if ((room.getXMinimum() <= x_coordinate) && (x_coordinate <= room.getXMaximum()) && (room.getYMinimum() <= y_coordinate) && (y_coordinate <= room.getYMaximum())) {
             if (circles == null) {
                 circles = new ArrayList<>();
             }
@@ -57,19 +36,12 @@ public class ThiefAndSensors {
         }
     }
 
-    private static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
+    public static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
+        reset();
         room = new Rectangle(lowerRightX, lowerRightY, lowerRightX + width, lowerRightY + height);
     }
 
-    private static void getDescription() {
-        System.out.println(
-                "Given a room with thief on one side of the room with finite number of sensors. He has to reach on other"
-                        + " side missing the sensors. Each sensor is placed at any random point in the room and has its"
-                        + " coverage in the radius r. Find out if the thief can reach to the other side without touching the"
-                        + " range of any sensor.");
-    }
-
-    private static void pathBottomTop() {
+    public static void pathBottomTop() {
         if (!evaluated) {
             processPaths();
         }
@@ -80,7 +52,7 @@ public class ThiefAndSensors {
         }
     }
 
-    private static void pathExists() {
+    public static void pathExists() {
         if (!evaluated) {
             processPaths();
         }
@@ -155,7 +127,7 @@ public class ThiefAndSensors {
         evaluated = true;
     }
 
-    private static void pathLeftRight() {
+    public static void pathLeftRight() {
         if (!evaluated) {
             processPaths();
         }
@@ -172,5 +144,27 @@ public class ThiefAndSensors {
         evaluated = false;
         blockedBottomTop = false;
         blockedLeftRight = false;
+    }
+
+    public static void main(String[] argv) {
+        getDescription();
+        constructRoom(0, 0, 10, 10);
+        add_circle(1, 1, 1);
+        add_circle(3, 3, 3);
+        add_circle(5, 8, 4);
+        add_circle(8, 8, 2);
+        pathExists();
+        pathBottomTop();
+        pathLeftRight();
+
+        reset();
+        constructRoom(0, 0, 10, 10);
+        add_circle(1, 1, 1);
+        add_circle(3, 3, 1);
+        add_circle(5, 5, 1);
+        add_circle(8, 8, 1);
+        pathExists();
+        pathBottomTop();
+        pathLeftRight();
     }
 }

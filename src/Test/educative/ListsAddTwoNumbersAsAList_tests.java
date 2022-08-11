@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.ListsAddTwoNumbersAsAList;
+import Code.Educative.ListsAddTwoNumbersAsAList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

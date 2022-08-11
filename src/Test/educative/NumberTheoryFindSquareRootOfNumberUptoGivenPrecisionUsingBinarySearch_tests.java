@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearch;
+import Code.Educative.NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearch;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

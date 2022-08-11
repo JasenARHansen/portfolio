@@ -1,7 +1,7 @@
 package Test.educative;
 
-import Code.educative.TreesLevelOrderTraversalOfBinaryTree;
-import Code.educative.TreesLevelOrderTraversalOfBinaryTree.Node;
+import Code.Educative.TreesLevelOrderTraversalOfBinaryTree;
+import Code.Educative.TreesLevelOrderTraversalOfBinaryTree.Node;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

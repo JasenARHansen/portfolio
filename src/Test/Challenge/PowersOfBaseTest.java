@@ -19,6 +19,7 @@ public class PowersOfBaseTest {
 
     @Test
     public void PowersOfBase() {
+        System.out.format("%s: ", name.getMethodName());
         PowersOfBase.getDescription();
     }
 
@@ -29,9 +30,7 @@ public class PowersOfBaseTest {
         String input = "101";
         int expected = 1;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -42,9 +41,7 @@ public class PowersOfBaseTest {
         String input = "111";
         int expected = 3;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -55,9 +52,7 @@ public class PowersOfBaseTest {
         String input = "101011001";
         int expected = 2;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -68,9 +63,7 @@ public class PowersOfBaseTest {
         String input = "101011000";
         int expected = 0;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -81,9 +74,7 @@ public class PowersOfBaseTest {
         String input = "101101";
         int expected = 2;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -94,9 +85,7 @@ public class PowersOfBaseTest {
         String input = "10010010001";
         int expected = 4;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -107,9 +96,7 @@ public class PowersOfBaseTest {
         String input = "5";
         int expected = 1;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -120,9 +107,7 @@ public class PowersOfBaseTest {
         String input = "25";
         int expected = 1;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -133,9 +118,7 @@ public class PowersOfBaseTest {
         String input = "55";
         int expected = 2;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -146,9 +129,7 @@ public class PowersOfBaseTest {
         String input = "56";
         int expected = 0;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -159,9 +140,7 @@ public class PowersOfBaseTest {
         String input = "34";
         int expected = 1;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -172,9 +151,7 @@ public class PowersOfBaseTest {
         String input = "3400034";
         int expected = 2;
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d' '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
     }
 
@@ -186,12 +163,9 @@ public class PowersOfBaseTest {
         int expected = 2;
 
         List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d'"
-                        + " '%s'\n",
-                name.getMethodName(), input, numberBase, result.size(), powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that are a power of '%d'" + " '%s'\n", name.getMethodName(), input, numberBase, result.size(), powerBase, result);
         assertEquals(expected, result.size());
-  }
+    }
 
     @Test
     public void validatePowerOfBase_10_1() {
@@ -200,9 +174,7 @@ public class PowersOfBaseTest {
         String input = "4";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -213,9 +185,7 @@ public class PowersOfBaseTest {
         String input = "5";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertFalse(result);
     }
 
@@ -226,9 +196,7 @@ public class PowersOfBaseTest {
         String input = "16";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -239,9 +207,7 @@ public class PowersOfBaseTest {
         String input = "390625";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -252,9 +218,7 @@ public class PowersOfBaseTest {
         String input = "1011111010111100001";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -265,9 +229,7 @@ public class PowersOfBaseTest {
         String input = "101111101011110000";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertFalse(result);
     }
 
@@ -278,9 +240,7 @@ public class PowersOfBaseTest {
         String input = "5F5E1";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -291,9 +251,7 @@ public class PowersOfBaseTest {
         String input = "5F5E0";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertFalse(result);
     }
 
@@ -304,9 +262,7 @@ public class PowersOfBaseTest {
         String input = "10";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -317,9 +273,7 @@ public class PowersOfBaseTest {
         String input = "11";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertFalse(result);
     }
 
@@ -330,9 +284,7 @@ public class PowersOfBaseTest {
         String input = "34";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 
@@ -343,9 +295,7 @@ public class PowersOfBaseTest {
         String input = "33";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertFalse(result);
     }
 
@@ -356,9 +306,7 @@ public class PowersOfBaseTest {
         String input = "51";
 
         boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
-        System.out.format(
-                "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
-                name.getMethodName(), input, numberBase, powerBase, result);
+        System.out.format("%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n", name.getMethodName(), input, numberBase, powerBase, result);
         assertTrue(result);
     }
 }

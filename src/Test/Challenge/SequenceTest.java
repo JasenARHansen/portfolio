@@ -19,6 +19,7 @@ public class SequenceTest {
 
     @Test
     public void Sequence() {
+        System.out.format("%s: ", name.getMethodName());
         Sequence.getDescriptionFibonacci();
     }
 

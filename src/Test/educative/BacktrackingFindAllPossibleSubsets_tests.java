@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.BacktrackingFindAllPossibleSubsets;
+import Code.Educative.BacktrackingFindAllPossibleSubsets;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

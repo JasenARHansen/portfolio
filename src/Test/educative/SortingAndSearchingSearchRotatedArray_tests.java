@@ -1,6 +1,6 @@
 package Test.educative;
 
-import Code.educative.SortingAndSearchingSearchRotatedArray;
+import Code.Educative.SortingAndSearchingSearchRotatedArray;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

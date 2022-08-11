@@ -1,7 +1,7 @@
 package Test.educative;
 
-import Code.educative.DesignSerializeAndDeserializeBinaryTree;
-import Code.educative.DesignSerializeAndDeserializeBinaryTree.Node;
+import Code.Educative.DesignSerializeAndDeserializeBinaryTree;
+import Code.Educative.DesignSerializeAndDeserializeBinaryTree.Node;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
