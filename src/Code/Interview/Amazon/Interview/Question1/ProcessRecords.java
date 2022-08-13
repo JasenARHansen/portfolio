@@ -33,16 +33,8 @@ public class ProcessRecords {
                 What log points would be used?""".indent(2));
     }
 
-    public void setEssential() {
+    private void setEssential() {
         this.data.setEssential(essential);
-    }
-
-    public void printTable() {
-        this.data.printTable();
-    }
-
-    public void delete(int rowId) {
-        this.data.removeRow(rowId);
     }
 
     public void deleteNonEssential() {
@@ -54,8 +46,37 @@ public class ProcessRecords {
         }
     }
 
-    public void insert(Object @NotNull ... row) {
-        this.data.addRow(row);
-
+    public void printTable() {
+        this.data.printTable();
     }
+
+    public void printRow(int row) {
+        this.data.printRow(row);
+    }
+
+    public void printRowByUserID(int UserID) {
+        this.data.printRowByUserID(UserID);
+    }
+
+    public void printRowByData(Object @NotNull ... data) {
+        this.data.printRowByData(data);
+    }
+
+    public void deleteRow(int rowId) {
+        this.data.deleteRow(rowId);
+    }
+
+    public void deleteRowByUserID(int UserID) {
+        this.data.deleteRowByUserID(UserID);
+    }
+
+    public void deleteRowByData(Object @NotNull ... data) {
+        this.data.deleteRowByData(data);
+    }
+
+    public void insert(Object @NotNull ... row) {
+        this.data.insert(row);
+    }
+
+
 }

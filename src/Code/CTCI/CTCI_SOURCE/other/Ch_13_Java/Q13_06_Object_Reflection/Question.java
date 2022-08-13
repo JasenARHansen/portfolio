@@ -11,18 +11,14 @@ public class Question {
       Object[] doubleArgs = new Object[]{4.2, 3.9};
 
       /* Get class */
-      @SuppressWarnings("rawtypes")
       Class rectangleDefinition = Class.forName("Question14_5.Rectangle");
 
       /* Equivalent: Rectangle rectangle = new Rectangle(4.2, 3.9); */
-      @SuppressWarnings("rawtypes")
       Class[] doubleArgsClass = new Class[]{double.class, double.class};
-      @SuppressWarnings({"rawtypes", "unchecked"})
       Constructor doubleArgsConstructor = rectangleDefinition.getConstructor(doubleArgsClass);
       Rectangle rectangle = (Rectangle) doubleArgsConstructor.newInstance(doubleArgs);
 
       /* Equivalent: Double area = rectangle.area(); */
-      @SuppressWarnings("unchecked")
       Method m = rectangleDefinition.getDeclaredMethod("area");
       Double area = (Double) m.invoke(rectangle);
 

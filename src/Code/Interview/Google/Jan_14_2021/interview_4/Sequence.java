@@ -13,17 +13,17 @@ public class Sequence {
   divided into "X of a kind"s.
   */
 
-  public static boolean XofAKind(@SuppressWarnings("ConstantConditions") ArrayList<Integer> input)
+  public static boolean XofAKind(ArrayList<Integer> input)
           throws Exception {
-    // When I asked an empty list should return true
-    if (input == null) {
-      throw new Exception("No values provided");
-    }
+      // When I asked an empty list should return true
+      if (input == null) {
+          throw new Exception("No values provided");
+      }
 
-    Map<Integer, Integer> map = new HashMap<>();
-    for (int value : input) {
-      if (map.containsKey(value)) {
-        map.put(value, map.get(value) + 1);
+      Map<Integer, Integer> map = new HashMap<>();
+      for (int value : input) {
+          if (map.containsKey(value)) {
+              map.put(value, map.get(value) + 1);
       } else {
         map.put(value, 1);
       }
@@ -36,21 +36,21 @@ public class Sequence {
     return true;
   }
 
-  /*
-  Define "Straight" as 5 cards with consecutive numbers.
-  Define an algorithm to determine if the deck can be fully divided into "Straight"s.
-  */
-  public static boolean straights(@SuppressWarnings("ConstantConditions") ArrayList<Integer> input)
-          throws Exception {
-    if (input == null) {
-      throw new Exception("No values provided");
-    }
-    if ((input.size() % 5) != 0) {
-      return false;
-    }
-    Map<Integer, Integer> values = new HashMap<>();
+    /*
+    Define "Straight" as 5 cards with consecutive numbers.
+    Define an algorithm to determine if the deck can be fully divided into "Straight"s.
+    */
+    public static boolean straights(ArrayList<Integer> input)
+            throws Exception {
+        if (input == null) {
+            throw new Exception("No values provided");
+        }
+        if ((input.size() % 5) != 0) {
+            return false;
+        }
+        Map<Integer, Integer> values = new HashMap<>();
 
-    for (int value : input) {
+        for (int value : input) {
       if (values.containsKey(value)) {
         values.put(value, values.get(value) + 1);
       } else {

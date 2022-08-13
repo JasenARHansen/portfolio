@@ -71,7 +71,6 @@ public class sequence_tests {
 
     @Test(expected = Exception.class)
     public void XofAKind_6() throws Exception {
-        //noinspection ConstantConditions
         Code.Interview.Google.Jan_14_2021.interview_4.Sequence.XofAKind(null);
     }
 
@@ -127,7 +126,6 @@ public class sequence_tests {
 
     @Test(expected = Exception.class)
     public void straights_7() throws Exception {
-        //noinspection ConstantConditions
         Sequence.straights(null);
     }
 }

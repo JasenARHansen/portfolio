@@ -11,7 +11,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-@SuppressWarnings("ConstantConditions")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrimeTest {
 

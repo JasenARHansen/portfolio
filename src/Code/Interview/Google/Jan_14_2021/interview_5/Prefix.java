@@ -20,17 +20,17 @@ import java.util.Map;
 public class Prefix {
   private static Object HashMap;
 
-  public static String longestPrefix(@SuppressWarnings("ConstantConditions") List<String> inputs)
+  public static String longestPrefix(List<String> inputs)
           throws Exception {
-    if (inputs == null) {
-      throw new Exception("No values provided");
-    }
-    Map<String, Integer> map = new HashMap<>();
-    for (String input : inputs) {
-      for (int stopindex = 1; stopindex <= input.length(); stopindex++) {
-        String subString = input.substring(0, stopindex);
-        if (map.containsKey(subString)) {
-          map.put(subString, map.get(subString) + 1);
+      if (inputs == null) {
+          throw new Exception("No values provided");
+      }
+      Map<String, Integer> map = new HashMap<>();
+      for (String input : inputs) {
+          for (int stopindex = 1; stopindex <= input.length(); stopindex++) {
+              String subString = input.substring(0, stopindex);
+              if (map.containsKey(subString)) {
+                  map.put(subString, map.get(subString) + 1);
         } else {
           map.put(subString, 1);
         }

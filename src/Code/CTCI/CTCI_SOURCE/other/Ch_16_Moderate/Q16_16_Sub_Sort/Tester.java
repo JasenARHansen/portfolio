@@ -4,7 +4,6 @@ import Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
 public class Tester {
 
-  @SuppressWarnings("ConstantConditions")
   public static void main(String[] args) {
     for (int i = 0; i < 1000; i++) {
       int[] array = AssortedMethods.randomArray(7, 1, 3);

@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Scrabble {
-  Trei dictionary = new Trei();
+  Trie dictionary = new Trie();
 
   public void setup(List<String> wordList) {
     this.dictionary.setup(wordList);

@@ -3,10 +3,15 @@ package Code.Interview.Amazon.Interview.Question2;
 import java.util.HashMap;
 import java.util.Map;
 
-class TrieNode {
+public class TrieNode {
     private final Map<Character, TrieNode> children;
     private char data;
     private boolean isEnd;
+
+    public static void getDescription() {
+        System.out.println("""
+                A generic TrieNode.""".indent(2));
+    }
 
     public TrieNode(char data) {
         this();

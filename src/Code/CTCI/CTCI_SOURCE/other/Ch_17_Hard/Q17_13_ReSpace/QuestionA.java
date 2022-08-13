@@ -7,7 +7,6 @@ import java.util.HashSet;
 public class QuestionA {
   public static String bestSplit(HashSet<String> dictionary, String sentence) {
     ParseResult r = split(dictionary, sentence, 0);
-    //noinspection ConstantConditions
     return r == null ? null : r.parsed;
   }
 

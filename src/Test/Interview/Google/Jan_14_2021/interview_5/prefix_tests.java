@@ -13,6 +13,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+@SuppressWarnings({"SpellCheckingInspection", "ConstantConditions"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class prefix_tests {
 
@@ -42,7 +43,6 @@ public class prefix_tests {
 
     @Test(expected = Exception.class)
     public void longestPrefix_3() throws Exception {
-        //noinspection ConstantConditions
         Prefix.longestPrefix(null);
     }
 }

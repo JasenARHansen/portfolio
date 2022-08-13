@@ -20,7 +20,6 @@ public class BitShift {
     while (lengthTest > 0) {
       lengthTest = lengthTest >> 1;
     }
-    //noinspection ConstantConditions
     if ((indexStop - indexStart + 1) < lengthTest) {
       return 0;
     }

@@ -4,16 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Checkers {
+    static String[][] board;
+
+    public static void getDescription() {
+        System.out.println("""
+                Generate a Checker board and provide possible moves.  Do not implement jumping..""".indent(2));
+    }
 
     public static String first_Player = "X";
     public static String first_initial = "x";
     public static String second_Player = "O";
     public static String second_initial = "o";
 
-    public static String[][] setup(int x, int y, int rows) {
-        String[][] board = new String[x][y];
+    public static void setup(int x, int y, int rows) {
+        board = new String[x][y];
         if (rows * 2 > x) {
-            return board;
+            return;
         }
 
         for (int row = 0; row < rows; row++) {
@@ -39,26 +45,24 @@ public class Checkers {
                 Y = Y + 2;
             }
         }
-
-        return board;
     }
 
-    public static void printBoard(String[][] board) {
+    public static void printBoard() {
         // Display a desired board
-        for (int x = 0; x < board.length; x++) {
-            String line = "";
+        for (String[] strings : board) {
+            StringBuilder line = new StringBuilder();
             for (int y = 0; y < board[0].length; y++) {
-                if (board[x][y] == null) {
-                    line += "_ ";
+                if (strings[y] == null) {
+                    line.append("_ ");
                 } else {
-                    line += board[x][y] + " ";
+                    line.append(strings[y]).append(" ");
                 }
             }
             System.out.println(line);
         }
     }
 
-    public static List<int[]> getMoves(String[][] board, String player) {
+    public static List<int[]> getMoves(String player) {
         // Doing X player moves if selected.
         List<int[]> moves = new ArrayList<>();
         if (player.equals(first_Player)) {
@@ -67,7 +71,7 @@ public class Checkers {
                     if ((board[x][y] != null) && (board[x][y].equals(first_initial))) {
                         // Worry about going over the edge of the board
                         // Can it go down?
-                        if ((x + 1) <= board.length) {
+                        if ((x + 1) < board.length) {
                             // Can it go left?
                             if (((y - 1) >= 0) && (board[x + 1][y - 1] == null)) {
                                 int[] move = {x, y, x + 1, y - 1};
@@ -107,15 +111,15 @@ public class Checkers {
         return moves;
     }
 
-    public static void applyMove(int move, List<int[]> moves, String[][] board) {
+    public static void applyMove(int move, List<int[]> moves) {
         int[] the_move = moves.get(move);
         board[the_move[2]][the_move[3]] = board[the_move[0]][the_move[1]];
         board[the_move[0]][the_move[1]] = null;
     }
 
     public void main(String[] args) {
-        String[][] board = setup(8, 8, 1);
-        printBoard(board);
-        getMoves(board, first_initial);
+        setup(8, 8, 1);
+        printBoard();
+        getMoves(first_initial);
     }
 }

@@ -7,74 +7,100 @@ import java.util.Queue;
 
 public class AtomTickets {
     /*
-     * Print a tree of Movies in level order:
-     *
-     * Print a tree of Movies in level order:
-     *
-     *              La La Land                (level: 0)
-     *               /       \
-     *     Hidden Figures   Resident Evil     (level: 1)
-     *         /              /      \
-     *    Arrival           Lion    Split     (level: 2)
-     *
-     * MovieNode: Title: String Left: MovieNode Right: MovieNode
-     *
-     *
-     * Write a method that takes in the root node, and print out the movies in
-     * level order.
-     *
-     * Sample Output: La La Land, Hidden Figures, Resident Evil, Arrival, Lion,
-     * Split
-     *
+      Print a tree of Movies in level order:
+     
+      Print a tree of Movies in level order:
+     
+                   La La Land                (level: 0)
+                    /       \
+          Hidden Figures   Resident Evil     (level: 1)
+              /              /      \
+         Arrival           Lion    Split     (level: 2)
+     
+      MovieNode: Title: String Left: MovieNode Right: MovieNode
+     
+     
+      Write a method that takes in the root node, and print out the movies in
+      level order.
+     
+      Sample Output: La La Land, Hidden Figures, Resident Evil, Arrival, Lion,
+      Split
+     
      */
 
-    private static Tree movies;
+    private MovieTree movies;
 
-    public static void main(String[] args) {
-        populateData();
+    public static void getDescription() {
+        System.out.println("""
+                Print a tree of Movies in level order:
+                Print a tree of Movies in level order:
+                             La La Land                (level: 0)
+                              /       \\
+                    Hidden Figures   Resident Evil     (level: 1)
+                        /              /      \\
+                   Arrival           Lion    Split     (level: 2)
+                MovieNode: Title: String Left: MovieNode Right: MovieNode
+                Write a method that takes in the root node, and print out the movies in
+                level order.
+                Sample Output: La La Land, Hidden Figures, Resident Evil, Arrival, Lion,
+                Split""".indent(2));
+    }
+
+    public void main(String[] args) {
+        // Data to reflect challenge
+        addMovie("La La Land");
+        addMovie("Hidden Figures", "La La Land", "Left");
+        addMovie("Arrival", "Hidden Figures", "Left");
+        addMovie("Resident Evil", "La La Land", "Right");
+        addMovie("Lion", "Resident Evil", "Left");
+        addMovie("Split", "Resident Evil", "Right");
         printMovies();
     }
 
-    // Data to reflect challenge
-    private static void populateData() {
-        MovieNode arrival = new MovieNode("Arrival");
-        MovieNode hiddenFigures = new MovieNode("Hidden Figures");
-        hiddenFigures.setLeft(arrival);
-        MovieNode lion = new MovieNode("Lion");
-        MovieNode split = new MovieNode("Split");
-        MovieNode residentEvil = new MovieNode("Resident Evil");
-        residentEvil.setLeft(lion);
-        residentEvil.setRight(split);
-        MovieNode laLaLand = new MovieNode("La La Land");
-        laLaLand.setLeft(hiddenFigures);
-        laLaLand.setRight(residentEvil);
-        movies = new Tree(laLaLand);
+    public void addMovie(String title) {
+        MovieNode root = new MovieNode(title);
+        this.movies = new MovieTree(root);
     }
 
-    private static void printMovies() {
-        List<String> movieTitle = printHelper();
-        StringBuilder printMe = new StringBuilder();
+    public void addMovie(String title, String parent_title, String side) {
+        MovieNode movie = new MovieNode(title);
+        MovieNode parent = this.movies.findMovie(parent_title);
+        if (parent == null) {
+            System.out.format("No movie named: '%s'\n", parent_title);
+            return;
+        }
 
-        if (!movieTitle.isEmpty()) {
-            printMe.append(movieTitle.get(0));
-            for (int i = 1; i < movieTitle.size(); i++) {
-                printMe.append(", ").append(movieTitle.get(i));
+        if (side.equals("Left")) {
+            parent.setLeft(movie);
+        } else if (side.equals("Right")) {
+
+            parent.setRight(movie);
+        } else {
+            System.out.format("Invalid selection '%s', valid options are 'Left' and 'Right'.\n", side);
+        }
+
+    }
+
+    public void printMovies() {
+        List<String> movieTitles = getLevelOrderMovies();
+        StringBuilder print_string = new StringBuilder();
+        if (!movieTitles.isEmpty()) {
+            print_string.append(movieTitles.get(0));
+            for (int i = 1; i < movieTitles.size(); i++) {
+                print_string.append(", ").append(movieTitles.get(i));
 
             }
         }
-
-        System.out.println(printMe);
+        System.out.println(print_string);
     }
 
-    private static List<String> printHelper() {
+    private List<String> getLevelOrderMovies() {
         Queue<MovieNode> movieList = new LinkedList<>();
         List<String> returnList = new ArrayList<>();
-        if (movies.isEmpty()) {
+        if (this.movies.isEmpty()) {
             return returnList;
         }
-
         movieList.add(movies.getRoot());
-
         while (!movieList.isEmpty()) {
             MovieNode temp = movieList.remove();
             if (temp != null) {
@@ -84,72 +110,5 @@ public class AtomTickets {
             }
         }
         return returnList;
-    }
-
-    static class MovieNode {
-
-        // MovieNode:
-        // Title: String
-        // Left: MovieNode
-        // Right: MovieNode
-        private String data;
-        private MovieNode left;
-        private MovieNode right;
-
-        /**
-         * Constructor
-         **/
-        public MovieNode(String data) {
-            this.data = data;
-        }
-
-        public String getData() {
-            return this.data;
-        }
-
-        public void setData(String data) {
-            this.data = data;
-        }
-
-        public MovieNode getLeft() {
-            return this.left;
-        }
-
-        public void setLeft(MovieNode left) {
-            this.left = left;
-        }
-
-        public MovieNode getRight() {
-            return this.right;
-        }
-
-        public void setRight(MovieNode right) {
-            this.right = right;
-        }
-
-    }
-
-    // No insert or remove node due to being out of the scope of the challenge
-    static class Tree {
-        private MovieNode root;
-
-        /**
-         * Constructor
-         **/
-        public Tree(MovieNode root) {
-            this.root = root;
-        }
-
-        public MovieNode getRoot() {
-            return this.root;
-        }
-
-        public void setRoot(MovieNode root) {
-            this.root = root;
-        }
-
-        public boolean isEmpty() {
-            return this.root == null;
-        }
     }
 }
