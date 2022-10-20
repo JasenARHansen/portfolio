@@ -10,7 +10,7 @@ public class PowersOfBase {
     }
     public static void getDescription() {
         System.out.println("""
-                Given a string of representing a number, a number to test for, and a numeric base,
+                Given a string of representing a number, a numeric base, and an exponent base,
                  if possible, tell the minimum number of splits that are required such that each split
                  part is a number which can be represented as power of X in the provided numeric
                  base and tell the least number of splits.
