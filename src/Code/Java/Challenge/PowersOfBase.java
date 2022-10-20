@@ -8,9 +8,17 @@ public class PowersOfBase {
     public static void main(String[] argv) {
         getDescription();
     }
-
     public static void getDescription() {
-        System.out.println("Given a string of representing a number, a number to test for, and a numeric base, if possible, tell that how many splits would be required such that each split part is a number which can be represented as power of X in the provided numeric base and tell the least number of splits.");
+        System.out.println("""
+                Given a string of representing a number, a number to test for, and a numeric base,
+                 if possible, tell the minimum number of splits that are required such that each split
+                 part is a number which can be represented as power of X in the provided numeric
+                 base and tell the least number of splits.
+                Sample:
+                 1. The string '101011001' with a numeric base of '2' splits '2' times into values that are a power of '5' '[101, 011001]'
+                 2. The string '101011000' with a numeric base of '2' splits '0' times into values that are a power of '5' '[]
+                 3. The string '55' with a numeric base of '10' splits '2' times into values that are a power of '5' '[5, 5]'
+                 4. The string '56' with a numeric base of '10' splits '0' times into values that are a power of '5' '[]'""".indent(2));
     }
 
     public static List<String> splitPowersOfBase(int numberBase, int powerBase, String input) {
