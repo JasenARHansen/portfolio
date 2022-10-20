@@ -1,0 +1,26 @@
+package Code.Java.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_02_Word_Frequencies;
+
+import Code.Java.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
+
+public class QuestionA {
+    public static void main(String[] args) {
+        String[] wordlist = AssortedMethods.getLongTextBlobAsStringList();
+
+        String[] words = {"the", "Lara", "and", "outcropping", "career", "it"};
+        for (String word : words) {
+            System.out.println(word + ": " + getFrequency(wordlist, word));
+        }
+    }
+
+    public static int getFrequency(String[] book, String word) {
+        word = word.trim().toLowerCase();
+        int count = 0;
+        for (String w : book) {
+            if (w.trim().toLowerCase().equals(word)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+}
