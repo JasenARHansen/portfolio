@@ -31,11 +31,11 @@ class PowersOfBase(object):
             split_list.append(string_value)
         # Case 2: The string is not a valid value so splits are necessary
         else:
-            for index in range(len(string_value) - 1):
-                left_string = string_value[:index + 1]
+            for index in range(1, len(string_value)):
+                left_string = string_value[:index]
                 value = PowersOfBase.convert_to_number(string_value=left_string, number_base=number_base)
                 if PowersOfBase.test_base_exponent(input_value=value, power_base=power_base):
-                    right_string = string_value[index + 1:]
+                    right_string = string_value[index:]
                     new_list = PowersOfBase.split_to_base(string_value=right_string, number_base=number_base,
                                                           power_base=power_base)
                     if new_list:
@@ -44,8 +44,8 @@ class PowersOfBase(object):
                             # If split_list is empty this is the first match so assign split_list
                             split_list = new_list
                         elif len(new_list) < len(split_list):
+                            # If the result set of the new evaluation is smaller, replace the old set
                             split_list = new_list
-
         return split_list
 
     @staticmethod
@@ -59,7 +59,7 @@ class PowersOfBase(object):
         if input_value == 0:
             return False
         # extract log value of appropriate base.
-        # A longer example of the change of base logic can be found at: http://www.tpub.com/math1/9.htm
+        # A longer example of the log logic can be found at: http://www.tpub.com/math1/9.htm
         #  Sample: 5^x = value -> log base 5 of value = x
         # Change of base formula can be seen at: http://www.mathwords.com/c/change_of_base_formula.htm
         #  Sample: log base y of value = x -> (ln value)/ (ln y) = X
