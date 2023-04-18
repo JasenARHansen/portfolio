@@ -42,9 +42,10 @@ class AmadaWeldTech(object):
         # If the data file does not exist, create one
         if not os.path.exists(self.input_file):
             # Generate default data file
+            default_data = ["File did not exist!!!", "Making default data."]
             output = open(self.input_file, 'w+')
-            output.write(f"File did not exist!!!\n")
-            output.write(f"Making default data.\n")
+            for data in default_data:
+                output.write(f"{data}\n")
             output.close()
         # Opening file to get the data
         self.lines = None
@@ -87,8 +88,7 @@ class AmadaWeldTech(object):
         """Internal call to dynamically generate name of output file.
         """
         # Generate output file name
-        output_file = os.path.splitext(self.input_file)[0] + "_" + method + \
-                      os.path.splitext(self.input_file)[1]
+        output_file = f"{os.path.splitext(self.input_file)[0]}_{method}{os.path.splitext(self.input_file)[1]}"
         return output_file
 
     def _generate_output_file(self, output_file):
