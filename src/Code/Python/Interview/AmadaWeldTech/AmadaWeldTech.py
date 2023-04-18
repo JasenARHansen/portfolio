@@ -26,6 +26,8 @@ class AmadaWeldTech(object):
                  4. Print to output file.""")
 
     def __init__(self, input_file=None):
+        """Create base class and initialize.
+        """
         if not input_file:
             # Dynamically generate a file to ./data/data.txt as a default file
             input_file = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +37,7 @@ class AmadaWeldTech(object):
             self.input_file = os.path.abspath(input_file)
         # If the data file does not exist, create one
         if not os.path.exists(self.input_file):
-            # Generate output file
+            # Generate default data file
             output = open(self.input_file, 'w+')
             output.write(f"File did not exist!!!\n")
             output.write(f"Making default data.\n")
@@ -46,38 +48,48 @@ class AmadaWeldTech(object):
             self.lines = [line.rstrip() for line in file]
 
     def reverse_lines(self):
+        """External call to reverse lines of data and generate file.
+        """
         # Generate output file name
-        output_file = self.generate_output_name(method=inspect.stack()[0][3])
-        # reverse order of lines
-        self.reverse_line_order()
+        output_file = self._generate_output_name(method=inspect.stack()[0][3])
+        # Reverse order of lines
+        self._reverse_line_order()
         # Generate output file
-        self.generate_output_file(output_file)
+        self._generate_output_file(output_file)
 
     def reverse_character(self):
+        """External call to reverse characters of data and generate file.
+        """
         # Generate output file name
-        output_file = self.generate_output_name(method=inspect.stack()[0][3])
+        output_file = self._generate_output_name(method=inspect.stack()[0][3])
         # Edit data to reverse characters in place
-        self.reverse_character_order()
+        self._reverse_character_order()
         # Generate output file
-        self.generate_output_file(output_file)
+        self._generate_output_file(output_file)
 
     def reverse_both(self):
+        """External call to reverse both lines and characters of data and generate file.
+        """
         # Generate output file name
-        output_file = self.generate_output_name(method=inspect.stack()[0][3])
-        # reverse order of lines
-        self.reverse_line_order()
+        output_file = self._generate_output_name(method=inspect.stack()[0][3])
+        # Reverse order of lines
+        self._reverse_line_order()
         # Edit data to reverse characters in place
-        self.reverse_character_order()
+        self._reverse_character_order()
         # Generate output file
-        self.generate_output_file(output_file)
+        self._generate_output_file(output_file)
 
-    def generate_output_name(self, method=""):
+    def _generate_output_name(self, method=""):
+        """Internal call to dynamically generate name of output file.
+        """
         # Generate output file name
         output_file = os.path.splitext(self.input_file)[0] + "_" + method + \
                       os.path.splitext(self.input_file)[1]
         return output_file
 
-    def generate_output_file(self, output_file):
+    def _generate_output_file(self, output_file):
+        """Internal call to generate output file.
+        """
         # Remove file if it exists
         if os.path.exists(output_file):
             os.remove(output_file)
@@ -87,14 +99,18 @@ class AmadaWeldTech(object):
             output.write(f"{line}\n")
         output.close()
 
-    def reverse_line_order(self):
+    def _reverse_line_order(self):
+        """Internal call to generate reverse line order in data.
+        """
         # reverse order of lines
         new_lines = []
         for line in self.lines:
             new_lines.insert(0, line)
         self.lines = new_lines
 
-    def reverse_character_order(self):
+    def _reverse_character_order(self):
+        """Internal call to generate reverse character order in data.
+        """
         # In each line, reverse order of characters
         for index in range(len(self.lines)):
             new_line = ""

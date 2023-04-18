@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import unittest
 
 import src.Code.Python.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
@@ -56,7 +55,7 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class.reverse_lines()
 
     def test_reverse_both(self) -> None:
-        """Reverse lines and optput file.
+        """Reverse lines and characters optput file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_both()
@@ -83,7 +82,7 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class.reverse_lines()
 
     def test_reverse_both_filename(self) -> None:
-        """Reverse lines and optput file.
+        """Reverse lines and characters optput file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
