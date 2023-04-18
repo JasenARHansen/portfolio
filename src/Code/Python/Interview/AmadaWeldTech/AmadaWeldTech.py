@@ -9,18 +9,18 @@ class AmadaWeldTech(object):
     """AmadaWeldTech main class."""
 
     @staticmethod
-    def get_description_alphabetical():
+    def get_description():
         print("""
               Coding challenge:
-                 1. read in text file.
+                 1. Read in text file.
                  2. Reverse characters in lines.
                  3. Print to output file.
               Bonus 1:
-                 1. read in text file.
+                 1. Read in text file.
                  2. Reverse lines in file.
                  3. Print to output file.
               Bonus 2:
-                 1. read in text file.
+                 1. Read in text file.
                  2. Reverse lines in file.
                  3. Reverse characters in lines.
                  4. Print to output file.""")
@@ -106,7 +106,7 @@ class AmadaWeldTech(object):
     def _reverse_line_order(self):
         """Internal call to generate reverse line order in data.
         """
-        # reverse order of lines
+        # Reverse order of lines
         new_lines = []
         for line in self.lines:
             new_lines.insert(0, line)

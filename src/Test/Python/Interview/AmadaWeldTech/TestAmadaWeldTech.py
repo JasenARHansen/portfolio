@@ -92,5 +92,5 @@ class TestValidatePageAccess(unittest.TestCase):
         """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data1\data\data1.txt')
+            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\d1\d\data1.txt')
         my_class.reverse_both()
