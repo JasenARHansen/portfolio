@@ -43,19 +43,19 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(my_class)
 
     def test_reverse_character(self) -> None:
-        """Reverse characters and optput file.
+        """Reverse characters and output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_character()
 
     def test_reverse_lines(self) -> None:
-        """Reverse lines and optput file.
+        """Reverse lines and output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_lines()
 
     def test_reverse_both(self) -> None:
-        """Reverse lines and characters optput file.
+        """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_both()
@@ -68,22 +68,29 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(my_class)
 
     def test_reverse_character_filename(self) -> None:
-        """Reverse characters and optput file.
+        """Reverse characters and output file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
         my_class.reverse_character()
 
     def test_reverse_lines_filename(self) -> None:
-        """Reverse lines and optput file.
+        """Reverse lines and output file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
         my_class.reverse_lines()
 
     def test_reverse_both_filename(self) -> None:
-        """Reverse lines and characters optput file.
+        """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
+        my_class.reverse_both()
+
+    def test_reverse_both_filename_directory_does_not_exist(self) -> None:
+        """Reverse lines and characters output file.
+        """
+        my_class = AmadaWeldTech(
+            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data1\data\data1.txt')
         my_class.reverse_both()

@@ -35,6 +35,10 @@ class AmadaWeldTech(object):
             self.input_file = os.path.join(input_file, "data.txt")
         else:
             self.input_file = os.path.abspath(input_file)
+        # Check whether the specified path exists or not. if not, create it
+        if not os.path.exists(os.path.dirname(self.input_file)):
+            # Create a new directory because it does not exist
+            os.makedirs(os.path.dirname(self.input_file))
         # If the data file does not exist, create one
         if not os.path.exists(self.input_file):
             # Generate default data file
