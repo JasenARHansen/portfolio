@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import unittest
 
 import src.Code.Python.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
@@ -36,97 +37,144 @@ class TestFile(unittest.TestCase):
 class TestValidatePageAccess(unittest.TestCase):
     """Test the elements visible at the root of the file."""
 
+    def setUp(self):
+        self.directory_base = f"{os.path.dirname(os.path.abspath(__file__))}"
+
     def test_init(self) -> None:
         """Assert init creates an object.
         """
         my_class = AmadaWeldTech()
         self.assertIsNotNone(my_class)
 
+    def test_init_filename(self) -> None:
+        """Assert init creates an object.
+        """
+        my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
+        self.assertIsNotNone(my_class)
+
     def test_reverse_character_memory(self) -> None:
-        """Reverse characters and output file.
+        """Reverse characters, and output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_characters()
 
     def test_reverse_character_processor(self) -> None:
-        """Reverse characters and output file.
+        """Reverse characters, and output file.
         """
         my_class = AmadaWeldTech(mode=1)
         my_class.reverse_characters()
 
     def test_reverse_character_undefined(self) -> None:
-        """Reverse characters and output file.
+        """Reverse characters, and output file.
         """
         my_class = AmadaWeldTech(mode=-1)
         my_class.reverse_characters()
 
+    def test_reverse_character_filename(self) -> None:
+        """Reverse characters, and output file.
+        """
+        my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
+        my_class.reverse_characters()
+
+    def test_reverse_reverse_characters_filename_directory_does_not_exist(self) -> None:
+        """Reverse lines and characters output file.
+        """
+        my_class = AmadaWeldTech(input_file=self.directory_base + r'\d1\d\data1.txt')
+        my_class.reverse_characters()
+
     def test_reverse_lines_memory(self) -> None:
-        """Reverse lines and output file.
+        """Reverse lines, and output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_lines()
 
     def test_reverse_lines_processor(self) -> None:
-        """Reverse lines and output file.
+        """Reverse lines, and output file.
         """
         my_class = AmadaWeldTech(mode=1)
         my_class.reverse_lines()
 
     def test_reverse_lines_undefined(self) -> None:
-        """Reverse lines and output file.
+        """Reverse lines, and output file.
         """
         my_class = AmadaWeldTech(mode=-1)
         my_class.reverse_lines()
-
-    def test_reverse_reverse_characters_lines_memory(self) -> None:
-        """Reverse lines and characters output file.
-        """
-        my_class = AmadaWeldTech()
-        my_class.reverse_characters_lines()
-
-    def test_reverse_reverse_characters_lines_processor(self) -> None:
-        """Reverse lines and characters output file.
-        """
-        my_class = AmadaWeldTech(mode=1)
-        my_class.reverse_characters_lines()
-
-    def test_reverse_reverse_characters_lines_undefined(self) -> None:
-        """Reverse lines and characters output file.
-        """
-        my_class = AmadaWeldTech(mode=-1)
-        my_class.reverse_characters_lines()
-
-    def test_init_filename(self) -> None:
-        """Assert init creates an object.
-        """
-        my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
-        self.assertIsNotNone(my_class)
-
-    def test_reverse_character_filename(self) -> None:
-        """Reverse characters and output file.
-        """
-        my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
-        my_class.reverse_characters()
 
     def test_reverse_lines_filename(self) -> None:
-        """Reverse lines and output file.
+        """Reverse lines, and output file.
         """
-        my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
+        my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
         my_class.reverse_lines()
 
-    def test_reverse_reverse_characters_lines_filename(self) -> None:
-        """Reverse lines and characters output file.
+    def test_rotate_character_memory(self) -> None:
+        """rptate characters, and output file.
         """
-        my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
-        my_class.reverse_characters_lines()
+        my_class = AmadaWeldTech()
+        my_class.rotate_character()
 
-    def test_reverse_reverse_characters_lines_filename_directory_does_not_exist(self) -> None:
-        """Reverse lines and characters output file.
+    def test_rotate_character_processor(self) -> None:
+        """rotate characters, and output file.
         """
-        my_class = AmadaWeldTech(
-            input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\d1\d\data1.txt')
-        my_class.reverse_characters_lines()
+        my_class = AmadaWeldTech(mode=1)
+        my_class.rotate_character()
+
+    def test_rotate_character_undefined(self) -> None:
+        """rotate characters, and output file.
+        """
+        my_class = AmadaWeldTech(mode=-1)
+        my_class.rotate_character()
+
+    def test_rotate_lines_memory(self) -> None:
+        """rotate lines, and output file.
+        """
+        my_class = AmadaWeldTech()
+        my_class.rotate_lines()
+
+    def test_rotate_lines_processor(self) -> None:
+        """rotate lines, and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.rotate_lines()
+
+    def test_rotate_lines_undefined(self) -> None:
+        """rotate lines, and output file.
+        """
+        my_class = AmadaWeldTech(mode=-1)
+        my_class.rotate_lines()
+
+    def test_rotate_lines_filename(self) -> None:
+        """rotate lines, and output file.
+        """
+        my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
+        my_class.rotate_lines()
+
+    def test_process_memory(self) -> None:
+        """Process inputs, and output file.
+        """
+        my_class = AmadaWeldTech()
+        my_class.process("Reverse Lines", "Reverse Characters", "Rotate Character", "Rotate Lines")
+
+    def test_process_memory_order_2(self) -> None:
+        """Process inputs, and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.process("Rotate Character", "Rotate Lines", "Rotate Lines", "Reverse Lines", "Reverse Characters")
+
+    def test_process_processor(self) -> None:
+        """Process inputs, and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.process("Reverse Lines", "Reverse Characters", "Rotate Character", "Rotate Lines")
+
+    def test_process_processor_order_2(self) -> None:
+        """Process inputs, and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.process("Rotate Character", "Rotate Lines", "Rotate Lines", "Reverse Lines", "Reverse Characters")
+
+    def test_process_processor_order_3(self) -> None:
+        """Process inputs, and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.process("Rotate Character", "Rotate Character", "Rotate Character", "Rotate Character",
+                         "Rotate Character")
