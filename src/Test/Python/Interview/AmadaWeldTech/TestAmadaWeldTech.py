@@ -42,23 +42,59 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class = AmadaWeldTech()
         self.assertIsNotNone(my_class)
 
-    def test_reverse_character(self) -> None:
+    def test_reverse_character_memory(self) -> None:
         """Reverse characters and output file.
         """
         my_class = AmadaWeldTech()
-        my_class.reverse_character()
+        my_class.reverse_characters()
 
-    def test_reverse_lines(self) -> None:
+    def test_reverse_character_processor(self) -> None:
+        """Reverse characters and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.reverse_characters()
+
+    def test_reverse_character_undefined(self) -> None:
+        """Reverse characters and output file.
+        """
+        my_class = AmadaWeldTech(mode=-1)
+        my_class.reverse_characters()
+
+    def test_reverse_lines_memory(self) -> None:
         """Reverse lines and output file.
         """
         my_class = AmadaWeldTech()
         my_class.reverse_lines()
 
-    def test_reverse_both(self) -> None:
+    def test_reverse_lines_processor(self) -> None:
+        """Reverse lines and output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.reverse_lines()
+
+    def test_reverse_lines_undefined(self) -> None:
+        """Reverse lines and output file.
+        """
+        my_class = AmadaWeldTech(mode=-1)
+        my_class.reverse_lines()
+
+    def test_reverse_reverse_characters_lines_memory(self) -> None:
         """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech()
-        my_class.reverse_both()
+        my_class.reverse_characters_lines()
+
+    def test_reverse_reverse_characters_lines_processor(self) -> None:
+        """Reverse lines and characters output file.
+        """
+        my_class = AmadaWeldTech(mode=1)
+        my_class.reverse_characters_lines()
+
+    def test_reverse_reverse_characters_lines_undefined(self) -> None:
+        """Reverse lines and characters output file.
+        """
+        my_class = AmadaWeldTech(mode=-1)
+        my_class.reverse_characters_lines()
 
     def test_init_filename(self) -> None:
         """Assert init creates an object.
@@ -72,7 +108,7 @@ class TestValidatePageAccess(unittest.TestCase):
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
-        my_class.reverse_character()
+        my_class.reverse_characters()
 
     def test_reverse_lines_filename(self) -> None:
         """Reverse lines and output file.
@@ -81,16 +117,16 @@ class TestValidatePageAccess(unittest.TestCase):
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
         my_class.reverse_lines()
 
-    def test_reverse_both_filename(self) -> None:
+    def test_reverse_reverse_characters_lines_filename(self) -> None:
         """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\data\data1.txt')
-        my_class.reverse_both()
+        my_class.reverse_characters_lines()
 
-    def test_reverse_both_filename_directory_does_not_exist(self) -> None:
+    def test_reverse_reverse_characters_lines_filename_directory_does_not_exist(self) -> None:
         """Reverse lines and characters output file.
         """
         my_class = AmadaWeldTech(
             input_file=r'C:\Users\jasen\IdeaProjects\portfolio\src\Code\Python\Interview\AmadaWeldTech\d1\d\data1.txt')
-        my_class.reverse_both()
+        my_class.reverse_characters_lines()
