@@ -6,8 +6,8 @@ class Point(object):
     """AIM Point class."""
 
     def __init__(self, x=0.0, y=0.0):
-        self.x = float(x)
-        self.y = float(y)
+        self.x = int(x) if int(x) == float(x) else float(x)
+        self.y = int(y) if int(y) == float(y) else float(y)
 
     def new_point(self, slope, distance, direction):
         # slope is infinite
@@ -83,16 +83,15 @@ class AIM(object):
 
     @staticmethod
     def get_description_find_squares():
-        print("""
-              Given a set of distinct points in the x-y plane, find the number of distinct rectangles that can
-               be formed from those points.
-              Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
-               a point the x-y plane, and computes the number of unique rectangles that can be using those points
-               as corners. The rectangles do not need to be aligned with the x-y axes.
-              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_rectangles(points)
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
+               that can be formed from those points.
+              Write a function find_squares that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique squares that can be using those points
+               as corners. The squares do not need to be aligned with the x-y axes.
+              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_squares(points)
                should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
-                rectangles that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
-                 and the green square {(0, 3), (3, 3), (3, 0), (0, 0)}.
+               squares that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
+               and the green square {(0, 3), (3, 3), (3, 0), (0, 0)}.
               Make sure to give yourself enough time to implement a correct solution, then you can try to find
                solutions that have better asymptotic runtime.
               We are looking for production quality code, so please make sure your submission is clean and well
@@ -100,14 +99,20 @@ class AIM(object):
 
     @staticmethod
     def get_description_find_rectangles():
-        print("""
-              Given a set of distinct points in the x-y plane, find the number of distinct rectangles that can
-               be formed from those points.
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
+               that can be formed from those points.
               Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique rectangles that can be using those points
                as corners. The rectangles do not need to be aligned with the x-y axes.
-              Rectangles are more comples than squares since all 4 sides do not need to be the same length.  Due
-               to that the code is more complex.""")
+              Rectangles are more comples than rectangles since all 4 sides do not need to be the same length.
+              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_rectangles(points)
+               should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
+               rectangles that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
+               and the green rectangle {(0, 3), (3, 3), (3, 0), (0, 0)}.
+              Make sure to give yourself enough time to implement a correct solution, then you can try to find
+               solutions that have better asymptotic runtime.
+              We are looking for production quality code, so please make sure your submission is clean and well
+               documented. Also include any test cases you think would be helpful in validating correctness.""")
 
     @staticmethod
     def find_squares(points: set) -> list:
@@ -141,6 +146,8 @@ class AIM(object):
                 # X symetry
                 if p1[0] == p4[0]:
                     center_distance = (abs(p1[1]) + abs(p4[1])) / 2
+                    center_distance = int(center_distance) if int(center_distance) == center_distance \
+                        else center_distance
                     if p1[1] < p4[1]:
                         p2 = (p1[0] - center_distance, p1[1] + center_distance)
                         p3 = (p1[0] + center_distance, p1[1] + center_distance)
@@ -158,6 +165,8 @@ class AIM(object):
                 # Y symetry
                 if p1[1] == p4[1]:
                     center_distance = (p1[0] + p4[0]) / 2
+                    center_distance = int(center_distance) if int(center_distance) == center_distance \
+                        else center_distance
                     p2 = (p1[0] + center_distance, p1[1] + center_distance)
                     p3 = (p1[0] + center_distance, p1[1] - center_distance)
                     if all(value in points_list for value in [p2, p3]):
@@ -191,7 +200,7 @@ class AIM(object):
                     p4 = None
                     l2 = Line(p1, p3)
                     l3 = Line(p2, p3)
-                    # Test
+                    # Test perpendicular
                     if l1.perpendicular_slope() == l2.slope():
                         # L1 perpendicular L2
                         p4 = p2.new_point(slope=l2.slope(), distance=l2.length(), direction=l2.direction)
