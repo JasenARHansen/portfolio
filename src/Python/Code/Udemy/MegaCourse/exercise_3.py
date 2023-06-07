@@ -10,6 +10,6 @@ user_prompt = "Enter your name (type exit to stop):\t"
 while True:
     # Populate name
     name = input(user_prompt).lower()
-    if name.lower() == "exit":
+    if name == "exit":
         break
     print(f"Name typed: {name.capitalize()}")
