@@ -60,6 +60,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
 
     def test_find_squares_2(self) -> None:
         """Find the squares in points"""
@@ -68,6 +70,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
 
     def test_find_squares_3(self) -> None:
         """Find the squares in points"""
@@ -77,6 +81,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
 
     def test_find_squares_4(self) -> None:
         """Find the squares in points"""
@@ -85,6 +91,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
 
     def test_find_squares_5(self) -> None:
         """Find the squares in points"""
@@ -93,6 +101,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
 
     def test_find_squares_6(self) -> None:
         """Find the squares in points"""
@@ -102,6 +112,56 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: squares from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(4, len(results))
+
+    def test_find_squares_7(self) -> None:
+        """Find the squares in points"""
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2)}
+        results = AIM.find_squares(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    def test_find_squares_8(self) -> None:
+        """Find the squares in points"""
+        points = {(0, 1), (-1, 0), (-1, 1), (0, 0), (0, 1), (1, 0), (1, 1)}
+        results = AIM.find_squares(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+
+    def test_find_squares_9(self) -> None:
+        """Find the squares in points"""
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1)}
+        results = AIM.find_squares(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_squares_10(self) -> None:
+        """Find the squares in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0)}
+        results = AIM.find_squares(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_squares_11(self) -> None:
+        """Find the squares in points"""
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1)}
+        results = AIM.find_squares(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
 
     def test_find_rectangles_0_get_description(self) -> None:
         """Test help message"""
@@ -115,6 +175,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
 
     def test_find_rectangles_2(self) -> None:
         """Find the rectangles in points"""
@@ -123,6 +185,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
 
     def test_find_rectangles_3(self) -> None:
         """Find the rectangles in points"""
@@ -132,6 +196,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
 
     def test_find_rectangles_4(self) -> None:
         """Find the rectangles in points"""
@@ -140,6 +206,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
 
     def test_find_rectangles_5(self) -> None:
         """Find the rectangles in points"""
@@ -148,6 +216,8 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
 
     def test_find_rectangles_6(self) -> None:
         """Find the rectangles in points"""
@@ -157,3 +227,45 @@ class TestValidatePageAccess(unittest.TestCase):
         headder = f"{inspect.stack()[0][3]}: rectangles from"
         print(f"{headder} points: = {points}\n"
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(4, len(results))
+
+    def test_find_rectangles_7(self) -> None:
+        """Find the rectangles in points"""
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2)}
+        results = AIM.find_rectangles(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    def test_find_rectangles_8(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1)}
+        results = AIM.find_rectangles(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rectangles_9(self) -> None:
+        """Find the rectangles in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0)}
+        results = AIM.find_rectangles(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rectangles_10(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1)}
+        results = AIM.find_rectangles(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
