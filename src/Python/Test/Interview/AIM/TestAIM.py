@@ -50,384 +50,550 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(my_class)
 
     @staticmethod
-    def test_find_squares_0_help() -> None:
+    def test_find_parallelogram_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_squares()
+        AIM.help_find_parallelogram()
 
-    def test_find_squares_1(self) -> None:
-        """Find the squares in points"""
-        points = {(-1.5, 0), (0, -1.5), (0, 1.5), (1.5, 0), (0, 0), (3, 3)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_squares_2(self) -> None:
-        """Find the squares in points"""
-        points = {(-1.75, -1.75), (1.75, -1.75), (-1.75, 1.75), (1.75, 1.75), (0, 0), (3, 3)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_squares_3(self) -> None:
-        """Find the squares in points"""
-        points = {(-1.5, 0), (0, -1.5), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (-1.75, -1.75),
-                  (1.75, -1.75), (-1.75, 1.75), (1.75, 1.75)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(2, len(results))
-
-    def test_find_squares_4(self) -> None:
-        """Find the squares in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(2, len(results))
-
-    def test_find_squares_5(self) -> None:
-        """Find the squares in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    def test_find_squares_6(self) -> None:
-        """Find the squares in points"""
-        points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
-                  (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(4, len(results))
-
-    def test_find_squares_7(self) -> None:
-        """Find the squares in points"""
-        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(0, len(results))
-
-    def test_find_squares_8(self) -> None:
-        """Find the squares in points"""
-        points = {(0, 1), (-1, 0), (-1, 1), (0, 0), (0, 1), (1, 0), (1, 1)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-
-    def test_find_squares_9(self) -> None:
-        """Find the squares in points"""
-        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_squares_10(self) -> None:
-        """Find the squares in points"""
-        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(2, len(results))
-
-    def test_find_squares_11(self) -> None:
-        """Find the squares in points"""
-        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1)}
-        results = AIM.find_squares(points=points)
-        headder = f"{inspect.stack()[0][3]}: squares from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:20} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    @staticmethod
-    def test_find_rectangles_0_help() -> None:
-        """Test help message"""
-        print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_rectangles()
-
-    def test_find_rectangles_1(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_rectangles_2(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-3.25, -1.75), (1.75, -1.75), (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_rectangles_3(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (-3.25, -1.75), (1.75, -1.75),
-                  (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(2, len(results))
-
-    def test_find_rectangles_4(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(2, len(results))
-
-    def test_find_rectangles_5(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    def test_find_rectangles_6(self) -> None:
-        """Find the rectangles in points"""
-        points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
-                  (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(4, len(results))
-
-    def test_find_rectangles_7(self) -> None:
-        """Find the rectangles in points"""
-        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(0, len(results))
-
-    def test_find_rectangles_8(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    def test_find_rectangles_9(self) -> None:
-        """Find the rectangles in points"""
-        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    def test_find_rectangles_10(self) -> None:
-        """Find the rectangles in points"""
-        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1)}
-        results = AIM.find_rectangles(points=points)
-        headder = f"{inspect.stack()[0][3]}: rectangles from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    @staticmethod
-    def test_find_parallelograms_0_help() -> None:
-        """Test help message"""
-        print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_parallelograms()
-
-    def test_find_parallelograms_1(self) -> None:
+    def test_find_parallelogram_1(self) -> None:
         """Find the parallelograms in points"""
-        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3)}
-        results = AIM.find_parallelograms(points=points)
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
         headder = f"{inspect.stack()[0][3]}: parallelograms from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(3, len(results))
-
-    def test_find_parallelograms_2(self) -> None:
-        """Find the parallelograms in points"""
-        points = {(-3.25, -1.75), (1.75, -1.75), (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3)}
-        results = AIM.find_parallelograms(points=points)
-        headder = f"{inspect.stack()[0][3]}: parallelograms from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(1, len(results))
-
-    def test_find_parallelograms_3(self) -> None:
-        """Find the parallelograms in points"""
-        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (-3.25, -1.75), (1.75, -1.75),
-                  (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3)}
-        results = AIM.find_parallelograms(points=points)
-        headder = f"{inspect.stack()[0][3]}: parallelograms from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(4, len(results))
-
-    def test_find_parallelograms_4(self) -> None:
-        """Find the parallelograms in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}
-        results = AIM.find_parallelograms(points=points)
-        headder = f"{inspect.stack()[0][3]}: parallelograms from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
-        self.assertIsNotNone(results)
-        self.assertEqual(4, len(results))
-
-    def test_find_parallelograms_5(self) -> None:
-        """Find the parallelograms in points"""
-        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_parallelograms(points=points)
-        headder = f"{inspect.stack()[0][3]}: parallelograms from"
-        print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(5, len(results))
 
-    def test_find_parallelograms_6(self) -> None:
+    def test_find_parallelogram_2(self) -> None:
+        """Find the parallelograms in points"""
+        points = {(-3.25, -1.75), (1.75, -1.75), (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3),
+                  (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
+        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_parallelogram_3(self) -> None:
+        """Find the parallelograms in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (-3.25, -1.75), (1.75, -1.75),
+                  (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
+        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(8, len(results))
+
+    def test_find_parallelogram_4(self) -> None:
+        """Find the parallelograms in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
+        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(5, len(results))
+
+    def test_find_parallelogram_5(self) -> None:
+        """Find the parallelograms in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2), (0, 3),
+                  (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
+        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(6, len(results))
+
+    def test_find_parallelogram_6(self) -> None:
         """Find the parallelograms in points"""
         points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
-                  (3, 3), (4, 0), (2, 2), (2, -2)}
-        results = AIM.find_parallelograms(points=points)
+                  (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
         headder = f"{inspect.stack()[0][3]}: parallelograms from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(16, len(results))
+        self.assertEqual(15, len(results))
 
-    def test_find_parallelograms_7(self) -> None:
+    def test_find_parallelogram_7(self) -> None:
         """Find the parallelograms in points"""
-        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2)}
-        results = AIM.find_parallelograms(points=points)
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
         headder = f"{inspect.stack()[0][3]}: parallelograms from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(0, len(results))
+        self.assertEqual(1, len(results))
 
-    def test_find_parallelograms_8(self) -> None:
+    def test_find_parallelogram_8(self) -> None:
         """Find the parallelograms in points"""
-        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1)}
-        results = AIM.find_parallelograms(points=points)
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
         headder = f"{inspect.stack()[0][3]}: parallelograms from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(18, len(results))
+
+    def test_find_parallelogram_9(self) -> None:
+        """Find the parallelograms in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
+        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(9, len(results))
 
-    def test_find_parallelograms_9(self) -> None:
+    def test_find_parallelogram_10(self) -> None:
         """Find the parallelograms in points"""
-        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0)}
-        results = AIM.find_parallelograms(points=points)
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_parallelogram(points=points)
         headder = f"{inspect.stack()[0][3]}: parallelograms from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(5, len(results))
+        self.assertEqual(17, len(results))
 
-    def test_find_parallelograms_10(self) -> None:
-        """Find the parallelograms in points"""
-        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1)}
-        results = AIM.find_parallelograms(points=points)
-        headder = f"{inspect.stack()[0][3]}: parallelograms from"
+    @staticmethod
+    def test_find_rhombus_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_rhombus()
+
+    def test_find_rhombus_1(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:27} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rhombus_2(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-3.25, -1.75), (1.75, -1.75), (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3),
+                  (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rhombus_3(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (-3.25, -1.75), (1.75, -1.75),
+                  (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rhombus_4(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rhombus_5(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-3, 0), (0, 0), (0, 3), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rhombus_6(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
+                  (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(7, len(results))
+
+    def test_find_rhombus_7(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rhombus_8(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rhombus_9(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rhombus_10(self) -> None:
+        """Find the rhombuses in points"""
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rhombus(points=points)
+        headder = f"{inspect.stack()[0][3]}: rhombuses from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(5, len(results))
 
     @staticmethod
-    def test_find_triangles_scalene_0_help() -> None:
+    def test_find_rectangle_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangles_scalene()
+        AIM.help_find_rectangle()
 
-    def test_find_triangles_scalene_1(self) -> None:
+    def test_find_rectangle_1(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rectangle_2(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-3.25, -1.75), (1.75, -1.75), (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3),
+                  (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_rectangle_3(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (-3.25, -1.75), (1.75, -1.75),
+                  (-3.25, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_rectangle_4(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_rectangle_5(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3),
+                  (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rectangle_6(self) -> None:
+        """Find the rectangles in points"""
+        points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
+                  (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(4, len(results))
+
+    def test_find_rectangle_7(self) -> None:
+        """Find the rectangles in points"""
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    def test_find_rectangle_8(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rectangle_9(self) -> None:
+        """Find the rectangles in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_rectangle_10(self) -> None:
+        """Find the rectangles in points"""
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_rectangle(points=points)
+        headder = f"{inspect.stack()[0][3]}: rectangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    @staticmethod
+    def test_find_square_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_square()
+
+    def test_find_square_1(self) -> None:
+        """Find the squares in points"""
+        points = {(-1.5, 0), (0, -1.5), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_square_2(self) -> None:
+        """Find the squares in points"""
+        points = {(-1.75, -1.75), (1.75, -1.75), (-1.75, 1.75), (1.75, 1.75), (0, 0), (3, 3), (0, 3), (0, -3),
+                  (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_square_3(self) -> None:
+        """Find the squares in points"""
+        points = {(-1.5, 0), (0, -1.5), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (-1.75, -1.75),
+                  (1.75, -1.75), (-1.75, 1.75), (1.75, 1.75), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_square_4(self) -> None:
+        """Find the squares in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_square_5(self) -> None:
+        """Find the squares in points"""
+        points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3),
+                  (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_square_6(self) -> None:
+        """Find the squares in points"""
+        points = {(0, 0), (1, 0), (1, 1), (0, 1), (-3, 0), (0, -3), (0, 3), (3, 0), (0, 0),
+                  (3, 3), (4, 0), (2, 2), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(4, len(results))
+
+    def test_find_square_7(self) -> None:
+        """Find the squares in points"""
+        points = {(0, 0), (0, 0), (0, 0), (0, 0), (2, -2), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    def test_find_square_8(self) -> None:
+        """Find the squares in points"""
+        points = {(0, 1), (-1, 0), (-1, 1), (0, 0), (0, 1), (1, 0), (1, 1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+
+    def test_find_square_9(self) -> None:
+        """Find the squares in points"""
+        points = {(-1, 1), (-1, 0), (-1, -1), (1, 1), (1, 0), (1, -1), (1, 2), (2, 1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_square_10(self) -> None:
+        """Find the squares in points"""
+        points = {(0, -2), (-1, -1), (0, 0), (1, -1), (1, 1), (2, 0), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_square_11(self) -> None:
+        """Find the squares in points"""
+        points = {(-1, 1), (-1, -1), (0, 1), (0, -1), (1, 1), (1, -1), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    @staticmethod
+    def test_find_triangle_scalene_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_triangle_scalene()
+
+    def test_find_triangle_scalene_1(self) -> None:
         """Find the scalene triangles in points"""
         points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
                   (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
-        results = AIM.find_triangles_scalene(points=points)
+        results = AIM.find_triangle_scalene(points=points)
         headder = f"{inspect.stack()[0][3]}: scalene triangles from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:30} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(48, len(results))
 
     @staticmethod
-    def test_find_triangles_isosceles_0_help() -> None:
+    def test_find_triangle_acute_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangles_isosceles()
+        AIM.help_find_triangle_acute()
 
-    def test_find_triangles_isosceles_1(self) -> None:
+    def test_find_triangle_acute_1(self) -> None:
+        """Find the acute triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
+        results = AIM.find_triangle_acute(points=points)
+        headder = f"{inspect.stack()[0][3]}: scalene triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(10, len(results))
+
+    @staticmethod
+    def test_find_triangle_obtuse_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_triangle_obtuse()
+
+    def test_find_triangle_obtuse_1(self) -> None:
+        """Find the obtuse triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
+        results = AIM.find_triangle_obtuse(points=points)
+        headder = f"{inspect.stack()[0][3]}: scalene triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(21, len(results))
+
+    @staticmethod
+    def test_find_triangle_right_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_triangle_right()
+
+    def test_find_triangle_right_1(self) -> None:
+        """Find the right triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
+        results = AIM.find_triangle_right(points=points)
+        headder = f"{inspect.stack()[0][3]}: right triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(13, len(results))
+
+    @staticmethod
+    def test_find_triangle_isosceles_0_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.help_find_triangle_isosceles()
+
+    def test_find_triangle_isosceles_1(self) -> None:
         """Find the isosceles triangles in points"""
         points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
                   (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
-        results = AIM.find_triangles_isosceles(points=points)
+        results = AIM.find_triangle_isosceles(points=points)
         headder = f"{inspect.stack()[0][3]}: isosceles triangles from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:32} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(32, len(results))
+        self.assertEqual(13, len(results))
 
     @staticmethod
-    def test_find_triangles_equilateral_0_help() -> None:
+    def test_find_triangle_equilateral_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangles_equilateral()
+        AIM.help_find_triangle_equilateral()
 
-    def test_find_triangles_equilateral_1(self) -> None:
+    def test_find_triangle_equilateral_1(self) -> None:
         """Find the equilateral triangles in points"""
         points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
                   (0, math.sqrt(3)), (0, 2 * math.sqrt(3)), (0, -2)}
-        results = AIM.find_triangles_equilateral(points=points)
+        results = AIM.find_triangle_equilateral(points=points)
         headder = f"{inspect.stack()[0][3]}: equilateral triangles from"
         print(f"{headder} points: = {points}\n"
-              f"{self.empty:34} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(5, len(results))

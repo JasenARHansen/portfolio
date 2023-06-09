@@ -19,7 +19,7 @@ class Point(object):
             x2 = self.x + distance
             y2 = self.y
         else:
-            dx = round((distance / math.sqrt(1 + (slope ** 2))), 2)
+            dx = round((distance / math.sqrt(1 + (slope ** 2))), 5)
             dy = slope * dx
             x2 = self.x + dx
             y2 = self.y + dy
@@ -60,7 +60,7 @@ class Line(object):
             self._line_slope = rise / run
         return self._line_slope
 
-    def is_perpendicular(self, line):
+    def is_perpendicular(self, line2):
         if not self._line_slope:
             self.slope()
         if not self._perpendicular_slope:
@@ -70,9 +70,27 @@ class Line(object):
                 self._perpendicular_slope = "MAX"
             else:
                 self._perpendicular_slope = -1 / self._line_slope
-        if self._perpendicular_slope == line.slope():
+        if self._perpendicular_slope == line2.slope():
             return True
         return False
+
+    def get_angle(self, line2):
+        # https://stackoverflow.com/questions/62195081/calculate-specific-angle-between-two-lines
+        # Get directional vectors
+        d1 = (self.p2.x - self.p1.x, self.p2.y - self.p1.y)
+        if self.p1.get_coordinates() == line2.p1.get_coordinates():
+            d2 = (line2.p2.x - line2.p1.x, line2.p2.y - line2.p1.y)
+        else:
+            d2 = (line2.p1.x - line2.p2.x, line2.p1.y - line2.p2.y)
+        # Compute dot product
+        p = d1[0] * d2[0] + d1[1] * d2[1]
+        # Compute norms
+        n1 = math.sqrt(d1[0] * d1[0] + d1[1] * d1[1])
+        n2 = math.sqrt(d2[0] * d2[0] + d2[1] * d2[1])
+        # Compute angle
+        ang = math.acos(p / (n1 * n2))
+        # Convert to degrees if you want
+        return round(math.degrees(ang), 5)
 
 
 # noinspection SpellCheckingInspection,PyTypeChecker
@@ -80,8 +98,8 @@ class AIM(object):
     """AIM main class."""
 
     @staticmethod
-    def find_quadrilaterals(points: set, rectangle: bool = False, square: bool = False,
-                            parallelogram: bool = False) -> list:
+    def find_quadrilateral(points: set, parallelogram: bool = False, rhombus: bool = False, rectangle: bool = False,
+                           square: bool = False) -> list:
         """Find quadrilateral."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
         """ Note: An issue was noted when not sorting the list with "sorted(list(points), key=lambda x: (x[0], x[1]))".
@@ -109,112 +127,98 @@ class AIM(object):
                 for p3index in range(p1index + 1, len(points_list)):
                     p3 = Point(point=points_list[p3index])
                     l2 = Line(p1=p2, p2=p3)
-                    # Determine the type of quadrilateral to process
-                    if parallelogram:
-                        # P4 has 2 possible positions, 1 valid and are invalid
-                        # Test first posibility
-                        p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
-                        l3 = Line(p1=p3, p2=p4a)
-                        l4 = Line(p1=p4a, p2=p1)
-                        if l1.length() == l3.length() and l2.length() == l4.length() \
-                                and p4a.get_coordinates() in points_list:
+                    # P4 has 2 possible positions, 1 valid and are invalid
+                    p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
+                    p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
+                    possible_points = [p4a, p4b]
+                    # Itterate over possible_points to generate valid quadrilateral
+                    for point in possible_points:
+                        l3 = Line(p1=p3, p2=point)
+                        l4 = Line(p1=point, p2=p1)
+                        if point.get_coordinates() in points_list:
                             # since initializing a set with values allows duplicates, the conversion to a list
                             # and back to a set clears the duplicates
                             point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
-                                                  p4a.get_coordinates())))
-                            if len(point_set) == 4:
+                                                  point.get_coordinates())))
+                            # A quadrilateral must have 4 sides and not simply form a line
+                            if len(point_set) != 4 or l1.slope() == l2.slope():
+                                continue
+                            # Creat append flag for valid quadrilateral
+                            append = False
+                            # Determine the type of quadrilateral to process.  If conditions are met set append flag
+                            if parallelogram and l1.length() == l3.length() and l2.length() == l4.length():
+                                append = True
+                            elif rhombus and l1.length() == l3.length() and l2.length() == l4.length() \
+                                    and l1.length() == l2.length():
+                                append = True
+                            elif rectangle and l1.is_perpendicular(line2=l2) and l2.length() == l4.length():
+                                append = True
+                            elif square and l1.is_perpendicular(line2=l2) and l1.length() == l4.length():
+                                append = True
+                            # If valid quadrilateral detected, append to output
+                            if append:
                                 output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        # Test second posibility
-                        p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                        l3 = Line(p1=p3, p2=p4b)
-                        l4 = Line(p1=p4b, p2=p1)
-                        if l1.length() == l3.length() and l2.length() == l4.length() \
-                                and p4b.get_coordinates() in points_list:
-                            # since initializing a set with values allows duplicates, the conversion to a list
-                            # and back to a set clears the duplicates
-                            point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
-                                                  p4b.get_coordinates())))
-                            if len(point_set) == 4:
-                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                    elif rectangle or square:
-                        # Test to see if l1 is perpendicularto l2 interseccting at p2
-                        if l1.is_perpendicular(line=l2):
-                            # P4 has 2 possible positions, 1 valid and are invalid
-                            # Test first posibility
-                            p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
-                            l4 = Line(p1=p1, p2=p4a)
-                            # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
-                            if l1.is_perpendicular(line=l4) and p4a.get_coordinates() in points_list:
-                                # since initializing a set with values allows duplicates, the conversion to a list
-                                # and back to a set clears the duplicates
-                                point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
-                                                      p4a.get_coordinates())))
-                                # If testing for a square the 2 perpendicular lines must be equal length
-                                if square and l1.length() == l4.length() and len(point_set) == 4:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square and len(point_set) == 4:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            # Test second posibility
-                            p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                            l4 = Line(p1=p1, p2=p4b)
-                            # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
-                            if l1.is_perpendicular(line=l4) and p4b.get_coordinates() in points_list:
-                                # since initializing a set with values allows duplicates, the conversion to a list
-                                # and back to a set clears the duplicates
-                                point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
-                                                      p4b.get_coordinates())))
-                                # If testing for a square the 2 perpendicular lines must be equal length
-                                if square and l1.length() == l4.length() and len(point_set) == 4:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif rectangle and len(point_set) == 4:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
 
     @staticmethod
-    def help_find_parallelograms():
+    def help_find_parallelogram():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                parallelograms that can be formed from those points.
-              Write a function find_parallelograms that takes in a set of tuples, where each tuple (x, y) represents
+              Parallelograms are defined as having 4 sides, formed with 4 points. The intersecting sides do
+               not need to be the same length but the pairs of oposite sides must be the same length as eachother.
+              Write a function find_parallelogram that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique parallelograms that can be using those points
                as corners. The parallelograms do not need to be aligned with the x-y axes.
-              Parallelograms are defined as having 4 sides, formed with 4 points, with each line. The intersecting
-               sides do not need to be the same length but the pairs of oposite sides must be the same length
-               as eachother.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_parallelograms(points: set) -> list:
+    def find_parallelogram(points: set) -> list:
         """Find parallelogram."""
-        return AIM.find_quadrilaterals(points=points, parallelogram=True)
+        return AIM.find_quadrilateral(points=points, parallelogram=True)
 
     @staticmethod
-    def help_find_rectangles():
+    def help_find_rhombus():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct
+               rhombuses that can be formed from those points.
+              Rhombuses are defined as having 4 sides, formed with 4 points, with each line being equal in length.
+              Write a function find_rhombus that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique rhombuses that can be using those points
+               as corners. The rhombuses do not need to be aligned with the x-y axes.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_rhombus(points: set) -> list:
+        """Find rhombuses."""
+        return AIM.find_quadrilateral(points=points, rhombus=True)
+
+    @staticmethod
+    def help_find_rectangle():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
                that can be formed from those points.
-              Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
+              Rectangles are defined as having 4 sides, formed with 4 points. The intersecting sides do
+               not need to be the same length but the pairs of oposite sides must be the same length as eachother.
+               Each corner must form a 90 degree angle.
+              Write a function find_rectangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique rectangles that can be using those points
                as corners. The rectangles do not need to be aligned with the x-y axes.
-              Rectangles are defined as having 4 sides, formed with 4 points, with each line intersection forming
-               a 90 degree angle. The intersecting sides do not need to be the same length but the pairs of
-               oposite sides must be the same length as eachother.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_rectangles(points: set) -> list:
+    def find_rectangle(points: set) -> list:
         """Find rectangles."""
-        return AIM.find_quadrilaterals(points=points, rectangle=True)
+        return AIM.find_quadrilateral(points=points, rectangle=True)
 
     @staticmethod
-    def help_find_squares():
+    def help_find_square():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
                that can be formed from those points.
-              Write a function find_squares that takes in a set of tuples, where each tuple (x, y) represents
+              Squares are defined as having 4 sides, formed with 4 points, with each line being equal in length.
+               Each corner must form a 90 degree angle.
+              Write a function find_square that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique squares that can be using those points
                as corners. The squares do not need to be aligned with the x-y axes.
-              Squares are defined as having 4 sides, formed with 4 points, of identical length with each line
-               intersection forming a 90 degree angle.
-              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_squares(points)
+              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_square(points)
                should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
                squares that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
                and the green square {(0, 3), (3, 3), (3, 0), (0, 0)}.
@@ -225,12 +229,12 @@ class AIM(object):
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_squares(points: set) -> list:
+    def find_square(points: set) -> list:
         """Find squares."""
-        return AIM.find_quadrilaterals(points=points, square=True)
+        return AIM.find_quadrilateral(points=points, square=True)
 
     @staticmethod
-    def help_find_triangles():
+    def help_find_triangle():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
@@ -240,8 +244,8 @@ class AIM(object):
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_triangles(points: set, scalene: bool = False, isosceles: bool = False,
-                       equilateral: bool = False) -> list:
+    def find_triangle(points: set, scalene: bool = False, acute: bool = False, obtuse: bool = False,
+                      isosceles: bool = False, equilateral: bool = False, right: bool = False) -> list:
         """Find triangles."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
         """ Note: I did not see the same issue with sorting that was discovered with the rectangles, but I kept the
@@ -260,8 +264,8 @@ class AIM(object):
                 # A third point is used to find line 2 and 3
                 for p3index in range(p2index + 1, len(points_list)):
                     p3 = Point(point=points_list[p3index])
-                    l2 = Line(p1=p1, p2=p3)
-                    l3 = Line(p1=p2, p2=p3)
+                    l2 = Line(p1=p2, p2=p3)
+                    l3 = Line(p1=p3, p2=p1)
                     # Verify that the 3 points are not collinear. To do this the slopes of only 2 lines
                     # must be tested
                     if l1.slope() == l2.slope():
@@ -271,66 +275,131 @@ class AIM(object):
                     point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index])))
                     if not len(point_set) == 3:
                         continue
+                    # Creat append flag for valid triangle
+                    append = False
+                    # Determine the type of triangle to process.  If conditions are met set append flag
                     if scalene:
-                        output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                        append = True
+                    elif acute:
+                        if all([angle < 90 for angle in [l1.get_angle(line2=l2), l2.get_angle(line2=l3),
+                                                         l3.get_angle(line2=l1)]]):
+                            append = True
+                    elif obtuse:
+                        if any([angle > 90 for angle in [l1.get_angle(line2=l2), l2.get_angle(line2=l3),
+                                                         l3.get_angle(line2=l1)]]):
+                            append = True
+                    elif right:
+                        if l1.is_perpendicular(l2) or l2.is_perpendicular(l3) or l3.is_perpendicular(l1):
+                            append = True
                     elif isosceles or equilateral:
                         length_set = set()
-                        length_set.add(round(l1.length()))
-                        length_set.add(round(l2.length()))
-                        length_set.add(round(l3.length()))
+                        length_set.add(round(l1.length(), 5))
+                        length_set.add(round(l2.length(), 5))
+                        length_set.add(round(l3.length(), 5))
                         # equilateral triangles have 3 sides that are equal in length
                         if equilateral and len(length_set) == 1:
-                            output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                            append = True
                         # isosceles triangles have 2 sides that are equal in length
-                        elif isosceles and len(length_set) <= 2:
-                            output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                        elif isosceles and len(length_set) == 2:
+                            append = True
+                    # If valid triangle detected, append to output
+                    if append:
+                        output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
 
     @staticmethod
-    def help_find_triangles_scalene():
+    def help_find_triangle_scalene():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
+              Scalene triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
+               need to be the same length.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
-              Triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not need
-               to be the same length.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_triangles_scalene(points: set) -> list:
+    def find_triangle_scalene(points: set) -> list:
         """Find scalene triangles."""
-        return AIM.find_triangles(points=points, scalene=True)
+        return AIM.find_triangle(points=points, scalene=True)
 
     @staticmethod
-    def help_find_triangles_isosceles():
+    def help_find_triangle_acute():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
+              Acute triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
+               need to be the same length.  All angles must be less than 90 degrees.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangle_acute(points: set) -> list:
+        """Find acute triangles."""
+        return AIM.find_triangle(points=points, acute=True)
+
+    @staticmethod
+    def help_find_triangle_obtuse():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Obtuse triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
+               need to be the same length.  1 angle must be greater than 90 degrees.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangle_obtuse(points: set) -> list:
+        """Find obtuse triangles."""
+        return AIM.find_triangle(points=points, obtuse=True)
+
+    @staticmethod
+    def help_find_triangle_right():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Right triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
+               need to be the same length.  1 angle must be 90 degrees.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangle_right(points: set) -> list:
+        """Find right triangles."""
+        return AIM.find_triangle(points=points, right=True)
+
+    @staticmethod
+    def help_find_triangle_isosceles():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
               Isosceles triangles are defined as having 3 sides, formed with 3 non collinear points. 2 sides must
                be the same length.
-              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
-
-    @staticmethod
-    def find_triangles_isosceles(points: set) -> list:
-        """Find isosceles triangles."""
-        return AIM.find_triangles(points=points, isosceles=True)
-
-    @staticmethod
-    def help_find_triangles_equilateral():
-        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
-               that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
-              Equilateral triangles are defined as having 3 sides, formed with 3 non collinear points. All 3 sides
-               must be the same length.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_triangles_equilateral(points: set) -> list:
+    def find_triangle_isosceles(points: set) -> list:
+        """Find isosceles triangles."""
+        return AIM.find_triangle(points=points, isosceles=True)
+
+    @staticmethod
+    def help_find_triangle_equilateral():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Equilateral triangles are defined as having 3 sides, formed with 3 non collinear points. All 3 sides
+               must be the same length.  All 3 angles must be equal.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangle_equilateral(points: set) -> list:
         """Find equilateral triangles."""
-        return AIM.find_triangles(points=points, equilateral=True)
+        return AIM.find_triangle(points=points, equilateral=True)
