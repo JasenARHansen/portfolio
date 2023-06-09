@@ -50,10 +50,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(my_class)
 
     @staticmethod
-    def test_find_squares_0_get_description_squares() -> None:
+    def test_find_squares_0_help_squares() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.get_description_find_squares()
+        AIM.help_find_squares()
 
     def test_find_squares_1(self) -> None:
         """Find the squares in points"""
@@ -166,10 +166,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(1, len(results))
 
     @staticmethod
-    def test_find_rectangles_0_get_description_rectangles() -> None:
+    def test_find_rectangles_0_help_rectangles() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.get_description_find_rectangles()
+        AIM.help_find_rectangles()
 
     def test_find_rectangles_1(self) -> None:
         """Find the rectangles in points"""
@@ -274,10 +274,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(3, len(results))
 
     @staticmethod
-    def test_find_triangles_0_get_description() -> None:
+    def test_find_triangles_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.get_description_find_triangles()
+        AIM.help_find_triangles()
 
     def test_find_triangles_1(self) -> None:
         """Find the triangles in points"""
@@ -291,10 +291,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(30, len(results))
 
     @staticmethod
-    def test_find_triangles_isosceles_0_get_description() -> None:
+    def test_find_triangles_isosceles_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.get_description_find_triangles_isosceles()
+        AIM.help_find_triangles_isosceles()
 
     def test_find_triangles_isosceles_1(self) -> None:
         """Find the isosceles triangles in points"""
@@ -305,13 +305,13 @@ class TestValidatePageAccess(unittest.TestCase):
         print(f"{headder} points: = {points}\n"
               f"{self.empty:32} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(15, len(results))
+        self.assertEqual(20, len(results))
 
     @staticmethod
-    def test_find_triangles_equilateral_0_get_description() -> None:
+    def test_find_triangles_equilateral_0_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.get_description_find_triangles_equilateral()
+        AIM.help_find_triangles_equilateral()
 
     def test_find_triangles_equilateral_1(self) -> None:
         """Find the equilateral triangles in points"""

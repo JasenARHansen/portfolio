@@ -76,7 +76,7 @@ class AIM(object):
     """AIM main class."""
 
     @staticmethod
-    def get_description_find_squares():
+    def help_find_squares():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
                that can be formed from those points.
               Write a function find_squares that takes in a set of tuples, where each tuple (x, y) represents
@@ -98,7 +98,7 @@ class AIM(object):
         return AIM.find_rectangles(points=points, square=True)
 
     @staticmethod
-    def get_description_find_rectangles():
+    def help_find_rectangles():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
                that can be formed from those points.
               Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
@@ -274,7 +274,7 @@ class AIM(object):
         return [list(x) for x in set(tuple(x) for x in output)]
 
     @staticmethod
-    def get_description_find_triangles():
+    def help_find_triangles():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
@@ -306,17 +306,17 @@ class AIM(object):
                     # must be tested
                     if l1.slope() == l2.slope():
                         continue
-                    # isosceles triangles have 2 sides that are equal in length
-                    # equilateral triangles have 3 sides that are equal in length
                     point_set = (points_list[p1index], points_list[p2index], points_list[p3index])
                     if isosceles or equilateral:
                         length_set = set()
                         length_set.add(round(l1.length()))
                         length_set.add(round(l2.length()))
                         length_set.add(round(l3.length()))
-                        if isosceles and len(length_set) == 2:
+                        # equilateral triangles have 3 sides that are equal in length
+                        if equilateral and len(length_set) == 1:
                             output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        elif equilateral and len(length_set) == 1:
+                        # isosceles triangles have 2 sides that are equal in length
+                        elif isosceles and len(length_set) <= 2:
                             output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
                     else:
                         output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
@@ -324,7 +324,7 @@ class AIM(object):
         return [list(x) for x in set(tuple(x) for x in output)]
 
     @staticmethod
-    def get_description_find_triangles_isosceles():
+    def help_find_triangles_isosceles():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
@@ -339,7 +339,7 @@ class AIM(object):
         return AIM.find_triangles(points=points, isosceles=True)
 
     @staticmethod
-    def get_description_find_triangles_equilateral():
+    def help_find_triangles_equilateral():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
