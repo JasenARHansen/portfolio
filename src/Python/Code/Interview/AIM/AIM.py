@@ -5,9 +5,9 @@ import math
 class Point(object):
     """AIM Point class."""
 
-    def __init__(self, x=0.0, y=0.0):
-        self.x = int(x) if int(x) == float(x) else float(x)
-        self.y = int(y) if int(y) == float(y) else float(y)
+    def __init__(self, point=(0.0, 0.0)):
+        self.x = int(point[0]) if int(point[0]) == float(point[0]) else float(point[0])
+        self.y = int(point[1]) if int(point[1]) == float(point[1]) else float(point[1])
 
     def new_point(self, slope, distance):
         # slope is infinite
@@ -23,52 +23,56 @@ class Point(object):
             dy = slope * dx
             x2 = self.x + dx
             y2 = self.y + dy
-        return Point(x=x2, y=y2)
+        return Point(point=(x2, y2))
+
+    def get_coordinates(self):
+        return self.x, self.y
 
 
 class Line(object):
     """AIM Line class."""
 
     def __init__(self, p1: Point, p2: Point):
-        self.p1 = p1 if p1.y <= p2.y else p2
-        self.p2 = p2 if p1.y <= p2.y else p1
-        self.line_length = None
-        self.line_slope = None
-        self.line_perpendicular_slope = None
+        self.p1 = p1
+        self.p2 = p2
+        self._line_length = None
+        self._line_slope = None
+        self._perpendicular_slope = None
 
     def length(self):
-        if self.line_length:
-            return self.line_length
+        if self._line_length:
+            return self._line_length
         dist_x = abs(self.p2.x - self.p1.x)
         dist_y = abs(self.p2.y - self.p1.y)
         dist_x_squared = dist_x ** 2
         dist_y_squared = dist_y ** 2
-        self.line_length = math.sqrt(dist_x_squared + dist_y_squared)
-        return self.line_length
+        self._line_length = math.sqrt(dist_x_squared + dist_y_squared)
+        return self._line_length
 
     def slope(self):
-        if self.line_slope:
-            return self.line_slope
+        if self._line_slope:
+            return self._line_slope
         run = self.p2.x - self.p1.x
         rise = self.p2.y - self.p1.y
         if run == 0:
-            self.line_slope = "MAX"
+            self._line_slope = "MAX"
         else:
-            self.line_slope = rise / run
-        return self.line_slope
+            self._line_slope = rise / run
+        return self._line_slope
 
-    def perpendicular_slope(self):
-        if self.line_perpendicular_slope:
-            return self.line_perpendicular_slope
-        if not self.line_slope:
+    def is_perpendicular(self, line):
+        if not self._line_slope:
             self.slope()
-        if self.line_slope == "MAX":
-            self.line_perpendicular_slope = 0
-        elif self.line_slope == 0:
-            self.line_perpendicular_slope = "MAX"
-        else:
-            self.line_perpendicular_slope = -1 / self.line_slope
-        return self.line_perpendicular_slope
+        if not self._perpendicular_slope:
+            if self._line_slope == "MAX":
+                self._perpendicular_slope = 0
+            elif self._line_slope == 0:
+                self._perpendicular_slope = "MAX"
+            else:
+                self._perpendicular_slope = -1 / self._line_slope
+        if self._perpendicular_slope == line.slope():
+            return True
+        return False
 
 
 # noinspection SpellCheckingInspection,PyTypeChecker
@@ -112,6 +116,7 @@ class AIM(object):
         """Find rectangles."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
         # Convert set to list to allow iteration with index and sort for processing simplicity
+        # Note: If this is not sorted there can be orderings that cause porcessing failures
         points_list = sorted(list(points), key=lambda x: (x[0], x[1]))
         # Define output list
         output = list()
@@ -119,157 +124,40 @@ class AIM(object):
         for p1index in range(len(points_list) - 2):
             for p2index in range(p1index + 1, len(points_list) - 1):
                 # 2 points are defined to identify a line
-                p1 = Point(points_list[p1index][0], points_list[p1index][1])
-                p2 = Point(points_list[p2index][0], points_list[p2index][1])
-                l1 = Line(p1, p2)
+                p1 = Point(point=points_list[p1index])
+                p2 = Point(point=points_list[p2index])
+                l1 = Line(p1=p1, p2=p2)
                 # A third point is used to determine if a line perpendicular to l1 can be formed
                 for p3index in range(p2index + 1, len(points_list)):
-                    p3 = Point(points_list[p3index][0], points_list[p3index][1])
-                    l2 = Line(p1, p3)
-                    l3 = Line(p2, p3)
-                    # Test perpendicular
-                    if l1.perpendicular_slope() == l2.slope():
-                        # L1 perpendicular L2, P1 intersection
-                        # P4 has 4 possible positions.  2 are equal and valid but 2 will make parallelagrams
-                        # and are invalid
-                        p4a = p2.new_point(slope=l2.slope(), distance=l2.length())
-                        p4b = p2.new_point(slope=l2.slope(), distance=-l2.length())
-                        l4 = Line(p2, p4a)
-                        if l1.perpendicular_slope() == l4.slope():
-                            l5 = Line(p3, p4a)
-                            if l2.perpendicular_slope() == l5.slope() and (p4a.x, p4a.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4a.x, p4a.y))
-                                if square and l2.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p3, p4b)
-                            if l2.perpendicular_slope() == l6.slope() and (p4b.x, p4b.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4b.x, p4b.y))
-                                if square and l2.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        # Below is a complementry processing method, but it is redundant, so it is commented out.
-                        """
-                        p4c = p3.new_point(slope=l1.slope(), distance=l1.length())
-                        p4d = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                        l4 = Line(p3, p4c)
-                        if l2.perpendicular_slope() == l4.slope():
-                            l5 = Line(p2, p4c)
-                            if l2.perpendicular_slope() == l5.slope() and (p4c.x, p4c.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4c.x, p4c.y))
-                                if square and l2.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p2, p4d)
-                            if l2.perpendicular_slope() == l6.slope() and (p4d.x, p4d.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4d.x, p4d.y))
-                                if square and l2.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        """
-                    elif l1.perpendicular_slope() == l3.slope():
-                        # L1 perpendicular L3, P2 intersection
-                        # P4 has 4 possible positions.  2 are equal and valid but 2 will make parallelagrams
-                        # and are invalid
-                        p4a = p1.new_point(slope=l3.slope(), distance=l3.length())
-                        p4b = p1.new_point(slope=l3.slope(), distance=-l3.length())
-                        l4 = Line(p1, p4a)
-                        if l1.perpendicular_slope() == l4.slope():
-                            l5 = Line(p3, p4a)
-                            if l3.perpendicular_slope() == l5.slope() and (p4a.x, p4a.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4a.x, p4a.y))
-                                if square and l3.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p3, p4b)
-                            if l3.perpendicular_slope() == l6.slope() and (p4b.x, p4b.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4b.x, p4b.y))
-                                if square and l3.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        # Below is a complementry processing method, but it is redundant, so it is commented out.
-                        """
-                        p4c = p3.new_point(slope=l1.slope(), distance=l1.length())
-                        p4d = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                        l4 = Line(p3, p4c)
-                        if l3.perpendicular_slope() == l4.slope():
-                            l5 = Line(p1, p4c)
-                            if l1.perpendicular_slope() == l5.slope() and (p4c.x, p4c.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4c.x, p4c.y))
-                                if square and l1.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p1, p4d)
-                            if l1.perpendicular_slope() == l6.slope() and (p4d.x, p4d.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4d.x, p4d.y))
-                                if square and l1.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                
-                        """
-                    elif l2.perpendicular_slope() == l3.slope():
-                        # L2 perpendicular L3, P3 intersection
-                        # P4 has 4 possible positions.  2 are equal and valid but 2 will make parallelagrams
-                        # and are invalid
-                        p4a = p1.new_point(slope=l3.slope(), distance=l3.length())
-                        p4b = p1.new_point(slope=l3.slope(), distance=-l3.length())
-                        l4 = Line(p1, p4a)
-                        if l2.perpendicular_slope() == l4.slope():
-                            l5 = Line(p2, p4a)
-                            if l3.perpendicular_slope() == l5.slope() and (p4a.x, p4a.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4a.x, p4a.y))
-                                if square and l3.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p2, p4b)
-                            if l3.perpendicular_slope() == l6.slope() and (p4b.x, p4b.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4b.x, p4b.y))
-                                if square and l3.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        # Below is a complementry processing method, but it is redundant, so it is commented out.
-                        """
-                        p4c = p2.new_point(slope=l2.slope(), distance=l2.length())
-                        p4d = p2.new_point(slope=l2.slope(), distance=-l2.length())
-                        l4 = Line(p2, p4c)
-                        if l3.perpendicular_slope() == l4.slope():
-                            l5 = Line(p1, p4c)
-                            if l1.perpendicular_slope() == l5.slope() and (p4c.x, p4c.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4c.x, p4c.y))
-                                if square and l1.length() == l5.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            l6 = Line(p1, p4d)
-                            if l1.perpendicular_slope() == l6.slope() and (p4d.x, p4d.y) in points_list:
-                                point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
-                                             (p4d.x, p4d.y))
-                                if square and l1.length() == l6.length():
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                                elif not square:
-                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                        """
+                    p3 = Point(point=points_list[p3index])
+                    l2 = Line(p1=p2, p2=p3)
+                    # Test to see if l1 is perpendicularto l2 interseccting at p2
+                    if l1.is_perpendicular(line=l2):
+                        # P4 has 2 possible positions, 1 valid and are invalid
+                        # Test first posibility
+                        p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
+                        l4 = Line(p1=p1, p2=p4a)
+                        # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
+                        if l1.is_perpendicular(line=l4) and p4a.get_coordinates() in points_list:
+                            point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
+                                         p4a.get_coordinates())
+                            # If testing for a square the 2 perpendicular lines must be equal length
+                            if square and l1.length() == l4.length():
+                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                            elif not square:
+                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                        # Test second posibility
+                        p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
+                        l4 = Line(p1=p1, p2=p4b)
+                        # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
+                        if l1.is_perpendicular(line=l4) and p4b.get_coordinates() in points_list:
+                            point_set = (points_list[p1index], points_list[p2index], points_list[p3index],
+                                         p4b.get_coordinates())
+                            # If testing for a square the 2 perpendicular lines must be equal length
+                            if square and l1.length() == l4.length():
+                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                            elif not square:
+                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
 
@@ -294,14 +182,14 @@ class AIM(object):
         for p1index in range(len(points_list) - 2):
             for p2index in range(p1index + 1, len(points_list) - 1):
                 # 2 points are defined to identify line 1
-                p1 = Point(points_list[p1index][0], points_list[p1index][1])
-                p2 = Point(points_list[p2index][0], points_list[p2index][1])
-                l1 = Line(p1, p2)
+                p1 = Point(point=points_list[p1index])
+                p2 = Point(point=points_list[p2index])
+                l1 = Line(p1=p1, p2=p2)
                 # A third point is used to find line 2 and 3
                 for p3index in range(p2index + 1, len(points_list)):
-                    p3 = Point(points_list[p3index][0], points_list[p3index][1])
-                    l2 = Line(p1, p3)
-                    l3 = Line(p2, p3)
+                    p3 = Point(point=points_list[p3index])
+                    l2 = Line(p1=p1, p2=p3)
+                    l3 = Line(p1=p2, p2=p3)
                     # Verify that the 3 points are not collinear.  To do this the slopes of only 2 lines
                     # must be tested
                     if l1.slope() == l2.slope():
