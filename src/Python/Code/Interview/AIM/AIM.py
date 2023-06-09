@@ -80,56 +80,20 @@ class AIM(object):
     """AIM main class."""
 
     @staticmethod
-    def help_find_squares():
-        print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
-               that can be formed from those points.
-              Write a function find_squares that takes in a set of tuples, where each tuple (x, y) represents
-               a point the x-y plane, and computes the number of unique squares that can be using those points
-               as corners. The squares do not need to be aligned with the x-y axes.
-              Squares are defined as having 4 sides, formed with 4 non collinear points, of identical length
-               with each line intersection forming a 90 degree angle.
-              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_squares(points)
-               should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
-               squares that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
-               and the green square {(0, 3), (3, 3), (3, 0), (0, 0)}.
-              Make sure to give yourself enough time to implement a correct solution, then you can try to find
-               solutions that have better asymptotic runtime.
-              We are looking for production quality code, so please make sure your submission is clean and well
-               documented. Also include any test cases you think would be helpful in validating correctness.
-              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
-
-    @staticmethod
-    def find_squares(points: set) -> list:
-        """Find squares."""
-        return AIM.find_rectangles(points=points, square=True)
-
-    @staticmethod
-    def help_find_rectangles():
-        print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
-               that can be formed from those points.
-              Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
-               a point the x-y plane, and computes the number of unique rectangles that can be using those points
-               as corners. The rectangles do not need to be aligned with the x-y axes.
-              Rectangles are defined as having 4 sides, formed with 3 non collinear points, with each line
-               intersection forming a 90 degree angle.  The intersecting sides do nto need to be the same length
-            but the pairs of oposite sides must be the same
-               length as eachother.
-              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
-
-    @staticmethod
-    def find_rectangles(points: set, square: bool = False) -> list:
-        """Find rectangles."""
+    def find_quadrilaterals(points: set, rectangle: bool = False, square: bool = False,
+                            parallelogram: bool = False) -> list:
+        """Find quadrilateral."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
         """ Note: An issue was noted when not sorting the list with "sorted(list(points), key=lambda x: (x[0], x[1]))".
-                There were orders of points that did not allow some items to be detected.  This was fixed by
-                changing the inner 2 "for index" loops to both trigger off of the "p1index + 1" values to ensure
-                propper processing.
-                This exposed a second issue where the point_set allowed duplicate values to be present.  This caused
-                items to be listed that were invalid.  To correct this error and remove duplicated, the set was
-                converted to a list and then back to a set.
+                There were orders of points that did not allow some items to be detected. This was fixed by
+                 changing the inner 2 "for index" loops to both trigger off of the "p1index + 1" values to ensure
+                 propper processing.
+                This exposed a second issue where the point_set allowed duplicate values to be present. This caused
+                 items to be listed that were invalid. To correct this error and remove duplicated, the set was
+                 converted to a list and then back to a set.
                 Both of these issues were not seen in testing with the sorted list, but I am not confident that
-                it was guarenteed to not have other orderings that still caused the issue.  The implemented code
-                looks less elagant, but I feel it is safer."""
+                 it was guarenteed to not have other orderings that still caused the issue. The implemented code
+                 looks less elagant, but I feel it is safer."""
         # Convert set to list to allow iteration with index and sort for processing simplicity
         points_list = list(points)
         # Define output list
@@ -145,39 +109,125 @@ class AIM(object):
                 for p3index in range(p1index + 1, len(points_list)):
                     p3 = Point(point=points_list[p3index])
                     l2 = Line(p1=p2, p2=p3)
-                    # Test to see if l1 is perpendicularto l2 interseccting at p2
-                    if l1.is_perpendicular(line=l2):
+                    # Determine the type of quadrilateral to process
+                    if parallelogram:
                         # P4 has 2 possible positions, 1 valid and are invalid
                         # Test first posibility
                         p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
-                        l4 = Line(p1=p1, p2=p4a)
-                        # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
-                        if l1.is_perpendicular(line=l4) and p4a.get_coordinates() in points_list:
+                        l3 = Line(p1=p3, p2=p4a)
+                        l4 = Line(p1=p4a, p2=p1)
+                        if l1.length() == l3.length() and l2.length() == l4.length() \
+                                and p4a.get_coordinates() in points_list:
                             # since initializing a set with values allows duplicates, the conversion to a list
                             # and back to a set clears the duplicates
                             point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
                                                   p4a.get_coordinates())))
-                            # If testing for a square the 2 perpendicular lines must be equal length
-                            if square and l1.length() == l4.length() and len(point_set) == 4:
-                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            elif not square and len(point_set) == 4:
+                            if len(point_set) == 4:
                                 output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
                         # Test second posibility
                         p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                        l4 = Line(p1=p1, p2=p4b)
-                        # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
-                        if l1.is_perpendicular(line=l4) and p4b.get_coordinates() in points_list:
+                        l3 = Line(p1=p3, p2=p4b)
+                        l4 = Line(p1=p4b, p2=p1)
+                        if l1.length() == l3.length() and l2.length() == l4.length() \
+                                and p4b.get_coordinates() in points_list:
                             # since initializing a set with values allows duplicates, the conversion to a list
                             # and back to a set clears the duplicates
                             point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
                                                   p4b.get_coordinates())))
-                            # If testing for a square the 2 perpendicular lines must be equal length
-                            if square and l1.length() == l4.length() and len(point_set) == 4:
+                            if len(point_set) == 4:
                                 output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                            elif not square and len(point_set) == 4:
-                                output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                    elif rectangle or square:
+                        # Test to see if l1 is perpendicularto l2 interseccting at p2
+                        if l1.is_perpendicular(line=l2):
+                            # P4 has 2 possible positions, 1 valid and are invalid
+                            # Test first posibility
+                            p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
+                            l4 = Line(p1=p1, p2=p4a)
+                            # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
+                            if l1.is_perpendicular(line=l4) and p4a.get_coordinates() in points_list:
+                                # since initializing a set with values allows duplicates, the conversion to a list
+                                # and back to a set clears the duplicates
+                                point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
+                                                      p4a.get_coordinates())))
+                                # If testing for a square the 2 perpendicular lines must be equal length
+                                if square and l1.length() == l4.length() and len(point_set) == 4:
+                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                                elif not square and len(point_set) == 4:
+                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                            # Test second posibility
+                            p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
+                            l4 = Line(p1=p1, p2=p4b)
+                            # Test to see if l1 is perpendicular to l4 and verify constructed point is in points list
+                            if l1.is_perpendicular(line=l4) and p4b.get_coordinates() in points_list:
+                                # since initializing a set with values allows duplicates, the conversion to a list
+                                # and back to a set clears the duplicates
+                                point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index],
+                                                      p4b.get_coordinates())))
+                                # If testing for a square the 2 perpendicular lines must be equal length
+                                if square and l1.length() == l4.length() and len(point_set) == 4:
+                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                                elif rectangle and len(point_set) == 4:
+                                    output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
+
+    @staticmethod
+    def help_find_parallelograms():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct
+               parallelograms that can be formed from those points.
+              Write a function find_parallelograms that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique parallelograms that can be using those points
+               as corners. The parallelograms do not need to be aligned with the x-y axes.
+              Parallelograms are defined as having 4 sides, formed with 4 points, with each line. The intersecting
+               sides do not need to be the same length but the pairs of oposite sides must be the same length
+               as eachother.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_parallelograms(points: set) -> list:
+        """Find parallelogram."""
+        return AIM.find_quadrilaterals(points=points, parallelogram=True)
+
+    @staticmethod
+    def help_find_rectangles():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
+               that can be formed from those points.
+              Write a function find_rectangles that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique rectangles that can be using those points
+               as corners. The rectangles do not need to be aligned with the x-y axes.
+              Rectangles are defined as having 4 sides, formed with 4 points, with each line intersection forming
+               a 90 degree angle. The intersecting sides do not need to be the same length but the pairs of
+               oposite sides must be the same length as eachother.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_rectangles(points: set) -> list:
+        """Find rectangles."""
+        return AIM.find_quadrilaterals(points=points, rectangle=True)
+
+    @staticmethod
+    def help_find_squares():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
+               that can be formed from those points.
+              Write a function find_squares that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique squares that can be using those points
+               as corners. The squares do not need to be aligned with the x-y axes.
+              Squares are defined as having 4 sides, formed with 4 points, of identical length with each line
+               intersection forming a 90 degree angle.
+              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_squares(points)
+               should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
+               squares that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
+               and the green square {(0, 3), (3, 3), (3, 0), (0, 0)}.
+              Make sure to give yourself enough time to implement a correct solution, then you can try to find
+               solutions that have better asymptotic runtime.
+              We are looking for production quality code, so please make sure your submission is clean and well
+               documented. Also include any test cases you think would be helpful in validating correctness.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_squares(points: set) -> list:
+        """Find squares."""
+        return AIM.find_quadrilaterals(points=points, square=True)
 
     @staticmethod
     def help_find_triangles():
@@ -186,12 +236,12 @@ class AIM(object):
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
-              Triangles are defined as having 3 sides, formed with 3 non collinear points.  The 3 sides do not need
-               to be the same length.
+              Triangles are defined as having 3 sides, formed with 3 non collinear points.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
-    def find_triangles(points: set, isosceles: bool = False, equilateral: bool = False) -> list:
+    def find_triangles(points: set, scalene: bool = False, isosceles: bool = False,
+                       equilateral: bool = False) -> list:
         """Find triangles."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
         """ Note: I did not see the same issue with sorting that was discovered with the rectangles, but I kept the
@@ -212,29 +262,46 @@ class AIM(object):
                     p3 = Point(point=points_list[p3index])
                     l2 = Line(p1=p1, p2=p3)
                     l3 = Line(p1=p2, p2=p3)
-                    # Verify that the 3 points are not collinear.  To do this the slopes of only 2 lines
+                    # Verify that the 3 points are not collinear. To do this the slopes of only 2 lines
                     # must be tested
                     if l1.slope() == l2.slope():
                         continue
                     # Note: Since initializing a set with values allows duplicates, the conversion to a list
                     #        and back to a set clears the duplicates
                     point_set = set(list((points_list[p1index], points_list[p2index], points_list[p3index])))
-                    if isosceles or equilateral:
+                    if not len(point_set) == 3:
+                        continue
+                    if scalene:
+                        output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                    elif isosceles or equilateral:
                         length_set = set()
                         length_set.add(round(l1.length()))
                         length_set.add(round(l2.length()))
                         length_set.add(round(l3.length()))
                         # equilateral triangles have 3 sides that are equal in length
-                        if equilateral and len(length_set) == 1 and len(point_set) == 3:
+                        if equilateral and len(length_set) == 1:
                             output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
                         # isosceles triangles have 2 sides that are equal in length
-                        elif isosceles and len(length_set) <= 2 and len(point_set) == 3:
-                            output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
-                    else:
-                        if len(point_set) == 3:
+                        elif isosceles and len(length_set) <= 2:
                             output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
+
+    @staticmethod
+    def help_find_triangles_scalene():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              Triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not need
+               to be the same length.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangles_scalene(points: set) -> list:
+        """Find scalene triangles."""
+        return AIM.find_triangles(points=points, scalene=True)
 
     @staticmethod
     def help_find_triangles_isosceles():
@@ -243,7 +310,7 @@ class AIM(object):
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
-              Isosceles triangles are defined as having 3 sides, formed with 3 non collinear points.  2 sides must
+              Isosceles triangles are defined as having 3 sides, formed with 3 non collinear points. 2 sides must
                be the same length.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
@@ -259,7 +326,7 @@ class AIM(object):
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
                a point the x-y plane, and computes the number of unique triangles that can be using those points
                as corners.
-              Equilateral triangles are defined as having 3 sides, formed with 3 non collinear points.  All 3 sides
+              Equilateral triangles are defined as having 3 sides, formed with 3 non collinear points. All 3 sides
                must be the same length.
               A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
