@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import inspect
+import math
 import unittest
 
 import Python.Code.Interview.AIM.AIM as baseFile
@@ -48,7 +49,8 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class = AIM()
         self.assertIsNotNone(my_class)
 
-    def test_find_squares_0_get_description(self) -> None:
+    @staticmethod
+    def test_find_squares_0_get_description_squares() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
         AIM.get_description_find_squares()
@@ -163,7 +165,8 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(results)
         self.assertEqual(1, len(results))
 
-    def test_find_rectangles_0_get_description(self) -> None:
+    @staticmethod
+    def test_find_rectangles_0_get_description_rectangles() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
         AIM.get_description_find_rectangles()
@@ -269,3 +272,54 @@ class TestValidatePageAccess(unittest.TestCase):
               f"{self.empty:23} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
         self.assertEqual(3, len(results))
+
+    @staticmethod
+    def test_find_triangles_0_get_description() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.get_description_find_triangles()
+
+    def test_find_triangles_1(self) -> None:
+        """Find the triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3))}
+        results = AIM.find_triangles(points=points)
+        headder = f"{inspect.stack()[0][3]}: triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:22} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(30, len(results))
+
+    @staticmethod
+    def test_find_triangles_isosceles_0_get_description() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.get_description_find_triangles_isosceles()
+
+    def test_find_triangles_isosceles_1(self) -> None:
+        """Find the isosceles triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3))}
+        results = AIM.find_triangles_isosceles(points=points)
+        headder = f"{inspect.stack()[0][3]}: isosceles triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:32} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(15, len(results))
+
+    @staticmethod
+    def test_find_triangles_equilateral_0_get_description() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.get_description_find_triangles_equilateral()
+
+    def test_find_triangles_equilateral_1(self) -> None:
+        """Find the equilateral triangles in points"""
+        points = {(0, 0), (1, math.sqrt(3)), (2, 0), (-1, math.sqrt(3)), (-2, 0),
+                  (0, math.sqrt(3)), (0, 2 * math.sqrt(3))}
+        results = AIM.find_triangles_equilateral(points=points)
+        headder = f"{inspect.stack()[0][3]}: equilateral triangles from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:34} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(5, len(results))

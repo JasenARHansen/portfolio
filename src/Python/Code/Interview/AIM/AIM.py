@@ -90,7 +90,12 @@ class AIM(object):
                solutions that have better asymptotic runtime.
               We are looking for production quality code, so please make sure your submission is clean and well
                documented. Also include any test cases you think would be helpful in validating correctness.
-            A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_squares(points: set) -> list:
+        """Find squares."""
+        return AIM.find_rectangles(points=points, square=True)
 
     @staticmethod
     def get_description_find_rectangles():
@@ -100,30 +105,17 @@ class AIM(object):
                a point the x-y plane, and computes the number of unique rectangles that can be using those points
                as corners. The rectangles do not need to be aligned with the x-y axes.
               Rectangles are more comples than rectangles since all 4 sides do not need to be the same length.
-              For example, if points = {(-3, 0), (0, -3), (0, 3), (3, 0), (0, 0), (3, 3)}, then find_rectangles(points)
-               should return 2. As illustrated in the figure here (https://imgur.com/a/ygK9wfB), there are two
-               rectangles that can be formed from these points: the blue diamond {(-3, 0), (0, -3), (3, 0), (0, 3)}
-               and the green rectangle {(0, 3), (3, 3), (3, 0), (0, 0)}.
-              Make sure to give yourself enough time to implement a correct solution, then you can try to find
-               solutions that have better asymptotic runtime.
-              We are looking for production quality code, so please make sure your submission is clean and well
-               documented. Also include any test cases you think would be helpful in validating correctness.
-            A useful webpage to verify tests is: https://www.desmos.com/calculator""")
-
-    @staticmethod
-    def find_squares(points: set) -> list:
-        """Find squares."""
-        return AIM.find_rectangles(points=points, square=True)
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
 
     @staticmethod
     def find_rectangles(points: set, square: bool = False) -> list:
         """Find rectangles."""
         # No need to process points to remove duplicates. Sets do not allow duplicates
-        # Convert set to list to allow itteration with index and sort for processing simplicity
+        # Convert set to list to allow iteration with index and sort for processing simplicity
         points_list = sorted(list(points), key=lambda x: (x[0], x[1]))
         # Define output list
         output = list()
-        # Itterate over list to find rectangle start points.
+        # Iterate over list to find rectangle start points.
         for p1index in range(len(points_list) - 2):
             for p2index in range(p1index + 1, len(points_list) - 1):
                 # 2 points are defined to identify a line
@@ -280,3 +272,83 @@ class AIM(object):
                         """
         # Sort values and eliminate duplicates
         return [list(x) for x in set(tuple(x) for x in output)]
+
+    @staticmethod
+    def get_description_find_triangles():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangles(points: set, isosceles: bool = False, equilateral: bool = False) -> list:
+        """Find triangles."""
+        # No need to process points to remove duplicates. Sets do not allow duplicates
+        # Convert set to list to allow iteration with index and sort for processing simplicity
+        points_list = sorted(list(points), key=lambda x: (x[0], x[1]))
+        # Define output list
+        output = list()
+        # Iterate over list to find rectangle start points.
+        for p1index in range(len(points_list) - 2):
+            for p2index in range(p1index + 1, len(points_list) - 1):
+                # 2 points are defined to identify line 1
+                p1 = Point(points_list[p1index][0], points_list[p1index][1])
+                p2 = Point(points_list[p2index][0], points_list[p2index][1])
+                l1 = Line(p1, p2)
+                # A third point is used to find line 2 and 3
+                for p3index in range(p2index + 1, len(points_list)):
+                    p3 = Point(points_list[p3index][0], points_list[p3index][1])
+                    l2 = Line(p1, p3)
+                    l3 = Line(p2, p3)
+                    # Verify that the 3 points are not collinear.  To do this the slopes of only 2 lines
+                    # must be tested
+                    if l1.slope() == l2.slope():
+                        continue
+                    # isosceles triangles have 2 sides that are equal in length
+                    # equilateral triangles have 3 sides that are equal in length
+                    point_set = (points_list[p1index], points_list[p2index], points_list[p3index])
+                    if isosceles or equilateral:
+                        length_set = set()
+                        length_set.add(round(l1.length()))
+                        length_set.add(round(l2.length()))
+                        length_set.add(round(l3.length()))
+                        if isosceles and len(length_set) == 2:
+                            output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                        elif equilateral and len(length_set) == 1:
+                            output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+                    else:
+                        output.append(sorted(point_set, key=lambda x: (x[0], x[1])))
+        # Sort values and eliminate duplicates
+        return [list(x) for x in set(tuple(x) for x in output)]
+
+    @staticmethod
+    def get_description_find_triangles_isosceles():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              Isosceles triangles are defined as having 2 sides of identical length.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangles_isosceles(points: set) -> list:
+        """Find isosceles triangles."""
+        return AIM.find_triangles(points=points, isosceles=True)
+
+    @staticmethod
+    def get_description_find_triangles_equilateral():
+        print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
+               that can be formed from those points.
+              Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
+               a point the x-y plane, and computes the number of unique triangles that can be using those points
+               as corners.
+              Equilateral triangles are defined as having 3 sides of identical length.
+              A useful webpage to verify tests is: https://www.desmos.com/calculator""")
+
+    @staticmethod
+    def find_triangles_equilateral(points: set) -> list:
+        """Find equilateral triangles."""
+        return AIM.find_triangles(points=points, equilateral=True)
