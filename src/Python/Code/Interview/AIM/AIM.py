@@ -149,47 +149,51 @@ class AIM(object):
             output_dictionary[arg] = list()
         # Iterate over list to find rectangle start points.
         for p1index in range(len(points_list)):
+            # The iniatal point for the quadrilateral
+            p1 = Point(point=points_list[p1index])
             for p2index in range(p1index + 1, len(points_list)):
-                # 2 points are defined to identify a line
-                p1 = Point(point=points_list[p1index])
+                # The second point for the quadrilateral
                 p2 = Point(point=points_list[p2index])
-                # The first 2 points are used to generate the first side
+                # The first side for the quadrilateral
                 l1 = Line(p1=p1, p2=p2)
-                # A third point is used to generate the 2nd side
                 for p3index in range(p1index + 1, len(points_list)):
+                    # The third point for the quadrilateral
                     p3 = Point(point=points_list[p3index])
+                    # The second point for the quadrilateral
                     l2 = Line(p1=p2, p2=p3)
-                    # These
+                    # These types can calculate potential p4, so they are grouped for efficiency
                     if any([in_and_true(shape) for shape in ["square", "rectangle", "parallelogram", "rhombus"]]):
                         # For the regualr quadrilaterals that have 2 sets of parallel sides, P4 has 2 possible
                         # positions, 1 valid and are invalid
-                        p4a = p3.new_point(slope=l1.slope(), distance=l1.length())
-                        p4b = p3.new_point(slope=l1.slope(), distance=-l1.length())
-                        possible_points = [p4a, p4b]
+                        possible_points = [p3.new_point(slope=l1.slope(), distance=l1.length()),
+                                           p3.new_point(slope=l1.slope(), distance=-l1.length())]
                         # Itterate over possible_points to generate valid quadrilateral
                         for point in possible_points:
-                            # These are the remaining 2 potential sides of the quadrilateral
-                            l3 = Line(p1=p3, p2=point)
-                            l4 = Line(p1=point, p2=p1)
                             if point.get_coordinates() in points_list:
+                                # Cordinates to use for quadrilateral
                                 point_set = {points_list[p1index], points_list[p2index], points_list[p3index],
                                              point.get_coordinates()}
-                                # A quadrilateral must have 4 points and not have adjacent lines be collinear
+                                # A quadrilateral must have 4 points to generate
                                 if len(point_set) != 4:
                                     continue
+                                # These are the remaining 2 potential sides of the quadrilateral
+                                l3 = Line(p1=p3, p2=point)
+                                l4 = Line(p1=point, p2=p1)
                                 # The sum of the inner angles of a quadrilateral must be 360 degrees
                                 angle_list = [round(l1.get_angle(line2=l2), 5), round(l2.get_angle(line2=l3), 5),
                                               round(l3.get_angle(line2=l4), 5), round(l4.get_angle(line2=l1), 5)]
-                                # A quadrilateral requires the sum of the inner angles to be 360
-                                if 360 != round(reduce(lambda x, y: x + y, angle_list), 3):
-                                    continue
                                 # If the angle between any 2 lines in 180,  then this will be colinnear
                                 if 180 in angle_list:
                                     continue
+                                # A quadrilateral requires the sum of the inner angles to be 360
+                                if 360 != round(reduce(lambda x, y: x + y, angle_list), 3):
+                                    continue
+                                # Making a set to remove duplicate angles
                                 angle_set = set(angle_list)
+                                # Making a set to remove duplicate lengths
                                 length_set = {round(l1.length(), 5), round(l2.length(), 5), round(l3.length(), 5),
                                               round(l4.length(), 5)}
-                                # Determine the type of quadrilateral to process.
+                                # Determine the type of quadrilateral to process
                                 if all([in_and_true("square"), len(angle_set) == 1, len(length_set) == 1]):
                                     # If valid quadrilateral detected, append to output
                                     output_dictionary.get("square").append(
@@ -206,30 +210,35 @@ class AIM(object):
                                     # If valid quadrilateral detected, append to output
                                     output_dictionary.get("rhombus").append(
                                         sorted(point_set, key=lambda x: (x[0], x[1])))
+                    # These types can not calculate potential p4, so they are grouped for efficiency
                     if any([in_and_true(shape) for shape in ["trapezoid", "isosceles_trapezoid", "kite", "irregular"]]):
                         for p4index in range(p1index + 1, len(points_list)):
-                            p4 = Point(point=points_list[p4index])
+                            # Cordinates to use for quadrilateral
                             point_set = {points_list[p1index], points_list[p2index], points_list[p3index],
                                          points_list[p4index]}
+                            # A quadrilateral must have 4 points to generate
+                            if len(point_set) != 4:
+                                continue
+                            # The forth point for the quadrilateral
+                            p4 = Point(point=points_list[p4index])
                             # These are the remaining 2 potential sides of the quadrilateral
                             l3 = Line(p1=p3, p2=p4)
                             l4 = Line(p1=p4, p2=p1)
-                            # A quadrilateral must have 4 sides and no lines be collinear
-                            if any([len(point_set) != 4, l1.is_parallel(l2), l2.is_parallel(l3), l3.is_parallel(l4),
-                                    l4.is_parallel(l1)]):
-                                continue
                             # The sum of the inner angles of a quadrilateral must be 360 degrees
                             angle_list = [round(l1.get_angle(line2=l2), 5), round(l2.get_angle(line2=l3), 5),
                                           round(l3.get_angle(line2=l4), 5), round(l4.get_angle(line2=l1), 5)]
-                            # A quadrilateral requires the sum of the inner angles to be 360
-                            if 360 != round(reduce(lambda x, y: x + y, angle_list), 3):
-                                continue
                             # If the angle between any 2 lines in 180,  then this will be colinnear
                             if 180 in angle_list:
                                 continue
+                            # A quadrilateral requires the sum of the inner angles to be 360
+                            if 360 != round(reduce(lambda x, y: x + y, angle_list), 3):
+                                continue
+                            # Making a set to remove duplicate angles
                             angle_set = set(angle_list)
+                            # Making a set to remove duplicate lengths
                             length_set = {round(l1.length(), 5), round(l2.length(), 5), round(l3.length(), 5),
                                           round(l4.length(), 5)}
+                            # Determine the type of quadrilateral to process
                             if all([in_and_true("trapezoid"), any([
                                 all([l1.is_parallel(l3), l1.get_angle(l2) != l1.get_angle(l4),
                                      any([all([l1.get_angle(l4) <= 90, l1.get_angle(l2) <= 90]),
@@ -441,35 +450,37 @@ class AIM(object):
             output_dictionary[arg] = list()
         # Iterate over list to find rectangle start points.
         for p1index in range(len(points_list) - 2):
+            # The iniatal point for the triangle
+            p1 = Point(point=points_list[p1index])
             for p2index in range(p1index + 1, len(points_list) - 1):
-                # 2 points are defined to identify line 1
-                p1 = Point(point=points_list[p1index])
                 p2 = Point(point=points_list[p2index])
+                # The second sided for the triangle
                 l1 = Line(p1=p1, p2=p2)
-                # A third point is used to find line 2 and 3
                 for p3index in range(p2index + 1, len(points_list)):
-                    p3 = Point(point=points_list[p3index])
+                    # Cordinates for the triangle points
                     point_set = {points_list[p1index], points_list[p2index], points_list[p3index]}
                     # A Triangle must have 3 points and not have adjacent lines be collinear
                     if len(point_set) != 3:
                         continue
+                    # The third point of the triangle
+                    p3 = Point(point=points_list[p3index])
+                    # The remaining 2 sides of the triangle
                     l2 = Line(p1=p2, p2=p3)
                     l3 = Line(p1=p3, p2=p1)
-                    # The sum of the inner angles of a triangle must be 180 degrees
+                    # Calculated inner angles for the triangle
                     angle_list = [round(l1.get_angle(line2=l2), 5), round(l2.get_angle(line2=l3), 5),
                                   round(l3.get_angle(line2=l1), 5)]
-                    if 180 != round(reduce(lambda x, y: x + y, angle_list), 3):
-                        continue
-                    # Verify that the 3 points are not collinear. If the angle between any 2 lines in 180,
-                    # then this will be colinnear
+                    # If the inner angle between any 2 lines in 180, then this will be colinnear
                     if 180 in angle_list:
                         continue
-                    angle_set = set(angle_list)
-                    length_set = {round(l1.length(), 5), round(l2.length(), 5), round(l3.length(), 5)}
-                    point_set = {points_list[p1index], points_list[p2index], points_list[p3index]}
-                    if not len(point_set) == 3:
+                    # The sum of the inner angles of a triangle must be 180 degrees
+                    if 180 != round(reduce(lambda x, y: x + y, angle_list), 3):
                         continue
-                    # Determine the type of triangle to process.
+                    # Making a set to remove duplicate angles
+                    angle_set = set(angle_list)
+                    # Making a set to remove duplicate lengths
+                    length_set = {round(l1.length(), 5), round(l2.length(), 5), round(l3.length(), 5)}
+                    # Making a set to remove duplicate lengths
                     if in_and_true("scalene"):
                         output_dictionary.get("scalene").append(sorted(point_set, key=lambda x: (x[0], x[1])))
                     if all([in_and_true("acute"), all([True if angle < 90 else False for angle in angle_set])]):
