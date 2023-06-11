@@ -17,8 +17,8 @@ class TestFile(unittest.TestCase):
         classes, constants, and root methods.
         """
         items_found = dir(baseFile)
-        items_found = [x for x in items_found if "__" not in x]
-        _test_data = ['Line', 'Point', 'math', "AIM"]
+        items_found = [x for x in items_found if "_" not in x]
+        _test_data = ['AIM', 'Line', 'Point', 'math', 'reduce']
         expected_not_found = [x for x in _test_data if x not in items_found]
         found_not_expected = [x for x in items_found if x not in _test_data]
         self.assertEqual(
@@ -50,10 +50,144 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(my_class)
 
     @staticmethod
-    def test_find_parallelogram_0_help() -> None:
+    def test_find_irregular_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_parallelogram()
+        AIM.find_irregular_help()
+
+    def test_find_irregular_1(self) -> None:
+        """Find the irregulars in points"""
+        points = {(-2, -1), (-1, -2), (1, 2), (2, 1), (0, 0)}
+        results = AIM.find_irregular(points=points)
+        headder = f"{inspect.stack()[0][3]}: irregulars from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    def test_find_irregular_2(self) -> None:
+        """Find the irregulars in points"""
+        points = {(-3, 1), (-1, 2), (1, 2), (2, 1), (0, 0)}
+        results = AIM.find_irregular(points=points)
+        headder = f"{inspect.stack()[0][3]}: irregulars from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    @staticmethod
+    def test_find_kite_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.find_kite_help()
+
+    def test_find_kite_1(self) -> None:
+        """Find the kites in points"""
+        points = {(-2, 0), (2, 0), (0, -2), (0, 2), (4, 0), (0, 4)}
+        results = AIM.find_kite(points=points)
+        headder = f"{inspect.stack()[0][3]}: kites from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:3} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(3, len(results))
+
+    def test_find_kite_2(self) -> None:
+        """Find the kites in points"""
+        points = {(-3, -1.5), (-1.5, -3), (0, 1.5), (1.5, 0), (0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_kite(points=points)
+        headder = f"{inspect.stack()[0][3]}: kites from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(4, len(results))
+
+    @staticmethod
+    def test_find_isosceles_trapezoid_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.find_isosceles_trapezoid_help()
+
+    def test_find_isosceles_trapezoid_1(self) -> None:
+        """Find the isosceles trapezoids in points"""
+        points = {(-1, 1), (1, 1), (-2, -1), (2, -1)}
+        results = AIM.find_isosceles_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: isosceles trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_isosceles_trapezoid_2(self) -> None:
+        """Find the isosceles trapezoids in points"""
+        points = {(0, 2), (0, 4), (2, 0), (4, 0)}
+        results = AIM.find_isosceles_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: isosceles trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_isosceles_trapezoid_3(self) -> None:
+        """Find the isosceles trapezoids in points"""
+        points = {(-1, 1), (1, 1), (-2, -1), (2, -1), (0, 2), (0, 4), (2, 0), (4, 0)}
+        results = AIM.find_isosceles_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: isosceles trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(2, len(results))
+
+    def test_find_isosceles_trapezoid_4(self) -> None:
+        """Find the isosceles trapezoids in points"""
+        points = {(0, 0), (3, 3), (0, 3), (0, -3), (4, 0), (-4, 0)}
+        results = AIM.find_isosceles_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: isosceles trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(0, len(results))
+
+    @staticmethod
+    def test_find_trapezoid_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.find_isosceles_trapezoid_help()
+
+    def test_find_trapezoid_1(self) -> None:
+        """Find the trapezoids in points"""
+        points = {(0, 1), (1, 1), (2, -1), (-2, -1)}
+        results = AIM.find_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_trapezoid_2(self) -> None:
+        """Find the trapezoids in points"""
+        points = {(0, 0), (1, 1), (0, -2), (2, 0)}
+        results = AIM.find_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
+    def test_find_trapezoid_3(self) -> None:
+        """Find the trapezoids in points"""
+        points = {(0, 1), (1, 1), (2, -1), (-2, -1), (0, 0), (1, 1), (0, -2), (2, 0)}
+        results = AIM.find_trapezoid(points=points)
+        headder = f"{inspect.stack()[0][3]}: trapezoids from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(5, len(results))
+
+    @staticmethod
+    def test_find_parallelogram_help() -> None:
+        """Test help message"""
+        print(f"{inspect.stack()[0][3]}: ")
+        AIM.find_parallelogram_help()
 
     def test_find_parallelogram_1(self) -> None:
         """Find the parallelograms in points"""
@@ -160,10 +294,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(17, len(results))
 
     @staticmethod
-    def test_find_rhombus_0_help() -> None:
+    def test_find_rhombus_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_rhombus()
+        AIM.find_rhombus_help()
 
     def test_find_rhombus_1(self) -> None:
         """Find the rhombuses in points"""
@@ -269,10 +403,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(5, len(results))
 
     @staticmethod
-    def test_find_rectangle_0_help() -> None:
+    def test_find_rectangle_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_rectangle()
+        AIM.find_rectangle_help()
 
     def test_find_rectangle_1(self) -> None:
         """Find the rectangles in points"""
@@ -379,10 +513,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(3, len(results))
 
     @staticmethod
-    def test_find_square_0_help() -> None:
+    def test_find_square_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_square()
+        AIM.find_square_help()
 
     def test_find_square_1(self) -> None:
         """Find the squares in points"""
@@ -496,11 +630,21 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertIsNotNone(results)
         self.assertEqual(1, len(results))
 
+    def test_find_square_12(self) -> None:
+        """Find the squares in points"""
+        points = {(1, 0), (1, 1), (0, 1), (0, 0)}
+        results = AIM.find_square(points=points)
+        headder = f"{inspect.stack()[0][3]}: squares from"
+        print(f"{headder} points: = {points}\n"
+              f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
+        self.assertIsNotNone(results)
+        self.assertEqual(1, len(results))
+
     @staticmethod
-    def test_find_triangle_scalene_0_help() -> None:
+    def test_find_triangle_scalene_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangle_scalene()
+        AIM.find_triangle_scalene_help()
 
     def test_find_triangle_scalene_1(self) -> None:
         """Find the scalene triangles in points"""
@@ -514,10 +658,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(48, len(results))
 
     @staticmethod
-    def test_find_triangle_acute_0_help() -> None:
+    def test_find_triangle_acute_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangle_acute()
+        AIM.find_triangle_acute_help()
 
     def test_find_triangle_acute_1(self) -> None:
         """Find the acute triangles in points"""
@@ -531,10 +675,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(10, len(results))
 
     @staticmethod
-    def test_find_triangle_obtuse_0_help() -> None:
+    def test_find_triangle_obtuse_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangle_obtuse()
+        AIM.find_triangle_obtuse_help()
 
     def test_find_triangle_obtuse_1(self) -> None:
         """Find the obtuse triangles in points"""
@@ -548,10 +692,10 @@ class TestValidatePageAccess(unittest.TestCase):
         self.assertEqual(21, len(results))
 
     @staticmethod
-    def test_find_triangle_right_0_help() -> None:
+    def test_find_triangle_right_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangle_right()
+        AIM.find_triangle_right_help()
 
     def test_find_triangle_right_1(self) -> None:
         """Find the right triangles in points"""
@@ -562,13 +706,13 @@ class TestValidatePageAccess(unittest.TestCase):
         print(f"{headder} points: = {points}\n"
               f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(13, len(results))
+        self.assertEqual(17, len(results))
 
     @staticmethod
-    def test_find_triangle_isosceles_0_help() -> None:
+    def test_find_triangle_isosceles_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
-        AIM.help_find_triangle_isosceles()
+        AIM.find_triangle_isosceles_help()
 
     def test_find_triangle_isosceles_1(self) -> None:
         """Find the isosceles triangles in points"""
@@ -579,10 +723,10 @@ class TestValidatePageAccess(unittest.TestCase):
         print(f"{headder} points: = {points}\n"
               f"{self.empty:10} result ({len(results)}) = {', '.join(str(x) for x in list(results))}")
         self.assertIsNotNone(results)
-        self.assertEqual(13, len(results))
+        self.assertEqual(18, len(results))
 
     @staticmethod
-    def test_find_triangle_equilateral_0_help() -> None:
+    def test_find_triangle_equilateral_help() -> None:
         """Test help message"""
         print(f"{inspect.stack()[0][3]}: ")
         AIM.help_find_triangle_equilateral()
