@@ -7,44 +7,56 @@ class Point(object):
     """AIM Point class."""
 
     def __init__(self, point=(0.0, 0.0)):
-        self.x = int(point[0]) if int(point[0]) == float(point[0]) else float(point[0])
-        self.y = int(point[1]) if int(point[1]) == float(point[1]) else float(point[1])
+        self._x = int(point[0]) if int(point[0]) == float(point[0]) else float(point[0])
+        self._y = int(point[1]) if int(point[1]) == float(point[1]) else float(point[1])
+
+    def get_x(self):
+        return self._x
+
+    def get_y(self):
+        return self._y
 
     def new_point(self, slope, distance):
         # slope is infinite
         if slope == "MAX":
-            x2 = self.x
-            y2 = self.y + distance
+            x2 = self.get_x()
+            y2 = self.get_y() + distance
         # slope is 0
         elif slope == 0:
-            x2 = self.x + distance
-            y2 = self.y
+            x2 = self.get_x() + distance
+            y2 = self.get_y()
         else:
             dx = round((distance / math.sqrt(1 + (slope ** 2))), 5)
             dy = slope * dx
-            x2 = self.x + dx
-            y2 = self.y + dy
+            x2 = self.get_x() + dx
+            y2 = self.get_y() + dy
         return Point(point=(x2, y2))
 
     def get_coordinates(self):
-        return self.x, self.y
+        return self.get_x(), self.get_y()
 
 
 class Line(object):
     """AIM Line class."""
 
     def __init__(self, a: Point, b: Point):
-        self.p1 = a
-        self.p2 = b
+        self._endpoint_a = a
+        self._endpoint_b = b
         self._line_length = None
         self._line_slope = None
         self._perpendicular_slope = None
 
+    def get_a(self):
+        return self._endpoint_a
+
+    def get_b(self):
+        return self._endpoint_b
+
     def length(self):
         if self._line_length:
             return self._line_length
-        dist_x = abs(self.p2.x - self.p1.x)
-        dist_y = abs(self.p2.y - self.p1.y)
+        dist_x = abs(self._endpoint_b.get_x() - self._endpoint_a.get_x())
+        dist_y = abs(self._endpoint_b.get_y() - self._endpoint_a.get_y())
         dist_x_squared = dist_x ** 2
         dist_y_squared = dist_y ** 2
         self._line_length = math.sqrt(dist_x_squared + dist_y_squared)
@@ -53,13 +65,26 @@ class Line(object):
     def slope(self):
         if self._line_slope:
             return self._line_slope
-        run = self.p2.x - self.p1.x
-        rise = self.p2.y - self.p1.y
+        run = self._endpoint_b.get_x() - self._endpoint_a.get_x()
+        rise = self._endpoint_b.get_y() - self._endpoint_a.get_y()
         if run == 0:
             self._line_slope = "MAX"
         else:
             self._line_slope = rise / run
         return self._line_slope
+
+    def perpendicular_slope(self):
+        if self._perpendicular_slope:
+            return self._perpendicular_slope
+        if not self._line_slope:
+            self.slope()
+        if self._line_slope == "MAX":
+            self._perpendicular_slope = 0
+        elif self._line_slope == 0:
+            self._perpendicular_slope = "MAX"
+        else:
+            self._perpendicular_slope = -1 / self._line_slope
+        return self._perpendicular_slope
 
     def is_parallel(self, line):
         if not self._line_slope:
@@ -69,16 +94,7 @@ class Line(object):
         return False
 
     def is_perpendicular(self, line):
-        if not self._line_slope:
-            self.slope()
-        if not self._perpendicular_slope:
-            if self._line_slope == "MAX":
-                self._perpendicular_slope = 0
-            elif self._line_slope == 0:
-                self._perpendicular_slope = "MAX"
-            else:
-                self._perpendicular_slope = -1 / self._line_slope
-        if self._perpendicular_slope == line.slope():
+        if self.perpendicular_slope() == line.slope():
             return True
         return False
 
@@ -95,11 +111,11 @@ class Line(object):
     def get_angle(self, line):
         # https://stackoverflow.com/questions/62195081/calculate-specific-angle-between-two-lines
         # Get directional vectors
-        d1 = (self.p2.x - self.p1.x, self.p2.y - self.p1.y)
-        if self.p1.get_coordinates() == line.p1.get_coordinates():
-            d2 = (line.p2.x - line.p1.x, line.p2.y - line.p1.y)
+        d1 = (self._endpoint_b.get_x() - self._endpoint_a.get_x(), self._endpoint_b.get_y() - self._endpoint_a.get_y())
+        if self._endpoint_a.get_coordinates() == line.get_a().get_coordinates():
+            d2 = (line.get_b().get_x() - line.get_a().get_x(), line.get_b().get_y() - line.get_a().get_y())
         else:
-            d2 = (line.p1.x - line.p2.x, line.p1.y - line.p2.y)
+            d2 = (line.get_a().get_x() - line.get_b().get_x(), line.get_a().get_y() - line.get_b().get_y())
         # Compute dot product
         p = d1[0] * d2[0] + d1[1] * d2[1]
         # Compute norms
@@ -124,13 +140,15 @@ class AIM(object):
         """Find quadrilateral."""
         """ This switches between different implentatins of the logic.  I did this for internal testing."""
 
-        version = 2
+        version = 3
 
         match version:
             case 1:
                 return AIM.find_quadrilateral_version_1(points, **kwargs)
             case 2:
                 return AIM.find_quadrilateral_version_2(points, **kwargs)
+            case 3:
+                return AIM.find_quadrilateral_version_3(points, **kwargs)
             case _:
                 return AIM.find_quadrilateral_version_1(points, **kwargs)
 
@@ -329,30 +347,30 @@ class AIM(object):
         # Iterate over list to find rectangle start points.
         for p1index in range(len(points_list)):
             # The iniatal point for the quadrilateral
-            data["p1"] = Point(point=points_list[p1index])
+            p1 = Point(point=points_list[p1index])
             for p2index in range(p1index + 1, len(points_list)):
                 # The second point for the quadrilateral
-                data["p2"] = Point(point=points_list[p2index])
+                p2 = Point(point=points_list[p2index])
                 # The first side for the quadrilateral
-                data["l1"] = Line(a=data.get("p1"), b=data.get("p2"))
+                data["l1"] = Line(a=p1, b=p2)
                 for p3index in range(p1index + 1, len(points_list)):
                     # The third point for the quadrilateral
-                    data["p3"] = Point(point=points_list[p3index])
+                    p3 = Point(point=points_list[p3index])
                     # The second point for the quadrilateral
-                    data["l2"] = Line(a=data.get("p2"), b=data.get("p3"))
+                    data["l2"] = Line(a=p2, b=p3)
                     # These types can calculate potential p4, so they are grouped for efficiency
                     if any([in_and_true(shape) for shape in ["square", "rectangle", "parallelogram", "rhombus"]]):
                         # For the regualr quadrilaterals that have 2 sets of parallel sides, P4 has 2 possible
                         # positions, 1 valid and are invalid
                         data["possible_points"] = [
-                            data.get("p3").new_point(slope=data.get("l1").slope(), distance=data.get("l1").length()),
-                            data.get("p3").new_point(slope=data.get("l1").slope(), distance=-data.get("l1").length())]
+                            p3.new_point(slope=data.get("l1").slope(), distance=data.get("l1").length()),
+                            p3.new_point(slope=data.get("l1").slope(), distance=-data.get("l1").length())]
                         # Itterate over possible_points to generate valid quadrilateral
                         for point in data.get("possible_points"):
                             if point.get_coordinates() in points_list:
                                 # These are the remaining 2 potential sides of the quadrilateral
-                                data["l3"] = Line(a=data.get("p3"), b=point)
-                                data["l4"] = Line(a=point, b=data.get("p1"))
+                                data["l3"] = Line(a=p3, b=point)
+                                data["l4"] = Line(a=point, b=p1)
                                 # Cordinates to use for quadrilateral
                                 data["point_set"] = {points_list[p1index], points_list[p2index], points_list[p3index],
                                                      point.get_coordinates()}
@@ -384,10 +402,10 @@ class AIM(object):
                     if any([in_and_true(shape) for shape in ["trapezoid", "isosceles_trapezoid", "kite", "irregular"]]):
                         for p4index in range(p1index + 1, len(points_list)):
                             # The forth point for the quadrilateral
-                            data["p4"] = Point(point=points_list[p4index])
+                            p4 = Point(point=points_list[p4index])
                             # These are the remaining 2 potential sides of the quadrilateral
-                            data["l3"] = Line(a=data.get("p3"), b=data.get("p4"))
-                            data["l4"] = Line(a=data.get("p4"), b=data.get("p1"))
+                            data["l3"] = Line(a=p3, b=p4)
+                            data["l4"] = Line(a=p4, b=p1)
                             # Cordinates to use for quadrilateral
                             data["point_set"] = {points_list[p1index], points_list[p2index], points_list[p3index],
                                                  points_list[p4index]}
@@ -444,6 +462,254 @@ class AIM(object):
         # Sort values and eliminate duplicates
         for key in output_dictionary:
             output_dictionary[key] = [list(x) for x in set(tuple(x) for x in output_dictionary.get(key))]
+        return output_dictionary
+
+    @staticmethod
+    def find_quadrilateral_version_3(points: set, **kwargs) -> list:
+        """Find quadrilateral."""
+        """ Note: Shape definiopns: https://www.skillsyouneed.com/num/polygons.html
+            Note: I did not see the same issue with sorting that was discovered with the rectangles, but I kept the
+                   same logical flow just in case."""
+
+        # No need to process points to remove duplicates. Sets do not allow duplicates
+
+        def in_and_true(shape: str = None):
+            if shape is not None and kwargs:
+                if shape in kwargs:
+                    return kwargs.get(shape)
+            return False
+
+        def get(item: str):
+            # This is used a lot, so I wanted the data access abstracted
+            return data.get(item)
+
+        def put(key: str, item):
+            # This is used a lot, so I wanted the data access abstracted
+            data[key] = item
+
+        def set_length(item: str):
+            # This is used a lot, so I wanted the data access abstracted
+            return len(get(item=item))
+
+        def validate():
+            # A quadrilateral must have 4 points to generate
+            if set_length(item="point_set") != 4:
+                return False
+            # The sum of the inner angles of a quadrilateral must be 360 degrees
+            put(key="angle_list", item=[round(get(item="l1").get_angle(line=get(item="l2")), 5),
+                                        round(get(item="l2").get_angle(line=get(item="l3")), 5),
+                                        round(get(item="l3").get_angle(line=get(item="l4")), 5),
+                                        round(get(item="l4").get_angle(line=get(item="l1")), 5)])
+            # If the angle between any 2 lines in 180, then this will be colinnear
+            if 180 in get(item="angle_list"):
+                return False
+            # A quadrilateral requires the sum of the inner angles to be 360
+            if 360 != round(reduce(lambda x, y: x + y, get(item="angle_list")), 3):
+                return False
+            # Making a set to remove duplicate angles
+            put(key="angle_set", item=set(get(item="angle_list")))
+            # Making a set to remove duplicate lengths
+            put(key="length_set", item={round(get(item="l1").length(), 5), round(get(item="l2").length(), 5),
+                                        round(get(item="l3").length(), 5), round(get(item="l4").length(), 5)})
+            return True
+
+        def insert_point_set(point_set: set, shape: str = None, shape_list: list = None):
+            # Test to see if the shape already has the points.  If so do not add.
+            local_set = sorted(point_set, key=lambda x: (x[0], x[1]))
+            if shape and local_set in output_dictionary[shape]:
+                return False
+            if shape_list:
+                for shape in shape_list:
+                    if not in_and_true(shape=shape):
+                        continue
+                    if shape and local_set in output_dictionary[shape]:
+                        return False
+            put(key="point_set", item=local_set)
+            return True
+
+        # Convert set to list to allow iteration with index and sort for processing simplicity
+        points_list = list(points)
+        # Define data dictionary for central processing
+        data = dict()
+        # groupings by numbers of points required to solve
+        quadrilateral_2_points = ["square"]
+        quadrilateral_3_points = ["rectangle", "parallelogram", "rhombus"]
+        quadrilateral_4_points = ["trapezoid", "isosceles_trapezoid", "kite", "irregular"]
+        # Define output dictionary
+        output_dictionary = dict()
+        for arg in kwargs:
+            output_dictionary[arg] = list()
+        # Iterate over list to find rectangle start points.
+        for p1index in range(len(points_list)):
+            # The iniatal point for the quadrilateral
+            p1 = Point(point=points_list[p1index])
+            for p2index in range(p1index + 1, len(points_list)):
+                # The second point for the quadrilateral
+                p2 = Point(point=points_list[p2index])
+                # The first side for the quadrilateral
+                put(key="l1", item=Line(a=p1, b=p2))
+                # Shapes in this set can be derived with 2 points
+                if any([in_and_true(shape) for shape in quadrilateral_2_points]):
+                    shape = "square"
+                    if in_and_true(shape):
+                        # For the square, extend line to generate possible point sets
+                        possible_points = (
+                            (get(item="l1").get_b().new_point(slope=get(item="l1").perpendicular_slope(),
+                                                              distance=get(item="l1").length()),
+                             get(item="l1").get_a().new_point(slope=get(item="l1").perpendicular_slope(),
+                                                              distance=get(item="l1").length())),
+                            (get(item="l1").get_b().new_point(slope=get(item="l1").perpendicular_slope(),
+                                                              distance=-get(item="l1").length()),
+                             get(item="l1").get_a().new_point(slope=get(item="l1").perpendicular_slope(),
+                                                              distance=-get(item="l1").length())))
+                        # Itterate over possible_points to generate valid quadrilateral
+                        for possible_point in possible_points:
+                            # If possible point set does not exist in source point list, continue the loop
+                            if not all(cordinate in points_list for cordinate in [possible_point[0].get_coordinates(),
+                                                                                  possible_point[1].get_coordinates()]):
+                                continue
+                            # Cordinates to use for quadrilateral
+                            # Test to see if the point set is already in the result set.  If it is not than proceed.
+                            if insert_point_set(shape=shape, point_set={points_list[p1index], points_list[p2index],
+                                                                        possible_point[0].get_coordinates(),
+                                                                        possible_point[1].get_coordinates()}):
+                                # Define remaining lines
+                                put(key="l2", item=Line(a=p2, b=possible_point[0]))
+                                put(key="l3", item=Line(a=possible_point[0], b=possible_point[1]))
+                                put(key="l4", item=Line(a=possible_point[1], b=p1))
+                                # Perform validation
+                                if not validate():
+                                    continue
+                                if all([set_length(item="angle_set") == 1, set_length(item="length_set") == 1]):
+                                    # If valid quadrilateral detected, append to output
+                                    output_dictionary.get(shape).append(get(item="point_set"))
+                # Shapes in this set can not be derived with 2 points
+                if any([in_and_true(shape) for shape in
+                        quadrilateral_3_points + quadrilateral_4_points]):
+                    for p3index in range(p1index + 1, len(points_list)):
+                        # The third point for the quadrilateral
+                        p3 = Point(point=points_list[p3index])
+                        # The second point for the quadrilateral
+                        put(key="l2", item=Line(a=p2, b=p3))
+                        # These types can calculate potential p4, so they are grouped for efficiency
+                        # Shapes in this set can be derived with 3 points
+                        if any([in_and_true(shape) for shape in quadrilateral_3_points]):
+                            # For the regualr quadrilaterals that have 2 sets of parallel sides, P4 has 2 possible
+                            # positions, 1 valid and are invalid
+                            put(key="possible_points", item=[
+                                p3.new_point(slope=get(item="l1").slope(), distance=get(item="l1").length()),
+                                p3.new_point(slope=get(item="l1").slope(),
+                                             distance=-get(item="l1").length())])
+                            # Itterate over possible_points to generate valid quadrilateral
+                            for point in get(item="possible_points"):
+                                if point.get_coordinates() in points_list:
+                                    # These are the remaining 2 potential sides of the quadrilateral
+                                    put(key="l3", item=Line(a=p3, b=point))
+                                    put(key="l4", item=Line(a=point, b=p1))
+                                    # Cordinates to use for quadrilateral
+                                    # Test to see if the point set is already in the result set.  If it is not
+                                    # than proceed.
+                                    if insert_point_set(shape_list=quadrilateral_3_points,
+                                                        point_set={points_list[p1index], points_list[p2index],
+                                                                   points_list[p3index], point.get_coordinates()}):
+                                        # Perform validation
+                                        if not validate():
+                                            continue
+                                        # Determine the type of quadrilateral to process
+                                        shape = "rectangle"
+                                        if all([in_and_true(shape), set_length(item="angle_set") == 1,
+                                                set_length(item="length_set") <= 2]):
+                                            # If valid quadrilateral detected, append to output
+                                            output_dictionary.get(shape).append(get(item="point_set"))
+                                        shape = "parallelogram"
+                                        if all([in_and_true(shape), set_length(item="angle_set") <= 2,
+                                                set_length(item="length_set") <= 2]):
+                                            # If valid quadrilateral detected, append to output
+                                            output_dictionary.get(shape).append(get(item="point_set"))
+                                        shape = "rhombus"
+                                        if all([in_and_true(shape), set_length(item="angle_set") <= 2,
+                                                set_length(item="length_set") == 1]):
+                                            # If valid quadrilateral detected, append to output
+                                            output_dictionary.get(shape).append(get(item="point_set"))
+                        # These types can not calculate potential p4, so they are grouped for efficiency
+                        # Shapes in this set can be derived with 4 points
+                        if any([in_and_true(shape) for shape in quadrilateral_4_points]):
+                            for p4index in range(p1index + 1, len(points_list)):
+                                # The forth point for the quadrilateral
+                                p4 = Point(point=points_list[p4index])
+                                # These are the remaining 2 potential sides of the quadrilateral
+                                put(key="l3", item=Line(a=p3, b=p4))
+                                put(key="l4", item=Line(a=p4, b=p1))
+                                # Cordinates to use for quadrilateral
+                                # Test to see if the point set is already in the result set.  If it is not than proceed.
+                                if insert_point_set(shape_list=quadrilateral_4_points,
+                                                    point_set={points_list[p1index], points_list[p2index],
+                                                               points_list[p3index], points_list[p4index]}):
+                                    # Perform validation
+                                    if not validate():
+                                        continue
+                                    # Determine the type of quadrilateral to process
+                                    shape = "trapezoid"
+                                    if all([in_and_true(shape), any([
+                                        all([get(item="l1").is_parallel(line=get(item="l3")),
+                                             get(item="l1").get_angle(line=get(item="l2")) != get(
+                                                 item="l1").get_angle(
+                                                 line=get(item="l4")),
+                                             any([all([get(item="l1").get_angle(line=get(item="l4")) <= 90,
+                                                       get(item="l1").get_angle(line=get(item="l2")) <= 90]),
+                                                  all([get(item="l1").get_angle(line=get(item="l4")) >= 90,
+                                                       get(item="l1").get_angle(
+                                                           line=get(item="l2")) >= 90])])]),
+                                        all([get(item="l2").is_parallel(line=get(item="l4")),
+                                             get(item="l2").get_angle(line=get(item="l3")) != get(
+                                                 item="l2").get_angle(
+                                                 line=get(item="l1")),
+                                             any([all([get(item="l2").get_angle(line=get(item="l3")) <= 90,
+                                                       get(item="l2").get_angle(line=get(item="l1")) <= 90]),
+                                                  all([get(item="l2").get_angle(line=get(item="l3")) >= 90,
+                                                       get(item="l2").get_angle(
+                                                           line=get(item="l1")) >= 90])])])])]):
+                                        # If valid quadrilateral detected, append to output
+                                        output_dictionary.get(shape).append(get(item="point_set"))
+                                    shape = "isosceles_trapezoid"
+                                    if all([in_and_true(shape), set_length(item="angle_set") == 2,
+                                            any([all([get(item="l1").is_parallel(line=get(item="l3")),
+                                                      any([all([get(item="l1").get_angle(
+                                                          line=get(item="l4")) <= 90,
+                                                                get(item="l1").get_angle(
+                                                                    line=get(item="l2")) <= 90]),
+                                                           all([get(item="l1").get_angle(
+                                                               line=get(item="l4")) >= 90,
+                                                                get(item="l1").get_angle(
+                                                                    line=get(item="l2")) >= 90])])]),
+                                                 all([get(item="l2").is_parallel(line=get(item="l4")),
+                                                      any([all([get(item="l2").get_angle(
+                                                          line=get(item="l3")) <= 90,
+                                                                get(item="l2").get_angle(
+                                                                    line=get(item="l1")) <= 90]),
+                                                           all([get(item="l2").get_angle(
+                                                               line=get(item="l3")) >= 90,
+                                                                get(item="l2").get_angle(
+                                                                    line=get(item="l1")) >= 90])])])
+                                                 ])
+                                            ]):
+                                        # If valid quadrilateral detected, append to output
+                                        output_dictionary.get(shape).append(get(item="point_set"))
+                                    shape = "kite"
+                                    if all([in_and_true(shape), set_length(item="angle_set") <= 3,
+                                            set_length(item="length_set") <= 2,
+                                            any([get(item="l1").length_equal(line=get(item="l2")),
+                                                 get(item="l1").length_equal(line=get(item="l4"))])]):
+                                        # If valid quadrilateral detected, append to output
+                                        output_dictionary.get(shape).append(get(item="point_set"))
+                                    shape = "irregular"
+                                    if all([in_and_true(shape), set_length(item="angle_set") == 4,
+                                            set_length(item="length_set") == 4]):
+                                        # If valid quadrilateral detected, append to output
+                                        output_dictionary.get(shape).append(get(item="point_set"))
+        # Sort values and eliminate duplicates
+        for shape in output_dictionary:
+            output_dictionary[shape] = [list(x) for x in set(tuple(x) for x in output_dictionary.get(shape))]
         return output_dictionary
 
     @staticmethod
@@ -610,10 +876,10 @@ class AIM(object):
             Note: I did not see the same issue with sorting that was discovered with the rectangles, but I kept the
                    same logical flow just in case."""
 
-        def in_and_true(shape: str = None):
-            if shape is not None and kwargs:
-                if shape in kwargs:
-                    return kwargs.get(shape)
+        def in_and_true(key: str = None):
+            if key is not None and kwargs:
+                if key in kwargs:
+                    return kwargs.get(key)
             return False
 
         # Convert set to list to allow iteration with index and sort for processing simplicity
@@ -667,8 +933,8 @@ class AIM(object):
                     if all([in_and_true("equilateral"), len(length_set) == 1]):
                         output_dictionary.get("equilateral").append(sorted(point_set, key=lambda x: (x[0], x[1])))
         # Sort values and eliminate duplicates
-        for key in output_dictionary:
-            output_dictionary[key] = [list(x) for x in set(tuple(x) for x in output_dictionary.get(key))]
+        for shape in output_dictionary:
+            output_dictionary[shape] = [list(x) for x in set(tuple(x) for x in output_dictionary.get(shape))]
         return output_dictionary
 
     @staticmethod
