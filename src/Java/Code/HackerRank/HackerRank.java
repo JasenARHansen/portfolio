@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
-@SuppressWarnings("SpellCheckingInspection")
+@SuppressWarnings({"SpellCheckingInspection", "unused", "deprecation"})
 public class HackerRank {
 
   private static final String querryTemplate =
@@ -29,7 +29,7 @@ public class HackerRank {
 
     BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
     String inputLine;
-    StringBuffer response = new StringBuffer();
+    StringBuilder response = new StringBuilder();
     while ((inputLine = in.readLine()) != null) {
       response.append(inputLine);
     }
@@ -48,7 +48,7 @@ public class HackerRank {
       connection.setRequestMethod("GET");
 
       in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-      response = new StringBuffer();
+      response = new StringBuilder();
       while ((inputLine = in.readLine()) != null) {
         response.append(inputLine);
       }
@@ -116,12 +116,8 @@ public class HackerRank {
     for (int index = 0; index < input.length(); index++) {
       String testString = Character.toString(input.charAt(index));
       switch (testString) {
-        case "{":
-        case "(":
-        case "[":
-          stackOfBrackets.push(testString);
-          break;
-        case "}":
+        case "{", "(", "[" -> stackOfBrackets.push(testString);
+        case "}" -> {
           if (stackOfBrackets.isEmpty()) {
             return "NO";
           } else {
@@ -130,8 +126,8 @@ public class HackerRank {
               return "NO";
             }
           }
-          break;
-        case ")":
+        }
+        case ")" -> {
           if (stackOfBrackets.isEmpty()) {
             return "NO";
           } else {
@@ -140,8 +136,8 @@ public class HackerRank {
               return "NO";
             }
           }
-          break;
-        case "]":
+        }
+        case "]" -> {
           if (stackOfBrackets.isEmpty()) {
             return "NO";
           } else {
@@ -150,7 +146,7 @@ public class HackerRank {
               return "NO";
             }
           }
-          break;
+        }
       }
     }
     if (stackOfBrackets.isEmpty()) {

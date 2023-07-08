@@ -1,4 +1,4 @@
-package Test.Java.Challenge;
+package Java.Test.Challenge;
 
 import Java.Code.Challenge.PeopleOnBench;
 import org.junit.FixMethodOrder;
@@ -10,26 +10,25 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PeopleOnBenchTest {
 
-    @Rule
-    public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
-    @Test
-    public void PeopleOnBench() {
-        System.out.format("%s: ", name.getMethodName());
-        PeopleOnBench.getDescription();
-    }
+  @Test
+  public void PeopleOnBench() {
+    System.out.format("%s: ", name.getMethodName());
+    PeopleOnBench.getDescription();
+  }
 
-    @Test
-    public void personSits_0() {
-        int seats = 5;
-        System.out.format("%s: A Bench with %d seats\n", name.getMethodName(), seats);
-        PeopleOnBench.buildBench(seats);
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-        PeopleOnBench.personSits();
-    }
+  @Test
+  public void personSits_0() {
+    int seats = 5;
+    System.out.format("%s: A Bench with %d seats\n", name.getMethodName(), seats);
+    PeopleOnBench.buildBench(seats);
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+    PeopleOnBench.personSits();
+  }
 }

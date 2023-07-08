@@ -1,4 +1,4 @@
-package Test.Java.educative;
+package Java.Test.Educative;
 
 import Java.Code.Educative.SortingAndSearchingFindTheHighAndLowIndex;
 import org.junit.FixMethodOrder;

@@ -1,4 +1,4 @@
-package Test.Java.educative;
+package Java.Test.Educative;
 
 import Java.Code.Educative.TreesLevelOrderTraversalOfBinaryTree;
 import Java.Code.Educative.TreesLevelOrderTraversalOfBinaryTree.Node;
