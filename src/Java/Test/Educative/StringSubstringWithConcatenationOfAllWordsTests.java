@@ -8,13 +8,12 @@ import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class stringSubstringWithConcatenationOfAllWordsTests {
+public class StringSubstringWithConcatenationOfAllWordsTests {
 
   @Rule public TestName name = new TestName();
 
