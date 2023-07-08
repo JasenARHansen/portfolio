@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Arrays;
+package Java.Test.HackerRank.Arrays;
 
 import Java.Code.HackerRank.Arrays.NewYearChaos;
 import org.junit.FixMethodOrder;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class NewYearChaos_tests {
+public class newYearChaosTests {
 
   @Rule
   public TestName name = new TestName();

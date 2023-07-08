@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Arrays;
+package Java.Test.HackerRank.Arrays;
 
 import Java.Code.HackerRank.Arrays.LeftRotation;
 import org.junit.FixMethodOrder;
@@ -11,8 +11,9 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
+@SuppressWarnings({"MismatchedReadAndWriteOfArray", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LeftRotation_tests {
+public class leftRotationTests {
 
     @Rule
     public TestName name = new TestName();

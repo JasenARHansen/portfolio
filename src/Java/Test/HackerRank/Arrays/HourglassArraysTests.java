@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Arrays;
+package Java.Test.HackerRank.Arrays;
 
 import Java.Code.HackerRank.Arrays.HourglassArray;
 import org.junit.FixMethodOrder;

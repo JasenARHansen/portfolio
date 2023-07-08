@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Sorting;
+package Java.Test.HackerRank.Sorting;
 
 import Java.Code.HackerRank.Sorting.FraudulentActivityNotifications;
 import org.junit.FixMethodOrder;

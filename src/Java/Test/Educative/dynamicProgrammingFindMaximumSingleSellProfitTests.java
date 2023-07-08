@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class DynamicProgrammingFindMaximumSingleSellProfit_tests {
+public class dynamicProgrammingFindMaximumSingleSellProfitTests {
 
   @Rule
   public TestName name = new TestName();

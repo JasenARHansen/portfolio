@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TreesConvertBinaryTreeToDoublyLinkedList_tests {
+public class treesConvertBinaryTreeToDoublyLinkedListTests {
 
   @Rule
   public TestName name = new TestName();

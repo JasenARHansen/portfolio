@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class NumberTheoryFindNthFibonacciNumber_tests {
+public class NumberTheoryFindNthFibonacciNumberTests {
 
   @Rule
   public TestName name = new TestName();

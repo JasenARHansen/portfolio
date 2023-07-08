@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.DictionariesAndHashmaps;
+package Java.Test.HackerRank.DictionariesAndHashmaps;
 
 import Java.Code.HackerRank.DictionariesAndHashmaps.HashTablesRansomNote;
 import org.junit.FixMethodOrder;

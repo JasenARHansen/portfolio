@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.DictionariesAndHashmaps;
+package Java.Test.HackerRank.DictionariesAndHashmaps;
 
 import Java.Code.HackerRank.DictionariesAndHashmaps.TwoStrings;
 import org.junit.FixMethodOrder;
@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TwoStrings_tests {
+public class twoStringsTests {
 
   @Rule
   public TestName name = new TestName();

@@ -9,7 +9,7 @@ import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TreesLevelOrderTraversalOfBinaryTree_tests {
+public class treesLevelOrderTraversalOfBinaryTreeTests {
 
   @Rule
   public TestName name = new TestName();

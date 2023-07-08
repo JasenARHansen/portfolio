@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Arrays;
+package Java.Test.HackerRank.Arrays;
 
 import Java.Code.HackerRank.Arrays.ArrayManipulation;
 import org.junit.FixMethodOrder;
@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ArrayManipulation_tests {
+public class arrayManipulationTests {
 
   @Rule
   public TestName name = new TestName();

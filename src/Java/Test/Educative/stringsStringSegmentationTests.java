@@ -15,7 +15,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class StringsStringSegmentation_tests {
+public class stringsStringSegmentationTests {
 
   @Rule
   public TestName name = new TestName();

@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Arrays;
+package Java.Test.HackerRank.Arrays;
 
 import Java.Code.HackerRank.Arrays.MinimumSwaps2;
 import org.junit.FixMethodOrder;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MinimumSwaps2_tests {
+public class minimumSwaps2Tests {
 
   @Rule
   public TestName name = new TestName();

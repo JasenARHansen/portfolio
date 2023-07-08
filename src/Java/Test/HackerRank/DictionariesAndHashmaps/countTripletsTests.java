@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.DictionariesAndHashmaps;
+package Java.Test.HackerRank.DictionariesAndHashmaps;
 
 import Java.Code.HackerRank.DictionariesAndHashmaps.CountTriplets;
 import org.junit.FixMethodOrder;
@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CountTriplets_tests {
+public class countTripletsTests {
 
   @Rule
   public TestName name = new TestName();

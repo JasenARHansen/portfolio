@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SortingAndSearchingFindTheHighAndLowIndex_tests {
+public class sortingAndSearchingFindTheHighAndLowIndexTests {
 
   @Rule
   public TestName name = new TestName();

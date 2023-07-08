@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Sorting;
+package Java.Test.HackerRank.Sorting;
 
 import Java.Code.HackerRank.Sorting.BubbleSort;
 import org.junit.FixMethodOrder;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class BubbleSort_tests {
+public class bubbleSortTests {
 
     @Rule
     public TestName name = new TestName();

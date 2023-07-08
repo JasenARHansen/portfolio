@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearch_tests {
+public class numberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearchTests {
 
   @Rule public TestName name = new TestName();
 

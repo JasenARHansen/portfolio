@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class StringMinimumAppendsForPalindrome_tests {
+public class stringMinimumAppendsForPalindromeTests {
 
   @Rule public TestName name = new TestName();
 

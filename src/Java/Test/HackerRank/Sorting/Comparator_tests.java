@@ -1,4 +1,4 @@
-package Test.Java.HackerRank.Sorting;
+package Java.Test.HackerRank.Sorting;
 
 import Java.Code.HackerRank.Sorting.Player;
 import Java.Code.HackerRank.Sorting.PlayerComparator;
