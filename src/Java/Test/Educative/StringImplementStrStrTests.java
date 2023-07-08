@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class stringImplementStrStrTests {
+public class StringImplementStrStrTests {
 
   @Rule public TestName name = new TestName();
 

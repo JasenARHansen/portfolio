@@ -35,7 +35,6 @@ public class stringSubstringWithConcatenationOfAllWordsTests {
 
   @Test
   public void findSubstring_2() {
-    List<Integer> expected = Collections.emptyList();
     String string = "wordgoodgoodgoodbestword";
     String[] words = {"word", "good", "best", "word"};
     List<Integer> result = StringSubstringWithConcatenationOfAllWords.findSubstring(string, words);

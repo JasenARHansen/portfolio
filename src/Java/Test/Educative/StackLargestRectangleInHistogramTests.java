@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class stackLargestRectangleInHistogramTests {
+public class StackLargestRectangleInHistogramTests {
 
   @Rule public TestName name = new TestName();
 

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class newYearChaosTests {
+public class NewYearChaosTests {
 
   @Rule
   public TestName name = new TestName();

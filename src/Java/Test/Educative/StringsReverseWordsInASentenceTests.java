@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class stringsReverseWordsInASentenceTests {
+public class StringsReverseWordsInASentenceTests {
 
   @Rule
   public TestName name = new TestName();

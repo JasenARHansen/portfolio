@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MarkAndToys_tests {
+public class MarkAndToysTests {
 
     @Rule
     public TestName name = new TestName();

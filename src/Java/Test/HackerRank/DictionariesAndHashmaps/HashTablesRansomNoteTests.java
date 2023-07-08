@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import java.util.Arrays;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class HashTablesRansomNote_tests {
+public class HashTablesRansomNoteTests {
 
   @Rule
   public TestName name = new TestName();

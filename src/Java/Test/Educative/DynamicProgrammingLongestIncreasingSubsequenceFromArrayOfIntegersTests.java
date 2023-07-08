@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class dynamicProgrammingLongestIncreasingSubsequenceFromArrayOfIntegersTests {
+public class DynamicProgrammingLongestIncreasingSubsequenceFromArrayOfIntegersTests {
 
     @Rule
     public TestName name = new TestName();

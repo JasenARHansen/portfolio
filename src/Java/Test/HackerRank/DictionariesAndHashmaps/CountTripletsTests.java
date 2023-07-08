@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class countTripletsTests {
+public class CountTripletsTests {
 
   @Rule
   public TestName name = new TestName();

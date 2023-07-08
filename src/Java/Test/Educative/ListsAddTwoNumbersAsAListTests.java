@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class listsAddTwoNumbersAsAListTests {
+public class ListsAddTwoNumbersAsAListTests {
 
   @Rule
   public TestName name = new TestName();

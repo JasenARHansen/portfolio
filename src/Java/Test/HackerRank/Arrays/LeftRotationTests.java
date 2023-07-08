@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 @SuppressWarnings({"MismatchedReadAndWriteOfArray", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class leftRotationTests {
+public class LeftRotationTests {
 
     @Rule
     public TestName name = new TestName();
