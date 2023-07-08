@@ -4,8 +4,9 @@ import inspect
 import math
 import unittest
 
-import Python.Code.Interview.AIM.AIM as baseFile
-from Python.Code.Interview.AIM.AIM import AIM
+# noinspection PyPep8Naming
+import src.Python.Code.Interview.AIM.AIM as baseFile
+from src.Python.Code.Interview.AIM.AIM import AIM
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

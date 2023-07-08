@@ -2,8 +2,8 @@
 
 import unittest
 
-import Python.Code.Interview.FirstResonance.ValidatePageAccess as baseFile
-from Python.Code.Interview.FirstResonance.ValidatePageAccess import ValidatePageAccess
+import src.Python.Code.Interview.FirstResonance.ValidatePageAccess as baseFile
+from src.Python.Code.Interview.FirstResonance.ValidatePageAccess import ValidatePageAccess
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

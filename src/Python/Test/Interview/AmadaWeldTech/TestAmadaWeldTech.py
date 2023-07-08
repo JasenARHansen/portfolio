@@ -3,8 +3,8 @@
 import os
 import unittest
 
-import Python.Code.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
-from Python.Code.Interview.AmadaWeldTech.AmadaWeldTech import AmadaWeldTech
+import src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
+from src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech import AmadaWeldTech
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

@@ -2,8 +2,8 @@
 
 import unittest
 
-import Python.Code.Interview.FirstResonance.DebugLimitedInformation as baseFile
-from Python.Code.Interview.FirstResonance.DebugLimitedInformation import DebugLimitedInformation
+import src.Python.Code.Interview.FirstResonance.DebugLimitedInformation as baseFile
+from src.Python.Code.Interview.FirstResonance.DebugLimitedInformation import DebugLimitedInformation
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

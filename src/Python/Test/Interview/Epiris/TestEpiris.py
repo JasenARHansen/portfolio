@@ -2,8 +2,8 @@
 
 import unittest
 
-import Python.Code.Interview.Epiris.Epiris as baseFile
-from Python.Code.Interview.Epiris.Epiris import Epiris
+import src.Python.Code.Interview.Epiris.Epiris as baseFile
+from src.Python.Code.Interview.Epiris.Epiris import Epiris
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection
