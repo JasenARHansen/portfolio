@@ -1,14 +1,13 @@
-package Test.Java.Interview.Alt;
+package Java.Test.Interview.Alt;
 
 import Java.Code.Interview.Alt.Checkers;
+import java.util.List;
+import java.util.Random;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.List;
-import java.util.Random;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CheckersTests {

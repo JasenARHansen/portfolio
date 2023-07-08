@@ -1,5 +1,8 @@
 package Java.Test.Educative;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import Java.Code.Educative.TreesLowestCommonAncestorOfABinarySearchTree;
 import Java.Code.Educative.TreesLowestCommonAncestorOfABinarySearchTree.TreeNode;
 import org.junit.FixMethodOrder;
@@ -8,15 +11,11 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 @SuppressWarnings("WriteOnlyObject")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
 
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void level_order_traversal_1() {
@@ -41,10 +40,10 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_8.right = N_9;
 
     TreeNode result =
-            TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_8);
+        TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_8);
     System.out.format(
-            "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
-            name.getMethodName(), N_2.data, N_8.data, N_6.data, result.data);
+        "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
+        name.getMethodName(), N_2.data, N_8.data, N_6.data, result.data);
     assertEquals(N_6, result);
   }
 
@@ -71,10 +70,10 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_8.right = N_9;
 
     TreeNode result =
-            TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_4);
+        TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_4);
     System.out.format(
-            "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
-            name.getMethodName(), N_2.data, N_4.data, N_6.data, result.data);
+        "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
+        name.getMethodName(), N_2.data, N_4.data, N_6.data, result.data);
     assertEquals(N_2, result);
   }
 
@@ -87,10 +86,10 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_2.left = N_1;
 
     TreeNode result =
-            TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_2, N_1);
+        TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_2, N_1);
     System.out.format(
-            "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
-            name.getMethodName(), N_2.data, N_1.data, N_2.data, result.data);
+        "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
+        name.getMethodName(), N_2.data, N_1.data, N_2.data, result.data);
     assertEquals(N_2, result);
   }
 
@@ -117,10 +116,10 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_8.right = N_9;
 
     TreeNode result =
-            TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_5, N_0);
+        TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_5, N_0);
     System.out.format(
-            "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
-            name.getMethodName(), N_5.data, N_0.data, N_6.data, result.data);
+        "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %d.\n",
+        name.getMethodName(), N_5.data, N_0.data, N_6.data, result.data);
     assertEquals(N_2, result);
   }
 
@@ -147,10 +146,10 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_8.right = N_9;
 
     TreeNode result =
-            TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_5, N_9);
+        TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_5, N_9);
     System.out.format(
-            "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %s.\n",
-            name.getMethodName(), N_5.data, N_9.data, N_2.data, result);
+        "%s: The lowest common ancestor of %d and %d in the tree starting with %d is %s.\n",
+        name.getMethodName(), N_5.data, N_9.data, N_2.data, result);
     assertNull(result);
   }
 }

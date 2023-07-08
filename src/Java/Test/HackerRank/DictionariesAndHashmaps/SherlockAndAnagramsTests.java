@@ -1,13 +1,13 @@
 package Java.Test.HackerRank.DictionariesAndHashmaps;
 
+import static org.junit.Assert.assertEquals;
+
 import Java.Code.HackerRank.DictionariesAndHashmaps.SherlockAndAnagrams;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SherlockAndAnagramsTests {

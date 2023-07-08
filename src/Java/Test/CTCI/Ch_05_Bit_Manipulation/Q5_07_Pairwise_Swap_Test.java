@@ -1,21 +1,24 @@
-package Test.Java.CTCI.Ch_05_Bit_Manipulation;
+package Java.Test.CTCI.Ch_05_Bit_Manipulation;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_07_Pairwise_Swap_Test {
 
   @Rule
   public TestName name = new TestName();
+
+  public static int swapOddEvenBits(int x) {
+    return (((x & 0xaaaaaaaa) >>> 1) | ((x & 0x55555555) << 1));
+  }
 
   @Test
   public void swapOddEvenBits() {
@@ -42,10 +45,6 @@ public class Q5_07_Pairwise_Swap_Test {
     System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
     int b = swapOddEvenBits(a);
     System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
-  }
-
-  public static int swapOddEvenBits(int x) {
-    return (((x & 0xaaaaaaaa) >>> 1) | ((x & 0x55555555) << 1));
   }
 
 

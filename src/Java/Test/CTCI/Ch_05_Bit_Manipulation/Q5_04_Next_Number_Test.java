@@ -1,15 +1,14 @@
-package Test.Java.CTCI.Ch_05_Bit_Manipulation;
+package Java.Test.CTCI.Ch_05_Bit_Manipulation;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_04_Next_Number.Tester;
 import Java.Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_04_Next_Number_Test {
@@ -34,34 +33,6 @@ public class Q5_04_Next_Number_Test {
 
   public static void binPrint(int i) {
     System.out.println(i + ": " + Integer.toBinaryString(i));
-  }
-
-  @Test
-  public void nextNumber() {
-    System.out.format("%s: \n", name.getMethodName());
-
-    ArrayList<Integer> values = new ArrayList<>(Arrays.asList(190, 197, 7727, 13948));
-    for (Integer value : values) {
-      int next = BitShift.getNext(value);
-      int previous = BitShift.getPrev(value);
-      System.out.format(
-              "%s: Initial number is %d with %d as previous and %d as next\n",
-              name.getMethodName(), value, previous, next);
-    }
-  }
-
-  @Test
-  public void nextNumber_solution_1() {
-    System.out.format("%s: \n", name.getMethodName());
-    int i = 13948;
-    int p1 = getPrevSlow(i);
-    int n1 = getNextSlow(i);
-    Tester.binPrint(p1);
-    Tester.binPrint(i);
-    Tester.binPrint(n1);
-    System.out.format(
-            "%s: Initial number is %d with %d as previous and %d as next\n",
-            name.getMethodName(), i, p1, n1);
   }
 
   public static int getNextSlow(int i) {
@@ -109,20 +80,6 @@ public class Q5_04_Next_Number_Test {
       i >>= 1;
     }
     return i != 0;
-  }
-
-  @Test
-  public void nextNumber_solution_2() {
-    System.out.format("%s: \n", name.getMethodName());
-    int i = 13948;
-    int p1 = getPrev(i);
-    int n1 = getNext(i);
-    Tester.binPrint(p1);
-    Tester.binPrint(i);
-    Tester.binPrint(n1);
-    System.out.format(
-            "%s: Initial number is %d with %d as previous and %d as next\n",
-            name.getMethodName(), i, p1, n1);
   }
 
   public static int getNext(int n) {
@@ -226,20 +183,6 @@ public class Q5_04_Next_Number_Test {
     return n;
   }
 
-  @Test
-  public void nextNumber_solution_3() {
-    System.out.format("%s: \n", name.getMethodName());
-    int i = 13948;
-    int p1 = getPrevArithmetic(i);
-    int n1 = getNextArithmetic(i);
-    Tester.binPrint(p1);
-    Tester.binPrint(i);
-    Tester.binPrint(n1);
-    System.out.format(
-            "%s: Initial number is %d with %d as previous and %d as next\n",
-            name.getMethodName(), i, p1, n1);
-  }
-
   public static int getNextArithmetic(int n) {
     int c = n;
     int c0 = 0;
@@ -296,5 +239,61 @@ public class Q5_04_Next_Number_Test {
      * 2^(c0 - 1) = 1 << (c0 - 1)
      */
     return n - (1 << c1) - (1 << (c0 - 1)) + 1;
+  }
+
+  @Test
+  public void nextNumber() {
+    System.out.format("%s: \n", name.getMethodName());
+
+    ArrayList<Integer> values = new ArrayList<>(Arrays.asList(190, 197, 7727, 13948));
+    for (Integer value : values) {
+      int next = BitShift.getNext(value);
+      int previous = BitShift.getPrev(value);
+      System.out.format(
+              "%s: Initial number is %d with %d as previous and %d as next\n",
+              name.getMethodName(), value, previous, next);
+    }
+  }
+
+  @Test
+  public void nextNumber_solution_1() {
+    System.out.format("%s: \n", name.getMethodName());
+    int i = 13948;
+    int p1 = getPrevSlow(i);
+    int n1 = getNextSlow(i);
+    Tester.binPrint(p1);
+    Tester.binPrint(i);
+    Tester.binPrint(n1);
+    System.out.format(
+            "%s: Initial number is %d with %d as previous and %d as next\n",
+            name.getMethodName(), i, p1, n1);
+  }
+
+  @Test
+  public void nextNumber_solution_2() {
+    System.out.format("%s: \n", name.getMethodName());
+    int i = 13948;
+    int p1 = getPrev(i);
+    int n1 = getNext(i);
+    Tester.binPrint(p1);
+    Tester.binPrint(i);
+    Tester.binPrint(n1);
+    System.out.format(
+            "%s: Initial number is %d with %d as previous and %d as next\n",
+            name.getMethodName(), i, p1, n1);
+  }
+
+  @Test
+  public void nextNumber_solution_3() {
+    System.out.format("%s: \n", name.getMethodName());
+    int i = 13948;
+    int p1 = getPrevArithmetic(i);
+    int n1 = getNextArithmetic(i);
+    Tester.binPrint(p1);
+    Tester.binPrint(i);
+    Tester.binPrint(n1);
+    System.out.format(
+            "%s: Initial number is %d with %d as previous and %d as next\n",
+            name.getMethodName(), i, p1, n1);
   }
 }

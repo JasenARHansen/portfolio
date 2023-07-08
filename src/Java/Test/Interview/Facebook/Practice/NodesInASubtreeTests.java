@@ -1,18 +1,17 @@
-package Test.Java.Interview.Facebook.Practice;
+package Java.Test.Interview.Facebook.Practice;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Facebook.Practice.NodesInASubtree;
 import Java.Code.Interview.Facebook.Practice.NodesInASubtree.Node;
 import Java.Code.Interview.Facebook.Practice.NodesInASubtree.Query;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
 
 @SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

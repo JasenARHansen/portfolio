@@ -1,15 +1,14 @@
-package Test.Java.Interview.Facebook.Practice;
+package Java.Test.Interview.Facebook.Practice;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Facebook.Practice.BillionUsers;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BillionUsersTests {

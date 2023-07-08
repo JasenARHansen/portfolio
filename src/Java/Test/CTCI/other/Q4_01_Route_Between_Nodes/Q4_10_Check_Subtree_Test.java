@@ -1,4 +1,7 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
@@ -9,9 +12,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_10_Check_Subtree_Test {

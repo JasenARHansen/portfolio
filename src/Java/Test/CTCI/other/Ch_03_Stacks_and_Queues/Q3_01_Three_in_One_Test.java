@@ -1,4 +1,4 @@
-package Test.Java.CTCI.other.Ch_03_Stacks_and_Queues;
+package Java.Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FixedMultiStack;
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_One.FullStackException;
@@ -21,6 +21,10 @@ public class Q3_01_Three_in_One_Test {
   public static void printStacks(FixedMultiStack stacks) {
     System.out.println(AssortedMethods.arrayToString(stacks.getValues()));
   }
+
+    public static void printStacks(MultiStack stacks) {
+        System.out.println(AssortedMethods.arrayToString(stacks.getValues()));
+    }
 
   @Test
   public void MultiStackArrayList() {
@@ -163,10 +167,6 @@ public class Q3_01_Three_in_One_Test {
         printStacks(stacks);
 
         System.out.println("Final Stack: " + AssortedMethods.arrayToString(stacks.getValues()));
-    }
-
-    public static void printStacks(MultiStack stacks) {
-        System.out.println(AssortedMethods.arrayToString(stacks.getValues()));
     }
 
     @Test

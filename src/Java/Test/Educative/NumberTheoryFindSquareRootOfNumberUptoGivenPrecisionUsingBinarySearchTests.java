@@ -1,15 +1,14 @@
 package Java.Test.Educative;
 
+import static org.junit.Assert.assertEquals;
+
 import Java.Code.Educative.NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearch;
+import java.text.DecimalFormat;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.text.DecimalFormat;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearchTests {

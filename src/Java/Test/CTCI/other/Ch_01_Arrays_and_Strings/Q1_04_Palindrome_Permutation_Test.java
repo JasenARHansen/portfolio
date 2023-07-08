@@ -1,4 +1,7 @@
-package Test.Java.CTCI.other.Ch_01_Arrays_and_Strings;
+package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_04_Palindrome_Permutation;
 import org.junit.FixMethodOrder;
@@ -6,9 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_04_Palindrome_Permutation_Test {

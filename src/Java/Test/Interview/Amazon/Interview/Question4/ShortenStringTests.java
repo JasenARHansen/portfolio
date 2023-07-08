@@ -1,16 +1,15 @@
-package Test.Java.Interview.Amazon.Interview.Question4;
+package Java.Test.Interview.Amazon.Interview.Question4;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Amazon.Interview.Question4.ShortenString;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ShortenStringTests {

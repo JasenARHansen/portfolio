@@ -1,4 +1,6 @@
-package Test.Java.CTCI.other.Ch_01_Arrays_and_Strings;
+package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_06_String_Compression;
 import org.junit.FixMethodOrder;
@@ -6,8 +8,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_06_String_Compression_Test {

@@ -1,17 +1,16 @@
-package Test.Java.Interview.Amazon.Assessment.Question1;
+package Java.Test.Interview.Amazon.Assessment.Question1;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Amazon.Assessment.Question1.Fulfillment;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FulfillmentTests {

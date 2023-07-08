@@ -1,4 +1,4 @@
-package Test.Java.Interview.Atom_Tickets;
+package Java.Test.Interview.Atom_Tickets;
 
 import Java.Code.Interview.Atom_Tickets.MovieNode;
 import Java.Code.Interview.Atom_Tickets.MovieTree;
@@ -7,7 +7,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovieTreeTests {

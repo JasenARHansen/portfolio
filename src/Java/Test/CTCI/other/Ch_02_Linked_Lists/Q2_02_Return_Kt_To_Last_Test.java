@@ -1,4 +1,7 @@
-package Test.Java.CTCI.other.Ch_02_Linked_Lists;
+package Java.Test.CTCI.other.Ch_02_Linked_Lists;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
@@ -10,9 +13,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_02_Return_Kt_To_Last_Test {
@@ -60,7 +60,7 @@ public class Q2_02_Return_Kt_To_Last_Test {
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
     for (int i = 0; i <= array.length + 1; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_2(head, i);
-      String nodeValue = node == null ? "null" : "" + node.data;
+      String nodeValue = node == null ? "null" : String.valueOf(node.data);
       System.out.println(i + ": " + nodeValue);
     }
   }
@@ -72,7 +72,7 @@ public class Q2_02_Return_Kt_To_Last_Test {
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
     for (int i = 0; i <= array.length + 1; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_3(head, i);
-      String nodeValue = node == null ? "null" : "" + node.data;
+      String nodeValue = node == null ? "null" : String.valueOf(node.data);
       System.out.println(i + ": " + nodeValue);
     }
   }

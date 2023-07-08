@@ -1,4 +1,6 @@
-package Test.Java.Interview.Amazon.Interview.Question3;
+package Java.Test.Interview.Amazon.Interview.Question3;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Amazon.Interview.Question3.ConvertXML;
 import org.junit.FixMethodOrder;
@@ -6,8 +8,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ConvertXMLTests {

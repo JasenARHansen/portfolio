@@ -1,20 +1,19 @@
-package Test.Java.CTCI.other.Ch_02_Linked_Lists;
+package Java.Test.CTCI.other.Ch_02_Linked_Lists;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_08_Loop_Detection;
 import Java.Code.unsorted.classes.NodeList;
 import Java.Code.unsorted.classes.classesInstance.CirularLinkedList;
+import java.lang.reflect.Field;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.lang.reflect.Field;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_08_Loop_Detection_Test {

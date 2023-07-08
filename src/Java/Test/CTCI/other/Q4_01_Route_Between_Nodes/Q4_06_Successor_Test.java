@@ -1,22 +1,49 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTree;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTreeNode;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_06_Successor_Test {
 
     @Rule
     public TestName name = new TestName();
+
+    public static TreeNode inorderSuccessor(TreeNode n) {
+        if (n == null) return null;
+
+        // Found right children -> return left most node of right subtree
+        if (n.parent == null || n.right != null) {
+            return leftMostChild(n.right);
+        } else {
+            TreeNode q = n;
+            TreeNode x = q.parent;
+            // Go up until we're on left instead of right
+            while (x != null && x.left != q) {
+                q = x;
+                x = x.parent;
+            }
+            return x;
+        }
+    }
+
+    public static TreeNode leftMostChild(TreeNode n) {
+        if (n == null) {
+            return null;
+        }
+        while (n.left != null) {
+            n = n.left;
+        }
+        return n;
+    }
 
     @Test
     public void inorderSuccessor_root() {
@@ -62,33 +89,5 @@ public class Q4_06_Successor_Test {
                 System.out.println(node.data + "->" + null);
             }
         }
-    }
-
-    public static TreeNode inorderSuccessor(TreeNode n) {
-        if (n == null) return null;
-
-        // Found right children -> return left most node of right subtree
-        if (n.parent == null || n.right != null) {
-            return leftMostChild(n.right);
-        } else {
-            TreeNode q = n;
-            TreeNode x = q.parent;
-            // Go up until we're on left instead of right
-            while (x != null && x.left != q) {
-                q = x;
-                x = x.parent;
-            }
-            return x;
-        }
-    }
-
-    public static TreeNode leftMostChild(TreeNode n) {
-        if (n == null) {
-            return null;
-        }
-        while (n.left != null) {
-            n = n.left;
-        }
-        return n;
     }
 }

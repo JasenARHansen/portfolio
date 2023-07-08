@@ -1,18 +1,17 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTree;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_03_List_of_Depths_Test {
@@ -56,35 +55,6 @@ public class Q4_03_List_of_Depths_Test {
         return lists;
     }
 
-    @Test
-    public void printLevelsBFS() {
-        System.out.format("%s: \n", name.getMethodName());
-        BinaryTree<Integer> myTree = new BinaryTree<>();
-        ArrayList<Integer> data = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        System.out.format("%s: Inputs %s\n", name.getMethodName(), data);
-        myTree.createMinimalBST(data);
-        System.out.format("%s\n", myTree.printResultBFS());
-    }
-
-    @Test
-    public void printLevelsDFS() {
-        System.out.format("%s: \n", name.getMethodName());
-        BinaryTree<Integer> myTree = new BinaryTree<>();
-        ArrayList<Integer> data = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        System.out.format("%s: Inputs %s\n", name.getMethodName(), data);
-        myTree.createMinimalBST(data);
-        System.out.format("%s\n", myTree.printResultDFS());
-    }
-
-    @Test
-    public void printLevelsBFS_solution_1() {
-        System.out.format("%s: \n", name.getMethodName());
-        int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
-        ArrayList<LinkedList<TreeNode>> list = createLevelLinkedListBFS(root);
-        printResultBFS(list);
-    }
-
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListBFS(TreeNode root) {
         ArrayList<LinkedList<TreeNode>> result = new ArrayList<>();
 
@@ -123,6 +93,35 @@ public class Q4_03_List_of_Depths_Test {
             System.out.println();
             depth++;
         }
+    }
+
+    @Test
+    public void printLevelsBFS() {
+        System.out.format("%s: \n", name.getMethodName());
+        BinaryTree<Integer> myTree = new BinaryTree<>();
+        ArrayList<Integer> data = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        System.out.format("%s: Inputs %s\n", name.getMethodName(), data);
+        myTree.createMinimalBST(data);
+        System.out.format("%s\n", myTree.printResultBFS());
+    }
+
+    @Test
+    public void printLevelsDFS() {
+        System.out.format("%s: \n", name.getMethodName());
+        BinaryTree<Integer> myTree = new BinaryTree<>();
+        ArrayList<Integer> data = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        System.out.format("%s: Inputs %s\n", name.getMethodName(), data);
+        myTree.createMinimalBST(data);
+        System.out.format("%s\n", myTree.printResultDFS());
+    }
+
+    @Test
+    public void printLevelsBFS_solution_1() {
+        System.out.format("%s: \n", name.getMethodName());
+        int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
+        ArrayList<LinkedList<TreeNode>> list = createLevelLinkedListBFS(root);
+        printResultBFS(list);
     }
 
     @Test

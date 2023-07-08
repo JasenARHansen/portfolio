@@ -1,17 +1,16 @@
-package Test.Java.Interview.Google.Jan_14_2021.interview_2;
+package Java.Test.Interview.Google.Jan_14_2021.interview_2;
 
 import Java.Code.Interview.Google.Jan_14_2021.interview_2.Scrabble;
+import java.util.Collection;
+import java.util.List;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import java.util.Collection;
-import java.util.List;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class scrabble_tests {
+public class ScrabbleTests {
 
     @Rule
     public TestName name = new TestName();

@@ -1,13 +1,12 @@
-package Test.Java.HackerRank;
+package Java.Test.HackerRank;
 
 import Java.Code.HackerRank.HackerRank;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HackerRankTest {

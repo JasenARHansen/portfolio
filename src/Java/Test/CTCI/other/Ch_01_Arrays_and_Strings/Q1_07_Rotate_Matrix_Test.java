@@ -1,4 +1,6 @@
-package Test.Java.CTCI.other.Ch_01_Arrays_and_Strings;
+package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
+
+import static org.junit.Assert.assertTrue;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_07_Rotate_Matrix;
@@ -7,8 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_07_Rotate_Matrix_Test {

@@ -1,14 +1,13 @@
-package Test.Java.CTCI.Ch_05_Bit_Manipulation;
+package Java.Test.CTCI.Ch_05_Bit_Manipulation;
 
 import Java.Code.CTCI.other.Ch_05_Bit_Manipulation.BitShift;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_03_Flip_Bit_to_Win_Test {
@@ -16,28 +15,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
   public static int SEQUENCE_LENGTH = 32;
   @Rule
   public TestName name = new TestName();
-
-  @Test
-  public void longestSequence() {
-    System.out.format("%s: \n", name.getMethodName());
-    ArrayList<Integer> values = new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775));
-    for (Integer value : values) {
-      int result = BitShift.longestSequence(value);
-      System.out.format(
-              "%s: The largest bit sequence in %s allowing a single bit skip %d\n",
-              name.getMethodName(), Integer.toBinaryString(value), result);
-    }
-  }
-
-  @Test
-  public void longestSequence_solution_1() {
-    System.out.format("%s: \n", name.getMethodName());
-    int original_number = Integer.MAX_VALUE;
-    int new_number = longestSequence_solution_1(original_number);
-
-    System.out.println(Integer.toBinaryString(original_number));
-    System.out.println(new_number);
-  }
 
   public static int longestSequence_solution_1(int n) {
     int maxSeq = 0;
@@ -65,16 +42,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
 
   public static boolean getBit(int num, int i) {
     return ((num & (1 << i)) != 0);
-  }
-
-  @Test
-  public void longestSequence_solution_2() {
-    System.out.format("%s: \n", name.getMethodName());
-    int original_number = 1775;
-    int new_number = longestSequence_solution_2(original_number);
-
-    System.out.println(Integer.toBinaryString(original_number));
-    System.out.println(new_number);
   }
 
   public static int longestSequence_solution_2(int n) {
@@ -128,16 +95,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     return maxSeq;
   }
 
-  @Test
-  public void longestSequence_solution_3() {
-    System.out.format("%s: \n", name.getMethodName());
-    int original_number = Integer.MAX_VALUE;
-    int new_number = longestSequence_solution_3(original_number);
-
-    System.out.println(Integer.toBinaryString(original_number));
-    System.out.println(new_number);
-  }
-
   public static int longestSequence_solution_3(int n) {
     int searchingFor = 0;
     int[] sequences = {0, 0, 0}; // Counts of last 3 sequences
@@ -185,19 +142,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     sequences[0] = 0;
   }
 
-  @Test
-  public void longestSequence_solution_4() {
-    System.out.format("%s: \n", name.getMethodName());
-    int[][] cases = {
-            {-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1}, {1, 2}, {15, 5}, {1775, 8}
-    };
-    for (int[] c : cases) {
-      int x = flipBit(c[0]);
-      boolean r = (c[1] == x);
-      System.out.println(c[0] + ": " + x + ", " + c[1] + " " + r);
-    }
-  }
-
   public static int flipBit(int a) {
     /* If all 1s, this is already the longest sequence. */
     if (~a == 0) return Integer.BYTES * 8;
@@ -217,5 +161,60 @@ public class Q5_03_Flip_Bit_to_Win_Test {
       a >>>= 1;
     }
     return maxLength;
+  }
+
+  @Test
+  public void longestSequence() {
+    System.out.format("%s: \n", name.getMethodName());
+    ArrayList<Integer> values = new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775));
+    for (Integer value : values) {
+      int result = BitShift.longestSequence(value);
+      System.out.format(
+              "%s: The largest bit sequence in %s allowing a single bit skip %d\n",
+              name.getMethodName(), Integer.toBinaryString(value), result);
+    }
+  }
+
+  @Test
+  public void longestSequence_solution_1() {
+    System.out.format("%s: \n", name.getMethodName());
+    int original_number = Integer.MAX_VALUE;
+    int new_number = longestSequence_solution_1(original_number);
+
+    System.out.println(Integer.toBinaryString(original_number));
+    System.out.println(new_number);
+  }
+
+  @Test
+  public void longestSequence_solution_2() {
+    System.out.format("%s: \n", name.getMethodName());
+    int original_number = 1775;
+    int new_number = longestSequence_solution_2(original_number);
+
+    System.out.println(Integer.toBinaryString(original_number));
+    System.out.println(new_number);
+  }
+
+  @Test
+  public void longestSequence_solution_3() {
+    System.out.format("%s: \n", name.getMethodName());
+    int original_number = Integer.MAX_VALUE;
+    int new_number = longestSequence_solution_3(original_number);
+
+    System.out.println(Integer.toBinaryString(original_number));
+    System.out.println(new_number);
+  }
+
+  @Test
+  public void longestSequence_solution_4() {
+    System.out.format("%s: \n", name.getMethodName());
+    int[][] cases = {
+            {-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1}, {1, 2}, {15, 5}, {1775, 8}
+    };
+    for (int[] c : cases) {
+      int x = flipBit(c[0]);
+      boolean r = (c[1] == x);
+      System.out.println(c[0] + ": " + x + ", " + c[1] + " " + r);
+    }
   }
 }

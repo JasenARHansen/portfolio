@@ -1,4 +1,7 @@
-package Test.Java.CTCI.other.Ch_02_Linked_Lists;
+package Java.Test.CTCI.other.Ch_02_Linked_Lists;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
@@ -9,9 +12,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_06_Palindrome_Test {

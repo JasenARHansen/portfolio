@@ -1,18 +1,18 @@
-package Test.Java.Interview.Facebook.Practice;
+package Java.Test.Interview.Facebook.Practice;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Facebook.Practice.SpiralArray;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
-
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SpiralArray_tests {
+public class SpiralArrayTests {
 
   @Rule
   public TestName name = new TestName();

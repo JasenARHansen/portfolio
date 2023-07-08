@@ -1,16 +1,15 @@
-package Test.Java.Interview.Facebook.Interview.Mar_25_2021;
+package Java.Test.Interview.Facebook.Interview.Mar_25_2021;
+
+import static org.junit.Assert.*;
 
 import Java.Code.Interview.Facebook.Interview.Mar_25_2021.Question1;
 import Java.Code.Interview.Facebook.Interview.Mar_25_2021.Question1.Node;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Question1Tests {

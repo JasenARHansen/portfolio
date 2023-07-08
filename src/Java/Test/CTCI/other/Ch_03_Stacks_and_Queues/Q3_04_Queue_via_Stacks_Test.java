@@ -1,16 +1,15 @@
-package Test.Java.CTCI.other.Ch_03_Stacks_and_Queues;
+package Java.Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks.MyQueue;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_03_Stacks_and_Queues.QueueFromStack;
+import java.util.LinkedList;
+import java.util.Queue;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_04_Queue_via_Stacks_Test {

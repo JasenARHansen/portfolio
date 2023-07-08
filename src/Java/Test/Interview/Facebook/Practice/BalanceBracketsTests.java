@@ -1,4 +1,7 @@
-package Test.Java.Interview.Facebook.Practice;
+package Java.Test.Interview.Facebook.Practice;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import Java.Code.Interview.Facebook.Practice.BalanceBrackets;
 import org.junit.FixMethodOrder;
@@ -6,9 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BalanceBracketsTests {

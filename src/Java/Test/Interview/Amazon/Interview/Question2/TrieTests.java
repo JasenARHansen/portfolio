@@ -1,4 +1,4 @@
-package Test.Java.Interview.Amazon.Interview.Question2;
+package Java.Test.Interview.Amazon.Interview.Question2;
 
 import Java.Code.Interview.Amazon.Interview.Question2.Trie;
 import org.junit.FixMethodOrder;
@@ -6,7 +6,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TrieTests {

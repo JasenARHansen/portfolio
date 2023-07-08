@@ -1,4 +1,6 @@
-package Test.Java.HackerRank.WarmUpChallenges;
+package Java.Test.HackerRank.WarmUpChallenges;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.WarmUpChallenges.RepeatedString;
 import org.junit.FixMethodOrder;
@@ -6,8 +8,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RepeatedString_tests {

@@ -1,16 +1,15 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.DFS.Graph;
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.DFS.Project;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.GraphAdjacencyMatrix;
+import java.util.ArrayList;
+import java.util.Stack;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Stack;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_07_Build_Order_Test {
@@ -83,6 +82,106 @@ public class Q4_07_Build_Order_Test {
         Stack<Project> buildOrder = findBuildOrder_DFS(dependencies);
         if (buildOrder == null) return null;
         return convertToStringList_DFS(buildOrder);
+    }
+
+    public static String[] buildOrderWrapper_Edge_Removal(
+            String[] projects, String[][] dependencies) {
+        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] buildOrder =
+                findBuildOrder(projects, dependencies);
+        if (buildOrder == null) return null;
+        return convertToStringList_Edge_Removal(buildOrder);
+    }
+
+    public static String[] convertToStringList_Edge_Removal(
+            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] projects) {
+        String[] buildOrder = new String[projects.length];
+        for (int i = 0; i < projects.length; i++) {
+            buildOrder[i] = projects[i].getName();
+        }
+        return buildOrder;
+    }
+
+    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[]
+    findBuildOrder(String[] projects, String[][] dependencies) {
+        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph graph =
+                buildGraph_Edge_Removal(projects, dependencies);
+        return orderProjects_Edge_Removal(graph.getNodes());
+    }
+
+    /* Build the graph, adding the edge (a, b) if b is dependent on a.
+     * Assumes a pair is listed in “build order”. The pair (a, b) in
+     * dependencies indicates that b depends on a and a must be built
+     * before b. */
+    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph
+    buildGraph_Edge_Removal(String[] projects, String[][] dependencies) {
+        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph graph =
+                new Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph();
+        for (String project : projects) {
+            graph.getOrCreateNode(project);
+        }
+
+        for (String[] dependency : dependencies) {
+            String first = dependency[0];
+            String second = dependency[1];
+            graph.addEdge(first, second);
+        }
+
+        return graph;
+    }
+
+    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[]
+    orderProjects_Edge_Removal(
+            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project>
+                    projects) {
+        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] order =
+                new Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project
+                        [projects.size()];
+
+        /* Add “roots” to the build order first.*/
+        int endOfList = addNonDependent(order, projects, 0);
+
+        int toBeProcessed = 0;
+        while (toBeProcessed < order.length) {
+            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project current =
+                    order[toBeProcessed];
+
+            /* We have a circular dependency since there are no remaining
+             * projects with zero dependencies. */
+            if (current == null) {
+                return null;
+            }
+
+            /* Remove myself as a dependency. */
+            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project> children =
+                    current.getChildren();
+            for (Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project child :
+                    children) {
+                child.decrementDependencies();
+            }
+
+            /* Add children that have no one depending on them. */
+            endOfList = addNonDependent(order, children, endOfList);
+
+            toBeProcessed++;
+        }
+
+        return order;
+    }
+
+    /* A helper function to insert projects with zero dependencies
+     * into the order array, starting at index offset. */
+    public static int addNonDependent(
+            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] order,
+            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project> projects,
+            int offset) {
+        for (Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project project :
+                projects) {
+            if (project.getNumberDependencies() == 0) {
+                order[offset] = project;
+                offset++;
+            }
+        }
+        return offset;
     }
 
     @Test
@@ -226,105 +325,5 @@ public class Q4_07_Build_Order_Test {
             order.insert(0, "Build order: ");
             System.out.println(order.toString().trim());
         }
-    }
-
-    public static String[] buildOrderWrapper_Edge_Removal(
-            String[] projects, String[][] dependencies) {
-        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] buildOrder =
-                findBuildOrder(projects, dependencies);
-        if (buildOrder == null) return null;
-        return convertToStringList_Edge_Removal(buildOrder);
-    }
-
-    public static String[] convertToStringList_Edge_Removal(
-            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] projects) {
-        String[] buildOrder = new String[projects.length];
-        for (int i = 0; i < projects.length; i++) {
-            buildOrder[i] = projects[i].getName();
-        }
-        return buildOrder;
-    }
-
-    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[]
-    findBuildOrder(String[] projects, String[][] dependencies) {
-        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph graph =
-                buildGraph_Edge_Removal(projects, dependencies);
-        return orderProjects_Edge_Removal(graph.getNodes());
-    }
-
-    /* Build the graph, adding the edge (a, b) if b is dependent on a.
-     * Assumes a pair is listed in “build order”. The pair (a, b) in
-     * dependencies indicates that b depends on a and a must be built
-     * before b. */
-    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph
-    buildGraph_Edge_Removal(String[] projects, String[][] dependencies) {
-        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph graph =
-                new Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Graph();
-        for (String project : projects) {
-            graph.getOrCreateNode(project);
-        }
-
-        for (String[] dependency : dependencies) {
-            String first = dependency[0];
-            String second = dependency[1];
-            graph.addEdge(first, second);
-        }
-
-        return graph;
-    }
-
-    public static Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[]
-    orderProjects_Edge_Removal(
-            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project>
-                    projects) {
-        Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] order =
-                new Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project
-                        [projects.size()];
-
-        /* Add “roots” to the build order first.*/
-        int endOfList = addNonDependent(order, projects, 0);
-
-        int toBeProcessed = 0;
-        while (toBeProcessed < order.length) {
-            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project current =
-                    order[toBeProcessed];
-
-            /* We have a circular dependency since there are no remaining
-             * projects with zero dependencies. */
-            if (current == null) {
-                return null;
-            }
-
-            /* Remove myself as a dependency. */
-            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project> children =
-                    current.getChildren();
-            for (Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project child :
-                    children) {
-                child.decrementDependencies();
-            }
-
-            /* Add children that have no one depending on them. */
-            endOfList = addNonDependent(order, children, endOfList);
-
-            toBeProcessed++;
-        }
-
-        return order;
-    }
-
-    /* A helper function to insert projects with zero dependencies
-     * into the order array, starting at index offset. */
-    public static int addNonDependent(
-            Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project[] order,
-            ArrayList<Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project> projects,
-            int offset) {
-        for (Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Order.EdgeRemoval.Project project :
-                projects) {
-            if (project.getNumberDependencies() == 0) {
-                order[offset] = project;
-                offset++;
-            }
-        }
-        return offset;
     }
 }

@@ -1,4 +1,4 @@
-package Test.Java.Interview.Amazon.Assessment.Demo2;
+package Java.Test.Interview.Amazon.Assessment.Demo2;
 
 import Java.Code.Interview.Amazon.Assessment.Demo2.FizzBuzz;
 import org.junit.FixMethodOrder;

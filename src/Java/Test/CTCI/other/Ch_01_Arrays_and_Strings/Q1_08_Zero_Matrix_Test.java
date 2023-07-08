@@ -1,4 +1,4 @@
-package Test.Java.CTCI.other.Ch_01_Arrays_and_Strings;
+package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_08_Zero_Matrix;

@@ -1,17 +1,15 @@
-package Test.Java.Interview.Amazon.Interview.Question2;
+package Java.Test.Interview.Amazon.Interview.Question2;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.Amazon.Interview.Question2.Boggle;
 import Java.Code.Interview.Amazon.Interview.Question2.Trie;
+import java.util.Set;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Set;
-
-import static org.junit.Assert.assertEquals;
-
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BoggleTests {

@@ -1,4 +1,4 @@
-package Test.Java.Interview.Amazon.Interview.Question1;
+package Java.Test.Interview.Amazon.Interview.Question1;
 
 import Java.Code.Interview.Amazon.Interview.Question1.ProcessRecords;
 import org.junit.FixMethodOrder;

@@ -1,5 +1,7 @@
 package Java.Test.Educative;
 
+import static org.junit.Assert.assertEquals;
+
 import Java.Code.Educative.DesignSerializeAndDeserializeBinaryTree;
 import Java.Code.Educative.DesignSerializeAndDeserializeBinaryTree.Node;
 import org.junit.FixMethodOrder;
@@ -8,13 +10,17 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.assertEquals;
-
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DesignSerializeAndDeserializeBinaryTreeTests {
 
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
+
+  @Test
+  public void DesignSerializeAndDeserializeBinaryTree() {
+    System.out.format("%s:", name.getMethodName());
+    DesignSerializeAndDeserializeBinaryTree.getDescription();
+  }
 
   @Test
   public void serialize_deserialize_1() {

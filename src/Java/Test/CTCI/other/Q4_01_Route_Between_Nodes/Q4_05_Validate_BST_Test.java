@@ -1,15 +1,14 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTree;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_05_Validate_BST_Test {

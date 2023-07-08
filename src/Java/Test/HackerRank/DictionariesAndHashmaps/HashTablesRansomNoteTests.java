@@ -1,13 +1,12 @@
 package Java.Test.HackerRank.DictionariesAndHashmaps;
 
 import Java.Code.HackerRank.DictionariesAndHashmaps.HashTablesRansomNote;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Arrays;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HashTablesRansomNoteTests {

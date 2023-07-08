@@ -1,14 +1,13 @@
-package Test.Java.CTCI.other.Ch_03_Stacks_and_Queues;
+package Java.Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_03_Stacks_and_Queues.SortableStack;
+import java.util.Stack;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Stack;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_05_Sort_Stack_Test {
@@ -56,22 +55,6 @@ public class Q3_05_Sort_Stack_Test {
       return reverseStack;
   }
 
-    @Test
-    public void sort_stack_solution_1() {
-        System.out.format("%s: \n", name.getMethodName());
-        Stack<Integer> s = new Stack<>();
-        for (int i = 0; i < 10; i++) {
-            int r = AssortedMethods.randomIntInRange(0, 1000);
-            s.push(r);
-        }
-
-        sort(s);
-
-        while (!s.isEmpty()) {
-            System.out.println(s.pop());
-        }
-    }
-
     public static void sort(Stack<Integer> s) {
         Stack<Integer> r = new Stack<>();
         while (!s.isEmpty()) {
@@ -86,6 +69,22 @@ public class Q3_05_Sort_Stack_Test {
         /* Copy the elements back. */
         while (!r.isEmpty()) {
             s.push(r.pop());
+        }
+    }
+
+    @Test
+    public void sort_stack_solution_1() {
+        System.out.format("%s: \n", name.getMethodName());
+        Stack<Integer> s = new Stack<>();
+        for (int i = 0; i < 10; i++) {
+            int r = AssortedMethods.randomIntInRange(0, 1000);
+            s.push(r);
+        }
+
+        sort(s);
+
+        while (!s.isEmpty()) {
+            System.out.println(s.pop());
         }
     }
 

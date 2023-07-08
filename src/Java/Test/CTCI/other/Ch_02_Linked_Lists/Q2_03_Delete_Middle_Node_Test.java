@@ -1,4 +1,4 @@
-package Test.Java.CTCI.other.Ch_02_Linked_Lists;
+package Java.Test.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;

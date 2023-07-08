@@ -1,15 +1,14 @@
-package Test.Java.HackerRank.WarmUpChallenges;
+package Java.Test.HackerRank.WarmUpChallenges;
+
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.WarmUpChallenges.JumpingOnTheClouds;
+import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JumpingOnTheClouds_tests {

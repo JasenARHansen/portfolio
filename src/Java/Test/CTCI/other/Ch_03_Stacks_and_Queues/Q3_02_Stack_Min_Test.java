@@ -1,4 +1,4 @@
-package Test.Java.CTCI.other.Ch_03_Stacks_and_Queues;
+package Java.Test.CTCI.other.Ch_03_Stacks_and_Queues;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_02_Stack_Min.StackWithMin;
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_02_Stack_Min.StackWithMin2;

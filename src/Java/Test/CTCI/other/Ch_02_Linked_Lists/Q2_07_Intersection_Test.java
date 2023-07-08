@@ -1,4 +1,7 @@
-package Test.Java.CTCI.other.Ch_02_Linked_Lists;
+package Java.Test.CTCI.other.Ch_02_Linked_Lists;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
@@ -11,9 +14,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_07_Intersection_Test {

@@ -1,4 +1,4 @@
-package Test.Java.CTCI.other.Q4_01_Route_Between_Nodes;
+package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Node.Tree;
 import Java.Code.CTCI.other.Ch_04_Trees_and_Graphs.BinaryTree;
