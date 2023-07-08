@@ -10,7 +10,7 @@ import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class RepeatedString_tests {
+public class RepeatedStringTests {
 
     @Rule
     public TestName name = new TestName();

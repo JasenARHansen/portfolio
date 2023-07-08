@@ -11,7 +11,7 @@ import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SalesByMatch_tests {
+public class SalesByMatchTests {
 
     @Rule
     public TestName name = new TestName();
