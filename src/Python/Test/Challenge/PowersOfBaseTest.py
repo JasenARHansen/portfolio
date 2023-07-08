@@ -3,7 +3,7 @@
 import unittest
 
 import Python.Code.Challenge.PowersOfBase as baseFile
-from Python.Code.Challenge import PowersOfBase
+from Python.Code.Challenge.PowersOfBase import PowersOfBase
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

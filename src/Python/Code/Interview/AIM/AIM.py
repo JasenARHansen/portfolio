@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import math
 from functools import reduce
 
@@ -131,7 +132,7 @@ class Line(object):
         return round(math.degrees(ang), 5)
 
 
-# noinspection SpellCheckingInspection,PyTypeChecker,PySetFunctionToLiteral
+# noinspection SpellCheckingInspection,PyTypeChecker,PySetFunctionToLiteral,DuplicatedCode
 class AIM(object):
     """AIM main class."""
 
