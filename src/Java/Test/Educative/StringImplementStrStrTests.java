@@ -9,9 +9,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringImplementStrStrTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -19,7 +19,6 @@ public class StringImplementStrStrTests {
     int expected = 2;
     String haystack = "hello";
     String needle = "ll";
-
     int result = StringImplementStrStr.strStr(haystack, needle);
     System.out.format(
         "%s: The needle '%s' can be found in haystack '%s' at index %d.\n",
@@ -32,7 +31,6 @@ public class StringImplementStrStrTests {
     int expected = -1;
     String haystack = "aaaaa";
     String needle = "bba";
-
     int result = StringImplementStrStr.strStr(haystack, needle);
     System.out.format(
         "%s: The needle '%s' can be found in haystack '%s' at index %d.\n",
@@ -45,7 +43,6 @@ public class StringImplementStrStrTests {
     int expected = 0;
     String haystack = "";
     String needle = "";
-
     int result = StringImplementStrStr.strStr(haystack, needle);
     System.out.format(
         "%s: The needle '%s' can be found in haystack '%s' at index %d.\n",

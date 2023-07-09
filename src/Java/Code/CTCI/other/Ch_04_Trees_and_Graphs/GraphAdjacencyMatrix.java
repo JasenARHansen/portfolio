@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+@SuppressWarnings("DuplicatedCode")
 public class GraphAdjacencyMatrix<T extends Comparable<T>> {
   HashMap<T, HashSet<T>> map;
   HashMap<T, State> visited;

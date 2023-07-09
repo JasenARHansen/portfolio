@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_04_Palindrome_Permutation {
   public static boolean palindromePermutation(String input) {
     int a = Character.getNumericValue('a');
@@ -30,7 +31,7 @@ public class Q1_04_Palindrome_Permutation {
   }
 
   public static int[] buildCharFrequencyTable(String phrase) {
-    // Builds a int array to count the instances of a character
+    // Builds an int array to count the instances of a character
     int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
     for (char c : phrase.toCharArray()) {
       // Gets int value of the charter to add to the array

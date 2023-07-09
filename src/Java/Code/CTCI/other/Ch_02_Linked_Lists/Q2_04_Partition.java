@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q2_04_Partition {
   public static LinkedListNode partition_solution_1(LinkedListNode node, int x) {
     LinkedListNode beforeStart = null;

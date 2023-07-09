@@ -1,5 +1,4 @@
 package Java.Test.Educative;
-
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.Educative.SortingAndSearchingFindTheHighAndLowIndex;
@@ -10,12 +9,11 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SortingAndSearchingFindTheHighAndLowIndexTests {
-
   @Rule
   public TestName name = new TestName();
-
   @Test
   public void find_index_1() {
     int expectedLow = 0;

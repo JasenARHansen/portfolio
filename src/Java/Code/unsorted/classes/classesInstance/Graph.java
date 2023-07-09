@@ -1,11 +1,18 @@
 package Java.Code.unsorted.classes.classesInstance;
+
 import java.util.*;
 import java.util.Queue;
 
-@SuppressWarnings({"unchecked", "ConditionalBreakInInfiniteLoop", "StatementWithEmptyBody"})
+@SuppressWarnings({
+  "unchecked",
+  "ConditionalBreakInInfiniteLoop",
+  "StatementWithEmptyBody",
+  "DuplicatedCode"
+})
 public class Graph<X extends Comparable<X>, Y, Z> {
   private final HashMap<X, NodeGraph<X, Y, Z>> mapNodes;
   private Object id;
+
   public Graph(Object id) {
     this();
     this.id = id;

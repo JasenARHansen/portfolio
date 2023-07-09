@@ -1,5 +1,6 @@
 package Java.Code.unsorted.classesStatic;
 
+@SuppressWarnings("unused")
 public class Utilities {
   public static void printMatrix(int[][] input) {
     for (int[] ints : input) {

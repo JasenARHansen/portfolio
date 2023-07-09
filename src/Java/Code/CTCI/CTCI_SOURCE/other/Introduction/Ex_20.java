@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Introduction;
 
+@SuppressWarnings("DuplicatedCode")
 public class Ex_20 {
   public static int powersOf2(int n) {
     if (n == 1) {

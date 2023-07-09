@@ -13,7 +13,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringArithmeticTests {
-
   @Rule public TestName name = new TestName();
 
   public void print_test(

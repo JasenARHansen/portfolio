@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_02_Linked_Lists.Q2_07_Intersection;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     /* Create linked list. */

@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_23_Rand7_From_Rand5;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     /* Test: call rand7 many times and inspect the results. */

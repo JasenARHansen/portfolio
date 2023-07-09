@@ -1,5 +1,4 @@
 package Java.Test.HackerRank.DictionariesAndHashmaps;
-
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.DictionariesAndHashmaps.SherlockAndAnagrams;
@@ -9,19 +8,17 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SherlockAndAnagramsTests {
-
-  @Rule
-  public TestName name = new TestName();
-
+  @Rule public TestName name = new TestName();
   @Test
   public void sherlockAndAnagrams_1() {
     int expected = 2;
     String source = "mom";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 
@@ -31,7 +28,7 @@ public class SherlockAndAnagramsTests {
     String source = "abba";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 
@@ -41,7 +38,7 @@ public class SherlockAndAnagramsTests {
     String source = "abcd";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 
@@ -51,7 +48,7 @@ public class SherlockAndAnagramsTests {
     String source = "ifailuhkqq";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 
@@ -61,7 +58,7 @@ public class SherlockAndAnagramsTests {
     String source = "kkkk";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 
@@ -71,7 +68,7 @@ public class SherlockAndAnagramsTests {
     String source = "cdcd";
     int result = SherlockAndAnagrams.sherlockAndAnagrams(source);
     System.out.format(
-            "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
+        "%s: The string '%s' has %d unordered anagrams.\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
   }
 }

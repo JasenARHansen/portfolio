@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_12_XML_Encoding;
 
+@SuppressWarnings("DuplicatedCode")
 public class Attribute {
   public String tag;
   public String value;

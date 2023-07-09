@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_02_Stack_Min;
+
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     StackWithMin stack = new StackWithMin();

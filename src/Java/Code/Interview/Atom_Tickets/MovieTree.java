@@ -3,9 +3,10 @@ package Java.Code.Interview.Atom_Tickets;
 import java.util.LinkedList;
 import java.util.Queue;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("ClassCanBeRecord")
 public class MovieTree {
   private final MovieNode root;
+
   public MovieTree(MovieNode root) {
     // Constructor
     this.root = root;

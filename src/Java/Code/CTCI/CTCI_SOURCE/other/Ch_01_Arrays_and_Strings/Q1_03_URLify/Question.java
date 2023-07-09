@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_01_Arrays_and_Strings.Q1_03_URLify;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     String str = "Mr John Smith    ";

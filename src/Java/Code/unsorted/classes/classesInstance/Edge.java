@@ -1,9 +1,10 @@
 package Java.Code.unsorted.classes.classesInstance;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings({"unused", "unchecked"})
 public class Edge<X extends Comparable<X>, Y> implements Comparable<Edge<X, Y>> {
   private final X id;
   private Y edgeData;
+
   public Edge(Object id, Object edgeData) {
     this(id);
     this.edgeData = (Y) edgeData;

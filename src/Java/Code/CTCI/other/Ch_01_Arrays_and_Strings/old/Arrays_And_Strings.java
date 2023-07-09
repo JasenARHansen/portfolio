@@ -1,10 +1,12 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.old;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
+@SuppressWarnings("DuplicatedCode")
 public class Arrays_And_Strings {
   public static String compressedString(String input) {
     // Base case for short-circuiting

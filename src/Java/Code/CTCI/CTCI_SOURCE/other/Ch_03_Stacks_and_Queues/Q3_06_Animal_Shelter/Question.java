@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Shelter;
 
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 public class Question {
   public static void main(String[] args) {
     AnimalQueue animals = new AnimalQueue();

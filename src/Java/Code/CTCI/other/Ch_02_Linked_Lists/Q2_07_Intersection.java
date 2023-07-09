@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q2_07_Intersection {
   public static LinkedListNode findIntersection_solution_1(
       LinkedListNode list1, LinkedListNode list2) {

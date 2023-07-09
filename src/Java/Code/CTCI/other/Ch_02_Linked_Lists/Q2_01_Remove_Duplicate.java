@@ -6,6 +6,7 @@ import Java.Code.unsorted.classes.NodeList;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q2_01_Remove_Duplicate {
   public static boolean removeDuplicate(CustomLinkedList<Integer> input) {
     Set<Integer> containmentSet = new HashSet<>();

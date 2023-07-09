@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_01_Route_Betw
 
 import java.util.LinkedList;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] a) {
     Graph g = createNewGraph();

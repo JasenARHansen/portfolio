@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Orde
 
 import java.util.ArrayList;
 
+@SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class Question {
   public static void main(String[] args) {
     String[] projects = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};

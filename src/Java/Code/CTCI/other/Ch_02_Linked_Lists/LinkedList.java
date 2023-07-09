@@ -2,12 +2,13 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.unsorted.classes.CustomLinkedList;
 import Java.Code.unsorted.classes.NodeList;
-import Java.Code.unsorted.classes.classesInstance.CirularLinkedList;
+import Java.Code.unsorted.classes.classesInstance.CircularLinkedList;
 import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Linked_List {
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
+public class LinkedList {
   public static void getDescription() {
     System.out.println("Section 2. Linked List");
   }
@@ -167,7 +168,7 @@ public class Linked_List {
 
   public static void removeDuplicateAsNode(
       CustomLinkedList<Integer> toSimplify, NodeList<Integer> input) {
-    // Sending in original list so I can use its remove method and not
+    // Sending in original list, so I can use its remove method and not
     // reimplement
     NodeList<Integer> currentNode = input;
     int currentIndex = 0;
@@ -218,7 +219,7 @@ public class Linked_List {
     }
     NodeList<Integer> tempNode = inputNode.getNext();
     // Since I do not have a previous pointer from this challenge, I must
-    // migrate the next data to current. and than remove the next node. I
+    // migrate the next data to current. and then remove the next node. I
     // will have to reimplement a few things since I am using my linked list
     // implementation
     inputNode.setData(inputNode.getNext().getData());
@@ -242,7 +243,7 @@ public class Linked_List {
     }
   }
 
-  public static NodeList<String> detectCycle(CirularLinkedList<String> input) {
+  public static NodeList<String> detectCycle(CircularLinkedList<String> input) {
     int slowPointer = 0;
     int fastPointer = 0;
     do {
@@ -254,8 +255,8 @@ public class Linked_List {
     if ((slowPointer == input.getSize()) && ((slowPointer * 2) == fastPointer)) {
       return null;
     }
-    // 2 bad cases, single cycle or corrupt pointers that led to 2 non
-    // intersecting cycled that fast and slow pointers are on.
+    // 2 bad cases, single cycle or corrupt pointers that led to 2 non-intersecting cycled
+    // that fast and slow pointers are on.
     // Cycle detected, identify cycle node
     slowPointer = 0;
     while (input.getIndex(slowPointer) != input.getIndex(fastPointer)) {

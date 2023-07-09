@@ -21,7 +21,6 @@ public class ShiftZeros {
   public static int removeZeros(int[] array) {
     int leftIndex = 0;
     int rightIndex = array.length - 1;
-
     while (leftIndex < rightIndex) {
       while (array[leftIndex] == 0) {
         if (array[rightIndex] != 0) {

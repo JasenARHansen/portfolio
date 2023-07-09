@@ -4,8 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class QueueRemovals {
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Queue Removals
                 You're given a list of n integers arr, which represent elements in a queue (in order from front to back).
                 You're also given an integer x, and must perform x iterations of the following 3-step process:
@@ -41,54 +42,54 @@ public class QueueRemovals {
                  The remaining elements are added back onto the queue, whose contents are then [0, 0].
                  In the final iteration, both elements are popped off the queue.
                  We remove the one that was popped first, which had the initial value of 2 at index 2 in the original array.
-                """.indent(2));
+                """
+            .indent(2));
+  }
+
+  public static int[] findPositions(int[] arr, int x) {
+    int[] returnArray = new int[x];
+    Queue<Tuple> queue = new LinkedList<>();
+    for (int index = 0; index < arr.length; index++) {
+      queue.add(new Tuple(index + 1, arr[index]));
     }
-
-    public static int[] findPositions(int[] arr, int x) {
-        int[] returnArray = new int[x];
-        Queue<Tuple> queue = new LinkedList<>();
-        for (int index = 0; index < arr.length; index++) {
-            queue.add(new Tuple(index + 1, arr[index]));
+    Queue<Tuple> inner;
+    Tuple largest;
+    Tuple tuple;
+    int count;
+    for (int iteration = 0; iteration < x; iteration++) {
+      count = x;
+      inner = new LinkedList<>();
+      largest = new Tuple(-1, -1);
+      while (!queue.isEmpty() && (count > 0)) {
+        tuple = queue.poll();
+        if (tuple.value > largest.value) {
+          largest = tuple;
         }
-        Queue<Tuple> inner;
-        Tuple largest;
-        Tuple tuple;
-        int count;
-        for (int iteration = 0; iteration < x; iteration++) {
-            count = x;
-            inner = new LinkedList<>();
-            largest = new Tuple(-1, -1);
-            while (!queue.isEmpty() && (count > 0)) {
-                tuple = queue.poll();
-                if (tuple.value > largest.value) {
-                    largest = tuple;
-                }
-                inner.add(tuple);
-                count--;
-            }
-
-            while (!inner.isEmpty()) {
-                tuple = inner.poll();
-                if (tuple.index == largest.index) {
-                    returnArray[iteration] = tuple.index;
-                } else {
-                    if (tuple.value > 0) {
-                        tuple.value--;
-                    }
-                    queue.add(tuple);
-                }
-            }
+        inner.add(tuple);
+        count--;
+      }
+      while (!inner.isEmpty()) {
+        tuple = inner.poll();
+        if (tuple.index == largest.index) {
+          returnArray[iteration] = tuple.index;
+        } else {
+          if (tuple.value > 0) {
+            tuple.value--;
+          }
+          queue.add(tuple);
         }
-        return returnArray;
+      }
     }
+    return returnArray;
+  }
 
-    public static class Tuple {
-        public int index;
-        public int value;
+  public static class Tuple {
+    public int index;
+    public int value;
 
-        public Tuple(int index, int value) {
-            this.index = index;
-            this.value = value;
-        }
+    public Tuple(int index, int value) {
+      this.index = index;
+      this.value = value;
     }
+  }
 }

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_04_Tic_Tac_Win;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("DuplicatedCode")
 public class Tester {
   public static void main(String[] args) {
     for (int k = 0; k < 100; k++) {

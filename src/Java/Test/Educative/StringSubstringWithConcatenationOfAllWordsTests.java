@@ -11,9 +11,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringSubstringWithConcatenationOfAllWordsTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

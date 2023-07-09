@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_06_Palindrome;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
@@ -27,7 +27,7 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("b");
     stringValues.insert("a");
     stringValues.printList();
-    boolean success = Linked_List.isPalindrome(stringValues);
+    boolean success = LinkedList.isPalindrome(stringValues);
     System.out.format("List is Palindrome: %s\n", success);
     assertTrue(success);
   }
@@ -40,7 +40,7 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("b");
     stringValues.insert("a");
     stringValues.printList();
-    boolean success = Linked_List.isPalindrome(stringValues);
+    boolean success = LinkedList.isPalindrome(stringValues);
     System.out.format("List is Palindrome: %s\n", success);
     assertTrue(success);
   }
@@ -53,7 +53,7 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("b");
     stringValues.insert("c");
     stringValues.printList();
-    boolean success = Linked_List.isPalindrome(stringValues);
+    boolean success = LinkedList.isPalindrome(stringValues);
     System.out.format("List is Palindrome: %s\n", success);
     assertFalse(success);
   }
@@ -66,7 +66,7 @@ public class Q2_06_Palindrome_Test {
     integerValues.insert(2);
     integerValues.insert(1);
     integerValues.printList();
-    boolean success = Linked_List.isPalindrome(integerValues);
+    boolean success = LinkedList.isPalindrome(integerValues);
     System.out.format("List is Palindrome: %s\n", success);
     assertTrue(success);
   }
@@ -79,7 +79,7 @@ public class Q2_06_Palindrome_Test {
     integerValues.insert(2);
     integerValues.insert(3);
     integerValues.printList();
-    boolean success = Linked_List.isPalindrome(integerValues);
+    boolean success = LinkedList.isPalindrome(integerValues);
     System.out.format("List is Palindrome: %s\n", success);
     assertFalse(success);
   }

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_06_Animal_Sh
 
 import java.util.LinkedList;
 
+@SuppressWarnings("unused")
 public class AnimalQueue {
   LinkedList<Dog> dogs = new LinkedList<>();
   LinkedList<Cat> cats = new LinkedList<>();

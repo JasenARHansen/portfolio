@@ -1,9 +1,9 @@
 package Java.Code.CTCI.other.Ch_02_Linked_Lists.old;
 
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import Java.Code.unsorted.classes.NodeList;
-import Java.Code.unsorted.classes.classesInstance.CirularLinkedList;
+import Java.Code.unsorted.classes.classesInstance.CircularLinkedList;
 import java.lang.reflect.Field;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -11,16 +11,16 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Linked_List_Test {
+public class LinkedListTest {
   private final String testSuite = "Linked List";
   @Rule public TestName name = new TestName();
 
   @Test
   public void detectCycle() throws IllegalAccessException {
     System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    CirularLinkedList<String> stringValue3 = new CirularLinkedList<>();
+    CircularLinkedList<String> stringValue3 = new CircularLinkedList<>();
     stringValue3.insert("a");
     stringValue3.insert("b");
     stringValue3.insert("c");
@@ -29,7 +29,7 @@ public class Linked_List_Test {
     stringValue3.insert("f");
     System.out.println("Detect Cycle Test 1 source:");
     stringValue3.printList();
-    NodeList<String> resultNode = Linked_List.detectCycle(stringValue3);
+    NodeList<String> resultNode = LinkedList.detectCycle(stringValue3);
     System.out.format("Cycle Node: %s\n", resultNode);
     System.out.println("Detect Cycle Test 2 source:");
     // Corrupting the list to make a cycle
@@ -43,7 +43,7 @@ public class Linked_List_Test {
     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException e) {
       e.printStackTrace();
     }
-    resultNode = Linked_List.detectCycle(stringValue3);
+    resultNode = LinkedList.detectCycle(stringValue3);
     System.out.format("Cycle Node: %s\n", resultNode);
   }
 
@@ -65,7 +65,7 @@ public class Linked_List_Test {
     System.out.println("intersects Test 1 source:");
     stringValue1.printList();
     stringValue2.printList();
-    NodeList<String> resultNode = Linked_List.intersects(stringValue1, stringValue2);
+    NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assert resultNode != null;
     System.out.format("List intersects at: %s\n", resultNode);
     stringValue1.empty();
@@ -82,7 +82,7 @@ public class Linked_List_Test {
     System.out.println("intersects Test 2 source:");
     stringValue1.printList();
     stringValue2.printList();
-    resultNode = Linked_List.intersects(stringValue1, stringValue2);
+    resultNode = LinkedList.intersects(stringValue1, stringValue2);
     System.out.format("List intersects at: %s\n", resultNode);
   }
 
@@ -96,7 +96,7 @@ public class Linked_List_Test {
     stringValue1.insert("a");
     System.out.println("isPalindrome Test 1 source:");
     stringValue1.printList();
-    boolean result = Linked_List.isPalindrome(stringValue1);
+    boolean result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
     stringValue1.empty();
     stringValue1.insert("a");
@@ -104,7 +104,7 @@ public class Linked_List_Test {
     stringValue1.insert("a");
     System.out.println("isPalindrome Test 2 source:");
     stringValue1.printList();
-    result = Linked_List.isPalindrome(stringValue1);
+    result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
     stringValue1.empty();
     stringValue1.insert("a");
@@ -112,7 +112,7 @@ public class Linked_List_Test {
     stringValue1.insert("c");
     System.out.println("isPalindrome Test 3 source:");
     stringValue1.printList();
-    result = Linked_List.isPalindrome(stringValue1);
+    result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
   }
 
@@ -132,7 +132,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("partition 5 Test 1 source:");
     toSimplify.printList();
-    Linked_List.partition(toSimplify, 5);
+    LinkedList.partition(toSimplify, 5);
     System.out.println("Test 1 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -148,7 +148,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("partition 7 Test 2 source:");
     toSimplify.printList();
-    Linked_List.partition(toSimplify, 7);
+    LinkedList.partition(toSimplify, 7);
     System.out.println("Test 2 result:");
     toSimplify.printList();
   }
@@ -169,7 +169,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 1 source:");
     toSimplify.printList();
-    Linked_List.removeDuplicate(toSimplify);
+    LinkedList.removeDuplicate(toSimplify);
     System.out.println("Test 1 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -185,7 +185,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 2 source:");
     toSimplify.printList();
-    Linked_List.removeDuplicateAlt(toSimplify);
+    LinkedList.removeDuplicateAlt(toSimplify);
     System.out.println("Test 2 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -201,7 +201,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 3 source:");
     toSimplify.printList();
-    Linked_List.removeDuplicateAsNode(toSimplify, toSimplify.getFirst());
+    LinkedList.removeDuplicateAsNode(toSimplify, toSimplify.getFirst());
     System.out.println("Test 3 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -223,7 +223,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 3 Test 2 source:");
     toSimplify.printList();
-    Linked_List.removeKthFromLast(3, toSimplify);
+    LinkedList.removeKthFromLast(3, toSimplify);
     System.out.println("Test 1 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -239,7 +239,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 5 Test 1 source:");
     toSimplify.printList();
-    Linked_List.removeKthFromLast2(5, toSimplify);
+    LinkedList.removeKthFromLast2(5, toSimplify);
     System.out.println("Test 2 result:");
     toSimplify.printList();
     toSimplify.empty();
@@ -255,7 +255,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 5 Test 2 source:");
     toSimplify.printList();
-    Linked_List.removeKthFromLast2(5, toSimplify);
+    LinkedList.removeKthFromLast2(5, toSimplify);
     System.out.println("Test 2 result:");
     toSimplify.printList();
   }
@@ -270,7 +270,7 @@ public class Linked_List_Test {
     toSimplify.insert(6);
     System.out.println("Remove middle Test 1 source:");
     toSimplify.printList();
-    Linked_List.removeMiddleNode(toSimplify.getIndex(1), toSimplify);
+    LinkedList.removeMiddleNode(toSimplify.getIndex(1), toSimplify);
     System.out.println("Test 1 result:");
     toSimplify.printList();
   }
@@ -289,7 +289,7 @@ public class Linked_List_Test {
     System.out.println("sumList Test 1 source:");
     intValue1.printList();
     intValue2.printList();
-    CustomLinkedList<Integer> intValue3 = Linked_List.sumList(intValue1, intValue2);
+    CustomLinkedList<Integer> intValue3 = LinkedList.sumList(intValue1, intValue2);
     System.out.println("Test 1 result:");
     intValue3.printList();
     intValue1 = new CustomLinkedList<>();
@@ -303,7 +303,7 @@ public class Linked_List_Test {
     System.out.println("sumList Test 2 source:");
     intValue1.printList();
     intValue2.printList();
-    intValue3 = Linked_List.sumList(intValue1, intValue2);
+    intValue3 = LinkedList.sumList(intValue1, intValue2);
     System.out.println("Test 2 result:");
     intValue3.printList();
   }

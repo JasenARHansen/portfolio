@@ -2,12 +2,13 @@ package Java.Code.unsorted.classes.classesInstance;
 
 import Java.Code.unsorted.classes.NodeList;
 
-public class CirularLinkedList<T extends Comparable<T>> {
+@SuppressWarnings("DuplicatedCode")
+public class CircularLinkedList<T extends Comparable<T>> {
   private NodeList<T> head;
   private NodeList<T> tail;
   private int size;
 
-  public CirularLinkedList() {
+  public CircularLinkedList() {
     this.head = null;
     this.tail = null;
     this.size = 0;
@@ -18,6 +19,7 @@ public class CirularLinkedList<T extends Comparable<T>> {
       removeIndex(0);
     }
   }
+
   public NodeList<T> remove(T data) {
     // This does not work as expected when the data type is integer...
     NodeList<T> pointerNode = this.head;
@@ -130,10 +132,6 @@ public class CirularLinkedList<T extends Comparable<T>> {
     }
     // Find the index
     // A <-> B <-> C remove B
-    // C.setPrevious(A)
-    // A.setNext(C)
-    // B.setNext(null);
-    // B.setPrevious(null);
     for (int i = 0; i < index; i++) {
       pointerNode = pointerNode.getNext();
     }

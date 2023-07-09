@@ -4,10 +4,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_08_Loop_Detection;
 import Java.Code.unsorted.classes.NodeList;
-import Java.Code.unsorted.classes.classesInstance.CirularLinkedList;
+import Java.Code.unsorted.classes.classesInstance.CircularLinkedList;
 import java.lang.reflect.Field;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -23,7 +23,7 @@ public class Q2_08_Loop_Detection_Test {
   @Test
   public void detectCycle_1() {
     System.out.format("%s: List\n", name.getMethodName());
-    CirularLinkedList<String> stringValue = new CirularLinkedList<>();
+    CircularLinkedList<String> stringValue = new CircularLinkedList<>();
     stringValue.insert("a");
     stringValue.insert("b");
     stringValue.insert("c");
@@ -31,7 +31,7 @@ public class Q2_08_Loop_Detection_Test {
     stringValue.insert("e");
     stringValue.insert("f");
     stringValue.printList();
-    NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
+    NodeList<String> resultNode = LinkedList.detectCycle(stringValue);
     assertNull(resultNode);
     System.out.format("Cycle Node: null\n");
   }
@@ -39,7 +39,7 @@ public class Q2_08_Loop_Detection_Test {
   @Test
   public void detectCycle_2() throws IllegalAccessException {
     System.out.format("%s: Can't print List due to cycle\n", name.getMethodName());
-    CirularLinkedList<String> stringValues = new CirularLinkedList<>();
+    CircularLinkedList<String> stringValues = new CircularLinkedList<>();
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("c");
@@ -57,7 +57,7 @@ public class Q2_08_Loop_Detection_Test {
     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException e) {
       e.printStackTrace();
     }
-    NodeList<String> resultNode = Linked_List.detectCycle(stringValues);
+    NodeList<String> resultNode = LinkedList.detectCycle(stringValues);
     System.out.format("Cycle Node: %s\n", resultNode);
     assertNotNull(resultNode);
   }

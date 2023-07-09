@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_02_Linked_Lists.Q2_08_Loop_Detection
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     int list_length = 100;

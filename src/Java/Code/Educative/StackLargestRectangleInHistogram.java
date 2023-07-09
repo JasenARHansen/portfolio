@@ -11,9 +11,7 @@ public class StackLargestRectangleInHistogram {
         5 6   3
     2   5 6 2 3
     2 1 5 6 2 3
-
   Example 1:
-
   Input: heights = [2,1,5,6,2,3]
   Output: 10
   Explanation: The above is a histogram where width of each bar is 1.
@@ -25,13 +23,11 @@ public class StackLargestRectangleInHistogram {
         X X   3
     2   X X 2 3
     2 1 X X 2 3
-
   Example 2:
     4
     4
   2 4
   2 4
-
   Input: heights = [2,4]
   Output: 4
     4       X
@@ -40,14 +36,11 @@ public class StackLargestRectangleInHistogram {
   X X  or 2 X
   Constraints:
       1 <= heights.length <= 105
-      0 <= heights[i] <= 104
-  */
-
+      0 <= heights[i] <= 104. */
   public static int largestRectangleAreaBrute(int[] heights) {
     int area;
     int max_area = -1;
     int index = 0;
-
     while (index < heights.length) {
       if (heights[index] > 0) {
         for (int height = 1; height <= heights[index]; height++) {
@@ -71,7 +64,6 @@ public class StackLargestRectangleInHistogram {
     int area;
     int max_area = -1;
     int index = 0;
-
     while (index < heights.length) {
       if (stack.isEmpty() || heights[stack.peek()] <= heights[index]) {
         stack.add(index);

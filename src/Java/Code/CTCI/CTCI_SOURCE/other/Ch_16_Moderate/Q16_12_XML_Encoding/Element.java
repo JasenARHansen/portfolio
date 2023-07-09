@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_12_XML_Encoding;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("DuplicatedCode")
 public class Element {
   public ArrayList<Attribute> attributes;
   public ArrayList<Element> children;

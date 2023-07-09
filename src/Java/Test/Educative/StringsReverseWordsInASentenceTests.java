@@ -9,11 +9,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringsReverseWordsInASentenceTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void reverse_1() {
@@ -21,8 +20,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = "Hello World";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -32,8 +31,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = "I am great at programming";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -43,8 +42,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = " at ";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -54,8 +53,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = " at";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -65,8 +64,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = "at ";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -76,8 +75,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = " cat";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 
@@ -87,8 +86,8 @@ public class StringsReverseWordsInASentenceTests {
     String sentence = "cat ";
     String result = StringsReverseWordsInASentence.reverse_words(sentence);
     System.out.format(
-            "%s: The string '%s' with its words reversed is '%s'.\n",
-            name.getMethodName(), sentence, result);
+        "%s: The string '%s' with its words reversed is '%s'.\n",
+        name.getMethodName(), sentence, result);
     assertEquals(expected, result);
   }
 }

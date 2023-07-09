@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+@SuppressWarnings("DuplicatedCode")
 public class QuestionBFS {
   public static void main(String[] args) {
     int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

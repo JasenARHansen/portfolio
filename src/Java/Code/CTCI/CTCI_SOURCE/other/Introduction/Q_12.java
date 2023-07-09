@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Introduction;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q_12 {
   public static int binarySearch(int[] a, int x) {
     int low = 0;

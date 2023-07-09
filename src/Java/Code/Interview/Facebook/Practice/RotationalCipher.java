@@ -2,8 +2,9 @@ package Java.Code.Interview.Facebook.Practice;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class RotationalCipher {
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Rotational Cipher
                 One simple way to encrypt a string is to "rotate" every alphanumeric character by a certain amount.
                 Rotating a character means replacing it with another character that is a certain number of steps away in normal alphabetic or numerical order.
@@ -26,48 +27,65 @@ public class RotationalCipher {
                  input = abcdefghijklmNOPQRSTUVWXYZ0123456789
                  rotationFactor = 39
                  output = nopqrstuvwxyzABCDEFGHIJKLM9012345678
-                """.indent(2));
+                """
+            .indent(2));
+  }
+
+  public static String rotationalCipher(String input, int rotationFactor) {
+    char[] characters = input.toCharArray();
+    int start_Upper = 'A';
+    int start_Lower = 'a';
+    int range_Letter = (int) 'Z' - start_Upper;
+    int start_Number = '0';
+    int range_Number = (int) '9' - start_Number;
+    for (int index = 0; index < characters.length; index++) {
+      if (('A' <= characters[index]) && (characters[index] <= 'Z')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - start_Upper + rotationFactor) % (range_Letter + 1))
+                    + start_Upper);
+      } else if (('a' <= characters[index]) && (characters[index] <= 'z')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - start_Lower + rotationFactor) % (range_Letter + 1))
+                    + start_Lower);
+      } else if (('0' <= characters[index]) && (characters[index] <= '9')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - start_Number + rotationFactor) % (range_Number + 1))
+                    + start_Number);
+      }
     }
+    return String.valueOf(characters);
+  }
 
-    public static String rotationalCipher(String input, int rotationFactor) {
-        char[] characters = input.toCharArray();
-        int start_Upper = 'A';
-        int start_Lower = 'a';
-        int range_Letter = (int) 'Z' - start_Upper;
-        int start_Number = '0';
-        int range_Number = (int) '9' - start_Number;
-
-        for (int index = 0; index < characters.length; index++) {
-            if (('A' <= characters[index]) && (characters[index] <= 'Z')) {
-                characters[index] = (char) ((((int) characters[index] - start_Upper + rotationFactor) % (range_Letter + 1)) + start_Upper);
-            } else if (('a' <= characters[index]) && (characters[index] <= 'z')) {
-                characters[index] = (char) ((((int) characters[index] - start_Lower + rotationFactor) % (range_Letter + 1)) + start_Lower);
-            } else if (('0' <= characters[index]) && (characters[index] <= '9')) {
-                characters[index] = (char) ((((int) characters[index] - start_Number + rotationFactor) % (range_Number + 1)) + start_Number);
-            }
-        }
-        return String.valueOf(characters);
+  public static String decodeCipher(String input, int rotationFactor) {
+    char[] characters = input.toCharArray();
+    int start_Upper = 'A';
+    int stop_Upper = 'Z';
+    int stop_Lower = 'z';
+    int start_Number = '0';
+    int stop_Number = '9';
+    int range_Letter = stop_Upper - start_Upper;
+    int range_Number = stop_Number - start_Number;
+    for (int index = 0; index < characters.length; index++) {
+      if (('A' <= characters[index]) && (characters[index] <= 'Z')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - stop_Upper - rotationFactor) % (range_Letter + 1))
+                    + stop_Upper);
+      } else if (('a' <= characters[index]) && (characters[index] <= 'z')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - stop_Lower - rotationFactor) % (range_Letter + 1))
+                    + stop_Lower);
+      } else if (('0' <= characters[index]) && (characters[index] <= '9')) {
+        characters[index] =
+            (char)
+                ((((int) characters[index] - stop_Number - rotationFactor) % (range_Number + 1))
+                    + stop_Number);
+      }
     }
-
-    public static String decodeCipher(String input, int rotationFactor) {
-        char[] characters = input.toCharArray();
-        int start_Upper = 'A';
-        int stop_Upper = 'Z';
-        int stop_Lower = 'z';
-        int start_Number = '0';
-        int stop_Number = '9';
-        int range_Letter = stop_Upper - start_Upper;
-        int range_Number = stop_Number - start_Number;
-
-        for (int index = 0; index < characters.length; index++) {
-            if (('A' <= characters[index]) && (characters[index] <= 'Z')) {
-                characters[index] = (char) ((((int) characters[index] - stop_Upper - rotationFactor) % (range_Letter + 1)) + stop_Upper);
-            } else if (('a' <= characters[index]) && (characters[index] <= 'z')) {
-                characters[index] = (char) ((((int) characters[index] - stop_Lower - rotationFactor) % (range_Letter + 1)) + stop_Lower);
-            } else if (('0' <= characters[index]) && (characters[index] <= '9')) {
-                characters[index] = (char) ((((int) characters[index] - stop_Number - rotationFactor) % (range_Number + 1)) + stop_Number);
-            }
-        }
-        return String.valueOf(characters);
-    }
+    return String.valueOf(characters);
+  }
 }

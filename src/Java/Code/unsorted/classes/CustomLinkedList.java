@@ -1,5 +1,6 @@
 package Java.Code.unsorted.classes;
 
+@SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class CustomLinkedList<T extends Comparable<T>> {
   private NodeList<T> head;
   private NodeList<T> tail;
@@ -20,10 +21,6 @@ public class CustomLinkedList<T extends Comparable<T>> {
     // Delete at front
     if (index == 0) {
       // A <-> B remove A
-      // B.setPrevious(null);
-      // this.head = B;
-      // A.setNext(null);
-      // A.setPrevious(null);
       pointerNode = this.head;
       if (pointerNode.getNext() != null) {
         pointerNode.getNext().setPrevious(null);
@@ -35,10 +32,6 @@ public class CustomLinkedList<T extends Comparable<T>> {
     // Delete at end
     else if (index >= (this.size - 1)) {
       // A <-> B remove B
-      // A.setNext(null);
-      // this.tail = A;
-      // B.setNext(null);
-      // B.setPrevious(null);
       pointerNode = this.tail;
       if (pointerNode.getPrevious() != null) {
         pointerNode.getPrevious().setNext(null);
@@ -51,10 +44,6 @@ public class CustomLinkedList<T extends Comparable<T>> {
     else {
       // Find the index
       // A <-> B <-> C remove B
-      // C.setPrevious(A)
-      // A.setNext(C)
-      // B.setNext(null);
-      // B.setPrevious(null);
       pointerNode = this.head;
       for (int i = 0; i < index; i++) {
         pointerNode = pointerNode.getNext();

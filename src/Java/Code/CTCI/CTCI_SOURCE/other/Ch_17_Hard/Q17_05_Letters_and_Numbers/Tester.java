@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_05_Letters_and_Numbers;
 
+@SuppressWarnings("DuplicatedCode")
 public class Tester {
   public static void main(String[] args) {
     char b = 'b';

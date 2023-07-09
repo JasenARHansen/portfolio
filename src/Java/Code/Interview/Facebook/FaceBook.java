@@ -4,6 +4,7 @@ import Java.Code.unsorted.classes.classesInstance.BinarySearchTreeHeightBalanced
 import Java.Code.unsorted.classes.classesInstance.NodeTree;
 import java.util.ArrayList;
 
+@SuppressWarnings("DuplicatedCode")
 public class FaceBook {
   public static void case1() {
     System.out.println("Integer Test");

@@ -3,6 +3,7 @@ package Java.Code.CTCI.other.Ch_03_Stacks_and_Queues;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("DuplicatedCode")
 public class AnimalShelter {
   private final Queue<Animal> catQueue;
   private final Queue<Animal> dogQueue;

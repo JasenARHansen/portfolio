@@ -3,7 +3,9 @@ package Java.Test.Interview.FirstQuadrant;
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.Interview.FirstQuadrant.RomanNumeral;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -11,7 +13,12 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
+@SuppressWarnings({
+  "DuplicatedCode",
+  "SpellCheckingInspection",
+  "InstantiationOfUtilityClass",
+  "unchecked"
+})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RomanNumeralTest {
   @Rule public TestName name = new TestName();
@@ -146,64 +153,65 @@ public class RomanNumeralTest {
     assertEquals("Test RomanNumeral Conversion (Invalid): MIM", -1, testValue);
   }
 
-  // @Test
-  // public void
-  // test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_Array() {
-  // System.out.format("Test: %s\n", name.getMethodName());
-  // String[] numerals = new String[] { "(XX+CMXCIX)/V", "(I+v+X+CM+XC+IX)/V",
-  // "(XX+CIMXCIX)/V" };
-  // RomanNumeral.conversion_Output_Complex_With_Log(numerals);
-  // System.out.format("\n");
-  // String testConversion = RomanNumeral.conversion_Complex("(XX+CMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+999)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(I+v+X+CM+XC+IX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(1+5+10+900+90+9)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(XX+CIMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+(#ERROR#))/5");
-  // }
+  @Test
+  public void test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_Array() {
+    System.out.format("Test: %s\n", name.getMethodName());
+    String[] numerals = new String[] {"(XX+CMXCIX)/V", "(I+v+X+CM+XC+IX)/V", "(XX+CIMXCIX)/V"};
+    RomanNumeral.conversion_Output_Complex_With_Log(numerals);
+    System.out.format("\n");
+    String testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+999)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(I+v+X+CM+XC+IX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
+        testConversion,
+        "(1+5+10+900+90+9)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CIMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+(#ERROR#))/5");
+  }
 
-  // @Test
-  // public void
-  // test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_List() {
-  // System.out.format("Test: %s\n", name.getMethodName());
-  // List<String> numerals = new ArrayList<>();
-  // numerals.add("(XX+CMXCIX)/V");
-  // numerals.add("(I+v+X+CM+XC+IX)/V");
-  // numerals.add("(XX+CIMXCIX)/V");
-  // RomanNumeral.conversion_Output_Complex_With_Log(numerals);
-  // System.out.format("\n");
-  // String testConversion = RomanNumeral.conversion_Complex("(XX+CMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+999)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(I+v+X+CM+XC+IX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(1+5+10+900+90+9)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(XX+CIMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+(#ERROR#))/5");
-  // }
+  @Test
+  public void test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_List() {
+    System.out.format("Test: %s\n", name.getMethodName());
+    List<String> numerals = new ArrayList<>();
+    numerals.add("(XX+CMXCIX)/V");
+    numerals.add("(I+v+X+CM+XC+IX)/V");
+    numerals.add("(XX+CIMXCIX)/V");
+    RomanNumeral.conversion_Output_Complex_With_Log(numerals);
+    System.out.format("\n");
+    String testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+999)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(I+v+X+CM+XC+IX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
+        testConversion,
+        "(1+5+10+900+90+9)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CIMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+(#ERROR#))/5");
+  }
 
-  // @Test
-  // public void
-  // test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_Multiple_Input()
-  // {
-  // System.out.format("Test: %s\n", name.getMethodName());
-  // RomanNumeral.conversion_Output_Complex_With_Log( "(XX+CMXCIX)/V",
-  // "(I+v+X+CM+XC+IX)/V", "(XX+CIMXCIX)/V");
-  // System.out.format("\n");
-  // String testConversion = RomanNumeral.conversion_Complex("(XX+CMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+999)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(I+v+X+CM+XC+IX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(1+5+10+900+90+9)/5");
-  // testConversion = RomanNumeral.conversion_Complex("(XX+CIMXCIX)/V");
-  // assertEquals("Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
-  // testConversion, "(20+(#ERROR#))/5");
-  // }
+  @Test
+  public void test_RomanNumeral_Conversion_To_Int_Complex_Output_With_Log_Multiple_Input() {
+    System.out.format("Test: %s\n", name.getMethodName());
+    RomanNumeral.conversion_Output_Complex_With_Log(
+        "(XX+CMXCIX)/V", "(I+v+X+CM+XC+IX)/V", "(XX+CIMXCIX)/V");
+    System.out.format("\n");
+    String testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+999)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(I+v+X+CM+XC+IX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V",
+        testConversion,
+        "(1+5+10+900+90+9)/5");
+    testConversion = RomanNumeral.conversion_To_Int_Complex("(XX+CIMXCIX)/V");
+    assertEquals(
+        "Test RomanNumeral Conversion Complex: (XX+CMXCIX)/V", testConversion, "(20+(#ERROR#))/5");
+  }
 
   @Test
   public void test_RomanNumeral_Conversion_To_Int_Output_Simple_MCMLXIV() {
@@ -673,47 +681,82 @@ public class RomanNumeralTest {
     assertEquals("Test RomanNumeral Subtractive Value: XL", 10, testvalue);
   }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_C() {
-  // int testValue = RomanNumeral.supportedCharacters.get("C");
-  // assertEquals("Test RomanNumeral Value: C", 100, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_I()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("I");
+    assertEquals("Test RomanNumeral Value: I", 1, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_D() {
-  // int testValue = RomanNumeral.supportedCharacters.get("D");
-  // assertEquals("Test RomanNumeral Value: D", 500, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_V()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("V");
+    assertEquals("Test RomanNumeral Value: V", 5, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_I() {
-  // int testValue = RomanNumeral.supportedCharacters.get("I");
-  // assertEquals("Test RomanNumeral Value: I", 1, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_X()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("X");
+    assertEquals("Test RomanNumeral Value: X", 10, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_L() {
-  // int testValue = RomanNumeral.supportedCharacters.get("L");
-  // assertEquals("Test RomanNumeral Value: L", 50, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_L()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("L");
+    assertEquals("Test RomanNumeral Value: l", 50, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_M() {
-  // int testValue = RomanNumeral.supportedCharacters.get("M");
-  // assertEquals("Test RomanNumeral Value: M", 1000, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_C()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("C");
+    assertEquals("Test RomanNumeral Value: C", 100, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_V() {
-  // int testValue = RomanNumeral.supportedCharacters.get("V");
-  // assertEquals("Test RomanNumeral Value: V", 5, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_D()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("D");
+    assertEquals("Test RomanNumeral Value: D", 500, testValue);
+  }
 
-  // @Test
-  // public void test_RomanNumeral_Supported_Characters_Value_X() {
-  // int testValue = RomanNumeral.supportedCharacters.get("X");
-  // assertEquals("Test RomanNumeral Value: X", 10, testValue);
-  // }
+  @Test
+  public void test_RomanNumeral_Supported_Characters_Value_M()
+      throws NoSuchFieldException, IllegalAccessException {
+    RomanNumeral e = new RomanNumeral();
+    Field privateField = RomanNumeral.class.getDeclaredField("supportedCharacters");
+    privateField.setAccessible(true);
+    HashMap<String, Integer> supportedCharacters = (HashMap<String, Integer>) privateField.get(e);
+    int testValue = supportedCharacters.get("M");
+    assertEquals("Test RomanNumeral Value: M", 1000, testValue);
+  }
 
   @Test
   public void test_RomanNumeral_Validity_Character_As_Character_c() {

@@ -1,6 +1,9 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.Q15_03_Dining_Philosophers.QuestionA;
+
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static int size = 3;
+
   public static void main(String[] args) {
     Chopstick[] chopsticks = new Chopstick[size + 1];
     for (int i = 0; i < size + 1; i++) {

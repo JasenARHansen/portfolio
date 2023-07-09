@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.Q15_03_Dining_Philosophers.QuestionB;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static int size = 3;
 

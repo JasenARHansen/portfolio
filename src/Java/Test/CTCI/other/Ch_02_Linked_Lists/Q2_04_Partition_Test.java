@@ -1,7 +1,7 @@
 package Java.Test.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_04_Partition;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
@@ -32,7 +32,7 @@ public class Q2_04_Partition_Test {
     int value = 5;
     System.out.format("%s: Partition with '%d' source\n", name.getMethodName(), value);
     toSimplify.printList();
-    Linked_List.partition(toSimplify, value);
+    LinkedList.partition(toSimplify, value);
     System.out.format("%s: Partition with '%d' result\n", name.getMethodName(), value);
     toSimplify.printList();
   }
@@ -54,7 +54,7 @@ public class Q2_04_Partition_Test {
     int value = 7;
     System.out.format("%s: Partition with '%d' source\n", name.getMethodName(), value);
     toSimplify.printList();
-    Linked_List.partition(toSimplify, value);
+    LinkedList.partition(toSimplify, value);
     System.out.format("%s: Partition with '%d' result\n", name.getMethodName(), value);
     toSimplify.printList();
   }

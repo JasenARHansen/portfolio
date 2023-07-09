@@ -4,6 +4,7 @@ import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import Java.Code.unsorted.classes.NodeList;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q2_02_Return_Kth_To_Last {
   public static NodeList<Integer> returnKthToLast(int k, CustomLinkedList<Integer> input) {
     if (input.getSize() < k) {

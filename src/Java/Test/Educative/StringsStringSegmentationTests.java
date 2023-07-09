@@ -13,11 +13,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringsStringSegmentationTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void can_segment_string_1() {
@@ -25,8 +24,8 @@ public class StringsStringSegmentationTests {
     String sentence = "applepie";
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
-            "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary, result);
+        "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
+        name.getMethodName(), sentence, dictionary, result);
     assertTrue(result);
   }
 
@@ -36,8 +35,8 @@ public class StringsStringSegmentationTests {
     String sentence = "applepeer";
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
-            "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary, result);
+        "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
+        name.getMethodName(), sentence, dictionary, result);
     assertFalse(result);
   }
 
@@ -47,8 +46,8 @@ public class StringsStringSegmentationTests {
     String sentence = "applepearpie";
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
-            "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary, result);
+        "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
+        name.getMethodName(), sentence, dictionary, result);
     assertTrue(result);
   }
 
@@ -58,8 +57,8 @@ public class StringsStringSegmentationTests {
     String sentence = "applespie";
     boolean result = StringsStringSegmentation.can_segment_string(sentence, dictionary);
     System.out.format(
-            "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
-            name.getMethodName(), sentence, dictionary, result);
+        "%s: The string '%s' can be segmented using the dictionary '%s': %b.\n",
+        name.getMethodName(), sentence, dictionary, result);
     assertFalse(result);
   }
 }

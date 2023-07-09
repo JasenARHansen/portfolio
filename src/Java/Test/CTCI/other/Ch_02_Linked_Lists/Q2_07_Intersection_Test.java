@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNull;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_07_Intersection;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import Java.Code.unsorted.classes.NodeList;
@@ -34,7 +34,7 @@ public class Q2_07_Intersection_Test {
     CustomLinkedList<String> stringValue2 = stringValue1.sublist(stringValue1, 3);
     stringValue2.printList();
     System.out.println("Test result:");
-    NodeList<String> resultNode = Linked_List.intersects(stringValue1, stringValue2);
+    NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assertNotNull(resultNode);
     System.out.format("List intersects at: %s\n", resultNode);
   }
@@ -60,7 +60,7 @@ public class Q2_07_Intersection_Test {
     stringValue2.insert("c");
     stringValue2.printList();
     System.out.println("Test result:");
-    NodeList<String> resultNode = Linked_List.intersects(stringValue1, stringValue2);
+    NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assertNull(resultNode);
     System.out.format("List intersects at: null\n");
   }

@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_07_Build_Orde
 import java.util.ArrayList;
 import java.util.Stack;
 
+@SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class Question {
   /* Build the graph, adding the edge (a, b) if b is dependent on a.
   Assumes a pair is listed in “build order” (which is the reverse

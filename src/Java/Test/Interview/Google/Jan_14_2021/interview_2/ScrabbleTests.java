@@ -11,19 +11,17 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ScrabbleTests {
+  @Rule public TestName name = new TestName();
 
-    @Rule
-    public TestName name = new TestName();
-
-    @Test
-    public void test() {
-        List<String> dictionary = List.of("hat", "cat", "chat", "at", "a", "foo", "bar", "baz", "test");
-        String source = "CHAT";
-        Scrabble result = new Scrabble();
-        result.setup(dictionary);
-        Collection<String> words = result.getWords(source);
-        for (String word : words) {
-            System.out.format("%s: Word: %s\n", name.getMethodName(), word);
-        }
+  @Test
+  public void test() {
+    List<String> dictionary = List.of("hat", "cat", "chat", "at", "a", "foo", "bar", "baz", "test");
+    String source = "CHAT";
+    Scrabble result = new Scrabble();
+    result.setup(dictionary);
+    Collection<String> words = result.getWords(source);
+    for (String word : words) {
+      System.out.format("%s: Word: %s\n", name.getMethodName(), word);
     }
+  }
 }

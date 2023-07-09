@@ -4,6 +4,7 @@ import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     MyQueue<Integer> my_queue = new MyQueue<>();

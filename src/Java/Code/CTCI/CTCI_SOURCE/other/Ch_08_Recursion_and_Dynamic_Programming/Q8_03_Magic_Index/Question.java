@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Arrays;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static int magicSlow(int[] array) {
     for (int i = 0; i < array.length; i++) {

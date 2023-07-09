@@ -26,7 +26,6 @@ public class Sequence {
     int even = 0;
     int odd = 1;
     boolean flip = true;
-
     if (count > 1) {
       int iterate = count - 1;
       while (iterate > 0) {
@@ -58,7 +57,6 @@ public class Sequence {
     while (row > 0) {
       row--;
       List<Integer> rowList = new ArrayList<>();
-
       // first entry
       rowList.add(returnList.get(0));
       // middle entries

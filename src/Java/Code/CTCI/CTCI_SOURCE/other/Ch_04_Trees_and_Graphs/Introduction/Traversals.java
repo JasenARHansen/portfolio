@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Introduction;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 
+@SuppressWarnings("unused")
 public class Traversals {
   public static void visit(TreeNode node) {
     if (node != null) {

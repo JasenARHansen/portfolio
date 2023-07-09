@@ -1,20 +1,18 @@
 package Java.Code.Interview.Google.Jan_14_2021.interview_2;
 
-/*
-Given a list of letters, the assistant must return all possible words (in some language) that can be created with those letters.
-        The returned words can contain all the provided letters or a subset of them.
-
-        For example, if the user has the letters “H”, ‘C”, “A”, “T”, then the assistant should suggest the words “CHAT”, “CAT”, “HAT”, “AT”
-        and “A” (valid words in the English dictionary).
-*/
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@SuppressWarnings({"GrazieInspection", "DuplicatedCode", "ConfusingMainMethod"})
 public class Scrabble {
+  /*
+  Given a list of letters, the assistant must return all possible words (in some language) that can be created with those letters.
+          The returned words can contain all the provided letters or a subset of them.
+          For example, if the user has the letters “H”, ‘C”, “A”, “T”, then the assistant should suggest the words “CHAT”, “CAT”, “HAT”, “AT”
+          and “A” (valid words in the English dictionary). */
   Trie dictionary = new Trie();
 
   public void setup(List<String> wordList) {
@@ -33,16 +31,15 @@ public class Scrabble {
   }
 
   public void main(String[] args) {
-
     this.getWords("CHAT");
   }
 
   private void getWords(String permutation, Set<String> words) {
     List<Character> chars =
-            permutation
-                    .chars() // IntStream
-                    .mapToObj(e -> (char) e) // Stream<Character>
-                    .collect(Collectors.toList());
+        permutation
+            .chars() // IntStream
+            .mapToObj(e -> (char) e) // Stream<Character>
+            .collect(Collectors.toList());
     dictionary.getPaths(chars, words);
   }
 
@@ -50,12 +47,11 @@ public class Scrabble {
     if (letters.length == 0) {
       returns.add(current);
     }
-
     for (int index = 0; index < letters.length; index++) {
       char[] remainder =
-              this.getRemainder(
-                      index,
-                      letters); // this returns the remainder of the char array.  I was given the ok to skip
+          this.getRemainder(
+              index,
+              letters); // this returns the remainder of the char array.  I was given the ok to skip
       String newCurrent = current + letters[index];
       this.getPermutations(remainder, returns, newCurrent);
     }

@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Node;
+
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     int[] counts = new int[10];

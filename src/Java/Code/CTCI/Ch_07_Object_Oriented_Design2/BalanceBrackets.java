@@ -2,8 +2,8 @@ package Java.Code.CTCI.Ch_07_Object_Oriented_Design2;
 
 import java.util.List;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
+@SuppressWarnings({"DuplicatedCode", "GrazieInspection", "unused"})
 public class BalanceBrackets {
   /*
   Balance Brackets
@@ -37,8 +37,8 @@ public class BalanceBrackets {
   */
 
   public static boolean isBalanced(String s) {
-    List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).collect(Collectors.toList());
-    List<Character> close = "}])".chars().mapToObj((i) -> (char) i).collect(Collectors.toList());
+    List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).toList();
+    List<Character> close = "}])".chars().mapToObj((i) -> (char) i).toList();
     Stack<Character> stack = new Stack<>();
     for (int index = 0; index < s.length(); index++) {
       if (close.contains(s.charAt(index))) {

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_05_Validate_B
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static Integer lastPrinted = null;
 

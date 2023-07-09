@@ -11,7 +11,7 @@ public class Shapes {
   public static void getDescription() {
     System.out.println(
         """
-                Generate various shapes composed of characters.""".indent(2));
+                    Generate various shapes composed of characters.""".indent(2));
   }
 
   public static void triangleLeftJustifiedPointDown(int count, char... symbolIn) {

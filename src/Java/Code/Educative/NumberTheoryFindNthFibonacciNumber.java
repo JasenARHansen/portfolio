@@ -1,5 +1,6 @@
 package Java.Code.Educative;
 
+@SuppressWarnings("DuplicatedCode")
 public class NumberTheoryFindNthFibonacciNumber {
   /*
   In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation

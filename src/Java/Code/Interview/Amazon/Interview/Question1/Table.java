@@ -3,7 +3,7 @@ package Java.Code.Interview.Amazon.Interview.Question1;
 import java.util.*;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("SuspiciousMethodCalls")
+@SuppressWarnings({"SuspiciousMethodCalls", "DuplicatedCode"})
 public class Table {
   List<String> essential = new ArrayList<>();
   List<String> keys = new ArrayList<>();

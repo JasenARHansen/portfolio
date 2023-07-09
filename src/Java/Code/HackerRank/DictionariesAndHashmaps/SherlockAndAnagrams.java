@@ -76,31 +76,30 @@ public class SherlockAndAnagrams {
   There are three anagrammatic pairs of length 2: [cd, dc], [cd, cd], [dc, cd] at positions [[0,1], [1, 2]],
    [[0, 1], [2, 3]], [[1, 2], [2, 3]] respectively.
    */
-
-    public static int sherlockAndAnagrams(String s) {
-        int count = 0;
-        Map<String, Integer> map = new HashMap<>();
-        char[] characters;
-        String string;
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 1; j <= s.length(); j++) {
-                characters = s.substring(i, j).toCharArray();
-                Arrays.sort(characters);
-                string = Arrays.toString(characters);
-                if (map.containsKey(string)) {
-                    map.put(string, map.get(string) + 1);
-                } else {
-                    map.put(string, 1);
-                }
-            }
+  public static int sherlockAndAnagrams(String s) {
+    int count = 0;
+    Map<String, Integer> map = new HashMap<>();
+    char[] characters;
+    String string;
+    for (int i = 0; i < s.length(); i++) {
+      for (int j = i + 1; j <= s.length(); j++) {
+        characters = s.substring(i, j).toCharArray();
+        Arrays.sort(characters);
+        string = Arrays.toString(characters);
+        if (map.containsKey(string)) {
+          map.put(string, map.get(string) + 1);
+        } else {
+          map.put(string, 1);
         }
-        for (String key : map.keySet()) {
-            if (map.get(key) > 1) {
-                for (int counter = map.get(key) - 1; counter > 0; counter--) {
-                    count += counter;
-                }
-            }
-        }
-        return count;
+      }
     }
+    for (String key : map.keySet()) {
+      if (map.get(key) > 1) {
+        for (int counter = map.get(key) - 1; counter > 0; counter--) {
+          count += counter;
+        }
+      }
+    }
+    return count;
+  }
 }

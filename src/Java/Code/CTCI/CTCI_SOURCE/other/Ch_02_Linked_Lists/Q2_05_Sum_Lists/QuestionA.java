@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_02_Linked_Lists.Q2_05_Sum_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings({"unused", "DuplicatedCode"})
 public class QuestionA {
   public static int linkedListToInt(LinkedListNode node) {
     int value = 0;

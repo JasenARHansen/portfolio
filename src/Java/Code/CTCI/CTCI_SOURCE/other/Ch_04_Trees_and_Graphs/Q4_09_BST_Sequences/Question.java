@@ -4,6 +4,7 @@ import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void weaveLists(
       LinkedList<Integer> first,
@@ -22,7 +23,7 @@ public class Question {
     }
     /* Recurse with head of first added to the prefix. Removing the
     head will damage first, so we’ll need to put it back where we
-    found it afterwards. */
+    found it afterward. */
     int headFirst = first.removeFirst();
     prefix.addLast(headFirst);
     weaveLists(first, second, results, prefix);

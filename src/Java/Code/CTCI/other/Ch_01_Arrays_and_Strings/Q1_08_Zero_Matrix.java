@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_08_Zero_Matrix {
   public static void zeroMatrix(int[][] matrix) {
     Set<Integer> columns = new HashSet<>();

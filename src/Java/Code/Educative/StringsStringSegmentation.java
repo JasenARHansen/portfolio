@@ -3,6 +3,7 @@ package Java.Code.Educative;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 public class StringsStringSegmentation {
   /*
   You are given a dictionary of words and a large input string. You have to find out whether the input
@@ -55,10 +56,9 @@ public class StringsStringSegmentation {
     if (subString.length() == 1) {
       return false;
     }
-
     for (int index = 1; index < subString.length(); index++) {
       String leftSubString = subString.substring(0, index);
-      boolean containsLeft = false;
+      boolean containsLeft;
       if (dictionary.contains(leftSubString)) {
         containsLeft = true;
       } else if (failed.contains(leftSubString)) {
@@ -66,15 +66,13 @@ public class StringsStringSegmentation {
       } else {
         containsLeft = testString(leftSubString, dictionary, failed);
       }
-
       if (containsLeft) {
         dictionary.add(leftSubString);
       } else {
         failed.add(leftSubString);
       }
-
       String rightSubString = subString.substring(index);
-      boolean containsRight = false;
+      boolean containsRight;
       if (dictionary.contains(rightSubString)) {
         containsRight = true;
       } else if (failed.contains(rightSubString)) {

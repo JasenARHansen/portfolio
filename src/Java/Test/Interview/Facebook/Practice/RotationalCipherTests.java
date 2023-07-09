@@ -12,7 +12,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RotationalCipherTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

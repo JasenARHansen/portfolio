@@ -3,6 +3,7 @@ package Java.Code.Interview.Facebook.Practice;
 import java.util.List;
 import java.util.Stack;
 
+@SuppressWarnings("DuplicatedCode")
 public class BalanceBrackets {
 
   public static void getDescription() {

@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming.Introduction;
 
+@SuppressWarnings("DuplicatedCode")
 public class FibonacciB {
   public static int fibonacci(int n) {
     return fibonacci(n, new int[n + 1]);

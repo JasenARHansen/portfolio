@@ -9,7 +9,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ShapesTest {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -707,7 +706,6 @@ public class ShapesTest {
     int height = 4;
     int width = 6;
     char firstSymbol = '@';
-
     System.out.format(
         "%s: Rectangle %d characters high and %d characters wide using character '%s'\n",
         name.getMethodName(), height, width, firstSymbol);
@@ -778,7 +776,6 @@ public class ShapesTest {
   public void square_2() {
     int width = 6;
     char firstSymbol = '@';
-
     System.out.format(
         "%s: square %d characters wide using character '%s'\n",
         name.getMethodName(), width, firstSymbol);

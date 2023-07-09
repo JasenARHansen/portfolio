@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 public class Q1_03_URLify {
   public static String URLify(String input) {
     char[] char_array = input.toCharArray();

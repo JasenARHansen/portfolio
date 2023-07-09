@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_02_Linked_Lists.Q2_04_Partition;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Tester {
   public static void main(String[] args) {
     System.out.println(createLinkedList().printForward());

@@ -1,7 +1,7 @@
 package Java.Test.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
-import Java.Code.CTCI.other.Ch_02_Linked_Lists.Linked_List;
+import Java.Code.CTCI.other.Ch_02_Linked_Lists.LinkedList;
 import Java.Code.CTCI.other.Ch_02_Linked_Lists.Q2_05_Sum_Lists;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import org.junit.FixMethodOrder;
@@ -30,7 +30,7 @@ public class Q2_05_Sum_Lists_Test {
     intValue1.printList();
     System.out.format("%s: Operand list 2:\n", name.getMethodName());
     intValue2.printList();
-    CustomLinkedList<Integer> result = Linked_List.sumList(intValue1, intValue2);
+    CustomLinkedList<Integer> result = LinkedList.sumList(intValue1, intValue2);
     System.out.format("%s: Result list:\n", name.getMethodName());
     result.printList();
   }
@@ -50,7 +50,7 @@ public class Q2_05_Sum_Lists_Test {
     intValue1.printList();
     System.out.format("%s: Operand list 2:\n", name.getMethodName());
     intValue2.printList();
-    CustomLinkedList<Integer> result = Linked_List.sumListReverse(intValue1, intValue2);
+    CustomLinkedList<Integer> result = LinkedList.sumListReverse(intValue1, intValue2);
     System.out.format("%s: Result list:\n", name.getMethodName());
     result.printList();
   }

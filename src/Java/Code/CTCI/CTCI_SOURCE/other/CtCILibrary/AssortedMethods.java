@@ -1,11 +1,12 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
+@SuppressWarnings({"DuplicatedCode", "unused", "SpellCheckingInspection"})
 public class AssortedMethods {
-  @SuppressWarnings("unused")
   public static boolean randomBoolean() {
     return randomIntInRange(0, 1) == 0;
   }
@@ -62,7 +63,6 @@ public class AssortedMethods {
     return root;
   }
 
-  @SuppressWarnings("unused")
   public static LinkedListNode linkedListWithValue(int N, int value) {
     LinkedListNode root = new LinkedListNode(value, null, null);
     LinkedListNode prev = root;
@@ -115,7 +115,6 @@ public class AssortedMethods {
     return s.toString();
   }
 
-  @SuppressWarnings("unused")
   public static String toBaseNString(int a, int base) {
     StringBuilder s = new StringBuilder();
     do {
@@ -175,7 +174,6 @@ public class AssortedMethods {
     return buffer.toString();
   }
 
-  @SuppressWarnings("unused")
   public static String listOfPointsToString(ArrayList<Point> list) {
     StringBuilder buffer = new StringBuilder();
     for (Point p : list) {
@@ -2269,7 +2267,6 @@ public class AssortedMethods {
     return new HashSet<>(Arrays.asList(wordList));
   }
 
-  @SuppressWarnings("unused")
   public static String getLongSampleText(boolean forceLower) {
     //noinspection TextBlockMigration
     String text =

@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_22_Langtons_Ant;
 
+@SuppressWarnings("UnnecessaryUnicodeEscape")
 public enum Orientation {
   left,
   up,

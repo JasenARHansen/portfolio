@@ -1,7 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_13_ReSpace;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
-
 import java.util.HashSet;
 
 public class QuestionA {
@@ -14,10 +13,8 @@ public class QuestionA {
     if (start >= sentence.length()) {
       return new ParseResult(0, "");
     }
-
     int bestInvalid = Integer.MAX_VALUE;
     String bestParsing = null;
-
     String partial = "";
     int index = start;
     while (index < sentence.length()) {
@@ -26,8 +23,8 @@ public class QuestionA {
       int invalid = dictionary.contains(partial) ? 0 : partial.length();
       if (invalid < bestInvalid) { // Short circuit
         /* Recurse, putting a space after this character. If this
-         * is better than the current best option, replace the best
-         * option. */
+        is better than the current best option, replace the best
+        option. */
         ParseResult result = split(dictionary, sentence, index + 1);
         if (invalid + result.invalid < bestInvalid) {
           bestInvalid = invalid + result.invalid;
@@ -35,7 +32,6 @@ public class QuestionA {
           if (bestInvalid == 0) break;
         }
       }
-
       index++;
     }
     return new ParseResult(bestInvalid, bestParsing);
@@ -52,7 +48,7 @@ public class QuestionA {
   public static void main(String[] args) {
     HashSet<String> dictionary = AssortedMethods.getWordListAsHashSet();
     String sentence =
-            "As one of the top companies in the world, Google"; // will surely attract the attention of
+        "As one of the top companies in the world, Google"; // will surely attract the attention of
     // computer gurus. This does not,
     // however, mean the company is for
     // everyone.";

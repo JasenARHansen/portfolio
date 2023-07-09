@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
 import java.util.Arrays;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_02_Is_Permutation {
   public static boolean isPermutation(String left, String right) {
     return convertAndSort(left).equals(convertAndSort(right));
@@ -19,7 +20,7 @@ public class Q1_02_Is_Permutation {
   }
 
   public static boolean isPermutation_solution_2(String s, String t) {
-    // They added short circuiting.
+    // They added short-circuiting.
     if (s.length() != t.length()) return false; // Permutations must be same length
     // They created an int array to count the numbers of character occurrences
     int[] letters = new int[128]; // Assumption: ASCII

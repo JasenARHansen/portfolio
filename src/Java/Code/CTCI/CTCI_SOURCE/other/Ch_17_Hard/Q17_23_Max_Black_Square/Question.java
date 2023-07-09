@@ -1,6 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_23_Max_Black_Square;
+
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     int[][] matrix = AssortedMethods.randomMatrix(7, 7, 0, 1);

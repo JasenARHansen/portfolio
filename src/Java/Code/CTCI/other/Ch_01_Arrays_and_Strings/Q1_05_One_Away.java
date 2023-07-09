@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
+@SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class Q1_05_One_Away {
   public static boolean oneAway(String first, String second) {
     if (Math.abs(first.length() - second.length()) > 1) {
@@ -37,7 +38,7 @@ public class Q1_05_One_Away {
 
   public static boolean oneAway_solution_1(String first, String second) {
     if (first.length() == second.length()) {
-      // If length is the same than it is a replace
+      // If length is the same then it is a replace.
       return oneEditReplace(first, second);
     } else if (first.length() + 1 == second.length()) {
       // If first is smaller, insert 1 into first

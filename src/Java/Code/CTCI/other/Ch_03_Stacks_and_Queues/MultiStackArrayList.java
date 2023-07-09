@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 
+@SuppressWarnings("DuplicatedCode")
 public class MultiStackArrayList {
   private final int defaultVolume = 2;
   private final int stackCount;

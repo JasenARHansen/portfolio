@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_07_Rotate_Matrix {
   public static boolean rotateMatrix(int[][] matrix) {
     if ((matrix == null) || (matrix.length == 0) || (matrix.length != matrix[0].length)) {

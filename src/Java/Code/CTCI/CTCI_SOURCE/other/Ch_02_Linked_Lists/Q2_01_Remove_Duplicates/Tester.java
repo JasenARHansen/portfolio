@@ -2,10 +2,11 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_02_Linked_Lists.Q2_01_Remove_Duplica
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Tester {
   public static void main(String[] args) {
     LinkedListNode first =
-        new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
+        new LinkedListNode(0, null, null);
     LinkedListNode head = first;
     LinkedListNode second;
     for (int i = 1; i < 8; i++) {

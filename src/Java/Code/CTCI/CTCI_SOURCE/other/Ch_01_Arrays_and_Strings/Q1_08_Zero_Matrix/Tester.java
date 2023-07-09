@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_01_Arrays_and_Strings.Q1_08_Zero_Mat
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 public class Tester {
   public static void main(String[] args) {
     int nrows = 10;

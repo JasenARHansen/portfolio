@@ -1,6 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_01_Arrays_and_Strings.Q1_08_Zero_Matrix;
+
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings({"SpellCheckingInspection", "DuplicatedCode", "unused"})
 public class QuestionA {
   public static boolean matricesAreEqual(int[][] m1, int[][] m2) {
     if (m1.length != m2.length || m1[0].length != m2[0].length) {

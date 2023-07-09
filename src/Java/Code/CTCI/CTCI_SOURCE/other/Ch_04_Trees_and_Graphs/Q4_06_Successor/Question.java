@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_06_Successor;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   public static void main(String[] args) {
     int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

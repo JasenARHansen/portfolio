@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings({"ConstantValue", "SameParameterValue", "ThrowablePrintedToSystemOut"})
 public class QuestionString {
   private static final Byte[] END = {0, 1};
   private final Map<String, Byte> tagMap;

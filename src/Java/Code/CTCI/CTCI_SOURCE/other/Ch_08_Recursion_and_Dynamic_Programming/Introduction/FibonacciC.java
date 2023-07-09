@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming.Introduction;
 
+@SuppressWarnings("DuplicatedCode")
 public class FibonacciC {
   public static void main(String[] args) {
     int max =

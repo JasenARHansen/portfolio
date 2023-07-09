@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_02_Call_Center;
 
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 abstract class Employee {
   /* Employee is a super class for the Director, Manager, and Respondent.
   It is implemented as an abstract class, since there should be no reason

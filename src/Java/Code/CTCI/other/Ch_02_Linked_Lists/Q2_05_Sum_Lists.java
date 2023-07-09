@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q2_05_Sum_Lists {
   public static LinkedListNode sumLists_solution_1(LinkedListNode l1, LinkedListNode l2) {
     return sumLists_solution_1(l1, l2, 0);

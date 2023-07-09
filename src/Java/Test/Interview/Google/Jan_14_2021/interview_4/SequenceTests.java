@@ -15,7 +15,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("DataFlowIssue")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SequenceTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

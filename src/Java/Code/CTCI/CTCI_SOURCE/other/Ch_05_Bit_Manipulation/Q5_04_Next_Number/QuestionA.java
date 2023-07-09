@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_04_Next_Number;
 
+@SuppressWarnings({"unused", "DuplicatedCode"})
 public class QuestionA {
   public static int countZeros(int i) {
     return 32 - countOnes(i);

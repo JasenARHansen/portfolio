@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
 import java.util.HashSet;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_01_Is_Unique {
   public static boolean isUnique(String input) {
     HashSet<Character> hash_set = new HashSet<>();
@@ -36,7 +37,7 @@ public class Q1_01_Is_Unique {
   }
 
   public static boolean isUnique_solution_2(String str) {
-    // This assumes a reduced set of the the ASCII characters representing the lower case letters.
+    // This assumes a reduced set of  the ASCII characters representing the lower case letters.
     if (str.length() > 26) { // Only 26 characters
       return false;
     }

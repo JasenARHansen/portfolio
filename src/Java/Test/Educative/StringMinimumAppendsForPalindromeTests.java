@@ -9,9 +9,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringMinimumAppendsForPalindromeTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

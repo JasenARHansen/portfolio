@@ -1,8 +1,9 @@
 package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings;
 
+@SuppressWarnings("DuplicatedCode")
 public class Q1_06_String_Compression {
   public static String stringCompression(String input) {
-    // Base case for short circuiting
+    // Base case for short-circuiting
     if (input == null) {
       return null;
     }
@@ -31,7 +32,7 @@ public class Q1_06_String_Compression {
     int countConsecutive = 0;
     for (int i = 0; i < str.length(); i++) {
       countConsecutive++;
-      /* If next character is different than current, append this char to result. */
+      /* If next character is different then current, append this char to result. */
       if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
         compressedString.append(str.charAt(i)).append(countConsecutive);
         countConsecutive = 0;
@@ -45,7 +46,7 @@ public class Q1_06_String_Compression {
     int countConsecutive = 0;
     for (int i = 0; i < str.length(); i++) {
       countConsecutive++;
-      /* If next character is different than current, append this char to result. */
+      /* If next character is different then current, append this char to result. */
       if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
         compressed.append(str.charAt(i));
         compressed.append(countConsecutive);
@@ -62,7 +63,7 @@ public class Q1_06_String_Compression {
     int countConsecutive = 0;
     for (int i = 0; i < str.length(); i++) {
       countConsecutive++;
-      /* If next character is different than current, append this char to result. */
+      /* If next character is different then current, append this char to result. */
       if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
         compressed.append(str.charAt(i));
         compressed.append(countConsecutive);
@@ -77,7 +78,7 @@ public class Q1_06_String_Compression {
     int countConsecutive = 0;
     for (int i = 0; i < str.length(); i++) {
       countConsecutive++;
-      /* If next character is different than current, append this char to result. */
+      /* If next character is different then current, append this char to result. */
       if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
         compressedLength += 1 + String.valueOf(countConsecutive).length();
         countConsecutive = 0;

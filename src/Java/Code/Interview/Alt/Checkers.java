@@ -118,7 +118,7 @@ public class Checkers {
   }
 
   @SuppressWarnings("ConfusingMainMethod")
-  public void main(String[] args) {
+  public void main() {
     setup(8, 8, 1);
     printBoard();
     getMoves(first_initial);
