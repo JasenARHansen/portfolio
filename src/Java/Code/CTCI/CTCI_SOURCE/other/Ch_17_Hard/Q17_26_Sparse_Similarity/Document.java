@@ -3,23 +3,23 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_26_Sparse_Similarity;
 import java.util.ArrayList;
 
 public class Document {
-    private final ArrayList<Integer> words;
-    private final int docId;
+  private final ArrayList<Integer> words;
+  private final int docId;
 
-    public Document(int id, ArrayList<Integer> w) {
-        docId = id;
-        words = w;
-    }
+  public Document(int id, ArrayList<Integer> w) {
+    docId = id;
+    words = w;
+  }
 
-    public ArrayList<Integer> getWords() {
-        return words;
-    }
+  public ArrayList<Integer> getWords() {
+    return words;
+  }
 
-    public int getId() {
-        return docId;
-    }
+  public int getId() {
+    return docId;
+  }
 
-    public int size() {
-        return words == null ? 0 : words.size();
-    }
+  public int size() {
+    return words == null ? 0 : words.size();
+  }
 }

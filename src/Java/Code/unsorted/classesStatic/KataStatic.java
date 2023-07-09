@@ -77,7 +77,7 @@ public class KataStatic {
 
   public static String HighAndLow2(String numbers) {
     IntSummaryStatistics numbersInt =
-            Arrays.stream(numbers.split("\\s")).mapToInt(Integer::parseInt).summaryStatistics();
+        Arrays.stream(numbers.split("\\s")).mapToInt(Integer::parseInt).summaryStatistics();
     return String.format("%d %d", numbersInt.getMax(), numbersInt.getMin());
   }
 
@@ -127,7 +127,7 @@ public class KataStatic {
     for (int i = 0; i < aWithOutDuplicates.length; i++) {
       final int test = i;
       if (IntStream.of(bWithOutDuplicates)
-              .noneMatch(x -> x == Math.pow(aWithOutDuplicates[test], 2))) {
+          .noneMatch(x -> x == Math.pow(aWithOutDuplicates[test], 2))) {
         return false;
       }
     }
@@ -160,17 +160,17 @@ public class KataStatic {
   public static String orderWeight(String strng) {
     // Comparator to sort by path depth
     Comparator<Entry<String, Integer>> weightComparator =
-            (e1, e2) -> {
-              Integer v1 = e1.getValue();
-              Integer v2 = e2.getValue();
-              if (v1.equals(v2)) {
-                String k1 = e1.getKey();
-                String k2 = e2.getKey();
-                return k1.compareTo(k2);
-              } else {
-                return v1.compareTo(v2);
-              }
-            };
+        (e1, e2) -> {
+          Integer v1 = e1.getValue();
+          Integer v2 = e2.getValue();
+          if (v1.equals(v2)) {
+            String k1 = e1.getKey();
+            String k2 = e2.getKey();
+            return k1.compareTo(k2);
+          } else {
+            return v1.compareTo(v2);
+          }
+        };
     // Object to hold weights to values
     Map<String, Integer> weightMap = new LinkedHashMap<>();
     List<String> numbersString = new ArrayList<>(Arrays.asList(strng.split(" ")));
@@ -195,12 +195,12 @@ public class KataStatic {
   public static String orderWeight2(String strng) {
     String[] split = strng.split(" ");
     Arrays.sort(
-            split,
-            (a, b) -> {
-              int aWeight = a.chars().map(Character::getNumericValue).sum();
-              int bWeight = b.chars().map(Character::getNumericValue).sum();
-              return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
-            });
+        split,
+        (a, b) -> {
+          int aWeight = a.chars().map(Character::getNumericValue).sum();
+          int bWeight = b.chars().map(Character::getNumericValue).sum();
+          return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
+        });
     return String.join(" ", split);
   }
 
@@ -223,10 +223,10 @@ public class KataStatic {
 
   public static String[] inArray2(String[] array1, String[] array2) {
     return Arrays.stream(array1)
-            .filter(str -> Arrays.stream(array2).anyMatch(s -> s.contains(str)))
-            .distinct()
-            .sorted()
-            .toArray(String[]::new);
+        .filter(str -> Arrays.stream(array2).anyMatch(s -> s.contains(str)))
+        .distinct()
+        .sorted()
+        .toArray(String[]::new);
   }
 
   public static int[] count_find_num(int[] primesL, int limit) {
@@ -249,16 +249,12 @@ public class KataStatic {
       // Initial result set
       resultSets.add(new ArrayList<>(factors));
       max = values.peek();
-
       // Determine all permutations
-
       // Set up return list
       returnArray.add(resultSets.size());
       returnArray.add(max);
     }
-
     // list = new ArrayList(stack);
-
     return returnArray.stream().mapToInt(i -> i).toArray();
   }
 }

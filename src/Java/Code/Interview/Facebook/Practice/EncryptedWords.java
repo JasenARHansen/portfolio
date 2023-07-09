@@ -2,9 +2,9 @@ package Java.Code.Interview.Facebook.Practice;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class EncryptedWords {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Encrypted Words
                 You've devised a simple encryption method for alphabetic strings that shuffles the characters in such a way that the resulting string is hard to quickly read, but is easy to convert back into the original string.
                 When you encrypt a string S, you start with an initially-empty resulting string R and append characters to it as follows:
@@ -30,42 +30,43 @@ public class EncryptedWords {
                 Example 4
                  S = "facebook"
                  R = "eafcobok"
-                """.indent(2));
-    }
+                """
+            .indent(2));
+  }
 
-    public static String findEncryptedWord(String s) {
-        String returnString = "";
-        if (s.length() <= 1) {
-            returnString = s;
-        } else {
-            int index;
-            if (s.length() % 2 == 0) {
-                index = s.length() / 2 - 1;
-            } else {
-                index = s.length() / 2;
-            }
-            returnString += s.charAt(index);
-            returnString += findEncryptedWord(s.substring(0, index));
-            returnString += findEncryptedWord(s.substring(index + 1));
-        }
-        return returnString;
+  public static String findEncryptedWord(String s) {
+    String returnString = "";
+    if (s.length() <= 1) {
+      returnString = s;
+    } else {
+      int index;
+      if (s.length() % 2 == 0) {
+        index = s.length() / 2 - 1;
+      } else {
+        index = s.length() / 2;
+      }
+      returnString += s.charAt(index);
+      returnString += findEncryptedWord(s.substring(0, index));
+      returnString += findEncryptedWord(s.substring(index + 1));
     }
+    return returnString;
+  }
 
-    public static String findUnEncryptedWord(String s) {
-        String middle = "";
-        if (s.isEmpty()) {
-            return middle;
-        }
-        // retrieve first character and decript 2 remaining substrings
-        middle += s.charAt(0);
-        int index;
-        if (s.length() % 2 == 0) {
-            index = s.length() / 2;
-        } else {
-            index = s.length() / 2 + 1;
-        }
-        String left = findUnEncryptedWord(s.substring(1, index));
-        String right = findUnEncryptedWord(s.substring(index));
-        return left + middle + right;
+  public static String findUnEncryptedWord(String s) {
+    String middle = "";
+    if (s.isEmpty()) {
+      return middle;
     }
+    // retrieve first character and decript 2 remaining substrings
+    middle += s.charAt(0);
+    int index;
+    if (s.length() % 2 == 0) {
+      index = s.length() / 2;
+    } else {
+      index = s.length() / 2 + 1;
+    }
+    String left = findUnEncryptedWord(s.substring(1, index));
+    String right = findUnEncryptedWord(s.substring(index));
+    return left + middle + right;
+  }
 }

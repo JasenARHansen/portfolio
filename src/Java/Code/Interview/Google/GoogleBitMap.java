@@ -1,9 +1,9 @@
 package Java.Code.Interview.Google;
 
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.Queue;
+import javax.swing.*;
 
 public class GoogleBitMap {
   public static void main(String[] args) throws Exception {
@@ -14,7 +14,6 @@ public class GoogleBitMap {
     int[][] input = {{1, 0, 1, 1}, {0, 0, 0, 0}, {1, 0, 1, 0}, {0, 1, 1, 1}};
     // int[][] input = { { 1 } };
     int scale = 40;
-
     BufferedImage image = createImage(input, scale);
     JPanel jPanel = initializePanel();
     JLabel jLabel = addImage(jPanel, image);
@@ -28,10 +27,8 @@ public class GoogleBitMap {
     // 0 = Black
     // 1 = White
     int[][] data = scaleUp(input, scale);
-
     int width = data.length;
     int height = data[0].length;
-
     BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
@@ -53,7 +50,6 @@ public class GoogleBitMap {
 
   private static int[][] scaleUp(int[][] data, int scale) {
     int[][] scaledUp = new int[data.length * scale][data[0].length * scale];
-
     for (int i = 0; i < data.length; i++) {
       for (int j = 0; j < data[i].length; j++) {
         for (int k = 0; k < scale; k++) {
@@ -69,7 +65,6 @@ public class GoogleBitMap {
   private static void addExit(JPanel jPanel) {
     JButton exitButton = new JButton("Exit");
     exitButton.addActionListener(e -> System.exit(0));
-
     jPanel.add(exitButton);
   }
 
@@ -88,15 +83,13 @@ public class GoogleBitMap {
   }
 
   private static void floodFill(
-          boolean color, int x, int y, int scale, JLabel jLabel, BufferedImage image) {
-    /*
-     * https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit
-     * In Flood Fill, you
-     * start with a bitmap where pixels are either black or white. The user
-     * selects a point on the bitmap and a color, and the program flood-fills
-     * the bitmap outward from that point (up, down, left, right) until a
-     * boundary is encountered. A boundary is a cell of the same color or
-     * out of range.
+      boolean color, int x, int y, int scale, JLabel jLabel, BufferedImage image) {
+    /**
+     * https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit In Flood
+     * Fill, you start with a bitmap where pixels are either black or white. The user selects a
+     * point on the bitmap and a color, and the program flood-fills the bitmap outward from that
+     * point (up, down, left, right) until a boundary is encountered. A boundary is a cell of the
+     * same color or out of range.
      */
     // (x, y) coordinate mapping array[y][x]
     // color = false : Black
@@ -108,24 +101,19 @@ public class GoogleBitMap {
     } else {
       colorValue = 0; // pixel
     }
-
     int imageHeight = image.getHeight();
     int imageWidth = image.getWidth();
     int xScaled = x * scale;
     int yScaled = y * scale;
-
     if ((x < 0) || (xScaled >= imageWidth)) {
       return;
     }
-
     if ((y < 0) || (yScaled >= imageHeight)) {
       return;
     }
-
     Queue<GoogleTuple<Integer, Integer>> floodQueue = new LinkedList<>();
     //noinspection SuspiciousNameCombination
     floodQueue.add(new GoogleTuple<>(xScaled, yScaled));
-
     while (!floodQueue.isEmpty()) {
       GoogleTuple<Integer, Integer> current = floodQueue.remove();
       // Boundary check
@@ -137,33 +125,33 @@ public class GoogleBitMap {
         image.setRGB(newX, newY, colorValue);
         // Performing look ahead to optimize data stored in queue
         if ((0 <= (newX + 1))
-                && ((newX + 1) < imageWidth)
-                && (0 <= (newY))
-                && ((newY) < imageHeight)
-                && (image.getRGB((newX + 1), (newY)) != colorValue)) {
+            && ((newX + 1) < imageWidth)
+            && (0 <= (newY))
+            && ((newY) < imageHeight)
+            && (image.getRGB((newX + 1), (newY)) != colorValue)) {
           //noinspection SuspiciousNameCombination
           floodQueue.add(new GoogleTuple<>((newX + 1), newY));
         }
         if ((0 <= (newX - 1))
-                && ((newX - 1) < imageWidth)
-                && (0 <= (newY))
-                && ((newY) < imageHeight)
-                && (image.getRGB((newX - 1), (newY)) != colorValue)) {
+            && ((newX - 1) < imageWidth)
+            && (0 <= (newY))
+            && ((newY) < imageHeight)
+            && (image.getRGB((newX - 1), (newY)) != colorValue)) {
           //noinspection SuspiciousNameCombination
           floodQueue.add(new GoogleTuple<>((newX - 1), newY));
         }
         if ((0 <= (newX))
-                && ((newX) < imageWidth)
-                && (0 <= (newY + 1))
-                && ((newY + 1) < imageHeight)
-                && (image.getRGB((newX), (newY + 1)) != colorValue)) {
+            && ((newX) < imageWidth)
+            && (0 <= (newY + 1))
+            && ((newY + 1) < imageHeight)
+            && (image.getRGB((newX), (newY + 1)) != colorValue)) {
           floodQueue.add(new GoogleTuple<>(newX, (newY + 1)));
         }
         if ((0 <= (newX))
-                && ((newX) < imageWidth)
-                && (0 <= (newY - 1))
-                && ((newY) < imageHeight)
-                && (image.getRGB((newX), (newY - 1)) != colorValue)) {
+            && ((newX) < imageWidth)
+            && (0 <= (newY - 1))
+            && ((newY) < imageHeight)
+            && (image.getRGB((newX), (newY - 1)) != colorValue)) {
           floodQueue.add(new GoogleTuple<>(newX, (newY - 1)));
         }
       }
@@ -171,7 +159,7 @@ public class GoogleBitMap {
   }
 
   static class GoogleTuple<X extends Comparable<X>, Y extends Comparable<Y>>
-          implements Comparable<GoogleTuple<X, Y>> {
+      implements Comparable<GoogleTuple<X, Y>> {
     private final X leftData;
     private final Y rightData;
 

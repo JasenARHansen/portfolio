@@ -1,35 +1,42 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_03_Intersection;
 
-
 public class Line {
-    public double slope, yintercept;
-    public Point start, end;
+  public double slope, yintercept;
+  public Point start, end;
 
-    public Line(Point start, Point end) {
-        this.start = start;
-        this.end = end;
-        if (start.x == end.x) {
-            slope = Double.POSITIVE_INFINITY;
-            yintercept = Double.POSITIVE_INFINITY;
-        } else {
-            slope = (end.y - start.y) / (end.x - start.x);
-            yintercept = end.y - slope * end.x;
-        }
+  public Line(Point start, Point end) {
+    this.start = start;
+    this.end = end;
+    if (start.x == end.x) {
+      slope = Double.POSITIVE_INFINITY;
+      yintercept = Double.POSITIVE_INFINITY;
+    } else {
+      slope = (end.y - start.y) / (end.x - start.x);
+      yintercept = end.y - slope * end.x;
     }
+  }
 
-    @Override
-    public String toString() {
-        return "Line [slope=" + slope + ", yintercept=" + yintercept + ", start=" + start + ", end=" + end + "]";
-    }
+  @Override
+  public String toString() {
+    return "Line [slope="
+        + slope
+        + ", yintercept="
+        + yintercept
+        + ", start="
+        + start
+        + ", end="
+        + end
+        + "]";
+  }
 
-    public double getYFromX(double x) {
-        if (isVertical()) {
-            return Double.POSITIVE_INFINITY;
-        }
-        return slope * x + yintercept;
+  public double getYFromX(double x) {
+    if (isVertical()) {
+      return Double.POSITIVE_INFINITY;
     }
+    return slope * x + yintercept;
+  }
 
-    public boolean isVertical() {
-        return slope == Double.POSITIVE_INFINITY;
-    }
+  public boolean isVertical() {
+    return slope == Double.POSITIVE_INFINITY;
+  }
 }

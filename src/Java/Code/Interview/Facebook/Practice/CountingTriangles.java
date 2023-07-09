@@ -3,9 +3,9 @@ package Java.Code.Interview.Facebook.Practice;
 import java.util.*;
 
 public class CountingTriangles {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Counting Triangles
                 Given a list of N triangles with integer side lengths, determine how many different triangles there are. Two triangles are considered to be the same if they can both be placed on the plane such that their vertices occupy exactly the same three points.
                 Signature
@@ -31,54 +31,55 @@ public class CountingTriangles {
                  arr = [[5, 8, 9], [5, 9, 8], [9, 5, 8], [9, 8, 5], [8, 9, 5], [8, 5, 9]]
                  output = 1
                  All of these triangles are the same.
-                """.indent(2));
-    }
+                """
+            .indent(2));
+  }
 
-    public static int countDistinctTriangles(ArrayList<Sides> arr) {
-        Map<String, Integer> triangleMap = new HashMap<>();
-        List<Integer> sides = new ArrayList<>();
-        for (Sides triangle : arr) {
-            sides.add(triangle.a);
-            sides.add(triangle.b);
-            sides.add(triangle.c);
-            Collections.sort(sides);
-            if (triangleMap.containsKey(sides.toString())) {
-                triangleMap.put(sides.toString(), triangleMap.get(sides.toString()) + 1);
-            } else {
-                triangleMap.put(sides.toString(), 1);
-            }
-            sides.clear();
-        }
-        return triangleMap.size();
+  public static int countDistinctTriangles(ArrayList<Sides> arr) {
+    Map<String, Integer> triangleMap = new HashMap<>();
+    List<Integer> sides = new ArrayList<>();
+    for (Sides triangle : arr) {
+      sides.add(triangle.a);
+      sides.add(triangle.b);
+      sides.add(triangle.c);
+      Collections.sort(sides);
+      if (triangleMap.containsKey(sides.toString())) {
+        triangleMap.put(sides.toString(), triangleMap.get(sides.toString()) + 1);
+      } else {
+        triangleMap.put(sides.toString(), 1);
+      }
+      sides.clear();
     }
+    return triangleMap.size();
+  }
 
-    public static int countDistinctTriangles(int[][] arr) {
-        Map<String, Integer> triangleMap = new HashMap<>();
-        List<Integer> sides = new ArrayList<>();
-        for (int[] triangle : arr) {
-            for (int side : triangle) {
-                sides.add(side);
-            }
-            Collections.sort(sides);
-            if (triangleMap.containsKey(sides.toString())) {
-                triangleMap.put(sides.toString(), triangleMap.get(sides.toString()) + 1);
-            } else {
-                triangleMap.put(sides.toString(), 1);
-            }
-            sides.clear();
-        }
-        return triangleMap.size();
+  public static int countDistinctTriangles(int[][] arr) {
+    Map<String, Integer> triangleMap = new HashMap<>();
+    List<Integer> sides = new ArrayList<>();
+    for (int[] triangle : arr) {
+      for (int side : triangle) {
+        sides.add(side);
+      }
+      Collections.sort(sides);
+      if (triangleMap.containsKey(sides.toString())) {
+        triangleMap.put(sides.toString(), triangleMap.get(sides.toString()) + 1);
+      } else {
+        triangleMap.put(sides.toString(), 1);
+      }
+      sides.clear();
     }
+    return triangleMap.size();
+  }
 
-    public static class Sides {
-        int a;
-        int b;
-        int c;
+  public static class Sides {
+    int a;
+    int b;
+    int c;
 
-        public Sides(int a, int b, int c) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
+    public Sides(int a, int b, int c) {
+      this.a = a;
+      this.b = b;
+      this.c = c;
     }
+  }
 }

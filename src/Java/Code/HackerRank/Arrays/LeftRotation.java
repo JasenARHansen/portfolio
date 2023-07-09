@@ -51,20 +51,18 @@ public class LeftRotation {
 
   */
   /*
-    public static int[] rotateLeft(int[] a, int d) {
-      int hold;
-
-      for (int index = 0; index < a.length; index++) {
-        hold = a[index];
-        int foo = (index + d) % a.length;
-        a[index] = a[(index + d) % a.length];
-        a[(index + d) % a.length] = hold;
-      }
-      // a[(a.length + d) % a.length] = hold;
-
-      return a;
+  public static int[] rotateLeft(int[] a, int d) {
+    int hold;
+    for (int index = 0; index < a.length; index++) {
+      hold = a[index];
+      int foo = (index + d) % a.length;
+      a[index] = a[(index + d) % a.length];
+      a[(index + d) % a.length] = hold;
     }
-  */
+    // a[(a.length + d) % a.length] = hold;
+    return a;
+  }. */
+
   public static int[] rotateLeft(int[] a, int d) {
     if ((a.length == 0) || (d % a.length == 0)) {
       return a;
@@ -77,12 +75,10 @@ public class LeftRotation {
     }
     int hold;
     int greatestCommonDivisor = gcdByEuclidsAlgorithm(rotate, a.length);
-
     for (int cycle = 0; cycle < greatestCommonDivisor; cycle++) {
       hold = a[cycle];
       int left;
       int right;
-
       for (int set = 0; set < (a.length / greatestCommonDivisor) - 1; set++) {
         left = ((set * rotate) + cycle) % a.length;
         right = (((set + 1) * rotate) + cycle) % a.length;
@@ -91,7 +87,6 @@ public class LeftRotation {
       int result = (a.length - rotate % a.length + cycle) % a.length;
       a[result] = hold;
     }
-
     return a;
   }
 

@@ -4,18 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BacktrackingFindAllPossibleSubsets {
-
   public static void getDescription() {
     System.out.println(
         """
                 We are given a set of integers, and we have to find all the possible subsets of
                  this set of integers.
-
-                Runtime complexity: Exponential, O(2^{n} * n), where nnn is the number of integers
+                Runtime complexity: Exponential, O(2^{n}   n), where nnn is the number of integers
                  in the given set
-
-                Memory Complexity: Constant, O(2^{n} * n)
-
+                Memory Complexity: Constant, O(2^{n}   n)
                 There are several ways to solve this problem. We will discuss the one that is neat
                  and easier to understand.
                 We know that for a set of ‘n’ elements there are 2^{n} subsets.
@@ -31,7 +27,6 @@ public class BacktrackingFindAllPossibleSubsets {
                      e.g. if i = 6 i.e. 110 in binary means that 1st and 2nd elements in original array
                       need to be picked.
                   add current subset to list of all subsets
-
                 Note that the ordering of bits for picking integers from the set does not matter;
                  picking integers from left to right would produce the same output as picking
                   integers from right to left."""

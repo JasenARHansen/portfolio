@@ -30,10 +30,10 @@ public class MatrixRotate {
         array[shell][space + shell] = array[array.length - 1 - shell - space][shell];
         // Bottom -> Left : 3 -> 4
         array[array.length - 1 - shell - space][shell] =
-                array[array.length - 1 - shell][array.length - 1 - shell - space];
+            array[array.length - 1 - shell][array.length - 1 - shell - space];
         // Right --> Bottom : 2 -> 3
         array[array.length - 1 - shell][array.length - 1 - shell - space] =
-                array[shell + space][array.length - 1 - shell];
+            array[shell + space][array.length - 1 - shell];
         // Storage -> Right : S -> 2
         array[shell + space][array.length - 1 - shell] = storage;
       }

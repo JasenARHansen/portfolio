@@ -1,7 +1,7 @@
 package Java.Code.unsorted.classes.classesInstance;
 
-import java.util.Queue;
 import java.util.*;
+import java.util.Queue;
 
 public class GraphAdjacency<X extends Comparable<X>, Y> {
   HashMap<X, LinkedList<Edge<X, Y>>> map;
@@ -36,7 +36,6 @@ public class GraphAdjacency<X extends Comparable<X>, Y> {
         }
       }
     }
-
     System.out.format("%s: -> %s\n", source, path.toString().replace("[", "").replace("]", ""));
   }
 
@@ -45,7 +44,7 @@ public class GraphAdjacency<X extends Comparable<X>, Y> {
     StringBuilder returnString = new StringBuilder();
     for (X key : map.keySet()) {
       returnString.append(
-              String.format("key: %s, adjacencies: %s\n", key.toString(), map.get(key).toString()));
+          String.format("key: %s, adjacencies: %s\n", key.toString(), map.get(key).toString()));
     }
     return returnString.toString();
   }

@@ -1,10 +1,9 @@
 package Java.Code.Interview.Facebook.Practice;
 
 public class BillionUsers {
-
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 1 Billion Users
                 We have N different apps with different user growth rates. At a given time t, measured in days, the number of users
                  using an app is g^t (for simplicity we'll allow fractional users), where g is the growth rate for that app. These
@@ -26,20 +25,21 @@ public class BillionUsers {
                 output = 79
                 Example 3
                 growthRates = [1.01, 1.02]
-                output = 1047""".indent(2));
-    }
+                output = 1047"""
+            .indent(2));
+  }
 
-    public static int getBillionUsersDay(float[] growthRates) {
-        // seems like there should be a trick with logs ...
-        int day = 0;
-        int sum = 0;
-        while (sum <= 1000000000) {
-            day++;
-            sum = 0;
-            for (float rate : growthRates) {
-                sum += (int) Math.pow(rate, day);
-            }
-        }
-        return day;
+  public static int getBillionUsersDay(float[] growthRates) {
+    // seems like there should be a trick with logs ...
+    int day = 0;
+    int sum = 0;
+    while (sum <= 1000000000) {
+      day++;
+      sum = 0;
+      for (float rate : growthRates) {
+        sum += (int) Math.pow(rate, day);
+      }
     }
+    return day;
+  }
 }

@@ -1,9 +1,9 @@
 package Java.Code.Interview.Facebook.Practice;
 
 public class DetectPalindrome {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 DetectPalindrome
                 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
                 bool isPalindrome(String s)
@@ -17,26 +17,27 @@ public class DetectPalindrome {
                 Example 2
                  s = "race a car"
                  output: false
-                """.indent(2));
-    }
+                """
+            .indent(2));
+  }
 
-    public static boolean isPalindrome(String s) {
-        int left = 0;
-        int right = s.length() - 1;
-        while (left < right) {
-            while (!Character.isLetterOrDigit(s.charAt(left))) {
-                left++;
-            }
-            while (!Character.isLetterOrDigit(s.charAt(right))) {
-                right--;
-            }
-            if (Character.toLowerCase(s.charAt(left)) == Character.toLowerCase(s.charAt(right))) {
-                left++;
-                right--;
-            } else {
-                return false;
-            }
-        }
-        return true;
+  public static boolean isPalindrome(String s) {
+    int left = 0;
+    int right = s.length() - 1;
+    while (left < right) {
+      while (!Character.isLetterOrDigit(s.charAt(left))) {
+        left++;
+      }
+      while (!Character.isLetterOrDigit(s.charAt(right))) {
+        right--;
+      }
+      if (Character.toLowerCase(s.charAt(left)) == Character.toLowerCase(s.charAt(right))) {
+        left++;
+        right--;
+      } else {
+        return false;
+      }
     }
+    return true;
+  }
 }

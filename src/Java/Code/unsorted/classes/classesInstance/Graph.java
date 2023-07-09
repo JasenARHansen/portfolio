@@ -1,14 +1,11 @@
 package Java.Code.unsorted.classes.classesInstance;
-
-import java.util.Queue;
 import java.util.*;
+import java.util.Queue;
 
 @SuppressWarnings({"unchecked", "ConditionalBreakInInfiniteLoop", "StatementWithEmptyBody"})
 public class Graph<X extends Comparable<X>, Y, Z> {
-
   private final HashMap<X, NodeGraph<X, Y, Z>> mapNodes;
   private Object id;
-
   public Graph(Object id) {
     this();
     this.id = id;
@@ -22,7 +19,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public void addNode(Object... values) {
     X id = null;
     Y data = null;
-
     if (values.length > 0) {
       if ((values[0] instanceof NodeGraph<?, ?, ?>)) {
         id = ((NodeGraph<X, Y, Z>) values[0]).getId();
@@ -30,18 +26,16 @@ public class Graph<X extends Comparable<X>, Y, Z> {
         id = (X) values[0];
       }
     }
-
     if (values.length > 1) {
       data = (Y) values[1];
     }
-
     if (mapNodes.containsKey(id)) {
       if (mapNodes.get(id).getData() == null) {
         System.err.format("Graph already contains a node with id '%s'\n", id);
       } else {
         System.err.format(
-                "Graph already contains a node with id '%s' and data '%s'\n",
-                id, mapNodes.get(id).getData());
+            "Graph already contains a node with id '%s' and data '%s'\n",
+            id, mapNodes.get(id).getData());
       }
     } else {
       if ((values[0] instanceof NodeGraph<?, ?, ?>)) {
@@ -55,43 +49,36 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public List<List<X>> findPathDepthFirstAllId(Object... values) {
     Object startPoint = null;
     Object endPoint = null;
-
     if (values.length > 0) {
       startPoint = values[0];
     }
     if (values.length > 1) {
       endPoint = values[1];
     }
-
     X startId;
     X stopId = null;
-
     if (startPoint instanceof NodeGraph<?, ?, ?>) {
       startId = (X) ((NodeGraph<?, ?, ?>) startPoint).getId();
     } else {
       startId = (X) startPoint;
     }
-
     if (endPoint == null) {
     } else if (endPoint instanceof NodeGraph<?, ?, ?>) {
       stopId = (X) ((NodeGraph<?, ?, ?>) endPoint).getId();
     } else {
       stopId = (X) endPoint;
     }
-
     List<List<X>> paths = new ArrayList<>();
     Set<X> visited = new HashSet<>();
     Map<X, X> parent = new HashMap<>();
-
     findPathDepthFirstRecursiveId(startId, startId, stopId, visited, parent, paths, false);
     return paths;
   }
 
   public List<X> findPathDepthFirstShortestId(
-          Object startPoint, Object endPoint, boolean terminateOnFirst) {
+      Object startPoint, Object endPoint, boolean terminateOnFirst) {
     X startId;
     X stopId;
-
     if (startPoint instanceof NodeGraph<?, ?, ?>) {
       startId = (X) ((NodeGraph<?, ?, ?>) startPoint).getId();
     } else {
@@ -102,16 +89,13 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     } else {
       stopId = (X) endPoint;
     }
-
     List<List<X>> paths = new ArrayList<>();
     Set<X> visited = new HashSet<>();
     Map<X, X> parent = new HashMap<>();
-
     findPathDepthFirstRecursiveId(
-            startId, startId, stopId, visited, parent, paths, terminateOnFirst);
+        startId, startId, stopId, visited, parent, paths, terminateOnFirst);
     int test = Integer.MAX_VALUE;
     int found = -1;
-
     for (int i = 0; i < paths.size(); i++) {
       if (paths.get(i).size() < test) {
         found = i;
@@ -128,7 +112,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public List<X> findPathDepthFirstLongestId(Object startPoint, Object endPoint) {
     X startId;
     X stopId;
-
     if (startPoint instanceof NodeGraph<?, ?, ?>) {
       startId = (X) ((NodeGraph<?, ?, ?>) startPoint).getId();
     } else {
@@ -139,15 +122,12 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     } else {
       stopId = (X) endPoint;
     }
-
     List<List<X>> paths = new ArrayList<>();
     Set<X> visited = new HashSet<>();
     Map<X, X> parent = new HashMap<>();
-
     findPathDepthFirstRecursiveId(startId, startId, stopId, visited, parent, paths, false);
     int test = Integer.MIN_VALUE;
     int found = -1;
-
     for (int i = 0; i < paths.size(); i++) {
       if (paths.get(i).size() > test) {
         found = i;
@@ -158,7 +138,7 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   }
 
   public List<NodeGraph<?, ?, ?>> findPathDepthFirstShortestNode(
-          Object startPoint, Object endPoint) {
+      Object startPoint, Object endPoint) {
     List<X> ids = findPathDepthFirstShortestId(startPoint, endPoint, false);
     List<NodeGraph<?, ?, ?>> nodes = new ArrayList<>();
     for (X id : ids) {
@@ -169,9 +149,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
 
   public void printGraphBreadthFirstId(Object startPoint) {
     String returnString =
-            String.format(
-                    "%s: -> %s",
-                    startPoint, BreadthFirstId(startPoint).toString().replace("[", "").replace("]", ""));
+        String.format(
+            "%s: -> %s",
+            startPoint, BreadthFirstId(startPoint).toString().replace("[", "").replace("]", ""));
     System.out.println(returnString);
   }
 
@@ -180,20 +160,17 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       System.err.format("Starting Point not provided.'\n");
       return null;
     }
-
     Object id;
     if (startPoint instanceof NodeGraph<?, ?, ?>) {
       id = ((NodeGraph<?, ?, ?>) startPoint).getId();
     } else {
       id = startPoint;
     }
-
     List<X> path = new ArrayList<>();
     Set<X> visited = new HashSet<>();
     //noinspection SuspiciousMethodCalls
     Queue<X> queue = new LinkedList<>(mapNodes.get(startPoint).getAdjacencyList());
     visited.add((X) id);
-
     while (!queue.isEmpty()) {
       X local = queue.remove();
       path.add(local);
@@ -206,10 +183,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
     }
     return path;
-  }
-
-  public void setId(Object id) {
-    this.id = id;
   }
 
   public List<X> getNodes() {
@@ -226,9 +199,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
 
   public void printGraphBreadthFirstNode(Object startPoint) {
     String returnString =
-            String.format(
-                    "%s: -> %s",
-                    startPoint, BreadthFirstNode(startPoint).toString().replace("[", "").replace("]", ""));
+        String.format(
+            "%s: -> %s",
+            startPoint, BreadthFirstNode(startPoint).toString().replace("[", "").replace("]", ""));
     System.out.println(returnString);
   }
 
@@ -252,9 +225,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
     System.out.println(returnString);
   }
@@ -275,9 +248,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
     System.out.println(returnString);
   }
@@ -285,7 +258,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public List<X> findPathBreadthFirstId(Object startPoint, Object endPoint) {
     X startId;
     X stopId;
-
     if (startPoint instanceof NodeGraph<?, ?, ?>) {
       startId = (X) ((NodeGraph<?, ?, ?>) startPoint).getId();
     } else {
@@ -296,14 +268,11 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     } else {
       stopId = (X) endPoint;
     }
-
     List<X> path = new ArrayList<>();
     Queue<X> queue = new LinkedList<>();
     Set<X> visited = new HashSet<>();
     Map<X, X> parent = new HashMap<>();
-
     boolean found = startId.compareTo(stopId) == 0;
-
     for (X edgeId : mapNodes.get(startId).getAdjacencyList()) {
       if (!parent.containsKey(edgeId)) {
         parent.put(edgeId, startId);
@@ -311,15 +280,12 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
     }
     visited.add(startId);
-
     while ((!found) && (!queue.isEmpty())) {
       X local = queue.remove();
-
       if (local.compareTo(stopId) == 0) {
         found = true;
         break;
       }
-
       for (X edgeId : mapNodes.get(local).getAdjacencyList()) {
         if (!visited.contains(edgeId)) {
           if (!parent.containsKey(edgeId)) {
@@ -332,7 +298,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
       visited.add(local);
     }
-
     if (found) {
       X local = stopId;
       path.add(local);
@@ -350,17 +315,16 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public void printPathDepthFirstAllId(Object startPoint, Object endPoint) {
     StringBuilder returnString;
     List<List<X>> returnTest = findPathDepthFirstAllId(startPoint, endPoint);
-
     if (returnTest.isEmpty()) {
       returnString =
-              new StringBuilder(String.format("%s:%s -> %s", startPoint, endPoint, "No Path"));
+          new StringBuilder(String.format("%s:%s -> %s", startPoint, endPoint, "No Path"));
     } else {
       returnString = new StringBuilder(String.format("Paths for %s->%s", startPoint, endPoint));
       for (int i = 0; i < returnTest.size(); i++) {
         String pathString =
-                String.format(
-                        "\n\t%d:\t%s",
-                        i + 1, returnTest.get(i).toString().replace("[", "").replace("]", ""));
+            String.format(
+                "\n\t%d:\t%s",
+                i + 1, returnTest.get(i).toString().replace("[", "").replace("]", ""));
         returnString.append(pathString);
       }
     }
@@ -370,23 +334,20 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   public void printPathDepthFirstAllNode(Object... values) {
     Object startPoint = null;
     Object endPoint = null;
-
     if (values.length > 0) {
       startPoint = values[0];
     }
     if (values.length > 1) {
       endPoint = values[1];
     }
-
     StringBuilder returnString;
     List<List<NodeGraph<?, ?, ?>>> returnTest = findPathDepthFirstAllNode(startPoint, endPoint);
-
     if (returnTest.isEmpty()) {
       if (endPoint == null) {
         returnString = new StringBuilder(String.format("%s: -> %s", startPoint, "No Path"));
       } else {
         returnString =
-                new StringBuilder(String.format("%s:%s -> %s", startPoint, endPoint, "No Path"));
+            new StringBuilder(String.format("%s:%s -> %s", startPoint, endPoint, "No Path"));
       }
     } else {
       if (endPoint == null) {
@@ -396,9 +357,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
       for (int i = 0; i < returnTest.size(); i++) {
         String pathString =
-                String.format(
-                        "\n\t%d:\t%s",
-                        i + 1, returnTest.get(i).toString().replace("[", "").replace("]", ""));
+            String.format(
+                "\n\t%d:\t%s",
+                i + 1, returnTest.get(i).toString().replace("[", "").replace("]", ""));
         returnString.append(pathString);
       }
     }
@@ -406,7 +367,7 @@ public class Graph<X extends Comparable<X>, Y, Z> {
   }
 
   public List<List<NodeGraph<?, ?, ?>>> findPathDepthFirstAllNode(
-          Object startPoint, Object endPoint) {
+      Object startPoint, Object endPoint) {
     List<List<X>> pathsId = findPathDepthFirstAllId(startPoint, endPoint);
     List<List<NodeGraph<?, ?, ?>>> paths = new ArrayList<>();
     for (List<X> pathId : pathsId) {
@@ -426,9 +387,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
     System.out.println(returnString);
   }
@@ -440,15 +401,15 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
     System.out.println(returnString);
   }
 
   public List<NodeGraph<?, ?, ?>> findPathDepthFirstLongestNode(
-          Object startPoint, Object endPoint) {
+      Object startPoint, Object endPoint) {
     List<X> ids = findPathDepthFirstLongestId(startPoint, endPoint);
     List<NodeGraph<?, ?, ?>> nodes = new ArrayList<>();
     for (X id : ids) {
@@ -464,11 +425,10 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
-
     System.out.println(returnString);
   }
 
@@ -479,11 +439,10 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       returnString = String.format("%s:%s -> %s", startPoint, endPoint, "No Path");
     } else {
       returnString =
-              String.format(
-                      "%s:%s -> %s",
-                      startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
+          String.format(
+              "%s:%s -> %s",
+              startPoint, endPoint, returnTest.toString().replace("[", "").replace("]", ""));
     }
-
     System.out.println(returnString);
   }
 
@@ -491,7 +450,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     Object value1 = null;
     Object value2 = null;
     Object value3 = null;
-
     if (values.length > 0) {
       if (values[0] instanceof NodeGraph<?, ?, ?>) {
         value1 = ((NodeGraph<?, ?, ?>) values[0]).getId();
@@ -499,7 +457,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
         value1 = values[0];
       }
     }
-
     if (values.length > 1) {
       if (values[1] instanceof NodeGraph<?, ?, ?>) {
         value2 = ((NodeGraph<?, ?, ?>) values[1]).getId();
@@ -507,11 +464,9 @@ public class Graph<X extends Comparable<X>, Y, Z> {
         value2 = values[1];
       }
     }
-
     if (values.length > 2) {
       value3 = values[2];
     }
-
     if ((value1 == null) || (value2 == null)) {
       if (value1 == null) {
         System.err.format("Source node not provided");
@@ -521,7 +476,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
       return;
     }
-
     //noinspection SuspiciousMethodCalls
     if (mapNodes.containsKey(value1) && mapNodes.containsKey(value2)) {
       //noinspection SuspiciousMethodCalls
@@ -550,16 +504,16 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     Collections.sort(forSorting);
     if (forSorting.size() >= 1) {
       returnString.append(
-              String.format(
-                      "(node: %s, details: %s)",
-                      forSorting.get(0).toString(), mapNodes.get(forSorting.get(0)).toString()));
+          String.format(
+              "(node: %s, details: %s)",
+              forSorting.get(0).toString(), mapNodes.get(forSorting.get(0)).toString()));
     }
     if (forSorting.size() > 1) {
       for (int i = 1; i < forSorting.size(); i++)
         returnString.append(
-                String.format(
-                        ", (node: %s, details: %s)",
-                        forSorting.get(i).toString(), mapNodes.get(forSorting.get(i)).toString()));
+            String.format(
+                ", (node: %s, details: %s)",
+                forSorting.get(i).toString(), mapNodes.get(forSorting.get(i)).toString()));
     }
     returnString.append(")");
     return returnString.toString();
@@ -569,18 +523,21 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     return this.id;
   }
 
+  public void setId(Object id) {
+    this.id = id;
+  }
+
   private void findPathDepthFirstRecursiveId(
-          X startId,
-          X currentId,
-          X stopId,
-          Set<X> visited,
-          Map<X, X> parent,
-          List<List<X>> paths,
-          boolean terminateOnFirst) {
+      X startId,
+      X currentId,
+      X stopId,
+      Set<X> visited,
+      Map<X, X> parent,
+      List<List<X>> paths,
+      boolean terminateOnFirst) {
     if (mapNodes.isEmpty()) {
       return;
     }
-
     if (stopId == null) {
       // Check to see if all adjacent nodes have been visited. If they
       // have we are at a terminal node and I can make a path. and return,
@@ -591,7 +548,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
           break;
         }
       }
-
       if (generatePath) {
         ArrayList<X> returnList = new ArrayList<>();
         X local = currentId;
@@ -607,7 +563,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
         paths.add(returnList);
       }
     }
-
     if ((stopId != null) && (currentId.compareTo(stopId) == 0)) {
       ArrayList<X> returnList = new ArrayList<>();
       X local = stopId;
@@ -626,7 +581,7 @@ public class Graph<X extends Comparable<X>, Y, Z> {
         if (!visited.contains(edgeId)) {
           parent.put(edgeId, currentId);
           findPathDepthFirstRecursiveId(
-                  startId, edgeId, stopId, visited, parent, paths, terminateOnFirst);
+              startId, edgeId, stopId, visited, parent, paths, terminateOnFirst);
           if (terminateOnFirst && !paths.isEmpty()) {
             return;
           }

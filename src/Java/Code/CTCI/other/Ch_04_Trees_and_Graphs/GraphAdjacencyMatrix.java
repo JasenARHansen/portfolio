@@ -20,7 +20,6 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
     if (!map.containsKey(target)) {
       this.addNode(target);
     }
-
     map.get(source).add(target);
   }
 
@@ -46,28 +45,23 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
           }
         }
       }
-
       visited.put(source, State.Unvisited);
     }
-
     return pathExists;
   }
 
   public String buildOrder_DFS() {
     ArrayList<T> processed = new ArrayList<>();
     ArrayList<T> remaining = new ArrayList<>(this.map.keySet());
-
     for (T element : this.map.keySet()) {
       this.build_dfs(element, processed, remaining);
     }
-
     StringBuilder order = new StringBuilder();
     // Generate output list
     order.append("Build order: ");
     for (T s : processed) {
       order.append(s.toString()).append(" ");
     }
-
     if (!remaining.isEmpty()) {
       order.append("  Cycle exists in: ");
       for (T s : remaining) {
@@ -81,7 +75,6 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
     ArrayList<T> processed = new ArrayList<>();
     ArrayList<T> remaining = new ArrayList<>(this.map.keySet());
     boolean process = true;
-
     while (process) {
       process = false;
       //noinspection unchecked
@@ -100,14 +93,12 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
         }
       }
     }
-
     StringBuilder order = new StringBuilder();
     // Generate output list
     order.append("Build order: ");
     for (T s : processed) {
       order.append(s.toString()).append(" ");
     }
-
     if (!remaining.isEmpty()) {
       order.append("  Cycle exists in: ");
       for (T s : remaining) {
@@ -121,7 +112,6 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
     if (visited.get(data) == State.Visited) {
       return false;
     }
-
     this.visited.put(data, State.Visited);
     boolean success = true;
     for (T element : this.map.get(data)) {

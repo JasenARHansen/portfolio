@@ -1,5 +1,4 @@
 package Java.Test.Educative;
-
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.Educative.ListsAddTwoNumbersAsAList;
@@ -15,19 +14,16 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ListsAddTwoNumbersAsAListTests {
-
-  @Rule
-  public TestName name = new TestName();
-
+  @Rule public TestName name = new TestName();
   @Test
   public void addTwoLists_1() {
     List<String> expected = new ArrayList<>(Arrays.asList("2", "0", "2", "3"));
     List<String> left = new ArrayList<>(Arrays.asList("1", "2", "3", "4"));
     List<String> right = new ArrayList<>(Arrays.asList("7", "8", "9"));
     List<String> result =
-            ListsAddTwoNumbersAsAList.addTwoLists_most_significant_digit_first(left, right);
+        ListsAddTwoNumbersAsAList.addTwoLists_most_significant_digit_first(left, right);
     System.out.format(
-            "%s: The '%s' plus '%s' is '%s'.\n", name.getMethodName(), left, right, result);
+        "%s: The '%s' plus '%s' is '%s'.\n", name.getMethodName(), left, right, result);
     assertEquals(expected.size(), result.size());
   }
 
@@ -37,9 +33,9 @@ public class ListsAddTwoNumbersAsAListTests {
     List<String> left = new ArrayList<>(Arrays.asList("9", "9", "9", "9"));
     List<String> right = new ArrayList<>(Collections.singletonList("1"));
     List<String> result =
-            ListsAddTwoNumbersAsAList.addTwoLists_most_significant_digit_first(left, right);
+        ListsAddTwoNumbersAsAList.addTwoLists_most_significant_digit_first(left, right);
     System.out.format(
-            "%s: The '%s' plus '%s' is '%s'.\n", name.getMethodName(), left, right, result);
+        "%s: The '%s' plus '%s' is '%s'.\n", name.getMethodName(), left, right, result);
     assertEquals(expected.size(), result.size());
   }
 }

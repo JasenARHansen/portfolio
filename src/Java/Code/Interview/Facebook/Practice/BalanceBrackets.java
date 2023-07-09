@@ -5,8 +5,9 @@ import java.util.Stack;
 
 public class BalanceBrackets {
 
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Balance Brackets
                 A bracket is considered to be any one of the following characters: (, ), {, }, [, or ].
                 We consider two brackets to be matching if the first element is an open-bracket, e.g., (, {, or [, and the second bracket is a close-bracket of the same type, e.g., ( and ), [ and ], and { and } are the only pairs of matching brackets.
@@ -32,27 +33,28 @@ public class BalanceBrackets {
                  output: false
                 Example 4
                  s = )
-                 output: false""".indent(2));
-    }
+                 output: false"""
+            .indent(2));
+  }
 
-    public static boolean isBalanced(String s) {
-        List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).toList();
-        List<Character> close = "}])".chars().mapToObj((i) -> (char) i).toList();
-        Stack<Character> stack = new Stack<>();
-        for (int index = 0; index < s.length(); index++) {
-            if (close.contains(s.charAt(index))) {
-                if (stack.isEmpty()) {
-                    return false;
-                }
-                if (stack.peek().equals(open.get(close.indexOf(s.charAt(index))))) {
-                    stack.pop();
-                } else {
-                    return false;
-                }
-            } else if (open.contains(s.charAt(index))) {
-                stack.push(s.charAt(index));
-            }
+  public static boolean isBalanced(String s) {
+    List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).toList();
+    List<Character> close = "}])".chars().mapToObj((i) -> (char) i).toList();
+    Stack<Character> stack = new Stack<>();
+    for (int index = 0; index < s.length(); index++) {
+      if (close.contains(s.charAt(index))) {
+        if (stack.isEmpty()) {
+          return false;
         }
-        return stack.isEmpty();
+        if (stack.peek().equals(open.get(close.indexOf(s.charAt(index))))) {
+          stack.pop();
+        } else {
+          return false;
+        }
+      } else if (open.contains(s.charAt(index))) {
+        stack.push(s.charAt(index));
+      }
     }
+    return stack.isEmpty();
+  }
 }

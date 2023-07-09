@@ -1,5 +1,4 @@
 package Java.Code.unsorted.classes.classesInstance;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,10 +6,8 @@ import java.util.Queue;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
-
-  // Root node of tree
+  /** Root node of tree. */
   private NodeTree<T> root;
-
   // Default constructor for empty tree
   public BinarySearchTreeHeightBalanced() {
     root = null;
@@ -20,13 +17,13 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     root = new NodeTree<>(value);
   }
 
-  // removes root reference for garbage collection
   public void clear() {
+    // removes root reference for garbage collection
     root = null;
   }
 
-  // Entry point for node count. Uses forwarding logic.
   public int countNodes() {
+    // Entry point for node count. Uses forwarding logic.
     return countNodes(root);
   }
 
@@ -77,13 +74,13 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return root;
   }
 
-  // Insert data from root and allow internal logic to handle the sorting
   public void insert(T data) {
+    /** Insert data from root and allow internal logic to handle the sorting */
     root = insert(data, root);
   }
 
-  // Test to see if tree is empty
   public boolean isEmpty() {
+    /** Test to see if tree is empty. */
     return (root == null);
   }
 
@@ -152,8 +149,8 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     System.out.print(dataPreorder());
   }
 
-  // Insert data from root and allow internal logic to handle the sorting
   public void remove(T data) {
+    /** Insert data from root and allow internal logic to handle the sorting. */
     remove(data, root);
   }
 
@@ -161,8 +158,8 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return root.getData();
   }
 
-  // Entry point for data search
   public boolean search(T data) {
+    /** Entry point for data search. */
     return search(root, data);
   }
 
@@ -171,8 +168,8 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return String.format("%s", this.dataInorder());
   }
 
-  // Recursive call to count number of nodes from current node
   private int countNodes(NodeTree<T> entryNode) {
+    /** Recursive call to count number of nodes from current node. */
     // If node is not assigned it can not have a count
     if (entryNode == null) {
       return 0;
@@ -221,13 +218,12 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return entryNode == null ? -1 : entryNode.getHeight();
   }
 
-  // recursive logic to insert data
   private NodeTree<T> insert(T data, NodeTree<T> entryNode) {
+    /** recursive logic to insert data. */
     if (entryNode == null) {
       entryNode = new NodeTree<>(data);
     } else if (data.compareTo(entryNode.getData()) < 0) {
       entryNode.setLeftChild(insert(data, entryNode.getLeftChild()));
-
       if (height(entryNode.getLeftChild()) - height(entryNode.getRightChild()) == 2) {
         if (data.compareTo(entryNode.getLeftChild().getData()) < 0) {
           entryNode = rotateRight(entryNode);
@@ -237,7 +233,6 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
       }
     } else if (data.compareTo(entryNode.getData()) > 0) {
       entryNode.setRightChild(insert(data, entryNode.getRightChild()));
-
       if (height(entryNode.getRightChild()) - height(entryNode.getLeftChild()) == 2) {
         if (data.compareTo(entryNode.getRightChild().getData()) > 0) {
           entryNode = rotateLeft(entryNode);
@@ -286,7 +281,6 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     } else if (data.compareTo(entryNode.getData()) > 0) {
       entryNode.setRightChild(remove(data, entryNode.getRightChild()));
     }
-
     // I need to rebalance here
     if (height(entryNode.getLeftChild()) - height(entryNode.getRightChild()) == 2) {
       if (data.compareTo(entryNode.getLeftChild().getData()) < 0) {
@@ -325,8 +319,8 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return leftChild;
   }
 
-  // recursive method to search tree for data
   private boolean search(NodeTree<T> entryNode, T data) {
+    /** recursive method to search tree for data. */
     if (entryNode == null) {
       return false;
     }

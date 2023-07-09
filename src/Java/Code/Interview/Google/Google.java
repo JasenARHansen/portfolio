@@ -1,23 +1,18 @@
 package Java.Code.Interview.Google;
 
 import Java.Code.unsorted.classes.classesInstance.Tuple;
-
 import java.util.*;
 
 public class Google {
-
   @SuppressWarnings("unused")
   public static void main(String[] args) throws Exception {
-
     // Determine weather a circular array of relative indices compose of a
     // single, complete cycle
     int[] cycle = {2, 2, -1};
-
     boolean value = detectCircularArrayCycle(cycle);
-    cycle = new int[]{-2, -2, 1};
+    cycle = new int[] {-2, -2, 1};
     //noinspection UnusedAssignment
     value = detectCircularArrayCycle(cycle);
-
     String test = "-123.456";
     Double result = convertNumber(test);
     System.out.println("Result: " + result);
@@ -34,17 +29,14 @@ public class Google {
     System.out.println("Result: " + output);
     output = addStrings("100.006", "-.05", "-23", "0.4");
     System.out.println("Result: " + output);
-
     // Array simulating a bit map. True represents White and False
     // represents Black
-
     boolean[][] source = {
-            {true, false, true, false},
-            {false, false, false, true},
-            {true, false, true, true},
-            {true, false, false, true}
+      {true, false, true, false},
+      {false, false, false, true},
+      {true, false, true, true},
+      {true, false, false, true}
     };
-
     System.out.println("\nBase Image:");
     printBitMap(source);
     boolean[][] modified;
@@ -57,7 +49,6 @@ public class Google {
     modified = floodFill(true, 3, 0, source);
     System.out.format("\nFlooded white (%d, %d)\n", 3, 0);
     printBitMap(modified);
-
     // Sample rotated array.
     int[] rotatedArray = {3, 4, 5, 6, 1, 2};
     System.out.format("\nArray Search 1: %s\n", Arrays.toString(rotatedArray));
@@ -69,7 +60,6 @@ public class Google {
     System.out.format("Find %d: found at index %d\n", 5, searchRotatedArray(5, rotatedArray));
     System.out.format("Find %d: found at index %d\n", 6, searchRotatedArray(6, rotatedArray));
     System.out.format("Find %d: found at index %d\n", 7, searchRotatedArray(7, rotatedArray));
-
     // Sample rotated array: but the rotation is 0
     int[] rotatedArray2 = {1, 2, 3, 4, 5, 6};
     System.out.format("\nArray Search 2: %s\n", Arrays.toString(rotatedArray2));
@@ -81,7 +71,6 @@ public class Google {
     System.out.format("Find %d: found at index %d\n", 5, searchRotatedArray(5, rotatedArray2));
     System.out.format("Find %d: found at index %d\n", 6, searchRotatedArray(6, rotatedArray2));
     System.out.format("Find %d: found at index %d\n", 7, searchRotatedArray(7, rotatedArray2));
-
     // Sample rotated array.
     int[] rotatedArray3 = {10, 12, 2, 4, 6, 8};
     System.out.format("\nArray Search 3: %s\n", Arrays.toString(rotatedArray3));
@@ -112,7 +101,6 @@ public class Google {
     if (base.isEmpty()) {
       throw new Exception("Empty Input");
     }
-
     int sign = 1;
     String decimal = "";
     if (base.charAt(0) == '-') {
@@ -125,7 +113,7 @@ public class Google {
       base = base.substring(0, base.indexOf('.'));
     }
     return (sign
-            * (convertInteger(base) + (convertInteger(decimal) * Math.pow(10, -decimal.length()))));
+        * (convertInteger(base) + (convertInteger(decimal) * Math.pow(10, -decimal.length()))));
   }
 
   private static Double convertInteger(String number) throws Exception {
@@ -141,29 +129,22 @@ public class Google {
   }
 
   private static boolean[][] floodFill(boolean color, int x, int y, boolean[][] bitMap) {
-    /*
-     * https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit
-     *  In Flood Fill, you
-     * start with a bitmap where pixels are either black or white. The user
-     * selects a point on the bitmap and a color, and the program flood-fills
-     * the bitmap outward from that point (up, down, left, right) until a
-     * boundary is encountered. A boundary is a cell of the same color or
-     * out of range.
-     */
-
+    /* https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit
+    In Flood Fill, you start with a bitmap where pixels are either black or white.
+    The user selects a point on the bitmap and a color, and the program flood-fills the
+     bitmap outward from that point (up, down, left, right) until a boundary is encountered.
+    A boundary is a cell of the same color or out of range. */
     // (x, y) coordinate mapping array[y][x]
     if ((y < 0) || (y >= bitMap.length)) {
       System.out.format(
-              "Value '%d' is not bin the range of y values [%d, %d)", y, 0, bitMap.length);
+          "Value '%d' is not bin the range of y values [%d, %d)", y, 0, bitMap.length);
       return bitMap;
     }
-
     if ((x < 0) || (x >= bitMap[y].length)) {
       System.out.format(
-              "Value '%d' is not bin the range of x values [%d, %d)", x, 0, bitMap[y].length);
+          "Value '%d' is not bin the range of x values [%d, %d)", x, 0, bitMap[y].length);
       return bitMap;
     }
-
     Queue<Tuple<Integer, Integer>> floodQueue = new LinkedList<>();
     // A set will help eliminate duplicate processing
     Set<Tuple<Integer, Integer>> pixelSet = new HashSet<>();
@@ -171,9 +152,7 @@ public class Google {
     Tuple<Integer, Integer> startPoint = new Tuple<>(x, y);
     floodQueue.add(startPoint);
     pixelSet.add(startPoint);
-
     boolean[][] toModify = cloneBitMap(bitMap);
-
     while (!floodQueue.isEmpty()) {
       Tuple<Integer, Integer> current = floodQueue.remove();
       // Boundary check
@@ -182,7 +161,6 @@ public class Google {
       if ((0 <= newY) && (newY < bitMap.length) && (0 <= newX) && (newX < bitMap[newY].length)) {
         if (toModify[newY][newX] != color) {
           toModify[newY][newX] = color;
-
           // Pixel right from test
           @SuppressWarnings("SuspiciousNameCombination")
           Tuple<Integer, Integer> pixelRight = new Tuple<>(newX + 1, newY);
@@ -190,7 +168,6 @@ public class Google {
             floodQueue.add(pixelRight);
             pixelSet.add(pixelRight);
           }
-
           // Pixel down from test
           @SuppressWarnings("SuspiciousNameCombination")
           Tuple<Integer, Integer> pixelLeft = new Tuple<>(newX - 1, newY);
@@ -198,14 +175,12 @@ public class Google {
             floodQueue.add(pixelLeft);
             pixelSet.add(pixelLeft);
           }
-
           // Pixel up from test
           Tuple<Integer, Integer> pixelUp = new Tuple<>(newX, newY + 1);
           if (!pixelSet.contains(pixelUp)) {
             floodQueue.add(pixelUp);
             pixelSet.add(pixelUp);
           }
-
           // Pixel down from test
           Tuple<Integer, Integer> pixelDown = new Tuple<>(newX, newY - 1);
           if (!pixelSet.contains(pixelDown)) {
@@ -218,8 +193,8 @@ public class Google {
     return toModify;
   }
 
-  // Clone bitMap array so the original is not altered by processing
   private static boolean[][] cloneBitMap(boolean[][] bitMap) {
+    // Clone bitMap array so the original is not altered by processing
     boolean[][] cloned = new boolean[bitMap.length][];
     for (int i = 0; i < bitMap.length; i++) {
       int innerLength = bitMap[i].length;
@@ -229,8 +204,8 @@ public class Google {
     return cloned;
   }
 
-  // Print the Bit Map Simulation array
   private static void printBitMap(boolean[][] toPrint) {
+    // Print the Bit Map Simulation array
     for (boolean[] entry : toPrint) {
       StringBuilder builder = new StringBuilder();
       builder.append("[");
@@ -248,8 +223,8 @@ public class Google {
     }
   }
 
-  // Helper method for printing BitMap array
   private static String getColor(boolean color) {
+    // Helper method for printing BitMap array
     if (color) {
       return "white";
     } else {
@@ -257,35 +232,31 @@ public class Google {
     }
   }
 
-  // Method to search a rotated array for a number. IF the number si found the
-  // first index in the array where the number is found is returned. If the
-  // number is not found a '-1' is returned to indicate failure
   private static int searchRotatedArray(int value, int[] toSearch) {
-
-    /*
-     * https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit
-     * Given a rotated
-     * sorted array of integers, and a number n, write an algorithm to find
-     * the number in the array. Sorted Array: [ 1, 2, 3, 4, 5, 6] Rotated
-     * Sorted Array [ 3, 4, 5, 6, 1, 2] (Please note we do not know the
-     * number of places by which the array has been rotated, we just know
-     * that the array is rotated)
+    /**
+     * Method to search a rotated array for a number. IF the number si found the first index in the
+     * array where the number is found is returned. If the number is not found a '-1' is returned to
+     * indicate failure.
      */
-
+    /*
+    https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit
+    Given a rotated
+    sorted array of integers, and a number n, write an algorithm to find
+    the number in the array. Sorted Array: [ 1, 2, 3, 4, 5, 6] Rotated
+    Sorted Array [ 3, 4, 5, 6, 1, 2] (Please note we do not know the
+    number of places by which the array has been rotated, we just know
+    that the array is rotated). */
     // Termination cases
     if ((toSearch == null) || (toSearch.length == 0)) {
       return -1;
     }
-
     // Quick test to short circuit
     if (toSearch[0] == value) {
       return 0;
     }
-
     int leftPointer = 0;
     int rightPointer = toSearch.length - 1;
     int midPointer;
-
     // Use binary search to find inflection point
     while (true) {
       midPointer = leftPointer + (rightPointer - leftPointer) / 2;
@@ -294,7 +265,6 @@ public class Google {
       } else {
         rightPointer = midPointer;
       }
-
       // Termination case due to integer division not always allowing
       // a valid midPointer
       if (((rightPointer - leftPointer)) <= 1) {
@@ -306,7 +276,6 @@ public class Google {
         break;
       }
     }
-
     // Determine what side of the divide is searched
     if (toSearch[0] < value) {
       leftPointer = 0;
@@ -315,7 +284,6 @@ public class Google {
       leftPointer = midPointer;
       rightPointer = toSearch.length - 1;
     }
-
     // Use binary search from inflection point find number
     while (true) {
       midPointer = leftPointer + (rightPointer - leftPointer) / 2;
@@ -326,7 +294,6 @@ public class Google {
       } else {
         rightPointer = midPointer;
       }
-
       // Termination case due to integer division not always allowing
       // rightPointer == leftPointer
       if (((rightPointer - leftPointer)) <= 1) {
@@ -342,14 +309,13 @@ public class Google {
   }
 
   private static boolean detectCircularArrayCycle(int[] toSearch) {
+    /**
+     * Circular array is that when you exceed a boundary you wrap around to the Relative index means
+     * the value of the element is a modification of the current index Complete cycle means that all
+     * elements are examined.
+     */
     int searchIndex = 0;
-    // Circular array is that when you exceed a boundary you wrap around to
-    // the
-    // Relative index means the value of the element is a modification of
-    // the current index
-    // Complete cycle means that all elements are examined
     boolean[] visited = new boolean[toSearch.length];
-
     while (!visited[searchIndex]) {
       visited[searchIndex] = true;
       // Handle overflow case
@@ -359,7 +325,6 @@ public class Google {
         searchIndex += toSearch.length;
       }
     }
-
     for (boolean value : visited) {
       if (!value) {
         return false;
@@ -384,7 +349,6 @@ public class Google {
         return false;
       }
     }
-
     return currentPos == 0;
   }
 }

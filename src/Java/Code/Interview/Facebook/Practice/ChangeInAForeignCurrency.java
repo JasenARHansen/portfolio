@@ -1,10 +1,9 @@
 package Java.Code.Interview.Facebook.Practice;
 
-
 public class ChangeInAForeignCurrency {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Change in a Foreign Currency
                 You likely know that different currencies have coins and bills of different denominations. In some currencies, it's actually impossible to receive change for a given amount of money. For example, Canada has given up the 1-cent penny. If you're owed 94 cents in Canada, a shopkeeper will graciously supply you with 95 cents instead since there exists a 5-cent coin.
                 Given a list of the available denominations, determine if it's possible to receive exact change for an amount of money targetMoney. Both the denominations and target amount will be given in generic units of that currency.
@@ -25,22 +24,22 @@ public class ChangeInAForeignCurrency {
                  denominations = [4, 17, 29]
                  targetMoney = 75
                  output = true
-                 You can make 75 units with the denominations [17, 29, 29].""".indent(2));
-    }
+                 You can make 75 units with the denominations [17, 29, 29]."""
+            .indent(2));
+  }
 
-
-    public static boolean canGetExactChange(int targetMoney, int[] denominations) {
-        // Denominations may not be in proper order
-        if (targetMoney < 0) {
-            return false;
-        } else if (targetMoney == 0) {
-            return true;
-        }
-        for (int denomination : denominations) {
-            if (ChangeInAForeignCurrency.canGetExactChange(targetMoney - denomination, denominations)) {
-                return true;
-            }
-        }
-        return false;
+  public static boolean canGetExactChange(int targetMoney, int[] denominations) {
+    // Denominations may not be in proper order
+    if (targetMoney < 0) {
+      return false;
+    } else if (targetMoney == 0) {
+      return true;
     }
+    for (int denomination : denominations) {
+      if (ChangeInAForeignCurrency.canGetExactChange(targetMoney - denomination, denominations)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

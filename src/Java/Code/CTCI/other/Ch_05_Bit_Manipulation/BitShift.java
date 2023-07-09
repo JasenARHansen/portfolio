@@ -1,11 +1,9 @@
 package Java.Code.CTCI.other.Ch_05_Bit_Manipulation;
 
 public class BitShift {
-
   public static int SEQUENCE_LENGTH = 32;
 
-  public BitShift() {
-  }
+  public BitShift() {}
 
   public static int updateBits(int base, int insert, int indexStart, int indexStop) {
     // Validation
@@ -24,21 +22,20 @@ public class BitShift {
       return 0;
     }
     // zero out the bits that will be replaced
-
     int allOnes =
-            ~0; // Taking advantage of the "~x equals (-x)-1" but I could have used -1 as well.
+        ~0; // Taking advantage of the "~x equals (-x)-1" but I could have used -1 as well.
     //  But -1 would require signed ints to work
     // Build left mask
     int leftMask =
-            indexStop < 31
-                    ? (allOnes << (indexStop + 1))
-                    : 0; // This is needed because the arithmetic shift
+        indexStop < 31
+            ? (allOnes << (indexStop + 1))
+            : 0; // This is needed because the arithmetic shift
     // preserves the sign bit
     // build right mask
     int rightMask =
-            allOnes
-                    >>> (SEQUENCE_LENGTH
-                    - indexStart); // Using the logical shift to get rid of the sign bit
+        allOnes
+            >>> (SEQUENCE_LENGTH
+                - indexStart); // Using the logical shift to get rid of the sign bit
     // Or the 2 to make the full mask
     int fullMask = leftMask | rightMask;
     // Clear the bits with an AND using the mask
@@ -74,7 +71,6 @@ public class BitShift {
     int countRight = 0;
     int padValue = 0;
     int zeroCount = 0;
-
     for (int i = 0; i < SEQUENCE_LENGTH; i++) {
       // First, apply mask
       int bit = mask & input;
@@ -85,19 +81,15 @@ public class BitShift {
         zeroCount++;
         padValue = 1;
       }
-
       if (currentMax < (countLeft + countRight + padValue)) {
         currentMax = countLeft + countRight + padValue;
       }
-
       if (zeroCount > 0) {
         countLeft = countRight;
         countRight = 0;
       }
-
       mask = mask << 1;
     }
-
     return currentMax;
   }
 
@@ -151,7 +143,6 @@ public class BitShift {
     mask = mask - 1;
     // Append the the 0's string with trailing zeros
     mask = mask << (index - count);
-
     return input | mask;
   }
 
@@ -159,7 +150,6 @@ public class BitShift {
     int xor = left ^ right;
     int count = 0;
     int mask = 1;
-
     while (xor != 0) {
       // First, apply mask
       int bit = mask & xor;
@@ -168,7 +158,6 @@ public class BitShift {
         count++;
       }
     }
-
     return count;
   }
 
@@ -178,7 +167,6 @@ public class BitShift {
     int leftMask = 0xaaaaaaaa;
     int left = leftMask & input;
     left >>>= 1;
-
     int rightMask = 0x55555555;
     int right = rightMask & input;
     right <<= 1;
@@ -205,16 +193,13 @@ public class BitShift {
     int startByte = start / 8;
     // startByteIndex is how far into the first byte printing starts
     int startByteIndex = start % 8;
-
     // Handle the left side
     int stopByte = stop / 8;
     // stopByteIndex is how far into the last byte printing stops
     int stopByteIndex = stop % 8;
-
     // Set left byte
     byte leftMask = (byte) (0xFF >> startByteIndex);
     byte rightMask = (byte) ((0xFF << stopByteIndex) & 0xFF);
-
     if (startByte == stopByte) {
       screen[startByte] = (byte) (leftMask & rightMask);
     } else {
@@ -227,7 +212,6 @@ public class BitShift {
       // Set right byte
       screen[stopByte] = rightMask;
     }
-
     // Print the screen
     for (int row = 0; row < height; row++) {
       for (int column = 0; column < width; column++) {

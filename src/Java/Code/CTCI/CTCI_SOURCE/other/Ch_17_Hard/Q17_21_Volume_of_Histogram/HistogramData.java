@@ -1,33 +1,31 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_21_Volume_of_Histogram;
 
 public class HistogramData {
+  private final int height;
+  private int leftMaxIndex = -1;
+  private int rightMaxIndex = -1;
 
-    private final int height;
-    private int leftMaxIndex = -1;
-    private int rightMaxIndex = -1;
+  public HistogramData(int v) {
+    height = v;
+  }
 
-    public HistogramData(int v) {
-        height = v;
-    }
+  public int getHeight() {
+    return height;
+  }
 
-    public int getHeight() {
-        return height;
-    }
+  public int getLeftMaxIndex() {
+    return leftMaxIndex;
+  }
 
-    public int getLeftMaxIndex() {
-        return leftMaxIndex;
-    }
+  public void setLeftMaxIndex(int idx) {
+    leftMaxIndex = idx;
+  }
 
-    public void setLeftMaxIndex(int idx) {
-        leftMaxIndex = idx;
-    }
+  public int getRightMaxIndex() {
+    return rightMaxIndex;
+  }
 
-    public int getRightMaxIndex() {
-        return rightMaxIndex;
-    }
-
-    public void setRightMaxIndex(int idx) {
-        rightMaxIndex = idx;
-    }
-
+  public void setRightMaxIndex(int idx) {
+    rightMaxIndex = idx;
+  }
 }

@@ -1,5 +1,4 @@
 package Java.Code.Interview.Facebook.Practice;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
@@ -7,9 +6,9 @@ import java.util.Queue;
 
 @SuppressWarnings("ConstantConditions")
 public class MagicalCandyBags {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Magical Candy Bags
                 You have N bags of candy. The ith bag contains arr[i] pieces of candy, and each of the bags is magical!
                 It takes you 1 minute to eat all of the pieces of candy in a bag (irrespective of how many pieces of candy are inside), and as soon as you finish, the bag mysteriously refills. If there were x pieces of candy in the bag at the beginning of the minute, then after you've finished you'll find that floor(x/2) pieces are now inside.
@@ -31,17 +30,18 @@ public class MagicalCandyBags {
                  In the second minute you can eat 4 pieces of candy from another bag. That bag will refill with floor(4/2) = 2 pieces.
                  In the third minute you can eat the 3 pieces of candy that have appeared in the first bag that you ate.
                  In total you can eat 7 + 4 + 3 = 14 pieces of candy.
-                """.indent(2));
-    }
+                """
+            .indent(2));
+  }
 
-    public static int maxCandies(int[] arr, int K) {
-        int total = 0;
-        Queue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
-        priorityQueue.addAll(Arrays.stream(arr).boxed().toList());
-        for (int iteration = 0; iteration < K; iteration++) {
-            total += priorityQueue.peek();
-            priorityQueue.add(priorityQueue.poll() / 2);
-        }
-        return total;
+  public static int maxCandies(int[] arr, int K) {
+    int total = 0;
+    Queue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+    priorityQueue.addAll(Arrays.stream(arr).boxed().toList());
+    for (int iteration = 0; iteration < K; iteration++) {
+      total += priorityQueue.peek();
+      priorityQueue.add(priorityQueue.poll() / 2);
     }
+    return total;
+  }
 }

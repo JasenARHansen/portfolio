@@ -1,7 +1,6 @@
 package Java.Code.Educative;
 
 public class ArraysMoveZeros {
-
   public static void getDescription() {
     System.out.println(
         """
@@ -9,7 +8,6 @@ public class ArraysMoveZeros {
                  the order of other elements in the array.
                 The array has to be modified in-place.
                 Try it yourself before reviewing the solution and explanation.
-
                 Runtime complexity: Linear, O(n)O(n)O(n)
                 Memory Complexity: Constant, O(1)O(1)O(1)
                 Keep two markers: read_index and write_index and point them to the end of the array.

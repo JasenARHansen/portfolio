@@ -1,32 +1,28 @@
 package Java.Code.HackerRank;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 @SuppressWarnings({"SpellCheckingInspection", "unused", "deprecation"})
 public class HackerRank {
-
   private static final String querryTemplate =
-          "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s";
+      "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s";
   private static final String pageTemplate =
-          "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s&page=%d";
+      "https://jsonmock.hackerrank.com/api/movies/search/?Title=%s&page=%d";
 
   public static List<String> http(String substr) throws IOException, JSONException {
     // http://chillyfacts.com/java-send-http-getpost-request-and-read-json-response/
     String initialString = String.format(querryTemplate, substr);
-
     URL url = new URL(initialString);
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
     connection.setRequestMethod("GET");
-
     BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
     String inputLine;
     StringBuilder response = new StringBuilder();
@@ -35,10 +31,8 @@ public class HackerRank {
     }
     in.close();
     connection.disconnect();
-
     // Read JSON response and print
     JSONObject myResponse = new JSONObject(response.toString());
-
     List<String> movies = new ArrayList<>();
     int pages = myResponse.getInt("total_pages");
     for (int page = 1; page <= pages; page++) {
@@ -46,7 +40,6 @@ public class HackerRank {
       url = new URL(pageString);
       connection = (HttpURLConnection) url.openConnection();
       connection.setRequestMethod("GET");
-
       in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
       response = new StringBuilder();
       while ((inputLine = in.readLine()) != null) {
@@ -54,7 +47,6 @@ public class HackerRank {
       }
       in.close();
       connection.disconnect();
-
       JSONArray data = myResponse.getJSONArray("data");
       for (int i = 0; i < data.length(); i++) {
         JSONObject movie = data.getJSONObject(i);
@@ -82,7 +74,6 @@ public class HackerRank {
   }
 
   public static String isSubset(String[] master, String[] secondary) {
-
     Map<String, Integer> masterMap = new HashMap<>();
     for (String element : master) {
       if (masterMap.containsKey(element)) {
@@ -111,7 +102,6 @@ public class HackerRank {
     // a string: YES if the sequence is balanced or NO if it is not.
     // isBalanced has the following parameter(s): s: a string of brackets
     // All chracters in the sequences ∈ { {, }, (, ), [, ] }.
-
     Stack<String> stackOfBrackets = new Stack<>();
     for (int index = 0; index < input.length(); index++) {
       String testString = Character.toString(input.charAt(index));
