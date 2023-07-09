@@ -1,13 +1,12 @@
 package Java.Code.Interview.Facebook.Practice;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MinimumLengthSubstrings {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Minimum Length Substrings
                 You are given two strings s and t. You can select any substring of string s and rearrange the characters of the selected substring. Determine the minimum length of the substring of s such that string t is a substring of the selected substring.
                 Signature
@@ -23,28 +22,27 @@ public class MinimumLengthSubstrings {
                 Explanation:
                 Substring "dcbef" can be rearranged to "cfdeb", "cefdb", and so on. String t is a substring of "cfdeb". Thus, the
                  minimum length required is 5.
-                """.indent(2));
+                """
+            .indent(2));
+  }
+
+  public static int minLengthSubstring(String s, String t) {
+    int returnValue = -1;
+    if (!(t.length() > s.length()) && (!s.isEmpty())) {
+      List<Character> chars = t.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
+      int index = 0;
+      while ((index < s.length()) && !chars.isEmpty()) {
+        chars.remove(Character.valueOf(s.charAt(index)));
+        index++;
+      }
+      if (chars.isEmpty()) {
+        returnValue = index;
+      }
+      int compare = minLengthSubstring(s.substring(1), t);
+      if ((compare >= 0) && (compare < index)) {
+        returnValue = compare;
+      }
     }
-
-
-    public static int minLengthSubstring(String s, String t) {
-        int returnValue = -1;
-        if (!(t.length() > s.length()) && (!s.isEmpty())) {
-            List<Character> chars = t.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
-            int index = 0;
-            while ((index < s.length()) && !chars.isEmpty()) {
-                chars.remove(Character.valueOf(s.charAt(index)));
-            index++;
-            }
-            if (chars.isEmpty()) {
-                returnValue = index;
-            }
-
-            int compare = minLengthSubstring(s.substring(1), t);
-            if ((compare >= 0) && (compare < index)) {
-                returnValue = compare;
-            }
-        }
-        return returnValue;
-    }
+    return returnValue;
+  }
 }

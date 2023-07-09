@@ -15,7 +15,6 @@ public class ParseResult {
     } else if (r2 == null) {
       return r1;
     }
-
     return r2.invalid < r1.invalid ? r2 : r1;
   }
 

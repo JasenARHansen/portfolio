@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 class Person {
-
   String name;
   Integer id;
 
@@ -26,10 +25,8 @@ class Person {
 }
 
 public class PersonTest {
-
   static List<Person> people =
       Arrays.asList(new Person("Bob", 1), new Person(2), new Person("Jane", 3));
-
   static int x;
 
   public static void main(String[] args) {

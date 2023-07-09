@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_07_Chat_Serve
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public abstract class Conversation {
   protected ArrayList<User> participants = new ArrayList<>();
   protected int id;

@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_13_Java.Introduction;
 
+@SuppressWarnings("unused")
 public class IntroductionOverriding {
   public static void printArea(Circle c) {
     System.out.println("The circle is " + c.computeArea());

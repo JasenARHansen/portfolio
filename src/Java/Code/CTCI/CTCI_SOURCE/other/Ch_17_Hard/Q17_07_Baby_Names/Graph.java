@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_07_Baby_Names;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class Graph {
   private final ArrayList<GraphNode> nodes;
   private final HashMap<String, GraphNode> map;

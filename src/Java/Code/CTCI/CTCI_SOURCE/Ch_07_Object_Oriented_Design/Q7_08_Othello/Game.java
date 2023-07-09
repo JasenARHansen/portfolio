@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_08_Othello;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class Game {
   private static Game instance;
   private final int ROWS = 10;

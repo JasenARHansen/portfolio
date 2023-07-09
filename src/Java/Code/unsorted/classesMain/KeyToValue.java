@@ -4,6 +4,7 @@ import Java.Code.unsorted.classes.classesInstance.Tuple;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("SameParameterValue")
 public class KeyToValue {
   static Map<Integer, Tuple<Integer, Integer>> map = new HashMap<>();
 

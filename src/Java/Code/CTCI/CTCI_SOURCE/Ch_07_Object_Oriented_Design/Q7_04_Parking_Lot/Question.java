@@ -1,12 +1,9 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_04_Parking_Lot;
-
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
 public class Question {
-
     public static void main(String[] args) {
         ParkingLot lot = new ParkingLot();
-
         Vehicle v = null;
         while (v == null || lot.parkVehicle(v)) {
             lot.print();
@@ -25,5 +22,4 @@ public class Question {
         System.out.println("Parking Failed. Final state: ");
         lot.print();
     }
-
 }

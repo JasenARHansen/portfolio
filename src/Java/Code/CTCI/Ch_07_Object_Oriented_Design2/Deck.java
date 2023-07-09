@@ -4,6 +4,7 @@ import Java.Code.CTCI.Ch_07_Object_Oriented_Design2.Card.Suit;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Deck {
   List<Card> deck;
 

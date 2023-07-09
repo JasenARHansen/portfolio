@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_05_Online_Book_Reader;
+
+@SuppressWarnings("unused")
 public class Book {
   private int bookId;
   private String details;

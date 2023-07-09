@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_11_File_System;
 
+@SuppressWarnings("unused")
 public class File extends Entry {
   private final int size;
   private String content;

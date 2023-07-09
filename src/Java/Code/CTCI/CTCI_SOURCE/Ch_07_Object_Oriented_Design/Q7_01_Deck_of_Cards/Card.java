@@ -1,10 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_01_Deck_of_Cards;
 
+@SuppressWarnings("unused")
 public abstract class Card {
-  /**
-   * Number or face that's on card - a number 2 through 10, or 11 for Jack, 12 for Queen, 13 for
-   * King, or 1 for Ace.
-   */
+  /* Number or face that's on card - a number 2 through 10, or 11 for Jack, 12 for Queen, 13 for King, or 1 for Ace. */
   protected int faceValue;
 
   protected Suit suit;
@@ -22,7 +20,7 @@ public abstract class Card {
   }
 
   public boolean isAvailable() {
-    /** returns whether-or-not the card is available to be given out to someone. */
+    /* returns whether-or-not the card is available to be given out to someone. */
     return available;
   }
 

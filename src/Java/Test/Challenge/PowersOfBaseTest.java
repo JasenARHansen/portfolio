@@ -12,7 +12,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PowersOfBaseTest {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -195,7 +194,6 @@ public class PowersOfBaseTest {
     int powerBase = 6;
     String input = "651";
     int expected = 2;
-
     List<String> result = PowersOfBase.splitPowersOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' splits '%d' times into values that"
@@ -210,7 +208,6 @@ public class PowersOfBaseTest {
     int numberBase = 10;
     int powerBase = 2;
     String input = "4";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -223,7 +220,6 @@ public class PowersOfBaseTest {
     int numberBase = 10;
     int powerBase = 2;
     String input = "5";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -236,7 +232,6 @@ public class PowersOfBaseTest {
     int numberBase = 10;
     int powerBase = 2;
     String input = "16";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -249,7 +244,6 @@ public class PowersOfBaseTest {
     int numberBase = 10;
     int powerBase = 5;
     String input = "390625";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -262,7 +256,6 @@ public class PowersOfBaseTest {
     int numberBase = 2;
     int powerBase = 5;
     String input = "1011111010111100001";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -275,7 +268,6 @@ public class PowersOfBaseTest {
     int numberBase = 2;
     int powerBase = 5;
     String input = "101111101011110000";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -288,7 +280,6 @@ public class PowersOfBaseTest {
     int numberBase = 16;
     int powerBase = 5;
     String input = "5F5E1";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -301,7 +292,6 @@ public class PowersOfBaseTest {
     int numberBase = 16;
     int powerBase = 5;
     String input = "5F5E0";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -314,7 +304,6 @@ public class PowersOfBaseTest {
     int numberBase = 7;
     int powerBase = 7;
     String input = "10";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -327,7 +316,6 @@ public class PowersOfBaseTest {
     int numberBase = 7;
     int powerBase = 7;
     String input = "11";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -340,7 +328,6 @@ public class PowersOfBaseTest {
     int numberBase = 7;
     int powerBase = 5;
     String input = "34";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -353,7 +340,6 @@ public class PowersOfBaseTest {
     int numberBase = 7;
     int powerBase = 5;
     String input = "33";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",
@@ -366,7 +352,6 @@ public class PowersOfBaseTest {
     int numberBase = 7;
     int powerBase = 6;
     String input = "51";
-
     boolean result = PowersOfBase.validatePowerOfBase(numberBase, powerBase, input);
     System.out.format(
         "%s: The string '%s' with a numeric base of '%d' is a power of '%d': %b\n",

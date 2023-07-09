@@ -1,12 +1,20 @@
 package Java.Code.unsorted.classes.classesInstance;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-@SuppressWarnings("SpellCheckingInspection")
+@SuppressWarnings({
+  "SpellCheckingInspection",
+  "DanglingJavadoc",
+  "ConstantValue",
+  "DuplicatedCode",
+  "unused",
+  "ReassignedVariable"
+})
 public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
-  /** Root node of tree. */
+  /* Root node of tree. */
   private NodeTree<T> root;
   // Default constructor for empty tree
   public BinarySearchTreeHeightBalanced() {
@@ -242,7 +250,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
       }
     }
     entryNode.setHeight(
-            maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
+        maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
     return entryNode;
   }
 
@@ -303,9 +311,9 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     entryNode.setRightChild(rightChild.getLeftChild());
     rightChild.setLeftChild(entryNode);
     entryNode.setHeight(
-            maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
+        maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
     rightChild.setHeight(
-            maximumValue(height(rightChild.getRightChild()), entryNode.getHeight()) + 1);
+        maximumValue(height(rightChild.getRightChild()), entryNode.getHeight()) + 1);
     return rightChild;
   }
 
@@ -314,7 +322,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     entryNode.setLeftChild(leftChild.getRightChild());
     leftChild.setRightChild(entryNode);
     entryNode.setHeight(
-            maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
+        maximumValue(height(entryNode.getLeftChild()), height(entryNode.getRightChild())) + 1);
     leftChild.setHeight(maximumValue(height(leftChild.getLeftChild()), entryNode.getHeight()) + 1);
     return leftChild;
   }

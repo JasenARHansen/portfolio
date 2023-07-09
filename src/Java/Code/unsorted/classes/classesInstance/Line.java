@@ -1,5 +1,6 @@
 package Java.Code.unsorted.classes.classesInstance;
 
+@SuppressWarnings({"unused", "SpellCheckingInspection"})
 public class Line {
   private final Tuple<Double, Double> point1;
   private final Tuple<Double, Double> point2;

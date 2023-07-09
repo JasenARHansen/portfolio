@@ -1,5 +1,4 @@
 package Java.Test.CTCI.other.Ch_03_Stacks_and_Queues;
-
 import Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks.MyQueue;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import Java.Code.CTCI.other.Ch_03_Stacks_and_Queues.QueueFromStack;
@@ -11,50 +10,40 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_04_Queue_via_Stacks_Test {
-
-  @Rule
-  public TestName name = new TestName();
-
+  @Rule public TestName name = new TestName();
   @Test
   public void QueueFromStack() {
     System.out.format("%s: \n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(0);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      queueFromStack.add(1);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      queueFromStack.add(2);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      queueFromStack.add(3);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      queueFromStack.add(4);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      queueFromStack.add(5);
-      System.out.format("Queue '%s'\n", queueFromStack);
-      System.out.format(
-              "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack);
-      System.out.format(
-              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
-      System.out.format(
-              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
-      System.out.format(
-              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
-      System.out.format(
-              "Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
-      System.out.format(
-              "Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    queueFromStack.add(1);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    queueFromStack.add(2);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    queueFromStack.add(3);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    queueFromStack.add(4);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    queueFromStack.add(5);
+    System.out.format("Queue '%s'\n", queueFromStack);
+    System.out.format("Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack);
+    System.out.format("Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
+    System.out.format("Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
+    System.out.format("Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
+    System.out.format("Remove '%s' on Queue '%s'\n", queueFromStack.remove(), queueFromStack);
+    System.out.format("Peek '%s' on Queue '%s'\n", queueFromStack.peek(), queueFromStack);
   }
 
   @Test
   public void MyQueue_solution_1() {
     System.out.format("%s: \n", name.getMethodName());
     MyQueue<Integer> my_queue = new MyQueue<>();
-
     // Let's test our code against a "real" queue
     Queue<Integer> test_queue = new LinkedList<>();
-
     for (int i = 0; i < 100; i++) {
       int choice = AssortedMethods.randomIntInRange(0, 10);
       if (choice <= 5) { // enqueue
@@ -70,15 +59,14 @@ public class Q3_04_Queue_via_Stacks_Test {
         }
         System.out.println("Dequeued " + top1);
       }
-
       if (test_queue.size() == my_queue.size()) {
         if (test_queue.size() > 0 && !test_queue.peek().equals(my_queue.peek())) {
-            System.out.println(
-                    "******* FAILURE - DIFFERENT TOPS: "
-                            + test_queue.peek()
-                            + ", "
-                            + my_queue.peek()
-                            + " ******");
+          System.out.println(
+              "******* FAILURE - DIFFERENT TOPS: "
+                  + test_queue.peek()
+                  + ", "
+                  + my_queue.peek()
+                  + " ******");
         }
       } else {
         System.out.println("******* FAILURE - DIFFERENT SIZES ******");

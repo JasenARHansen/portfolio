@@ -3,33 +3,33 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_04_Parking_Lo
 import java.util.ArrayList;
 
 public abstract class Vehicle {
-    protected ArrayList<ParkingSpot> parkingSpots = new ArrayList<>();
-    protected String licensePlate;
-    protected int spotsNeeded;
-    protected VehicleSize size;
+  protected ArrayList<ParkingSpot> parkingSpots = new ArrayList<>();
+  protected String licensePlate;
+  protected int spotsNeeded;
+  protected VehicleSize size;
 
-    public int getSpotsNeeded() {
-        return spotsNeeded;
+  public int getSpotsNeeded() {
+    return spotsNeeded;
+  }
+
+  public VehicleSize getSize() {
+    return size;
+  }
+
+  public void parkInSpot(ParkingSpot spot) {
+    /* Park vehicle in this spot (among others, potentially). */
+    parkingSpots.add(spot);
+  }
+
+  public void clearSpots() {
+    /* Remove car from spot, and notify spot that it's gone. */
+    for (ParkingSpot parkingSpot : parkingSpots) {
+      parkingSpot.removeVehicle();
     }
+    parkingSpots.clear();
+  }
 
-    public VehicleSize getSize() {
-        return size;
-    }
+  public abstract boolean canFitInSpot(ParkingSpot spot);
 
-    /* Park vehicle in this spot (among others, potentially) */
-    public void parkInSpot(ParkingSpot spot) {
-        parkingSpots.add(spot);
-    }
-
-    /* Remove car from spot, and notify spot that it's gone */
-    public void clearSpots() {
-        for (ParkingSpot parkingSpot : parkingSpots) {
-            parkingSpot.removeVehicle();
-        }
-        parkingSpots.clear();
-    }
-
-    public abstract boolean canFitInSpot(ParkingSpot spot);
-
-    public abstract void print();
+  public abstract void print();
 }

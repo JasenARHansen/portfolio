@@ -1,28 +1,24 @@
 #include <iostream>
 using namespace std;
-
 struct node {
-	node * next;
+	node   next;
 	int data;
 };
-
 node* nthToLast(node* head, int k, int& i) {
 	if (head == NULL) {
 		return NULL;
 	}
-	node * nd = nthToLast(head->next, k, i);
+	node   nd = nthToLast(head->next, k, i);
 	i = i + 1;
 	if (i == k) {
 		return head;
 	}
 	return nd;
 }
-
 node* nthToLast(node* head, int k) {
 	int i = 0;
 	return nthToLast(head, k, i);
 }
-
 node* createList(int count) {
 	node* head = new node();
 	head->data = 0;
@@ -35,14 +31,12 @@ node* createList(int count) {
 	}
 	return head;
 }
-
 void printList(node* head) {
 	while (head != NULL) {
 		printf("%d", head->data);
 		head = head->next;
 	}
 }
-
 int main() {
 	int count = 5;
 	node* head = createList(count);

@@ -6,30 +6,25 @@ import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 public class Question {
-    public static void main(String[] args) {
-        TreeMap<Integer, String> treeMap = new TreeMap<>();
-        HashMap<Integer, String> hashMap = new HashMap<>();
-        LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>();
+  public static void main(String[] args) {
+    TreeMap<Integer, String> treeMap = new TreeMap<>();
+    HashMap<Integer, String> hashMap = new HashMap<>();
+    LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>();
+    System.out.println("\nHashMap - Arbitrary Order:");
+    insertAndPrint(hashMap);
+    System.out.println("\nLinkedHashMap - Insertion Order:");
+    insertAndPrint(linkedHashMap);
+    System.out.println("\nTreeMap - Natural Order:");
+    insertAndPrint(treeMap);
+  }
 
-        System.out.println("\nHashMap - Arbitrary Order:");
-        insertAndPrint(hashMap);
-
-        System.out.println("\nLinkedHashMap - Insertion Order:");
-        insertAndPrint(linkedHashMap);
-
-        System.out.println("\nTreeMap - Natural Order:");
-        insertAndPrint(treeMap);
+  public static void insertAndPrint(AbstractMap<Integer, String> map) {
+    int[] array = {1, -1, 0};
+    for (int x : array) {
+      map.put(x, Integer.toString(x));
     }
-
-    public static void insertAndPrint(AbstractMap<Integer, String> map) {
-        int[] array = {1, -1, 0};
-        for (int x : array) {
-            map.put(x, Integer.toString(x));
-        }
-
-        for (int k : map.keySet()) {
-            System.out.print(k + ", ");
-        }
+    for (int k : map.keySet()) {
+      System.out.print(k + ", ");
     }
-
+  }
 }

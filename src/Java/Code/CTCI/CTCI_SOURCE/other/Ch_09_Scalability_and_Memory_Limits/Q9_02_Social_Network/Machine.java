@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_09_Scalability_and_Memory_Limits.Q9_
 
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class Machine {
   public HashMap<Integer, Person> persons = new HashMap<>();
   public int machineID;

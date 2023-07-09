@@ -10,11 +10,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_06_Conversion_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   public static int bitSwapRequired_solution_1(int a, int b) {
     int count = 0;
@@ -29,7 +28,6 @@ public class Q5_06_Conversion_Test {
   public static int bitSwapRequired(int a, int b) {
     int count = 0;
     int c = a ^ b;
-
     System.out.println("****");
     System.out.println(c + ": " + AssortedMethods.toFullBinaryString(c));
     while (c != 0) {
@@ -47,18 +45,17 @@ public class Q5_06_Conversion_Test {
     System.out.format("%s: \n", name.getMethodName());
     int left = 512132;
     ArrayList<Integer> values =
-            new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
+        new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
     for (Integer value : values) {
-
       int conversionCount = BitShift.bitSwapRequired(left, value);
       System.out.format(
-              "%s: It takes %d bit flips to convert %d (%s) to %d (%s)\n",
-              name.getMethodName(),
-              conversionCount,
-              left,
-              Integer.toBinaryString(left),
-              value,
-              Integer.toBinaryString(value));
+          "%s: It takes %d bit flips to convert %d (%s) to %d (%s)\n",
+          name.getMethodName(),
+          conversionCount,
+          left,
+          Integer.toBinaryString(left),
+          value,
+          Integer.toBinaryString(value));
     }
   }
 

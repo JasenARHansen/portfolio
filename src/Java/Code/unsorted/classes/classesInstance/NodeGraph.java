@@ -1,8 +1,8 @@
 package Java.Code.unsorted.classes.classesInstance;
 
-import java.util.*;
-
 import static org.junit.Assert.assertNotNull;
+
+import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<NodeGraph<X, Y, Z>> {
@@ -23,7 +23,6 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
   public void addAdjacent(Object... values) {
     X id = null;
     Object edgeData = null;
-
     if (values.length > 0) {
       if (values[0] instanceof NodeGraph<?, ?, ?>) {
         id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
@@ -31,16 +30,18 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
         id = (X) values[0];
       }
     }
-
     if (values.length > 1) {
       edgeData = values[1];
     }
-
     this.adjacent.put(id, new Edge<>(id, edgeData));
   }
 
   public X getId() {
     return this.id;
+  }
+
+  public void setId(Object id) {
+    this.id = (X) id;
   }
 
   @Override
@@ -60,32 +61,24 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
     this.data = (Y) data;
   }
 
-  public void setId(Object id) {
-    this.id = (X) id;
-  }
-
   public boolean isAdjacent(Object value) {
     Object id;
-
     if (value instanceof NodeGraph<?, ?, ?>) {
       id = ((NodeGraph<?, ?, ?>) value).getId();
     } else {
       id = value;
     }
-
     //noinspection SuspiciousMethodCalls
     return this.adjacent.containsKey(id);
   }
 
   public void removeAdjacent(Object value) {
     Object id;
-
     if (value instanceof NodeGraph<?, ?, ?>) {
       id = ((NodeGraph<?, ?, ?>) value).getId();
     } else {
       id = value;
     }
-
     //noinspection SuspiciousMethodCalls
     this.adjacent.remove(id);
   }
@@ -93,7 +86,6 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
   public void setAdjacent(Object... values) {
     X id = null;
     Object data = null;
-
     if (values.length > 0) {
       if (values[0] instanceof NodeGraph<?, ?, ?>) {
         id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
@@ -101,7 +93,6 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
         id = (X) values[0];
       }
     }
-
     if (values.length > 1) {
       if (values[1] instanceof NodeGraph<?, ?, ?>) {
         data = ((NodeGraph<?, ?, ?>) values[1]).getId();
@@ -123,14 +114,14 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
     } else {
       if (data == null) {
         return String.format(
-                "(id: %s, data: null, adjacent to: %s)",
-                this.id.toString(), getAdjacencyList().toString().replace("[", "").replace("]", ""));
+            "(id: %s, data: null, adjacent to: %s)",
+            this.id.toString(), getAdjacencyList().toString().replace("[", "").replace("]", ""));
       } else {
         return String.format(
-                "(id: %s, data: %s, adjacent to: %s)",
-                this.id.toString(),
-                this.data.toString(),
-                getAdjacencyList().toString().replace("[", "").replace("]", ""));
+            "(id: %s, data: %s, adjacent to: %s)",
+            this.id.toString(),
+            this.data.toString(),
+            getAdjacencyList().toString().replace("[", "").replace("]", ""));
       }
     }
   }

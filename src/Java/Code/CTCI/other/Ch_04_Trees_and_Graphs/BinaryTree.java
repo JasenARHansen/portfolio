@@ -3,8 +3,9 @@ package Java.Code.CTCI.other.Ch_04_Trees_and_Graphs;
 import Java.Code.unsorted.classes.classesInstance.Tuple;
 import java.util.*;
 
+@SuppressWarnings("DuplicatedCode")
 public class BinaryTree<T extends Comparable<T>> {
-  /** Root node of tree. */
+  /* Root node of tree. */
   private BinaryTreeNode<T> root;
   // Default constructor for empty tree
   public BinaryTree() {
@@ -77,7 +78,7 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   public void clear() {
-    /** removes root reference for garbage collection. */
+    /* removes root reference for garbage collection. */
     root = null;
   }
 
@@ -121,7 +122,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
   @SuppressWarnings("unused")
   public int countNodes() {
-    /** Entry point for node count. Uses forwarding logic. */
+    /* Entry point for node count. Uses forwarding logic. */
     return countNodes(root);
   }
 
@@ -177,9 +178,7 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   public T getRandomNode() {
-    /**
-     * This is not great. I do not have a size designed and it is difficult to refactor just yet.
-     */
+    /* This is not great. I do not have a size designed, and it is difficult to refactor just yet. */
     ArrayList<T> left = this.buildOrder(this.root);
     Random random = new Random();
     int i = random.nextInt(left.size());

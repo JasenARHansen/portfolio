@@ -13,7 +13,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DesignSerializeAndDeserializeBinaryTreeTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -31,14 +30,12 @@ public class DesignSerializeAndDeserializeBinaryTreeTests {
     Node N_100 = new Node(100);
     Node N_200 = new Node(200);
     Node N_350 = new Node(350);
-
     // Make tree
     N_100.left = N_50;
     N_100.right = N_200;
     N_50.left = N_25;
     N_50.right = N_75;
     N_200.right = N_350;
-
     System.out.format("%s:", name.getMethodName());
     String result = DesignSerializeAndDeserializeBinaryTree.serialize(N_100);
     System.out.format("%s: The tree serialized in '%s'.\n", name.getMethodName(), result);

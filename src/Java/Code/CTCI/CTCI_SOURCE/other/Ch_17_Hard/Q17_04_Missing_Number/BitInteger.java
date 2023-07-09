@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_04_Missing_Number;
 
+@SuppressWarnings({"DanglingJavadoc", "unused"})
 public class BitInteger {
   public static int INTEGER_SIZE;
   private final boolean[] bits;
@@ -9,7 +10,7 @@ public class BitInteger {
   }
 
   public BitInteger(int value) {
-    /** Creates a number equal to given value. Takes time proportional to INTEGER_SIZE. */
+    /* Creates a number equal to given value. Takes time proportional to INTEGER_SIZE. */
     bits = new boolean[INTEGER_SIZE];
     for (int j = 0; j < INTEGER_SIZE; j++) {
       bits[INTEGER_SIZE - 1 - j] = ((value >> j) & 1) == 1;
@@ -17,12 +18,12 @@ public class BitInteger {
   }
 
   public void set(int k, char bitValue) {
-    /** Sets k-th most-significant bit. */
+    /* Sets k-th most-significant bit. */
     bits[k] = bitValue != '0';
   }
 
   public void set(int k, boolean bitValue) {
-    /** Sets k-th most-significant bit. */
+    /* Sets k-th most-significant bit. */
     bits[k] = bitValue;
   }
 
@@ -35,13 +36,13 @@ public class BitInteger {
   }
 
   public int fetch(int k) {
-    /** Returns k-th most-significant bit. */
+    /* Returns k-th most-significant bit. */
     if (bits[k]) return 1;
     else return 0;
   }
 
   public void set(int k, int bitValue) {
-    /** Sets k-th most-significant bit. */
+    /* Sets k-th most-significant bit. */
     bits[k] = bitValue != 0;
   }
 

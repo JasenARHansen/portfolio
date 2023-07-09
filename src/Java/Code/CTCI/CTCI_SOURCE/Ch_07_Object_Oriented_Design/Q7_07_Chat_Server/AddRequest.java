@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_07_Chat_Serve
 
 import java.util.Date;
 
+@SuppressWarnings("unused")
 public class AddRequest {
   private final User fromUser;
   private final User toUser;

@@ -117,6 +117,7 @@ public class Checkers {
     board[the_move[0]][the_move[1]] = null;
   }
 
+  @SuppressWarnings("ConfusingMainMethod")
   public void main(String[] args) {
     setup(8, 8, 1);
     printBoard();

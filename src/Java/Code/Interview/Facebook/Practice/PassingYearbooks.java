@@ -1,9 +1,8 @@
 package Java.Code.Interview.Facebook.Practice;
-
 public class PassingYearbooks {
-
-    public static void getDescription() {
-        System.out.println("""
+  public static void getDescription() {
+    System.out.println(
+        """
                 Passing Yearbooks
                 There are n students, numbered from 1 to n, each with their own yearbook.
                 They would like to pass their yearbooks around and get them signed by other students.
@@ -45,19 +44,20 @@ public class PassingYearbooks {
                  Pass 2:
                   Both students now hold their own yearbook, so the process is complete.
                  Each student received 1 signature.
-                """.indent(2));
-    }
+                """
+            .indent(2));
+  }
 
-    public static int[] findSignatureCounts(int[] arr) {
-        int[] signatures = new int[arr.length];
-        for (int index = 0; index < arr.length; index++) {
-            signatures[index]++;
-            int nextStudent = arr[index] - 1;
-            while (nextStudent != index) {
-                signatures[index]++;
-                nextStudent = arr[nextStudent] - 1;
-            }
-        }
-        return signatures;
+  public static int[] findSignatureCounts(int[] arr) {
+    int[] signatures = new int[arr.length];
+    for (int index = 0; index < arr.length; index++) {
+      signatures[index]++;
+      int nextStudent = arr[index] - 1;
+      while (nextStudent != index) {
+        signatures[index]++;
+        nextStudent = arr[nextStudent] - 1;
+      }
     }
+    return signatures;
+  }
 }

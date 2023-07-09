@@ -1,10 +1,13 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.Q15_05_Call_In_Order;
+
 import java.util.concurrent.Semaphore;
 
+@SuppressWarnings("unused")
 public class Foo {
   public int pauseTime = 1000;
   public Semaphore sem1;
   public Semaphore sem2;
+
   public Foo() {
     try {
       sem1 = new Semaphore(1);

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class LockFactory {
   private static LockFactory instance;
   private final LockNode[] locks;

@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "unused"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DataStructureTest {
   @Rule public TestName name = new TestName();
@@ -77,6 +77,7 @@ public class DataStructureTest {
     testValue = HeightBalancedBinarySearchTree.dataBreadth();
     assertEquals("Breadth first output: 3 1 7 0 2 8 4 6 9", testValue, "3 1 7 0 2 6 8 4 9");
   }
+
   //  @Test
   public void BinarySearchTreeHeightBalanced_100() {
     BinarySearchTreeHeightBalanced<Integer> HeightBalancedBinarySearchTree =

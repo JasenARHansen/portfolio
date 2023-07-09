@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import javax.swing.*;
 
+@SuppressWarnings({"SameParameterValue", "unused", "CommentedOutCode"})
 public class GoogleBitMap {
   public static void main(String[] args) throws Exception {
     // https://stackoverflow.com/questions/28154236/create-a-bitmap-file-from-random-data
@@ -84,8 +85,7 @@ public class GoogleBitMap {
 
   private static void floodFill(
       boolean color, int x, int y, int scale, JLabel jLabel, BufferedImage image) {
-    /**
-     * https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit In Flood
+    /*  https://docs.google.com/document/d/1l_59pIyArA0Mr3k6dJptyoatFXZhqY9fIMV7_WsT828/edit In Flood
      * Fill, you start with a bitmap where pixels are either black or white. The user selects a
      * point on the bitmap and a color, and the program flood-fills the bitmap outward from that
      * point (up, down, left, right) until a boundary is encountered. A boundary is a cell of the
@@ -158,6 +158,7 @@ public class GoogleBitMap {
     }
   }
 
+  @SuppressWarnings("ClassCanBeRecord")
   static class GoogleTuple<X extends Comparable<X>, Y extends Comparable<Y>>
       implements Comparable<GoogleTuple<X, Y>> {
     private final X leftData;

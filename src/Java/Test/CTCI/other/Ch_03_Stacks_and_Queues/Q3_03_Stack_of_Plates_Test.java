@@ -9,17 +9,15 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_03_Stack_of_Plates_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void StackOfPlates() {
     System.out.format("%s: \n", name.getMethodName());
     StackOfPlates<Integer> stackOfPlates = new StackOfPlates<>();
-
     stackOfPlates.push(0);
     System.out.format("Stack '%s'\n", stackOfPlates);
     stackOfPlates.push(1);
@@ -35,12 +33,9 @@ public class Q3_03_Stack_of_Plates_Test {
     System.out.format("Peek '%s' on Stack '%s'\n", stackOfPlates.peek(), stackOfPlates);
     System.out.format("Pop '%s' on Stack '%s'\n", stackOfPlates.pop(), stackOfPlates);
     try {
-      System.out.format(
-              "Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
-      System.out.format(
-              "Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
-      System.out.format(
-              "Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
+      System.out.format("Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
+      System.out.format("Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
+      System.out.format("Pop at 0 '%s' on Stack '%s'\n", stackOfPlates.popAt(0), stackOfPlates);
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -56,7 +51,6 @@ public class Q3_03_Stack_of_Plates_Test {
     }
     int index = 1;
     System.out.format("%s: Popped %d at index %d\n", name.getMethodName(), set.popAt(index), index);
-
     for (int i = 0; i < 35; i++) {
       System.out.println("Popped " + set.pop());
     }

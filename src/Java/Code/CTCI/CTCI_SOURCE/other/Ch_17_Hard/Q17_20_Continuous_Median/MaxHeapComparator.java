@@ -2,7 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_20_Continuous_Median;
 import java.util.Comparator;
 
 public class MaxHeapComparator implements Comparator<Integer> {
-  /** Comparator that sorts integers from highest to lowest. */
+  /* Comparator that sorts integers from highest to lowest. */
   @Override
   public int compare(Integer o1, Integer o2) {
     // TODO Auto-generated method stub

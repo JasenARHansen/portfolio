@@ -9,20 +9,17 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_03_Flip_Bit_to_Win_Test {
-
   public static int SEQUENCE_LENGTH = 32;
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   public static int longestSequence_solution_1(int n) {
     int maxSeq = 0;
-
     for (int i = 0; i < SEQUENCE_LENGTH; i++) {
       maxSeq = Math.max(maxSeq, longestSequenceOf1s(n, i));
     }
-
     return maxSeq;
   }
 
@@ -50,15 +47,13 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     return findLongestSequence(sequences);
   }
 
-  /* Return a list of the sizes of the sequences. The sequence starts
-   * off with the number of 0s (which might be 0) and then alternates
-   * with the counts of each value.*/
   public static ArrayList<Integer> getAlternatingSequences(int n) {
+    /* Return a list of the sizes of the sequences. The sequence starts
+    off with the number of 0s (which might be 0) and then alternates
+    with the counts of each value. */
     ArrayList<Integer> sequences = new ArrayList<>();
-
     int searchingFor = 0;
     int counter = 0;
-
     for (int i = 0; i < Integer.BYTES * 8; i++) {
       if ((n & 1) != searchingFor) {
         sequences.add(counter);
@@ -69,18 +64,15 @@ public class Q5_03_Flip_Bit_to_Win_Test {
       n >>>= 1;
     }
     sequences.add(counter);
-
     return sequences;
   }
 
   public static int findLongestSequence(ArrayList<Integer> seq) {
     int maxSeq = 1;
-
     for (int i = 0; i < seq.size(); i += 2) {
       int zerosSeq = seq.get(i);
       int onesSeqPrev = i - 1 >= 0 ? seq.get(i - 1) : 0;
       int onesSeqNext = i + 1 < seq.size() ? seq.get(i + 1) : 0;
-
       int thisSeq = 0;
       if (zerosSeq == 1) { // Can merge
         thisSeq = onesSeqNext + 1 + onesSeqPrev;
@@ -91,7 +83,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
       }
       maxSeq = Math.max(thisSeq, maxSeq);
     }
-
     return maxSeq;
   }
 
@@ -99,34 +90,30 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     int searchingFor = 0;
     int[] sequences = {0, 0, 0}; // Counts of last 3 sequences
     int maxSequence = 1;
-
     for (int i = 0; i < SEQUENCE_LENGTH; i++) {
       if ((n & 1) != searchingFor) {
         if (searchingFor == 1) { // End of 1s + 0s + 1s sequence
           maxSequence = Math.max(maxSequence, getMaxSequence(sequences));
         }
-
         searchingFor = n & 1; // Flip 1 to 0 or 0 to 1
         shift(sequences); // Shift sequences
       }
       sequences[0]++;
       n >>>= 1;
     }
-
-    /* Check final set of sequences */
+    /* Check final set of sequences. */
     if (searchingFor == 0) {
       shift(sequences);
     }
     int finalSequence = getMaxSequence(sequences);
     maxSequence = Math.max(finalSequence, maxSequence);
-
     return maxSequence;
   }
 
-  /* Given set of three sequences ordered as {0s, then 1s, then 0s},
-   * find max sequence that can be formed. */
   public static int getMaxSequence(int[] sequences) {
-    /* 1s, then 0s, then [old] ones */
+    /* Given set of three sequences ordered as {0s, then 1s, then 0s},
+    find max sequence that can be formed. */
+    /* 1s, then 0s, then [old] ones. */
     if (sequences[1] == 1) { // a single 0 -> merge sequences
       return sequences[0] + sequences[2] + 1;
     } else if (sequences[1] == 0) { // no 0s -> take one side
@@ -145,7 +132,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
   public static int flipBit(int a) {
     /* If all 1s, this is already the longest sequence. */
     if (~a == 0) return Integer.BYTES * 8;
-
     int currentLength = 0;
     int previousLength = 0;
     int maxLength = 1; // We can always have a sequence of at least one 1
@@ -170,8 +156,8 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     for (Integer value : values) {
       int result = BitShift.longestSequence(value);
       System.out.format(
-              "%s: The largest bit sequence in %s allowing a single bit skip %d\n",
-              name.getMethodName(), Integer.toBinaryString(value), result);
+          "%s: The largest bit sequence in %s allowing a single bit skip %d\n",
+          name.getMethodName(), Integer.toBinaryString(value), result);
     }
   }
 
@@ -180,7 +166,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     System.out.format("%s: \n", name.getMethodName());
     int original_number = Integer.MAX_VALUE;
     int new_number = longestSequence_solution_1(original_number);
-
     System.out.println(Integer.toBinaryString(original_number));
     System.out.println(new_number);
   }
@@ -190,7 +175,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     System.out.format("%s: \n", name.getMethodName());
     int original_number = 1775;
     int new_number = longestSequence_solution_2(original_number);
-
     System.out.println(Integer.toBinaryString(original_number));
     System.out.println(new_number);
   }
@@ -200,7 +184,6 @@ public class Q5_03_Flip_Bit_to_Win_Test {
     System.out.format("%s: \n", name.getMethodName());
     int original_number = Integer.MAX_VALUE;
     int new_number = longestSequence_solution_3(original_number);
-
     System.out.println(Integer.toBinaryString(original_number));
     System.out.println(new_number);
   }
@@ -209,7 +192,7 @@ public class Q5_03_Flip_Bit_to_Win_Test {
   public void longestSequence_solution_4() {
     System.out.format("%s: \n", name.getMethodName());
     int[][] cases = {
-            {-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1}, {1, 2}, {15, 5}, {1775, 8}
+      {-1, 32}, {Integer.MAX_VALUE, 32}, {-10, 31}, {0, 1}, {1, 2}, {15, 5}, {1775, 8}
     };
     for (int[] c : cases) {
       int x = flipBit(c[0]);

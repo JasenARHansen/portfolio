@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_13_Java.Introduction;
+
+@SuppressWarnings("unused")
 public class Introduction {
   public static void main(String[] args) {
     bar();

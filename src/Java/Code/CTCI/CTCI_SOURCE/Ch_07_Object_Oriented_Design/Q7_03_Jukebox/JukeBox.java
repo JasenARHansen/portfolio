@@ -1,6 +1,7 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_03_Jukebox;
 import java.util.Set;
 
+@SuppressWarnings({"unused", "SpellCheckingInspection", "FieldCanBeLocal"})
 public class JukeBox {
   private final CDPlayer cdPlayer;
   private final Set<CD> cdCollection;

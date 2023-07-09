@@ -3,7 +3,6 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
 public class Q2_05_Sum_Lists {
-
   public static LinkedListNode sumLists_solution_1(LinkedListNode l1, LinkedListNode l2) {
     return sumLists_solution_1(l1, l2, 0);
   }
@@ -44,15 +43,13 @@ public class Q2_05_Sum_Lists {
     }
   }
 
-  public static void main(String[] args) {
-  }
+  public static void main(String[] args) {}
 
   private static LinkedListNode sumLists_solution_1(
-          LinkedListNode l1, LinkedListNode l2, int carry) {
+      LinkedListNode l1, LinkedListNode l2, int carry) {
     if (l1 == null && l2 == null && carry == 0) {
       return null;
     }
-
     LinkedListNode result = new LinkedListNode();
     int value = carry;
     if (l1 != null) {
@@ -64,8 +61,8 @@ public class Q2_05_Sum_Lists {
     result.data = value % 10;
     if (l1 != null || l2 != null) {
       LinkedListNode more =
-              sumLists_solution_1(
-                      l1 == null ? null : l1.next, l2 == null ? null : l2.next, value >= 10 ? 1 : 0);
+          sumLists_solution_1(
+              l1 == null ? null : l1.next, l2 == null ? null : l2.next, value >= 10 ? 1 : 0);
       result.setNext(more);
     }
     return result;

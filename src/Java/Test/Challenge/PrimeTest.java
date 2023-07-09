@@ -13,7 +13,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings({"ConstantValue", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrimeTest {
-
   @Rule public TestName name = new TestName();
 
   @Test

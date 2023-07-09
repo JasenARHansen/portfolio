@@ -14,11 +14,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_02_Return_Kt_To_Last_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void returnKthToLast() {
@@ -39,7 +38,7 @@ public class Q2_02_Return_Kt_To_Last_Test {
     NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
     assertNotNull(result);
     System.out.format(
-            "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
+        "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
     assertEquals(9, (int) result.getData());
   }
 

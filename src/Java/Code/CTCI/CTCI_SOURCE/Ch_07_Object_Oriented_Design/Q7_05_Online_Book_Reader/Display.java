@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_05_Online_Book_Reader;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class Display {
   private Book activeBook;
   private User activeUser;

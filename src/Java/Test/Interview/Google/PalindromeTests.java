@@ -12,7 +12,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalindromeTests {
-
   @Rule public TestName name = new TestName();
 
   public void print_palindrome(String name, String value, boolean result) {

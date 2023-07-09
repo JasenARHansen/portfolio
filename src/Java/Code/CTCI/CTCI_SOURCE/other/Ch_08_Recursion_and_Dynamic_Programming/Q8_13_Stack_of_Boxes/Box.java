@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming.Q8_13_Stack_of_Boxes;
+
+@SuppressWarnings("unused")
 public class Box {
   public int width;
   public int height;

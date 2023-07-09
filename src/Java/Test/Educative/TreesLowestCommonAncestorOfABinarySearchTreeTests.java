@@ -11,10 +11,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("WriteOnlyObject")
+@SuppressWarnings({"DuplicatedCode", "WriteOnlyObject"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -28,7 +27,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     TreeNode N_7 = new TreeNode(7);
     TreeNode N_8 = new TreeNode(8);
     TreeNode N_9 = new TreeNode(9);
-
     // Make tree
     N_6.left = N_2;
     N_6.right = N_8;
@@ -38,7 +36,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_4.right = N_5;
     N_8.left = N_7;
     N_8.right = N_9;
-
     TreeNode result =
         TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_8);
     System.out.format(
@@ -58,7 +55,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     TreeNode N_7 = new TreeNode(7);
     TreeNode N_8 = new TreeNode(8);
     TreeNode N_9 = new TreeNode(9);
-
     // Make tree
     N_6.left = N_2;
     N_6.right = N_8;
@@ -68,7 +64,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_4.right = N_5;
     N_8.left = N_7;
     N_8.right = N_9;
-
     TreeNode result =
         TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_2, N_4);
     System.out.format(
@@ -81,10 +76,8 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
   public void level_order_traversal_3() {
     TreeNode N_1 = new TreeNode(1);
     TreeNode N_2 = new TreeNode(2);
-
     // Make tree
     N_2.left = N_1;
-
     TreeNode result =
         TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_2, N_1);
     System.out.format(
@@ -104,7 +97,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     TreeNode N_7 = new TreeNode(7);
     TreeNode N_8 = new TreeNode(8);
     TreeNode N_9 = new TreeNode(9);
-
     // Make tree
     N_6.left = N_2;
     N_6.right = N_8;
@@ -114,7 +106,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_4.right = N_5;
     N_8.left = N_7;
     N_8.right = N_9;
-
     TreeNode result =
         TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_6, N_5, N_0);
     System.out.format(
@@ -134,7 +125,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     TreeNode N_7 = new TreeNode(7);
     TreeNode N_8 = new TreeNode(8);
     TreeNode N_9 = new TreeNode(9);
-
     // Make tree
     N_6.left = N_2;
     N_6.right = N_8;
@@ -144,7 +134,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTreeTests {
     N_4.right = N_5;
     N_8.left = N_7;
     N_8.right = N_9;
-
     TreeNode result =
         TreesLowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(N_2, N_5, N_9);
     System.out.format(

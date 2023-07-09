@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Introduction;
+
+@SuppressWarnings("UnusedAssignment")
 public class Ex_14 {
   public static void main(String[] args) {
     int[] array = {2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -14,7 +16,7 @@ public class Ex_14 {
 
   public static boolean isPrime(int n) {
     for (int x = 2; x * x <= n; x++) {
-          return n % x != 0;
+      return n % x != 0;
     }
     return true;
   }

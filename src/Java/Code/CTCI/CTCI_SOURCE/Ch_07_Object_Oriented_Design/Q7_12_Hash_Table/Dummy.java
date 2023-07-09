@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_12_Hash_Table;
 
+@SuppressWarnings("unused")
 public class Dummy {
   private final String name;
   private final int age;

@@ -1,12 +1,10 @@
 package Java.Test.unsorted;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import org.junit.Test;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "CommentedOutCode", "DataFlowIssue"})
 public class MyTest {
-
   @Test
   public void test1() {
     System.out.println("Test 1");
@@ -28,7 +26,7 @@ public class MyTest {
   private int[] mergeAndSort(int[]... sourceArrays) {
     List<Integer> merged = new ArrayList<>();
     for (int[] array : sourceArrays) {
-      merged.addAll(Arrays.stream(array).boxed().collect(Collectors.toList()));
+      merged.addAll(Arrays.stream(array).boxed().toList());
     }
     int[] returnArray = new int[merged.size()];
     Iterator<Integer> iterator = merged.iterator();
@@ -43,8 +41,8 @@ public class MyTest {
     if ((element < 1) || (element > (array1.length + array2.length))) {
       return -1;
     }
-    // Arrays.sort(array1);/* To pre-sort the contents of the Array */
-    // Arrays.sort(array2);/* To pre-sort the contents of the Array */
+    // Arrays.sort(array1);/* To pre-sort the contents of the Array. */
+    // Arrays.sort(array2);/* To pre-sort the contents of the Array. */
     int value = -1;
     int counter = 0;
     int index1 = 0;
@@ -161,8 +159,8 @@ public class MyTest {
   private int searchComplex(int element, int[]... sourceArrays) {
     int totalCount = 0;
     for (int[] array : sourceArrays) {
-      Arrays.sort(array); /* To pre-sort the contents of the Array */
-      totalCount += array.length; /* Ignoring the NPE for simplicity */
+      Arrays.sort(array); /* To pre-sort the contents of the Array. */
+      totalCount += array.length; /* Ignoring the NPE for simplicity. */
     }
     if ((element < 1) || (element > totalCount)) {
       return Integer.MIN_VALUE;
@@ -215,15 +213,12 @@ public class MyTest {
     Scanner scan = new Scanner(System.in);
     float AssociativityThreshold = scan.nextFloat();
     int associationCount = scan.nextInt();
-
     List<AssociativityNode> associativityNodeList = new ArrayList<>();
-
     for (int i = 0; i < associationCount; i++) {
       String firstItem = scan.next();
       String secondItem = scan.next();
       float itemAssociativity = scan.nextFloat();
-
-      /* Create all AssociativityNodes */
+      /* Create all AssociativityNodes. */
       boolean found = false;
       for (AssociativityNode associativityNode : associativityNodeList) {
         if (associativityNode.getName().equals(firstItem)) {
@@ -249,12 +244,11 @@ public class MyTest {
         if (itemAssociativity > AssociativityThreshold) {
           associativityNode.addAssociation(secondItem);
         }
-        /* Add to associativityNodeList */
+        /* Add to associativityNodeList. */
         associativityNodeList.add(associativityNode);
       }
     }
-
-    /* Create proper links in associativityNodeList */
+    /* Create proper links in associativityNodeList. */
     for (AssociativityNode associativityNode : associativityNodeList) {
       for (int i = 0; i < associativityNode.getAssociationCount(); i++) {
         for (AssociativityNode associativityNodeInner : associativityNodeList) {
@@ -268,8 +262,7 @@ public class MyTest {
         }
       }
     }
-
-    /* Determine AssociativityNode with the greatest associativity */
+    /* Determine AssociativityNode with the greatest associativity. */
     int associativity = 0;
     List<String> associativityHeadList = new ArrayList<>();
     for (AssociativityNode associativityNode : associativityNodeList) {
@@ -283,7 +276,6 @@ public class MyTest {
       }
     }
     Collections.sort(associativityHeadList);
-
     System.out.println(associativityHeadList.get(0));
     scan.close();
   }
@@ -308,16 +300,16 @@ public class MyTest {
         }
         loopOut.add(sum);
       }
-      String output = "";
+      StringBuilder output = new StringBuilder();
       for (int value : loopOut) {
-        output += value + " ";
+        output.append(value).append(" ");
       }
-
-      System.out.println(output.trim());
+      System.out.println(output.toString().trim());
     }
     scan.close();
   }
 
+  @SuppressWarnings("InnerClassMayBeStatic")
   public class AssociativityNode {
     private final List<AssociativityNode> associations;
     private final String name;

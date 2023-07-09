@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PowersOfBase {
-
   public static void main(String[] argv) {
     getDescription();
   }

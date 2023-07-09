@@ -1,16 +1,15 @@
 package Java.Test.HackerRank;
+import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.HackerRank;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"SpellCheckingInspection", "MismatchedQueryAndUpdateOfCollection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HackerRankTest {
-
   @Test
   public void http() throws Exception {
     List<String> test = HackerRank.http("Spiderman");
@@ -24,17 +23,36 @@ public class HackerRankTest {
   }
 
   @Test
-  public void isSubset() {
+  public void isSubset_1() {
+    String [] master  = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
+    String [] secondary  = {"John", "New York", "Rajeev", "Bengaluru"};
+    String result = HackerRank.isSubset(  master, secondary);
+    System.out.println(result);
+    assertEquals("Yes", result);
+  }
 
-    Map<String, String> myMap1 = new HashMap<>();
-    myMap1.put("John", "New York");
-    myMap1.put("Rajeev", "Bengaluru");
-    myMap1.put("Steve", "London");
-    Map<String, String> myMap2 = new HashMap<>();
-    myMap2.put("John", "New York");
-    myMap2.put("Steve", "London");
+  @Test
+  public void isSubset_2() {
+    String [] master  = {"John", "New York", "Rajeev", "Bengaluru"};
+    String [] secondary  = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
+    String result = HackerRank.isSubset(  master, secondary);
+    System.out.println(result);
+    assertEquals("No", result);
+  }
 
-    //		String test = code.HackerRank.isSubset(  myMap1, myMap2);
-    //		System.out.println(test);
+  @Test
+  public void isBalanced_1() {
+    String value = "({[Test]})";
+    String result = HackerRank.isBalanced(value);
+    System.out.println(result);
+    assertEquals("Yes", result);
+  }
+
+  @Test
+  public void isBalanced_2() {
+    String value = "({[Test)]}";
+    String result = HackerRank.isBalanced(value);
+    System.out.println(result);
+    assertEquals("No", result);;
   }
 }

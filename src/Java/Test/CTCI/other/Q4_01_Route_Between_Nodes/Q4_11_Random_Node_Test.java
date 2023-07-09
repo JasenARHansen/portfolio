@@ -8,16 +8,14 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_11_Random_Node_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void getRandomNode() {
     System.out.format("%s: \n", name.getMethodName());
-
     int[] counts = new int[10];
     BinaryTree<Integer> leftTree = new BinaryTree<>();
     leftTree.insert(0);
@@ -30,7 +28,6 @@ public class Q4_11_Random_Node_Test {
     leftTree.insert(7);
     leftTree.insert(8);
     leftTree.insert(9);
-
     for (int i = 0; i < 1000000; i++) {
       int d = leftTree.getRandomNode();
       counts[d]++;
@@ -53,7 +50,6 @@ public class Q4_11_Random_Node_Test {
       int d = tree.getRandomNode().data;
       counts[d]++;
     }
-
     for (int i = 0; i < counts.length; i++) {
       System.out.println(i + ": " + counts[i]);
     }

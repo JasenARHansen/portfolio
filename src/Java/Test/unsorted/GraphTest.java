@@ -1,4 +1,5 @@
 package Java.Test.unsorted;
+
 import Java.Code.unsorted.classes.classesInstance.Graph;
 import Java.Code.unsorted.classes.classesInstance.GraphAdjacency;
 import org.junit.FixMethodOrder;
@@ -10,6 +11,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GraphTest {
   @Rule public TestName name = new TestName();
+
   @Test
   public void graph_Int() {
     Graph<Integer, String, Integer> graph = new Graph<>();

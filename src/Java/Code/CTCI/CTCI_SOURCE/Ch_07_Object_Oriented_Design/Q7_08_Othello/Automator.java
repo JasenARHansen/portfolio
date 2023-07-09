@@ -4,6 +4,7 @@ import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.ArrayList;
 
 /* A helper class to automate this game. This is just used for testing purposes. */
+@SuppressWarnings({"unused", "SuspiciousListRemoveInLoop"})
 public class Automator {
   private static Automator instance;
   public ArrayList<Location> remainingMoves = new ArrayList<>();

@@ -16,7 +16,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CodeChallengeTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -41,7 +40,6 @@ public class CodeChallengeTests {
     System.out.format("Test: %s\n", name.getMethodName());
     int[] array1 = {1, 2, 3, 4, 5, 6};
     int[] array2 = {3, 6, 9};
-
     List<Integer> value = CodeChallenge.findCommonComplex(array1, array2);
     System.out.println(value);
   }
@@ -51,7 +49,6 @@ public class CodeChallengeTests {
     System.out.format("Test: %s\n", name.getMethodName());
     int[] array1 = {1, 2, 3, 3, 3, 3, 4, 5, 6};
     int[] array2 = {3, 3, 3, 6, 9};
-
     List<Integer> value = CodeChallenge.findCommonComplex(array1, array2);
     System.out.println(value);
   }
@@ -64,7 +61,6 @@ public class CodeChallengeTests {
     int[] array3 = {3, 6};
     int[] array4 = {1, 2, 3, 4, 6, 11};
     int[] array5 = {2, 3, 4, 4, 5, 6, 9};
-
     List<Integer> value = CodeChallenge.findCommonComplex(array1, array2, array3, array4, array5);
     System.out.println(value);
   }
@@ -75,7 +71,6 @@ public class CodeChallengeTests {
     int[] array1 = {2, 6, 9, 11, 13, 17};
     int[] array2 = {3, 6, 7, 10, 13, 18};
     int[] array3 = {4, 5, 6, 9, 11, 13};
-
     List<Integer> value = CodeChallenge.findCommonComplex(array1, array2, array3);
     System.out.println(value);
   }
@@ -84,7 +79,6 @@ public class CodeChallengeTests {
   public void findCommonComplex_5() {
     System.out.format("Test: %s\n", name.getMethodName());
     int[] array1 = {1, 2, 3, 4, 5, 6};
-
     List<Integer> value = CodeChallenge.findCommonComplex(array1);
     System.out.println(value);
   }
@@ -203,7 +197,6 @@ public class CodeChallengeTests {
   public void rectangleOverlap_1() {
     Rectangle rectangle1 = new Rectangle(2, 1, 5, 5);
     Rectangle rectangle2 = new Rectangle(3, 2, 5, 7);
-
     int test = CodeChallenge.rectangleOverlap(rectangle1, rectangle2);
     assertEquals("Rectangle overlap", test, 6);
   }
@@ -212,7 +205,6 @@ public class CodeChallengeTests {
   public void rectangleOverlap_2() {
     Rectangle rectangle1 = new Rectangle(5, 5, 2, 1);
     Rectangle rectangle2 = new Rectangle(5, 7, 3, 2);
-
     int test = CodeChallenge.rectangleOverlap(rectangle1, rectangle2);
     assertEquals("Rectangle overlap", test, 0);
   }
@@ -221,7 +213,6 @@ public class CodeChallengeTests {
   public void rectangleOverlap_3() {
     Rectangle rectangle1 = new Rectangle(0, 0, 5, 5);
     Rectangle rectangle2 = new Rectangle(1, 1, 2, 2);
-
     int test = CodeChallenge.rectangleOverlap(rectangle1, rectangle2);
     assertEquals("Rectangle overlap", test, 1);
   }
@@ -230,7 +221,6 @@ public class CodeChallengeTests {
   public void rectangleOverlap_4() {
     Rectangle rectangle1 = new Rectangle(5, 5, 0, 0);
     Rectangle rectangle2 = new Rectangle(2, 2, 1, 1);
-
     int test = CodeChallenge.rectangleOverlap(rectangle1, rectangle2);
     assertEquals("Rectangle overlap", test, 0);
   }
@@ -282,7 +272,6 @@ public class CodeChallengeTests {
     values.add(new Tuple<>("Kelly", 23));
     values.add(new Tuple<>("William", 26));
     values.add(new Tuple<>("Christal", 33));
-
     System.out.println("Unsorted:");
     for (Tuple<String, Integer> value : values) {
       System.out.format("\t%s, %s\n", value.getLeftData(), value.getRightData());

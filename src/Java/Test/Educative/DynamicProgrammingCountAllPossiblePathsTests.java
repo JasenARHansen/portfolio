@@ -11,9 +11,13 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DynamicProgrammingCountAllPossiblePathsTests {
+  @Rule public TestName name = new TestName();
 
-  @Rule
-  public TestName name = new TestName();
+  @Test
+  public void DynamicProgrammingCountAllPossiblePaths() {
+    System.out.format("%s:", name.getMethodName());
+    DynamicProgrammingCountAllPossiblePaths.getDescription();
+  }
 
   @Test
   public void uniquePaths_1() {
@@ -22,8 +26,8 @@ public class DynamicProgrammingCountAllPossiblePathsTests {
     int n = 7;
     int result = DynamicProgrammingCountAllPossiblePaths.uniquePaths(m, n);
     System.out.format(
-            "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
-            name.getMethodName(), m, n, result);
+        "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
+        name.getMethodName(), m, n, result);
     assertEquals(expected, result);
   }
 
@@ -34,8 +38,8 @@ public class DynamicProgrammingCountAllPossiblePathsTests {
     int n = 2;
     int result = DynamicProgrammingCountAllPossiblePaths.uniquePaths(m, n);
     System.out.format(
-            "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
-            name.getMethodName(), m, n, result);
+        "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
+        name.getMethodName(), m, n, result);
     assertEquals(expected, result);
   }
 
@@ -46,8 +50,8 @@ public class DynamicProgrammingCountAllPossiblePathsTests {
     int n = 3;
     int result = DynamicProgrammingCountAllPossiblePaths.uniquePaths(m, n);
     System.out.format(
-            "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
-            name.getMethodName(), m, n, result);
+        "%s: Given the prices %d by %d matrix, there are %d unique paths.\n",
+        name.getMethodName(), m, n, result);
     assertEquals(expected, result);
   }
 }

@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.EmptyStackException;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused", "ConstantValue"})
 public class FixedMultiStack {
   private final int stackCapacity;
   private final int[] values;

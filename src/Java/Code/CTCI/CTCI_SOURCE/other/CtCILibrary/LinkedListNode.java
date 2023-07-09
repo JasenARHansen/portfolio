@@ -1,9 +1,12 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary;
+
+@SuppressWarnings("MethodDoesntCallSuperMethod")
 public class LinkedListNode {
   public LinkedListNode next;
   public LinkedListNode prev;
   public LinkedListNode last;
   public int data;
+
   public LinkedListNode(int d, LinkedListNode n, LinkedListNode p) {
     data = d;
     setNext(n);

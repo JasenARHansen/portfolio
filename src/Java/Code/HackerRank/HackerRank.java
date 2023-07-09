@@ -99,7 +99,7 @@ public class HackerRank {
 
   public static String isBalanced(String input) {
     // Complete the function isBalanced in the editor below. It must return
-    // a string: YES if the sequence is balanced or NO if it is not.
+    // a string: Yes if the sequence is balanced or NO if it is not.
     // isBalanced has the following parameter(s): s: a string of brackets
     // All chracters in the sequences ∈ { {, }, (, ), [, ] }.
     Stack<String> stackOfBrackets = new Stack<>();
@@ -109,40 +109,40 @@ public class HackerRank {
         case "{", "(", "[" -> stackOfBrackets.push(testString);
         case "}" -> {
           if (stackOfBrackets.isEmpty()) {
-            return "NO";
+            return "No";
           } else {
             String evalString = stackOfBrackets.pop();
             if (!evalString.equals("{")) {
-              return "NO";
+              return "No";
             }
           }
         }
         case ")" -> {
           if (stackOfBrackets.isEmpty()) {
-            return "NO";
+            return "No";
           } else {
             String evalString = stackOfBrackets.pop();
             if (!evalString.equals("(")) {
-              return "NO";
+              return "No";
             }
           }
         }
         case "]" -> {
           if (stackOfBrackets.isEmpty()) {
-            return "NO";
+            return "No";
           } else {
             String evalString = stackOfBrackets.pop();
             if (!evalString.equals("[")) {
-              return "NO";
+              return "No";
             }
           }
         }
       }
     }
     if (stackOfBrackets.isEmpty()) {
-      return "YES";
+      return "Yes";
     } else {
-      return "NO";
+      return "No";
     }
   }
 }

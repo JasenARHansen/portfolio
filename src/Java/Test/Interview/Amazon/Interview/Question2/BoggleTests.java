@@ -13,31 +13,30 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BoggleTests {
+  @Rule public TestName name = new TestName();
 
-    @Rule
-    public TestName name = new TestName();
+  @Test
+  public void Boggle() {
+    System.out.format("%s: ", name.getMethodName());
+    Boggle.getDescription();
+  }
 
-    @Test
-    public void Boggle() {
-        System.out.format("%s: ", name.getMethodName());
-        Boggle.getDescription();
-    }
+  @Test
+  public void constructor() {
+    System.out.format("%s: Boggle\n", name.getMethodName());
+    new Boggle();
+  }
 
-    @Test
-    public void constructor() {
-        System.out.format("%s: Boggle\n", name.getMethodName());
-        new Boggle();
-    }
-
-    @Test
-    public void game() {
-        String[] words = {"bog", "boggle", "boggled", "dog", "god", "lob", "bad", "dab", "bode", "abode", "cat", "rat"};
-        Trie dictionary = new Trie();
-        dictionary.insert(words);
-        Character[][] board = {{'a', 'b', 'c'}, {'d', 'o', 'g'}, {'e', 'l', 'g'}};
-        Set result = Boggle.getWords(dictionary, board);
-        System.out.format("%s: Words %s.\n", name.getMethodName(), result);
-        assertEquals(0, 0);
-    }
-
+  @Test
+  public void game() {
+    String[] words = {
+      "bog", "boggle", "boggled", "dog", "god", "lob", "bad", "dab", "bode", "abode", "cat", "rat"
+    };
+    Trie dictionary = new Trie();
+    dictionary.insert(words);
+    Character[][] board = {{'a', 'b', 'c'}, {'d', 'o', 'g'}, {'e', 'l', 'g'}};
+    Set result = Boggle.getWords(dictionary, board);
+    System.out.format("%s: Words %s.\n", name.getMethodName(), result);
+    assertEquals(0, 0);
+  }
 }

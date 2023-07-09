@@ -14,46 +14,44 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FulfillmentTests {
+  @Rule public TestName name = new TestName();
 
-    @Rule
-    public TestName name = new TestName();
+  @Test
+  public void Fulfillment() {
+    System.out.format("%s: ", name.getMethodName());
+    Fulfillment.getDescription();
+  }
 
-    @Test
-    public void Fulfillment() {
-        System.out.format("%s: ", name.getMethodName());
-        Fulfillment.getDescription();
-    }
+  @Test
+  public void isBalanced_1() {
+    List<Integer> expected = new ArrayList<>(Arrays.asList(4, 5));
+    List<Integer> start_original = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+    List<Integer> start = new ArrayList<>(start_original);
+    List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
+    System.out.format(
+        "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
+    assertEquals(expected, result);
+  }
 
-    @Test
-    public void isBalanced_1() {
-        List<Integer> expected = new ArrayList<>(Arrays.asList(4, 5));
-        List<Integer> start_original = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        List<Integer> start = new ArrayList<>(start_original);
-        List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
-        System.out.format(
-                "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
-        assertEquals(expected, result);
-    }
+  @Test
+  public void isBalanced_2() {
+    List<Integer> expected = new ArrayList<>(Arrays.asList(6, 7));
+    List<Integer> start_original = new ArrayList<>(Arrays.asList(3, 6, 7, 4, 5));
+    List<Integer> start = new ArrayList<>(start_original);
+    List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
+    System.out.format(
+        "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
+    assertEquals(expected, result);
+  }
 
-    @Test
-    public void isBalanced_2() {
-        List<Integer> expected = new ArrayList<>(Arrays.asList(6, 7));
-        List<Integer> start_original = new ArrayList<>(Arrays.asList(3, 6, 7, 4, 5));
-        List<Integer> start = new ArrayList<>(start_original);
-        List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
-        System.out.format(
-                "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void isBalanced_3() {
-        List<Integer> expected = new ArrayList<>(Arrays.asList(6, 7));
-        List<Integer> start_original = new ArrayList<>(Arrays.asList(3, 7, 5, 6, 2));
-        List<Integer> start = new ArrayList<>(start_original);
-        List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
-        System.out.format(
-                "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
-        assertEquals(expected, result);
-    }
+  @Test
+  public void isBalanced_3() {
+    List<Integer> expected = new ArrayList<>(Arrays.asList(6, 7));
+    List<Integer> start_original = new ArrayList<>(Arrays.asList(3, 7, 5, 6, 2));
+    List<Integer> start = new ArrayList<>(start_original);
+    List<Integer> result = Fulfillment.minimalHeaviestSetA(start);
+    System.out.format(
+        "%s: The subset A of '%s' is '%s'\n", name.getMethodName(), start_original, result);
+    assertEquals(expected, result);
+  }
 }

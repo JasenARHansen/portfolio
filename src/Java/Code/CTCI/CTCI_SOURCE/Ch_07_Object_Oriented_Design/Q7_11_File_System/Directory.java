@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_11_File_Syste
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class Directory extends Entry {
   protected ArrayList<Entry> contents;
 

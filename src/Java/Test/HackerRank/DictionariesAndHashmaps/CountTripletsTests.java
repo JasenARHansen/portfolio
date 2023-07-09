@@ -12,9 +12,7 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CountTripletsTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void countTriplets_1() {
@@ -23,9 +21,8 @@ public class CountTripletsTests {
     long base = 4;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -36,9 +33,8 @@ public class CountTripletsTests {
     long base = 2;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -49,9 +45,8 @@ public class CountTripletsTests {
     long base = 3;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -62,9 +57,8 @@ public class CountTripletsTests {
     long base = 5;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -75,9 +69,8 @@ public class CountTripletsTests {
     long base = 5;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -88,9 +81,8 @@ public class CountTripletsTests {
     long base = 5;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -101,9 +93,8 @@ public class CountTripletsTests {
     long base = 4;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -111,18 +102,17 @@ public class CountTripletsTests {
   public void countTriplets_9() {
     long expected = 161700;
     List<Long> values =
-            List.of(
-                    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
-                    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
-                    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
-                    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
-                    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L);
+        List.of(
+            1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
+            1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
+            1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
+            1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
+            1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L);
     long base = 1;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -133,9 +123,8 @@ public class CountTripletsTests {
     long base = 2;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -146,9 +135,8 @@ public class CountTripletsTests {
     long base = 0;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 
@@ -159,9 +147,8 @@ public class CountTripletsTests {
     long base = 0;
     long result = CountTriplets.countTriplets(values, base);
     System.out.format(
-            "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
-            name.getMethodName(), base, values, result);
-
+        "%s: Given the base of %d and the values of '%s' there are %d triplets.\n",
+        name.getMethodName(), base, values, result);
     assertEquals(expected, result);
   }
 }

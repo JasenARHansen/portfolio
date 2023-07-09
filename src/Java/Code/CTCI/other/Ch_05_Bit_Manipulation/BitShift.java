@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_05_Bit_Manipulation;
 
+@SuppressWarnings({"GrazieInspection", "ConstantValue"})
 public class BitShift {
   public static int SEQUENCE_LENGTH = 32;
 

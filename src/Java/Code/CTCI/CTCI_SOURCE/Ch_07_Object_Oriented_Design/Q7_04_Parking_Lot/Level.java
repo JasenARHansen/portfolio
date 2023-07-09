@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_04_Parking_Lot;
 /* Represents a level in a parking garage. */
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class Level {
   private static final int SPOTS_PER_ROW = 10;
   private final ParkingSpot[] spots;
@@ -82,6 +83,7 @@ public class Level {
       spot.print();
     }
   }
+
   public void spotFreed() {
     /* When a car was removed from the spot, increment availableSpots. */
     availableSpots++;

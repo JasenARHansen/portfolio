@@ -1,5 +1,6 @@
 package Java.Code.CTCI.other.Ch_04_Trees_and_Graphs;
 
+@SuppressWarnings("unused")
 public class BinaryTreeNode<T extends Comparable<T>> {
   private T data;
   private int height;

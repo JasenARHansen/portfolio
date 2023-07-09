@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_10_Sorting_and_Searching.Q10_09_Sorted_Matrix_Search;
 
+@SuppressWarnings({"MethodDoesntCallSuperMethod", "BooleanMethodIsAlwaysInverted", "unused"})
 public class Coordinate implements Cloneable {
   public int row;
   public int column;

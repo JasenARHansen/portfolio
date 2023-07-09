@@ -1,5 +1,4 @@
 package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -12,10 +11,8 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_01_Is_Unique_Test {
-
     @Rule
     public TestName name = new TestName();
-
     @Test
     public void isUniqueChars_true() {
         String word = "cat";
@@ -23,7 +20,6 @@ public class Q1_01_Is_Unique_Test {
         System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
         assertTrue(success);
     }
-
     @Test
     public void isUniqueChars_false() {
         String word = "Jasen Hansen";
@@ -31,7 +27,6 @@ public class Q1_01_Is_Unique_Test {
         System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
         assertFalse(success);
     }
-
     @Test
     public void isUniqueChars_solution_1_true() {
         String word = "cake";
@@ -39,7 +34,6 @@ public class Q1_01_Is_Unique_Test {
         System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
         assertTrue(success);
     }
-
     @Test
     public void isUniqueChars_solution_1_false() {
         String word = "teapot";
@@ -47,7 +41,6 @@ public class Q1_01_Is_Unique_Test {
         System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
         assertFalse(success);
     }
-
     @Test
     public void isUniqueChars_solution_2_true() {
         String word = "cake";
@@ -55,7 +48,6 @@ public class Q1_01_Is_Unique_Test {
         System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
         assertTrue(success);
     }
-
     @Test
     public void isUniqueChars_solution_2_false() {
         String word = "teapot";

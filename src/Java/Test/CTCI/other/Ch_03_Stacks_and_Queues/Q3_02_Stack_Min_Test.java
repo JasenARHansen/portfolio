@@ -9,15 +9,13 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_02_Stack_Min_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void MinStack() {
-
     System.out.format("%s: \n", name.getMethodName());
     MinStack<Integer> minStack = new MinStack<>();
     minStack.push(5);

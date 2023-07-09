@@ -3,10 +3,11 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_02_Call_Cente
 import java.util.ArrayList;
 import java.util.List;
 
-/* CallHandler represents the body of the program,
-and all calls are funneled first through it. */
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class CallHandler {
-  /** We have 3 levels of employees: respondents, managers, directors. */
+  /* We have 3 levels of employees: respondents, managers, directors. */
+  /* CallHandler represents the body of the program,
+  and all calls are funneled first through it. */
   private final int LEVELS = 3;
   /* Initialize with 10 respondents, 4 managers, and 2 directors. */
   private final int NUM_RESPONDENTS = 10;

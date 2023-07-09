@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_07_Chat_Server;
 
+@SuppressWarnings("unused")
 public class GroupChat extends Conversation {
   public void removeParticipant(User user) {
     participants.remove(user);

@@ -11,11 +11,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_01_Remove_Duplicate_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void removeDuplicate() {
@@ -82,55 +81,55 @@ public class Q2_01_Remove_Duplicate_Test {
 
   @Test
   public void isUniqueChars_solution_1() {
-      System.out.format("%s: Initial list\n", name.getMethodName());
-      LinkedListNode first =
-              new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
-      LinkedListNode head = first;
-      LinkedListNode second;
-      for (int i = 1; i < 8; i++) {
-          second = new LinkedListNode(i % 2, null, null);
-          first.setNext(second);
-          second.setPrevious(first);
-          first = second;
-      }
-      System.out.println(head.printForward());
-      Q2_01_Remove_Duplicate.removeDuplicate_solution_1(head);
-      System.out.println(head.printForward());
+    System.out.format("%s: Initial list\n", name.getMethodName());
+    LinkedListNode first =
+        new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
+    LinkedListNode head = first;
+    LinkedListNode second;
+    for (int i = 1; i < 8; i++) {
+      second = new LinkedListNode(i % 2, null, null);
+      first.setNext(second);
+      second.setPrevious(first);
+      first = second;
+    }
+    System.out.println(head.printForward());
+    Q2_01_Remove_Duplicate.removeDuplicate_solution_1(head);
+    System.out.println(head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_2() {
-      System.out.format("%s: Initial list\n", name.getMethodName());
-      LinkedListNode first =
-              new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
-      LinkedListNode head = first;
-      LinkedListNode second;
-      for (int i = 1; i < 8; i++) {
-          second = new LinkedListNode(i % 2, null, null);
-          first.setNext(second);
-          second.setPrevious(first);
-          first = second;
-      }
-      System.out.println(head.printForward());
-      Q2_01_Remove_Duplicate.removeDuplicate_solution_2(head);
-      System.out.println(head.printForward());
+    System.out.format("%s: Initial list\n", name.getMethodName());
+    LinkedListNode first =
+        new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
+    LinkedListNode head = first;
+    LinkedListNode second;
+    for (int i = 1; i < 8; i++) {
+      second = new LinkedListNode(i % 2, null, null);
+      first.setNext(second);
+      second.setPrevious(first);
+      first = second;
+    }
+    System.out.println(head.printForward());
+    Q2_01_Remove_Duplicate.removeDuplicate_solution_2(head);
+    System.out.println(head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_3() {
-      System.out.format("%s: Initial list\n", name.getMethodName());
-      LinkedListNode first =
-              new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
-      LinkedListNode head = first;
-      LinkedListNode second;
-      for (int i = 1; i < 8; i++) {
-          second = new LinkedListNode(i % 2, null, null);
-          first.setNext(second);
-          second.setPrevious(first);
-          first = second;
-      }
-      System.out.println(head.printForward());
-      Q2_01_Remove_Duplicate.removeDuplicate_solution_3(head);
-      System.out.println(head.printForward());
+    System.out.format("%s: Initial list\n", name.getMethodName());
+    LinkedListNode first =
+        new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
+    LinkedListNode head = first;
+    LinkedListNode second;
+    for (int i = 1; i < 8; i++) {
+      second = new LinkedListNode(i % 2, null, null);
+      first.setNext(second);
+      second.setPrevious(first);
+      first = second;
+    }
+    System.out.println(head.printForward());
+    Q2_01_Remove_Duplicate.removeDuplicate_solution_3(head);
+    System.out.println(head.printForward());
   }
 }

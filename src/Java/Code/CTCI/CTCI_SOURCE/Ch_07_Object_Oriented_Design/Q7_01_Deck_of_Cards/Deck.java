@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_01_Deck_of_Ca
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.ArrayList;
 
+@SuppressWarnings({"SpellCheckingInspection", "unchecked", "unused"})
 public class Deck<T extends Card> {
   private ArrayList<T> cards;
   private int dealtIndex = 0; // marks first undealt card

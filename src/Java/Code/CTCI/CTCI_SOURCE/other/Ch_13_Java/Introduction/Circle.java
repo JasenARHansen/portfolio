@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_13_Java.Introduction;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class Circle extends Shape {
   private final double rad = 5;
 

@@ -12,9 +12,7 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MinimumSwaps2Tests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void minimumSwaps_1() {
@@ -23,8 +21,8 @@ public class MinimumSwaps2Tests {
     int[] original = values.clone();
     int result = MinimumSwaps2.minimumSwaps(values);
     System.out.format(
-            "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
-            name.getMethodName(), Arrays.toString(original), result);
+        "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
+        name.getMethodName(), Arrays.toString(original), result);
     assertEquals(expected, result);
   }
 
@@ -34,8 +32,8 @@ public class MinimumSwaps2Tests {
     int[] values = {7, 1, 3, 2, 4, 5, 6};
     int result = MinimumSwaps2.minimumSwaps(values);
     System.out.format(
-            "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
-            name.getMethodName(), Arrays.toString(values), result);
+        "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
+        name.getMethodName(), Arrays.toString(values), result);
     assertEquals(expected, result);
   }
 
@@ -45,8 +43,8 @@ public class MinimumSwaps2Tests {
     int[] values = {4, 3, 1, 2};
     int result = MinimumSwaps2.minimumSwaps(values);
     System.out.format(
-            "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
-            name.getMethodName(), Arrays.toString(values), result);
+        "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
+        name.getMethodName(), Arrays.toString(values), result);
     assertEquals(expected, result);
   }
 
@@ -56,8 +54,8 @@ public class MinimumSwaps2Tests {
     int[] values = {2, 3, 4, 1, 5};
     int result = MinimumSwaps2.minimumSwaps(values);
     System.out.format(
-            "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
-            name.getMethodName(), Arrays.toString(values), result);
+        "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
+        name.getMethodName(), Arrays.toString(values), result);
     assertEquals(expected, result);
   }
 
@@ -67,8 +65,8 @@ public class MinimumSwaps2Tests {
     int[] values = {1, 3, 5, 2, 4, 6, 7};
     int result = MinimumSwaps2.minimumSwaps(values);
     System.out.format(
-            "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
-            name.getMethodName(), Arrays.toString(values), result);
+        "%s: Sorting the array '%s' requires a minimum of %d swaps.\n",
+        name.getMethodName(), Arrays.toString(values), result);
     assertEquals(expected, result);
   }
 }

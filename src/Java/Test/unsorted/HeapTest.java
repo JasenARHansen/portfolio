@@ -2,13 +2,10 @@ package Java.Test.unsorted;
 
 import Java.Code.unsorted.classes.classesInstance.Heap;
 
-// import java.util.Scanner;
-
-/** Class BinaryHeapTest */
 @SuppressWarnings("DuplicatedCode")
 public class HeapTest {
+  /* Class BinaryHeapTest. */
   public static void main(String[] args) {
-    // Scanner scan = new Scanner(System.in);
     System.out.println("Heap Test:");
     Heap<Integer> minHeap = new Heap<>();
     minHeap.insert(17);
@@ -50,7 +47,6 @@ public class HeapTest {
     minHeap.remove();
     System.out.format("\nTop: '%s'", minHeap.peek().toString());
     minHeap.printHeap();
-
     Heap<Integer> maxHeap = new Heap<>(false);
     maxHeap.insert(17);
     System.out.format("\nTop: '%s'", maxHeap.peek().toString());

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_
 
 import java.io.Serial;
 
+@SuppressWarnings("unused")
 public class FullStackException extends Exception {
   @Serial private static final long serialVersionUID = 1L;
 

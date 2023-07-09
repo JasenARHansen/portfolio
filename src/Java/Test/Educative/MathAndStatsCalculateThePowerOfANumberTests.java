@@ -1,4 +1,5 @@
 package Java.Test.Educative;
+
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.Educative.MathAndStatsCalculateThePowerOfANumber;
@@ -11,6 +12,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MathAndStatsCalculateThePowerOfANumberTests {
   @Rule public TestName name = new TestName();
+
   @Test
   public void power_1() {
     double expected = 25;

@@ -3,6 +3,11 @@ package Java.Code.HackerRank.Sorting;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+@SuppressWarnings({
+  "IntegerDivisionInFloatingPointContext",
+  "GrazieInspection",
+  "SpellCheckingInspection"
+})
 public class FraudulentActivityNotifications {
   /*
   HackerLand National Bank has a simple policy for warning clients about possible fraudulent account activity. If
@@ -97,7 +102,7 @@ public class FraudulentActivityNotifications {
         if (numbers.size() < size) {
           numbers.add(expenditure[index]);
         } else {
-          if (expenditure[index] > numbers.peek()) {
+          if (!numbers.isEmpty() && (expenditure[index] > numbers.peek())) {
             numbers.poll();
             numbers.add(expenditure[index]);
           }

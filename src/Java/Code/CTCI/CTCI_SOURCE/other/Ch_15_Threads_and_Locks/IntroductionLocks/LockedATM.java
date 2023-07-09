@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.IntroductionLoc
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+@SuppressWarnings("UnusedReturnValue")
 public class LockedATM {
   private final Lock lock;
   private int balance = 100;

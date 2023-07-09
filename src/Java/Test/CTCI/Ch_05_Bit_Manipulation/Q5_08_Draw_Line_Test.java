@@ -7,11 +7,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_08_Draw_Line_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   public static void drawLine(byte[] screen, int width, int x1, int x2, int y) {
     int start_offset = x1 % 8;
@@ -19,21 +18,17 @@ public class Q5_08_Draw_Line_Test {
     if (start_offset != 0) {
       first_full_byte++;
     }
-
     int end_offset = x2 % 8;
     int last_full_byte = x2 / 8;
     if (end_offset != 7) {
       last_full_byte--;
     }
-
     // Set full bytes
     for (int b = first_full_byte; b <= last_full_byte; b++) {
       screen[(width / 8) * y + b] = (byte) 0xFF;
     }
-
     byte start_mask = (byte) (0xFF >> start_offset);
     byte end_mask = (byte) ~(0xFF >> (end_offset + 1));
-
     // Set start and end of line
     if ((x1 / 8) == (x2 / 8)) { // If x1 and x2 are in the same byte
       byte mask = (byte) (start_mask & end_mask);
@@ -82,7 +77,6 @@ public class Q5_08_Draw_Line_Test {
     int startBit = 2;
     int stopBit = 27;
     byte[] screen = new byte[height * width];
-
     BitShift.drawLine(screen, width, startBit, stopBit, y);
   }
 
@@ -96,7 +90,6 @@ public class Q5_08_Draw_Line_Test {
     int startBit = 2;
     int stopBit = 27;
     byte[] screen = new byte[height * width];
-
     BitShift.drawLine(screen, width, startBit, stopBit, y);
   }
 
@@ -109,7 +102,6 @@ public class Q5_08_Draw_Line_Test {
       for (int c1 = 0; c1 < width; c1++) {
         for (int c2 = c1; c2 < width; c2++) {
           byte[] screen = new byte[width * height / 8];
-
           System.out.println("row: " + r + ": " + c1 + " -> " + c2);
           drawLine(screen, width, c1, c2, r);
           printScreen(screen, width);

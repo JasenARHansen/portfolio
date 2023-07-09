@@ -12,45 +12,51 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DetectPalindromeTests {
+  @Rule public TestName name = new TestName();
 
-    @Rule
-    public TestName name = new TestName();
+  @Test
+  public void DetectPalindrome() {
+    System.out.format("%s: ", name.getMethodName());
+    DetectPalindrome.getDescription();
+  }
 
-    @Test
-    public void DetectPalindrome() {
-        System.out.format("%s: ", name.getMethodName());
-        DetectPalindrome.getDescription();
-    }
+  @Test
+  public void isPalindrome_1() {
+    String input = "A man, a plan, a canal: Panama";
+    boolean result = DetectPalindrome.isPalindrome(input);
+    System.out.format(
+        "%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n",
+        name.getMethodName(), input, result);
+    assertTrue(result);
+  }
 
-    @Test
-    public void isPalindrome_1() {
-        String input = "A man, a plan, a canal: Panama";
-        boolean result = DetectPalindrome.isPalindrome(input);
-        System.out.format("%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n", name.getMethodName(), input, result);
-        assertTrue(result);
-    }
+  @Test
+  public void isPalindrome_2() {
+    String input = "race a car";
+    boolean result = DetectPalindrome.isPalindrome(input);
+    System.out.format(
+        "%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n",
+        name.getMethodName(), input, result);
+    assertFalse(result);
+  }
 
-    @Test
-    public void isPalindrome_2() {
-        String input = "race a car";
-        boolean result = DetectPalindrome.isPalindrome(input);
-        System.out.format("%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n", name.getMethodName(), input, result);
-        assertFalse(result);
-    }
+  @Test
+  public void isPalindrome_3() {
+    String input = "123   321";
+    boolean result = DetectPalindrome.isPalindrome(input);
+    System.out.format(
+        "%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n",
+        name.getMethodName(), input, result);
+    assertTrue(result);
+  }
 
-    @Test
-    public void isPalindrome_3() {
-        String input = "123   321";
-        boolean result = DetectPalindrome.isPalindrome(input);
-        System.out.format("%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n", name.getMethodName(), input, result);
-        assertTrue(result);
-    }
-
-    @Test
-    public void isPalindrome_4() {
-        String input = "123ab321";
-        boolean result = DetectPalindrome.isPalindrome(input);
-        System.out.format("%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n", name.getMethodName(), input, result);
-        assertFalse(result);
-    }
+  @Test
+  public void isPalindrome_4() {
+    String input = "123ab321";
+    boolean result = DetectPalindrome.isPalindrome(input);
+    System.out.format(
+        "%s: The string '%s' is a palindrome ignoring non alpha numeric characters: %b\n",
+        name.getMethodName(), input, result);
+    assertFalse(result);
+  }
 }

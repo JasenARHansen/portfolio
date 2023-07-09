@@ -19,7 +19,6 @@ public class NumberTheoryFindNthFibonacciNumber {
     int even = 0;
     int odd = 1;
     boolean flip = true;
-
     if (count > 1) {
       int iterate = count - 1;
       while (iterate > 0) {

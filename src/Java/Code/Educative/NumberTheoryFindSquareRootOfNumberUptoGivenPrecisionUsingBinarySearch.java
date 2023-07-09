@@ -1,21 +1,15 @@
 package Java.Code.Educative;
-
 public class NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySearch {
   /*
   Given a positive number n and precision p, find the square root of number upto p decimal places using binary search.
   Note : Prerequisite : Binary search
   Examples:
-
   Input : number = 50, precision = 3
   Output : 7.071
-
   Input : number = 10, precision = 4
   Output : 3.1622
-
   Recommended: Please try your approach on {IDE} first, before moving on to the solution.
-
   We have discussed how to compute integral value of square root in Square Root using Binary Search
-
   Approach :
   1) As the square root of number lies in range 0 <= squareRoot <= number, therefore, initialize start and end
    as : start = 0, end = number.
@@ -25,19 +19,13 @@ public class NumberTheoryFindSquareRootOfNumberUptoGivenPrecisionUsingBinarySear
   4) Initialize the increment variable by 0.1 and iteratively compute the fractional part upto p places. For each
    iteration, increment changes to 1/10th of it’s previous value.
   5) Finally return the answer computed.
-
   Below is the implementation of above approach :
-
   Output:
-
   7.071
   3.1622
-
   Time Complexity : The time required to compute the integral part is O(log(number)) and constant i.e, = precision
    for computing the fractional part. Therefore, overall time complexity is O(log(number) + precision) which is
-   approximately equal to O(log(number)).
-  */
-
+   approximately equal to O(log(number)). */
   public static float squareRoot(int number, int precision) {
     double result;
     int start = 0;

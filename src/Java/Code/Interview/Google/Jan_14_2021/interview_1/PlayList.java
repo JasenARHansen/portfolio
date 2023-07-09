@@ -6,9 +6,7 @@ One possible sequence of songs played from a series of calls for k = 2 could be:
 from [A, B, C, D],  played B
 from [A, B, C, D],  played C
 from [A, B, C, D],  played D
-from [A, B, C, D],  played B
-* */
-
+from [A, B, C, D],  played B */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class PlayList {
 
   public static void getDescription() {
     System.out.println(
-            "A tool to access a playlist ensuring that a given song has not played in the last K songs.");
+        "A tool to access a playlist ensuring that a given song has not played in the last K songs.");
   }
 
   public void setup(int k, List<String> songs) throws Exception {
@@ -31,7 +29,6 @@ public class PlayList {
     if ((songs == null) || (songs.isEmpty())) {
       throw new Exception("No songs provided");
     }
-
     if ((k < 0) || (k >= songs.size())) {
       throw new Exception("Invalid K provided");
     }

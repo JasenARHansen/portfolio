@@ -12,10 +12,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArraysMergeOverlappingIntervalsTest {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -38,8 +37,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.size(); index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result.get(index)));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result.get(index)));
       assertEquals(Arrays.toString(expected.get(index)), Arrays.toString(result.get(index)));
     }
   }
@@ -56,8 +54,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.size(); index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result.get(index)));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result.get(index)));
       assertEquals(Arrays.toString(expected.get(index)), Arrays.toString(result.get(index)));
     }
   }
@@ -78,8 +75,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.size(); index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result.get(index)));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result.get(index)));
       assertEquals(Arrays.toString(expected.get(index)), Arrays.toString(result.get(index)));
     }
   }
@@ -98,8 +94,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.length; index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result[index]));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result[index]));
       assertEquals(Arrays.toString(expected[index]), Arrays.toString(result[index]));
     }
   }
@@ -116,8 +111,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.length; index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result[index]));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result[index]));
       assertEquals(Arrays.toString(expected[index]), Arrays.toString(result[index]));
     }
   }
@@ -138,8 +132,7 @@ public class ArraysMergeOverlappingIntervalsTest {
     System.out.format("%s\n", name.getMethodName());
     for (int index = 0; index < result.length; index++) {
       System.out.format(
-          "\t%d: The merged element is '%s'.\n",
-          index + 1, Arrays.toString(result[index]));
+          "\t%d: The merged element is '%s'.\n", index + 1, Arrays.toString(result[index]));
       assertEquals(Arrays.toString(expected[index]), Arrays.toString(result[index]));
     }
   }

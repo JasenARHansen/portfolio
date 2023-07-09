@@ -10,11 +10,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("NewClassNamingConvention")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_07_Rotate_Matrix_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void rotateMatrix() {

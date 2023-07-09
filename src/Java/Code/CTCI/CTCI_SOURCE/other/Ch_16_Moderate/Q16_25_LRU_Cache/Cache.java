@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_25_LRU_Cache;
 
 import java.util.HashMap;
 
+@SuppressWarnings("UnusedReturnValue")
 public class Cache {
   private final int maxCacheSize;
   private final HashMap<Integer, LinkedListNode> map = new HashMap<>();
@@ -87,6 +88,7 @@ public class Cache {
     return listHead.printForward();
   }
 
+  @SuppressWarnings("InnerClassMayBeStatic")
   private class LinkedListNode {
     public int key;
     public String value;

@@ -1,5 +1,4 @@
 package Java.Test.HackerRank.WarmUpChallenges;
-
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.WarmUpChallenges.CountingValleys;
@@ -11,10 +10,8 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CountingValleysTests {
-
     @Rule
     public TestName name = new TestName();
-
     @Test
     public void valleysTraversed_1() {
         int expected = 1;
@@ -26,7 +23,6 @@ public class CountingValleysTests {
                 name.getMethodName(), steps, path, result);
         assertEquals(expected, result);
     }
-
     @Test
     public void valleysTraversed_2() {
         int expected = 1;
@@ -38,7 +34,6 @@ public class CountingValleysTests {
                 name.getMethodName(), steps, path, result);
         assertEquals(expected, result);
     }
-
     @Test
     public void valleysTraversed_3() {
         int expected = 1;
@@ -50,7 +45,6 @@ public class CountingValleysTests {
                 name.getMethodName(), steps, path, result);
         assertEquals(expected, result);
     }
-
     @Test
     public void valleysTraversed_5() {
         int expected = 4;
@@ -62,7 +56,6 @@ public class CountingValleysTests {
                 name.getMethodName(), steps, path, result);
         assertEquals(expected, result);
     }
-
     @Test
     public void valleysTraversed_6() {
         int expected = 2;
@@ -74,7 +67,6 @@ public class CountingValleysTests {
                 name.getMethodName(), steps, path, result);
         assertEquals(expected, result);
     }
-
     @Test
     public void valleysTraversed_7() {
         int expected = 2;

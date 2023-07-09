@@ -1,4 +1,5 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper;
+
 import Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper.Game.GameState;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -19,7 +20,7 @@ public class Board {
     initializeBoard();
     shuffleBoard();
     setNumberedCells();
-    numUnexposedRemaining = nRows   nColumns - nBombs;
+    numUnexposedRemaining = nRows * nColumns - nBombs;
   }
 
   private void initializeBoard() {
@@ -32,25 +33,25 @@ public class Board {
     }
     for (int i = 0; i < nBombs; i++) {
       int r = i / nColumns;
-      int c = (i - r   nColumns) % nColumns;
+      int c = (i - r * nColumns) % nColumns;
       bombs[i] = cells[r][c];
       bombs[i].setBomb(true);
     }
   }
 
   private void shuffleBoard() {
-    int nCells = nRows   nColumns;
+    int nCells = nRows * nColumns;
     Random random = new Random();
     for (int index1 = 0; index1 < nCells; index1++) {
       int index2 = index1 + random.nextInt(nCells - index1);
       if (index1 != index2) {
         /* Get cell at index1. */
         int row1 = index1 / nColumns;
-        int column1 = (index1 - row1   nColumns) % nColumns;
+        int column1 = (index1 - row1 * nColumns) % nColumns;
         Cell cell1 = cells[row1][column1];
         /* Get cell at index2. */
         int row2 = index2 / nColumns;
-        int column2 = (index2 - row2   nColumns) % nColumns;
+        int column2 = (index2 - row2 * nColumns) % nColumns;
         Cell cell2 = cells[row2][column2];
         /* Swap. */
         cells[row1][column1] = cell2;
@@ -63,8 +64,8 @@ public class Board {
 
   private void setNumberedCells() {
     /* Set the cells around the bombs to the right number. Although
-       the bombs have been shuffled, the reference in the bombs array
-       is still to same object. */
+    the bombs have been shuffled, the reference in the bombs array
+    is still to same object. */
     int[][] deltas = { // Offsets of 8 surrounding cells
       {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}
     };

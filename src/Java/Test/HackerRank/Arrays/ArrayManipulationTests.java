@@ -11,22 +11,20 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArrayManipulationTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void arrayManipulation_1() {
     long expected = 10;
     int n = 10;
     int[][] values = {
-            {1, 5, 3},
-            {4, 8, 7},
-            {6, 9, 1}
+      {1, 5, 3},
+      {4, 8, 7},
+      {6, 9, 1}
     };
     long result = ArrayManipulation.arrayManipulation(n, values);
     System.out.format(
-            "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
+        "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
     assertEquals(expected, result);
   }
 
@@ -35,13 +33,13 @@ public class ArrayManipulationTests {
     long expected = 200;
     int n = 5;
     int[][] values = {
-            {1, 2, 100},
-            {2, 5, 100},
-            {3, 4, 100}
+      {1, 2, 100},
+      {2, 5, 100},
+      {3, 4, 100}
     };
     long result = ArrayManipulation.arrayManipulation(n, values);
     System.out.format(
-            "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
+        "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
     assertEquals(expected, result);
   }
 
@@ -50,14 +48,14 @@ public class ArrayManipulationTests {
     long expected = 31;
     int n = 10;
     int[][] values = {
-            {2, 6, 8},
-            {3, 5, 7},
-            {1, 8, 1},
-            {5, 9, 15}
+      {2, 6, 8},
+      {3, 5, 7},
+      {1, 8, 1},
+      {5, 9, 15}
     };
     long result = ArrayManipulation.arrayManipulation(n, values);
     System.out.format(
-            "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
+        "%s: Using all of the queries, the largest result is %d.\n", name.getMethodName(), result);
     assertEquals(expected, result);
   }
 }

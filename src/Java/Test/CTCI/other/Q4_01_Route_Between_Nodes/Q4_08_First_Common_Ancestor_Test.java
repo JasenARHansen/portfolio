@@ -1,5 +1,4 @@
 package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -15,17 +14,15 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_08_First_Common_Ancestor_Test {
-
   static int TWO_NODES_FOUND = 2;
   static int ONE_NODE_FOUND = 1;
   static int NO_NODES_FOUND = 0;
-  @Rule
-  public TestName name = new TestName();
-
-  // Checks how many 'special' nodes are located under this root
+  @Rule public TestName name = new TestName();
   public static int covers_solution_1(TreeNode root, TreeNode p, TreeNode q) {
+    // Checks how many 'special' nodes are located under this root
     int ret = NO_NODES_FOUND;
     if (root == null) return ret;
     if (root == p || root == q) ret += 1;
@@ -45,7 +42,6 @@ public class Q4_08_First_Common_Ancestor_Test {
       if (root == p) return p;
       else if (root == q) return q;
     }
-
     int nodesFromRight = covers_solution_1(root.right, p, q); // Check right side
     if (nodesFromRight == TWO_NODES_FOUND) {
       if (root.right == p || root.right == q) return root.right;
@@ -66,7 +62,6 @@ public class Q4_08_First_Common_Ancestor_Test {
     } else if (covers_solution_1(q, p)) {
       return q;
     }
-
     TreeNode sibling = getSibling(p);
     TreeNode parent = p.parent;
     while (!covers_solution_1(sibling, q)) {
@@ -86,14 +81,13 @@ public class Q4_08_First_Common_Ancestor_Test {
     if (node == null || node.parent == null) {
       return null;
     }
-
     TreeNode parent = node.parent;
     return parent.left == node ? parent.right : parent.left;
   }
 
   public static TreeNode commonAncestor_version_5(TreeNode root, TreeNode p, TreeNode q) {
     if (!covers_solution_5(root, p)
-            || !covers_solution_5(root, q)) { // Error check - one node is not in tree
+        || !covers_solution_5(root, q)) { // Error check - one node is not in tree
       return null;
     }
     return ancestorHelper(root, p, q);
@@ -103,7 +97,6 @@ public class Q4_08_First_Common_Ancestor_Test {
     if (root == null || root == p || root == q) {
       return root;
     }
-
     boolean pIsOnLeft = covers_solution_5(root.left, p);
     boolean qIsOnLeft = covers_solution_5(root.left, q);
     if (pIsOnLeft != qIsOnLeft) { // Nodes are on different side
@@ -126,23 +119,20 @@ public class Q4_08_First_Common_Ancestor_Test {
     if (root == p && root == q) {
       return new QuestionE.Result(root, true);
     }
-
     QuestionE.Result rx = commonAncestorHelper(root.left, p, q);
     if (rx.isAncestor) { // Found common ancestor
       return rx;
     }
-
     QuestionE.Result ry = commonAncestorHelper(root.right, p, q);
     if (ry.isAncestor) { // Found common ancestor
       return ry;
     }
-
     if (rx.node != null && ry.node != null) {
       return new QuestionE.Result(root, true); // This is the common ancestor
     } else if (root == p || root == q) {
       /* If we�re currently at p or q, and we also found one of those
-       * nodes in a subtree, then this is truly an ancestor and the
-       * flag should be true. */
+         nodes in a subtree, then this is truly an ancestor and the
+         flag should be true. */
       boolean isAncestor = rx.node != null || ry.node != null;
       return new QuestionE.Result(root, isAncestor);
     } else {
@@ -165,17 +155,14 @@ public class Q4_08_First_Common_Ancestor_Test {
     if (root == p && root == q) {
       return root;
     }
-
     TreeNode x = commonAncestorBad(root.left, p, q);
     if (x != null && x != p && x != q) { // Found common ancestor
       return x;
     }
-
     TreeNode y = commonAncestorBad(root.right, p, q);
     if (y != null && y != p && y != q) {
       return y;
     }
-
     if (x != null && y != null) {
       return root; // This is the common ancestor
     } else if (root == p || root == q) {
@@ -187,7 +174,6 @@ public class Q4_08_First_Common_Ancestor_Test {
 
   public static TreeNode commonAncestor_version_2(TreeNode p, TreeNode q) {
     if (p == q) return p;
-
     TreeNode ancestor = p;
     while (ancestor != null) {
       if (isOnPath(ancestor, q)) {
@@ -238,7 +224,6 @@ public class Q4_08_First_Common_Ancestor_Test {
     if ((p == null) || (q == null)) {
       return null;
     }
-
     TreeNode ap = p.parent;
     while (ap != null) {
       TreeNode aq = q.parent;
@@ -264,8 +249,8 @@ public class Q4_08_First_Common_Ancestor_Test {
     BinaryTreeNode<Integer> ancestor = myTree.commonAncestorBT(first, second);
     // @Test
     System.out.format(
-            "%s: The common ancestor between %d and %d is: %s\n",
-            name.getMethodName(), first, second, ancestor.getData().toString());
+        "%s: The common ancestor between %d and %d is: %s\n",
+        name.getMethodName(), first, second, ancestor.getData().toString());
   }
 
   @Test
@@ -279,8 +264,8 @@ public class Q4_08_First_Common_Ancestor_Test {
     BinaryTreeNode<Integer> ancestor = myTree.commonAncestorBST(first, second);
     assertNotNull(ancestor);
     System.out.format(
-            "%s: The common ancestor between %d and %d is: %s\n",
-            name.getMethodName(), first, second, ancestor.getData().toString());
+        "%s: The common ancestor between %d and %d is: %s\n",
+        name.getMethodName(), first, second, ancestor.getData().toString());
   }
 
   @Test
@@ -294,8 +279,8 @@ public class Q4_08_First_Common_Ancestor_Test {
     BinaryTreeNode<Integer> ancestor = myTree.commonAncestorBST(first, second);
     assertNull(ancestor);
     System.out.format(
-            "%s: The common ancestor between %d and %d is: null\n",
-            name.getMethodName(), first, second);
+        "%s: The common ancestor between %d and %d is: null\n",
+        name.getMethodName(), first, second);
   }
 
   @Test
@@ -309,8 +294,8 @@ public class Q4_08_First_Common_Ancestor_Test {
     BinaryTreeNode<Integer> ancestor = myTree.commonAncestorBT(first, second);
     assertNull(ancestor);
     System.out.format(
-            "%s: The common ancestor between %d and %d is: null\n",
-            name.getMethodName(), first, second);
+        "%s: The common ancestor between %d and %d is: null\n",
+        name.getMethodName(), first, second);
   }
 
   @Test
@@ -420,7 +405,6 @@ public class Q4_08_First_Common_Ancestor_Test {
   public static class Result {
     public TreeNode node;
     public boolean isAncestor;
-
     public Result(TreeNode n, boolean isAnc) {
       node = n;
       isAncestor = isAnc;

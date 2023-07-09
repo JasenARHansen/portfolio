@@ -1,8 +1,10 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class BTreePrinter {
   public static <T extends Comparable<?>> void printNode(TreeNode root) {
     int maxLevel = BTreePrinter.maxLevel(root);

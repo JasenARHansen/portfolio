@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Queue;
 
 public class ThiefAndSensors {
-
   private static List<Circle> circles;
   private static Rectangle room;
   private static boolean evaluated = false;
@@ -82,9 +81,7 @@ public class ThiefAndSensors {
       }
       intersections.add(intersectsWith);
     }
-
     boolean[] processed = new boolean[circles.size()];
-
     List<ArrayList<Integer>> intersectionClusters = new ArrayList<>();
     for (int circle = 0; circle < circles.size(); circle++) {
       if (!processed[circle]) {
@@ -105,7 +102,6 @@ public class ThiefAndSensors {
         intersectionClusters.add(cluster);
       }
     }
-
     for (ArrayList<Integer> cluster : intersectionClusters) {
       int xMinimum = circles.get(cluster.get(0)).getXMinimum();
       int xMaximum = circles.get(cluster.get(0)).getXMaximum();
@@ -164,7 +160,6 @@ public class ThiefAndSensors {
     pathExists();
     pathBottomTop();
     pathLeftRight();
-
     reset();
     constructRoom(0, 0, 10, 10);
     add_circle(1, 1, 1);

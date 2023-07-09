@@ -1,7 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_03_Flip_Bit_to_Win;
 
 public class Tester {
-
   public static void main(String[] args) {
     int[][] ranges = {{Integer.MIN_VALUE, 1000}, {Integer.MAX_VALUE - 2333, 5333}, {-10000, 20000}};
     for (int[] range : ranges) {
@@ -21,7 +20,6 @@ public class Tester {
       int seqB = QuestionB.longestSequence(value);
       int seqC = QuestionC.longestSequence(value);
       int seqD = QuestionC.longestSequence(value);
-
       System.out.format("%d: %d\n", value, seqD);
       if (seqA != seqB || seqB != seqC || seqC != seqD) {
         System.out.println("FAILURE on value " + value);

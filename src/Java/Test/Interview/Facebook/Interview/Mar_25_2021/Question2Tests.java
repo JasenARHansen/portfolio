@@ -12,7 +12,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Question2Tests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -34,7 +33,6 @@ public class Question2Tests {
   @Test
   public void NValues_2() {
     int[][] points = {{0, 0}, {50, 50}, {100, 50}, {50, 200}, {100, 200}, {120, 200}};
-
     boolean result = Question2.rectangleFound(points);
     System.out.format(
         "%s: The array contains prints that can form a rectangle: %s.\n",
@@ -45,7 +43,6 @@ public class Question2Tests {
   @Test
   public void NValues_3() {
     int[][] points = {{0, 0}, {100, 50}, {50, 200}, {100, 200}, {120, 200}};
-
     boolean result = Question2.rectangleFound(points);
     System.out.format(
         "%s: The array contains prints that can form a rectangle: %s.\n",

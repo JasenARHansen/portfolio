@@ -3,6 +3,7 @@ package Java.Code.unsorted.classes.classesInstance;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Heap<T extends Comparable<T>> {
   private final List<T> heapItems;
   // Determines heap type: true for minHeap and false for maxHeap
@@ -14,7 +15,7 @@ public class Heap<T extends Comparable<T>> {
   }
 
   public Heap() {
-    /** Constructor. */
+    /* Constructor. */
     this.heapItems = new ArrayList<>();
   }
 

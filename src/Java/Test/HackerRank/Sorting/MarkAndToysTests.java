@@ -12,7 +12,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MarkAndToysTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

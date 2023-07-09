@@ -1,5 +1,4 @@
 package Java.Test.CTCI.other.Ch_02_Linked_Lists;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -15,12 +14,11 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_07_Intersection_Test {
-
   @Rule
   public TestName name = new TestName();
-
   @Test
   public void intersects_1() {
     System.out.format("%s: List\n", name.getMethodName());
@@ -70,20 +68,16 @@ public class Q2_07_Intersection_Test {
   @Test
   public void findIntersection_solution_1() {
     System.out.format("%s: List 1\n", name.getMethodName());
-    /* Create linked list */
+    /* Create linked list. */
     int[] vales = {-1, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8};
     LinkedListNode list1 = AssortedMethods.createLinkedListFromArray(vales);
-
     int[] vales2 = {12, 14, 15};
     LinkedListNode list2 = AssortedMethods.createLinkedListFromArray(vales2);
     list2.next.next = list1.next.next.next.next;
-
     System.out.println(list1.printForward());
     System.out.format("%s: List 2\n", name.getMethodName());
     System.out.println(list2.printForward());
-
     LinkedListNode intersection = Q2_07_Intersection.findIntersection_solution_1(list1, list2);
-
     System.out.format("%s: List intersection\n", name.getMethodName());
     System.out.println(intersection.printForward());
     assertNotNull(intersection);

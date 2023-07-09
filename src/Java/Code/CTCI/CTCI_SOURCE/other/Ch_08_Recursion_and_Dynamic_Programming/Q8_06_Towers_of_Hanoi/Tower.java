@@ -3,32 +3,31 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming
 import java.util.Stack;
 
 public class Tower {
-    private final Stack<Integer> disks = new Stack<>();
-    public String name;
+  private final Stack<Integer> disks = new Stack<>();
+  public String name;
 
-    public void add(int d) {
-        if (!disks.isEmpty() && disks.peek() <= d) {
-            System.out.println("Error placing disk " + d);
-        } else {
-            disks.push(d);
-        }
+  public void add(int d) {
+    if (!disks.isEmpty() && disks.peek() <= d) {
+      System.out.println("Error placing disk " + d);
+    } else {
+      disks.push(d);
     }
+  }
 
-    public void moveTopTo(Tower t) {
-        int top = disks.pop();
-        t.add(top);
-    }
+  public void moveTopTo(Tower t) {
+    int top = disks.pop();
+    t.add(top);
+  }
 
-    public void print() {
-        System.out.println("Contents of Tower " + name + ": " + disks);
-    }
+  public void print() {
+    System.out.println("Contents of Tower " + name + ": " + disks);
+  }
 
-    public void moveDisks(int quantity, Tower destination, Tower buffer) {
-        if (quantity <= 0) return;
-
-        moveDisks(quantity - 1, buffer, destination);
-        System.out.println("Move " + disks.peek() + " from " + this.name + " to " + destination.name);
-        moveTopTo(destination);
-        buffer.moveDisks(quantity - 1, destination, this);
-    }
+  public void moveDisks(int quantity, Tower destination, Tower buffer) {
+    if (quantity <= 0) return;
+    moveDisks(quantity - 1, buffer, destination);
+    System.out.println("Move " + disks.peek() + " from " + this.name + " to " + destination.name);
+    moveTopTo(destination);
+    buffer.moveDisks(quantity - 1, destination, this);
+  }
 }

@@ -3,6 +3,7 @@ package Java.Code.Interview.Google;
 import Java.Code.unsorted.classes.classesInstance.Tuple;
 import java.util.*;
 
+@SuppressWarnings("DuplicatedCode")
 public class Google {
   @SuppressWarnings("unused")
   public static void main(String[] args) throws Exception {
@@ -233,8 +234,7 @@ public class Google {
   }
 
   private static int searchRotatedArray(int value, int[] toSearch) {
-    /**
-     * Method to search a rotated array for a number. IF the number si found the first index in the
+    /* Method to search a rotated array for a number. IF the number si found the first index in the
      * array where the number is found is returned. If the number is not found a '-1' is returned to
      * indicate failure.
      */
@@ -309,11 +309,9 @@ public class Google {
   }
 
   private static boolean detectCircularArrayCycle(int[] toSearch) {
-    /**
-     * Circular array is that when you exceed a boundary you wrap around to the Relative index means
-     * the value of the element is a modification of the current index Complete cycle means that all
-     * elements are examined.
-     */
+    /* Circular array is that when you exceed a boundary you wrap around to the Relative index means
+    the value of the element is a modification of the current index Complete cycle means that all
+    elements are examined. */
     int searchIndex = 0;
     boolean[] visited = new boolean[toSearch.length];
     while (!visited[searchIndex]) {

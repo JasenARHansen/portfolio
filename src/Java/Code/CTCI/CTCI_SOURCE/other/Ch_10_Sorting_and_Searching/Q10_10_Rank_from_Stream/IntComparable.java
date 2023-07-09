@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_10_Sorting_and_Searching.Q10_10_Rank
 
 import java.util.Comparator;
 
+@SuppressWarnings("unused")
 public class IntComparable implements Comparator<Integer> {
   @Override
   public int compare(Integer o1, Integer o2) {

@@ -2,7 +2,9 @@ package Java.Code.Interview.Facebook.Practice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
+@SuppressWarnings("unused")
 public class BalancedSplit {
   public static void getDescription() {
     System.out.println(
@@ -36,7 +38,7 @@ public class BalancedSplit {
   public static boolean balancedSplitExists(int[] arr) {
     List<Integer> list = Arrays.stream(arr).boxed().sorted().toList();
     for (int index = 0; index < arr.length - 1; index++) {
-      while ((index < arr.length - 1) && (list.get(index) == list.get(index + 1))) {
+      while ((index < arr.length - 1) && (Objects.equals(list.get(index), list.get(index + 1)))) {
         index++;
       }
       if (subListSum(list, 0, index) == subListSum(list, index + 1, arr.length - 1)) {

@@ -9,20 +9,17 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TrieNodeTests {
+  @Rule public TestName name = new TestName();
 
-    @Rule
-    public TestName name = new TestName();
+  @Test
+  public void TrieNode() {
+    System.out.format("%s: ", name.getMethodName());
+    TrieNode.getDescription();
+  }
 
-    @Test
-    public void TrieNode() {
-        System.out.format("%s: ", name.getMethodName());
-        TrieNode.getDescription();
-    }
-
-    @Test
-    public void constructor() {
-        System.out.format("%s: TrieNode\n", name.getMethodName());
-        new TrieNode();
-    }
-
+  @Test
+  public void constructor() {
+    System.out.format("%s: TrieNode\n", name.getMethodName());
+    new TrieNode();
+  }
 }

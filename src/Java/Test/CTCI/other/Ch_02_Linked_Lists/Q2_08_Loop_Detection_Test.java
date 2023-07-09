@@ -15,11 +15,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_08_Loop_Detection_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void detectCycle_1() {
@@ -31,9 +30,7 @@ public class Q2_08_Loop_Detection_Test {
     stringValue.insert("d");
     stringValue.insert("e");
     stringValue.insert("f");
-
     stringValue.printList();
-
     NodeList<String> resultNode = Linked_List.detectCycle(stringValue);
     assertNull(resultNode);
     System.out.format("Cycle Node: null\n");
@@ -49,7 +46,6 @@ public class Q2_08_Loop_Detection_Test {
     stringValues.insert("d");
     stringValues.insert("e");
     stringValues.insert("f");
-
     // Corrupting the list to make a cycle
     NodeList<String> cyclePoint = stringValues.getIndex(3);
     NodeList<String> cyclePointStart = stringValues.getLast();
@@ -69,19 +65,15 @@ public class Q2_08_Loop_Detection_Test {
   @Test
   public void findIntersection_solution_1() {
     System.out.format("%s: Can't print List due to cycle\n", name.getMethodName());
-
     int list_length = 100;
     int k = 10;
-
     // Create linked list
     LinkedListNode[] nodes = new LinkedListNode[list_length];
     for (int i = 0; i < list_length; i++) {
       nodes[i] = new LinkedListNode(i, null, i > 0 ? nodes[i - 1] : null);
     }
-
     // Create loop;
     nodes[list_length - 1].next = nodes[list_length - k];
-
     LinkedListNode loop = Q2_08_Loop_Detection.FindBeginning_solution_1(nodes[0]);
     if (loop == null) {
       System.out.println("No Cycle.");

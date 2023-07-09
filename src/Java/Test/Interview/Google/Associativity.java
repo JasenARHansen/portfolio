@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 @SuppressWarnings("DuplicatedCode")
 public class Associativity {
-
   public static void main(String[] args) {
     Associativity associativity = new Associativity();
     associativity.highestAssociativity();
@@ -17,15 +16,12 @@ public class Associativity {
     Scanner scan = new Scanner(System.in);
     float associativityThreshold = scan.nextFloat();
     int associationCount = scan.nextInt();
-
     List<AssociativityNode> associativityNodeList = new ArrayList<>();
-
     for (int i = 0; i < associationCount; i++) {
       String firstItem = scan.next();
       String secondItem = scan.next();
       float itemAssociativity = scan.nextFloat();
-
-      /* Create all AssociativityNodes */
+      /* Create all AssociativityNodes. */
       boolean found = false;
       for (AssociativityNode associativityNode : associativityNodeList) {
         if (associativityNode.getName().equals(firstItem)) {
@@ -51,12 +47,11 @@ public class Associativity {
         if (itemAssociativity > associativityThreshold) {
           associativityNode.addAssociation(secondItem);
         }
-        /* Add to associativityNodeList */
+        /* Add to associativityNodeList. */
         associativityNodeList.add(associativityNode);
       }
     }
-
-    /* Create proper links in associativityNodeList */
+    /* Create proper links in associativityNodeList. */
     for (AssociativityNode associativityNode : associativityNodeList) {
       for (int i = 0; i < associativityNode.getAssociationCount(); i++) {
         for (AssociativityNode associativityNodeInner : associativityNodeList) {
@@ -70,8 +65,7 @@ public class Associativity {
         }
       }
     }
-
-    /* Determine AssociativityNode with the greatest associativity.*/
+    /* Determine AssociativityNode with the greatest associativity. */
     int associativity = 0;
     List<String> associativityHeadList = new ArrayList<>();
     for (AssociativityNode associativityNode : associativityNodeList) {
@@ -85,7 +79,6 @@ public class Associativity {
       }
     }
     Collections.sort(associativityHeadList);
-
     System.out.println(associativityHeadList.get(0));
   }
 

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_01_Deck_of_Ca
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class BlackJackGameAutomator {
   private static final int HIT_UNTIL = 16;
   private final BlackJackHand[] hands;

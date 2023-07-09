@@ -6,16 +6,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-// @SuppressWarnings("GrazieInspection")
 public class PeopleOnBench {
-
-  // Comparator to sort by value
+  /* Comparator to sort by value. */
   static Comparator<Tuple<Integer, Integer>> compareGaps =
       (o1, o2) -> {
         Integer v1 = o1.getLeftData() - o1.getRightData();
         Integer v2 = o2.getLeftData() - o2.getRightData();
         return v1.compareTo(v2);
       };
+
   private static int benchSeats = 0;
   private static boolean benchLeftEdge = true;
   private static boolean benchRightEdge = true;
@@ -115,7 +114,6 @@ public class PeopleOnBench {
       gaps.add(new Tuple<>(originalGap.getLeftData(), newSeat));
       gaps.add(new Tuple<>(newSeat, originalGap.getRightData()));
       people.add(newSeat);
-
       System.out.format(
           "Person '%d' sits at seat '%d', '%d' spaces from the person to his left and '%d'"
               + " spaces from the person to his right\n",

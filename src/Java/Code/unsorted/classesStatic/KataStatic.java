@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.IntStream;
 
+@SuppressWarnings({"SpellCheckingInspection", "unused", "UnusedAssignment"})
 public class KataStatic {
   public static int multiple3_5(int number) {
     // If we list all the natural numbers below 10 that are multiples of 3
@@ -46,11 +47,7 @@ public class KataStatic {
     // To find the starting point of the nth row = (n)(n-1) + 1
     // Triangle count = n(n+1)/2
     // (n(n+1)/2)^2 - ((n-1)(n)/2)^2
-    // int larger = Math.pow((n*(n+1)/2), 2);
-    // int smaller = Math.pow(((n-1)*n/2), 2);
     return (int) (Math.pow(((n * (n + 1)) >> 1), 2) - Math.pow((((n - 1) * n) >> 1), 2));
-    // Optimal
-    // return (int) (Math.pow(n, 3);
   }
 
   public static int rowSumOddNumbers2(int n) {
@@ -107,13 +104,14 @@ public class KataStatic {
     while (true) {
       BigInteger value = BigInteger.valueOf((((long) n * n) * ((long) (n + 1) * (n + 1))) >> 2);
       switch (value.compareTo(source)) {
-        case -1: // Less than
-          n++;
-          break;
-        case 0: // Equal to
+        case -1 -> // Less than
+        n++;
+        case 0 -> { // Equal to
           return n;
-        case 1: // Greater than
+        }
+        case 1 -> { // Greater than
           return -1;
+        }
       }
     }
   }

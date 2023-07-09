@@ -8,11 +8,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("NewClassNamingConvention")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_08_Zero_Matrix_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void zeroMatrix() {

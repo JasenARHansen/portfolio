@@ -13,7 +13,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class IsSortedTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

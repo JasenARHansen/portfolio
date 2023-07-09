@@ -1,10 +1,7 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_16_Sub_Sort;
-
 public class Question {
-
   /* Validate that sorting between these indices will sort the array. Note that this is not a complete
-   * validation, as it does not check if these are the best possible indices.
-   */
+     validation, as it does not check if these are the best possible indices. */
   public static boolean validate(int[] array, int left_index, int right_index) {
     int[] middle = new int[right_index - left_index + 1];
     if (right_index + 1 - left_index >= 0)
@@ -22,7 +19,6 @@ public class Question {
 
   public static void main(String[] args) {
     int[] array = {1, 2, 4, 7, 10, 11, 8, 12, 5, 6, 16, 18, 19};
-
     Range r = findUnsortedSequence(array);
     System.out.println(r);
     System.out.println(array[r.start] + ", " + array[r.end]);
@@ -31,15 +27,12 @@ public class Question {
   public static Range findUnsortedSequence(int[] array) {
     // find left subsequence
     int end_left = findEndOfLeftSubsequence(array);
-
     if (end_left >= array.length - 1) {
       // System.out.println("The array is already sorted.");
       return new Range(0, 0); // Already sorted
     }
-
     // find right subsequence
     int start_right = findStartOfRightSubsequence(array);
-
     int max_index = end_left; // max of left side
     int min_index = start_right; // min of right side
     for (int i = end_left + 1; i < start_right; i++) {
@@ -50,13 +43,10 @@ public class Question {
         max_index = i;
       }
     }
-
     // slide left until less than array[min_index]
     int left_index = shrinkLeft(array, min_index, end_left);
-
     // slide right until greater than array[max_index]
     int right_index = shrinkRight(array, max_index, start_right);
-
     return new Range(left_index, right_index);
   }
 

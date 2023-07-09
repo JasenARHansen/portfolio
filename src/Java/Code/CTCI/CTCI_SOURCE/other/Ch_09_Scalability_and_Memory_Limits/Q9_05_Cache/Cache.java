@@ -1,6 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_09_Scalability_and_Memory_Limits.Q9_05_Cache;
+
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class Cache {
   public static int MAX_SIZE = 10;
   public Node head;

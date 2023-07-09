@@ -2,6 +2,7 @@ package Java.Code.HackerRank.WarmUpChallenges;
 
 import java.util.Arrays;
 
+@SuppressWarnings("GrazieInspection")
 public class JumpingOnTheClouds {
   /*
   There is a new mobile game that starts with consecutively numbered clouds. Some of the clouds are thunderheads and
@@ -52,6 +53,6 @@ public class JumpingOnTheClouds {
     if ((c.length > 2) && (c[2] == 0)) {
       longJump = jumpClouds(Arrays.copyOfRange(c, 2, c.length)) + 1;
     }
-    return Math.min(Integer.MAX_VALUE, Math.min(shortJump, longJump));
+    return Math.min(shortJump, longJump);
   }
 }

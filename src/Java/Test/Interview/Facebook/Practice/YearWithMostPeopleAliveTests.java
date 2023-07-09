@@ -15,7 +15,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class YearWithMostPeopleAliveTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
@@ -30,7 +29,6 @@ public class YearWithMostPeopleAliveTests {
     people.add(new Person(1840, 1935));
     people.add(new Person(1803, 1921));
     people.add(new Person(1894, 1921));
-
     int[] result = YearWithMostPeopleAlive.mostPeople(people);
     System.out.format(
         "%s: After looking at %d records, the year %d was the first to have the maximum number of %d people\n",
@@ -44,7 +42,6 @@ public class YearWithMostPeopleAliveTests {
     List<Person> people = new ArrayList<>();
     people.add(new Person(2000, 2010));
     people.add(new Person(2010, 2011));
-
     int[] result = YearWithMostPeopleAlive.mostPeople(people);
     System.out.format(
         "%s: After looking at %d records, the year %d was the first to have the maximum number of %d people\n",

@@ -1,8 +1,10 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_02_Call_Center;
-/* Represents a call from a user. Calls have a minimum rank and are assigned to the
-   first employee who can handle that call. */
+
+@SuppressWarnings({"unused", "FieldCanBeLocal", "UnusedReturnValue"})
 public class Call {
-  /** Person who is calling. */
+  /* Represents a call from a user. Calls have a minimum rank and are assigned to the
+  first employee who can handle that call. */
+  /* Person who is calling. */
   private final Caller caller;
   /* Minimal rank of employee who can handle this call. */
   private Rank rank;

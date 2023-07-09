@@ -1,5 +1,4 @@
 package Java.Test.CTCI.other.Ch_01_Arrays_and_Strings;
-
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Q1_03_URLify;
@@ -9,12 +8,11 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_03_URLify_Test {
-
     @Rule
     public TestName name = new TestName();
-
     @Test
     public void URLify() {
         String source = "Mr John Smith    ";
@@ -23,7 +21,6 @@ public class Q1_03_URLify_Test {
         System.out.format("%s: '%s' was converted to '%s'\n", name.getMethodName(), source, expected);
         assertEquals(expected, result);
     }
-
     @Test
     public void URLify_solution_1() {
         String source = "Mr John Smith    ";

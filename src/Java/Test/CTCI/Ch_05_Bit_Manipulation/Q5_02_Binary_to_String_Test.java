@@ -9,21 +9,19 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_02_Binary_to_String_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   public static String printBinary(double num) {
     if (num >= 1 || num <= 0) {
       return "ERROR";
     }
-
     StringBuilder binary = new StringBuilder();
     binary.append(".");
     while (num > 0) {
-      /* Setting a limit on length: 32 characters */
+      /* Setting a limit on length: 32 characters. */
       if (binary.length() > 32) {
         return "ERROR";
       }
@@ -43,12 +41,11 @@ public class Q5_02_Binary_to_String_Test {
     if (num >= 1 || num <= 0) {
       return "ERROR";
     }
-
     StringBuilder binary = new StringBuilder();
     double frac = 0.5;
     binary.append(".");
     while (num > 0) {
-      /* Setting a limit on length: 32 characters */
+      /* Setting a limit on length: 32 characters. */
       if (binary.length() >= 32) {
         return "ERROR";
       }
@@ -78,7 +75,6 @@ public class Q5_02_Binary_to_String_Test {
     System.out.format("%s: \n", name.getMethodName());
     String bs = printBinary(.125);
     System.out.println(bs);
-
     for (int i = 0; i < 1000; i++) {
       double num = i / 1000.0;
       String binary = printBinary(num);

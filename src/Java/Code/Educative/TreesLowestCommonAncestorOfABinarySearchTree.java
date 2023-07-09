@@ -1,5 +1,4 @@
 package Java.Code.Educative;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +77,6 @@ public class TreesLowestCommonAncestorOfABinarySearchTree {
     public TreeNode left;
     public TreeNode right;
     public int data;
-
     public TreeNode(int data) {
       this.data = data;
       this.left = null;

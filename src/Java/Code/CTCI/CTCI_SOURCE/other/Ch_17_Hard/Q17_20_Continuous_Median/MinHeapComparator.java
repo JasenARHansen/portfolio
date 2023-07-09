@@ -1,5 +1,4 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_20_Continuous_Median;
-
 import java.util.Comparator;
 
 public class MinHeapComparator implements Comparator<Integer> {

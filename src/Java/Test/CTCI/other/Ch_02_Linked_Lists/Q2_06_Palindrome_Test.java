@@ -13,11 +13,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_06_Palindrome_Test {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void isPalindrome_1() {
@@ -93,7 +92,6 @@ public class Q2_06_Palindrome_Test {
     for (int i = 0; i < length; i++) {
       nodes[i] = new LinkedListNode(i >= length / 2 ? length - i - 1 : i, null, null);
     }
-
     for (int i = 0; i < length; i++) {
       if (i < length - 1) {
         nodes[i].setNext(nodes[i + 1]);
@@ -103,9 +101,7 @@ public class Q2_06_Palindrome_Test {
       }
     }
     // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
-
     LinkedListNode head = nodes[0];
-
     System.out.println(head.printForward());
     boolean success = Q2_06_Palindrome.isPalindrome_solution_1(head);
     System.out.format("%s: list is a palindrome: %b\n", name.getMethodName(), success);
@@ -120,7 +116,6 @@ public class Q2_06_Palindrome_Test {
     for (int i = 0; i < length; i++) {
       nodes[i] = new LinkedListNode(i >= length / 2 ? length - i - 1 : i, null, null);
     }
-
     for (int i = 0; i < length; i++) {
       if (i < length - 1) {
         nodes[i].setNext(nodes[i + 1]);
@@ -130,7 +125,6 @@ public class Q2_06_Palindrome_Test {
       }
     }
     // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
-
     LinkedListNode head = nodes[0];
     System.out.println(head.printForward());
     boolean success = Q2_06_Palindrome.isPalindrome_solution_2(head);
@@ -146,7 +140,6 @@ public class Q2_06_Palindrome_Test {
     for (int i = 0; i < length; i++) {
       nodes[i] = new LinkedListNode(i >= length / 2 ? length - i - 1 : i, null, null);
     }
-
     for (int i = 0; i < length; i++) {
       if (i < length - 1) {
         nodes[i].setNext(nodes[i + 1]);
@@ -156,7 +149,6 @@ public class Q2_06_Palindrome_Test {
       }
     }
     // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
-
     LinkedListNode head = nodes[0];
     System.out.println(head.printForward());
     boolean success = Q2_06_Palindrome.isPalindrome_solution_3(head);

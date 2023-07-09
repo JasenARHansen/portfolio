@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+@SuppressWarnings("ConfusingMainMethod")
 public class AtomTickets {
   /*
   Print a tree of Movies in level order:

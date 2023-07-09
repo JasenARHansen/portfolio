@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.IntroductionWaitNotify;
 
+@SuppressWarnings({"unused", "DuplicatedCode"})
 public class Intro {
   public static void main(String[] args) {
     try {

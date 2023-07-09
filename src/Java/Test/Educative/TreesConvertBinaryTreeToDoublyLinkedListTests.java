@@ -14,9 +14,7 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TreesConvertBinaryTreeToDoublyLinkedListTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void convert_to_linked_list_1() {
@@ -29,7 +27,6 @@ public class TreesConvertBinaryTreeToDoublyLinkedListTests {
     Node N_125 = new Node(125);
     Node N_200 = new Node(200);
     Node N_350 = new Node(350);
-
     // Make expected
     List<Node> expected = new ArrayList<>();
     expected.add(N_25);
@@ -41,7 +38,6 @@ public class TreesConvertBinaryTreeToDoublyLinkedListTests {
     expected.add(N_125);
     expected.add(N_200);
     expected.add(N_350);
-
     // Make tree
     N_100.left = N_50;
     N_100.right = N_200;
@@ -51,22 +47,21 @@ public class TreesConvertBinaryTreeToDoublyLinkedListTests {
     N_75.left = N_60;
     N_200.left = N_125;
     N_200.right = N_350;
-
     List<Node> result = TreesConvertBinaryTreeToDoublyLinkedList.convert_to_linked_list(N_100);
     assertEquals(expected.size(), result.size());
     for (int index = 0; index < result.size(); index++) {
       System.out.format(
-              """
+          """
                       %s: In the new linked list, element %d is '%s'
                       \twith data %d with a left node of '%s'
                       \tand a right node of '%s'.
                       """,
-              name.getMethodName(),
-              index,
-              result.get(index),
-              result.get(index).data,
-              result.get(index).left,
-              result.get(index).right);
+          name.getMethodName(),
+          index,
+          result.get(index),
+          result.get(index).data,
+          result.get(index).left,
+          result.get(index).right);
       assertEquals(expected.get(index), result.get(index));
       // Test Left
       if (index > 0) {

@@ -1,4 +1,5 @@
 package Java.Test.Educative;
+
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.Educative.ListsAddTwoNumbersAsAList;
@@ -15,6 +16,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ListsAddTwoNumbersAsAListTests {
   @Rule public TestName name = new TestName();
+
   @Test
   public void addTwoLists_1() {
     List<String> expected = new ArrayList<>(Arrays.asList("2", "0", "2", "3"));

@@ -9,11 +9,10 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TwoStringsTests {
-
-  @Rule
-  public TestName name = new TestName();
+  @Rule public TestName name = new TestName();
 
   @Test
   public void arrayManipulation_1() {
@@ -22,8 +21,8 @@ public class TwoStringsTests {
     String s2 = "art";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -34,8 +33,8 @@ public class TwoStringsTests {
     String s2 = "cat";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -46,8 +45,8 @@ public class TwoStringsTests {
     String s2 = "world";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -58,8 +57,8 @@ public class TwoStringsTests {
     String s2 = "world";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -70,8 +69,8 @@ public class TwoStringsTests {
     String s2 = "bet";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -82,8 +81,8 @@ public class TwoStringsTests {
     String s2 = "bet";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -94,8 +93,8 @@ public class TwoStringsTests {
     String s2 = "abcabcabcabcabcabc";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -106,8 +105,8 @@ public class TwoStringsTests {
     String s2 = "cdecdecdecde";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -118,8 +117,8 @@ public class TwoStringsTests {
     String s2 = "wentupthehill";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -130,8 +129,8 @@ public class TwoStringsTests {
     String s2 = "fghmqzldbc";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -142,8 +141,8 @@ public class TwoStringsTests {
     String s2 = "apple";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -154,8 +153,8 @@ public class TwoStringsTests {
     String s2 = "sandals";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 
@@ -166,8 +165,8 @@ public class TwoStringsTests {
     String s2 = "sandals";
     String result = TwoStrings.twoStrings(s1, s2);
     System.out.format(
-            "%s: The strings '%s' and '%s' have a common substring: %s.\n",
-            name.getMethodName(), s1, s2, result);
+        "%s: The strings '%s' and '%s' have a common substring: %s.\n",
+        name.getMethodName(), s1, s2, result);
     assertEquals(expected, result);
   }
 }

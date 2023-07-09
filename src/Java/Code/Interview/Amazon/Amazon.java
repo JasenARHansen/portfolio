@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+@SuppressWarnings("UnusedAssignment")
 public class Amazon {
   public static NodeTree<Character> binaryExpressionTree(String input) {
     char[] inputCharacters = input.toCharArray();

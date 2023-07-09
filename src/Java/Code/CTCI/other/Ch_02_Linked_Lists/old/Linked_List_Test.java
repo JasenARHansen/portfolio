@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("ALL")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Linked_List_Test {
   private final String testSuite = "Linked List";

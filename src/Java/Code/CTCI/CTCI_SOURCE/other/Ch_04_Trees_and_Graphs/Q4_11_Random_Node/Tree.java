@@ -3,25 +3,24 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Nod
 import java.util.Random;
 
 public class Tree {
-    TreeNode root = null;
+  TreeNode root = null;
 
-    public void insertInOrder(int value) {
-        if (root == null) {
-            root = new TreeNode(value);
-        } else {
-            root.insertInOrder(value);
-        }
+  public void insertInOrder(int value) {
+    if (root == null) {
+      root = new TreeNode(value);
+    } else {
+      root.insertInOrder(value);
     }
+  }
 
-    public TreeNode getRandomNode() {
-        if (root == null) return null;
+  public TreeNode getRandomNode() {
+    if (root == null) return null;
+    Random random = new Random();
+    int i = random.nextInt(size());
+    return root.getIthNode(i);
+  }
 
-        Random random = new Random();
-        int i = random.nextInt(size());
-        return root.getIthNode(i);
-    }
-
-    public int size() {
-        return root == null ? 0 : root.size();
-    }
+  public int size() {
+    return root == null ? 0 : root.size();
+  }
 }

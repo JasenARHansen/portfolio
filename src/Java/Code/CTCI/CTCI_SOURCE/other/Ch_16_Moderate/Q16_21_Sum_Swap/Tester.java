@@ -1,9 +1,7 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_21_Sum_Swap;
-
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
 public class Tester {
-
     public static String arrayToString(int[] array) {
         StringBuilder sb = new StringBuilder();
         for (int a : array) {
@@ -11,7 +9,6 @@ public class Tester {
         }
         return sb.toString();
     }
-
     public static void main(String[] args) {
         int count = 0;
         int max = 100;
@@ -22,11 +19,9 @@ public class Tester {
             int[] swapsB = QuestionB.findSwapValues(array1, array2);
             int[] swapsC = QuestionC.findSwapValues(array1, array2);
             int[] swapsD = QuestionD.findSwapValues(array1, array2);
-
             if (swapsA != null || swapsB != null || swapsC != null || swapsD != null) {
                 count++;
             }
-
             if (!isEquivalent(swapsA, swapsB, swapsC, swapsD)) {
                 System.out.println("Error");
                 System.out.println(AssortedMethods.arrayToString(array1));
@@ -48,19 +43,16 @@ public class Tester {
             }
         }
     }
-
     public static boolean isEquivalent(int[] a, int[] b, int[] c, int[] d) {
         if (a == null || b == null || c == null || d == null) {
             return a == null && b == null && c == null && d == null;
         }
         return difference(a) == difference(b) && difference(a) == difference(c) && difference(a) == difference(d);
     }
-
     public static int difference(int[] a) {
         if (a.length != 2) {
             return -1;
         }
         return a[0] - a[1];
     }
-
 }

@@ -15,7 +15,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings({"SpellCheckingInspection", "ConstantConditions"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrefixTests {
-
   @Rule public TestName name = new TestName();
 
   @Test

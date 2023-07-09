@@ -6,6 +6,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+@SuppressWarnings({
+  "DuplicatedCode",
+  "SpellCheckingInspection",
+  "UnusedAssignment",
+  "ConstantValue",
+  "unused",
+  "ReassignedVariable",
+  "DataFlowIssue"
+})
 public class CodeChallenge {
   /** Comparator to sort by value. */
   static Comparator<Tuple<String, Integer>> compareLeft =
@@ -55,7 +64,7 @@ public class CodeChallenge {
   public static int[] mergeAndSort(int[]... sourceArrays) {
     List<Integer> merged = new ArrayList<>();
     for (int[] array : sourceArrays) {
-      merged.addAll(Arrays.stream(array).boxed().collect(Collectors.toList()));
+      merged.addAll(Arrays.stream(array).boxed().toList());
     }
     int[] returnArray = new int[merged.size()];
     Iterator<Integer> iterator = merged.iterator();
@@ -161,10 +170,11 @@ public class CodeChallenge {
           }
         }
         switch (detect) {
-          case -1:
+          case -1 -> {
             // Escaped the inputs, no cycle
             return false;
-          case 0:
+          }
+          case 0 -> {
             // Bound by the inputs, continue looking for cycle
             failsafe++;
             if (failsafe == values.length) {
@@ -173,10 +183,11 @@ public class CodeChallenge {
               // cycle exists.
               return true;
             }
-            break;
-          case 1:
+          }
+          case 1 -> {
             // cursors are equal, cycle
             return true;
+          }
         }
       }
     }

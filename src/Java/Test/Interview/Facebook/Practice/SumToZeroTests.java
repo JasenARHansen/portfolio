@@ -14,7 +14,6 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SumToZeroTests {
-
   @Rule public TestName name = new TestName();
 
   @Test
