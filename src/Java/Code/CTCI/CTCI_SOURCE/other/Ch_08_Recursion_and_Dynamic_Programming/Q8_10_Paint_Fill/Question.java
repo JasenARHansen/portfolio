@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_08_Recursion_and_Dynamic_Programming.Q8_10_Paint_Fill;
 
+@SuppressWarnings("UnusedReturnValue")
 public class Question {
   public static String PrintColor(Color c) {
     return switch (c) {

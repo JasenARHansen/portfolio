@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_06_Math_and_Logic_Puzzles.Introduction;
 
+@SuppressWarnings("unused")
 public class PrimeNumbers {
   public static boolean primeNaive(int n) {
     for (int i = 2; i < n; i++) {

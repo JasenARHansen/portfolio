@@ -13,8 +13,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"DataFlowIssue", "unused"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Trees_And_Graphs_Tests {
+public class TreesAndGraphsTests {
   private final String testSuite = "Trees And Graphs";
   @Rule public TestName name = new TestName();
 

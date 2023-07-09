@@ -1,5 +1,6 @@
 package Java.Code.unsorted.classes;
 
+@SuppressWarnings("unused")
 public class NodeList<T extends Comparable<T>> {
   private T data;
   private NodeList<T> previous;

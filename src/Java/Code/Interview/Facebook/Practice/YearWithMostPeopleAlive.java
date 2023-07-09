@@ -3,6 +3,7 @@ package Java.Code.Interview.Facebook.Practice;
 import java.util.List;
 import java.util.PriorityQueue;
 
+@SuppressWarnings("ConstantValue")
 public class YearWithMostPeopleAlive {
   /* Year With Most People Alive given a list of People with a birth year and a death year, fine
    what year, or rear range has the most people Special object Person(int birth, int death) bool

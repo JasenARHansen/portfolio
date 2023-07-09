@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+@SuppressWarnings({"unused", "SuspiciousMethodCalls", "UnusedReturnValue"})
 public class User {
   private final int id;
   private final HashMap<Integer, PrivateChat> privateChats = new HashMap<>();

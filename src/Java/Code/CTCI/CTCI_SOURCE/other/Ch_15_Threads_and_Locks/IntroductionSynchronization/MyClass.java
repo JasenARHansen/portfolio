@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.IntroductionSynchronization;
 
+@SuppressWarnings({"unused", "FieldCanBeLocal"})
 public class MyClass extends Thread {
   private final String name;
   private final MyObject myObj;

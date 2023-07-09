@@ -1,8 +1,10 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_16_Sub_Sort;
+
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Question {
-  /* Validate that sorting between these indices will sort the array. Note that this is not a complete
-     validation, as it does not check if these are the best possible indices. */
   public static boolean validate(int[] array, int left_index, int right_index) {
+    /* Validate that sorting between these indices will sort the array. Note that this is not a complete
+    validation, as it does not check if these are the best possible indices. */
     int[] middle = new int[right_index - left_index + 1];
     if (right_index + 1 - left_index >= 0)
       System.arraycopy(array, left_index, middle, 0, right_index + 1 - left_index);

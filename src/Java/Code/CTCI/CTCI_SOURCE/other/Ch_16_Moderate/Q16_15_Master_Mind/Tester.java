@@ -1,6 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_15_Master_Mind;
+
 import java.util.Random;
 
+@SuppressWarnings({"ConstantValue", "SpellCheckingInspection"})
 public class Tester {
   public static void main(String[] args) {
     test(1000);

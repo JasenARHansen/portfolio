@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_02_Shuffle;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Random;
 
+@SuppressWarnings({"DuplicatedCode", "UnusedReturnValue", "unused"})
 public class Question {
   public static int[] shuffleArrayRecursively(int[] cards, int i) {
     if (i == 0) {

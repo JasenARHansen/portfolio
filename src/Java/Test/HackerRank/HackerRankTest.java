@@ -1,4 +1,5 @@
 package Java.Test.HackerRank;
+
 import static org.junit.Assert.assertEquals;
 
 import Java.Code.HackerRank.HackerRank;
@@ -24,18 +25,18 @@ public class HackerRankTest {
 
   @Test
   public void isSubset_1() {
-    String [] master  = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
-    String [] secondary  = {"John", "New York", "Rajeev", "Bengaluru"};
-    String result = HackerRank.isSubset(  master, secondary);
+    String[] master = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
+    String[] secondary = {"John", "New York", "Rajeev", "Bengaluru"};
+    String result = HackerRank.isSubset(master, secondary);
     System.out.println(result);
     assertEquals("Yes", result);
   }
 
   @Test
   public void isSubset_2() {
-    String [] master  = {"John", "New York", "Rajeev", "Bengaluru"};
-    String [] secondary  = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
-    String result = HackerRank.isSubset(  master, secondary);
+    String[] master = {"John", "New York", "Rajeev", "Bengaluru"};
+    String[] secondary = {"John", "New York", "Rajeev", "Bengaluru", "Steve", "London"};
+    String result = HackerRank.isSubset(master, secondary);
     System.out.println(result);
     assertEquals("No", result);
   }
@@ -53,6 +54,6 @@ public class HackerRankTest {
     String value = "({[Test)]}";
     String result = HackerRank.isBalanced(value);
     System.out.println(result);
-    assertEquals("No", result);;
+    assertEquals("No", result);
   }
 }

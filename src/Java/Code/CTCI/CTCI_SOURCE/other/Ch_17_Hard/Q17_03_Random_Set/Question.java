@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_03_Random_Set;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Random;
 
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Question {
   public static void main(String[] args) {
     int[] cards = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};

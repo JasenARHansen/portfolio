@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_14_Smallest_K;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Arrays;
 
+@SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnnecessaryLocalVariable"})
 public class Tester {
   public static int rankB(int[] array, int rank) {
     int[] cloned = array.clone();

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+@SuppressWarnings("unused")
 public class HashMapList<T, E> {
   private final HashMap<T, ArrayList<E>> map = new HashMap<>();
   /* Insert item into list at key. */

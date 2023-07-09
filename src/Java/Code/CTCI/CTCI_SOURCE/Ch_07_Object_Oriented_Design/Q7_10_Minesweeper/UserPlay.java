@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper;
 
+@SuppressWarnings("InfiniteRecursion")
 public class UserPlay {
   private final boolean isGuess;
   private int row;

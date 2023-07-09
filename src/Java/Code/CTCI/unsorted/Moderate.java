@@ -96,6 +96,7 @@ public class Moderate {
     }
   }
 
+  @SuppressWarnings({"SpellCheckingInspection", "FieldCanBeLocal"})
   public static class ConvertNumberToString {
     private final String[] smalls = {
       "Zero",
@@ -132,7 +133,7 @@ public class Moderate {
       if (startValue == 0) {
         return smalls[0];
       }
-      if (startValue >= Integer.MAX_VALUE) {
+      if (startValue == Integer.MAX_VALUE) {
         return "out of range";
       }
       Stack<String> stack = new Stack<>();

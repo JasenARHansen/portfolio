@@ -9,14 +9,17 @@ import Java.Code.unsorted.classes.classesInstance.Tuple;
 import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"unused", "InstantiationOfUtilityClass"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Moderate_Test {
+public class ModerateTest {
   private final String testSuite = "Moderate";
   @Rule public TestName name = new TestName();
-  // @Test
+
+  @Test
   public void getWordFrequency() {
     String[] words = {
       "the", "Lara", "and", "outcropping", "career", "It", "outcropping", "career", "it"
@@ -28,14 +31,16 @@ public class Moderate_Test {
           "ProcessBook: word '%s' found '%s' times\n", word, processBook.getWordFrequency(word));
     }
   }
-  // @Test
+
+  @Test
   public void lineIntersection() {
     Line segment1 = new Line(0, 0, 3, 3);
     Line segment2 = new Line(0, 3, 3, 0);
     Tuple<Double, Double> intersection = Moderate.lineIntersection(segment1, segment2);
     System.out.format("Intersection of '%s' and '%s' is '%s'\n", segment1, segment2, intersection);
   }
-  // @Test
+
+  @Test
   public void minimumDistance() {
     System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
     int[] array1 = {1, 3, 15, 11, 2};
@@ -45,7 +50,8 @@ public class Moderate_Test {
         "Smallest difference between '%s' and '%s' is '%s'\n",
         Arrays.toString(array1), Arrays.toString(array2), Moderate.minimumDistance(array1, array2));
   }
-  // @Test
+
+  @Test
   public void numberSwapInPlace() {
     System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
     int left = 5;
@@ -54,7 +60,8 @@ public class Moderate_Test {
     System.out.println("Start right: " + right);
     Moderate.numberSwapInPlace(left, right);
   }
-  // @Test
+
+  @Test
   public void playTicTacToe() {
     int size = 3;
     Moderate container = new Moderate();
@@ -69,7 +76,8 @@ public class Moderate_Test {
     game.placePiece(Tic_Tac_Toe_Piece.X, 2, 2);
     game.placePiece(Tic_Tac_Toe_Piece.O, 1, 1);
   }
-  // @Test
+
+  @Test
   public void processNumber() {
     System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
     Moderate container = new Moderate();

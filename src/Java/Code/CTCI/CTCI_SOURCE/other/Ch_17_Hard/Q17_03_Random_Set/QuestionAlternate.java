@@ -3,9 +3,10 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_03_Random_Set;
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Random;
 
+@SuppressWarnings({"ConstantValue", "DataFlowIssue", "unused"})
 public class QuestionAlternate {
-  /* pick M elements from original array, using only elements 0 through i (inclusive). */
   public static int[] pickMRecursively(int[] original, int m, int i) {
+    /* pick M elements from original array, using only elements 0 through i (inclusive). */
     if (i + 1 < m) { // Not enough elements
       return null;
     } else if (i + 1 == m) { // Base case -- copy first m elements into array

@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.Q15_06_Synchronized_Methods;
 
+@SuppressWarnings({"LoopConditionNotUpdatedInsideLoop", "DuplicatedCode"})
 public class Question {
   @SuppressWarnings("StatementWithEmptyBody")
   public static void main(String[] args) {

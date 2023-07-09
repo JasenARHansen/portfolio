@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.IntroductionB;
 
+@SuppressWarnings("BusyWait")
 public class ThreadExample extends Thread {
   int count = 0;
 

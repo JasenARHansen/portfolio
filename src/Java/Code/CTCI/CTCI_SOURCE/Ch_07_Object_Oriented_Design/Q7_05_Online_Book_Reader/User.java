@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_05_Online_Book_Reader;
 
+@SuppressWarnings("unused")
 public class User {
   private int userId;
   private String details;

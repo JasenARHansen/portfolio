@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Introduction;
 
+@SuppressWarnings("unused")
 public class Q_11 {
   public static int numChars = 26;
 

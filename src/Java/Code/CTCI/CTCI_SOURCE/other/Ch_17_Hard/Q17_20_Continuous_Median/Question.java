@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+@SuppressWarnings({"ToArrayCallWithZeroLengthArrayArgument", "FieldCanBeLocal"})
 public class Question {
   private static Comparator<Integer> maxHeapComparator;
   private static Comparator<Integer> minHeapComparator;

@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_06_Math_and_Logic_Puzzles;
 
 import java.util.*;
 
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Primes {
   public static void main(String[] argv) {
     getDescription();

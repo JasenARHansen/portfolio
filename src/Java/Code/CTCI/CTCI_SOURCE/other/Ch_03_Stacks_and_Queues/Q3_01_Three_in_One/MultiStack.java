@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_01_Three_in_
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.EmptyStackException;
 
+@SuppressWarnings("unused")
 public class MultiStack {
   private final StackInfo[] info;
   private final int[] values;

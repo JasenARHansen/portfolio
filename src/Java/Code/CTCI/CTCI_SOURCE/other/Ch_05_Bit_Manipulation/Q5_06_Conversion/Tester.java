@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_05_Bit_Manipulation.Q5_06_Conversion
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("unused")
 public class Tester {
   public static int bitSwapRequired(int a, int b) {
     int count = 0;

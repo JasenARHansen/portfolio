@@ -1,5 +1,6 @@
 package Java.Code.unsorted.classes.classesInstance;
 
+@SuppressWarnings("unused")
 public class NodeTree<T extends Comparable<T>> {
   private T data;
   private int height;

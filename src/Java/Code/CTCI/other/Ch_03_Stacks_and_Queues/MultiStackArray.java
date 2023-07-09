@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_03_Stacks_and_Queues;
 
 import java.util.EmptyStackException;
 
+@SuppressWarnings("ConstantValue")
 public class MultiStackArray {
   private final int stackCount;
   private final int[] indexes;

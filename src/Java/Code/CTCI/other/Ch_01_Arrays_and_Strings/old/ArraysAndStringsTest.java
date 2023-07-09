@@ -1,5 +1,5 @@
-package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.old; // package
-// Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.Old;
+package Java.Code.CTCI.other.Ch_01_Arrays_and_Strings.old;
+
 import static org.junit.Assert.*;
 
 import Java.Code.CTCI.unsorted.RansomNote;
@@ -13,8 +13,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Arrays_And_Strings_Test {
+public class ArraysAndStringsTest {
   private final String testSuite = "Arrays And Strings";
   @Rule public TestName name = new TestName();
 

@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_15_Longest_Word;
 import java.util.Arrays;
 import java.util.HashMap;
 
+@SuppressWarnings("UnusedReturnValue")
 public class Question {
   public static String printLongestWord(String[] arr) {
     HashMap<String, Boolean> map = new HashMap<>();
@@ -894,23 +895,5 @@ public class Question {
       "you",
       "young"
     };
-    /* To see performance on a larger array, comment / delete the above "return arr;" line and uncomment the below code.
-    This will create a giant array by concatenating words from the above list. */
-    /*ArrayList<String> list = new ArrayList<>();
-    for (int i = 0; i < arr.length; i++) {
-    	int n = AssortedMethods.randomIntInRange(0, 1000);
-    	String s = arr[i];
-    	for (int j = 0; j < n; j++) {
-    		int index = AssortedMethods.randomIntInRange(0, i);
-    		s += arr[index];
-    	}
-    	list.add(s);
-    	list.add(arr[i]);
-    }
-    String[] ar = new String[list.size()];
-    for (int i = 0; i < list.size(); i++) {
-    	ar[i] = list.get(i);
-    }
-    return ar; */
   }
 }

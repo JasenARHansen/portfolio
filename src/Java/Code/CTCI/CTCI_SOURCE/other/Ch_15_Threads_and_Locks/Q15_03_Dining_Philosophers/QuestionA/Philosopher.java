@@ -1,12 +1,15 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.Q15_03_Dining_Philosophers.QuestionA;
+
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class Philosopher extends Thread {
   private final int maxPause = 100;
   private final int bites = 10;
   private final Chopstick left;
   private final Chopstick right;
   private final int index;
+
   public Philosopher(int i, Chopstick left, Chopstick right) {
     index = i;
     this.left = left;

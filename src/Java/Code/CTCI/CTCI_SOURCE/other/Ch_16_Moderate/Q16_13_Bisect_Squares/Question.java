@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_13_Bisect_Squares;
 
+@SuppressWarnings({"ConstantValue", "UnusedReturnValue", "unused"})
 public class Question {
   public static int randomInt(int n) {
     return (int) (Math.random() * n);

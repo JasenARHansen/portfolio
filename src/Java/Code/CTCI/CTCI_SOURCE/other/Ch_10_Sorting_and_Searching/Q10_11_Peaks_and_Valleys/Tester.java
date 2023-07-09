@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_10_Sorting_and_Searching.Q10_11_Peak
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("StatementWithEmptyBody")
 public class Tester {
   public static void main(String[] args) {
     for (int i = 0; i < 100; i++) {
@@ -32,9 +33,7 @@ public class Tester {
       int curr = array[i];
       int next = array[i + 1];
       if (prev <= curr && curr >= next) {
-        continue;
       } else if (prev >= curr && curr <= next) {
-        continue;
       } else {
         return false;
       }

@@ -4,6 +4,7 @@ import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 import Java.Code.unsorted.classes.CustomLinkedList;
 import java.util.Stack;
 
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Q2_06_Palindrome {
   public static boolean isPalindrome(CustomLinkedList<String> input) {
     int offset = 0;

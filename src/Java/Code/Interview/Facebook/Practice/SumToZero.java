@@ -2,6 +2,7 @@ package Java.Code.Interview.Facebook.Practice;
 
 import java.util.*;
 
+@SuppressWarnings({"ConstantValue", "DuplicatedCode"})
 public class SumToZero {
   /*
   Given an array of integers, determine if any three elements sum to zero.

@@ -1,18 +1,23 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
+
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.TreeNode;
 
+@SuppressWarnings("DuplicatedCode")
 public class Question {
   static int TWO_NODES_FOUND = 2;
   static int ONE_NODE_FOUND = 1;
   static int NO_NODES_FOUND = 0;
-  // Checks how many 'special' nodes are located under this root
+
   public static int covers(TreeNode root, TreeNode p, TreeNode q) {
+    // Checks how many 'special' nodes are located under this root
     int ret = NO_NODES_FOUND;
     if (root == null) return ret;
     if (root == p || root == q) ret += 1;
     ret += covers(root.left, p, q);
     if (ret == TWO_NODES_FOUND) // Found p and q
-    return ret;
+    {
+      return ret;
+    }
     return ret + covers(root.right, p, q);
   }
 

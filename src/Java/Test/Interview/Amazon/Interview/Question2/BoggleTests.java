@@ -1,7 +1,5 @@
 package Java.Test.Interview.Amazon.Interview.Question2;
 
-import static org.junit.Assert.assertEquals;
-
 import Java.Code.Interview.Amazon.Interview.Question2.Boggle;
 import Java.Code.Interview.Amazon.Interview.Question2.Trie;
 import java.util.Set;
@@ -11,6 +9,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("InstantiationOfUtilityClass")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BoggleTests {
   @Rule public TestName name = new TestName();
@@ -35,8 +34,7 @@ public class BoggleTests {
     Trie dictionary = new Trie();
     dictionary.insert(words);
     Character[][] board = {{'a', 'b', 'c'}, {'d', 'o', 'g'}, {'e', 'l', 'g'}};
-    Set result = Boggle.getWords(dictionary, board);
+    Set<String> result = Boggle.getWords(dictionary, board);
     System.out.format("%s: Words %s.\n", name.getMethodName(), result);
-    assertEquals(0, 0);
   }
 }

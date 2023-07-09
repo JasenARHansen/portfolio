@@ -3,6 +3,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_03_Stacks_and_Queues.Q3_05_Sort_Stac
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 import java.util.Stack;
 
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Question {
   public static Stack<Integer> mergesort(Stack<Integer> inStack) {
     if (inStack.size() <= 1) {

@@ -4,10 +4,6 @@ import Java.Code.unsorted.classes.classesInstance.Car;
 import Java.Code.unsorted.interfaces.GreetingService;
 import Java.Code.unsorted.interfaces.MathOperation;
 import Java.Code.unsorted.interfaces.Vehicle;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.nio.charset.StandardCharsets;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -15,7 +11,17 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
+@SuppressWarnings({
+  "SameParameterValue",
+  "DataFlowIssue",
+  "SpellCheckingInspection",
+  "ConstantValue",
+  "DuplicatedCode"
+})
 public class Java8Tester {
   public static void main(String[] args) {
     // https://www.tutorialspoint.com/java8/index.htm
@@ -55,16 +61,6 @@ public class Java8Tester {
     System.out.println(names2);
   }
 
-  // sort using java 7
-  private void sortUsingJava7(List<String> names) {
-    names.sort(String::compareTo);
-  }
-
-  // sort using java 8
-  private void sortUsingJava8(List<String> names) {
-    names.sort(String::compareTo);
-  }
-
   private static void section10() {
     System.out.println("\nSection 10:");
     Java8Tester java8tester = new Java8Tester();
@@ -77,125 +73,19 @@ public class Java8Tester {
     java8tester.testBackwardCompatability();
   }
 
-  private void testAdjusters() {
-    System.out.println("Test TemporalAdjusters:");
-    // Get the current date
-    LocalDate date1 = LocalDate.now();
-    System.out.println("Current date: " + date1);
-    // get the next Tuesday
-    LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
-    System.out.println("Next Tuesday on : " + nextTuesday);
-    // get the second Saturday of next month
-    LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
-    LocalDate secondSaturday =
-            firstInYear
-                    .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
-                    .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
-    System.out.println("Second Saturday on : " + secondSaturday);
-  }
-
-  private void testBackwardCompatability() {
-    System.out.println("Test Date:");
-    // Get the current date
-    Date currentDate = new Date();
-    System.out.println("Current date: " + currentDate);
-    // Get the instant of current date in terms of milliseconds
-    Instant now = currentDate.toInstant();
-    ZoneId currentZone = ZoneId.systemDefault();
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
-    System.out.println("Local date: " + localDateTime);
-    ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
-    System.out.println("Zoned date: " + zonedDateTime);
-  }
-
-  private void testChromoUnits() {
-    System.out.println("Test ChronoUnit:");
-    // Get the current date
-    LocalDate today = LocalDate.now();
-    System.out.println("Current date: " + today);
-    // add 1 week to the current date
-    LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
-    System.out.println("Next week: " + nextWeek);
-    // add 1 month to the current date
-    LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
-    System.out.println("Next month: " + nextMonth);
-    // add 1 year to the current date
-    LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
-    System.out.println("Next year: " + nextYear);
-    // add 10 years to the current date
-    LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
-    System.out.println("Date after ten year: " + nextDecade);
-  }
-
-  private void testDuration() {
-    System.out.println("Test Duration:");
-    LocalTime time1 = LocalTime.now();
-    Duration twoHours = Duration.ofHours(2);
-    LocalTime time2 = time1.plus(twoHours);
-    Duration duration = Duration.between(time1, time2);
-    System.out.println("Duration: " + duration);
-  }
-
-  private void testLocalDateTime() {
-    System.out.println("Test LocalDateTime:");
-    // Get the current date and time
-    LocalDateTime currentTime = LocalDateTime.now();
-    System.out.println("Current DateTime: " + currentTime);
-    LocalDate date1 = currentTime.toLocalDate();
-    System.out.println("date1: " + date1);
-    Month month = currentTime.getMonth();
-    int day = currentTime.getDayOfMonth();
-    int seconds = currentTime.getSecond();
-    System.out.println("Month: " + month + " day: " + day + " seconds: " + seconds);
-    LocalDateTime date2 = currentTime.withDayOfMonth(10).withYear(2012);
-    System.out.println("date2: " + date2);
-    // 12 december 2014
-    LocalDate date3 = LocalDate.of(2014, Month.DECEMBER, 12);
-    System.out.println("date3: " + date3);
-    // 22 hour 15 minutes
-    LocalTime date4 = LocalTime.of(22, 15);
-    System.out.println("date4: " + date4);
-    // parse a string
-    LocalTime date5 = LocalTime.parse("20:15:30");
-    System.out.println("date5: " + date5);
-  }
-
-  private void testPeriod() {
-    System.out.println("Test Period:");
-    // Get the current date
-    LocalDate date1 = LocalDate.now();
-    System.out.println("Current date: " + date1);
-    // add 1 month to the current date
-    LocalDate date2 = date1.plus(1, ChronoUnit.MONTHS);
-    System.out.println("Next month: " + date2);
-    Period period = Period.between(date2, date1);
-    System.out.println("Period: " + period);
-  }
-
-  private void testZonedDateTime() {
-    System.out.println("Test ZonedDateTime:");
-    // Get the current date and time
-    ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
-    System.out.println("date1: " + date1);
-    ZoneId id = ZoneId.of("Europe/Paris");
-    System.out.println("ZoneId: " + id);
-    ZoneId currentZone = ZoneId.systemDefault();
-    System.out.println("CurrentZone: " + currentZone);
-  }
-
   private static void section11() {
     System.out.println("\nSection 11:");
     // Encode using basic encoder
     String base64encodedString =
-            Base64.getEncoder().encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
+        Base64.getEncoder().encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
     System.out.println("Base64 Encoded String (Basic) :" + base64encodedString);
     // Decode
     byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
     System.out.println(
-            "Original String: " + new String(base64decodedBytes, StandardCharsets.UTF_8));
+        "Original String: " + new String(base64decodedBytes, StandardCharsets.UTF_8));
     base64encodedString =
-            Base64.getUrlEncoder()
-                    .encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
+        Base64.getUrlEncoder()
+            .encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
     System.out.println("Base64 Encoded String (URL) :" + base64encodedString);
     StringBuilder stringBuilder = new StringBuilder();
     for (int i = 0; i < 10; ++i) {
@@ -210,20 +100,20 @@ public class Java8Tester {
     System.out.println("\nSection 2:");
     // with type declaration
     MathOperation addition = Integer::sum;
-    // with out type declaration
+    // without type declaration
     MathOperation subtraction = (a, b) -> a - b;
     // with return statement along with curly braces
     MathOperation multiplication = (int a, int b) -> a * b;
     // without return statement and without curly braces
     MathOperation division = (int a, int b) -> a / b;
     System.out.println(
-            "10 + 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, addition));
+        "10 + 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, addition));
     System.out.println(
-            "10 - 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, subtraction));
+        "10 - 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, subtraction));
     System.out.println(
-            "10 x 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, multiplication));
+        "10 x 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, multiplication));
     System.out.println(
-            "10 / 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, division));
+        "10 / 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, division));
   }
 
   private static void section3() {
@@ -235,8 +125,8 @@ public class Java8Tester {
     greetService1.sayMessage("Mahesh");
     greetService2.sayMessage("Suresh");
     GreetingService greetService3 =
-            message ->
-                    System.out.println(Java.Code.unsorted.interfaces.GreetingService.salutation + message);
+        message ->
+            System.out.println(Java.Code.unsorted.interfaces.GreetingService.salutation + message);
     greetService3.sayMessage("Mahesh");
   }
 
@@ -287,7 +177,7 @@ public class Java8Tester {
     System.out.println("\nSection 6:");
     List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
     List<String> filtered =
-            strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+        strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
     System.out.println("strings:" + strings);
     System.out.println("filtered:" + filtered);
     Random random = new Random();
@@ -295,8 +185,7 @@ public class Java8Tester {
     random.ints().limit(10).forEach(System.out::println);
     List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
     // get list of unique squares
-    List<Integer> squaresList =
-            numbers.stream().map(i -> i * i).distinct().collect(Collectors.toList());
+    List<Integer> squaresList = numbers.stream().map(i -> i * i).distinct().toList();
     System.out.println("squaresList:" + squaresList);
     strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
     // get count of empty string
@@ -316,7 +205,7 @@ public class Java8Tester {
     filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
     System.out.println("Filtered List: " + filtered);
     String mergedString =
-            strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+        strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
     System.out.println("Merged String: " + mergedString);
     numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
     IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
@@ -375,7 +264,7 @@ public class Java8Tester {
     filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
     System.out.println("Filtered List: " + filtered);
     mergedString =
-            strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+        strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
     System.out.println("Merged String: " + mergedString);
     squaresList = numbers.stream().map(i -> i * i).distinct().collect(Collectors.toList());
     System.out.println("Squares List: " + squaresList);
@@ -491,21 +380,6 @@ public class Java8Tester {
     System.out.println(java8Tester.sum(a, b));
   }
 
-  private Integer sum(
-          @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> a,
-          @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> b) {
-    // Optional.isPresent - checks the value is present or not
-    System.out.println("First parameter is present: " + a.isPresent());
-    System.out.println("Second parameter is present: " + b.isPresent());
-    // Optional.orElse - returns the value if present otherwise returns
-    // the default value passed.
-    Integer value1 = a.orElse(0);
-    // Optional.get - gets the value, value should be present
-    //noinspection OptionalGetWithoutIsPresent
-    Integer value2 = b.get();
-    return value1 + value2;
-  }
-
   private static void section9() {
     System.out.println("\nSection 9:");
     ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
@@ -518,8 +392,138 @@ public class Java8Tester {
     } catch (ScriptException e) {
       System.out.println("Error executing script: " + e.getMessage());
     }
-
     assert result != null;
     System.out.println(result);
+  }
+
+  private void sortUsingJava7(List<String> names) {
+    // sort using java 7
+    names.sort(String::compareTo);
+  }
+
+  private void sortUsingJava8(List<String> names) {
+    // sort using java 8
+    names.sort(String::compareTo);
+  }
+
+  private void testAdjusters() {
+    System.out.println("Test TemporalAdjusters:");
+    // Get the current date
+    LocalDate date1 = LocalDate.now();
+    System.out.println("Current date: " + date1);
+    // get the next Tuesday
+    LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+    System.out.println("Next Tuesday on : " + nextTuesday);
+    // get the second Saturday of next month
+    LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
+    LocalDate secondSaturday =
+        firstInYear
+            .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
+            .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+    System.out.println("Second Saturday on : " + secondSaturday);
+  }
+
+  private void testBackwardCompatability() {
+    System.out.println("Test Date:");
+    // Get the current date
+    Date currentDate = new Date();
+    System.out.println("Current date: " + currentDate);
+    // Get the instant of current date in terms of milliseconds
+    Instant now = currentDate.toInstant();
+    ZoneId currentZone = ZoneId.systemDefault();
+    LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+    System.out.println("Local date: " + localDateTime);
+    ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+    System.out.println("Zoned date: " + zonedDateTime);
+  }
+
+  private void testChromoUnits() {
+    System.out.println("Test ChronoUnit:");
+    // Get the current date
+    LocalDate today = LocalDate.now();
+    System.out.println("Current date: " + today);
+    // add 1 week to the current date
+    LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
+    System.out.println("Next week: " + nextWeek);
+    // add 1 month to the current date
+    LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
+    System.out.println("Next month: " + nextMonth);
+    // add 1 year to the current date
+    LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
+    System.out.println("Next year: " + nextYear);
+    // add 10 years to the current date
+    LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
+    System.out.println("Date after ten year: " + nextDecade);
+  }
+
+  private void testDuration() {
+    System.out.println("Test Duration:");
+    LocalTime time1 = LocalTime.now();
+    Duration twoHours = Duration.ofHours(2);
+    LocalTime time2 = time1.plus(twoHours);
+    Duration duration = Duration.between(time1, time2);
+    System.out.println("Duration: " + duration);
+  }
+
+  private void testLocalDateTime() {
+    System.out.println("Test LocalDateTime:");
+    // Get the current date and time
+    LocalDateTime currentTime = LocalDateTime.now();
+    System.out.println("Current DateTime: " + currentTime);
+    LocalDate date1 = currentTime.toLocalDate();
+    System.out.println("date1: " + date1);
+    Month month = currentTime.getMonth();
+    int day = currentTime.getDayOfMonth();
+    int seconds = currentTime.getSecond();
+    System.out.println("Month: " + month + " day: " + day + " seconds: " + seconds);
+    LocalDateTime date2 = currentTime.withDayOfMonth(10).withYear(2012);
+    System.out.println("date2: " + date2);
+    // 12 december 2014
+    LocalDate date3 = LocalDate.of(2014, Month.DECEMBER, 12);
+    System.out.println("date3: " + date3);
+    // 22 hour 15 minutes
+    LocalTime date4 = LocalTime.of(22, 15);
+    System.out.println("date4: " + date4);
+    // parse a string
+    LocalTime date5 = LocalTime.parse("20:15:30");
+    System.out.println("date5: " + date5);
+  }
+
+  private void testPeriod() {
+    System.out.println("Test Period:");
+    // Get the current date
+    LocalDate date1 = LocalDate.now();
+    System.out.println("Current date: " + date1);
+    // add 1 month to the current date
+    LocalDate date2 = date1.plus(1, ChronoUnit.MONTHS);
+    System.out.println("Next month: " + date2);
+    Period period = Period.between(date2, date1);
+    System.out.println("Period: " + period);
+  }
+
+  private void testZonedDateTime() {
+    System.out.println("Test ZonedDateTime:");
+    // Get the current date and time
+    ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
+    System.out.println("date1: " + date1);
+    ZoneId id = ZoneId.of("Europe/Paris");
+    System.out.println("ZoneId: " + id);
+    ZoneId currentZone = ZoneId.systemDefault();
+    System.out.println("CurrentZone: " + currentZone);
+  }
+
+  private Integer sum(
+      @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> a,
+      @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> b) {
+    // Optional.isPresent - checks the value is present or not
+    System.out.println("First parameter is present: " + a.isPresent());
+    System.out.println("Second parameter is present: " + b.isPresent());
+    // Optional.orElse - returns the value if present otherwise returns
+    // the default value passed.
+    Integer value1 = a.orElse(0);
+    // Optional.get - gets the value, value should be present
+    //noinspection OptionalGetWithoutIsPresent
+    Integer value2 = b.get();
+    return value1 + value2;
   }
 }

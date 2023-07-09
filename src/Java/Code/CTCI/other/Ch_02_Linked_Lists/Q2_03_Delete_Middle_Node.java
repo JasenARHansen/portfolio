@@ -2,6 +2,7 @@ package Java.Code.CTCI.other.Ch_02_Linked_Lists;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.LinkedListNode;
 
+@SuppressWarnings("UnusedReturnValue")
 public class Q2_03_Delete_Middle_Node {
   public static boolean removeNextNode(LinkedListNode node) {
     // Since this is a single linked list I have limits.

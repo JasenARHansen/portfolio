@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_04_Parking_Lo
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public abstract class Vehicle {
   protected ArrayList<ParkingSpot> parkingSpots = new ArrayList<>();
   protected String licensePlate;

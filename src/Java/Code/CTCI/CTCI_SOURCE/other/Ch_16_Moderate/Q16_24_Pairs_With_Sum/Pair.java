@@ -1,16 +1,16 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_24_Pairs_With_Sum;
 
 public class Pair {
-    public int first;
-    public int second;
+  public int first;
+  public int second;
 
-    public Pair(int first, int second) {
-        this.first = first;
-        this.second = second;
-    }
+  public Pair(int first, int second) {
+    this.first = first;
+    this.second = second;
+  }
 
-    @Override
-    public String toString() {
-        return "(" + first + ", " + second + ")";
-    }
+  @Override
+  public String toString() {
+    return "(" + first + ", " + second + ")";
+  }
 }

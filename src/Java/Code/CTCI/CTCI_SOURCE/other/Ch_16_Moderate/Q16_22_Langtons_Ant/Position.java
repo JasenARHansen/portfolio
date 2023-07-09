@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_22_Langtons_Ant;
 
+@SuppressWarnings("MethodDoesntCallSuperMethod")
 public class Position {
   public int row;
   public int column;

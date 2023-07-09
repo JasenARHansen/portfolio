@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_08_Circus_Tower;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class Tester {
   public static boolean validate(ArrayList<HtWt> seq) {
     for (int i = 1; i < seq.size(); i++) {

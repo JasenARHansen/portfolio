@@ -1,4 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_01_Add_Without_Plus;
+
+@SuppressWarnings("unused")
 public class Tester {
   public static int randomInt(int n) {
     return (int) (Math.random() * n);

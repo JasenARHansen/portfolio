@@ -3,8 +3,9 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_07_Chat_Serve
 import java.util.Date;
 import java.util.HashMap;
 
-/* UserManager serves as the central place for the core user actions. */
+@SuppressWarnings({"unused", "MismatchedQueryAndUpdateOfCollection"})
 public class UserManager {
+  /* UserManager serves as the central place for the core user actions. */
   private static UserManager instance;
   private final HashMap<Integer, User> usersById = new HashMap<>();
   private final HashMap<String, User> usersByAccountName = new HashMap<>();

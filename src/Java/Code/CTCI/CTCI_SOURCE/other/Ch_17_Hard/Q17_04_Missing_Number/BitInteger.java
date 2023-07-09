@@ -1,6 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_17_Hard.Q17_04_Missing_Number;
 
-@SuppressWarnings({"DanglingJavadoc", "unused"})
+@SuppressWarnings("unused")
 public class BitInteger {
   public static int INTEGER_SIZE;
   private final boolean[] bits;

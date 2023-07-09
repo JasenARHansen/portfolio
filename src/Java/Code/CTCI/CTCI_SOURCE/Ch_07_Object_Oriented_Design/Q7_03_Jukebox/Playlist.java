@@ -1,9 +1,12 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_03_Jukebox;
+
 import java.util.Queue;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class Playlist {
   private final Song song;
   private final Queue<Song> queue;
+
   public Playlist(Song song, Queue<Song> queue) {
     super();
     this.song = song;

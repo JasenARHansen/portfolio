@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.*;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "unused", "DuplicatedCode"})
 public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<NodeGraph<X, Y, Z>> {
   private final Map<X, Edge<X, Z>> adjacent = new HashMap<>();
   private X id;

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_05_Online_Boo
 
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class UserManager {
   private HashMap<Integer, User> users;
 

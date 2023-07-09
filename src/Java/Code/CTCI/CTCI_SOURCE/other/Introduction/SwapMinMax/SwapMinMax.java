@@ -1,6 +1,8 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Introduction.SwapMinMax;
+
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("unused")
 public class SwapMinMax {
   public static void swapMinMax(int[] array) {
     int minIndex = 0;

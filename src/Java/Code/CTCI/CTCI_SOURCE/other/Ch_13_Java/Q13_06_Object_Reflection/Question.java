@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+@SuppressWarnings({"rawtypes", "ThrowablePrintedToSystemOut", "unchecked"})
 public class Question {
   public static void main(String[] args) {
     try {
@@ -26,7 +27,6 @@ public class Question {
         | NoSuchMethodException e) {
       System.out.println(e);
     } catch (InstantiationException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }

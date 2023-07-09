@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_13_Bisect_Squares;
 
+@SuppressWarnings("unused")
 public class Point {
   public double x;
   public double y;

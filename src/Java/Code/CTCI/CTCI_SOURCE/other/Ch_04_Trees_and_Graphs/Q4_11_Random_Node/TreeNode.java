@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_04_Trees_and_Graphs.Q4_11_Random_Nod
 
 import java.util.Random;
 
+@SuppressWarnings("unused")
 public class TreeNode {
   /* One node of a binary tree. The data element stored is a single character. */
   public int data;

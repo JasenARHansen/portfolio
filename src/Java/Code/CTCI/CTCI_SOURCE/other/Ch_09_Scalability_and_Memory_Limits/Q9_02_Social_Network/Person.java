@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_09_Scalability_and_Memory_Limits.Q9_
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class Person {
   private final ArrayList<Integer> friends = new ArrayList<>();
   private final int personID;

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_16_Sub_Sort;
 
 import Java.Code.CTCI.CTCI_SOURCE.other.CtCILibrary.AssortedMethods;
 
+@SuppressWarnings("ConstantValue")
 public class Tester {
   public static void main(String[] args) {
     for (int i = 0; i < 1000; i++) {

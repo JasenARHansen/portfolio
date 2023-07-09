@@ -1,4 +1,5 @@
 package Java.Test.CTCI.other.Q4_01_Route_Between_Nodes;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -13,9 +14,11 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode", "unused"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_01_Route_Between_Nodes_Test {
   @Rule public TestName name = new TestName();
+
   public static Graph createNewGraph() {
     Graph g = new Graph();
     Node[] temp = new Node[6];

@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_06_Jigsaw;
 
 import java.util.LinkedList;
 
+@SuppressWarnings("UnusedReturnValue")
 public class Puzzle {
   private final LinkedList<Piece> pieces; /* Remaining pieces left to put away. */
   private final int size;

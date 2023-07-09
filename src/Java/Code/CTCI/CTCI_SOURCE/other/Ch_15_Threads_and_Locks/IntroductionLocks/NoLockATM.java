@@ -1,5 +1,6 @@
 package Java.Code.CTCI.CTCI_SOURCE.other.Ch_15_Threads_and_Locks.IntroductionLocks;
 
+@SuppressWarnings("UnusedReturnValue")
 public class NoLockATM {
   private int balance = 100;
 

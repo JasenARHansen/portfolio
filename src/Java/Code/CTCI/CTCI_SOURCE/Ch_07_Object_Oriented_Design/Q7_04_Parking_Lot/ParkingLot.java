@@ -1,7 +1,10 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_04_Parking_Lot;
+
+@SuppressWarnings("FieldCanBeLocal")
 public class ParkingLot {
   private final int NUM_LEVELS = 5;
   private final Level[] levels;
+
   public ParkingLot() {
     levels = new Level[NUM_LEVELS];
     for (int i = 0; i < NUM_LEVELS; i++) {

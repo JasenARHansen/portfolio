@@ -2,6 +2,7 @@ package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_03_Intersection;
 
 import java.util.ArrayList;
 
+@SuppressWarnings({"SpellCheckingInspection", "ConstantValue"})
 public class Tester {
   public static void main(String[] args) {
     ArrayList<Point> points = getPoints(10);

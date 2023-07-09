@@ -1,5 +1,7 @@
 package Java.Code.CTCI.CTCI_SOURCE.Ch_07_Object_Oriented_Design.Q7_12_Hash_Table;
 
+import java.util.Objects;
+
 public class Question {
   public static void main(String[] args) {
     Dummy bob = new Dummy("Bob", 20);
@@ -28,11 +30,8 @@ public class Question {
         System.out.println("Dummy named " + name + ": " + dummy);
       }
       Dummy d2 = hash.remove(name);
-      if (d2 == null) {
-        System.out.println("Dummy removed named " + name + ": " + "null");
-      } else {
-        System.out.println("Dummy removed named " + name + ": " + d2);
-      }
+      System.out.println(
+          "Dummy removed named " + name + ": " + Objects.requireNonNullElse(d2, "null"));
     }
   }
 }

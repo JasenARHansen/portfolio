@@ -1,13 +1,15 @@
 package Java.Code.Interview.Google.Jan_14_2021.interview_2;
-/*
-Given a list of letters, the assistant must return all possible words (in some language) that can be created with those letters.
-        The returned words can contain all the provided letters or a subset of them.
-        For example, if the user has the letters "H", "C", "A", "T", then the assistant should suggest the words “CHAT”, “CAT”, “HAT”, “AT”
-        and “A” (valid words in the English dictionary). */
+
 import java.util.List;
 import java.util.Set;
 
+@SuppressWarnings({"DuplicatedCode", "unchecked", "rawtypes"})
 public class Trie {
+  /*
+  Given a list of letters, the assistant must return all possible words (in some language) that can be created with those letters.
+          The returned words can contain all the provided letters or a subset of them.
+          For example, if the user has the letters "H", "C", "A", "T", then the assistant should suggest the words “CHAT”, “CAT”, “HAT”, “AT”
+          and “A” (valid words in the English dictionary). */
   TrieNode root = new TrieNode("");
 
   public void setup(List<String> dictionary) {
@@ -19,12 +21,10 @@ public class Trie {
   }
 
   public void insert(String word) {
-    //noinspection unchecked
     insert(this.root, word.toCharArray());
   }
 
   public void getPaths(List<Character> data, Set<String> words) {
-    //noinspection unchecked
     this.getPaths(this.root, data, words, "");
   }
 
