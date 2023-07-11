@@ -1,7 +1,9 @@
-package Java.Code.CTCI.CTCI_SOURCE.other.Ch_16_Moderate.Q16_22_Langtons_Ant;
+package Java.code.ctci.source.ch_16_Moderate.q16_22_Langtons_Ant;
+
 public class Grid {
   private final Ant ant = new Ant();
   private boolean[][] grid; // false is white, true is black
+
   public Grid() {
     grid = new boolean[1][1];
   }
@@ -18,9 +20,9 @@ public class Grid {
 
   private void ensureFit(Position position) {
     /* Ensure that the given position will fit on the array. If
-       necessary, double the size of the matrix, copy the old values
-       over, and adjust the ant's position so that it's in a positive
-       ranges. */
+    necessary, double the size of the matrix, copy the old values
+    over, and adjust the ant's position so that it's in a positive
+    ranges. */
     int shiftRow = 0;
     int shiftColumn = 0;
     /* Calculate new number of rows. */
@@ -65,15 +67,15 @@ public class Grid {
 
   public String toString() {
     /* Print board. The first loop of this is a "compression" which only prints the active parts of the board. The active
-       board is the smallest rectangle that contains all the black cells and the ant. This is fairly optional. Nice to do
-       but also not essential.
-       FULL BOARD:    ACTIVE BOARD:
-        _____          _X
-        ___X_          XX
-        __XX_           X
-        ___X_
-        _____
-        _____. */
+    board is the smallest rectangle that contains all the black cells and the ant. This is fairly optional. Nice to do
+    but also not essential.
+    FULL BOARD:    ACTIVE BOARD:
+     _____          _X
+     ___X_          XX
+     __XX_           X
+     ___X_
+     _____
+     _____. */
     int firstActiveRow = grid.length;
     int firstActiveColumn = grid[0].length;
     int lastActiveRow = 0;
