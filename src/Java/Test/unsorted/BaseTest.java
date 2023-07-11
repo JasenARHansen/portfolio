@@ -1,4 +1,4 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
 import java.util.ArrayList;
 import java.util.Collections;

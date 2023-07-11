@@ -1,10 +1,11 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 import java.util.*;
 import java.util.Queue;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class GraphAdjacency<X extends Comparable<X>, Y> {
-  HashMap<X, LinkedList<Edge<X, Y>>> map;
+  final HashMap<X, LinkedList<Edge<X, Y>>> map;
 
   public GraphAdjacency() {
     this.map = new HashMap<>();

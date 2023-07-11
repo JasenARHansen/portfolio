@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classes;
+package Java.code.unsorted.classes;
 
 @SuppressWarnings("unused")
 public class NodeList<T extends Comparable<T>> {

@@ -1,12 +1,12 @@
-package Java.Code.unsorted.classesMain;
+package Java.code.unsorted.classesMain;
 
-import Java.Code.unsorted.classes.classesInstance.Tuple;
+import Java.code.unsorted.classes.classesInstance.Tuple;
 import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("SameParameterValue")
 public class KeyToValue {
-  static Map<Integer, Tuple<Integer, Integer>> map = new HashMap<>();
+  static final Map<Integer, Tuple<Integer, Integer>> map = new HashMap<>();
 
   public static void main(String[] argv) {
     getDescription();
@@ -20,8 +20,8 @@ public class KeyToValue {
   private static void addValue(int leftValue, int rightValue) {
     boolean insert = true;
     for (int key = 0; key < map.size(); key++) {
-      if ((map.get(key).getLeftData() == leftValue)
-          && (map.get(key).getRightData() == rightValue)) {
+      if ((map.get(key).leftData() == leftValue)
+          && (map.get(key).rightData() == rightValue)) {
         System.out.format(
             "The the values '%d' and '%d' are already mapped to key '%d'\n",
             leftValue, rightValue, key);
@@ -46,7 +46,7 @@ public class KeyToValue {
       Tuple<Integer, Integer> data = map.get(key);
       System.out.format(
           "The key '%d' maps to values '%d' and '%d'\n",
-          key, data.getLeftData(), data.getRightData());
+          key, data.leftData(), data.rightData());
     } else {
       System.out.format("The key '%d' is not in the data set.\n", key);
     }
@@ -55,8 +55,8 @@ public class KeyToValue {
   private static void getValueKey(int leftValue, int rightValue) {
     boolean notFound = true;
     for (int key = 0; key < map.size(); key++) {
-      if ((map.get(key).getLeftData() == leftValue)
-          && (map.get(key).getRightData() == rightValue)) {
+      if ((map.get(key).leftData() == leftValue)
+          && (map.get(key).rightData() == rightValue)) {
         System.out.format(
             "The the values '%d' and '%d' are mapped to key '%d'\n", leftValue, rightValue, key);
         notFound = false;

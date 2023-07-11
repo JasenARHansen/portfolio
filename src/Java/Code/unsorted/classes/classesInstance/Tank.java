@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 public class Tank {
   private int size;

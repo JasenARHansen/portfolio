@@ -1,11 +1,11 @@
-package Java.Code.unsorted.classesMain;
+package Java.code.unsorted.classesMain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MaxInRange {
-  static List<Integer> values = new ArrayList<>();
+  static final List<Integer> values = new ArrayList<>();
 
   public static void main(String[] argv) {
     getDescription();

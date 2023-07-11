@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classesStatic;
+package Java.code.unsorted.classesStatic;
 
 @SuppressWarnings("unused")
 public class Utilities {

@@ -1,12 +1,12 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 class Person {
-  String name;
-  Integer id;
+  final String name;
+  final Integer id;
 
   Person(String n, Integer i) {
     name = n;
@@ -25,7 +25,7 @@ class Person {
 }
 
 public class PersonTest {
-  static List<Person> people =
+  static final List<Person> people =
       Arrays.asList(new Person("Bob", 1), new Person(2), new Person("Jane", 3));
   static int x;
 

@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 @SuppressWarnings({"unused", "unchecked"})
 public class Edge<X extends Comparable<X>, Y> implements Comparable<Edge<X, Y>> {

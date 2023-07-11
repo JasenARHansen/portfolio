@@ -1,36 +1,36 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 public class Circle {
-  int xCordinate;
-  int yCordinate;
-  int radius;
+  final int xCoordinate;
+  final int yCoordinate;
+  final int radius;
 
   public Circle(int xCoordinate, int yCoordinate, int radius) {
-    this.xCordinate = xCoordinate;
-    this.yCordinate = yCoordinate;
+    this.xCoordinate = xCoordinate;
+    this.yCoordinate = yCoordinate;
     this.radius = radius;
   }
 
   public int getXMaximum() {
-    return this.xCordinate + this.radius;
+    return this.xCoordinate + this.radius;
   }
 
   public int getXMinimum() {
-    return this.xCordinate - this.radius;
+    return this.xCoordinate - this.radius;
   }
 
   public int getYMaximum() {
-    return this.yCordinate + this.radius;
+    return this.yCoordinate + this.radius;
   }
 
   public int getYMinimum() {
-    return this.yCordinate - this.radius;
+    return this.yCoordinate - this.radius;
   }
 
   public boolean intersects(Circle otherCircle) {
     // Distance between 2 points = ((x2 - x1)^2 + (y2 - y1)^2)^(1/2)
-    double xValues = Math.pow((this.xCordinate - otherCircle.xCordinate), 2);
-    double yValues = Math.pow((this.yCordinate - otherCircle.yCordinate), 2);
+    double xValues = Math.pow((this.xCoordinate - otherCircle.xCoordinate), 2);
+    double yValues = Math.pow((this.yCoordinate - otherCircle.yCoordinate), 2);
     double distance = Math.pow((xValues + yValues), .5);
     int totalRadius = this.radius + otherCircle.radius;
     return (distance <= totalRadius);

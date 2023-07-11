@@ -1,9 +1,9 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
-//noinspection SuspiciousNameCombination
+@SuppressWarnings({"unused", "SuspiciousNameCombination"})
 public class Rectangle {
-  public Tuple<Integer, Integer> point1;
-  public Tuple<Integer, Integer> point2;
+  public final Tuple<Integer, Integer> point1;
+  public final Tuple<Integer, Integer> point2;
 
   public Rectangle(int point1X, int point1Y, int point2X, int point2Y) {
     this.point1 = new Tuple<>(point1X, point1Y);
@@ -15,11 +15,11 @@ public class Rectangle {
   }
 
   public int height() {
-    return this.point2.getRightData() - this.point1.getRightData();
+    return this.point2.rightData() - this.point1.rightData();
   }
 
   public int width() {
-    return this.point2.getLeftData() - this.point1.getLeftData();
+    return this.point2.leftData() - this.point1.leftData();
   }
 
   public Tuple<Integer, Integer> getPoint1() {
@@ -38,18 +38,18 @@ public class Rectangle {
   }
 
   public int getXMaximum() {
-    return Math.max(point1.getLeftData(), point2.getLeftData());
+    return Math.max(point1.leftData(), point2.leftData());
   }
 
   public int getXMinimum() {
-    return Math.min(point1.getLeftData(), point2.getLeftData());
+    return Math.min(point1.leftData(), point2.leftData());
   }
 
   public int getYMaximum() {
-    return Math.max(point1.getRightData(), point2.getRightData());
+    return Math.max(point1.rightData(), point2.rightData());
   }
 
   public int getYMinimum() {
-    return Math.min(point1.getRightData(), point2.getRightData());
+    return Math.min(point1.rightData(), point2.rightData());
   }
 }

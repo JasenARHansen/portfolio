@@ -1,6 +1,6 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
-import Java.Code.unsorted.classes.classesInstance.Heap;
+import Java.code.unsorted.classes.classesInstance.Heap;
 
 @SuppressWarnings("DuplicatedCode")
 public class HeapTest {

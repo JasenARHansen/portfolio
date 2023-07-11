@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classesStatic;
+package Java.code.unsorted.classesStatic;
 
 import java.math.BigInteger;
 import java.util.*;

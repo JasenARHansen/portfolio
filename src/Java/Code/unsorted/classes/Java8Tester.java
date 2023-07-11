@@ -1,9 +1,9 @@
-package Java.Code.unsorted.classes;
+package Java.code.unsorted.classes;
 
-import Java.Code.unsorted.classes.classesInstance.Car;
-import Java.Code.unsorted.interfaces.GreetingService;
-import Java.Code.unsorted.interfaces.MathOperation;
-import Java.Code.unsorted.interfaces.Vehicle;
+import Java.code.unsorted.classes.classesInstance.Car;
+import Java.code.unsorted.interfaces.GreetingService;
+import Java.code.unsorted.interfaces.MathOperation;
+import Java.code.unsorted.interfaces.Vehicle;
 import java.nio.charset.StandardCharsets;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -106,14 +106,10 @@ public class Java8Tester {
     MathOperation multiplication = (int a, int b) -> a * b;
     // without return statement and without curly braces
     MathOperation division = (int a, int b) -> a / b;
-    System.out.println(
-        "10 + 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, addition));
-    System.out.println(
-        "10 - 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, subtraction));
-    System.out.println(
-        "10 x 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, multiplication));
-    System.out.println(
-        "10 / 5 = " + Java.Code.unsorted.interfaces.MathOperation.operate(10, 5, division));
+    System.out.println("10 + 5 = " + MathOperation.operate(10, 5, addition));
+    System.out.println("10 - 5 = " + MathOperation.operate(10, 5, subtraction));
+    System.out.println("10 x 5 = " + MathOperation.operate(10, 5, multiplication));
+    System.out.println("10 / 5 = " + MathOperation.operate(10, 5, division));
   }
 
   private static void section3() {
@@ -125,8 +121,7 @@ public class Java8Tester {
     greetService1.sayMessage("Mahesh");
     greetService2.sayMessage("Suresh");
     GreetingService greetService3 =
-        message ->
-            System.out.println(Java.Code.unsorted.interfaces.GreetingService.salutation + message);
+        message -> System.out.println(GreetingService.salutation + message);
     greetService3.sayMessage("Mahesh");
   }
 

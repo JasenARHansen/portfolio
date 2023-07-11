@@ -1,4 +1,5 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,6 +8,7 @@ public class Median<T extends Comparable<T>> {
   private final Heap<T> larger;
   private final Heap<T> smaller;
   private final List<T> median;
+
   public Median() {
     // Min heap for larger numbers
     larger = new Heap<>(false);

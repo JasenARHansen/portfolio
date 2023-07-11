@@ -1,18 +1,11 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-@SuppressWarnings({
-  "SpellCheckingInspection",
-  "DanglingJavadoc",
-  "ConstantValue",
-  "DuplicatedCode",
-  "unused",
-  "ReassignedVariable"
-})
+@SuppressWarnings("DuplicatedCode")
 public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   /* Root node of tree. */
   private NodeTree<T> root;
@@ -83,12 +76,12 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   public void insert(T data) {
-    /** Insert data from root and allow internal logic to handle the sorting */
+    /* Insert data from root and allow internal logic to handle the sorting */
     root = insert(data, root);
   }
 
   public boolean isEmpty() {
-    /** Test to see if tree is empty. */
+    /* Test to see if tree is empty. */
     return (root == null);
   }
 
@@ -158,7 +151,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   public void remove(T data) {
-    /** Insert data from root and allow internal logic to handle the sorting. */
+    /* Insert data from root and allow internal logic to handle the sorting. */
     remove(data, root);
   }
 
@@ -167,7 +160,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   public boolean search(T data) {
-    /** Entry point for data search. */
+    /* Entry point for data search. */
     return search(root, data);
   }
 
@@ -177,7 +170,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   private int countNodes(NodeTree<T> entryNode) {
-    /** Recursive call to count number of nodes from current node. */
+    /* Recursive call to count number of nodes from current node. */
     // If node is not assigned it can not have a count
     if (entryNode == null) {
       return 0;
@@ -227,7 +220,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   private NodeTree<T> insert(T data, NodeTree<T> entryNode) {
-    /** recursive logic to insert data. */
+    /* recursive logic to insert data. */
     if (entryNode == null) {
       entryNode = new NodeTree<>(data);
     } else if (data.compareTo(entryNode.getData()) < 0) {
@@ -236,7 +229,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
         if (data.compareTo(entryNode.getLeftChild().getData()) < 0) {
           entryNode = rotateRight(entryNode);
         } else {
-          entryNode = rebalanceWithLeftChild(entryNode);
+          entryNode = balanceWithLeftChild(entryNode);
         }
       }
     } else if (data.compareTo(entryNode.getData()) > 0) {
@@ -245,7 +238,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
         if (data.compareTo(entryNode.getRightChild().getData()) > 0) {
           entryNode = rotateLeft(entryNode);
         } else {
-          entryNode = rebalanceWithRightChild(entryNode);
+          entryNode = balanceWithRightChild(entryNode);
         }
       }
     }
@@ -258,19 +251,19 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     return Math.max(leftValue, rightValue);
   }
 
-  private NodeTree<T> rebalanceWithLeftChild(NodeTree<T> entryNode) {
+  private NodeTree<T> balanceWithLeftChild(NodeTree<T> entryNode) {
     entryNode.setLeftChild(rotateLeft(entryNode.getLeftChild()));
     return rotateRight(entryNode);
   }
 
-  private NodeTree<T> rebalanceWithRightChild(NodeTree<T> entryNode) {
+  private NodeTree<T> balanceWithRightChild(NodeTree<T> entryNode) {
     entryNode.setRightChild(rotateRight(entryNode.getRightChild()));
     return rotateLeft(entryNode);
   }
 
   private NodeTree<T> remove(T data, NodeTree<T> entryNode) {
     if (entryNode == null) {
-      return entryNode;
+      return null;
     } else if (data.compareTo(entryNode.getData()) == 0) {
       // if right child is null
       if (entryNode.getRightChild() == null) {
@@ -289,18 +282,18 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
     } else if (data.compareTo(entryNode.getData()) > 0) {
       entryNode.setRightChild(remove(data, entryNode.getRightChild()));
     }
-    // I need to rebalance here
+    // I need to balance here
     if (height(entryNode.getLeftChild()) - height(entryNode.getRightChild()) == 2) {
       if (data.compareTo(entryNode.getLeftChild().getData()) < 0) {
         entryNode = rotateRight(entryNode);
       } else {
-        entryNode = rebalanceWithLeftChild(entryNode);
+        entryNode = balanceWithLeftChild(entryNode);
       }
     } else if (height(entryNode.getRightChild()) - height(entryNode.getLeftChild()) == 2) {
       if (data.compareTo(entryNode.getRightChild().getData()) > 0) {
         entryNode = rotateLeft(entryNode);
       } else {
-        entryNode = rebalanceWithRightChild(entryNode);
+        entryNode = balanceWithRightChild(entryNode);
       }
     }
     return entryNode;
@@ -328,7 +321,7 @@ public class BinarySearchTreeHeightBalanced<T extends Comparable<T>> {
   }
 
   private boolean search(NodeTree<T> entryNode, T data) {
-    /** recursive method to search tree for data. */
+    /* recursive method to search tree for data. */
     if (entryNode == null) {
       return false;
     }

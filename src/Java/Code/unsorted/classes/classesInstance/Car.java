@@ -1,7 +1,7 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
-import Java.Code.unsorted.interfaces.FourWheeler;
-import Java.Code.unsorted.interfaces.Vehicle;
+import Java.code.unsorted.interfaces.FourWheeler;
+import Java.code.unsorted.interfaces.Vehicle;
 
 public class Car implements Vehicle, FourWheeler {
   public void print() {

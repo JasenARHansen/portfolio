@@ -1,10 +1,10 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
 import static org.junit.Assert.*;
 
-import Java.Code.unsorted.classes.CustomLinkedList;
-import Java.Code.unsorted.classes.classesInstance.BinarySearchTreeHeightBalanced;
-import Java.Code.unsorted.classes.classesInstance.Median;
+import Java.code.unsorted.classes.CustomLinkedList;
+import Java.code.unsorted.classes.classesInstance.BinarySearchTreeHeightBalanced;
+import Java.code.unsorted.classes.classesInstance.Median;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

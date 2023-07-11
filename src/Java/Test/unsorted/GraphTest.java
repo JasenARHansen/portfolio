@@ -1,7 +1,7 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
-import Java.Code.unsorted.classes.classesInstance.Graph;
-import Java.Code.unsorted.classes.classesInstance.GraphAdjacency;
+import Java.code.unsorted.classes.classesInstance.Graph;
+import Java.code.unsorted.classes.classesInstance.GraphAdjacency;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;

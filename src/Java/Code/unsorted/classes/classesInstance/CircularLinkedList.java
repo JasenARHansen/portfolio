@@ -1,6 +1,6 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
-import Java.Code.unsorted.classes.NodeList;
+import Java.code.unsorted.classes.NodeList;
 
 @SuppressWarnings("DuplicatedCode")
 public class CircularLinkedList<T extends Comparable<T>> {

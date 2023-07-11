@@ -1,4 +1,4 @@
-package Java.Code.unsorted.interfaces;
+package Java.code.unsorted.interfaces;
 
 public interface MathOperation {
   static int operate(int a, int b, MathOperation mathOperation) {

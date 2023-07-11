@@ -1,8 +1,8 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
 import static org.junit.Assert.*;
 
-import Java.Code.unsorted.classesStatic.KataStatic;
+import Java.code.unsorted.classesStatic.KataStatic;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;

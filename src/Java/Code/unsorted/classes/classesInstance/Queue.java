@@ -1,12 +1,13 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
-import Java.Code.unsorted.classes.CustomLinkedList;
+import Java.code.unsorted.classes.CustomLinkedList;
 import java.util.EmptyStackException;
 
 public class Queue<T extends Comparable<T>> {
   private final CustomLinkedList<T> innerList;
+
   public Queue() {
-    /** Constructor. */
+    /* Constructor. */
     this.innerList = new CustomLinkedList<>();
   }
 

@@ -1,7 +1,7 @@
-package Java.Code.unsorted.classes;
+package Java.code.unsorted.classes;
 
-import Java.Code.unsorted.classes.classesInstance.Rectangle;
-import Java.Code.unsorted.classes.classesInstance.Tuple;
+import Java.code.unsorted.classes.classesInstance.Rectangle;
+import Java.code.unsorted.classes.classesInstance.Tuple;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -11,23 +11,22 @@ import java.util.stream.IntStream;
   "SpellCheckingInspection",
   "UnusedAssignment",
   "ConstantValue",
-  "unused",
   "ReassignedVariable",
   "DataFlowIssue"
 })
 public class CodeChallenge {
-  /** Comparator to sort by value. */
-  static Comparator<Tuple<String, Integer>> compareLeft =
+  /* Comparator to sort by value. */
+  static final Comparator<Tuple<String, Integer>> compareLeft =
       (e1, e2) -> {
-        String v1 = e1.getLeftData();
-        String v2 = e2.getLeftData();
+        String v1 = e1.leftData();
+        String v2 = e2.leftData();
         return v1.compareTo(v2);
       };
   // Comparator to sort by value
-  static Comparator<Tuple<String, Integer>> compareRight =
+  static final Comparator<Tuple<String, Integer>> compareRight =
       (e1, e2) -> {
-        Integer v1 = e1.getRightData();
-        Integer v2 = e2.getRightData();
+        Integer v1 = e1.rightData();
+        Integer v2 = e2.rightData();
         return v1.compareTo(v2);
       };
 
@@ -58,7 +57,7 @@ public class CodeChallenge {
     System.out.println(
         "Challenge 10: Given 1 or more array, find all values that exist in all arrays");
     System.out.println(
-        "Challenge 11: Given a list of Tuples, sort by the leftData and sort by .getRightData()");
+        "Challenge 11: Given a list of Tuples, sort by the leftData and sort by .rightData()");
   }
 
   public static int[] mergeAndSort(int[]... sourceArrays) {
@@ -343,9 +342,8 @@ public class CodeChallenge {
     System.out.println(topBoarder);
     String[] board = new String[queenList.size()];
     for (Tuple<Integer, Integer> queen : queenList) {
-      String line =
-          queen.getRightData() + ":\t" + "\t".repeat(Math.max(0, queen.getLeftData())) + "X";
-      board[queen.getRightData()] = line;
+      String line = queen.rightData() + ":\t" + "\t".repeat(Math.max(0, queen.leftData())) + "X";
+      board[queen.rightData()] = line;
     }
     for (int index = 0; index < queenList.size(); index++) {
       System.out.println(board[index]);
@@ -364,10 +362,10 @@ public class CodeChallenge {
 
   public static int rectangleOverlap(Rectangle firstRectangle, Rectangle secondRectangle) {
     // For overlap area there must be X axis overlap
-    int firstX1 = firstRectangle.point1.getLeftData();
-    int firstX2 = firstRectangle.point2.getLeftData();
-    int secondX1 = secondRectangle.point1.getLeftData();
-    int secondX2 = secondRectangle.point2.getLeftData();
+    int firstX1 = firstRectangle.point1.leftData();
+    int firstX2 = firstRectangle.point2.leftData();
+    int secondX1 = secondRectangle.point1.leftData();
+    int secondX2 = secondRectangle.point2.leftData();
     int overlapXStart = Math.max(firstX1, secondX1);
     int overlapXEnd = Math.min(firstX2, secondX2);
     // Validity check
@@ -376,10 +374,10 @@ public class CodeChallenge {
       return 0;
     }
     // For overlap area there must be y-axis overlap
-    int firstY1 = firstRectangle.point1.getRightData();
-    int firstY2 = firstRectangle.point2.getRightData();
-    int secondY1 = secondRectangle.point1.getRightData();
-    int secondY2 = secondRectangle.point2.getRightData();
+    int firstY1 = firstRectangle.point1.rightData();
+    int firstY2 = firstRectangle.point2.rightData();
+    int secondY1 = secondRectangle.point1.rightData();
+    int secondY2 = secondRectangle.point2.rightData();
     int overlapYStart = Math.max(firstY1, secondY1);
     int overlapYEnd = Math.min(firstY2, secondY2);
     // Validity check
@@ -388,72 +386,6 @@ public class CodeChallenge {
       return 0;
     }
     return new Rectangle(overlapXStart, overlapYStart, overlapXEnd, overlapYEnd).getArea();
-    // Integer overlapXStart = null;
-    // Integer overlapXEnd = null;
-    //
-    // // The starting X coordinate must be between the X bounds of the 2nd
-    // Rectangle
-    // if (( firstX1 <= secondX1 ) && (secondX1 <= firstX2)){
-    // overlapXStart = secondX1;
-    // }
-    // else if (( secondX1 <= firstX1 ) && (firstX1 <= firstX2)){
-    // overlapXEnd = secondX1;
-    // }
-    // else
-    // {
-    // //No overlap
-    // return 0;
-    // }
-    //
-    // // The ending X coordinate must be between the X bounds of the 2nd
-    // Rectangle
-    // if (( firstX1 <= secondX2 ) && (secondX2 <= firstX2)){
-    // overlapXEnd = secondX2;
-    // }
-    // else if (( secondX1 <= firstX2 ) && (firstX2 <= firstX2)){
-    // overlapXEnd = firstX2;
-    // }
-    // else
-    // {
-    // //No overlap
-    // return 0;
-    // }
-    //
-    // Integer overlapYStart = null;
-    // Integer overlapYEnd = null;
-    //
-    // // The starting Y coordinate must be between the Y bounds of the 2nd
-    // Rectangle
-    // if (( firstY1 <= secondY1 ) && (secondY1 <= firstY2)){
-    // overlapYStart = secondY1;
-    // }
-    // else if (( secondY1 <= firstY1 ) && (firstY1 <= firstY2)){
-    // overlapYEnd = secondY1;
-    // }
-    // else
-    // {
-    // //No overlap
-    // return 0;
-    // }
-    //
-    // // The ending Y coordinate must be between the Y bounds of the 2nd
-    // Rectangle
-    // if (( firstY1 <= secondY2 ) && (secondY2 <= firstY2)){
-    // overlapYEnd = secondY2;
-    // }
-    // else if (( secondY1 <= firstY2 ) && (firstY2 <= firstY2)){
-    // overlapYEnd = firstY2;
-    // }
-    // else
-    // {
-    // //No overlap
-    // return 0;
-    // }
-    //
-    // // If double overlap found
-    // int width = overlapXEnd - overlapXStart;
-    // int height = overlapYEnd - overlapYStart;
-    // return width   height;
   }
 
   private static void addQueen(

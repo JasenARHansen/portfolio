@@ -1,4 +1,4 @@
-package Java.Code.unsorted.interfaces;
+package Java.code.unsorted.interfaces;
 
 public interface GreetingService {
   String salutation = "Hello! ";

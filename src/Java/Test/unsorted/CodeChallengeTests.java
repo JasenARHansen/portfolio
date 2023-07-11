@@ -1,10 +1,10 @@
-package Java.Test.unsorted;
+package Java.test.unsorted;
 
 import static org.junit.Assert.*;
 
-import Java.Code.unsorted.classes.CodeChallenge;
-import Java.Code.unsorted.classes.classesInstance.Rectangle;
-import Java.Code.unsorted.classes.classesInstance.Tuple;
+import Java.code.unsorted.classes.CodeChallenge;
+import Java.code.unsorted.classes.classesInstance.Rectangle;
+import Java.code.unsorted.classes.classesInstance.Tuple;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.FixMethodOrder;
@@ -16,7 +16,7 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CodeChallengeTests {
-  @Rule public TestName name = new TestName();
+  @Rule public final TestName name = new TestName();
 
   @Test
   public void _description() {
@@ -274,17 +274,17 @@ public class CodeChallengeTests {
     values.add(new Tuple<>("Christal", 33));
     System.out.println("Unsorted:");
     for (Tuple<String, Integer> value : values) {
-      System.out.format("\t%s, %s\n", value.getLeftData(), value.getRightData());
+      System.out.format("\t%s, %s\n", value.leftData(), value.rightData());
     }
     System.out.println("Sorted Left:");
     CodeChallenge.sortTupelLeft(values);
     for (Tuple<String, Integer> value : values) {
-      System.out.format("\t%s, %s\n", value.getLeftData(), value.getRightData());
+      System.out.format("\t%s, %s\n", value.leftData(), value.rightData());
     }
     System.out.println("Sorted Right:");
     CodeChallenge.sortTupelRight(values);
     for (Tuple<String, Integer> value : values) {
-      System.out.format("\t%s, %s\n", value.getLeftData(), value.getRightData());
+      System.out.format("\t%s, %s\n", value.leftData(), value.rightData());
     }
   }
 }

@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classes.classesInstance;
+package Java.code.unsorted.classes.classesInstance;
 
 @SuppressWarnings({"unused", "SpellCheckingInspection"})
 public class Line {
@@ -31,7 +31,7 @@ public class Line {
   }
 
   public Double getPoint1Y() {
-    return this.point1.getRightData();
+    return this.point1.rightData();
   }
 
   public double getSlope() {
@@ -39,15 +39,15 @@ public class Line {
   }
 
   public Double getPoint1X() {
-    return this.point1.getLeftData();
+    return this.point1.leftData();
   }
 
   public Double getPoint2X() {
-    return this.point2.getLeftData();
+    return this.point2.leftData();
   }
 
   public Double getPoint2Y() {
-    return this.point2.getRightData();
+    return this.point2.rightData();
   }
 
   public double getYfromX(double x) {

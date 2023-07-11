@@ -1,4 +1,4 @@
-package Java.Code.unsorted.classes;
+package Java.code.unsorted.classes;
 
 @SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class CustomLinkedList<T extends Comparable<T>> {
