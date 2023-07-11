@@ -7,7 +7,8 @@ import java.util.Queue;
   "unchecked",
   "ConditionalBreakInInfiniteLoop",
   "StatementWithEmptyBody",
-  "DuplicatedCode"
+  "DuplicatedCode",
+  "SuspiciousMethodCalls"
 })
 public class Graph<X extends Comparable<X>, Y, Z> {
   private final HashMap<X, NodeGraph<X, Y, Z>> mapNodes;
@@ -175,7 +176,6 @@ public class Graph<X extends Comparable<X>, Y, Z> {
     }
     List<X> path = new ArrayList<>();
     Set<X> visited = new HashSet<>();
-    //noinspection SuspiciousMethodCalls
     Queue<X> queue = new LinkedList<>(mapNodes.get(startPoint).getAdjacencyList());
     visited.add((X) id);
     while (!queue.isEmpty()) {
@@ -483,16 +483,12 @@ public class Graph<X extends Comparable<X>, Y, Z> {
       }
       return;
     }
-    //noinspection SuspiciousMethodCalls
     if (mapNodes.containsKey(value1) && mapNodes.containsKey(value2)) {
-      //noinspection SuspiciousMethodCalls
       mapNodes.get(value1).addAdjacent(value2, value3);
     } else {
-      //noinspection SuspiciousMethodCalls
       if (!mapNodes.containsKey(value1)) {
         System.err.format("Graph does not contain a node with id '%s'", value1);
       }
-      //noinspection SuspiciousMethodCalls
       if (!mapNodes.containsKey(value2)) {
         System.err.format("Graph does not contain a node with id '%s'", value2);
       }

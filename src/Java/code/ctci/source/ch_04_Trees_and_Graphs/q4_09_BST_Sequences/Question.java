@@ -4,7 +4,7 @@ import Java.code.ctci.source.ctciLibrary.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "unchecked"})
 public class Question {
   public static void weaveLists(
       LinkedList<Integer> first,
@@ -14,7 +14,6 @@ public class Question {
     /* One list is empty. Add the remainder to [a cloned] prefix and
     store result. */
     if (first.size() == 0 || second.size() == 0) {
-      //noinspection unchecked
       LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
       result.addAll(first);
       result.addAll(second);

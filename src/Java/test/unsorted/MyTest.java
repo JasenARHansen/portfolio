@@ -204,7 +204,8 @@ public class MyTest {
     }
   }
 
-  @Test
+  // Disabling since it requires user input
+  // @Test
   public void test9() {
     highestAssociativity();
   }
@@ -280,7 +281,8 @@ public class MyTest {
     scan.close();
   }
 
-  @Test
+  // Disabling since it requires user input
+  // @Test
   public void test10() {
     loopTest();
   }

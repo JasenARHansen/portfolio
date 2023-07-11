@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "OctalInteger"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringArithmeticTests {
   @Rule public final TestName name = new TestName();
@@ -107,7 +107,6 @@ public class StringArithmeticTests {
   public void convert_number_zeros() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    //noinspection OctalInteger
     List<String> output = string_arithmetic.convert(000000);
     Assert.assertEquals(expected, output);
   }
@@ -116,7 +115,6 @@ public class StringArithmeticTests {
   public void convert_number_padded_zeros() {
     List<String> expected = new ArrayList<>();
     expected.add("1");
-    //noinspection OctalInteger
     List<String> output = string_arithmetic.convert(000001);
     Assert.assertEquals(expected, output);
   }

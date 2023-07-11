@@ -3,10 +3,12 @@ package Java.test.unsorted;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class BaseTest {
-  @Test
+
+  // For now disabling since this requires user input.
+  // @Test
   public void test() {
     ArrayList<ArrayList<String>> affinityClusters = new ArrayList<>();
     Scanner scan = new Scanner(System.in);

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.*;
 
-@SuppressWarnings({"unchecked", "unused", "DuplicatedCode"})
+@SuppressWarnings({"unchecked", "unused", "DuplicatedCode", "SuspiciousMethodCalls"})
 public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<NodeGraph<X, Y, Z>> {
   private final Map<X, Edge<X, Z>> adjacent = new HashMap<>();
   private X id;
@@ -68,7 +68,6 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
     } else {
       id = value;
     }
-    //noinspection SuspiciousMethodCalls
     return this.adjacent.containsKey(id);
   }
 
@@ -79,7 +78,6 @@ public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<Node
     } else {
       id = value;
     }
-    //noinspection SuspiciousMethodCalls
     this.adjacent.remove(id);
   }
 

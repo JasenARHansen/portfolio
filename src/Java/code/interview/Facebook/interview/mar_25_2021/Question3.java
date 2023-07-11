@@ -23,7 +23,7 @@ public class Question3 {
 
   public static String addString(String left, String right) {
     // left pad zeros
-    String returnString = "";
+    String returnString;
     int maxLength = Math.max(left.length(), right.length());
     if (left.length() > right.length()) {
       // pad right
@@ -34,15 +34,16 @@ public class Question3 {
     }
     // Note : Now this would be something like 1234 + 0056
     int carry = 0;
+    StringBuilder returnStringBuilder = new StringBuilder();
     for (int index = maxLength; index > 0; index--) {
       int top = Integer.parseInt(left.substring(index - 1, index));
       int bottom = Integer.parseInt(right.substring(index - 1, index));
       int value = carry + top + bottom;
       carry = value / 10;
       value = value % 10;
-      //noinspection StringConcatenationInLoop
-      returnString = value + returnString;
+      returnStringBuilder.insert(0, value);
     }
+    returnString = returnStringBuilder.toString();
     if (carry > 0) {
       returnString = carry + returnString;
     }

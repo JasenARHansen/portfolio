@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("NewClassNamingConvention")
+@SuppressWarnings({"NewClassNamingConvention", "ConstantValue", "SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_02_Is_Permutation_Test {
   @Rule public final TestName name = new TestName();
@@ -18,11 +18,11 @@ public class Q1_02_Is_Permutation_Test {
   @Test
   public void isPermutation_true() {
     String left = "apple";
-    String right = "cat";
+    String right = "elppa";
     boolean success = Q1_02_Is_Permutation.isPermutation(left, right);
+    assertTrue(success);
     System.out.format(
         "%s: %s is a permutation of %s: %b\n", name.getMethodName(), left, right, success);
-    assertTrue(success);
   }
 
   @Test

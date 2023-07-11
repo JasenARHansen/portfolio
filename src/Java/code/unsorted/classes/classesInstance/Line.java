@@ -1,14 +1,12 @@
 package Java.code.unsorted.classes.classesInstance;
 
-@SuppressWarnings({"unused", "SpellCheckingInspection"})
+@SuppressWarnings({"unused", "SpellCheckingInspection", "SuspiciousNameCombination"})
 public class Line {
   private final Tuple<Double, Double> point1;
   private final Tuple<Double, Double> point2;
 
   public Line(double point1X, double point1Y, double point2X, double point2Y) {
-    //noinspection SuspiciousNameCombination
     this.point1 = new Tuple<>(point1X, point1Y);
-    //noinspection SuspiciousNameCombination
     this.point2 = new Tuple<>(point2X, point2Y);
   }
 

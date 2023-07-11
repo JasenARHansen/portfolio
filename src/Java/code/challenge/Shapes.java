@@ -1,6 +1,6 @@
 package Java.code.challenge;
 
-@SuppressWarnings({"DuplicatedCode", "unused", "DuplicateExpressions"})
+@SuppressWarnings({"DuplicatedCode", "unused", "DuplicateExpressions", "SuspiciousNameCombination"})
 public class Shapes {
 
   // Set Default Values
@@ -403,12 +403,10 @@ public class Shapes {
   }
 
   public static void square(int width, char... symbolIn) {
-    //noinspection SuspiciousNameCombination
     rectangle(width, width, false, symbolIn);
   }
 
   public static void square(int width, boolean inscribed, char... symbolIn) {
-    //noinspection SuspiciousNameCombination
     rectangle(width, width, inscribed, symbolIn);
   }
 

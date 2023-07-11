@@ -16,12 +16,12 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 @SuppressWarnings({
-  "SameParameterValue",
-  "DataFlowIssue",
-  "SpellCheckingInspection",
-  "ConstantValue",
-  "DuplicatedCode"
-})
+        "SameParameterValue",
+        "DataFlowIssue",
+        "SpellCheckingInspection",
+        "ConstantValue",
+        "DuplicatedCode"
+        , "OptionalGetWithoutIsPresent"})
 public class Java8Tester {
   public static void main(String[] args) {
     // https://www.tutorialspoint.com/java8/index.htm
@@ -517,7 +517,6 @@ public class Java8Tester {
     // the default value passed.
     Integer value1 = a.orElse(0);
     // Optional.get - gets the value, value should be present
-    //noinspection OptionalGetWithoutIsPresent
     Integer value2 = b.get();
     return value1 + value2;
   }

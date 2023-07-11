@@ -3,7 +3,7 @@ package Java.code.interview.Google;
 import Java.code.unsorted.classes.classesInstance.Tuple;
 import java.util.*;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "UnusedAssignment"})
 public class Google {
   @SuppressWarnings("unused")
   public static void main(String[] args) throws Exception {
@@ -12,7 +12,6 @@ public class Google {
     int[] cycle = {2, 2, -1};
     boolean value = detectCircularArrayCycle(cycle);
     cycle = new int[] {-2, -2, 1};
-    //noinspection UnusedAssignment
     value = detectCircularArrayCycle(cycle);
     String test = "-123.456";
     Double result = convertNumber(test);

@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode", "unchecked"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_09_BST_Sequences_Test {
   @Rule public final TestName name = new TestName();
@@ -27,7 +27,6 @@ public class Q4_09_BST_Sequences_Test {
     /* One list is empty. Add the remainder to [a cloned] prefix and
     store result. */
     if (first.size() == 0 || second.size() == 0) {
-      //noinspection unchecked
       LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
       result.addAll(first);
       result.addAll(second);

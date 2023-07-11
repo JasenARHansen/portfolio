@@ -15,7 +15,6 @@ public class Trie {
   public void setup(List<String> dictionary) {
     for (String word : dictionary) {
       char[] letters = word.toLowerCase().toCharArray();
-      //noinspection unchecked
       this.insert(this.root, letters);
     }
   }

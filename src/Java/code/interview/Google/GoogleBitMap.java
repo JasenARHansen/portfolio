@@ -112,7 +112,6 @@ public class GoogleBitMap {
       return;
     }
     Queue<GoogleTuple<Integer, Integer>> floodQueue = new LinkedList<>();
-    //noinspection SuspiciousNameCombination
     floodQueue.add(new GoogleTuple<>(xScaled, yScaled));
     while (!floodQueue.isEmpty()) {
       GoogleTuple<Integer, Integer> current = floodQueue.remove();
@@ -129,7 +128,6 @@ public class GoogleBitMap {
             && (0 <= (newY))
             && ((newY) < imageHeight)
             && (image.getRGB((newX + 1), (newY)) != colorValue)) {
-          //noinspection SuspiciousNameCombination
           floodQueue.add(new GoogleTuple<>((newX + 1), newY));
         }
         if ((0 <= (newX - 1))
@@ -137,7 +135,6 @@ public class GoogleBitMap {
             && (0 <= (newY))
             && ((newY) < imageHeight)
             && (image.getRGB((newX - 1), (newY)) != colorValue)) {
-          //noinspection SuspiciousNameCombination
           floodQueue.add(new GoogleTuple<>((newX - 1), newY));
         }
         if ((0 <= (newX))

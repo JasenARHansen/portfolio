@@ -28,7 +28,7 @@ public class CardTests {
     Suit suit = Suit.Club;
     int value = 11;
     Card card = new Card(suit, value);
-    Suit result = card.getSuit();
+    Suit result = card.suit();
     assertEquals(suit, result);
     System.out.format("%s: getSuit %s\n", name.getMethodName(), result);
   }
@@ -38,7 +38,7 @@ public class CardTests {
     Suit suit = Suit.Club;
     int value = 11;
     Card card = new Card(suit, value);
-    int result = card.getValue();
+    int result = card.value();
     assertEquals(value, result);
     System.out.format("%s: getValue %d\n", name.getMethodName(), result);
   }

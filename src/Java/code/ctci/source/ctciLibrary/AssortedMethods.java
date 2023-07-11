@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-@SuppressWarnings({"DuplicatedCode", "unused", "SpellCheckingInspection"})
+@SuppressWarnings({"DuplicatedCode", "unused", "SpellCheckingInspection", "TextBlockMigration"})
 public class AssortedMethods {
   public static boolean randomBoolean() {
     return randomIntInRange(0, 1) == 0;
@@ -2268,7 +2268,6 @@ public class AssortedMethods {
   }
 
   public static String getLongSampleText(boolean forceLower) {
-    //noinspection TextBlockMigration
     String text =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim magna, rhoncus at risus at, tincidunt pretium sapien. Maecenas vitae sagittis urna. Donec egestas, mauris ut porttitor eleifend, lectus felis sollicitudin sapien, luctus tempor ligula lacus sit amet quam. Quisque gravida est dolor, vel cursus lacus cursus vel. Morbi vulputate ligula nec libero ullamcorper iaculis. Sed finibus tincidunt scelerisque. Cras condimentum lectus ac sem ornare, non pellentesque enim bibendum. Quisque tincidunt eget elit ut iaculis. Aliquam purus sapien, tincidunt non imperdiet eu, venenatis quis turpis. Vestibulum finibus porta urna sed consequat. Phasellus at rutrum enim. In euismod tellus nec ligula placerat dapibus. Quisque mauris urna, malesuada sit amet scelerisque at, euismod vitae nulla. Sed cursus lacus vitae leo venenatis, id ultrices ex fermentum.\r\n"
             + "\r\n"

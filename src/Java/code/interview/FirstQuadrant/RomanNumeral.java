@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@SuppressWarnings("ToArrayCallWithZeroLengthArrayArgument")
 public class RomanNumeral {
   public static final String errorString = "(#ERROR#)";
   private static final Map<String, Integer> supportedCharacters =
@@ -89,7 +90,6 @@ public class RomanNumeral {
   }
 
   public static void conversion_To_Int_Output(List<String> numerals) {
-    //noinspection ToArrayCallWithZeroLengthArrayArgument
     conversion_To_Int_Output(numerals.toArray(new String[numerals.size()]));
   }
 
@@ -102,7 +102,6 @@ public class RomanNumeral {
   }
 
   public static void conversion_To_Int_Output_Complex(List<String> complexNumeralStrings) {
-    //noinspection ToArrayCallWithZeroLengthArrayArgument
     conversion_To_Int_Output_Complex(
         complexNumeralStrings.toArray(new String[complexNumeralStrings.size()]));
   }
@@ -117,7 +116,6 @@ public class RomanNumeral {
   }
 
   public static void conversion_To_Int_Output_With_Log(List<String> numerals) {
-    //noinspection ToArrayCallWithZeroLengthArrayArgument
     conversion_To_Int_Output_With_Log(numerals.toArray(new String[numerals.size()]));
   }
 
@@ -133,7 +131,6 @@ public class RomanNumeral {
   }
 
   public static void conversion_Output_Complex_With_Log(List<String> numerals) {
-    //noinspection ToArrayCallWithZeroLengthArrayArgument
     conversion_To_Int_Output_With_Log(numerals.toArray(new String[numerals.size()]));
   }
 

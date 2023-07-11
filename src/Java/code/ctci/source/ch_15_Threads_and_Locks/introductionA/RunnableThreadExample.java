@@ -1,5 +1,6 @@
 package Java.code.ctci.source.ch_15_Threads_and_Locks.introductionA;
 
+@SuppressWarnings("BusyWait")
 public class RunnableThreadExample implements Runnable {
   public int count = 0;
 
@@ -7,7 +8,6 @@ public class RunnableThreadExample implements Runnable {
     System.out.println("RunnableThread starting.");
     try {
       while (count < 5) {
-        //noinspection BusyWait
         Thread.sleep(500);
         System.out.println("RunnableThread count: " + count);
         count++;

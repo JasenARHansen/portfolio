@@ -28,7 +28,6 @@ public class KataStatic {
   }
 
   public static int rowSumOddNumbers(int n) {
-    //
     // Given the triangle of consecutive odd numbers:
     // 1
     // 3 5
@@ -133,6 +132,7 @@ public class KataStatic {
   }
 
   public static long findNextSquare(long sq) {
+    // Check if current value is a square, if not return -1
     double local = Math.sqrt(sq);
     if (local % 1 != 0) {
       return -1;
