@@ -3,6 +3,7 @@ package Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_05_Validate_BST;
 import Java.code.ctci.source.ctciLibrary.AssortedMethods;
 import Java.code.ctci.source.ctciLibrary.TreeNode;
 
+@SuppressWarnings("unused")
 public class QuestionB {
   public static boolean checkBST(TreeNode n, Integer min, Integer max) {
     if (n == null) {

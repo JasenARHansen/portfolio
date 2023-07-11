@@ -5,6 +5,7 @@ import Java.code.ctci.source.ctciLibrary.HashMapList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class QuestionC {
   public static final char[][] t9Letters = {
     null, // 0

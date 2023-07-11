@@ -3,7 +3,7 @@ package Java.code.ctci.source.ch_16_Moderate.q16_10_Living_People;
 import java.util.Arrays;
 import java.util.Random;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class QuestionC {
   public static void main(String[] args) {
     int n = 3;

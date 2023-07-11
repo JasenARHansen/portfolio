@@ -30,7 +30,9 @@ public class Q4_08_First_Common_Ancestor_Test {
     if (root == p || root == q) ret += 1;
     ret += covers_solution_1(root.left, p, q);
     if (ret == TWO_NODES_FOUND) // Found p and q
-    return ret;
+    {
+      return ret;
+    }
     return ret + covers_solution_1(root.right, p, q);
   }
 

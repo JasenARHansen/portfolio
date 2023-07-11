@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"ConstantValue", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TreesAndGraphsTests {
   @Rule public final TestName name = new TestName();

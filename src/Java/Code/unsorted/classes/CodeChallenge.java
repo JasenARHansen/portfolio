@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @SuppressWarnings({
-  "DuplicatedCode",
-  "SpellCheckingInspection",
-  "UnusedAssignment",
-  "ConstantValue",
-  "ReassignedVariable",
-  "DataFlowIssue"
-})
+        "DuplicatedCode",
+        "SpellCheckingInspection",
+        "UnusedAssignment",
+        "ConstantValue",
+        "ReassignedVariable",
+        "DataFlowIssue"
+        , "unused"})
 public class CodeChallenge {
   /* Comparator to sort by value. */
   static final Comparator<Tuple<String, Integer>> compareLeft =

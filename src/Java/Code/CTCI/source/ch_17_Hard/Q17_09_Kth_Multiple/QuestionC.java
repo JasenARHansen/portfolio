@@ -3,6 +3,7 @@ package Java.code.ctci.source.ch_17_Hard.q17_09_Kth_Multiple;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("unused")
 public class QuestionC {
   public static void printQueue(Queue<Integer> q, int x) {
     System.out.print(x + ": ");

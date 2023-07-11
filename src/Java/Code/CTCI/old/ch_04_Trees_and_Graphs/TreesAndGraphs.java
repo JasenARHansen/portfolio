@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class TreesAndGraphs {
   public static void getDescription() {
     System.out.println("Section 4. Trees And Graphs");
