@@ -18,6 +18,23 @@ public class NodeList<T extends Comparable<T>> {
     this.data = data;
   }
 
+  public NodeList<T> getPrevious() {
+    return this.previous;
+  }
+
+  public void setPrevious(NodeList<T> input) {
+    this.previous = input;
+  }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "(data: %s, previous: %s, next: %s)",
+        this.data.toString(),
+        this.previous == null ? "?" : this.previous.getData(),
+        this.next == null ? "?" : this.next.getData());
+  }
+
   public T getData() {
     return this.data;
   }
@@ -32,18 +49,5 @@ public class NodeList<T extends Comparable<T>> {
 
   public void setNext(NodeList<T> input) {
     this.next = input;
-  }
-
-  public NodeList<T> getPrevious() {
-    return this.previous;
-  }
-
-  public void setPrevious(NodeList<T> input) {
-    this.previous = input;
-  }
-
-  @Override
-  public String toString() {
-    return String.format("(data: %s )", this.data.toString());
   }
 }

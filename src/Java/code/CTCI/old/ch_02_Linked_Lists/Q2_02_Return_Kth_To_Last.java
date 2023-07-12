@@ -3,6 +3,8 @@ package Java.code.ctci.old.ch_02_Linked_Lists;
 import Java.code.ctci.source.ctciLibrary.LinkedListNode;
 import Java.code.unsorted.classes.CustomLinkedList;
 import Java.code.unsorted.classes.NodeList;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("DuplicatedCode")
 public class Q2_02_Return_Kth_To_Last {
@@ -13,13 +15,22 @@ public class Q2_02_Return_Kth_To_Last {
     return input.getIndex(input.getSize() - k);
   }
 
-  public static int printKthToLast_solution_1(LinkedListNode head, int k) {
+  public static String printKthToLast_solution_1(LinkedListNode head, int k) {
+    List<String> answer = new ArrayList<>();
+    printKthToLast_solution_1(head, k, answer);
+    if (answer.isEmpty()) {
+      return "Unknown";
+    }
+    return answer.get(0);
+  }
+
+  private static int printKthToLast_solution_1(LinkedListNode head, int k, List<String> answer) {
     if (head == null) {
       return 0;
     }
-    int index = printKthToLast_solution_1(head.next, k) + 1;
+    int index = printKthToLast_solution_1(head.next, k, answer) + 1;
     if (index == k) {
-      System.out.println(k + "th to last node is " + head.data);
+      answer.add(String.format("%dth to last node is %d", index, head.data));
     }
     return index;
   }

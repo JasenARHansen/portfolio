@@ -17,11 +17,10 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArraysAndStringsTest {
   @Rule public final TestName name = new TestName();
-  private final String testSuite = "Arrays And Strings";
 
   @Test
   public void compressedString() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String[] words = {"aa", "aaaaabbbbaaaabbddc", "c", ""};
     for (String word : words) {
       System.out.format(
@@ -31,7 +30,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void isPermutation() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String[][] pairs = {{"apple", "cat"}, {"carrot", "fish"}, {"hello", "llloh"}};
     for (String[] pair : pairs) {
       String word1 = pair[0];
@@ -44,7 +43,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void isSubstring() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String first = "cat";
     String second = "dog";
     System.out.format(
@@ -59,7 +58,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void isUnique() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String[] words = {"abcde", "hello", "apple", "kite", "padle"};
     for (String word : words) {
       System.out.format("Word '%s' '%s'\n", word, ArraysAndStrings.isUnique(word));
@@ -68,7 +67,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void palindromePermutation() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String[] strings = {
       "Tact Coa",
       "Rats live on no evil star",
@@ -85,7 +84,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void permuteString() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String smaller = "abbc";
     Set<String> returnSet = SubstringPermutationOfLargerString.permuteString(smaller);
     assertNotNull("Valid", returnSet);
@@ -93,14 +92,13 @@ public class ArraysAndStringsTest {
 
   @Test
   public void RansomNote() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String note = "give me your money";
     String magazine1 =
         "If you want to give your money to charity you can take it from me that it will save lives.";
     String magazine2 =
         "good can be used for everything from driving, making deliveries, and taking your dog to the vet.";
     String magazine3 = "this music rocks!";
-    RansomNote.getDescription();
     boolean testBool = RansomNote.findNoteWords(note, magazine1);
     assertTrue("Valid", testBool);
     testBool = RansomNote.findNoteWords(note, magazine2);
@@ -113,7 +111,7 @@ public class ArraysAndStringsTest {
 
   @Test
   public void rotate() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     Utilities.printMatrix(matrix);
     System.out.print("\n");
@@ -123,13 +121,13 @@ public class ArraysAndStringsTest {
 
   @Test
   public void getDescription() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     ArraysAndStrings.getDescription();
   }
 
   @Test
   public void singleEdit() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String[][] pairs = {
       {"palee", "pale"},
       {"pale", "pkle"},
@@ -160,30 +158,28 @@ public class ArraysAndStringsTest {
 
   @Test
   public void SubstringPermutationOfLargerString() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String smaller = "abbc";
     String larger = "cbabadcbbabbcbabaabccbabc";
-    SubstringPermutationOfLargerString.getDescription();
     SubstringPermutationOfLargerString.findPermutations(larger, smaller);
   }
 
   @Test
-  public void SumOfCubes() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    SumOfCubes.getDescription();
+  public void findValues() {
+    System.out.format("\n%s:\n", name.getMethodName());
     SumOfCubes.findValues(5);
   }
 
   @Test
   public void URLif() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     String value = "Mr John Smith    ";
     System.out.format("Value '%s' converted is '%s'\n", value, ArraysAndStrings.URLif(value));
   }
 
   @Test
   public void zeroMatrix() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     int[][] matrix = {{0, 2, 0}, {4, 5, 6}, {7, 8, 9}};
     Utilities.printMatrix(matrix);
     System.out.print("\n");

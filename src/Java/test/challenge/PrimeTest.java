@@ -16,16 +16,16 @@ public class PrimeTest {
   @Rule public final TestName name = new TestName();
 
   @Test
+  public void getDescription() {
+    System.out.format("%s: ", name.getMethodName());
+    Primes.getDescription();
+  }
+
+  @Test
   public void Primes() {
     Primes result = new Primes();
     assertNotNull(result);
     System.out.format("%s:\n", name.getMethodName());
-  }
-
-  @Test
-  public void getDescription() {
-    System.out.format("%s: ", name.getMethodName());
-    Primes.getDescription();
   }
 
   @Test

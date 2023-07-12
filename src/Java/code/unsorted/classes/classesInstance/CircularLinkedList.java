@@ -20,6 +20,34 @@ public class CircularLinkedList<T extends Comparable<T>> {
     }
   }
 
+  public NodeList<T> removeIndex(int index) {
+    NodeList<T> pointerNode = this.head;
+    // Reset head and tail as needed
+    // Front with wrap around
+    if (((index + 1) % this.size) == 1) {
+      this.head = this.head.getNext();
+    }
+    // End with wrap around
+    else if (((index + 1) % this.size) == 0) {
+      this.tail = this.tail.getPrevious();
+    }
+    // Find the index
+    // A <-> B <-> C remove B
+    for (int i = 0; i < index; i++) {
+      pointerNode = pointerNode.getNext();
+    }
+    pointerNode.getPrevious().setNext(pointerNode.getNext());
+    pointerNode.getNext().setPrevious(pointerNode.getPrevious());
+    pointerNode.setNext(null);
+    pointerNode.setPrevious(null);
+    this.size--;
+    if (this.size == 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return pointerNode;
+  }
+
   public NodeList<T> remove(T data) {
     // This does not work as expected when the data type is integer...
     NodeList<T> pointerNode = this.head;
@@ -99,8 +127,9 @@ public class CircularLinkedList<T extends Comparable<T>> {
     return this.size == 0;
   }
 
-  public void printList() {
-    System.out.format("List: '%s'\n", this);
+  public String list() {
+    return String.format(
+        "Head: %s, Tail: %s, Size: %d, Data '%s'\n", this.head, this.tail, this.size, this);
   }
 
   @Override
@@ -117,33 +146,5 @@ public class CircularLinkedList<T extends Comparable<T>> {
       stringBuilder.append(pointerNode.toString());
     }
     return stringBuilder.toString();
-  }
-
-  public NodeList<T> removeIndex(int index) {
-    NodeList<T> pointerNode = this.head;
-    // Reset head and tail as needed
-    // Front with wrap around
-    if (((index + 1) % this.size) == 1) {
-      this.head = this.head.getNext();
-    }
-    // End with wrap around
-    else if (((index + 1) % this.size) == 0) {
-      this.tail = this.tail.getPrevious();
-    }
-    // Find the index
-    // A <-> B <-> C remove B
-    for (int i = 0; i < index; i++) {
-      pointerNode = pointerNode.getNext();
-    }
-    pointerNode.getPrevious().setNext(pointerNode.getNext());
-    pointerNode.getNext().setPrevious(pointerNode.getPrevious());
-    pointerNode.setNext(null);
-    pointerNode.setPrevious(null);
-    this.size--;
-    if (this.size == 0) {
-      this.head = null;
-      this.tail = null;
-    }
-    return pointerNode;
   }
 }

@@ -1,5 +1,7 @@
 package Java.test.ctci.old.ch_02_Linked_Lists.old;
 
+import static org.junit.Assert.*;
+
 import Java.code.ctci.old.ch_02_Linked_Lists.LinkedList;
 import Java.code.unsorted.classes.CustomLinkedList;
 import Java.code.unsorted.classes.NodeList;
@@ -15,26 +17,42 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LinkedListTest {
   @Rule public final TestName name = new TestName();
-  private final String testSuite = "Linked List";
 
   @Test
-  public void detectCycle() throws IllegalAccessException {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    CircularLinkedList<String> stringValue3 = new CircularLinkedList<>();
-    stringValue3.insert("a");
-    stringValue3.insert("b");
-    stringValue3.insert("c");
-    stringValue3.insert("d");
-    stringValue3.insert("e");
-    stringValue3.insert("f");
-    System.out.println("Detect Cycle Test 1 source:");
-    stringValue3.printList();
-    NodeList<String> resultNode = LinkedList.detectCycle(stringValue3);
-    System.out.format("Cycle Node: %s\n", resultNode);
-    System.out.println("Detect Cycle Test 2 source:");
+  public void getDescription() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    LinkedList.getDescription();
+  }
+
+  @Test
+  public void detectCycle_1() throws IllegalAccessException {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CircularLinkedList<String> stringList = new CircularLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("c");
+    stringList.insert("d");
+    stringList.insert("e");
+    stringList.insert("f");
+    System.out.format("\tSource: %s", stringList.list());
+    NodeList<String> result = LinkedList.detectCycle(stringList);
+    assertNull(result);
+    System.out.format("\tCycle Node: %s\n", result);
+  }
+
+  @Test
+  public void detectCycle_2() throws IllegalAccessException {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CircularLinkedList<String> stringList = new CircularLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("c");
+    stringList.insert("d");
+    stringList.insert("e");
+    stringList.insert("f");
     // Corrupting the list to make a cycle
-    NodeList<String> cyclePoint = stringValue3.getIndex(3);
-    NodeList<String> cyclePointStart = stringValue3.getLast();
+    NodeList<String> cyclePoint = stringList.getIndex(3);
+    NodeList<String> cyclePointStart = stringList.getLast();
     Field declaredField;
     try {
       declaredField = NodeList.class.getDeclaredField("next");
@@ -43,82 +61,96 @@ public class LinkedListTest {
     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException e) {
       e.printStackTrace();
     }
-    resultNode = LinkedList.detectCycle(stringValue3);
-    System.out.format("Cycle Node: %s\n", resultNode);
+    System.out.format("\tSource: %s", stringList.list());
+    NodeList<String> result = LinkedList.detectCycle(stringList);
+    assertNotNull(result);
+    System.out.format("\tCycle Node: %s\n", result);
   }
 
   @Test
-  public void intersects() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    CustomLinkedList<String> stringValue1 = new CustomLinkedList<>();
-    stringValue1.insert("a");
-    stringValue1.insert("b");
-    stringValue1.insert("c");
-    stringValue1.insert("d");
-    stringValue1.insert("e");
-    stringValue1.insert("f");
-    System.out.println("SubList Test 1 source:");
-    System.out.format("\t%s\n", stringValue1);
-    CustomLinkedList<String> stringValue2 = stringValue1.sublist(stringValue1, 3);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", stringValue2);
-    System.out.println("intersects Test 1 source:");
-    System.out.format("\t%s\n", stringValue1);
-    System.out.format("\t%s\n", stringValue2);
-    NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
-    assert resultNode != null;
-    System.out.format("List intersects at: %s\n", resultNode);
-    stringValue1.empty();
-    stringValue2.empty();
-    stringValue1.insert("a");
-    stringValue1.insert("a");
-    stringValue1.insert("a");
-    stringValue1.insert("a");
-    stringValue1.insert("a");
-    stringValue2.insert("a");
-    stringValue2.insert("a");
-    stringValue2.insert("a");
-    stringValue2.insert("a");
-    System.out.println("intersects Test 2 source:");
-    System.out.format("\t%s\n", stringValue1);
-    System.out.format("\t%s\n", stringValue2);
-    resultNode = LinkedList.intersects(stringValue1, stringValue2);
-    System.out.format("List intersects at: %s\n", resultNode);
+  public void intersects_1() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<String> stringList = new CustomLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("c");
+    stringList.insert("d");
+    stringList.insert("e");
+    stringList.insert("f");
+    System.out.format("\tSource: %s\n", stringList);
+    CustomLinkedList<String> subList = stringList.sublist(stringList, 3);
+    System.out.format("\tSublist: %s\n", subList);
+    NodeList<String> result = LinkedList.intersects(stringList, subList);
+    assertNotNull(result);
+    System.out.format("\tIntersects at: %s\n", result);
   }
 
   @Test
-  public void isPalindrome() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    CustomLinkedList<String> stringValue1 = new CustomLinkedList<>();
-    stringValue1.insert("a");
-    stringValue1.insert("b");
-    stringValue1.insert("b");
-    stringValue1.insert("a");
-    System.out.println("isPalindrome Test 1 source:");
-    System.out.format("\t%s\n", stringValue1);
-    boolean result = LinkedList.isPalindrome(stringValue1);
-    System.out.format("List is Palindrome: %s\n", result);
-    stringValue1.empty();
-    stringValue1.insert("a");
-    stringValue1.insert("b");
-    stringValue1.insert("a");
-    System.out.println("isPalindrome Test 2 source:");
-    System.out.format("\t%s\n", stringValue1);
-    result = LinkedList.isPalindrome(stringValue1);
-    System.out.format("List is Palindrome: %s\n", result);
-    stringValue1.empty();
-    stringValue1.insert("a");
-    stringValue1.insert("b");
-    stringValue1.insert("c");
-    System.out.println("isPalindrome Test 3 source:");
-    System.out.format("\t%s\n", stringValue1);
-    result = LinkedList.isPalindrome(stringValue1);
-    System.out.format("List is Palindrome: %s\n", result);
+  public void intersects_2() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<String> stringList = new CustomLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("a");
+    stringList.insert("a");
+    stringList.insert("a");
+    stringList.insert("a");
+    CustomLinkedList<String> subList = new CustomLinkedList<>();
+    subList.insert("a");
+    subList.insert("a");
+    subList.insert("a");
+    subList.insert("a");
+    System.out.format("\tSource: %s\n", stringList);
+    System.out.format("\tSublist: %s\n", subList);
+    NodeList<String> result = LinkedList.intersects(stringList, subList);
+    assertNull(result);
+    System.out.format("\tIntersects at: %s\n", result);
   }
 
   @Test
-  public void partition() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+  public void isPalindrome_1() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<String> stringList = new CustomLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("b");
+    stringList.insert("a");
+    System.out.format("\tSource: %s\n", stringList);
+    boolean result = LinkedList.isPalindrome(stringList);
+    assertTrue(result);
+    System.out.format("\tPalindrome: %s\n", result);
+  }
+
+  @Test
+  public void isPalindrome_2() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<String> stringList = new CustomLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("a");
+    System.out.format("\tSource: %s\n", stringList);
+    boolean result = LinkedList.isPalindrome(stringList);
+    assertTrue(result);
+    System.out.format("\tPalindrome: %s\n", result);
+  }
+
+  @Test
+  public void isPalindrome_3() {
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<String> stringList = new CustomLinkedList<>();
+    stringList.insert("a");
+    stringList.insert("b");
+    stringList.insert("c");
+    System.out.format("\tSource: %s\n", stringList);
+    boolean result = LinkedList.isPalindrome(stringList);
+    assertFalse(result);
+    System.out.format("\tPalindrome: %s\n", result);
+  }
+
+  @Test
+  public void partition_1() {
+    int expected = 10;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int partition = 5;
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -130,32 +162,18 @@ public class LinkedListTest {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.println("partition 5 Test 1 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.partition(toSimplify, 5);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
-    toSimplify.insert(0);
-    toSimplify.insert(1);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(6);
-    toSimplify.insert(6);
-    System.out.println("partition 7 Test 2 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.partition(toSimplify, 7);
-    System.out.println("Test 2 result:");
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
+    LinkedList.partition(toSimplify, partition);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tPartition %d Result: %s\n", partition, toSimplify);
   }
 
   @Test
-  public void removeDuplicate() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+  public void partition_2() {
+    int expected = 10;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int partition = 7;
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -167,49 +185,39 @@ public class LinkedListTest {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.println("Remove Duplicate Test 1 source:");
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
+    LinkedList.partition(toSimplify, partition);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tPartition %d Result: %s\n", partition, toSimplify);
+  }
+
+  @Test
+  public void removeDuplicate_1() {
+    int expected = 5;
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
+    toSimplify.insert(0);
+    toSimplify.insert(1);
+    toSimplify.insert(6);
+    toSimplify.insert(9);
+    toSimplify.insert(4);
+    toSimplify.insert(0);
+    toSimplify.insert(6);
+    toSimplify.insert(9);
+    toSimplify.insert(6);
+    toSimplify.insert(6);
+    System.out.format("\tSource: %s\n", toSimplify);
     LinkedList.removeDuplicate(toSimplify);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
-    toSimplify.insert(0);
-    toSimplify.insert(1);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(6);
-    toSimplify.insert(6);
-    System.out.println("Remove Duplicate Test 2 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.removeDuplicateAlt(toSimplify);
-    System.out.println("Test 2 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
-    toSimplify.insert(0);
-    toSimplify.insert(1);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
-    toSimplify.insert(9);
-    toSimplify.insert(6);
-    toSimplify.insert(6);
-    System.out.println("Remove Duplicate Test 3 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.removeDuplicateAsNode(toSimplify, toSimplify.getFirst());
-    System.out.println("Test 3 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
-  public void removeKthFromLast() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+  public void removeDuplicate_2() {
+    int expected = 6;
+    System.out.format("\n%s:\n", name.getMethodName());
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -217,73 +225,116 @@ public class LinkedListTest {
     toSimplify.insert(9);
     toSimplify.insert(4);
     toSimplify.insert(0);
-    toSimplify.insert(6);
+    toSimplify.insert(5);
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.println("Remove Kth from last K = 3 Test 2 source:");
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
+    LinkedList.removeDuplicate(toSimplify);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
+  }
+
+  @Test
+  public void removeDuplicate_3() {
+    int expected = 4;
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
+    toSimplify.insert(0);
+    toSimplify.insert(9);
+    toSimplify.insert(6);
+    toSimplify.insert(0);
+    toSimplify.insert(4);
+    toSimplify.insert(0);
+    toSimplify.insert(6);
+    toSimplify.insert(9);
+    toSimplify.insert(0);
+    toSimplify.insert(6);
+    System.out.format("\tSource: %s\n", toSimplify);
+    LinkedList.removeDuplicate(toSimplify);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
+  }
+
+  @Test
+  public void removeKthFromLast_1() {
+    int expected = 5;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int k = 5;
+    CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
+    toSimplify.insert(0);
+    toSimplify.insert(1);
+    toSimplify.insert(9);
+    toSimplify.insert(9);
+    toSimplify.insert(6);
+    toSimplify.insert(6);
+    System.out.format("\tK = %d Test 2 source: %s\n", k, toSimplify);
     LinkedList.removeKthFromLast(3, toSimplify);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
+  }
+
+  @Test
+  public void removeKthFromLast_2() {
+    int expected = 5;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int k = 3;
+    CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
-    toSimplify.insert(6);
     toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.println("Remove Kth from last K = 5 Test 1 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.removeKthFromLast2(5, toSimplify);
-    System.out.println("Test 2 result:");
-    System.out.format("\t%s\n", toSimplify);
-    toSimplify.empty();
+    System.out.format("\tK = %d Test 2 source: %s\n", k, toSimplify);
+    LinkedList.removeKthFromLast(3, toSimplify);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
+  }
+
+  @Test
+  public void removeKthFromLast_3() {
+    int expected = 5;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int k = 1;
+    CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
-    toSimplify.insert(6);
     toSimplify.insert(9);
-    toSimplify.insert(4);
-    toSimplify.insert(0);
-    toSimplify.insert(6);
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.println("Remove Kth from last K = 5 Test 2 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.removeKthFromLast2(5, toSimplify);
-    System.out.println("Test 2 result:");
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tK = %d Test 2 source: %s\n", k, toSimplify);
+    LinkedList.removeKthFromLast(3, toSimplify);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
   public void removeMiddleNode() throws IllegalAccessException {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    int expected = 2;
+    System.out.format("\n%s:\n", name.getMethodName());
+    int node = 1;
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
-    toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
     toSimplify.insert(6);
-    System.out.println("Remove middle Test 1 source:");
-    System.out.format("\t%s\n", toSimplify);
-    LinkedList.removeMiddleNode(toSimplify.getIndex(1), toSimplify);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
+    LinkedList.removeMiddleNode(toSimplify.getIndex(node), toSimplify);
+    int result = toSimplify.getSize();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
-  public void getDescription() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
-    LinkedList.getDescription();
-  }
-
-  @Test
-  public void sumList() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+  public void sumList_1() {
+    int expected = 4;
+    System.out.format("\n%s:\n", name.getMethodName());
     CustomLinkedList<Integer> intValue1 = new CustomLinkedList<>();
     intValue1.insert(7);
     intValue1.insert(1);
@@ -292,25 +343,31 @@ public class LinkedListTest {
     intValue2.insert(5);
     intValue2.insert(9);
     intValue2.insert(2);
-    System.out.println("sumList Test 1 source:");
-    System.out.format("\t%s\n", intValue1);
-    System.out.format("\t%s\n", intValue2);
-    CustomLinkedList<Integer> intValue3 = LinkedList.sumList(intValue1, intValue2);
-    System.out.println("Test 1 result:");
-    System.out.format("\t%s\n", intValue3);
-    intValue1 = new CustomLinkedList<>();
+    System.out.println("\tSource:");
+    System.out.format("\t\t%s\n", intValue1);
+    System.out.format("\t\t%s\n", intValue2);
+    CustomLinkedList<Integer> result = LinkedList.sumList(intValue1, intValue2);
+    assertEquals(expected, result.getSize());
+    System.out.format("\tResult: %s\n", result);
+  }
+
+  @Test
+  public void sumList_2() {
+    int expected = 3;
+    System.out.format("\n%s:\n", name.getMethodName());
+    CustomLinkedList<Integer> intValue1 = new CustomLinkedList<>();
     intValue1.insert(6);
     intValue1.insert(1);
     intValue1.insert(7);
-    intValue2 = new CustomLinkedList<>();
+    CustomLinkedList<Integer> intValue2 = new CustomLinkedList<>();
     intValue2.insert(2);
     intValue2.insert(9);
     intValue2.insert(5);
-    System.out.println("sumList Test 2 source:");
-    System.out.format("\t%s\n", intValue1);
-    System.out.format("\t%s\n", intValue2);
-    intValue3 = LinkedList.sumList(intValue1, intValue2);
-    System.out.println("Test 2 result:");
-    System.out.format("\t%s\n", intValue3);
+    System.out.println("\tSource:");
+    System.out.format("\t\t%s\n", intValue1);
+    System.out.format("\t\t%s\n", intValue2);
+    CustomLinkedList<Integer> result = LinkedList.sumList(intValue1, intValue2);
+    assertEquals(expected, result.getSize());
+    System.out.format("\tResult: %s\n", result);
   }
 }

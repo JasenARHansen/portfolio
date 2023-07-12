@@ -18,7 +18,7 @@ public class Q2_01_Remove_Duplicate_Test {
 
   @Test
   public void removeDuplicate() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -30,18 +30,17 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
     int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicate(toSimplify);
     int result_2 = toSimplify.getSize();
     assertNotEquals(result_1, result_2);
-    System.out.format("%s: Cleaned list\n", name.getMethodName());
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
   public void removeDuplicate_no_storage() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -53,18 +52,17 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
     int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicate_no_storage(toSimplify);
     int result_2 = toSimplify.getSize();
-    System.out.format("%s: Cleaned list\n", name.getMethodName());
-    System.out.format("\t%s\n", toSimplify);
     assertNotEquals(result_1, result_2);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
   public void removeDuplicateAsNode() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -76,17 +74,17 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tSource: %s\n", toSimplify);
     int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicateAsNode(toSimplify);
     int result_2 = toSimplify.getSize();
     assertNotEquals(result_1, result_2);
-    System.out.format("%s: Cleaned list\n", name.getMethodName());
-    System.out.format("\t%s\n", toSimplify);
+    System.out.format("\tResult: %s\n", toSimplify);
   }
 
   @Test
   public void isUniqueChars_solution_1() {
+    String expected = "0->1";
     System.out.format("%s:\n", name.getMethodName());
     LinkedListNode first = new LinkedListNode(0, null, null);
     LinkedListNode head = first;
@@ -97,13 +95,16 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_1(head);
-    System.out.format("\t%s\n", head.printForward());
+    String result = head.printForward();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_2() {
+    String expected = "0->1";
     System.out.format("%s:\n", name.getMethodName());
     LinkedListNode first =
         new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
@@ -115,13 +116,16 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_2(head);
-    System.out.format("\t%s\n", head.printForward());
+    String result = head.printForward();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_3() {
+    String expected = "0->1";
     System.out.format("%s:\n", name.getMethodName());
     LinkedListNode first =
         new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
@@ -133,8 +137,10 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_3(head);
-    System.out.format("\t%s\n", head.printForward());
+    String result = head.printForward();
+    assertEquals(expected, result);
+    System.out.format("\tResult: %s\n", head.printForward());
   }
 }

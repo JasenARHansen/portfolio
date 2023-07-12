@@ -18,7 +18,6 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ModerateTest {
   @Rule public final TestName name = new TestName();
-  private final String testSuite = "Moderate";
 
   @Test
   public void getDescription() {
@@ -49,7 +48,7 @@ public class ModerateTest {
 
   @Test
   public void minimumDistance() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     int[] array1 = {1, 3, 15, 11, 2};
     int[] array2 = {23, 127, 234, 19, 8};
     Moderate.minimumDistance(array1, array2);
@@ -60,7 +59,7 @@ public class ModerateTest {
 
   @Test
   public void numberSwapInPlace() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     int left = 5;
     int right = 9;
     System.out.println("Start left: " + left);
@@ -86,7 +85,7 @@ public class ModerateTest {
 
   @Test
   public void processNumber() {
-    System.out.format("\n%s '%s'\n", testSuite, name.getMethodName());
+    System.out.format("\n%s:\n", name.getMethodName());
     Moderate container = new Moderate();
     ConvertNumberToString convertNumberToString = new ConvertNumberToString();
     int number = 1234;

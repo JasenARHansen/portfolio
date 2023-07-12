@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Random;
 
 public class PeopleOnBench {
-  /* Comparator to sort by value. */
   static final Comparator<Tuple<Integer, Integer>> compareGaps =
       (o1, o2) -> {
+        /* Comparator to sort by value. */
         Integer v1 = o1.leftData() - o1.rightData();
         Integer v2 = o2.leftData() - o2.rightData();
         return v1.compareTo(v2);
@@ -21,33 +21,13 @@ public class PeopleOnBench {
   private static List<Tuple<Integer, Integer>> gaps;
   private static List<Integer> people;
 
-  public static void main(String[] argv) {
-    getDescription();
-    buildBench(10);
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-    personSits();
-  }
-
   public static void getDescription() {
     System.out.println(
         """
-                Given a bench with n seats and few people sitting, tell the seat number each time when a
-                 new person goes to sit on the bench such that his distance from others is maximum."""
+                Given a bench with n seats and few people sitting, tell the
+                 seat number each time when a new person goes to sit on the
+                 bench such that his distance from others is maximum."""
             .indent(2));
-  }
-
-  public static void buildBench(int seats) {
-    reset();
-    benchSeats = seats;
   }
 
   public static String personSits() {
@@ -130,11 +110,20 @@ public class PeopleOnBench {
     }
   }
 
+  public static void buildBench(int seats) {
+    reset();
+    benchSeats = seats;
+  }
+
   private static void reset() {
     benchSeats = 0;
     benchLeftEdge = true;
     benchRightEdge = true;
     gaps = null;
     people = null;
+  }
+
+  public static String getBench() {
+    return String.format("Seats:%d, People:%s", benchSeats, people);
   }
 }

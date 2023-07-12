@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 
-@SuppressWarnings("DuplicatedCode")
 public class StackOfPlates<T extends Comparable<T>> {
   final List<List<T>> stackList;
 

@@ -1,7 +1,6 @@
 package Java.test.ctci.old.ch_02_Linked_Lists;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import Java.code.ctci.old.ch_02_Linked_Lists.Q2_02_Return_Kth_To_Last;
 import Java.code.ctci.source.ctciLibrary.AssortedMethods;
@@ -48,7 +47,9 @@ public class Q2_02_Return_Kt_To_Last_Test {
     int[] array = {0, 1, 2, 3, 4, 5, 6};
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
     for (int i = 1; i <= array.length; i++) {
-      System.out.format("\t%s\n", Q2_02_Return_Kth_To_Last.printKthToLast_solution_1(head, i));
+      String result = Q2_02_Return_Kth_To_Last.printKthToLast_solution_1(head, i);
+      assertNotNull(result);
+      System.out.format("\t%s\n", result);
     }
   }
 
@@ -59,8 +60,9 @@ public class Q2_02_Return_Kt_To_Last_Test {
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
     for (int i = 1; i <= array.length; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_2(head, i);
-      String nodeValue = node == null ? "null" : String.valueOf(node.data);
-      System.out.format("\t%d: %s\n", i, nodeValue);
+      String result = node == null ? "null" : String.valueOf(node.data);
+      assertNotNull(result);
+      System.out.format("\t%d: %s\n", i, result);
     }
   }
 
@@ -71,8 +73,9 @@ public class Q2_02_Return_Kt_To_Last_Test {
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
     for (int i = 1; i <= array.length; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_3(head, i);
-      String nodeValue = node == null ? "null" : String.valueOf(node.data);
-      System.out.format("\t%d: %s\n", i, nodeValue);
+      String result = node == null ? "null" : String.valueOf(node.data);
+      assertNotNull(result);
+      System.out.format("\t%d: %s\n", i, result);
     }
   }
 }

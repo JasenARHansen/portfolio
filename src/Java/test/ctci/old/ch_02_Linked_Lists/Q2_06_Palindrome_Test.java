@@ -20,13 +20,13 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_1() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<String> stringValues = new CustomLinkedList<>();
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("b");
     stringValues.insert("a");
-    System.out.format("\t%s\n", stringValues);
+    System.out.format("\tSource: %s\n", stringValues);
     boolean result = LinkedList.isPalindrome(stringValues);
     assertTrue(result);
     System.out.format("\tList is Palindrome: %s\n", result);
@@ -34,12 +34,12 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_2() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<String> stringValues = new CustomLinkedList<>();
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("a");
-    System.out.format("\t%s\n", stringValues);
+    System.out.format("\tSource: %s\n", stringValues);
     boolean result = LinkedList.isPalindrome(stringValues);
     assertTrue(result);
     System.out.format("\tList is Palindrome: %s\n", result);
@@ -47,12 +47,12 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_3() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<String> stringValues = new CustomLinkedList<>();
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("c");
-    System.out.format("\t%s\n", stringValues);
+    System.out.format("\tSource: %s\n", stringValues);
     boolean result = LinkedList.isPalindrome(stringValues);
     assertFalse(result);
     System.out.format("\tList is Palindrome: %s\n", result);
@@ -60,12 +60,12 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_4() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<Integer> integerValues = new CustomLinkedList<>();
     integerValues.insert(1);
     integerValues.insert(2);
     integerValues.insert(1);
-    System.out.format("\t%s\n", integerValues);
+    System.out.format("\tSource: %s\n", integerValues);
     boolean result = LinkedList.isPalindrome(integerValues);
     assertTrue(result);
     System.out.format("\tList is Palindrome: %s\n", result);
@@ -73,12 +73,12 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_5() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     CustomLinkedList<Integer> integerValues = new CustomLinkedList<>();
     integerValues.insert(1);
     integerValues.insert(2);
     integerValues.insert(3);
-    System.out.format("\t%s\n", integerValues);
+    System.out.format("\tSource: %s\n", integerValues);
     boolean result = LinkedList.isPalindrome(integerValues);
     assertFalse(result);
     System.out.format("\tList is Palindrome: %s\n", result);
@@ -86,7 +86,7 @@ public class Q2_06_Palindrome_Test {
 
   @Test
   public void isPalindrome_solution_1() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     int length = 9;
     LinkedListNode[] nodes = new LinkedListNode[length];
     for (int i = 0; i < length; i++) {
@@ -101,15 +101,15 @@ public class Q2_06_Palindrome_Test {
       }
     }
     LinkedListNode head = nodes[0];
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     boolean result = Q2_06_Palindrome.isPalindrome_solution_1(head);
     assertTrue(result);
-    System.out.format("\tlist is a palindrome: %b\n", result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
   public void isPalindrome_solution_2() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     int length = 9;
     LinkedListNode[] nodes = new LinkedListNode[length];
     for (int i = 0; i < length; i++) {
@@ -124,15 +124,15 @@ public class Q2_06_Palindrome_Test {
       }
     }
     LinkedListNode head = nodes[0];
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     boolean result = Q2_06_Palindrome.isPalindrome_solution_2(head);
     assertTrue(result);
-    System.out.format("\tlist is a palindrome: %b\n", result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
   public void isPalindrome_solution_3() {
-    System.out.format("%s: List\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     int length = 9;
     LinkedListNode[] nodes = new LinkedListNode[length];
     for (int i = 0; i < length; i++) {
@@ -147,9 +147,9 @@ public class Q2_06_Palindrome_Test {
       }
     }
     LinkedListNode head = nodes[0];
-    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tSource: %s\n", head.printForward());
     boolean result = Q2_06_Palindrome.isPalindrome_solution_3(head);
     assertTrue(result);
-    System.out.format("\tlist is a palindrome: %b\n", result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 }
