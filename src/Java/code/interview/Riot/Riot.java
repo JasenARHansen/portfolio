@@ -180,7 +180,6 @@ public class Riot {
   }
 
   private static void processFile(String filename, Pattern pattern) throws IOException {
-    @SuppressWarnings("resource")
     FileInputStream inputStream = new FileInputStream(filename);
     FileChannel fc = inputStream.getChannel();
     ByteBuffer byteBuffer = fc.map(FileChannel.MapMode.READ_ONLY, 0, (int) fc.size());
@@ -192,6 +191,8 @@ public class Riot {
     while (matcher.find()) {
       shaValues.add(matcher.group());
     }
+    fc.close();
+    inputStream.close();
     shaList.put(filename, shaValues);
   }
 

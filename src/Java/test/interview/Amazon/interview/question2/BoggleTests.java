@@ -15,7 +15,7 @@ public class BoggleTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Boggle() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Boggle.getDescription();
   }

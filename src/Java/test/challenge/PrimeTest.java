@@ -33,7 +33,8 @@ public class PrimeTest {
     int expected = 0;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -41,7 +42,8 @@ public class PrimeTest {
     int expected = 1;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -49,7 +51,8 @@ public class PrimeTest {
     int expected = 2;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -57,7 +60,8 @@ public class PrimeTest {
     int expected = 3;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -65,7 +69,8 @@ public class PrimeTest {
     int expected = 4;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -73,7 +78,8 @@ public class PrimeTest {
     int expected = 18;
     List<Integer> result = Primes.getNPrimes(expected);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), expected, result);
+    System.out.format(
+        "%s: The first %d prime numbers are %s\n", name.getMethodName(), expected, result);
   }
 
   @Test
@@ -82,7 +88,8 @@ public class PrimeTest {
     int count = 100;
     List<Integer> result = Primes.getPrimesLessThanN(count);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), count, result);
+    System.out.format(
+        "%s: The prime numbers less than %d are %s\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -91,7 +98,8 @@ public class PrimeTest {
     int count = 97;
     List<Integer> result = Primes.getPrimesLessThanN(count);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), count, result);
+    System.out.format(
+        "%s: The prime numbers less than %d are %s\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -100,7 +108,7 @@ public class PrimeTest {
     int count = 89;
     int result = Primes.getNextPrime(count);
     assertEquals(expected, result);
-    System.out.format("%s: %d : %d\n", name.getMethodName(), count, result);
+    System.out.format("%s: The next prime after %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -109,7 +117,7 @@ public class PrimeTest {
     int count = 96;
     int result = Primes.getNextPrime(count);
     assertEquals(expected, result);
-    System.out.format("%s: %d : %d\n", name.getMethodName(), count, result);
+    System.out.format("%s: The next prime after %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -118,7 +126,7 @@ public class PrimeTest {
     int count = 97;
     int result = Primes.getNextPrime(count);
     assertEquals(expected, result);
-    System.out.format("%s: %d : %d\n", name.getMethodName(), count, result);
+    System.out.format("%s: The next prime after %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -127,7 +135,7 @@ public class PrimeTest {
     int value = 0;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -136,7 +144,7 @@ public class PrimeTest {
     int value = 1;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -145,7 +153,7 @@ public class PrimeTest {
     int value = 18;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -154,7 +162,7 @@ public class PrimeTest {
     int value = -18;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -163,7 +171,7 @@ public class PrimeTest {
     int value = 55;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -172,7 +180,7 @@ public class PrimeTest {
     int value = 97;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -181,7 +189,7 @@ public class PrimeTest {
     int value = 533;
     List<Integer> result = Primes.primeFactors(value);
     assertEquals(expected, result.size());
-    System.out.format("%s: %d : %s\n", name.getMethodName(), value, result);
+    System.out.format("%s: The prime factors of %d are %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -190,7 +198,8 @@ public class PrimeTest {
     int value = 0;
     String result = Primes.primeFactorization(value);
     assertEquals(expected, result);
-    System.out.format("%s: primeFactorization %d : %s\n", name.getMethodName(), value, result);
+    System.out.format(
+        "%s: The prime factorization of %d is %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -199,7 +208,8 @@ public class PrimeTest {
     int value = 1;
     String result = Primes.primeFactorization(value);
     assertEquals(expected, result);
-    System.out.format("%s: primeFactorization %d : %s\n", name.getMethodName(), value, result);
+    System.out.format(
+        "%s: The prime factorization of %d is %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -208,7 +218,8 @@ public class PrimeTest {
     int value = 123200;
     String result = Primes.primeFactorization(value);
     assertEquals(expected, result);
-    System.out.format("%s: primeFactorization %d : %s\n", name.getMethodName(), value, result);
+    System.out.format(
+        "%s: The prime factorization of %d is %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -217,7 +228,8 @@ public class PrimeTest {
     int value = 18;
     String result = Primes.primeFactorization(value);
     assertEquals(expected, result);
-    System.out.format("%s: primeFactorization %d : %s\n", name.getMethodName(), value, result);
+    System.out.format(
+        "%s: The prime factorization of %d is %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -226,7 +238,8 @@ public class PrimeTest {
     int value = -18;
     String result = Primes.primeFactorization(value);
     assertEquals(expected, result);
-    System.out.format("%s: primeFactorization %d : %s\n", name.getMethodName(), value, result);
+    System.out.format(
+        "%s: The prime factorization of %d is %s\n", name.getMethodName(), value, result);
   }
 
   @Test
@@ -268,7 +281,9 @@ public class PrimeTest {
     int right = 6;
     int result = Primes.greatestCommonFactor(left, right);
     assertEquals(expected, result);
-    System.out.format("%s: %d - %d : %d\n", name.getMethodName(), left, right, result);
+    System.out.format(
+        "%s: The greatest common factor of %d and %d is %d\n",
+        name.getMethodName(), left, right, result);
   }
 
   @Test
@@ -278,7 +293,9 @@ public class PrimeTest {
     int right = 7260;
     int result = Primes.greatestCommonFactor(left, right);
     assertEquals(expected, result);
-    System.out.format("%s: %d - %d : %d\n", name.getMethodName(), left, right, result);
+    System.out.format(
+        "%s: The greatest common factor of %d and %d is %d\n",
+        name.getMethodName(), left, right, result);
   }
 
   @Test
@@ -288,7 +305,9 @@ public class PrimeTest {
     int right = 7;
     int result = Primes.greatestCommonFactor(left, right);
     assertEquals(expected, result);
-    System.out.format("%s: %d - %d : %d\n", name.getMethodName(), left, right, result);
+    System.out.format(
+        "%s: The greatest common factor of %d and %d is %d\n",
+        name.getMethodName(), left, right, result);
   }
 
   @Test
@@ -298,7 +317,9 @@ public class PrimeTest {
     int expected = 35;
     int result = Primes.leastCommonMultiple(left, right);
     assertEquals(expected, result);
-    System.out.format("%s: %d - %d :  %d\n", name.getMethodName(), left, right, result);
+    System.out.format(
+        "%s: The least common multiple of %d and %d is %d\n",
+        name.getMethodName(), left, right, result);
   }
 
   @Test
@@ -307,7 +328,9 @@ public class PrimeTest {
     int left = 9;
     int right = 12;
     int result = Primes.leastCommonMultiple(left, right);
-    System.out.format("%s: %d - %d :  %d\n", name.getMethodName(), left, right, result);
+    System.out.format(
+        "%s: The least common multiple of %d and %d is %d\n",
+        name.getMethodName(), left, right, result);
     assertEquals(expected, result);
   }
 }

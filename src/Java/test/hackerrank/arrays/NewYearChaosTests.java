@@ -17,6 +17,12 @@ public class NewYearChaosTests {
   @Rule public final TestName name = new TestName();
 
   @Test
+  public void getDescription() {
+    System.out.format("%s:", name.getMethodName());
+    NewYearChaos.getDescription();
+  }
+
+  @Test
   public void minimumBribes_1() {
     // Mock inputs for scanner
     String input = "2 5 2 1 5 3 4 5 2 5 1 3 4";

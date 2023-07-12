@@ -17,7 +17,7 @@ public class FulfillmentTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Fulfillment() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Fulfillment.getDescription();
   }

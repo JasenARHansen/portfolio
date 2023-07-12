@@ -15,7 +15,7 @@ public class RotationalCipherTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void RotationalCipher() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     RotationalCipher.getDescription();
   }

@@ -4,15 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings({"SpellCheckingInspection", "DataFlowIssue"})
+@SuppressWarnings({"SpellCheckingInspection"})
 public class Prefix {
   public static void getDescription() {
     System.out.println(
         """
-                Write a function that, given a list of strings, returns the longest common prefix for more than half of the strings.
+                Write a function that, given a list of strings, returns the longest
+                  common prefix for more than half of the strings.
                 Example:
-                ["abc", "bc", "ab", "abdabz123", "abe", "bz"]  →  "ab"
-                ["a", "b"] → ""
+                  ["abc", "bc", "ab", "abdabz123", "abe", "bz"]  →  "ab"
+                  ["a", "b"] → ""
                 Let n be the size of 'inputs'
                 Let m be the size of the largest string
                 Runtime: O(n*m)
@@ -20,9 +21,9 @@ public class Prefix {
             .indent(2));
   }
 
-  public static String longestPrefix(List<String> inputs) throws Exception {
+  public static String longestPrefix(List<String> inputs) {
     if (inputs == null) {
-      throw new Exception("No values provided");
+      return "No values provided";
     }
     Map<String, Integer> map = new HashMap<>();
     for (String input : inputs) {

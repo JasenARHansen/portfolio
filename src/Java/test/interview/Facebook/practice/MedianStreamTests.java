@@ -15,7 +15,7 @@ public class MedianStreamTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MedianStream() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     MedianStream.getDescription();
   }

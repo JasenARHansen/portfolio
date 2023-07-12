@@ -15,7 +15,7 @@ public class PairSumsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void PairSums() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     PairSums.getDescription();
   }

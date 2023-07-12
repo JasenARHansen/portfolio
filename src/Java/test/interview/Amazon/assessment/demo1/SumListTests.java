@@ -17,7 +17,7 @@ public class SumListTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void SumList() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     SumList.getDescription();
   }

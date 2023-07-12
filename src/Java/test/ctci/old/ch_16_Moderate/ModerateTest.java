@@ -21,7 +21,7 @@ public class ModerateTest {
   private final String testSuite = "Moderate";
 
   @Test
-  public void Moderate() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Moderate.getDescription();
   }

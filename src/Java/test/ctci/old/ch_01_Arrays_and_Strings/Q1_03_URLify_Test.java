@@ -19,8 +19,8 @@ public class Q1_03_URLify_Test {
     String source = "Mr John Smith    ";
     String expected = "Mr%20John%20Smith";
     String result = Q1_03_URLify.URLify(source);
-    System.out.format("%s: '%s' was converted to '%s'\n", name.getMethodName(), source, expected);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' was converted to '%s'\n", name.getMethodName(), source, expected);
   }
 
   @Test
@@ -31,7 +31,7 @@ public class Q1_03_URLify_Test {
     int trueLength = Q1_03_URLify.findLastCharacter(arr) + 1;
     Q1_03_URLify.replaceSpaces(arr, trueLength);
     String result = new String(arr);
-    System.out.format("%s: '%s' was converted to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' was converted to '%s'\n", name.getMethodName(), source, result);
   }
 }

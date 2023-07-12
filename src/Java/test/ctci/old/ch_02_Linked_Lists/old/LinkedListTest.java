@@ -58,13 +58,13 @@ public class LinkedListTest {
     stringValue1.insert("e");
     stringValue1.insert("f");
     System.out.println("SubList Test 1 source:");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     CustomLinkedList<String> stringValue2 = stringValue1.sublist(stringValue1, 3);
     System.out.println("Test 1 result:");
-    stringValue2.printList();
+    System.out.format("\t%s\n", stringValue2);
     System.out.println("intersects Test 1 source:");
-    stringValue1.printList();
-    stringValue2.printList();
+    System.out.format("\t%s\n", stringValue1);
+    System.out.format("\t%s\n", stringValue2);
     NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assert resultNode != null;
     System.out.format("List intersects at: %s\n", resultNode);
@@ -80,8 +80,8 @@ public class LinkedListTest {
     stringValue2.insert("a");
     stringValue2.insert("a");
     System.out.println("intersects Test 2 source:");
-    stringValue1.printList();
-    stringValue2.printList();
+    System.out.format("\t%s\n", stringValue1);
+    System.out.format("\t%s\n", stringValue2);
     resultNode = LinkedList.intersects(stringValue1, stringValue2);
     System.out.format("List intersects at: %s\n", resultNode);
   }
@@ -95,7 +95,7 @@ public class LinkedListTest {
     stringValue1.insert("b");
     stringValue1.insert("a");
     System.out.println("isPalindrome Test 1 source:");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     boolean result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
     stringValue1.empty();
@@ -103,7 +103,7 @@ public class LinkedListTest {
     stringValue1.insert("b");
     stringValue1.insert("a");
     System.out.println("isPalindrome Test 2 source:");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
     stringValue1.empty();
@@ -111,7 +111,7 @@ public class LinkedListTest {
     stringValue1.insert("b");
     stringValue1.insert("c");
     System.out.println("isPalindrome Test 3 source:");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     result = LinkedList.isPalindrome(stringValue1);
     System.out.format("List is Palindrome: %s\n", result);
   }
@@ -131,10 +131,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("partition 5 Test 1 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.partition(toSimplify, 5);
     System.out.println("Test 1 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -147,10 +147,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("partition 7 Test 2 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.partition(toSimplify, 7);
     System.out.println("Test 2 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
@@ -168,10 +168,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 1 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeDuplicate(toSimplify);
     System.out.println("Test 1 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -184,10 +184,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 2 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeDuplicateAlt(toSimplify);
     System.out.println("Test 2 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -200,10 +200,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Duplicate Test 3 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeDuplicateAsNode(toSimplify, toSimplify.getFirst());
     System.out.println("Test 3 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
   }
 
@@ -222,10 +222,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 3 Test 2 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeKthFromLast(3, toSimplify);
     System.out.println("Test 1 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -238,10 +238,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 5 Test 1 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeKthFromLast2(5, toSimplify);
     System.out.println("Test 2 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     toSimplify.empty();
     toSimplify.insert(0);
     toSimplify.insert(1);
@@ -254,10 +254,10 @@ public class LinkedListTest {
     toSimplify.insert(6);
     toSimplify.insert(6);
     System.out.println("Remove Kth from last K = 5 Test 2 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeKthFromLast2(5, toSimplify);
     System.out.println("Test 2 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
@@ -269,10 +269,10 @@ public class LinkedListTest {
     toSimplify.insert(1);
     toSimplify.insert(6);
     System.out.println("Remove middle Test 1 source:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.removeMiddleNode(toSimplify.getIndex(1), toSimplify);
     System.out.println("Test 1 result:");
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
@@ -293,11 +293,11 @@ public class LinkedListTest {
     intValue2.insert(9);
     intValue2.insert(2);
     System.out.println("sumList Test 1 source:");
-    intValue1.printList();
-    intValue2.printList();
+    System.out.format("\t%s\n", intValue1);
+    System.out.format("\t%s\n", intValue2);
     CustomLinkedList<Integer> intValue3 = LinkedList.sumList(intValue1, intValue2);
     System.out.println("Test 1 result:");
-    intValue3.printList();
+    System.out.format("\t%s\n", intValue3);
     intValue1 = new CustomLinkedList<>();
     intValue1.insert(6);
     intValue1.insert(1);
@@ -307,10 +307,10 @@ public class LinkedListTest {
     intValue2.insert(9);
     intValue2.insert(5);
     System.out.println("sumList Test 2 source:");
-    intValue1.printList();
-    intValue2.printList();
+    System.out.format("\t%s\n", intValue1);
+    System.out.format("\t%s\n", intValue2);
     intValue3 = LinkedList.sumList(intValue1, intValue2);
     System.out.println("Test 2 result:");
-    intValue3.printList();
+    System.out.format("\t%s\n", intValue3);
   }
 }

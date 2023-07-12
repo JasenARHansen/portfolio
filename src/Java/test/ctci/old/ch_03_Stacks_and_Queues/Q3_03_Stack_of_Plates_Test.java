@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_03_Stack_of_Plates_Test {
   @Rule public final TestName name = new TestName();

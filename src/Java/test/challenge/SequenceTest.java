@@ -10,14 +10,15 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("ConstantValue")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SequenceTest {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Sequence() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
-    Sequence.getDescriptionFibonacci();
+    Sequence.getDescription();
   }
 
   @Test
@@ -25,8 +26,8 @@ public class SequenceTest {
     int expected = 0;
     int count = 0;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -34,8 +35,8 @@ public class SequenceTest {
     int expected = 1;
     int count = 1;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -43,8 +44,8 @@ public class SequenceTest {
     int expected = 1;
     int count = 2;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -52,8 +53,8 @@ public class SequenceTest {
     int expected = 8;
     int count = 6;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -61,8 +62,8 @@ public class SequenceTest {
     int expected = 13;
     int count = 7;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -70,8 +71,8 @@ public class SequenceTest {
     int expected = 6765;
     int count = 20;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -79,8 +80,8 @@ public class SequenceTest {
     int expected = 1;
     int count = -1;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -88,8 +89,8 @@ public class SequenceTest {
     int expected = -1;
     int count = -2;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -97,8 +98,8 @@ public class SequenceTest {
     int expected = 2;
     int count = -3;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -106,8 +107,8 @@ public class SequenceTest {
     int expected = 13;
     int count = -7;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
@@ -115,52 +116,52 @@ public class SequenceTest {
     int expected = -21;
     int count = -8;
     int result = Sequence.getFibonacci(count);
-    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
     assertEquals(expected, result);
+    System.out.format("%s: Fibonacci number %d is %d\n", name.getMethodName(), count, result);
   }
 
   @Test
   public void getPascalTriangleRow_0() {
-    int row = 0;
-    int expectedLength = row + 1;
+    int expected = 1;
+    int row = expected - 1;
     List<Integer> result = Sequence.getPascalTriangleRow(row);
+    assertEquals(expected, result.size());
     System.out.format("%s: Pascal's Triangle Row %d is %s\n", name.getMethodName(), row, result);
-    assertEquals(expectedLength, result.size());
   }
 
   @Test
   public void getPascalTriangleRow_1() {
-    int row = 1;
-    int expectedLength = row + 1;
+    int expected = 2;
+    int row = expected - 1;
     List<Integer> result = Sequence.getPascalTriangleRow(row);
+    assertEquals(expected, result.size());
     System.out.format("%s: Pascal's Triangle Row %d is %s\n", name.getMethodName(), row, result);
-    assertEquals(expectedLength, result.size());
   }
 
   @Test
   public void getPascalTriangleRow_2() {
-    int row = 2;
-    int expectedLength = row + 1;
+    int expected = 3;
+    int row = expected - 1;
     List<Integer> result = Sequence.getPascalTriangleRow(row);
+    assertEquals(expected, result.size());
     System.out.format("%s: Pascal's Triangle Row %d is %s\n", name.getMethodName(), row, result);
-    assertEquals(expectedLength, result.size());
   }
 
   @Test
   public void getPascalTriangleRow_3() {
-    int row = 3;
-    int expectedLength = row + 1;
+    int expected = 4;
+    int row = expected - 1;
     List<Integer> result = Sequence.getPascalTriangleRow(row);
+    assertEquals(expected, result.size());
     System.out.format("%s: Pascal's Triangle Row %d is %s\n", name.getMethodName(), row, result);
-    assertEquals(expectedLength, result.size());
   }
 
   @Test
   public void getPascalTriangleRow_7() {
-    int row = 7;
-    int expectedLength = row + 1;
+    int expected = 8;
+    int row = expected - 1;
     List<Integer> result = Sequence.getPascalTriangleRow(row);
+    assertEquals(expected, result.size());
     System.out.format("%s: Pascal's Triangle Row %d is %s\n", name.getMethodName(), row, result);
-    assertEquals(expectedLength, result.size());
   }
 }

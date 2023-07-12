@@ -26,13 +26,10 @@ public class Q2_05_Sum_Lists_Test {
     intValue2.insert(5);
     intValue2.insert(9);
     intValue2.insert(3);
-    System.out.format("%s: Operand list 1:\n", name.getMethodName());
-    intValue1.printList();
-    System.out.format("%s: Operand list 2:\n", name.getMethodName());
-    intValue2.printList();
+    System.out.format("\tOperand list 1: %s\n", intValue1);
+    System.out.format("\tOperand list 2: %s\n", intValue2);
     CustomLinkedList<Integer> result = LinkedList.sumList(intValue1, intValue2);
-    System.out.format("%s: Result list:\n", name.getMethodName());
-    result.printList();
+    System.out.format("\tResult list: %s\n", result);
   }
 
   @Test
@@ -46,13 +43,10 @@ public class Q2_05_Sum_Lists_Test {
     intValue2.insert(5);
     intValue2.insert(9);
     intValue2.insert(3);
-    System.out.format("%s: Operand list 1:\n", name.getMethodName());
-    intValue1.printList();
-    System.out.format("%s: Operand list 2:\n", name.getMethodName());
-    intValue2.printList();
+    System.out.format("\tOperand list 1: %s\n", intValue1);
+    System.out.format("\tOperand list 2: %s\n", intValue2);
     CustomLinkedList<Integer> result = LinkedList.sumListReverse(intValue1, intValue2);
-    System.out.format("%s: Result list:\n", name.getMethodName());
-    result.printList();
+    System.out.format("\tResult list: %s\n", result);
   }
 
   @Test
@@ -65,19 +59,14 @@ public class Q2_05_Sum_Lists_Test {
     LinkedListNode lB2 = new LinkedListNode(0, null, lB1);
     new LinkedListNode(0, null, lB2);
     LinkedListNode list3 = Q2_05_Sum_Lists.sumLists_solution_1(lA1, lB1);
-    System.out.format("%s: Operand list 1:\n", name.getMethodName());
-    System.out.println(lA1.printForward());
-    System.out.format("%s: Operand list 2:\n", name.getMethodName());
-    System.out.println(lB1.printForward());
-    System.out.format("%s: Result list:\n", name.getMethodName());
-    System.out.println(list3.printForward());
+    System.out.format("\tOperand list 1: %s\n", lA1.printForward());
+    System.out.format("\tOperand list 2: %s\n", lB1.printForward());
+    System.out.format("\tResult list: %s\n", list3.printForward());
     int l1 = Q2_05_Sum_Lists.linkedListToIntReverse(lA1);
     int l2 = Q2_05_Sum_Lists.linkedListToIntReverse(lB1);
     int l3 = Q2_05_Sum_Lists.linkedListToIntReverse(list3);
-    System.out.format("%s: Result from list addition:\n", name.getMethodName());
-    System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
-    System.out.format("%s: Result from normal addition:\n", name.getMethodName());
-    System.out.print(l1 + " + " + l2 + " = " + (l1 + l2) + "\n");
+    System.out.format("\tResult from list addition: %d + %d = %d\n", l1, l2, l3);
+    System.out.format("\tResult from normal addition: %d + %d = %d\n", l1, l2, (l1 + l2));
   }
 
   @Test
@@ -88,19 +77,14 @@ public class Q2_05_Sum_Lists_Test {
     LinkedListNode lB1 = new LinkedListNode(5, null, null);
     LinkedListNode lB2 = new LinkedListNode(9, null, lB1);
     new LinkedListNode(1, null, lB2);
-    System.out.format("%s: Operand list 1:\n", name.getMethodName());
-    System.out.println(lA1.printForward());
-    System.out.format("%s: Operand list 2:\n", name.getMethodName());
-    System.out.println(lB1.printForward());
+    System.out.format("\tOperand list 1: %s\n", lA1.printForward());
+    System.out.format("\tOperand list 2: %s\n", lB1.printForward());
     LinkedListNode list3 = Q2_05_Sum_Lists.sumLists_solution_2(lA1, lB1);
-    System.out.format("%s: Result list:\n", name.getMethodName());
-    System.out.println(list3.printForward());
+    System.out.format("\tResult list: %s\n", list3.printForward());
     int l1 = Q2_05_Sum_Lists.linkedListToIntForward(lA1);
     int l2 = Q2_05_Sum_Lists.linkedListToIntForward(lB1);
     int l3 = Q2_05_Sum_Lists.linkedListToIntForward(list3);
-    System.out.format("%s: Result from list addition:\n", name.getMethodName());
-    System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
-    System.out.format("%s: Result from normal addition:\n", name.getMethodName());
-    System.out.print(l1 + " + " + l2 + " = " + (l1 + l2) + "\n");
+    System.out.format("\tResult from list addition: %d + %d = %d\n", l1, l2, l3);
+    System.out.format("\tResult from normal addition: %d + %d = %d\n", l1, l2, (l1 + l2));
   }
 }

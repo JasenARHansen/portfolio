@@ -15,7 +15,7 @@ public class NumberOfVisibleNodesTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void NumberOfVisibleNodes() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     NumberOfVisibleNodes.getDescription();
   }

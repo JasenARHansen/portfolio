@@ -12,8 +12,9 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BalanceBracketsTests {
   @Rule public final TestName name = new TestName();
+
   @Test
-  public void BalanceBrackets() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     BalanceBrackets.getDescription();
   }

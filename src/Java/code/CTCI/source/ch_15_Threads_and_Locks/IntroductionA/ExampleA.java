@@ -1,6 +1,6 @@
 package Java.code.ctci.source.ch_15_Threads_and_Locks.introductionA;
 
-@SuppressWarnings("BusyWait")
+@SuppressWarnings({"BusyWait", "BlockingMethodInNonBlockingContext"})
 public class ExampleA {
   public static void main(String[] args) {
     RunnableThreadExample instance = new RunnableThreadExample();

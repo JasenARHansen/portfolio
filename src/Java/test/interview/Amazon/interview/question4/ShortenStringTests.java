@@ -17,7 +17,7 @@ public class ShortenStringTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ConvertXML() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ShortenString.getDescription();
   }

@@ -12,12 +12,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({
-  "SpellCheckingInspection",
-  "DuplicatedCode",
-  "unchecked",
-  "InstantiationOfUtilityClass"
-})
+@SuppressWarnings({"SpellCheckingInspection", "unchecked", "InstantiationOfUtilityClass"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RomanNumeralTest {
   @Rule public final TestName name = new TestName();

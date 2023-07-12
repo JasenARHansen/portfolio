@@ -16,7 +16,7 @@ public class ReverseToMakeEqualTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ReverseToMakeEqual() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ReverseToMakeEqual.getDescription();
   }

@@ -18,31 +18,31 @@ public class Q2_03_Delete_Middle_Node_Test {
   public void removeMiddleNode() {
     System.out.format("%s: List\n", name.getMethodName());
     LinkedListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
     LinkedListNode node_to_delete = head.next;
-    System.out.format("%s: Remove '%d' from head\n", name.getMethodName(), 1);
+    System.out.format("\tRemove '%d' from head\n", 1);
     Q2_03_Delete_Middle_Node.removeNextNode(node_to_delete);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 
   @Test
   public void removeXFromHead() {
     System.out.format("%s: List\n", name.getMethodName());
     LinkedListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
     int offset = 3;
-    System.out.format("%s: Remove '%d' from head\n", name.getMethodName(), offset);
+    System.out.format("\tRemove '%d' from head\n", offset);
     Q2_03_Delete_Middle_Node.removeXFromHead(head, offset);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 
   @Test
   public void removeMiddleNode_solution_1() {
     System.out.format("%s: List\n", name.getMethodName());
     LinkedListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
-    System.out.println(head.printForward());
-    System.out.format("%s: Remove '%d' from head\n", name.getMethodName(), 4);
+    System.out.format("\t%s\n", head.printForward());
+    System.out.format("\tRemove '%d' from head\n", 4);
     Q2_03_Delete_Middle_Node.removeMiddleNode_solution_1(head.next.next.next.next); // delete node 4
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 }

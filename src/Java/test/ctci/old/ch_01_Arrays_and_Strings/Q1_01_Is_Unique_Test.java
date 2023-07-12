@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("NewClassNamingConvention")
+@SuppressWarnings({"NewClassNamingConvention", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_01_Is_Unique_Test {
   @Rule public final TestName name = new TestName();
@@ -18,48 +18,48 @@ public class Q1_01_Is_Unique_Test {
   @Test
   public void isUniqueChars_true() {
     String word = "cat";
-    boolean success = Q1_01_Is_Unique.isUnique(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertTrue(success);
+    boolean result = Q1_01_Is_Unique.isUnique(word);
+    assertTrue(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 
   @Test
   public void isUniqueChars_false() {
     String word = "Jasen Hansen";
-    boolean success = Q1_01_Is_Unique.isUnique(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertFalse(success);
+    boolean result = Q1_01_Is_Unique.isUnique(word);
+    assertFalse(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 
   @Test
   public void isUniqueChars_solution_1_true() {
     String word = "cake";
-    boolean success = Q1_01_Is_Unique.isUnique_solution_1(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertTrue(success);
+    boolean result = Q1_01_Is_Unique.isUnique_solution_1(word);
+    assertTrue(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 
   @Test
   public void isUniqueChars_solution_1_false() {
     String word = "teapot";
-    boolean success = Q1_01_Is_Unique.isUnique_solution_1(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertFalse(success);
+    boolean result = Q1_01_Is_Unique.isUnique_solution_1(word);
+    assertFalse(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 
   @Test
   public void isUniqueChars_solution_2_true() {
     String word = "cake";
-    boolean success = Q1_01_Is_Unique.isUnique_solution_2(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertTrue(success);
+    boolean result = Q1_01_Is_Unique.isUnique_solution_2(word);
+    assertTrue(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 
   @Test
   public void isUniqueChars_solution_2_false() {
     String word = "teapot";
-    boolean success = Q1_01_Is_Unique.isUnique_solution_2(word);
-    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, success);
-    assertFalse(success);
+    boolean result = Q1_01_Is_Unique.isUnique_solution_2(word);
+    assertFalse(result);
+    System.out.format("%s: %s has unique characters: %b\n", name.getMethodName(), word, result);
   }
 }

@@ -15,7 +15,7 @@ public class ContiguousSubArraysTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ContiguousSubArrays() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ContiguousSubArrays.getDescription();
   }

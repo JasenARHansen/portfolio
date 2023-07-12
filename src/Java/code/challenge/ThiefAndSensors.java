@@ -14,6 +14,27 @@ public class ThiefAndSensors {
   private static boolean blockedBottomTop = false;
   private static boolean blockedLeftRight = false;
 
+  public static void main(String[] argv) {
+    getDescription();
+    constructRoom(0, 0, 10, 10);
+    add_circle(1, 1, 1);
+    add_circle(3, 3, 3);
+    add_circle(5, 8, 4);
+    add_circle(8, 8, 2);
+    pathExists();
+    pathBottomTop();
+    pathLeftRight();
+    reset();
+    constructRoom(0, 0, 10, 10);
+    add_circle(1, 1, 1);
+    add_circle(3, 3, 1);
+    add_circle(5, 5, 1);
+    add_circle(8, 8, 1);
+    pathExists();
+    pathBottomTop();
+    pathLeftRight();
+  }
+
   public static void getDescription() {
     System.out.println(
         """
@@ -22,6 +43,11 @@ public class ThiefAndSensors {
                  Each sensor is placed at any random point in the room and has its coverage in the radius r.
                 Find out if the thief can reach to the other side without touching the range of any sensor."""
             .indent(2));
+  }
+
+  public static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
+    reset();
+    room = new Rectangle(lowerRightX, lowerRightY, lowerRightX + width, lowerRightY + height);
   }
 
   public static void add_circle(int x_coordinate, int y_coordinate, int radius) {
@@ -43,31 +69,45 @@ public class ThiefAndSensors {
     }
   }
 
-  public static void constructRoom(int lowerRightX, int lowerRightY, int width, int height) {
-    reset();
-    room = new Rectangle(lowerRightX, lowerRightY, lowerRightX + width, lowerRightY + height);
-  }
-
-  public static void pathBottomTop() {
-    if (!evaluated) {
-      processPaths();
-    }
-    if (blockedBottomTop) {
-      System.out.println("There is no path from Left to Right");
-    } else {
-      System.out.println("There is a path from Left to Right");
-    }
-  }
-
-  public static void pathExists() {
+  public static String pathExists() {
     if (!evaluated) {
       processPaths();
     }
     if (blockedLeftRight && blockedBottomTop) {
-      System.out.println("There is no path available");
+      return "There is no path available";
     } else {
-      System.out.println("There is a path available");
+      return "There is a path available";
     }
+  }
+
+  public static String pathBottomTop() {
+    if (!evaluated) {
+      processPaths();
+    }
+    if (blockedBottomTop) {
+      return "There is no path from Left to Right";
+    } else {
+      return "There is a path from Left to Right";
+    }
+  }
+
+  public static String pathLeftRight() {
+    if (!evaluated) {
+      processPaths();
+    }
+    if (blockedLeftRight) {
+      return "There is no path from Bottom to Top";
+    } else {
+      return "There is a path from Bottom to Top";
+    }
+  }
+
+  private static void reset() {
+    circles = null;
+    room = null;
+    evaluated = false;
+    blockedBottomTop = false;
+    blockedLeftRight = false;
   }
 
   private static void processPaths() {
@@ -129,45 +169,5 @@ public class ThiefAndSensors {
       }
     }
     evaluated = true;
-  }
-
-  public static void pathLeftRight() {
-    if (!evaluated) {
-      processPaths();
-    }
-    if (blockedLeftRight) {
-      System.out.println("There is no path from Bottom to Top");
-    } else {
-      System.out.println("There is a path from Bottom to Top");
-    }
-  }
-
-  private static void reset() {
-    circles = null;
-    room = null;
-    evaluated = false;
-    blockedBottomTop = false;
-    blockedLeftRight = false;
-  }
-
-  public static void main(String[] argv) {
-    getDescription();
-    constructRoom(0, 0, 10, 10);
-    add_circle(1, 1, 1);
-    add_circle(3, 3, 3);
-    add_circle(5, 8, 4);
-    add_circle(8, 8, 2);
-    pathExists();
-    pathBottomTop();
-    pathLeftRight();
-    reset();
-    constructRoom(0, 0, 10, 10);
-    add_circle(1, 1, 1);
-    add_circle(3, 3, 1);
-    add_circle(5, 5, 1);
-    add_circle(8, 8, 1);
-    pathExists();
-    pathBottomTop();
-    pathLeftRight();
   }
 }

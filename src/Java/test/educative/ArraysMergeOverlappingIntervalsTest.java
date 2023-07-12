@@ -18,7 +18,7 @@ public class ArraysMergeOverlappingIntervalsTest {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ArraysMergeOverlappingIntervals() {
+  public void getDescription() {
     System.out.format("%s:", name.getMethodName());
     ArraysMergeOverlappingIntervals.getDescription();
   }

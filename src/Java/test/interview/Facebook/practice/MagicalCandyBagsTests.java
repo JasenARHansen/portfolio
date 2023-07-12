@@ -15,7 +15,7 @@ public class MagicalCandyBagsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MagicalCandyBags() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     MagicalCandyBags.getDescription();
   }

@@ -64,8 +64,9 @@ public class NodesInASubtree {
     }
     return count;
   }
-  // Tree Node
+
   public static class Node {
+    // Tree Node
     public final int val;
     public final List<Node> children;
 
@@ -77,11 +78,6 @@ public class NodesInASubtree {
     public Node(int _val) {
       val = _val;
       children = new ArrayList<>();
-    }
-
-    public Node(int _val, ArrayList<Node> _children) {
-      val = _val;
-      children = _children;
     }
   }
 

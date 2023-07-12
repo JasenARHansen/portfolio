@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q2_06_Palindrome_Test {
   @Rule public final TestName name = new TestName();
@@ -26,10 +26,10 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("b");
     stringValues.insert("b");
     stringValues.insert("a");
-    stringValues.printList();
-    boolean success = LinkedList.isPalindrome(stringValues);
-    System.out.format("List is Palindrome: %s\n", success);
-    assertTrue(success);
+    System.out.format("\t%s\n", stringValues);
+    boolean result = LinkedList.isPalindrome(stringValues);
+    assertTrue(result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
@@ -39,10 +39,10 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("a");
-    stringValues.printList();
-    boolean success = LinkedList.isPalindrome(stringValues);
-    System.out.format("List is Palindrome: %s\n", success);
-    assertTrue(success);
+    System.out.format("\t%s\n", stringValues);
+    boolean result = LinkedList.isPalindrome(stringValues);
+    assertTrue(result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
@@ -52,10 +52,10 @@ public class Q2_06_Palindrome_Test {
     stringValues.insert("a");
     stringValues.insert("b");
     stringValues.insert("c");
-    stringValues.printList();
-    boolean success = LinkedList.isPalindrome(stringValues);
-    System.out.format("List is Palindrome: %s\n", success);
-    assertFalse(success);
+    System.out.format("\t%s\n", stringValues);
+    boolean result = LinkedList.isPalindrome(stringValues);
+    assertFalse(result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
@@ -65,10 +65,10 @@ public class Q2_06_Palindrome_Test {
     integerValues.insert(1);
     integerValues.insert(2);
     integerValues.insert(1);
-    integerValues.printList();
-    boolean success = LinkedList.isPalindrome(integerValues);
-    System.out.format("List is Palindrome: %s\n", success);
-    assertTrue(success);
+    System.out.format("\t%s\n", integerValues);
+    boolean result = LinkedList.isPalindrome(integerValues);
+    assertTrue(result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
@@ -78,10 +78,10 @@ public class Q2_06_Palindrome_Test {
     integerValues.insert(1);
     integerValues.insert(2);
     integerValues.insert(3);
-    integerValues.printList();
-    boolean success = LinkedList.isPalindrome(integerValues);
-    System.out.format("List is Palindrome: %s\n", success);
-    assertFalse(success);
+    System.out.format("\t%s\n", integerValues);
+    boolean result = LinkedList.isPalindrome(integerValues);
+    assertFalse(result);
+    System.out.format("\tList is Palindrome: %s\n", result);
   }
 
   @Test
@@ -100,12 +100,11 @@ public class Q2_06_Palindrome_Test {
         nodes[i].setPrevious(nodes[i - 1]);
       }
     }
-    // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
     LinkedListNode head = nodes[0];
-    System.out.println(head.printForward());
-    boolean success = Q2_06_Palindrome.isPalindrome_solution_1(head);
-    System.out.format("%s: list is a palindrome: %b\n", name.getMethodName(), success);
-    assertTrue(success);
+    System.out.format("\t%s\n", head.printForward());
+    boolean result = Q2_06_Palindrome.isPalindrome_solution_1(head);
+    assertTrue(result);
+    System.out.format("\tlist is a palindrome: %b\n", result);
   }
 
   @Test
@@ -124,12 +123,11 @@ public class Q2_06_Palindrome_Test {
         nodes[i].setPrevious(nodes[i - 1]);
       }
     }
-    // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
     LinkedListNode head = nodes[0];
-    System.out.println(head.printForward());
-    boolean success = Q2_06_Palindrome.isPalindrome_solution_2(head);
-    System.out.format("%s: list is a palindrome: %b\n", name.getMethodName(), success);
-    assertTrue(success);
+    System.out.format("\t%s\n", head.printForward());
+    boolean result = Q2_06_Palindrome.isPalindrome_solution_2(head);
+    assertTrue(result);
+    System.out.format("\tlist is a palindrome: %b\n", result);
   }
 
   @Test
@@ -148,11 +146,10 @@ public class Q2_06_Palindrome_Test {
         nodes[i].setPrevious(nodes[i - 1]);
       }
     }
-    // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
     LinkedListNode head = nodes[0];
-    System.out.println(head.printForward());
-    boolean success = Q2_06_Palindrome.isPalindrome_solution_3(head);
-    System.out.format("%s: list is a palindrome: %b\n", name.getMethodName(), success);
-    assertTrue(success);
+    System.out.format("\t%s\n", head.printForward());
+    boolean result = Q2_06_Palindrome.isPalindrome_solution_3(head);
+    assertTrue(result);
+    System.out.format("\tlist is a palindrome: %b\n", result);
   }
 }

@@ -17,7 +17,7 @@ public class BinaryTreeAverageValuePerLevelTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void BinaryTreeAverageValuePerLevel() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     BinaryTreeAverageValuePerLevel.getDescription();
   }

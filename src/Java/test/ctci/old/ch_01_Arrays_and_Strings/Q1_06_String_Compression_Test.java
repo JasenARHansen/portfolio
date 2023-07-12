@@ -16,73 +16,73 @@ public class Q1_06_String_Compression_Test {
 
   @Test
   public void stringCompression_small() {
-    String source = "aa";
     String expected = "aa";
+    String source = "aa";
     String result = Q1_06_String_Compression.stringCompression(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_large() {
-    String source = "abbbaaaa";
     String expected = "a1b3a4";
+    String source = "abbbaaaa";
     String result = Q1_06_String_Compression.stringCompression(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_1_small() {
-    String source = "bb";
     String expected = "bb";
+    String source = "bb";
     String result = Q1_06_String_Compression.stringCompression_solution_1(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_1_large() {
-    String source = "aabbb";
     String expected = "a2b3";
+    String source = "aabbb";
     String result = Q1_06_String_Compression.stringCompression_solution_1(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_2_small() {
-    String source = "cc";
     String expected = "cc";
+    String source = "cc";
     String result = Q1_06_String_Compression.stringCompression_solution_2(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_2_large() {
-    String source = "aabbccc";
     String expected = "a2b2c3";
+    String source = "aabbccc";
     String result = Q1_06_String_Compression.stringCompression_solution_2(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_3_small() {
-    String source = "dd";
     String expected = "dd";
+    String source = "dd";
     String result = Q1_06_String_Compression.stringCompression_solution_3(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 
   @Test
   public void stringCompression_solution_3_large() {
-    String source = "aaaaabbbbaaaabbddc";
     String expected = "a5b4a4b2d2c1";
+    String source = "aaaaabbbbaaaabbddc";
     String result = Q1_06_String_Compression.stringCompression_solution_3(source);
-    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
     assertEquals(expected, result);
+    System.out.format("%s: '%s' converts to '%s'\n", name.getMethodName(), source, result);
   }
 }

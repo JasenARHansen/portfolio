@@ -15,7 +15,7 @@ public class MinimizingPermutationsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MinimizingPermutations() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     MinimizingPermutations.getDescription();
   }

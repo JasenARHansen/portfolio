@@ -31,10 +31,10 @@ public class Q2_04_Partition_Test {
     toSimplify.insert(6);
     int value = 5;
     System.out.format("%s: Partition with '%d' source\n", name.getMethodName(), value);
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.partition(toSimplify, value);
     System.out.format("%s: Partition with '%d' result\n", name.getMethodName(), value);
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
@@ -53,10 +53,10 @@ public class Q2_04_Partition_Test {
     toSimplify.insert(6);
     int value = 7;
     System.out.format("%s: Partition with '%d' source\n", name.getMethodName(), value);
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
     LinkedList.partition(toSimplify, value);
     System.out.format("%s: Partition with '%d' result\n", name.getMethodName(), value);
-    toSimplify.printList();
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test

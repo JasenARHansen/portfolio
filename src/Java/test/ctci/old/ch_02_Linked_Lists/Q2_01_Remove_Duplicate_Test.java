@@ -30,13 +30,13 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    toSimplify.printList();
-    int length_1 = toSimplify.getSize();
+    System.out.format("\t%s\n", toSimplify);
+    int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicate(toSimplify);
-    int length_2 = toSimplify.getSize();
+    int result_2 = toSimplify.getSize();
+    assertNotEquals(result_1, result_2);
     System.out.format("%s: Cleaned list\n", name.getMethodName());
-    toSimplify.printList();
-    assertNotEquals(length_1, length_2);
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
@@ -53,13 +53,13 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    toSimplify.printList();
-    int length_1 = toSimplify.getSize();
+    System.out.format("\t%s\n", toSimplify);
+    int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicate_no_storage(toSimplify);
-    int length_2 = toSimplify.getSize();
+    int result_2 = toSimplify.getSize();
     System.out.format("%s: Cleaned list\n", name.getMethodName());
-    toSimplify.printList();
-    assertNotEquals(length_1, length_2);
+    System.out.format("\t%s\n", toSimplify);
+    assertNotEquals(result_1, result_2);
   }
 
   @Test
@@ -76,20 +76,19 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    toSimplify.printList();
-    int length_1 = toSimplify.getSize();
+    System.out.format("\t%s\n", toSimplify);
+    int result_1 = toSimplify.getSize();
     Q2_01_Remove_Duplicate.removeDuplicateAsNode(toSimplify);
-    int length_2 = toSimplify.getSize();
+    int result_2 = toSimplify.getSize();
+    assertNotEquals(result_1, result_2);
     System.out.format("%s: Cleaned list\n", name.getMethodName());
-    toSimplify.printList();
-    assertNotEquals(length_1, length_2);
+    System.out.format("\t%s\n", toSimplify);
   }
 
   @Test
   public void isUniqueChars_solution_1() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
-    LinkedListNode first =
-        new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
+    System.out.format("%s:\n", name.getMethodName());
+    LinkedListNode first = new LinkedListNode(0, null, null);
     LinkedListNode head = first;
     LinkedListNode second;
     for (int i = 1; i < 8; i++) {
@@ -98,14 +97,14 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_1(head);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_2() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     LinkedListNode first =
         new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
     LinkedListNode head = first;
@@ -116,14 +115,14 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_2(head);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 
   @Test
   public void isUniqueChars_solution_3() {
-    System.out.format("%s: Initial list\n", name.getMethodName());
+    System.out.format("%s:\n", name.getMethodName());
     LinkedListNode first =
         new LinkedListNode(0, null, null); // AssortedMethods.randomLinkedList(1000, 0, 2);
     LinkedListNode head = first;
@@ -134,8 +133,8 @@ public class Q2_01_Remove_Duplicate_Test {
       second.setPrevious(first);
       first = second;
     }
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
     Q2_01_Remove_Duplicate.removeDuplicate_solution_3(head);
-    System.out.println(head.printForward());
+    System.out.format("\t%s\n", head.printForward());
   }
 }

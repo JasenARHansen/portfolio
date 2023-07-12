@@ -6,11 +6,8 @@ import java.util.List;
 
 @SuppressWarnings("DuplicatedCode")
 public class Sequence {
-  public static void main(String[] argv) {
-    getDescriptionFibonacci();
-  }
 
-  public static void getDescriptionFibonacci() {
+  public static void getDescription() {
     System.out.println(
         """
                 The Fibonacci sequence is a series of numbers where a number is the addition of the last

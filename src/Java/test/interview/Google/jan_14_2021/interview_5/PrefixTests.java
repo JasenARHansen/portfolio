@@ -12,40 +12,47 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"SpellCheckingInspection", "DataFlowIssue"})
+@SuppressWarnings("SpellCheckingInspection")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrefixTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Prefix() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Prefix.getDescription();
   }
 
   @Test
-  public void longestPrefix_1() throws Exception {
+  public void longestPrefix_1() {
+    String expected = "";
     ArrayList<String> inputs =
         new ArrayList<>(List.of("abc", "bc", "ab", "abdabz123", "abe", "bz"));
     String result = Prefix.longestPrefix(inputs);
+    assertNotEquals(result, expected);
     System.out.format(
         "%s: list %s has '%s' as its longest prefxes that at least half of the nodes share\n",
         name.getMethodName(), inputs, result);
-    assertNotEquals(result, "");
   }
 
   @Test
-  public void longestPrefix_2() throws Exception {
+  public void longestPrefix_2() {
+    String expected = "";
     ArrayList<String> inputs = new ArrayList<>(List.of("a", "b"));
     String result = Prefix.longestPrefix(inputs);
+    assertEquals(result, expected);
     System.out.format(
         "%s: list %s has '%s' as its longest prefxes that at least half of the nodes share\n",
         name.getMethodName(), inputs, result);
-    assertEquals(result, "");
   }
 
-  @Test(expected = Exception.class)
-  public void longestPrefix_3() throws Exception {
-    Prefix.longestPrefix(null);
+  @Test
+  public void longestPrefix_3() {
+    String expected = "No values provided";
+    String result = Prefix.longestPrefix(null);
+    assertEquals(result, expected);
+    System.out.format(
+        "%s: list null has '%s' as its longest prefxes that at least half of the nodes share\n",
+        name.getMethodName(), result);
   }
 }

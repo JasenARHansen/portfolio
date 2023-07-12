@@ -12,8 +12,9 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BillionUsersTests {
   @Rule public final TestName name = new TestName();
+
   @Test
-  public void BillionUsers() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     BillionUsers.getDescription();
   }

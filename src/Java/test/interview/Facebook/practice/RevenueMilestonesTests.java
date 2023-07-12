@@ -15,7 +15,7 @@ public class RevenueMilestonesTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void RevenueMilestones() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     RevenueMilestones.getDescription();
   }

@@ -5,16 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings({"DuplicatedCode", "DataFlowIssue"})
+@SuppressWarnings({"DuplicatedCode"})
 public class Sequence {
   /*
   Assume you have a deck of cards, each with an integer number on it (no suits).
   Define "X of a kind" as X cards of the same number.
   (X>=2) Define an algorithm to determine if the deck can be fully divided into "X of a kind"s. */
-  public static boolean XofAKind(ArrayList<Integer> input) throws Exception {
+  public static boolean XofAKind(ArrayList<Integer> input) {
     // When I asked an empty list should return true
     if (input == null) {
-      throw new Exception("No values provided");
+      return false;
     }
     Map<Integer, Integer> map = new HashMap<>();
     for (int value : input) {
@@ -32,12 +32,11 @@ public class Sequence {
     return true;
   }
 
-  public static boolean straights(ArrayList<Integer> input) throws Exception {
-    /*
-    Define "Straight" as 5 cards with consecutive numbers.
+  public static boolean straights(ArrayList<Integer> input) {
+    /*  Define "Straight" as 5 cards with consecutive numbers.
     Define an algorithm to determine if the deck can be fully divided into "Straight"s. */
     if (input == null) {
-      throw new Exception("No values provided");
+      return false;
     }
     if ((input.size() % 5) != 0) {
       return false;

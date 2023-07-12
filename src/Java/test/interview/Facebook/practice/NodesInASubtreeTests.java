@@ -19,7 +19,7 @@ public class NodesInASubtreeTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void NodesInASubtree() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     NodesInASubtree.getDescription();
   }

@@ -21,6 +21,7 @@ public class Q2_02_Return_Kt_To_Last_Test {
 
   @Test
   public void returnKthToLast() {
+    int expected = 9;
     System.out.format("%s: List\n", name.getMethodName());
     CustomLinkedList<Integer> toSimplify = new CustomLinkedList<>();
     toSimplify.insert(0);
@@ -33,13 +34,12 @@ public class Q2_02_Return_Kt_To_Last_Test {
     toSimplify.insert(9);
     toSimplify.insert(6);
     toSimplify.insert(6);
-    toSimplify.printList();
+    System.out.format("\tList: %s\n", toSimplify);
     int from_last = 3;
     NodeList<Integer> result = Q2_02_Return_Kth_To_Last.returnKthToLast(from_last, toSimplify);
     assertNotNull(result);
-    System.out.format(
-        "%s: Data '%d' from last: '%d'\n", name.getMethodName(), from_last, result.getData());
-    assertEquals(9, (int) result.getData());
+    assertEquals(expected, (int) result.getData());
+    System.out.format("\tData: '%d' from last: '%d'\n", from_last, result.getData());
   }
 
   @Test
@@ -47,8 +47,8 @@ public class Q2_02_Return_Kt_To_Last_Test {
     System.out.format("%s: List\n", name.getMethodName());
     int[] array = {0, 1, 2, 3, 4, 5, 6};
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
-    for (int i = 0; i <= array.length + 1; i++) {
-      Q2_02_Return_Kth_To_Last.printKthToLast_solution_1(head, i);
+    for (int i = 1; i <= array.length; i++) {
+      System.out.format("\t%s\n", Q2_02_Return_Kth_To_Last.printKthToLast_solution_1(head, i));
     }
   }
 
@@ -57,10 +57,10 @@ public class Q2_02_Return_Kt_To_Last_Test {
     System.out.format("%s: List\n", name.getMethodName());
     int[] array = {0, 1, 2, 3, 4, 5, 6};
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
-    for (int i = 0; i <= array.length + 1; i++) {
+    for (int i = 1; i <= array.length; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_2(head, i);
       String nodeValue = node == null ? "null" : String.valueOf(node.data);
-      System.out.println(i + ": " + nodeValue);
+      System.out.format("\t%d: %s\n", i, nodeValue);
     }
   }
 
@@ -69,10 +69,10 @@ public class Q2_02_Return_Kt_To_Last_Test {
     System.out.format("%s: List\n", name.getMethodName());
     int[] array = {0, 1, 2, 3};
     LinkedListNode head = AssortedMethods.createLinkedListFromArray(array);
-    for (int i = 0; i <= array.length + 1; i++) {
+    for (int i = 1; i <= array.length; i++) {
       LinkedListNode node = Q2_02_Return_Kth_To_Last.printKthToLast_solution_3(head, i);
       String nodeValue = node == null ? "null" : String.valueOf(node.data);
-      System.out.println(i + ": " + nodeValue);
+      System.out.format("\t%d: %s\n", i, nodeValue);
     }
   }
 }

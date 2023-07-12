@@ -16,7 +16,7 @@ public class BalanceSplitTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void BalancedSplit() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     BalancedSplit.getDescription();
   }

@@ -404,14 +404,4 @@ public class Q4_08_First_Common_Ancestor_Test {
     TreeNode ancestor = commonAncestor_version_8(n1, n9);
     System.out.println(ancestor.data);
   }
-
-  public static class Result {
-    public final TreeNode node;
-    public final boolean isAncestor;
-
-    public Result(TreeNode n, boolean isAnc) {
-      node = n;
-      isAncestor = isAnc;
-    }
-  }
 }

@@ -75,14 +75,6 @@ public class CustomLinkedList<T extends Comparable<T>> {
     }
   }
 
-  public NodeList<T> getIndex(int index) {
-    NodeList<T> pointerNode = this.head;
-    for (int i = 0; i < index; i++) {
-      pointerNode = pointerNode.getNext();
-    }
-    return pointerNode;
-  }
-
   public int getSize() {
     return this.size;
   }
@@ -93,6 +85,14 @@ public class CustomLinkedList<T extends Comparable<T>> {
 
   public void insert(T data) {
     insertIndex(data, this.size);
+  }
+
+  public NodeList<T> getIndex(int index) {
+    NodeList<T> pointerNode = this.head;
+    for (int i = 0; i < index; i++) {
+      pointerNode = pointerNode.getNext();
+    }
+    return pointerNode;
   }
 
   public void insertIndex(T data, int index) {
@@ -144,10 +144,6 @@ public class CustomLinkedList<T extends Comparable<T>> {
 
   public boolean isEmpty() {
     return this.size == 0;
-  }
-
-  public void printList() {
-    System.out.format("List: '%s'\n", this);
   }
 
   @Override

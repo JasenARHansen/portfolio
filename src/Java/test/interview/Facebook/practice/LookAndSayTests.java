@@ -14,7 +14,7 @@ public class LookAndSayTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void LookAndSay() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     LookAndSay.getDescription();
   }

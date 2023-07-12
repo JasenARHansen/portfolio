@@ -16,7 +16,7 @@ public class ElementSwappingTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void EditDistance() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     EditDistance.getDescription();
   }

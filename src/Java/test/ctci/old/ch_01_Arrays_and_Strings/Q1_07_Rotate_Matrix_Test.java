@@ -21,9 +21,9 @@ public class Q1_07_Rotate_Matrix_Test {
     int[][] matrix = AssortedMethods.randomMatrix(3, 3, 0, 9);
     AssortedMethods.printMatrix(matrix);
     boolean result = Q1_07_Rotate_Matrix.rotateMatrix(matrix);
+    assertTrue(result);
     System.out.format("%s: Matrix rotated\n", name.getMethodName());
     AssortedMethods.printMatrix(matrix);
-    assertTrue(result);
   }
 
   @Test
@@ -32,9 +32,9 @@ public class Q1_07_Rotate_Matrix_Test {
     int[][] matrix = AssortedMethods.randomMatrix(4, 4, 0, 9);
     AssortedMethods.printMatrix(matrix);
     boolean result = Q1_07_Rotate_Matrix.rotateMatrix_in_place(matrix);
+    assertTrue(result);
     System.out.format("%s: Matrix rotated\n", name.getMethodName());
     AssortedMethods.printMatrix(matrix);
-    assertTrue(result);
   }
 
   @Test
@@ -43,8 +43,8 @@ public class Q1_07_Rotate_Matrix_Test {
     int[][] matrix = AssortedMethods.randomMatrix(3, 3, 0, 9);
     AssortedMethods.printMatrix(matrix);
     boolean result = Q1_07_Rotate_Matrix.rotateMatrix_solution_1(matrix);
+    assertTrue(result);
     System.out.format("%s: Matrix rotated\n", name.getMethodName());
     AssortedMethods.printMatrix(matrix);
-    assertTrue(result);
   }
 }

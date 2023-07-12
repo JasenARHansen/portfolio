@@ -14,7 +14,7 @@ public class CheckersTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Checkers() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Checkers.getDescription();
   }

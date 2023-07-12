@@ -30,10 +30,10 @@ public class Q2_07_Intersection_Test {
     stringValue1.insert("d");
     stringValue1.insert("e");
     stringValue1.insert("f");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     System.out.println("SubList source:");
     CustomLinkedList<String> stringValue2 = stringValue1.sublist(stringValue1, 3);
-    stringValue2.printList();
+    System.out.format("\t%s\n", stringValue2);
     System.out.println("Test result:");
     NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assertNotNull(resultNode);
@@ -50,7 +50,7 @@ public class Q2_07_Intersection_Test {
     stringValue1.insert("d");
     stringValue1.insert("e");
     stringValue1.insert("f");
-    stringValue1.printList();
+    System.out.format("\t%s\n", stringValue1);
     System.out.println("Second List source:");
     CustomLinkedList<String> stringValue2 = new CustomLinkedList<>();
     stringValue2.insert("a");
@@ -59,7 +59,7 @@ public class Q2_07_Intersection_Test {
     stringValue2.insert("b");
     stringValue2.insert("e");
     stringValue2.insert("c");
-    stringValue2.printList();
+    System.out.format("\t%s\n", stringValue2);
     System.out.println("Test result:");
     NodeList<String> resultNode = LinkedList.intersects(stringValue1, stringValue2);
     assertNull(resultNode);

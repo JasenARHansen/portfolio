@@ -15,7 +15,7 @@ public class MinimumLengthSubstringsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MinimumLengthSubstrings() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     MinimumLengthSubstrings.getDescription();
   }

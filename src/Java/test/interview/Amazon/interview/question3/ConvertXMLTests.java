@@ -14,7 +14,7 @@ public class ConvertXMLTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ConvertXML() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ConvertXML.getDescription();
   }

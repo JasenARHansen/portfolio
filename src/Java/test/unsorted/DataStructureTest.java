@@ -125,31 +125,31 @@ public class DataStructureTest {
   @Test
   public void CustomLinkedList() {
     CustomLinkedList<Integer> test = new CustomLinkedList<>();
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insert(1);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insert(2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insert(4);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insertIndex(3, 2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.removeIndex(2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.remove(2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.removeIndex(2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insert(2);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.removeIndex(0);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.removeIndex(0);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.insert(1);
-    test.printList();
+    System.out.format("\t%s\n", test);
     test.removeIndex(1);
-    test.printList();
+    System.out.format("\t%s\n", test);
   }
 
   @Test

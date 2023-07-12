@@ -15,7 +15,7 @@ public class LargestTripleProductsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void LargestTripleProducts() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     LargestTripleProducts.getDescription();
   }

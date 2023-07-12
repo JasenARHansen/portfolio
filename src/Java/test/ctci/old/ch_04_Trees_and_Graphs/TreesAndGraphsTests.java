@@ -12,7 +12,7 @@ public class TreesAndGraphsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void TreesAndGraphs() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     TreesAndGraphs.getDescription();
   }

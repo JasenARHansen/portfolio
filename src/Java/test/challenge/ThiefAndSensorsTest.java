@@ -13,7 +13,7 @@ public class ThiefAndSensorsTest {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ThiefAndSensors() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ThiefAndSensors.getDescription();
   }
@@ -32,9 +32,9 @@ public class ThiefAndSensorsTest {
     ThiefAndSensors.add_circle(3, 3, 3);
     ThiefAndSensors.add_circle(5, 8, 4);
     ThiefAndSensors.add_circle(8, 8, 2);
-    ThiefAndSensors.pathExists();
-    ThiefAndSensors.pathBottomTop();
-    ThiefAndSensors.pathLeftRight();
+    System.out.format("\t%s\n", ThiefAndSensors.pathExists());
+    System.out.format("\t%s\n", ThiefAndSensors.pathBottomTop());
+    System.out.format("\t%s\n", ThiefAndSensors.pathLeftRight());
   }
 
   @Test

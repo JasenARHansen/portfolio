@@ -15,7 +15,7 @@ public class DetectPalindromeTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void DetectPalindrome() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     DetectPalindrome.getDescription();
   }

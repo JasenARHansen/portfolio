@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "SpellCheckingInspection"})
+@SuppressWarnings({"NewClassNamingConvention", "SpellCheckingInspection", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q1_05_One_Away_Test {
   @Rule public final TestName name = new TestName();
@@ -19,79 +19,79 @@ public class Q1_05_One_Away_Test {
   public void oneAway_different_true() {
     String a = "cat";
     String b = "at";
-    boolean success = Q1_05_One_Away.oneAway(a, b);
+    boolean result = Q1_05_One_Away.oneAway(a, b);
+    assertTrue(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertTrue(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_same_true() {
     String a = "cat";
     String b = "bat";
-    boolean success = Q1_05_One_Away.oneAway(a, b);
+    boolean result = Q1_05_One_Away.oneAway(a, b);
+    assertTrue(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertTrue(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_different_false() {
     String a = "pse";
     String b = "pale";
-    boolean success = Q1_05_One_Away.oneAway(a, b);
+    boolean result = Q1_05_One_Away.oneAway(a, b);
+    assertFalse(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertFalse(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_same_false() {
     String a = "past";
     String b = "pale";
-    boolean success = Q1_05_One_Away.oneAway(a, b);
+    boolean result = Q1_05_One_Away.oneAway(a, b);
+    assertFalse(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertFalse(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_solution_1_true() {
     String a = "d";
     String b = "de";
-    boolean success = Q1_05_One_Away.oneAway_solution_1(a, b);
+    boolean result = Q1_05_One_Away.oneAway_solution_1(a, b);
+    assertTrue(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertTrue(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_solution_1_false() {
     String a = "pkle";
     String b = "pable";
-    boolean success = Q1_05_One_Away.oneAway_solution_1(a, b);
+    boolean result = Q1_05_One_Away.oneAway_solution_1(a, b);
+    assertFalse(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertFalse(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_solution_2_true() {
     String a = "pale";
     String b = "pkle";
-    boolean success = Q1_05_One_Away.oneAway_solution_2(a, b);
+    boolean result = Q1_05_One_Away.oneAway_solution_2(a, b);
+    assertTrue(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertTrue(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 
   @Test
   public void oneAway_solution_2_false() {
     String a = "adfdsfadsf";
     String b = "acdfdsfdsf";
-    boolean success = Q1_05_One_Away.oneAway_solution_2(a, b);
+    boolean result = Q1_05_One_Away.oneAway_solution_2(a, b);
+    assertFalse(result);
     System.out.format(
-        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, success);
-    assertFalse(success);
+        "%s: '%s' is 1 edit away from '%s': %b\n", name.getMethodName(), a, b, result);
   }
 }

@@ -13,7 +13,7 @@ public class ProcessRecordsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void ProcessRecords() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     ProcessRecords.getDescription();
   }

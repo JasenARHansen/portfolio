@@ -12,13 +12,13 @@ public class MovieNodeTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MovieNode() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     MovieNode.getDescription();
   }
 
   @Test
-  public void constructor() {
+  public void MovieNode() {
     System.out.format("%s: MovieNode\n", name.getMethodName());
     new MovieNode("Movie Title");
   }

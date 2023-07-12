@@ -12,7 +12,7 @@ public class PeopleOnBenchTest {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void PeopleOnBench() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     PeopleOnBench.getDescription();
   }
@@ -22,12 +22,13 @@ public class PeopleOnBenchTest {
     int seats = 5;
     System.out.format("%s: A Bench with %d seats\n", name.getMethodName(), seats);
     PeopleOnBench.buildBench(seats);
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
-    PeopleOnBench.personSits();
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
+    System.out.format("\t%s", PeopleOnBench.personSits());
   }
 }

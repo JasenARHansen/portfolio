@@ -1,5 +1,8 @@
 package Java.test.interview.Amazon.interview.question2;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import Java.code.interview.Amazon.interview.question2.TrieNode;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -7,18 +10,16 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TrieNodeTests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void TrieNode() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     TrieNode.getDescription();
   }
+
   @Test
   public void constructor_1() {
     TrieNode trieNode = new TrieNode();

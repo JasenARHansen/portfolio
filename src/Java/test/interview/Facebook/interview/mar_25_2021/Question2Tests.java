@@ -15,7 +15,7 @@ public class Question2Tests {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void Question2() {
+  public void getDescription() {
     System.out.format("%s: ", name.getMethodName());
     Question2.getDescription();
   }
