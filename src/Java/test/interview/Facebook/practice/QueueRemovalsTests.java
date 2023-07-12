@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.QueueRemovals;
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class QueueRemovalsTests {
     System.out.format(
         "%s: The array '%s' with %d iterations becomes '%s'\n",
         name.getMethodName(), Arrays.toString(array), x, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -41,6 +41,6 @@ public class QueueRemovalsTests {
     System.out.format(
         "%s: The array '%s' with %d iterations becomes '%s'\n",
         name.getMethodName(), Arrays.toString(array), x, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

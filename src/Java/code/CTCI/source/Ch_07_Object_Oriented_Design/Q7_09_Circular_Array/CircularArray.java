@@ -3,12 +3,12 @@ package Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_09_Circular_Array;
 import java.util.Iterator;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("unchecked")
 public class CircularArray<T> implements Iterable<T> {
   private final T[] items;
   private int head = 0;
 
   public CircularArray(int size) {
-    //noinspection unchecked
     items = (T[]) new Object[size];
   }
 

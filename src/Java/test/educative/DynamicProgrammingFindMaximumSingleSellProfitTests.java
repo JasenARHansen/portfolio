@@ -1,6 +1,6 @@
 package Java.test.educative;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.educative.DynamicProgrammingFindMaximumSingleSellProfit;
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class DynamicProgrammingFindMaximumSingleSellProfitTests {
         "%s: Given the prices '%s' to get the maximum profit or minimum loss is the buy price is %d"
             + " and the sell price is %d with a profit of %d.\n",
         name.getMethodName(), Arrays.toString(values), result[0], result[1], result[2]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -41,7 +41,7 @@ public class DynamicProgrammingFindMaximumSingleSellProfitTests {
         "%s: Given the prices '%s' to get the maximum profit or minimum loss is the buy price is %d"
             + " and the sell price is %d with a profit of %d.\n",
         name.getMethodName(), Arrays.toString(values), result[0], result[1], result[2]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -54,7 +54,7 @@ public class DynamicProgrammingFindMaximumSingleSellProfitTests {
         "%s: Given the prices '%s' to get the maximum profit or minimum loss is the buy price is %d"
             + " and the sell price is %d with a profit of %d.\n",
         name.getMethodName(), Arrays.toString(values), result[0], result[1], result[2]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -67,6 +67,6 @@ public class DynamicProgrammingFindMaximumSingleSellProfitTests {
         "%s: Given the prices '%s' to get the maximum profit or minimum loss is the buy price is %d"
             + " and the sell price is %d with a profit of %d.\n",
         name.getMethodName(), Arrays.toString(values), result[0], result[1], result[2]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

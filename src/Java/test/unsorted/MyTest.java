@@ -1,9 +1,11 @@
 package Java.test.unsorted;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.*;
 import org.junit.Test;
 
-@SuppressWarnings({"DuplicatedCode", "CommentedOutCode", "DataFlowIssue"})
+@SuppressWarnings({"CommentedOutCode", "DuplicatedCode", "DataFlowIssue"})
 public class MyTest {
   @Test
   public void test1() {
@@ -204,9 +206,12 @@ public class MyTest {
     }
   }
 
-  // Disabling since it requires user input
-  // @Test
+  @Test
   public void test9() {
+    // Mock inputs for scanner
+    String input = "3.0 3 1 2 2.0 2 3 4.0 3 4 4.0";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    System.setIn(in);
     highestAssociativity();
   }
 
@@ -249,6 +254,7 @@ public class MyTest {
         associativityNodeList.add(associativityNode);
       }
     }
+    scan.close();
     /* Create proper links in associativityNodeList. */
     for (AssociativityNode associativityNode : associativityNodeList) {
       for (int i = 0; i < associativityNode.getAssociationCount(); i++) {
@@ -278,12 +284,14 @@ public class MyTest {
     }
     Collections.sort(associativityHeadList);
     System.out.println(associativityHeadList.get(0));
-    scan.close();
   }
 
-  // Disabling since it requires user input
-  // @Test
+  @Test
   public void test10() {
+    // Mock inputs for scanner
+    String input = "3 1 2 3 2 3 4 3 4 5";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    System.setIn(in);
     loopTest();
   }
 
@@ -311,8 +319,7 @@ public class MyTest {
     scan.close();
   }
 
-  @SuppressWarnings("InnerClassMayBeStatic")
-  public class AssociativityNode {
+  public static class AssociativityNode {
     private final List<AssociativityNode> associations;
     private final String name;
 

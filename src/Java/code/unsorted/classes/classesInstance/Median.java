@@ -52,6 +52,5 @@ public class Median<T extends Comparable<T>> {
   public void printMedian() {
     smaller.printHeap();
     larger.printHeap();
-    //	System.out.format("\n%s: '%s'", getHeapType(), this.heapItems.toString());
   }
 }

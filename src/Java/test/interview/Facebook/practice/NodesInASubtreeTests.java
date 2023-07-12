@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.NodesInASubtree;
 import Java.code.interview.Facebook.practice.NodesInASubtree.Node;
@@ -35,7 +35,7 @@ public class NodesInASubtreeTests {
     queries_1.add(new Query(1, 'a'));
     int[] result = NodesInASubtree.countOfNodes(root, queries_1, s_1);
     System.out.format("%s: The array %s\n", name.getMethodName(), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -55,6 +55,6 @@ public class NodesInASubtreeTests {
     queries_2.add(new Query(3, 'a'));
     int[] result = NodesInASubtree.countOfNodes(root_2, queries_2, s_2);
     System.out.format("%s: The array %s\n", name.getMethodName(), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

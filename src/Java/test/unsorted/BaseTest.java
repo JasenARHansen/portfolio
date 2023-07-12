@@ -1,16 +1,21 @@
 package Java.test.unsorted;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import org.junit.Test;
 
-@SuppressWarnings("unused")
 public class BaseTest {
 
-  // For now disabling since this requires user input.
-  // @Test
+  @Test
   public void test() {
     ArrayList<ArrayList<String>> affinityClusters = new ArrayList<>();
+    // Mock inputs for scanner
+    String input = "3.0 3 1 2 2.0 2 3 4.0 3 4 4.0";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    System.setIn(in);
     Scanner scan = new Scanner(System.in);
     /* The defined affinity threshold. */
     float affinity_threshold = scan.nextFloat();
@@ -42,6 +47,7 @@ public class BaseTest {
         affinityClusters.add(cluster);
       }
     }
+    scan.close();
     ArrayList<Integer> selectedCluster = new ArrayList<>();
     /* Sort lists and count members. */
     int max = 0;
@@ -68,6 +74,5 @@ public class BaseTest {
         break;
       }
     }
-    scan.close();
   }
 }

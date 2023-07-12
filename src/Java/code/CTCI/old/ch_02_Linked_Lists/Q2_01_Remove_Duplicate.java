@@ -8,7 +8,7 @@ import java.util.Set;
 
 @SuppressWarnings("DuplicatedCode")
 public class Q2_01_Remove_Duplicate {
-  public static boolean removeDuplicate(CustomLinkedList<Integer> input) {
+  public static void removeDuplicate(CustomLinkedList<Integer> input) {
     Set<Integer> containmentSet = new HashSet<>();
     int index = 0;
     while (index < input.getSize()) {
@@ -19,10 +19,9 @@ public class Q2_01_Remove_Duplicate {
         index++;
       }
     }
-    return true;
   }
 
-  public static boolean removeDuplicate_no_storage(CustomLinkedList<Integer> input) {
+  public static void removeDuplicate_no_storage(CustomLinkedList<Integer> input) {
     int startIndex = 0;
     while (startIndex < input.getSize()) {
       int testData = input.getIndex(startIndex).getData();
@@ -36,10 +35,9 @@ public class Q2_01_Remove_Duplicate {
       }
       startIndex++;
     }
-    return true;
   }
 
-  public static boolean removeDuplicateAsNode(CustomLinkedList<Integer> toSimplify) {
+  public static void removeDuplicateAsNode(CustomLinkedList<Integer> toSimplify) {
     // Sending in original list, so I can use its remove method and not reimplement
     NodeList<Integer> currentNode = toSimplify.getFirst();
     int currentIndex = 0;
@@ -60,7 +58,6 @@ public class Q2_01_Remove_Duplicate {
         currentIndex++;
       }
     }
-    return true;
   }
 
   public static void removeDuplicate_solution_1(LinkedListNode n) {

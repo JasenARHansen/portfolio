@@ -13,8 +13,7 @@ public abstract class Conversation {
   }
 
   public boolean addMessage(Message m) {
-    messages.add(m);
-    return true;
+    return messages.add(m);
   }
 
   public int getId() {

@@ -1,6 +1,6 @@
 package Java.test.hackerrank.arrays;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.hackerrank.arrays.LeftRotation;
 import java.util.Arrays;
@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"MismatchedReadAndWriteOfArray", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LeftRotationTests {
   @Rule public final TestName name = new TestName();
@@ -21,10 +20,10 @@ public class LeftRotationTests {
     int rotations = 1;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -33,10 +32,10 @@ public class LeftRotationTests {
     int rotations = 2;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -45,10 +44,10 @@ public class LeftRotationTests {
     int rotations = 3;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -57,10 +56,10 @@ public class LeftRotationTests {
     int rotations = 4;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -69,10 +68,10 @@ public class LeftRotationTests {
     int rotations = 5;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -81,10 +80,10 @@ public class LeftRotationTests {
     int rotations = 24;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -93,10 +92,10 @@ public class LeftRotationTests {
     int rotations = 1;
     int[] values = {1, 2, 3, 4, 5, 6};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -105,10 +104,10 @@ public class LeftRotationTests {
     int rotations = 2;
     int[] values = {1, 2, 3, 4, 5, 6};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -117,10 +116,10 @@ public class LeftRotationTests {
     int rotations = 3;
     int[] values = {1, 2, 3, 4, 5, 6};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -129,10 +128,10 @@ public class LeftRotationTests {
     int rotations = 10;
     int[] values = {77, 97, 58, 1, 86, 58, 26, 10, 86, 51, 41, 73, 89, 7, 10, 1, 59, 58, 84, 77};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -141,10 +140,10 @@ public class LeftRotationTests {
     int rotations = 13;
     int[] expected = {87, 97, 33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -153,10 +152,10 @@ public class LeftRotationTests {
     int rotations = -1;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -165,10 +164,10 @@ public class LeftRotationTests {
     int rotations = 0;
     int[] values = {};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -177,10 +176,10 @@ public class LeftRotationTests {
     int rotations = 1;
     int[] values = {};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
@@ -189,9 +188,9 @@ public class LeftRotationTests {
     int rotations = 15;
     int[] values = {1, 2, 3, 4, 5};
     int[] result = LeftRotation.rotateLeft(values, rotations);
+    assertArrayEquals(expected, result);
     System.out.format(
         "%s: The largest array '%s' rotated left %d values is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), rotations, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 }

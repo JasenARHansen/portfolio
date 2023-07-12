@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.EditDistance;
 import Java.code.interview.Facebook.practice.ElementSwapping;
@@ -30,7 +30,7 @@ public class ElementSwappingTests {
     System.out.format(
         "%s: The smallest possible lexical sort of '%s' with %d swaps is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), k, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -42,6 +42,6 @@ public class ElementSwappingTests {
     System.out.format(
         "%s: The smallest possible lexical sort of '%s' with %d swaps is '%s'.\n",
         name.getMethodName(), Arrays.toString(values), k, Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

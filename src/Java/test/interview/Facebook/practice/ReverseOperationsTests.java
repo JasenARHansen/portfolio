@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.ReverseOperations;
 import Java.code.interview.Facebook.practice.ReverseOperations.Node;
@@ -28,11 +28,11 @@ public class ReverseOperationsTests {
     int[] array = {1, 2, 8, 9, 12, 16};
     Node head = ReverseOperations.createLinkedList(array);
     Node output = ReverseOperations.reverse(head);
-    Object[] result = ReverseOperations.createArray(output);
+    int[] result = ReverseOperations.createArray(output);
     System.out.format(
         "%s: Reversing '%s' had a result of '%s'\n",
         name.getMethodName(), Arrays.toString(array), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -41,10 +41,10 @@ public class ReverseOperationsTests {
     int[] array = {2, 18, 24, 3, 5, 7, 9, 6, 12};
     Node head = ReverseOperations.createLinkedList(array);
     Node output = ReverseOperations.reverse(head);
-    Object[] result = ReverseOperations.createArray(output);
+    int[] result = ReverseOperations.createArray(output);
     System.out.format(
         "%s: Reversing '%s' had a result of '%s'\n",
         name.getMethodName(), Arrays.toString(array), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

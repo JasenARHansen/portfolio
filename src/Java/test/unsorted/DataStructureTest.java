@@ -11,11 +11,12 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"DuplicatedCode", "unused"})
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DataStructureTest {
   @Rule public TestName name = new TestName();
-  // @Test
+
+  @Test
   public void BinarySearchTreeHeightBalanced_10() {
     BinarySearchTreeHeightBalanced<Integer> HeightBalancedBinarySearchTree =
         new BinarySearchTreeHeightBalanced<>();
@@ -78,7 +79,7 @@ public class DataStructureTest {
     assertEquals("Breadth first output: 3 1 7 0 2 8 4 6 9", testValue, "3 1 7 0 2 6 8 4 9");
   }
 
-  //  @Test
+  @Test
   public void BinarySearchTreeHeightBalanced_100() {
     BinarySearchTreeHeightBalanced<Integer> HeightBalancedBinarySearchTree =
         new BinarySearchTreeHeightBalanced<>();
@@ -151,7 +152,7 @@ public class DataStructureTest {
     test.printList();
   }
 
-  // @Test
+  @Test
   public void Median() {
     Median<Integer> median = new Median<>();
     median.getMedian();

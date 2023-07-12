@@ -50,7 +50,7 @@ public class RomanNumeral {
     int currentValue = 0;
     for (int index = localNumeral.length() - 1; index >= 0; index--) {
       char testCharacter = localNumeral.charAt(index);
-      int testValue = get_Character_Value(testCharacter);
+      int testValue = characterValue(testCharacter);
       int testSubtraction = 0;
       if (index > 0) {
         testSubtraction = subtractive_Notation(localNumeral, index);
@@ -65,6 +65,53 @@ public class RomanNumeral {
       }
     }
     return currentValue;
+  }
+
+  public static int[] conversion_To_Int(List<String> complexNumeral) {
+    return conversion_To_Int(complexNumeral.toArray(new String[complexNumeral.size()]));
+  }
+
+  public static int[] conversion_To_Int(String... numeral) {
+    // Convert valid Roman Numerals in string into Integer representations
+    int[] result = new int[numeral.length];
+    for (int i = 0; i < numeral.length; i++) {
+      result[i] = conversion_To_Int(numeral[i]);
+    }
+    return result;
+  }
+
+  public static List<String> conversion_To_Int_Log(String... numerals) {
+    List<String> log = new ArrayList<>();
+    // Convert and display based on specification
+    for (String numeral : numerals) {
+      int localConversion = conversion_To_Int(numeral);
+      if (localConversion == -1) {
+        log.addAll(conversion_To_Int_Error_Log(numeral));
+      } else {
+        log.add(
+            "The String '" + numeral + "' is valid and converts to '" + localConversion + "'\n");
+      }
+    }
+    return log;
+  }
+
+  public static int conversion_To_Int_Output(String numeral) {
+    int result = conversion_To_Int(numeral);
+    System.out.format("%s -> %d\n", numeral, result);
+    return result;
+  }
+
+  public static int[] conversion_To_Int_Output(List<String> numerals) {
+    return conversion_To_Int_Output(numerals.toArray(new String[numerals.size()]));
+  }
+
+  public static int[] conversion_To_Int_Output(String... numerals) {
+    // Convert and display based on specification
+    int[] result = new int[numerals.length];
+    for (int i = 0; i < numerals.length; i++) {
+      result[i] = conversion_To_Int_Output(numerals[i]);
+    }
+    return result;
   }
 
   public static String conversion_To_Int_Complex(String complexNumeral) {
@@ -89,57 +136,36 @@ public class RomanNumeral {
     return complexNumeralLocal;
   }
 
-  public static void conversion_To_Int_Output(List<String> numerals) {
-    conversion_To_Int_Output(numerals.toArray(new String[numerals.size()]));
+  public static String[] conversion_To_Int_Complex(List<String> complexNumeral) {
+    return conversion_To_Int_Complex(complexNumeral.toArray(new String[complexNumeral.size()]));
   }
 
-  public static void conversion_To_Int_Output(String... numeralStrings) {
-    // Convert and display based on specification
-    for (String numeralString : numeralStrings) {
-      int localConversion = conversion_To_Int(numeralString);
-      System.out.format("%s -> %d\n", numeralString, localConversion);
-    }
-  }
-
-  public static void conversion_To_Int_Output_Complex(List<String> complexNumeralStrings) {
-    conversion_To_Int_Output_Complex(
-        complexNumeralStrings.toArray(new String[complexNumeralStrings.size()]));
-  }
-
-  public static void conversion_To_Int_Output_Complex(String... complexNumeralStrings) {
+  public static String[] conversion_To_Int_Complex(String... complexNumeral) {
     // Convert valid Roman Numerals in string into Integer representations
-    // and print output
-    for (String complexNumeral : complexNumeralStrings) {
-      String complexNumeralLocal = conversion_To_Int_Complex(complexNumeral);
-      System.out.format("%s -> %s\n", complexNumeral, complexNumeralLocal);
+    String[] result = new String[complexNumeral.length];
+    for (int i = 0; i < complexNumeral.length; i++) {
+      result[i] = conversion_To_Int_Complex(complexNumeral[i]);
     }
+    return result;
   }
 
-  public static void conversion_To_Int_Output_With_Log(List<String> numerals) {
-    conversion_To_Int_Output_With_Log(numerals.toArray(new String[numerals.size()]));
+  public static String[] conversion_To_Int_Complex_Output(List<String> numerals) {
+    return conversion_To_Int_Complex_Output(numerals.toArray(new String[numerals.size()]));
   }
 
-  public static void conversion_To_Int_Output_With_Log(String... numeralStrings) {
+  public static String[] conversion_To_Int_Complex_Output(String... complexNumeral) {
     // Convert and display based on specification
-    for (String numeralString : numeralStrings) {
-      int localConversion = conversion_To_Int(numeralString);
-      if (localConversion == -1) {
-        conversion_To_Int_Error_Log(numeralString);
-      }
-      System.out.format("%s -> %d\n", numeralString, localConversion);
+    String[] result = new String[complexNumeral.length];
+    for (int i = 0; i < complexNumeral.length; i++) {
+      result[i] = conversion_To_Int_Complex_Output(complexNumeral[i]);
     }
+    return result;
   }
 
-  public static void conversion_Output_Complex_With_Log(List<String> numerals) {
-    conversion_To_Int_Output_With_Log(numerals.toArray(new String[numerals.size()]));
-  }
-
-  public static void conversion_Output_Complex_With_Log(String... numeralStrings) {
-    // Convert and display based on specification
-    for (String numeralString : numeralStrings) {
-      String localConversion = conversion_To_Int_Complex(numeralString);
-      System.out.format("%s -> %S\n", numeralString, localConversion);
-    }
+  public static String conversion_To_Int_Complex_Output(String complexNumeral) {
+    String result = conversion_To_Int_Complex(complexNumeral);
+    System.out.format("%s -> %S\n", complexNumeral, result);
+    return result;
   }
 
   public static String conversion_To_Numeral(int number) {
@@ -184,24 +210,82 @@ public class RomanNumeral {
     return returnValue.toString();
   }
 
-  public static Boolean validity_Value(int number) {
+  private static Boolean validity_Value(int number) {
     // Test value to determine if it is supported
     return number >= 1 && number <= 3999;
   }
 
-  public static int get_Character_Value(char numeralCharacter) {
+  private static List<String> conversion_To_Int_Error_Log(String errorString) {
+    List<String> log = new ArrayList<>();
+    if (!validity_String(errorString)) {
+      log.add("The String '" + errorString + "' contains invalid characters\n");
+    }
+    if (!validity_Order(errorString)) {
+      log.add("The String '" + errorString + "' contains characters in an invalid order\n");
+    }
+    if (!validity_Repetition(errorString)) {
+      log.add("The String '" + errorString + "' contains invalid repeating characters\n");
+    }
+    return log;
+  }
+
+  private static Boolean validity_String(String numeralString) {
+    // Test string to determine if all characters are supported
+    String localString = numeralString.toUpperCase();
+    for (int i = 0; i < localString.length(); i++) {
+      if (!validity_Character(localString.charAt(i))) return false;
+    }
+    return true;
+  }
+
+  private static Boolean validity_Order(String numeralString) {
+    // Test string to determine if all characters are in a valid order
+    String localString = numeralString.toUpperCase();
+    int currentValue = 0;
+    for (int index = localString.length() - 1; index >= 0; index--) {
+      char testCharacter = localString.charAt(index);
+      int testValue = characterValue(testCharacter);
+      if (testValue != -1) {
+        if (index > 0) {
+          int testSubtraction = subtractive_Notation(numeralString, index);
+          if (testSubtraction != 0) {
+            index--;
+          }
+        }
+        if (testValue >= currentValue) {
+          currentValue = testValue;
+        } else {
+          return false;
+        }
+      } else {
+        // This is an error case that is handled elsewhere
+        return true;
+      }
+    }
+    return true;
+  }
+
+  private static Boolean validity_Repetition(String numeralString) {
+    // Characters can not repeat more than 3 times
+    String localString = numeralString.toUpperCase();
+    Pattern pattern = Pattern.compile("^.*(.)\\1\\1\\1.*$");
+    Matcher matcher = pattern.matcher(localString);
+    return !matcher.find();
+  }
+
+  private static Boolean validity_Character(char numeralCharacter) {
+    // Test character to determine if it is supported
+    String localCharacter = Character.toString(numeralCharacter);
+    return validity_Character(localCharacter);
+  }
+
+  private static int characterValue(char numeralCharacter) {
     // Test string to determine if all characters are in a valid order
     String localCharacter = Character.toString(numeralCharacter);
-    return get_Character_Value(localCharacter);
+    return characterValue(localCharacter);
   }
 
-  public static int get_Character_Value(String numeralCharacter) {
-    // Test string to determine if all characters are in a valid order
-    String localString = numeralCharacter.toUpperCase();
-    return supportedCharacters.getOrDefault(localString, -1);
-  }
-
-  public static int subtractive_Notation(String numeralString, int index) {
+  private static int subtractive_Notation(String numeralString, int index) {
     // Test string to determine if subtractive notation applies
     // I placed before V or X indicates one less
     // X placed before L or C indicates ten less
@@ -227,71 +311,15 @@ public class RomanNumeral {
     return 0;
   }
 
-  public static Boolean validity_Character(char numeralCharacter) {
-    // Test character to determine if it is supported
-    String localCharacter = Character.toString(numeralCharacter);
-    return validity_Character(localCharacter);
-  }
-
-  public static Boolean validity_Character(String numeralCharacter) {
+  private static Boolean validity_Character(String numeralCharacter) {
     // Test character to determine if it is supported
     String localCharacter = numeralCharacter.toUpperCase();
     return supportedCharacters.containsKey(localCharacter);
   }
 
-  public static Boolean validity_Order(String numeralString) {
+  private static int characterValue(String numeralCharacter) {
     // Test string to determine if all characters are in a valid order
-    String localString = numeralString.toUpperCase();
-    int currentValue = 0;
-    for (int index = localString.length() - 1; index >= 0; index--) {
-      char testCharacter = localString.charAt(index);
-      int testValue = get_Character_Value(testCharacter);
-      if (testValue != -1) {
-        if (index > 0) {
-          int testSubtraction = subtractive_Notation(numeralString, index);
-          if (testSubtraction != 0) {
-            index--;
-          }
-        }
-        if (testValue >= currentValue) {
-          currentValue = testValue;
-        } else {
-          return false;
-        }
-      } else {
-        // This is an error case that is handled elsewhere
-        return true;
-      }
-    }
-    return true;
-  }
-
-  public static Boolean validity_Repetition(String numeralString) {
-    // Characters can not repeat more than 3 times
-    String localString = numeralString.toUpperCase();
-    Pattern pattern = Pattern.compile("^.*(.)\\1\\1\\1.*$");
-    Matcher matcher = pattern.matcher(localString);
-    return !matcher.find();
-  }
-
-  public static Boolean validity_String(String numeralString) {
-    // Test string to determine if all characters are supported
-    String localString = numeralString.toUpperCase();
-    for (int i = 0; i < localString.length(); i++) {
-      if (!validity_Character(localString.charAt(i))) return false;
-    }
-    return true;
-  }
-
-  private static void conversion_To_Int_Error_Log(String errorString) {
-    if (!validity_String(errorString)) {
-      System.out.format("The String '%s' contains invalid characters\n", errorString);
-    }
-    if (!validity_Order(errorString)) {
-      System.out.format("The String '%s' contains characters in an invalid order\n", errorString);
-    }
-    if (!validity_Repetition(errorString)) {
-      System.out.format("The String '%s' contains invalid repeating characters\n", errorString);
-    }
+    String localString = numeralCharacter.toUpperCase();
+    return supportedCharacters.getOrDefault(localString, -1);
   }
 }

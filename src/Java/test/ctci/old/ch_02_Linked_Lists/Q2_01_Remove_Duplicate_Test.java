@@ -1,6 +1,6 @@
 package Java.test.ctci.old.ch_02_Linked_Lists;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import Java.code.ctci.old.ch_02_Linked_Lists.Q2_01_Remove_Duplicate;
 import Java.code.ctci.source.ctciLibrary.LinkedListNode;
@@ -31,10 +31,12 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(6);
     toSimplify.insert(6);
     toSimplify.printList();
-    boolean success = Q2_01_Remove_Duplicate.removeDuplicate(toSimplify);
+    int length_1 = toSimplify.getSize();
+    Q2_01_Remove_Duplicate.removeDuplicate(toSimplify);
+    int length_2 = toSimplify.getSize();
     System.out.format("%s: Cleaned list\n", name.getMethodName());
     toSimplify.printList();
-    assertTrue(success);
+    assertNotEquals(length_1, length_2);
   }
 
   @Test
@@ -52,10 +54,12 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(6);
     toSimplify.insert(6);
     toSimplify.printList();
-    boolean success = Q2_01_Remove_Duplicate.removeDuplicate_no_storage(toSimplify);
+    int length_1 = toSimplify.getSize();
+    Q2_01_Remove_Duplicate.removeDuplicate_no_storage(toSimplify);
+    int length_2 = toSimplify.getSize();
     System.out.format("%s: Cleaned list\n", name.getMethodName());
     toSimplify.printList();
-    assertTrue(success);
+    assertNotEquals(length_1, length_2);
   }
 
   @Test
@@ -73,10 +77,12 @@ public class Q2_01_Remove_Duplicate_Test {
     toSimplify.insert(6);
     toSimplify.insert(6);
     toSimplify.printList();
-    boolean success = Q2_01_Remove_Duplicate.removeDuplicateAsNode(toSimplify);
+    int length_1 = toSimplify.getSize();
+    Q2_01_Remove_Duplicate.removeDuplicateAsNode(toSimplify);
+    int length_2 = toSimplify.getSize();
     System.out.format("%s: Cleaned list\n", name.getMethodName());
     toSimplify.printList();
-    assertTrue(success);
+    assertNotEquals(length_1, length_2);
   }
 
   @Test

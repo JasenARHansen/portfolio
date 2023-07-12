@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.PassingYearbooks;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ public class PassingYearbooksTests {
     System.out.format(
         "%s: The yearbooks for the initial mix '%s' has the following number of signatures '%s'\n",
         name.getMethodName(), Arrays.toString(values), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -39,6 +39,6 @@ public class PassingYearbooksTests {
     System.out.format(
         "%s: The yearbooks for the initial mix '%s' has the following number of signatures '%s'\n",
         name.getMethodName(), Arrays.toString(values), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

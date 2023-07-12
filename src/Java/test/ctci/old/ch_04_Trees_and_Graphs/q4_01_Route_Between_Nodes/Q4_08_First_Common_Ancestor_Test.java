@@ -251,7 +251,6 @@ public class Q4_08_First_Common_Ancestor_Test {
     int first = 3;
     int second = 2;
     BinaryTreeNode<Integer> ancestor = myTree.commonAncestorBT(first, second);
-    // @Test
     System.out.format(
         "%s: The common ancestor between %d and %d is: %s\n",
         name.getMethodName(), first, second, ancestor.getData().toString());

@@ -1,8 +1,9 @@
 package Java.test.interview.Google;
 
+import static org.junit.Assert.*;
+
 import Java.code.interview.Google.palindrome;
 import java.util.Map;
-import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -14,24 +15,16 @@ import org.junit.runners.MethodSorters;
 public class PalindromeTests {
   @Rule public final TestName name = new TestName();
 
-  public void print_palindrome(String name, String value, boolean result) {
-    System.out.printf("%s: %s is a palindrome: %b\n", name, value, result);
-  }
-
-  public void print_palindrome(String name, String value, String result) {
-    System.out.printf("%s: %s became the palindrome: %s\n", name, value, result);
-  }
-
-  public void print_transform(String name, String value, String transform) {
-    System.out.printf("%s: %s applied the transform: %s\n", name, value, transform);
-  }
-
   @Test
   public void detect_false() {
     String source = "cat";
     boolean result = palindrome.detect(source);
     print_palindrome(name.getMethodName(), source, result);
-    Assert.assertFalse(result);
+    assertFalse(result);
+  }
+
+  public void print_palindrome(String name, String value, boolean result) {
+    System.out.printf("%s: %s is a palindrome: %b\n", name, value, result);
   }
 
   @Test
@@ -39,7 +32,7 @@ public class PalindromeTests {
     String source = "Anna";
     boolean result = palindrome.detect(source);
     print_palindrome(name.getMethodName(), source, result);
-    Assert.assertTrue(result);
+    assertTrue(result);
   }
 
   @Test
@@ -50,6 +43,14 @@ public class PalindromeTests {
     String transform = palindrome.report(transformed);
     print_palindrome(name.getMethodName(), source, value);
     print_transform(name.getMethodName(), source, transform);
+  }
+
+  public void print_palindrome(String name, String value, String result) {
+    System.out.printf("%s: %s became the palindrome: %s\n", name, value, result);
+  }
+
+  public void print_transform(String name, String value, String transform) {
+    System.out.printf("%s: %s applied the transform: %s\n", name, value, transform);
   }
 
   @Test

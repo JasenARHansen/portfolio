@@ -1,11 +1,10 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.YearWithMostPeopleAlive;
 import Java.code.interview.Facebook.practice.YearWithMostPeopleAlive.Person;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -33,7 +32,7 @@ public class YearWithMostPeopleAliveTests {
     System.out.format(
         "%s: After looking at %d records, the year %d was the first to have the maximum number of %d people\n",
         name.getMethodName(), people.size(), result[0], result[1]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -46,6 +45,6 @@ public class YearWithMostPeopleAliveTests {
     System.out.format(
         "%s: After looking at %d records, the year %d was the first to have the maximum number of %d people\n",
         name.getMethodName(), people.size(), result[0], result[1]);
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

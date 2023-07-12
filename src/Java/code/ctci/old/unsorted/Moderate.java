@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Stack;
 
-@SuppressWarnings("SuspiciousNameCombination")
+@SuppressWarnings({"SuspiciousNameCombination", "unused"})
 public class Moderate {
   public static void getDescription() {
     System.out.println("Section 16. Moderate");
@@ -40,7 +40,6 @@ public class Moderate {
     }
   }
 
-  @SuppressWarnings("unused")
   public static int maxNumber(int left, int right) {
     return 0;
   }
@@ -96,7 +95,6 @@ public class Moderate {
     }
   }
 
-  @SuppressWarnings({"SpellCheckingInspection", "FieldCanBeLocal"})
   public static class ConvertNumberToString {
     private final String[] smalls = {
       "Zero",
@@ -120,12 +118,10 @@ public class Moderate {
       "Eighteen",
       "Nineteen"
     };
-    private final String[] mediums = {
+    private final String[] smallUnits = {
       "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
     };
-    private final String[] bigs = {"", "Thousand", "Million", "Billion"};
-    private final String hundred = "Hundred";
-    private final String negativeSign = "Negative";
+    private final String[] largeUnits = {"", "Thousand", "Million", "Billion"};
 
     public ConvertNumberToString() {}
 
@@ -146,7 +142,7 @@ public class Moderate {
       while (startValue > 0) {
         int process = startValue % 1000;
         if (process != 0) {
-          stack.add(bigs[bigCounter]);
+          stack.add(largeUnits[bigCounter]);
         }
         int hundreds = process / 100;
         process = process % 100;
@@ -156,13 +152,14 @@ public class Moderate {
           if (ones != 0) {
             stack.add(smalls[ones]);
           }
-          stack.add(mediums[tens]);
+          stack.add(smallUnits[tens]);
         } else {
           if (process != 0) {
             stack.add(smalls[process]);
           }
         }
         if (hundreds != 0) {
+          String hundred = "Hundred";
           stack.add(hundred);
           stack.add(smalls[hundreds]);
         }
@@ -171,10 +168,11 @@ public class Moderate {
       }
       StringBuilder stringBuilder = new StringBuilder();
       if (negative) {
+        String negativeSign = "Negative";
         stringBuilder.append(negativeSign);
       }
       while (!stack.isEmpty()) {
-        if (!stack.peek().equals(mediums[0])) {
+        if (!stack.peek().equals(smallUnits[0])) {
           stringBuilder.append(" ").append(stack.pop());
         } else {
           stack.pop();
@@ -210,6 +208,7 @@ public class Moderate {
     }
   }
 
+  @SuppressWarnings("unused")
   public static class Tic_Tac_Toe {
     private final int size;
     private Tic_Tac_Toe_Piece lastPlayer;
@@ -343,7 +342,6 @@ public class Moderate {
       return builder.toString();
     }
 
-    @SuppressWarnings("unused")
     public void resetBoard() {
       this.initializeBoard();
       this.moves = size * size;

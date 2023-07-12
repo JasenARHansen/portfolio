@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "unchecked"})
 public class GraphAdjacencyMatrix<T extends Comparable<T>> {
   final HashMap<T, HashSet<T>> map;
   final HashMap<T, State> visited;
@@ -78,7 +78,6 @@ public class GraphAdjacencyMatrix<T extends Comparable<T>> {
     boolean process = true;
     while (process) {
       process = false;
-      //noinspection unchecked
       ArrayList<T> copy = (ArrayList<T>) remaining.clone();
       for (T element : copy) {
         boolean build = true;

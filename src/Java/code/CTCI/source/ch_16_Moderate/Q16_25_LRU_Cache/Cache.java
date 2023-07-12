@@ -74,13 +74,12 @@ public class Cache {
     map.put(key, node);
   }
 
-  public boolean removeKey(int key) {
+  public void removeKey(int key) {
     /* Remove key, value pair from cache, deleting from hash table
     and linked list. */
     LinkedListNode node = map.get(key);
     removeFromLinkedList(node);
     map.remove(key);
-    return true;
   }
 
   public String getCacheAsString() {

@@ -65,13 +65,13 @@ public class ReverseOperations {
     return head;
   }
 
-  public static Object[] createArray(Node node) {
+  public static int[] createArray(Node node) {
     List<Integer> returnList = new ArrayList<>();
     while (node != null) {
       returnList.add(node.data);
       node = node.next;
     }
-    return returnList.toArray();
+    return returnList.stream().mapToInt(i -> i).toArray();
   }
 
   public static Node createLinkedList(int[] arr) {

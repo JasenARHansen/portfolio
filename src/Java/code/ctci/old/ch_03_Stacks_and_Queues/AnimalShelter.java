@@ -96,7 +96,7 @@ public class AnimalShelter {
 
   @Override
   public String toString() {
-    return "Dogs: " + this.dogQueue + "\n" + "Cats: " + this.catQueue + "\n";
+    return "Dogs: " + this.dogQueue + ", " + "Cats: " + this.catQueue;
   }
 
   public abstract static class Animal {

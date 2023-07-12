@@ -1,6 +1,6 @@
 package Java.test.interview.Facebook.practice;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import Java.code.interview.Facebook.practice.BinaryTreeAverageValuePerLevel;
 import Java.code.interview.Facebook.practice.BinaryTreeAverageValuePerLevel.Node;
@@ -37,7 +37,7 @@ public class BinaryTreeAverageValuePerLevelTests {
     System.out.format(
         "%s: The are tree has '%s' as the average values per level\n",
         name.getMethodName(), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 
   @Test
@@ -55,6 +55,6 @@ public class BinaryTreeAverageValuePerLevelTests {
     System.out.format(
         "%s: The are tree has '%s' as the average values per level\n",
         name.getMethodName(), Arrays.toString(result));
-    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    assertArrayEquals(expected, result);
   }
 }

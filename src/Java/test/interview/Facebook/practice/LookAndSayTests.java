@@ -21,6 +21,7 @@ public class LookAndSayTests {
 
   @Test
   public void lookAndSay_1() {
+    System.out.format("%s:\n", name.getMethodName());
     String[] expected = {
       "11",
       "21",
@@ -35,8 +36,7 @@ public class LookAndSayTests {
     String start = "1";
     for (String s : expected) {
       String result = LookAndSay.lookAndSay(start);
-      System.out.format(
-          "%s: The Look and Say of '%s' is '%s'\n", name.getMethodName(), start, result);
+      System.out.format("\tThe Look and Say of '%s' is '%s'\n", start, result);
       assertEquals(s, result);
       start = result;
     }
@@ -44,12 +44,12 @@ public class LookAndSayTests {
 
   @Test
   public void lookAndSay_2() {
+    System.out.format("%s:\n", name.getMethodName());
     String[] expected = {"11", "21", "1211", "111221", "312211", "13112221", "1113213211"};
     int start = 1;
     for (String s : expected) {
       String result = LookAndSay.lookAndSay(start);
-      System.out.format(
-          "%s: The Look and Say of '%s' is '%s'\n", name.getMethodName(), start, result);
+      System.out.format("\tThe Look and Say of '%s' is '%s'\n", start, result);
       assertEquals(s, result);
       start = Integer.parseInt(result);
     }
@@ -57,14 +57,14 @@ public class LookAndSayTests {
 
   @Test
   public void lookAndSayReverse_1() {
+    System.out.format("%s:\n", name.getMethodName());
     String[] expected = {
       "31131211131221", "1113213211", "13112221", "312211", "111221", "1211", "21", "11", "1", ""
     };
     String start = "13211311123113112211";
     for (String s : expected) {
       String result = LookAndSay.lookAndSayReverse(start);
-      System.out.format(
-          "%s: The Look and Say Reverse of '%s' is '%s'\n", name.getMethodName(), start, result);
+      System.out.format("\tThe Look and Say Reverse of '%s' is '%s'\n", start, result);
       assertEquals(s, result);
       start = result;
     }
@@ -72,6 +72,7 @@ public class LookAndSayTests {
 
   @Test
   public void lookAndSayReverse_2() {
+    System.out.format("%s:\n", name.getMethodName());
     String[] expected = {"13112221", "312211", "111221", "1211", "21", "11", "1"};
     int start = 1113213211;
     for (String s : expected) {

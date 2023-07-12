@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class JumpingOnTheClouds_tests {
+public class JumpingOnTheCloudsTests {
   @Rule public final TestName name = new TestName();
 
   @Test
@@ -20,10 +20,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 3;
     int[] clouds = {0, 1, 0, 0, 0, 1, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -31,10 +31,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 4;
     int[] clouds = {0, 0, 1, 0, 0, 1, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -42,10 +42,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 3;
     int[] clouds = {0, 0, 0, 0, 1, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -53,10 +53,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 3;
     int[] clouds = {0, 0, 0, 1, 0, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -64,10 +64,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 4;
     int[] clouds = {0, 0, 1, 0, 0, 1, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -75,10 +75,10 @@ public class JumpingOnTheClouds_tests {
     int expected = 1;
     int[] clouds = {0, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 
   @Test
@@ -86,9 +86,9 @@ public class JumpingOnTheClouds_tests {
     int expected = 1;
     int[] clouds = {0, 0, 0};
     int result = JumpingOnTheClouds.jumpClouds(clouds);
+    assertEquals(expected, result);
     System.out.format(
         "%s: The shortest path through the clouds '%s' is %d jumps.\n",
         name.getMethodName(), Arrays.toString(clouds), result);
-    assertEquals(expected, result);
   }
 }

@@ -1,20 +1,13 @@
 package Java.code.ctci.old.ch_07_Object_Oriented_Design;
 
-public class Card {
-  final Suit suit;
-  final int value;
+public record Card(Suit suit, int value) {
 
-  public Card(Suit suit, int value) {
-    this.suit = suit;
-    this.value = value;
-  }
-
-  public int getValue() {
-    return this.value;
-  }
-
-  public Suit getSuit() {
+  public Suit suit() {
     return this.suit;
+  }
+
+  public int value() {
+    return this.value;
   }
 
   public enum Suit {
