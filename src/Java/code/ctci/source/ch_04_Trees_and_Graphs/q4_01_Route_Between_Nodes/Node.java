@@ -1,5 +1,7 @@
 package Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes;
 
+import java.util.Arrays;
+
 public class Node {
   private final Node[] adjacent;
   private final String vertex;
@@ -8,25 +10,30 @@ public class Node {
 
   public Node(String vertex, int adjacentLength) {
     this.vertex = vertex;
-    adjacentCount = 0;
-    adjacent = new Node[adjacentLength];
+    this.adjacentCount = 0;
+    this.adjacent = new Node[adjacentLength];
   }
 
   public void addAdjacent(Node x) {
-    if (adjacentCount < adjacent.length) {
-      this.adjacent[adjacentCount] = x;
-      adjacentCount++;
+    if (this.adjacentCount < this.adjacent.length) {
+      this.adjacent[this.adjacentCount] = x;
+      this.adjacentCount++;
     } else {
       System.out.print("No more adjacent can be added");
     }
   }
 
   public Node[] getAdjacent() {
-    return adjacent;
+    return this.adjacent;
   }
 
   @SuppressWarnings("unused")
   public String getVertex() {
-    return vertex;
+    return this.vertex;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("adjacent: %s, adjacent: %s", this.vertex, Arrays.toString(this.adjacent));
   }
 }

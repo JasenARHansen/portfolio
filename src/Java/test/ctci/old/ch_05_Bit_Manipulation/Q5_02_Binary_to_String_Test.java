@@ -14,6 +14,31 @@ import org.junit.runners.MethodSorters;
 public class Q5_02_Binary_to_String_Test {
   @Rule public final TestName name = new TestName();
 
+  @Test
+  public void printBinary() {
+    System.out.format("%s:\n", name.getMethodName());
+    ArrayList<Double> values = new ArrayList<>(Arrays.asList(0.5, 0.1, 0.25, 0.75));
+    for (Double value : values) {
+      String result = BitShift.convertBinaryLessThanOne(value);
+      System.out.format("%s: %f converted to binary is %s\n", name.getMethodName(), value, result);
+    }
+  }
+
+  @Test
+  public void printBinary_solution_1() {
+    System.out.format("%s:\n", name.getMethodName());
+    String bs = printBinary(.125);
+    System.out.println(bs);
+    for (int i = 0; i < 1000; i++) {
+      double num = i / 1000.0;
+      String binary = printBinary(num);
+      String binary2 = printBinary2(num);
+      if (!binary.equals("ERROR") || !binary2.equals("ERROR")) {
+        System.out.println(num + " : " + binary + " " + binary2);
+      }
+    }
+  }
+
   public static String printBinary(double num) {
     if (num >= 1 || num <= 0) {
       return "ERROR";
@@ -58,30 +83,5 @@ public class Q5_02_Binary_to_String_Test {
       frac /= 2;
     }
     return binary.toString();
-  }
-
-  @Test
-  public void printBinary() {
-    System.out.format("%s:\n", name.getMethodName());
-    ArrayList<Double> values = new ArrayList<>(Arrays.asList(0.5, 0.1, 0.25, 0.75));
-    for (Double value : values) {
-      String result = BitShift.convertBinaryLessThanOne(value);
-      System.out.format("%s: %f converted to binary is %s\n", name.getMethodName(), value, result);
-    }
-  }
-
-  @Test
-  public void printBinary_solution_1() {
-    System.out.format("%s:\n", name.getMethodName());
-    String bs = printBinary(.125);
-    System.out.println(bs);
-    for (int i = 0; i < 1000; i++) {
-      double num = i / 1000.0;
-      String binary = printBinary(num);
-      String binary2 = printBinary2(num);
-      if (!binary.equals("ERROR") || !binary2.equals("ERROR")) {
-        System.out.println(num + " : " + binary + " " + binary2);
-      }
-    }
   }
 }

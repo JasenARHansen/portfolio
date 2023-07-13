@@ -1,5 +1,8 @@
 package Java.test.ctci.old.ch_03_Stacks_and_Queues;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
 import Java.code.ctci.old.ch_03_Stacks_and_Queues.SortableStack;
 import Java.code.ctci.source.ctciLibrary.AssortedMethods;
 import java.util.Stack;
@@ -49,6 +52,23 @@ public class Q3_05_Sort_Stack_Test {
     return reverseStack;
   }
 
+  @Test
+  public void sort_stack_solution_1() {
+    System.out.format("%s:\n", name.getMethodName());
+    Stack<Integer> s = new Stack<>();
+    for (int i = 0; i < 10; i++) {
+      int r = AssortedMethods.randomIntInRange(0, 1000);
+      s.push(r);
+    }
+    String notExpected = s.toString();
+    sort(s);
+    String result = s.toString();
+    assertNotEquals(notExpected, result);
+    while (!s.isEmpty()) {
+      System.out.format("\t%s\n", s.pop());
+    }
+  }
+
   public static void sort(Stack<Integer> s) {
     Stack<Integer> r = new Stack<>();
     while (!s.isEmpty()) {
@@ -66,32 +86,21 @@ public class Q3_05_Sort_Stack_Test {
   }
 
   @Test
-  public void sort_stack_solution_1() {
-    System.out.format("%s:\n", name.getMethodName());
-    Stack<Integer> s = new Stack<>();
-    for (int i = 0; i < 10; i++) {
-      int r = AssortedMethods.randomIntInRange(0, 1000);
-      s.push(r);
-    }
-    sort(s);
-    while (!s.isEmpty()) {
-      System.out.println(s.pop());
-    }
-  }
-
-  @Test
   public void SortableStack() {
+    String expected = "[123, 55, 23, 5, 1, 0]";
     System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int[] array = new int[] {55, 1, 23, 0, 123, 5};
     for (int data : array) {
       sortableStack.push(data);
-      System.out.format("Push '%s' on Stack '%s'\n", data, sortableStack);
+      System.out.format("\tPush '%s' on Stack '%s'\n", data, sortableStack);
     }
     sortableStack.sort();
-    System.out.format("Sorted Queue '%s'\n", sortableStack);
+    String result = sortableStack.toString();
+    assertEquals(expected, result);
+    System.out.format("\tSorted Queue '%s'\n", sortableStack);
     for (int i = 0; i < array.length; i++) {
-      System.out.format("Pop '%s' on Stack '%s'\n", sortableStack.pop(), sortableStack);
+      System.out.format("\tPop '%s' on Stack '%s'\n", sortableStack.pop(), sortableStack);
     }
   }
 
@@ -103,7 +112,10 @@ public class Q3_05_Sort_Stack_Test {
       int r = AssortedMethods.randomIntInRange(0, 1000);
       s.push(r);
     }
+    String notExpected = s.toString();
     mergesort(s);
+    String result = s.toString();
+    assertNotEquals(notExpected, result);
     while (!s.isEmpty()) {
       System.out.println(s.pop());
     }

@@ -16,7 +16,7 @@ public class Q3_04_Queue_via_Stacks_Test {
   @Rule public final TestName name = new TestName();
 
   @Test
-  public void MyQueue_solution_1() {
+  public void MyQueue() {
     System.out.format("%s:\n", name.getMethodName());
     MyQueue<Integer> my_queue = new MyQueue<>();
     // Let's test our code against a "real" queue
@@ -27,26 +27,23 @@ public class Q3_04_Queue_via_Stacks_Test {
         int element = AssortedMethods.randomIntInRange(1, 10);
         test_queue.add(element);
         my_queue.add(element);
-        System.out.println("Enqueued " + element);
+        System.out.format("\tEnqueued %d\n", element);
       } else if (test_queue.size() > 0) {
         int top1 = test_queue.remove();
         int top2 = my_queue.remove();
         if (top1 != top2) { // Check for error
-          System.out.println("******* FAILURE - DIFFERENT TOPS: " + top1 + ", " + top2);
+          System.out.format("\t******* FAILURE - DIFFERENT TOPS: %d, %d\n", top1, top2);
         }
-        System.out.println("Dequeued " + top1);
+        System.out.format("\tDequeued %d\n", top1);
       }
       if (test_queue.size() == my_queue.size()) {
         if (test_queue.size() > 0 && !test_queue.peek().equals(my_queue.peek())) {
-          System.out.println(
-              "******* FAILURE - DIFFERENT TOPS: "
-                  + test_queue.peek()
-                  + ", "
-                  + my_queue.peek()
-                  + " ******");
+          System.out.format(
+              "\t******* FAILURE - DIFFERENT TOPS: %d, %d ******\n",
+              test_queue.peek(), my_queue.peek());
         }
       } else {
-        System.out.println("******* FAILURE - DIFFERENT SIZES ******");
+        System.out.println("\t******* FAILURE - DIFFERENT SIZES ******\n");
       }
     }
   }

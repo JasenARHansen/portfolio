@@ -232,11 +232,15 @@ public class LinkedList {
     } else {
       // Reassigning tail. Only necessary because of the structure I am
       // using.
-      Field declaredField;
       try {
-        declaredField = CustomLinkedList.class.getDeclaredField("tail");
-        declaredField.setAccessible(true);
-        declaredField.set(inputList, inputNode);
+        Field tail;
+        Field size;
+        tail = CustomLinkedList.class.getDeclaredField("tail");
+        tail.setAccessible(true);
+        tail.set(inputList, inputNode);
+        size = CustomLinkedList.class.getDeclaredField("size");
+        size.setAccessible(true);
+        size.set(inputList, inputList.getSize() - 1);
       } catch (NoSuchFieldException | SecurityException | IllegalArgumentException e) {
         e.printStackTrace();
       }

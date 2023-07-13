@@ -8,4 +8,9 @@ public class Cat extends Animal {
   public String name() {
     return "Cat: " + name;
   }
+
+  @Override
+  public String toString() {
+    return String.format("(Cat: %s)", this.name);
+  }
 }

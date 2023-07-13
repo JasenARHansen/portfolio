@@ -67,4 +67,9 @@ public class AnimalQueue {
   public Cat peekCats() {
     return cats.peek();
   }
+
+  @Override
+  public String toString() {
+    return "Dogs: " + this.dogs + ", " + "Cats: " + this.cats;
+  }
 }

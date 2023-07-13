@@ -108,6 +108,10 @@ public class Associativity {
       return false;
     }
 
+    public String getName() {
+      return this.name;
+    }
+
     private int getAssociationCount() {
       return associations.size();
     }
@@ -134,10 +138,6 @@ public class Associativity {
     public List<String> getAssociativity() {
       List<String> returnList = new ArrayList<>();
       return getAssociationList(returnList);
-    }
-
-    public String getName() {
-      return this.name;
     }
 
     private void replaceAssociation(AssociativityNode associationNode) {

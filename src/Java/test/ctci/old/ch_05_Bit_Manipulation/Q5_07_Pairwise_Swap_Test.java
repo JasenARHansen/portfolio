@@ -15,10 +15,6 @@ import org.junit.runners.MethodSorters;
 public class Q5_07_Pairwise_Swap_Test {
   @Rule public final TestName name = new TestName();
 
-  public static int swapOddEvenBits(int x) {
-    return (((x & 0xaaaaaaaa) >>> 1) | ((x & 0x55555555) << 1));
-  }
-
   @Test
   public void swapOddEvenBits() {
     System.out.format("%s:\n", name.getMethodName());
@@ -43,5 +39,9 @@ public class Q5_07_Pairwise_Swap_Test {
     System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
     int b = swapOddEvenBits(a);
     System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
+  }
+
+  public static int swapOddEvenBits(int x) {
+    return (((x & 0xaaaaaaaa) >>> 1) | ((x & 0x55555555) << 1));
   }
 }

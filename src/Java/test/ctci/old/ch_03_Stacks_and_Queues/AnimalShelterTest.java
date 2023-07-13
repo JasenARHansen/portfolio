@@ -32,7 +32,7 @@ public class AnimalShelterTest {
     animalShelter.enqueue(barney);
     int result = animalShelter.size();
     assertEquals(expected, result);
-    System.out.format("%s: enqueue '%s'\n", name.getMethodName(), animalShelter);
+    System.out.format("%s: '%s'\n", name.getMethodName(), animalShelter);
   }
 
   @Test
@@ -44,7 +44,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.peekDogs();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: peekDogs %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -56,7 +56,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.peekCats();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: peekCats %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -68,7 +68,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.dequeueAny();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: dequeueAny %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -80,7 +80,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.peek();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: peek %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -92,7 +92,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.dequeueDogs();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: dequeueDogs %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -104,7 +104,7 @@ public class AnimalShelterTest {
     Animal animal = animalShelter.dequeueCats();
     String result = animal.getName();
     assertEquals(expected, result);
-    System.out.format("%s: dequeueCats %s\n", name.getMethodName(), animal);
+    System.out.format("%s: %s\n", name.getMethodName(), animal);
   }
 
   @Test
@@ -116,7 +116,7 @@ public class AnimalShelterTest {
     animalShelter.enqueue(Smokey);
     String result = animalShelter.printChoice();
     assertEquals(expected, result);
-    System.out.format("%s: printChoice %s\n", name.getMethodName(), result);
+    System.out.format("%s: %s\n", name.getMethodName(), result);
   }
 
   @Test
@@ -127,6 +127,6 @@ public class AnimalShelterTest {
     animalShelter.enqueue(Smokey);
     String result = Smokey.getName();
     assertEquals(expected, result);
-    System.out.format("%s: getName %s\n", name.getMethodName(), result);
+    System.out.format("%s: %s\n", name.getMethodName(), result);
   }
 }

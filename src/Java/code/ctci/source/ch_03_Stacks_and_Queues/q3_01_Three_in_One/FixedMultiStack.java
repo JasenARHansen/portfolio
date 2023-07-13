@@ -1,6 +1,7 @@
 package Java.code.ctci.source.ch_03_Stacks_and_Queues.q3_01_Three_in_One;
 
 import Java.code.ctci.source.ctciLibrary.AssortedMethods;
+import java.util.Arrays;
 import java.util.EmptyStackException;
 
 @SuppressWarnings({"FieldCanBeLocal", "unused", "ConstantValue"})
@@ -64,10 +65,6 @@ public class FixedMultiStack {
     return values[indexOfTop(stackNum)];
   }
 
-  public int[] getValues() {
-    return values;
-  }
-
   public String stackToString(int stackNum) {
     int[] items = getStackValues(stackNum);
     return stackNum + ": " + AssortedMethods.arrayToString(items);
@@ -78,5 +75,14 @@ public class FixedMultiStack {
     if (items.length >= 0)
       System.arraycopy(values, stackNum * stackCapacity, items, 0, items.length);
     return items;
+  }
+
+  @Override
+  public String toString() {
+    return Arrays.toString(this.getValues()).replace("[", "").replace("]", "");
+  }
+
+  public int[] getValues() {
+    return values;
   }
 }

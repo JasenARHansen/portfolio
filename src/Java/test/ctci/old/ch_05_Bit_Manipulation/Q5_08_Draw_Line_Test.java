@@ -12,6 +12,50 @@ import org.junit.runners.MethodSorters;
 public class Q5_08_Draw_Line_Test {
   @Rule public final TestName name = new TestName();
 
+  @Test
+  public void testSwitch() {
+    System.out.format("%s:\n", name.getMethodName());
+    int height = 4;
+    // Width is a byte so if you wanted to know pixel width multiply by 8
+    int width = 2;
+    int y = 3;
+    int startBit = 2;
+    int stopBit = 27;
+    byte[] screen = new byte[height * width];
+    BitShift.drawLine(screen, width, startBit, stopBit, y);
+  }
+
+  @Test
+  public void drawLine() {
+    System.out.format("%s:\n", name.getMethodName());
+    int height = 4;
+    // Width is a byte so if you wanted to know pixel width multiply by 8
+    int width = 2;
+    int y = 3;
+    int startBit = 2;
+    int stopBit = 27;
+    byte[] screen = new byte[height * width];
+    BitShift.drawLine(screen, width, startBit, stopBit, y);
+  }
+
+  @Test
+  public void drawLine_solution_1() {
+    System.out.format("%s:\n", name.getMethodName());
+    int width = 8;
+    int height = 1;
+    for (int r = 0; r < height; r++) {
+      for (int c1 = 0; c1 < width; c1++) {
+        for (int c2 = c1; c2 < width; c2++) {
+          byte[] screen = new byte[width * height / 8];
+          System.out.println("row: " + r + ": " + c1 + " -> " + c2);
+          drawLine(screen, width, c1, c2, r);
+          printScreen(screen, width);
+          System.out.println("\n\n");
+        }
+      }
+    }
+  }
+
   public static void drawLine(byte[] screen, int width, int x1, int x2, int y) {
     int start_offset = x1 % 8;
     int first_full_byte = x1 / 8;
@@ -64,50 +108,6 @@ public class Q5_08_Draw_Line_Test {
     for (int i = 7; i >= 0; i--) {
       char c = ((b >> i) & 1) == 1 ? '1' : '_';
       System.out.print(c);
-    }
-  }
-
-  @Test
-  public void testSwitch() {
-    System.out.format("%s:\n", name.getMethodName());
-    int height = 4;
-    // Width is a byte so if you wanted to know pixel width multiply by 8
-    int width = 2;
-    int y = 3;
-    int startBit = 2;
-    int stopBit = 27;
-    byte[] screen = new byte[height * width];
-    BitShift.drawLine(screen, width, startBit, stopBit, y);
-  }
-
-  @Test
-  public void drawLine() {
-    System.out.format("%s:\n", name.getMethodName());
-    int height = 4;
-    // Width is a byte so if you wanted to know pixel width multiply by 8
-    int width = 2;
-    int y = 3;
-    int startBit = 2;
-    int stopBit = 27;
-    byte[] screen = new byte[height * width];
-    BitShift.drawLine(screen, width, startBit, stopBit, y);
-  }
-
-  @Test
-  public void drawLine_solution_1() {
-    System.out.format("%s:\n", name.getMethodName());
-    int width = 8;
-    int height = 1;
-    for (int r = 0; r < height; r++) {
-      for (int c1 = 0; c1 < width; c1++) {
-        for (int c2 = c1; c2 < width; c2++) {
-          byte[] screen = new byte[width * height / 8];
-          System.out.println("row: " + r + ": " + c1 + " -> " + c2);
-          drawLine(screen, width, c1, c2, r);
-          printScreen(screen, width);
-          System.out.println("\n\n");
-        }
-      }
     }
   }
 }

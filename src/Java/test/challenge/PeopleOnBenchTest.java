@@ -43,7 +43,6 @@ public class PeopleOnBenchTest {
 
   @Test
   public void personSits() {
-    String expected = "Seats:5, People:[5, 1, 3, 2, 4]";
     System.out.format("%s:\n", name.getMethodName());
     int seats = 5;
     PeopleOnBench.buildBench(seats);

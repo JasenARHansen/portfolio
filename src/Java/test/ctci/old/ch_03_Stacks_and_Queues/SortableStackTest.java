@@ -16,78 +16,90 @@ public class SortableStackTest {
 
   @Test
   public void SortableStack() {
-    new SortableStack<>();
+    SortableStack<Integer> result = new SortableStack<>();
+    assertNotNull(result);
     System.out.format("%s:\n", name.getMethodName());
   }
 
   @Test
   public void isEmpty() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     boolean result_1 = sortableStack.isEmpty();
     assertTrue(result_1);
     int data = 10;
     sortableStack.push(data);
-    boolean result_2 = sortableStack.isEmpty();
-    assertFalse(result_2);
-    System.out.format("%s: isEmpty %b - %b\n", name.getMethodName(), result_1, result_2);
-    System.out.format("%s:\n", name.getMethodName());
+    System.out.format("\tSource: %s\n", sortableStack);
+    boolean result = sortableStack.isEmpty();
+    assertFalse(result);
+    System.out.format("\tEmpty: %b\n", result_1, result);
   }
 
   @Test
   public void getSize() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int data = 10;
     sortableStack.push(data);
+    System.out.format("\tSource: %s\n", sortableStack);
     int result = sortableStack.getSize();
     assertEquals(1, result);
-    System.out.format("%s: getSize %d\n", name.getMethodName(), result);
+    System.out.format("\tSize: %d\n", result);
   }
 
   @Test
   public void peek() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int data = 10;
     sortableStack.push(data);
+    System.out.format("\tSource: %s\n", sortableStack);
     int result = sortableStack.peek();
     assertEquals(data, result);
     assertFalse(sortableStack.isEmpty());
-    System.out.format("%s: peek %d\n", name.getMethodName(), result);
+    System.out.format("\tPeek: %d\n", result);
   }
 
   @Test
   public void push() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int data = 10;
     boolean result = sortableStack.isEmpty();
     assertTrue(result);
     sortableStack.push(data);
+    System.out.format("\tSource: %s\n", sortableStack);
     result = sortableStack.isEmpty();
     assertFalse(result);
-    System.out.format("%s: push %b\n", name.getMethodName(), result);
+    System.out.format("\tPush: %b\n", result);
   }
 
   @Test
   public void pop() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int data = 10;
     sortableStack.push(data);
+    System.out.format("\tSource: %s\n", sortableStack);
     int result = sortableStack.pop();
     assertEquals(data, result);
     assertTrue(sortableStack.isEmpty());
-    System.out.format("%s: pop %d\n", name.getMethodName(), result);
+    System.out.format("\tPop: %d\n", result);
   }
 
   @Test
   public void sort() {
+    System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
     int data = 10;
     sortableStack.push(data++);
     sortableStack.push(data++);
     sortableStack.push(data);
+    System.out.format("\tSource: %s\n", sortableStack);
     String result_1 = sortableStack.toString();
     sortableStack.sort();
     String result1_2 = sortableStack.toString();
     assertNotEquals(result_1, result1_2);
-    System.out.format("%s: sort %s - %s\n", name.getMethodName(), result_1, result1_2);
+    System.out.format("\tSort: %s\n", result1_2);
   }
 }

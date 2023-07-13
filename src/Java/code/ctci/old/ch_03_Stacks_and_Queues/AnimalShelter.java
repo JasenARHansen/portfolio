@@ -86,12 +86,12 @@ public class AnimalShelter {
     return returnString.toString();
   }
 
-  public Animal peekCats() {
-    return this.catQueue.peek();
-  }
-
   public Animal peekDogs() {
     return this.dogQueue.peek();
+  }
+
+  public Animal peekCats() {
+    return this.catQueue.peek();
   }
 
   @Override

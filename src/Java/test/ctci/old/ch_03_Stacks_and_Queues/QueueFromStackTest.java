@@ -23,66 +23,77 @@ public class QueueFromStackTest {
 
   @Test
   public void isEmpty() {
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     boolean result_1 = queueFromStack.isEmpty();
     assertTrue(result_1);
     queueFromStack.add(0);
     boolean result_2 = queueFromStack.isEmpty();
     assertFalse(result_2);
-    System.out.format("%s: %b - %b\n", name.getMethodName(), result_1, result_2);
+    System.out.format("\tResult: %b\n", result_2);
   }
 
   @Test
   public void add() {
     int expected = 1;
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
+    System.out.format("\tSource: %s\n", queueFromStack);
     queueFromStack.add(0);
     int result = queueFromStack.getSize();
     assertEquals(expected, result);
-    System.out.format("%s: %d\n", name.getMethodName(), result);
+    System.out.format("\tResult: %s\n", queueFromStack);
   }
 
   @Test
   public void getSize() {
     int expected = 2;
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(0);
     queueFromStack.add(1);
+    System.out.format("\tSource: %s\n", queueFromStack);
     int result = queueFromStack.getSize();
     assertEquals(expected, result);
-    System.out.format("%s: %d\n", name.getMethodName(), result);
+    System.out.format("\tResult: %d\n", result);
   }
 
   @Test
   public void remove() {
     int expected = 6;
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(expected);
     queueFromStack.add(1);
+    System.out.format("\tSource: %s\n", queueFromStack);
     int result = queueFromStack.remove();
     assertEquals(expected, result);
-    System.out.format("%s: %d\n", name.getMethodName(), result);
+    System.out.format("\tResult: %d\n", result);
   }
 
   @Test
   public void peek() {
     int expected = 5;
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(expected);
     queueFromStack.add(1);
+    System.out.format("\tSource: %s\n", queueFromStack);
     int result = queueFromStack.peek();
     assertEquals(expected, result);
-    System.out.format("%s: %d\n", name.getMethodName(), result);
+    System.out.format("\tResult: %d\n", result);
   }
 
   @Test
   public void to_string() {
     String expected = "[1, 5]";
+    System.out.format("%s:\n", name.getMethodName());
     QueueFromStack<Integer> queueFromStack = new QueueFromStack<>();
     queueFromStack.add(5);
     queueFromStack.add(1);
+    System.out.format("\tSource: %s\n", queueFromStack);
     String result = queueFromStack.toString();
     assertEquals(expected, result);
-    System.out.format("%s: %s\n", name.getMethodName(), result);
+    System.out.format("\tResult: %s\n", queueFromStack);
   }
 }

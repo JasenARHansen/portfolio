@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LinkedListTest {
   @Rule public final TestName name = new TestName();
@@ -25,7 +25,7 @@ public class LinkedListTest {
   }
 
   @Test
-  public void detectCycle_1() throws IllegalAccessException {
+  public void detectCycle_1() {
     System.out.format("\n%s:\n", name.getMethodName());
     CircularLinkedList<String> stringList = new CircularLinkedList<>();
     stringList.insert("a");
