@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode", "unused"})
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode", "unused", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_01_Route_Between_Nodes_Test {
   @Rule public final TestName name = new TestName();
@@ -31,9 +31,9 @@ public class Q4_01_Route_Between_Nodes_Test {
     matrix.addEdge("6", "1");
     String source = "1";
     String target = "4";
-    boolean success = matrix.pathExists(source, target);
-    assertTrue(success);
-    System.out.format("\tA path exists between %s and %b\n", source, target, success);
+    boolean result = matrix.pathExists(source, target);
+    assertTrue(result);
+    System.out.format("\tA path exists between %s and %s:  %b\n", source, target, result);
   }
 
   @Test

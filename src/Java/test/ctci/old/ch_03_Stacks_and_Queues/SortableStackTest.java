@@ -25,14 +25,14 @@ public class SortableStackTest {
   public void isEmpty() {
     System.out.format("%s:\n", name.getMethodName());
     SortableStack<Integer> sortableStack = new SortableStack<>();
-    boolean result_1 = sortableStack.isEmpty();
-    assertTrue(result_1);
+    boolean result = sortableStack.isEmpty();
+    assertTrue(result);
     int data = 10;
     sortableStack.push(data);
     System.out.format("\tSource: %s\n", sortableStack);
-    boolean result = sortableStack.isEmpty();
+    result = sortableStack.isEmpty();
     assertFalse(result);
-    System.out.format("\tEmpty: %b\n", result_1, result);
+    System.out.format("\tEmpty: %b\n", result);
   }
 
   @Test

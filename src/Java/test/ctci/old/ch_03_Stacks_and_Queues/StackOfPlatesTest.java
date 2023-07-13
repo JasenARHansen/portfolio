@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("ConstantValue")
+@SuppressWarnings({"ConstantValue", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StackOfPlatesTest {
   @Rule public final TestName name = new TestName();
@@ -98,10 +98,8 @@ public class StackOfPlatesTest {
       stackOfPlates.push(data++);
     }
     System.out.format("\tSource: %s\n", stackOfPlates);
-    String string_1 = stackOfPlates.toString();
     int offset = 4;
     int result = stackOfPlates.popAt(offset);
-    String string_2 = stackOfPlates.toString();
     int expected = data - offset;
     assertEquals(expected, result);
     System.out.format("\tPop at index '%d' is '%d'\n", offset, result);

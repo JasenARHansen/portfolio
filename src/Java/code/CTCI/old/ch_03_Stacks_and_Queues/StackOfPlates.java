@@ -83,7 +83,6 @@ public class StackOfPlates<T extends Comparable<T>> {
         stringBuilder.append(item).append(", ");
       }
     }
-    stringBuilder.setLength(stringBuilder.length() - 2);
-    return stringBuilder.toString();
+    return stringBuilder.toString().replaceAll(", $", "");
   }
 }

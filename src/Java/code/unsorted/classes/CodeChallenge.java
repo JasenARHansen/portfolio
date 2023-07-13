@@ -7,13 +7,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @SuppressWarnings({
-        "DuplicatedCode",
-        "SpellCheckingInspection",
-        "UnusedAssignment",
-        "ConstantValue",
-        "ReassignedVariable",
-        "DataFlowIssue"
-        , "unused"})
+  "DuplicatedCode",
+  "SpellCheckingInspection",
+  "UnusedAssignment",
+  "ConstantValue",
+  "ReassignedVariable",
+  "DataFlowIssue",
+  "unused",
+  "unchecked"
+})
 public class CodeChallenge {
   /* Comparator to sort by value. */
   static final Comparator<Tuple<String, Integer>> compareLeft =
@@ -416,7 +418,6 @@ public class CodeChallenge {
     }
     int counMax = returnValue.size();
     for (int loop = 0; loop < counMax; loop++) {
-      @SuppressWarnings("unchecked")
       ArrayList<Integer> working = (ArrayList<Integer>) returnValue.get(loop).clone();
       working.add(numbers[index]);
       returnValue.add(working);

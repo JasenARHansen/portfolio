@@ -52,6 +52,15 @@ public class MultiStackArrayList {
     return this.stackIndex.get(stack) == 0;
   }
 
+  public boolean isEmpty() {
+    for (int index = 0; index < this.stackCount; index++) {
+      if (!this.isEmpty(index)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();

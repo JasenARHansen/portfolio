@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection", "unused"})
 public class LinkedList {
   public static void getDescription() {
     System.out.println("Section 2. Linked List");

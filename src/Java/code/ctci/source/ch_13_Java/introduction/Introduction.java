@@ -1,6 +1,6 @@
 package Java.code.ctci.source.ch_13_Java.introduction;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "divzero"})
 public class Introduction {
   public static void main(String[] args) {
     bar();
@@ -18,7 +18,6 @@ public class Introduction {
     int y = 5;
     try {
       System.out.println("start try");
-      @SuppressWarnings("divzero")
       int b = y / x;
       System.out.println("end try");
       return "returned from try";

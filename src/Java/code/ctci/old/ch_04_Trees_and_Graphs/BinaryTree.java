@@ -17,6 +17,11 @@ public class BinaryTree<T extends Comparable<T>> {
     this.root = new BinaryTreeNode<>(value);
   }
 
+  @Override
+  public String toString() {
+    return String.format("%s", this.dataInorder());
+  }
+
   public ArrayList<ArrayList<T>> allBSTBuildSequences() {
     ArrayList<ArrayList<T>> results = new ArrayList<>();
     ArrayList<T> left = buildOrder(this.root.getLeftChild());
@@ -406,11 +411,6 @@ public class BinaryTree<T extends Comparable<T>> {
   public boolean search(T data) {
     // Entry point for data search
     return search(this.root, data);
-  }
-
-  @Override
-  public String toString() {
-    return String.format("%s", this.dataInorder());
   }
 
   public boolean validateBST() {

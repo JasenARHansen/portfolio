@@ -16,12 +16,14 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 @SuppressWarnings({
-        "SameParameterValue",
-        "DataFlowIssue",
-        "SpellCheckingInspection",
-        "ConstantValue",
-        "DuplicatedCode"
-        , "OptionalGetWithoutIsPresent"})
+  "SameParameterValue",
+  "DataFlowIssue",
+  "SpellCheckingInspection",
+  "ConstantValue",
+  "DuplicatedCode",
+  "OptionalGetWithoutIsPresent",
+  "OptionalUsedAsFieldOrParameterType"
+})
 public class Java8Tester {
   public static void main(String[] args) {
     // https://www.tutorialspoint.com/java8/index.htm
@@ -59,41 +61,6 @@ public class Java8Tester {
     System.out.println("Sort using Java 8 syntax: ");
     tester.sortUsingJava8(names2);
     System.out.println(names2);
-  }
-
-  private static void section10() {
-    System.out.println("\nSection 10:");
-    Java8Tester java8tester = new Java8Tester();
-    java8tester.testLocalDateTime();
-    java8tester.testZonedDateTime();
-    java8tester.testChromoUnits();
-    java8tester.testPeriod();
-    java8tester.testDuration();
-    java8tester.testAdjusters();
-    java8tester.testBackwardCompatability();
-  }
-
-  private static void section11() {
-    System.out.println("\nSection 11:");
-    // Encode using basic encoder
-    String base64encodedString =
-        Base64.getEncoder().encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
-    System.out.println("Base64 Encoded String (Basic) :" + base64encodedString);
-    // Decode
-    byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
-    System.out.println(
-        "Original String: " + new String(base64decodedBytes, StandardCharsets.UTF_8));
-    base64encodedString =
-        Base64.getUrlEncoder()
-            .encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
-    System.out.println("Base64 Encoded String (URL) :" + base64encodedString);
-    StringBuilder stringBuilder = new StringBuilder();
-    for (int i = 0; i < 10; ++i) {
-      stringBuilder.append(UUID.randomUUID());
-    }
-    byte[] mimeBytes = stringBuilder.toString().getBytes(StandardCharsets.UTF_8);
-    String mimeEncodedString = Base64.getMimeEncoder().encodeToString(mimeBytes);
-    System.out.println("Base64 Encoded String (MIME) :" + mimeEncodedString);
   }
 
   private static void section2() {
@@ -152,14 +119,6 @@ public class Java8Tester {
     // test method will return true if n is greater than 3.
     System.out.println("Print numbers greater than 3:");
     eval(list, n -> n > 3);
-  }
-
-  public static void eval(List<Integer> list, Predicate<Integer> predicate) {
-    for (Integer n : list) {
-      if (predicate.test(n)) {
-        System.out.println(n + " ");
-      }
-    }
   }
 
   private static void section5() {
@@ -276,93 +235,6 @@ public class Java8Tester {
     System.out.println("Empty Strings: " + count);
   }
 
-  private static List<String> deleteEmptyStringsUsingJava7(List<String> strings) {
-    List<String> filteredList = new ArrayList<>();
-    for (String string : strings) {
-      if (!string.isEmpty()) {
-        filteredList.add(string);
-      }
-    }
-    return filteredList;
-  }
-
-  private static int getAverage(List<Integer> numbers) {
-    return getSum(numbers) / numbers.size();
-  }
-
-  private static int getCountEmptyStringUsingJava7(List<String> strings) {
-    int count = 0;
-    for (String string : strings) {
-      if (string.isEmpty()) {
-        count++;
-      }
-    }
-    return count;
-  }
-
-  private static int getCountLengthUsingJava7(List<String> strings) {
-    int count = 0;
-    for (String string : strings) {
-      if (string.length() == 3) {
-        count++;
-      }
-    }
-    return count;
-  }
-
-  private static String getMergedStringUsingJava7(List<String> strings, String separator) {
-    StringBuilder stringBuilder = new StringBuilder();
-    for (String string : strings) {
-      if (!string.isEmpty()) {
-        stringBuilder.append(string);
-        stringBuilder.append(separator);
-      }
-    }
-    String mergedString = stringBuilder.toString();
-    return mergedString.substring(0, mergedString.length() - 2);
-  }
-
-  private static int getMin(List<Integer> numbers) {
-    int min = numbers.get(0);
-    for (int i = 1; i < numbers.size(); i++) {
-      Integer number = numbers.get(i);
-      if (number < min) {
-        min = number;
-      }
-    }
-    return min;
-  }
-
-  private static List<Integer> getSquares(List<Integer> numbers) {
-    List<Integer> squaresList = new ArrayList<>();
-    for (Integer number : numbers) {
-      Integer square = number * number;
-      if (!squaresList.contains(square)) {
-        squaresList.add(square);
-      }
-    }
-    return squaresList;
-  }
-
-  private static int getSum(List<Integer> numbers) {
-    int sum = numbers.get(0);
-    for (int i = 1; i < numbers.size(); i++) {
-      sum += numbers.get(i);
-    }
-    return sum;
-  }
-
-  private static int getMax(List<Integer> numbers) {
-    int max = numbers.get(0);
-    for (int i = 1; i < numbers.size(); i++) {
-      Integer number = numbers.get(i);
-      if (number > max) {
-        max = number;
-      }
-    }
-    return max;
-  }
-
   private static void section8() {
     System.out.println("\nSection 8:");
     Java8Tester java8Tester = new Java8Tester();
@@ -373,6 +245,18 @@ public class Java8Tester {
     // Optional.of - throws NullPointerException if passed parameter is null
     Optional<Integer> b = Optional.of(value2);
     System.out.println(java8Tester.sum(a, b));
+  }
+
+  private Integer sum(Optional<Integer> a, Optional<Integer> b) {
+    // Optional.isPresent - checks the value is present or not
+    System.out.println("First parameter is present: " + a.isPresent());
+    System.out.println("Second parameter is present: " + b.isPresent());
+    // Optional.orElse - returns the value if present otherwise returns
+    // the default value passed.
+    Integer value1 = a.orElse(0);
+    // Optional.get - gets the value, value should be present
+    Integer value2 = b.get();
+    return value1 + value2;
   }
 
   private static void section9() {
@@ -391,45 +275,27 @@ public class Java8Tester {
     System.out.println(result);
   }
 
-  private void sortUsingJava7(List<String> names) {
-    // sort using java 7
-    names.sort(String::compareTo);
+  private static void section10() {
+    System.out.println("\nSection 10:");
+    Java8Tester java8tester = new Java8Tester();
+    java8tester.testLocalDateTime();
+    java8tester.testZonedDateTime();
+    java8tester.testChromoUnits();
+    java8tester.testPeriod();
+    java8tester.testDuration();
+    java8tester.testAdjusters();
+    java8tester.testBackwardCompatability();
   }
 
-  private void sortUsingJava8(List<String> names) {
-    // sort using java 8
-    names.sort(String::compareTo);
-  }
-
-  private void testAdjusters() {
-    System.out.println("Test TemporalAdjusters:");
-    // Get the current date
-    LocalDate date1 = LocalDate.now();
-    System.out.println("Current date: " + date1);
-    // get the next Tuesday
-    LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
-    System.out.println("Next Tuesday on : " + nextTuesday);
-    // get the second Saturday of next month
-    LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
-    LocalDate secondSaturday =
-        firstInYear
-            .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
-            .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
-    System.out.println("Second Saturday on : " + secondSaturday);
-  }
-
-  private void testBackwardCompatability() {
-    System.out.println("Test Date:");
-    // Get the current date
-    Date currentDate = new Date();
-    System.out.println("Current date: " + currentDate);
-    // Get the instant of current date in terms of milliseconds
-    Instant now = currentDate.toInstant();
+  private void testZonedDateTime() {
+    System.out.println("Test ZonedDateTime:");
+    // Get the current date and time
+    ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
+    System.out.println("date1: " + date1);
+    ZoneId id = ZoneId.of("Europe/Paris");
+    System.out.println("ZoneId: " + id);
     ZoneId currentZone = ZoneId.systemDefault();
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
-    System.out.println("Local date: " + localDateTime);
-    ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
-    System.out.println("Zoned date: " + zonedDateTime);
+    System.out.println("CurrentZone: " + currentZone);
   }
 
   private void testChromoUnits() {
@@ -460,6 +326,132 @@ public class Java8Tester {
     System.out.println("Duration: " + duration);
   }
 
+  private static int getCountEmptyStringUsingJava7(List<String> strings) {
+    int count = 0;
+    for (String string : strings) {
+      if (string.isEmpty()) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  private static int getCountLengthUsingJava7(List<String> strings) {
+    int count = 0;
+    for (String string : strings) {
+      if (string.length() == 3) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  private void testAdjusters() {
+    System.out.println("Test TemporalAdjusters:");
+    // Get the current date
+    LocalDate date1 = LocalDate.now();
+    System.out.println("Current date: " + date1);
+    // get the next Tuesday
+    LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+    System.out.println("Next Tuesday on : " + nextTuesday);
+    // get the second Saturday of next month
+    LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
+    LocalDate secondSaturday =
+        firstInYear
+            .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
+            .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+    System.out.println("Second Saturday on : " + secondSaturday);
+  }
+
+  private static String getMergedStringUsingJava7(List<String> strings, String separator) {
+    StringBuilder stringBuilder = new StringBuilder();
+    for (String string : strings) {
+      if (!string.isEmpty()) {
+        stringBuilder.append(string);
+        stringBuilder.append(separator);
+      }
+    }
+    String mergedString = stringBuilder.toString();
+    return mergedString.substring(0, mergedString.length() - 2);
+  }
+
+  private static List<Integer> getSquares(List<Integer> numbers) {
+    List<Integer> squaresList = new ArrayList<>();
+    for (Integer number : numbers) {
+      Integer square = number * number;
+      if (!squaresList.contains(square)) {
+        squaresList.add(square);
+      }
+    }
+    return squaresList;
+  }
+
+  private static int getMax(List<Integer> numbers) {
+    int max = numbers.get(0);
+    for (int i = 1; i < numbers.size(); i++) {
+      Integer number = numbers.get(i);
+      if (number > max) {
+        max = number;
+      }
+    }
+    return max;
+  }
+
+  private void testBackwardCompatability() {
+    System.out.println("Test Date:");
+    // Get the current date
+    Date currentDate = new Date();
+    System.out.println("Current date: " + currentDate);
+    // Get the instant of current date in terms of milliseconds
+    Instant now = currentDate.toInstant();
+    ZoneId currentZone = ZoneId.systemDefault();
+    LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+    System.out.println("Local date: " + localDateTime);
+    ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+    System.out.println("Zoned date: " + zonedDateTime);
+  }
+
+  private static void section11() {
+    System.out.println("\nSection 11:");
+    // Encode using basic encoder
+    String base64encodedString =
+        Base64.getEncoder().encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
+    System.out.println("Base64 Encoded String (Basic) :" + base64encodedString);
+    // Decode
+    byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
+    System.out.println(
+        "Original String: " + new String(base64decodedBytes, StandardCharsets.UTF_8));
+    base64encodedString =
+        Base64.getUrlEncoder()
+            .encodeToString("TutorialsPoint?java8".getBytes(StandardCharsets.UTF_8));
+    System.out.println("Base64 Encoded String (URL) :" + base64encodedString);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (int i = 0; i < 10; ++i) {
+      stringBuilder.append(UUID.randomUUID());
+    }
+    byte[] mimeBytes = stringBuilder.toString().getBytes(StandardCharsets.UTF_8);
+    String mimeEncodedString = Base64.getMimeEncoder().encodeToString(mimeBytes);
+    System.out.println("Base64 Encoded String (MIME) :" + mimeEncodedString);
+  }
+
+  public static void eval(List<Integer> list, Predicate<Integer> predicate) {
+    for (Integer n : list) {
+      if (predicate.test(n)) {
+        System.out.println(n + " ");
+      }
+    }
+  }
+
+  private static List<String> deleteEmptyStringsUsingJava7(List<String> strings) {
+    List<String> filteredList = new ArrayList<>();
+    for (String string : strings) {
+      if (!string.isEmpty()) {
+        filteredList.add(string);
+      }
+    }
+    return filteredList;
+  }
+
   private void testLocalDateTime() {
     System.out.println("Test LocalDateTime:");
     // Get the current date and time
@@ -484,6 +476,21 @@ public class Java8Tester {
     System.out.println("date5: " + date5);
   }
 
+  private static int getMin(List<Integer> numbers) {
+    int min = numbers.get(0);
+    for (int i = 1; i < numbers.size(); i++) {
+      Integer number = numbers.get(i);
+      if (number < min) {
+        min = number;
+      }
+    }
+    return min;
+  }
+
+  private static int getAverage(List<Integer> numbers) {
+    return getSum(numbers) / numbers.size();
+  }
+
   private void testPeriod() {
     System.out.println("Test Period:");
     // Get the current date
@@ -496,28 +503,21 @@ public class Java8Tester {
     System.out.println("Period: " + period);
   }
 
-  private void testZonedDateTime() {
-    System.out.println("Test ZonedDateTime:");
-    // Get the current date and time
-    ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
-    System.out.println("date1: " + date1);
-    ZoneId id = ZoneId.of("Europe/Paris");
-    System.out.println("ZoneId: " + id);
-    ZoneId currentZone = ZoneId.systemDefault();
-    System.out.println("CurrentZone: " + currentZone);
+  private static int getSum(List<Integer> numbers) {
+    int sum = numbers.get(0);
+    for (int i = 1; i < numbers.size(); i++) {
+      sum += numbers.get(i);
+    }
+    return sum;
   }
 
-  private Integer sum(
-      @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> a,
-      @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Integer> b) {
-    // Optional.isPresent - checks the value is present or not
-    System.out.println("First parameter is present: " + a.isPresent());
-    System.out.println("Second parameter is present: " + b.isPresent());
-    // Optional.orElse - returns the value if present otherwise returns
-    // the default value passed.
-    Integer value1 = a.orElse(0);
-    // Optional.get - gets the value, value should be present
-    Integer value2 = b.get();
-    return value1 + value2;
+  private void sortUsingJava7(List<String> names) {
+    // sort using java 7
+    names.sort(String::compareTo);
+  }
+
+  private void sortUsingJava8(List<String> names) {
+    // sort using java 8
+    names.sort(String::compareTo);
   }
 }

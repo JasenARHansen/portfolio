@@ -3,9 +3,8 @@ package Java.code.interview.Google;
 import Java.code.unsorted.classes.classesInstance.Tuple;
 import java.util.*;
 
-@SuppressWarnings({"DuplicatedCode", "UnusedAssignment"})
+@SuppressWarnings({"DuplicatedCode", "UnusedAssignment", "unused", "SuspiciousNameCombination"})
 public class Google {
-  @SuppressWarnings("unused")
   public static void main(String[] args) throws Exception {
     // Determine weather a circular array of relative indices compose of a
     // single, complete cycle
@@ -85,12 +84,27 @@ public class Google {
     System.out.format("Find %d: found at index %d\n", 13, searchRotatedArray(13, rotatedArray3));
   }
 
-  private static String addStrings(String... numbers) throws Exception {
-    double accumulator = 0;
-    for (String number : numbers) {
-      accumulator += convertNumber(number);
+  private static boolean detectCircularArrayCycle(int[] toSearch) {
+    /* Circular array is that when you exceed a boundary you wrap around to the Relative index means
+    the value of the element is a modification of the current index Complete cycle means that all
+    elements are examined. */
+    int searchIndex = 0;
+    boolean[] visited = new boolean[toSearch.length];
+    while (!visited[searchIndex]) {
+      visited[searchIndex] = true;
+      // Handle overflow case
+      searchIndex = (searchIndex + toSearch[searchIndex]) % toSearch.length;
+      // Cover underflow case and wrap around.
+      if (searchIndex < 0) {
+        searchIndex += toSearch.length;
+      }
     }
-    return Double.toString(accumulator);
+    for (boolean value : visited) {
+      if (!value) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private static Double convertNumber(String number) throws Exception {
@@ -116,16 +130,31 @@ public class Google {
         * (convertInteger(base) + (convertInteger(decimal) * Math.pow(10, -decimal.length()))));
   }
 
-  private static Double convertInteger(String number) throws Exception {
-    if (!number.matches("[1234567890]*")) {
-      throw new Exception("Invalid Input");
-    }
+  private static String addStrings(String... numbers) throws Exception {
     double accumulator = 0;
-    int offset = number.length() - 1;
-    for (int i = 0; i < number.length(); i++) {
-      accumulator += (((int) number.charAt(i) - (int) '0') * Math.pow(10, offset - i));
+    for (String number : numbers) {
+      accumulator += convertNumber(number);
     }
-    return accumulator;
+    return Double.toString(accumulator);
+  }
+
+  private static void printBitMap(boolean[][] toPrint) {
+    // Print the Bit Map Simulation array
+    for (boolean[] entry : toPrint) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("[");
+      if (entry.length > 0) {
+        builder.append(getColor(entry[0]));
+        if (entry.length > 1) {
+          for (int i = 1; i < entry.length; i++) {
+            builder.append("\t");
+            builder.append(getColor(entry[i]));
+          }
+        }
+      }
+      builder.append("]");
+      System.out.println(builder);
+    }
   }
 
   private static boolean[][] floodFill(boolean color, int x, int y, boolean[][] bitMap) {
@@ -148,7 +177,6 @@ public class Google {
     Queue<Tuple<Integer, Integer>> floodQueue = new LinkedList<>();
     // A set will help eliminate duplicate processing
     Set<Tuple<Integer, Integer>> pixelSet = new HashSet<>();
-    @SuppressWarnings("SuspiciousNameCombination")
     Tuple<Integer, Integer> startPoint = new Tuple<>(x, y);
     floodQueue.add(startPoint);
     pixelSet.add(startPoint);
@@ -162,14 +190,12 @@ public class Google {
         if (toModify[newY][newX] != color) {
           toModify[newY][newX] = color;
           // Pixel right from test
-          @SuppressWarnings("SuspiciousNameCombination")
           Tuple<Integer, Integer> pixelRight = new Tuple<>(newX + 1, newY);
           if (!pixelSet.contains(pixelRight)) {
             floodQueue.add(pixelRight);
             pixelSet.add(pixelRight);
           }
           // Pixel down from test
-          @SuppressWarnings("SuspiciousNameCombination")
           Tuple<Integer, Integer> pixelLeft = new Tuple<>(newX - 1, newY);
           if (!pixelSet.contains(pixelLeft)) {
             floodQueue.add(pixelLeft);
@@ -191,45 +217,6 @@ public class Google {
       }
     }
     return toModify;
-  }
-
-  private static boolean[][] cloneBitMap(boolean[][] bitMap) {
-    // Clone bitMap array so the original is not altered by processing
-    boolean[][] cloned = new boolean[bitMap.length][];
-    for (int i = 0; i < bitMap.length; i++) {
-      int innerLength = bitMap[i].length;
-      cloned[i] = new boolean[innerLength];
-      System.arraycopy(bitMap[i], 0, cloned[i], 0, innerLength);
-    }
-    return cloned;
-  }
-
-  private static void printBitMap(boolean[][] toPrint) {
-    // Print the Bit Map Simulation array
-    for (boolean[] entry : toPrint) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("[");
-      if (entry.length > 0) {
-        builder.append(getColor(entry[0]));
-        if (entry.length > 1) {
-          for (int i = 1; i < entry.length; i++) {
-            builder.append("\t");
-            builder.append(getColor(entry[i]));
-          }
-        }
-      }
-      builder.append("]");
-      System.out.println(builder);
-    }
-  }
-
-  private static String getColor(boolean color) {
-    // Helper method for printing BitMap array
-    if (color) {
-      return "white";
-    } else {
-      return "black";
-    }
   }
 
   private static int searchRotatedArray(int value, int[] toSearch) {
@@ -307,30 +294,38 @@ public class Google {
     }
   }
 
-  private static boolean detectCircularArrayCycle(int[] toSearch) {
-    /* Circular array is that when you exceed a boundary you wrap around to the Relative index means
-    the value of the element is a modification of the current index Complete cycle means that all
-    elements are examined. */
-    int searchIndex = 0;
-    boolean[] visited = new boolean[toSearch.length];
-    while (!visited[searchIndex]) {
-      visited[searchIndex] = true;
-      // Handle overflow case
-      searchIndex = (searchIndex + toSearch[searchIndex]) % toSearch.length;
-      // Cover underflow case and wrap around.
-      if (searchIndex < 0) {
-        searchIndex += toSearch.length;
-      }
+  private static String getColor(boolean color) {
+    // Helper method for printing BitMap array
+    if (color) {
+      return "white";
+    } else {
+      return "black";
     }
-    for (boolean value : visited) {
-      if (!value) {
-        return false;
-      }
-    }
-    return true;
   }
 
-  @SuppressWarnings("unused")
+  private static Double convertInteger(String number) throws Exception {
+    if (!number.matches("[1234567890]*")) {
+      throw new Exception("Invalid Input");
+    }
+    double accumulator = 0;
+    int offset = number.length() - 1;
+    for (int i = 0; i < number.length(); i++) {
+      accumulator += (((int) number.charAt(i) - (int) '0') * Math.pow(10, offset - i));
+    }
+    return accumulator;
+  }
+
+  private static boolean[][] cloneBitMap(boolean[][] bitMap) {
+    // Clone bitMap array so the original is not altered by processing
+    boolean[][] cloned = new boolean[bitMap.length][];
+    for (int i = 0; i < bitMap.length; i++) {
+      int innerLength = bitMap[i].length;
+      cloned[i] = new boolean[innerLength];
+      System.arraycopy(bitMap[i], 0, cloned[i], 0, innerLength);
+    }
+    return cloned;
+  }
+
   private static boolean hasCycleGoogleSample(int[] x) {
     // Test for null or zero length, else
     int currentPos = 0;
