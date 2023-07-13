@@ -9,12 +9,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({
-  "GrazieInspection",
-  "DuplicatedCode",
-  "NewClassNamingConvention",
-  "BooleanMethodIsAlwaysInverted"
-})
+@SuppressWarnings({"DuplicatedCode", "NewClassNamingConvention", "BooleanMethodIsAlwaysInverted"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_07_Build_Order_Test {
   @Rule public final TestName name = new TestName();
