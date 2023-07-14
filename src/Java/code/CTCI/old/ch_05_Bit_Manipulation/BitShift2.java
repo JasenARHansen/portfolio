@@ -1,6 +1,6 @@
 package Java.code.ctci.old.ch_05_Bit_Manipulation;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 public class BitShift2 {
 
   public static int updateBits(int n, int m, int i, int j) {
