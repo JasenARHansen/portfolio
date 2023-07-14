@@ -1,3 +1,18 @@
-out
-.idea
-portfolio.iml
+# Blocklist files/folders in same directory as the .gitignore file
+/*
+
+# Includelist some files
+# !.gitignore
+# !README.md
+
+# Ignore all files named .DS_Store or ending with .log
+# **/.DS_Store
+# **.log
+
+# Includelist folder/a/b1/ and folder/a/b2/
+# trailing "/" is optional for folders, may match file though.
+# "/" is NOT optional when followed by a *
+!modules/
+modules/*
+!src/
+src/*
