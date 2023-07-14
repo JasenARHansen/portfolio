@@ -1,13 +1,11 @@
 package Java.test.ctci.old.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import Java.code.ctci.old.ch_04_Trees_and_Graphs.GraphAdjacencyMatrix;
+import Java.code.ctci.old.ch_04_Trees_and_Graphs.GraphAdjacencyMatrix2;
 import Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes.Graph;
 import Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes.Node;
-import Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes.Question;
-import java.util.LinkedList;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -56,16 +54,6 @@ public class Q4_01_Route_Between_Nodes_Test {
   @Test
   public void routeBetween_solution_1() {
     System.out.format("%s:\n", name.getMethodName());
-    Graph g = createNewGraph();
-    Node[] n = g.getNodes();
-    Node start = n[3];
-    Node end = n[5];
-    boolean result = search(g, start, end);
-    assertTrue(result);
-    System.out.format("\tA path exists between %s and %s: %b\n", start, end, result);
-  }
-
-  public static Graph createNewGraph() {
     Graph g = new Graph();
     Node[] temp = new Node[6];
     temp[0] = new Node("a", 3);
@@ -82,39 +70,11 @@ public class Q4_01_Route_Between_Nodes_Test {
     for (int i = 0; i < 6; i++) {
       g.addNode(temp[i]);
     }
-    return g;
-  }
-
-  public static boolean search(Graph g, Node start, Node end) {
-    LinkedList<Node> q = new LinkedList<>();
-    for (Node u : g.getNodes()) {
-      u.state = Question.State.Unvisited;
-    }
-    start.state = Question.State.Visiting;
-    q.add(start);
-    Node u;
-    while (!q.isEmpty()) {
-      u = q.removeFirst();
-      if (u != null) {
-        for (Node v : u.getAdjacent()) {
-          if (v.state == Question.State.Unvisited) {
-            if (v == end) {
-              return true;
-            } else {
-              v.state = Question.State.Visiting;
-              q.add(v);
-            }
-          }
-        }
-        u.state = Question.State.Visited;
-      }
-    }
-    return false;
-  }
-
-  public enum State {
-    Unvisited,
-    Visited,
-    Visiting
+    Node[] n = g.getNodes();
+    Node start = n[3];
+    Node end = n[5];
+    boolean result = GraphAdjacencyMatrix2.search(g, start, end);
+    assertTrue(result);
+    System.out.format("\tA path exists between %s and %s: %b\n", start, end, result);
   }
 }

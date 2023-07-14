@@ -1,31 +1,11 @@
-package Java.test.unsorted;
+package Java.code.unsorted;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.*;
-import org.junit.Test;
 
-@SuppressWarnings({"CommentedOutCode", "DuplicatedCode", "DataFlowIssue"})
-public class MyTest {
-  @Test
-  public void test1() {
-    System.out.println("Test 1");
-    int[] array1 = {1, 5, 10, 11, 13, 18};
-    int[] array2 = {2, 3, 7, 9, 12, 16, 17};
-    int[] answer = mergeAndSort(array1, array2);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = search(i, array1, array2);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
+@SuppressWarnings({"DuplicatedCode", "DataFlowIssue"})
+public class Mine {
 
-  private int[] mergeAndSort(int[]... sourceArrays) {
+  public static int[] mergeAndSort(int[]... sourceArrays) {
     List<Integer> merged = new ArrayList<>();
     for (int[] array : sourceArrays) {
       merged.addAll(Arrays.stream(array).boxed().toList());
@@ -39,12 +19,12 @@ public class MyTest {
     return returnArray;
   }
 
-  private int search(int element, int[] array1, int[] array2) {
+  public static int search(int element, int[] array1, int[] array2) {
     if ((element < 1) || (element > (array1.length + array2.length))) {
       return -1;
     }
-    // Arrays.sort(array1);/* To pre-sort the contents of the Array. */
-    // Arrays.sort(array2);/* To pre-sort the contents of the Array. */
+    Arrays.sort(array1); /* To pre-sort the contents of the Array. */
+    Arrays.sort(array2); /* To pre-sort the contents of the Array. */
     int value = -1;
     int counter = 0;
     int index1 = 0;
@@ -67,98 +47,7 @@ public class MyTest {
     return value;
   }
 
-  @Test
-  public void test2() {
-    System.out.println("Test 2");
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    int[] array2 = {7, 8, 9, 10, 11, 12, 13};
-    int[] answer = mergeAndSort(array1, array2);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = search(i, array1, array2);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  @Test
-  public void test3() {
-    System.out.println("Test 3");
-    int[] array1 = {7, 8, 9, 10, 11, 12, 13};
-    int[] array2 = {1, 2, 3, 4, 5, 6};
-    int[] answer = mergeAndSort(array1, array2);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = search(i, array1, array2);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  @Test
-  public void test4() {
-    System.out.println("Test 4");
-    int[] array1 = {6, 8, 2, 10, 4, 12, 13};
-    int[] array2 = {1, 7, 3, 5, 5, 6};
-    int[] answer = mergeAndSort(array1, array2);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = search(i, array1, array2);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  @Test
-  public void test5() {
-    System.out.println("Test 5");
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    int[] array2 = {7, 8, 9, 10, 11, 12, 13};
-    int[] answer = mergeAndSort(array1, array2);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = search(i, array1, array2);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  @Test
-  public void test6() {
-    System.out.println("Test 6");
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    int[] array2 = {7, 8, 9, 10, 11, 12, 13};
-    int[] array3 = {3, 6, 9};
-    int[] answer = mergeAndSort(array1, array2, array3);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = searchComplex(i, array1, array2, array3);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  private int searchComplex(int element, int[]... sourceArrays) {
+  public static int searchComplex(int element, int[]... sourceArrays) {
     int totalCount = 0;
     for (int[] array : sourceArrays) {
       Arrays.sort(array); /* To pre-sort the contents of the Array. */
@@ -187,35 +76,7 @@ public class MyTest {
     return value;
   }
 
-  @Test
-  public void test7() {
-    System.out.println("Test 6");
-    int[] array1 = {5, 3, 1, 2, 4, 6};
-    int[] array2 = {11, 12, 7, 9, 8, 10, 13};
-    int[] array3 = {6, 3, 9};
-    int[] answer = mergeAndSort(array1, array2, array3);
-    for (int i = 1; i <= answer.length; i++) {
-      int value = searchComplex(i, array1, array2, array3);
-      System.out.println(
-          "The answer is: "
-              + value
-              + " and the expected is: "
-              + answer[i - 1]
-              + ".  This is "
-              + (value == answer[i - 1]));
-    }
-  }
-
-  @Test
-  public void test9() {
-    // Mock inputs for scanner
-    String input = "3.0 3 1 2 2.0 2 3 4.0 3 4 4.0";
-    InputStream in = new ByteArrayInputStream(input.getBytes());
-    System.setIn(in);
-    highestAssociativity();
-  }
-
-  private void highestAssociativity() {
+  public static String highestAssociativity() {
     Scanner scan = new Scanner(System.in);
     float AssociativityThreshold = scan.nextFloat();
     int associationCount = scan.nextInt();
@@ -283,19 +144,10 @@ public class MyTest {
       }
     }
     Collections.sort(associativityHeadList);
-    System.out.println(associativityHeadList.get(0));
+    return associativityHeadList.get(0);
   }
 
-  @Test
-  public void test10() {
-    // Mock inputs for scanner
-    String input = "3 1 2 3 2 3 4 3 4 5";
-    InputStream in = new ByteArrayInputStream(input.getBytes());
-    System.setIn(in);
-    loopTest();
-  }
-
-  private void loopTest() {
+  public static void loopTest() {
     Scanner scan = new Scanner(System.in);
     int t = scan.nextInt();
     for (int i = 0; i < t; i++) {
@@ -314,7 +166,7 @@ public class MyTest {
       for (int value : loopOut) {
         output.append(value).append(" ");
       }
-      System.out.println(output.toString().trim());
+      System.out.format("\t%s\n", output.toString().trim());
     }
     scan.close();
   }

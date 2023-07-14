@@ -1,9 +1,9 @@
 package Java.test.ctci.old.ch_03_Stacks_and_Queues;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 import Java.code.ctci.old.ch_03_Stacks_and_Queues.SortableStack;
+import Java.code.ctci.old.ch_03_Stacks_and_Queues.SortableStack2;
 import Java.code.ctci.source.ctciLibrary.AssortedMethods;
 import java.util.Stack;
 import org.junit.FixMethodOrder;
@@ -17,41 +17,6 @@ import org.junit.runners.MethodSorters;
 public class Q3_05_Sort_Stack_Test {
   @Rule public final TestName name = new TestName();
 
-  public static Stack<Integer> mergesort(Stack<Integer> inStack) {
-    if (inStack.size() <= 1) {
-      return inStack;
-    }
-    Stack<Integer> left = new Stack<>();
-    Stack<Integer> right = new Stack<>();
-    int count = 0;
-    while (inStack.size() != 0) {
-      count++;
-      if (count % 2 == 0) {
-        left.push(inStack.pop());
-      } else {
-        right.push(inStack.pop());
-      }
-    }
-    left = mergesort(left);
-    right = mergesort(right);
-    while (left.size() > 0 || right.size() > 0) {
-      if (left.size() == 0) {
-        inStack.push(right.pop());
-      } else if (right.size() == 0) {
-        inStack.push(left.pop());
-      } else if (right.peek().compareTo(left.peek()) <= 0) {
-        inStack.push(left.pop());
-      } else {
-        inStack.push(right.pop());
-      }
-    }
-    Stack<Integer> reverseStack = new Stack<>();
-    while (inStack.size() > 0) {
-      reverseStack.push(inStack.pop());
-    }
-    return reverseStack;
-  }
-
   @Test
   public void sort_stack_solution_1() {
     System.out.format("%s:\n", name.getMethodName());
@@ -61,27 +26,11 @@ public class Q3_05_Sort_Stack_Test {
       s.push(r);
     }
     String notExpected = s.toString();
-    sort(s);
+    SortableStack2.sort(s);
     String result = s.toString();
     assertNotEquals(notExpected, result);
     while (!s.isEmpty()) {
       System.out.format("\t%s\n", s.pop());
-    }
-  }
-
-  public static void sort(Stack<Integer> s) {
-    Stack<Integer> r = new Stack<>();
-    while (!s.isEmpty()) {
-      /* Insert each element in s in sorted order into r. */
-      int tmp = s.pop();
-      while (!r.isEmpty() && r.peek() > tmp) {
-        s.push(r.pop());
-      }
-      r.push(tmp);
-    }
-    /* Copy the elements back. */
-    while (!r.isEmpty()) {
-      s.push(r.pop());
     }
   }
 
@@ -113,7 +62,7 @@ public class Q3_05_Sort_Stack_Test {
       s.push(r);
     }
     String notExpected = s.toString();
-    mergesort(s);
+    SortableStack2.mergesort(s);
     String result = s.toString();
     assertNotEquals(notExpected, result);
     while (!s.isEmpty()) {

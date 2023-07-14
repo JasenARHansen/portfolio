@@ -14,6 +14,11 @@ public class TreeNode {
     size = 1;
   }
 
+  @Override
+  public String toString() {
+    return String.format("(data: %d, Size: %d)", this.data, this.size);
+  }
+
   public static TreeNode createMinimalBST(int[] array) {
     return createMinimalBST(array, 0, array.length - 1);
   }

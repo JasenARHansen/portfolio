@@ -10,7 +10,7 @@ import org.junit.Test;
 public class BaseTest {
 
   @Test
-  public void test() {
+  public void AffinityClusters() {
     ArrayList<ArrayList<String>> affinityClusters = new ArrayList<>();
     // Mock inputs for scanner
     String input = "3.0 3 1 2 2.0 2 3 4.0 3 4 4.0";

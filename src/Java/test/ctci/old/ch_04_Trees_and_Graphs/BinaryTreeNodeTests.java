@@ -16,138 +16,154 @@ public class BinaryTreeNodeTests {
 
   @Test
   public void BinaryTreeNodeTree_1() {
-    BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
-    assertNotNull(node);
     System.out.format("%s:\n", name.getMethodName());
+    BinaryTreeNode<Integer> result = new BinaryTreeNode<>();
+    assertNotNull(result);
+    System.out.format("\tNode: %s\n", result);
   }
 
   @Test
   public void BinaryTreeNodeTree_2() {
-    BinaryTreeNode<Integer> node = new BinaryTreeNode<>(10);
-    assertNotNull(node);
     System.out.format("%s:\n", name.getMethodName());
+    BinaryTreeNode<Integer> result = new BinaryTreeNode<>(10);
+    assertNotNull(result);
+    System.out.format("\tNode: %s\n", result);
   }
 
   @Test
   public void getData() {
-    int value = 10;
-    BinaryTreeNode<Integer> node = new BinaryTreeNode<>(value);
-    int data = node.getData();
-    assertEquals(value, data);
-    System.out.format("%s: getData %d\n", name.getMethodName(), data);
+    int expected = 10;
+    System.out.format("%s:\n", name.getMethodName());
+    BinaryTreeNode<Integer> node = new BinaryTreeNode<>(expected);
+    int result = node.getData();
+    assertEquals(expected, result);
+    System.out.format("\tData: %d\n", result);
   }
 
   @Test
   public void setData() {
-    int value_1 = 10;
-    BinaryTreeNode<Integer> node = new BinaryTreeNode<>(value_1);
-    int value_2 = 15;
-    node.setData(value_2);
-    int data = node.getData();
-    assertNotEquals(value_1, data);
-    assertEquals(value_2, data);
-    System.out.format("%s: setData %d\n", name.getMethodName(), data);
+    int expected_1 = 10;
+    int expected_2 = 15;
+    System.out.format("%s:\n", name.getMethodName());
+    BinaryTreeNode<Integer> node = new BinaryTreeNode<>(expected_1);
+    node.setData(expected_2);
+    int result = node.getData();
+    assertNotEquals(expected_1, result);
+    assertEquals(expected_2, result);
+    System.out.format("\tData: %d\n", result);
   }
 
   @Test
   public void getHeight() {
+    int expected = 0;
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
-    int data = node.getHeight();
-    assertEquals(0, data);
-    System.out.format("%s: getHeight %d\n", name.getMethodName(), data);
+    int result = node.getHeight();
+    assertEquals(expected, result);
+    System.out.format("\tHeight: %d\n", result);
   }
 
   @Test
   public void setHeight() {
+    int expected = 15;
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
-    int data_1 = node.getHeight();
-    int value = 15;
-    node.setHeight(value);
-    int data_2 = node.getHeight();
-    assertNotEquals(value, data_1);
-    assertEquals(value, data_2);
-    System.out.format("%s: setHeight %d\n", name.getMethodName(), data_2);
+    int result_1 = node.getHeight();
+    node.setHeight(expected);
+    int result_2 = node.getHeight();
+    assertNotEquals(expected, result_1);
+    assertEquals(expected, result_2);
+    System.out.format("\tHeight: %d\n", result_2);
   }
 
   @Test
   public void getWeight() {
+    int expected = 0;
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
     int data = node.getWeight();
-    assertEquals(0, data);
-    System.out.format("%s: getWeight %d\n", name.getMethodName(), data);
+    assertEquals(expected, data);
+    System.out.format("\tWeight: %d\n", data);
   }
 
   @Test
   public void setLeftChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
     BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    boolean data_1 = node.hasLeftChild();
+    boolean result_1 = node.hasLeftChild();
     node.setLeftChild(child);
-    boolean data_2 = node.hasLeftChild();
-    assertFalse(data_1);
-    assertTrue(data_2);
-    System.out.format("%s: setLeftChild %b - %b\n", name.getMethodName(), data_1, data_2);
+    boolean result_2 = node.hasLeftChild();
+    assertFalse(result_1);
+    assertTrue(result_2);
+    System.out.format("\tLeftChild: %b - %b\n", result_1, result_2);
   }
 
   @Test
   public void hasLeftChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
     BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    boolean data_1 = node.hasLeftChild();
+    boolean expected_1 = node.hasLeftChild();
     node.setLeftChild(child);
-    boolean data_2 = node.hasLeftChild();
-    assertFalse(data_1);
-    assertTrue(data_2);
-    System.out.format("%s: hasLeftChild %b - %b\n", name.getMethodName(), data_1, data_2);
+    boolean expected_2 = node.hasLeftChild();
+    assertFalse(expected_1);
+    assertTrue(expected_2);
+    System.out.format("\tLeftChild: %b - %b\n", expected_1, expected_2);
   }
 
   @Test
   public void getLeftChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
-    BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    node.setLeftChild(child);
+    BinaryTreeNode<Integer> expected = new BinaryTreeNode<>();
+    node.setLeftChild(expected);
     BinaryTreeNode<Integer> result = node.getLeftChild();
-    assertEquals(child, result);
-    System.out.format("%s: getLeftChild %s\n", name.getMethodName(), result.toString());
+    assertEquals(expected, result);
+    System.out.format("\tLeftChild: %s\n", result.toString());
   }
 
   @Test
   public void setRightChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
     BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    boolean data_1 = node.hasRightChild();
+    boolean result_1 = node.hasRightChild();
     node.setRightChild(child);
-    boolean data_2 = node.hasRightChild();
-    assertFalse(data_1);
-    assertTrue(data_2);
-    System.out.format("%s: setRightChild %b - %b\n", name.getMethodName(), data_1, data_2);
+    boolean result_2 = node.hasRightChild();
+    assertFalse(result_1);
+    assertTrue(result_2);
+    System.out.format("\tRightChild: %b - %b\n", result_1, result_2);
   }
 
   @Test
   public void hasRightChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
     BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    boolean data_1 = node.hasRightChild();
+    boolean expected_1 = node.hasRightChild();
     node.setRightChild(child);
-    boolean data_2 = node.hasRightChild();
-    assertFalse(data_1);
-    assertTrue(data_2);
-    System.out.format("%s: hasRightChild %b - %b\n", name.getMethodName(), data_1, data_2);
+    boolean expected_2 = node.hasRightChild();
+    assertFalse(expected_1);
+    assertTrue(expected_2);
+    System.out.format("\tRightChild: %b - %b\n", expected_1, expected_2);
   }
 
   @Test
   public void getRightChild() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>();
-    BinaryTreeNode<Integer> child = new BinaryTreeNode<>();
-    node.setRightChild(child);
+    BinaryTreeNode<Integer> expected = new BinaryTreeNode<>();
+    node.setRightChild(expected);
     BinaryTreeNode<Integer> result = node.getRightChild();
-    assertEquals(child, result);
-    System.out.format("%s: getRightChild %s\n", name.getMethodName(), result.toString());
+    assertEquals(expected, result);
+    System.out.format("\tRightChild: %s\n", result.toString());
   }
 
   @Test
-  public void print() {
+  public void to_string() {
+    System.out.format("%s:\n", name.getMethodName());
     BinaryTreeNode<Integer> node = new BinaryTreeNode<>(5);
-    System.out.format("%s: toString %s\n", name.getMethodName(), node);
+    System.out.format("\ttoString: %s\n", node);
   }
 }

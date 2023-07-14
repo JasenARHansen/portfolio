@@ -1,16 +1,12 @@
-package Java.test.interview.Google;
+package Java.code.interview.Google;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "unused"})
 public class Associativity {
-  public static void main(String[] args) {
-    Associativity associativity = new Associativity();
-    associativity.highestAssociativity();
-  }
 
   public void highestAssociativity() {
     Scanner scan = new Scanner(System.in);

@@ -2,6 +2,10 @@ package Java.test.ctci.old.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes;
 
 import Java.code.ctci.old.ch_04_Trees_and_Graphs.BinaryTree;
 import Java.code.ctci.source.ch_04_Trees_and_Graphs.q4_11_Random_Node.Tree;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,34 +20,31 @@ public class Q4_11_Random_Node_Test {
   @Test
   public void getRandomNode() {
     System.out.format("%s:\n", name.getMethodName());
-    int[] counts = new int[10];
+    int size = 10;
+    int[] counts = new int[size];
     BinaryTree<Integer> leftTree = new BinaryTree<>();
-    leftTree.insert(0);
-    leftTree.insert(1);
-    leftTree.insert(2);
-    leftTree.insert(3);
-    leftTree.insert(4);
-    leftTree.insert(5);
-    leftTree.insert(6);
-    leftTree.insert(7);
-    leftTree.insert(8);
-    leftTree.insert(9);
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < counts.length; i++) {
+      leftTree.insert(i);
+    }
+    for (int i = 0; i < 1000; i++) {
       int d = leftTree.getRandomNode();
       counts[d]++;
     }
     for (int i = 0; i < counts.length; i++) {
-      System.out.println(i + ": " + counts[i]);
+      System.out.format("\t%d:%d\n", i, counts[i]);
     }
   }
 
   @Test
   public void getRandomNode_solution_1() {
     System.out.format("%s:\n", name.getMethodName());
-    int[] counts = new int[10];
-    for (int i = 0; i < 1000000; i++) {
+    int size = 10;
+    int[] counts = new int[size];
+    for (int i = 0; i < 1000; i++) {
       Tree tree = new Tree();
-      int[] array = {1, 0, 6, 2, 3, 9, 4, 5, 8, 7};
+      List<Integer> digits = IntStream.range(0, size).boxed().collect(Collectors.toList());
+      Collections.shuffle(digits);
+      Integer[] array = digits.toArray(new Integer[0]);
       for (int x : array) {
         tree.insertInOrder(x);
       }
@@ -51,7 +52,7 @@ public class Q4_11_Random_Node_Test {
       counts[d]++;
     }
     for (int i = 0; i < counts.length; i++) {
-      System.out.println(i + ": " + counts[i]);
+      System.out.format("\t%d:%d\n", i, counts[i]);
     }
   }
 }

@@ -1,9 +1,8 @@
 package Java.test.ctci.old.ch_05_Bit_Manipulation;
 
+import static org.junit.Assert.assertEquals;
+
 import Java.code.ctci.old.ch_05_Bit_Manipulation.BitShift;
-import Java.code.ctci.source.ctciLibrary.AssortedMethods;
-import java.util.ArrayList;
-import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,31 +16,15 @@ public class Q5_07_Pairwise_Swap_Test {
 
   @Test
   public void swapOddEvenBits() {
+    int[] expected = {15, 1911, 6893, 6630, 2527, 778312, -42828};
     System.out.format("%s:\n", name.getMethodName());
-    ArrayList<Integer> values =
-        new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
-    for (Integer value : values) {
-      int converted = BitShift.swapOddEvenBits(value);
+    int[] values = {15, 3003, 9694, 9945, 1775, 512132, -23432};
+    for (int i = 0; i < values.length; i++) {
+      int result = BitShift.swapOddEvenBits(values[i]);
+      assertEquals(expected[i], result);
       System.out.format(
-          "%s: %d (%s) converts to %d (%s)\n",
-          name.getMethodName(),
-          value,
-          Integer.toBinaryString(value),
-          converted,
-          Integer.toBinaryString(converted));
+          "\t%d (%s) converts to %d (%s)\n",
+          values[i], Integer.toBinaryString(values[i]), result, Integer.toBinaryString(result));
     }
-  }
-
-  @Test
-  public void swapOddEvenBits_solution_1() {
-    System.out.format("%s:\n", name.getMethodName());
-    int a = 234321;
-    System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
-    int b = swapOddEvenBits(a);
-    System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
-  }
-
-  public static int swapOddEvenBits(int x) {
-    return (((x & 0xaaaaaaaa) >>> 1) | ((x & 0x55555555) << 1));
   }
 }

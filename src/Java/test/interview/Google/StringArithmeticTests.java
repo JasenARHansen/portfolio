@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"DuplicatedCode", "OctalInteger"})
+@SuppressWarnings({"DuplicatedCode", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringArithmeticTests {
   @Rule public final TestName name = new TestName();
@@ -23,40 +23,55 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<String> output = string_arithmetic.convert("1234");
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "1234";
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_string_empty() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<String> output = string_arithmetic.convert("");
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "";
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_string_zero() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<String> output = string_arithmetic.convert("0");
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "0";
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_string_zeros() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<String> output = string_arithmetic.convert("00000");
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "00000";
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_string_padded_zeros() {
     List<String> expected = new ArrayList<>();
     expected.add("1");
-    List<String> output = string_arithmetic.convert("000001");
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "000001";
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
@@ -66,32 +81,22 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<String> output = string_arithmetic.convert(1234);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    int source = 1234;
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %d, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_number_zero() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<String> output = string_arithmetic.convert(0);
-    assertEquals(expected, output);
-  }
-
-  @Test
-  public void convert_number_zeros() {
-    List<String> expected = new ArrayList<>();
-    expected.add("0");
-    List<String> output = string_arithmetic.convert(000000);
-    assertEquals(expected, output);
-  }
-
-  @Test
-  public void convert_number_padded_zeros() {
-    List<String> expected = new ArrayList<>();
-    expected.add("1");
-    List<String> output = string_arithmetic.convert(000001);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    int source = 0;
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %d, Result: %s\n", source, result);
   }
 
   @Test
@@ -101,30 +106,36 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<Integer> input = new ArrayList<>();
-    input.add(4);
-    input.add(3);
-    input.add(2);
-    input.add(1);
-    List<String> output = string_arithmetic.convert(input);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<Integer> source = new ArrayList<>();
+    source.add(4);
+    source.add(3);
+    source.add(2);
+    source.add(1);
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void convert_number_list_null() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<String> output = string_arithmetic.convert(null);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<String> result = string_arithmetic.convert(null);
+    assertEquals(expected, result);
+    System.out.format("\tSource: nll, Result: %s\n", result);
   }
 
   @Test
   public void convert_number_list_empty() {
     List<String> expected = new ArrayList<>();
     expected.add("0");
-    List<Integer> input = new ArrayList<>();
-    List<String> output = string_arithmetic.convert(input);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<Integer> source = new ArrayList<>();
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
@@ -134,14 +145,16 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<Integer> input = new ArrayList<>();
-    input.add(4);
-    input.add(3);
-    input.add(2);
-    input.add(1);
-    input.add(0);
-    List<String> output = string_arithmetic.convert(input);
-    assertEquals(expected, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<Integer> source = new ArrayList<>();
+    source.add(4);
+    source.add(3);
+    source.add(2);
+    source.add(1);
+    source.add(0);
+    List<String> result = string_arithmetic.convert(source);
+    assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
@@ -151,14 +164,16 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<String> input = new ArrayList<>();
-    input.add("4");
-    input.add("3");
-    input.add("2");
-    input.add("1");
-    input.add("0");
-    List<String> result = string_arithmetic.convert(input);
+    System.out.format("%s:\n", name.getMethodName());
+    List<String> source = new ArrayList<>();
+    source.add("4");
+    source.add("3");
+    source.add("2");
+    source.add("1");
+    source.add("0");
+    List<String> result = string_arithmetic.convert(source);
     assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
@@ -168,77 +183,81 @@ public class StringArithmeticTests {
     expected.add("3");
     expected.add("2");
     expected.add("1");
-    List<Integer> input = new ArrayList<>();
-    input.add(4);
-    input.add(3);
-    input.add(2);
-    input.add(1);
-    input.add(0);
-    List<String> result = string_arithmetic.convert(input);
+    System.out.format("%s:\n", name.getMethodName());
+    List<Integer> source = new ArrayList<>();
+    source.add(4);
+    source.add(3);
+    source.add(2);
+    source.add(1);
+    source.add(0);
+    List<String> result = string_arithmetic.convert(source);
     assertEquals(expected, result);
+    System.out.format("\tSource: %s, Result: %s\n", source, result);
   }
 
   @Test
   public void greaterThan_less_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.greaterThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, ">", rvalue, output);
-    assertFalse(output);
-  }
-
-  public void print_test(
-      String name, List<String> lvalue, String operation, List<String> rvalue, boolean solution) {
+    boolean result = string_arithmetic.greaterThan(lvalue, rvalue);
+    assertFalse(result);
     System.out.printf(
-        "%s: %s %s %s = %s\n",
-        name,
-        string_arithmetic.convert(lvalue),
-        operation,
-        string_arithmetic.convert(rvalue),
-        solution);
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), ">", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void greaterThan_more_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     lvalue.add("2");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("1");
-    boolean output = string_arithmetic.greaterThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, ">", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.greaterThan(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), ">", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void greaterThan_equal() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.greaterThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, ">", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.greaterThan(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), ">", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void greaterThan_true() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("1");
-    boolean output = string_arithmetic.greaterThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, ">", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.greaterThan(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), ">", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void greaterThan_false() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     lvalue.add("2");
@@ -247,48 +266,60 @@ public class StringArithmeticTests {
     rvalue.add("1");
     rvalue.add("2");
     rvalue.add("2");
-    boolean output = string_arithmetic.greaterThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, ">", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.greaterThan(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), ">", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void lessThan_less_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.lessThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "<", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.lessThan(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "<", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void lessThan_more_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("1");
-    boolean output = string_arithmetic.lessThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "<", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.lessThan(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "<", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void lessThan_equal() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("1");
-    boolean output = string_arithmetic.lessThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "<", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.lessThan(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "<", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void lessThan_true() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     lvalue.add("2");
@@ -297,13 +328,16 @@ public class StringArithmeticTests {
     rvalue.add("3");
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.lessThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "<", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.lessThan(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "<", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void lessThan_false() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("3");
     lvalue.add("2");
@@ -312,46 +346,57 @@ public class StringArithmeticTests {
     rvalue.add("2");
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.lessThan(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "<", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.lessThan(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "<", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void equal_less_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.equal(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "==", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.equal(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "==", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void equal_more_digits() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("1");
-    boolean output = string_arithmetic.equal(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "==", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.equal(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "==", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void equal_true() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("2");
     lvalue.add("1");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.equal(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "==", rvalue, output);
-    assertTrue(output);
+    boolean result = string_arithmetic.equal(lvalue, rvalue);
+    assertTrue(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "==", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
@@ -359,131 +404,159 @@ public class StringArithmeticTests {
     List<String> lvalue = new ArrayList<>();
     lvalue.add("1");
     lvalue.add("1");
+    System.out.format("%s:\n", name.getMethodName());
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    boolean output = string_arithmetic.equal(lvalue, rvalue);
-    print_test(name.getMethodName(), lvalue, "==", rvalue, output);
-    assertFalse(output);
+    boolean result = string_arithmetic.equal(lvalue, rvalue);
+    assertFalse(result);
+    System.out.printf(
+        "\t%s %s %s = %b\n",
+        string_arithmetic.convert(lvalue), "==", string_arithmetic.convert(rvalue), result);
   }
 
   @Test
   public void add() {
+    List<String> expected = new ArrayList<>();
+    expected.add("6");
+    expected.add("4");
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("4");
     lvalue.add("3");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    List<String> expected = new ArrayList<>();
-    expected.add("6");
-    expected.add("4");
-    List<String> output = string_arithmetic.add(lvalue, rvalue);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "+", rvalue, output);
-  }
-
-  public void print_test(
-      String name,
-      List<String> lvalue,
-      String operation,
-      List<String> rvalue,
-      List<String> solution) {
+    List<String> result = string_arithmetic.add(lvalue, rvalue);
+    assertEquals(expected, result);
     System.out.printf(
-        "%s: %s %s %s = %s\n",
-        name,
+        "\t%s %s %s = %s\n",
         string_arithmetic.convert(lvalue),
-        operation,
+        "+",
         string_arithmetic.convert(rvalue),
-        string_arithmetic.convert(solution));
+        string_arithmetic.convert(result));
   }
 
   @Test
   public void add_base_5() {
-    List<String> lvalue = new ArrayList<>();
-    lvalue.add("4");
-    lvalue.add("3");
-    List<String> rvalue = new ArrayList<>();
-    rvalue.add("2");
-    rvalue.add("1");
     List<String> expected = new ArrayList<>();
     expected.add("1");
     expected.add("0");
     expected.add("1");
-    List<String> output = string_arithmetic.add(lvalue, rvalue, 5);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "+", rvalue, output);
-  }
-
-  @Test
-  public void subtract() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("4");
     lvalue.add("3");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
+    List<String> result = string_arithmetic.add(lvalue, rvalue, 5);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "+",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
+  }
+
+  @Test
+  public void subtract() {
     List<String> expected = new ArrayList<>();
     expected.add("2");
     expected.add("2");
-    List<String> output = string_arithmetic.subtract(lvalue, rvalue);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "-", rvalue, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<String> lvalue = new ArrayList<>();
+    lvalue.add("4");
+    lvalue.add("3");
+    List<String> rvalue = new ArrayList<>();
+    rvalue.add("2");
+    rvalue.add("1");
+    List<String> result = string_arithmetic.subtract(lvalue, rvalue);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "-",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
   }
 
   @Test
   public void subtract_base_5() {
+    List<String> expected = new ArrayList<>();
+    expected.add("4");
+    expected.add("1");
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("3");
     lvalue.add("3");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("4");
     rvalue.add("1");
-    List<String> expected = new ArrayList<>();
-    expected.add("4");
-    expected.add("1");
-    List<String> output = string_arithmetic.subtract(lvalue, rvalue, 5);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "-", rvalue, output);
+    List<String> result = string_arithmetic.subtract(lvalue, rvalue, 5);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "-",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
   }
 
   @Test
   public void multiply() {
-    List<String> lvalue = new ArrayList<>();
-    lvalue.add("4");
-    lvalue.add("3");
-    List<String> rvalue = new ArrayList<>();
-    rvalue.add("2");
-    rvalue.add("1");
     List<String> expected = new ArrayList<>();
     expected.add("8");
     expected.add("0");
     expected.add("4");
-    List<String> output = string_arithmetic.multiply(lvalue, rvalue);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "*", rvalue, output);
-  }
-
-  @Test
-  public void multiply_base_5() {
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("4");
     lvalue.add("3");
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
+    List<String> result = string_arithmetic.multiply(lvalue, rvalue);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "*",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
+  }
+
+  @Test
+  public void multiply_base_5() {
     List<String> expected = new ArrayList<>();
     expected.add("3");
     expected.add("1");
     expected.add("0");
     expected.add("1");
-    List<String> output = string_arithmetic.multiply(lvalue, rvalue, 5);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "*", rvalue, output);
+    System.out.format("%s:\n", name.getMethodName());
+    List<String> lvalue = new ArrayList<>();
+    lvalue.add("4");
+    lvalue.add("3");
+    List<String> rvalue = new ArrayList<>();
+    rvalue.add("2");
+    rvalue.add("1");
+    List<String> result = string_arithmetic.multiply(lvalue, rvalue, 5);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "*",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
   }
 
   @Test
   public void divide() {
+    List<String> expected = new ArrayList<>();
+    expected.add("3");
+    expected.add("8");
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("0");
     lvalue.add("0");
@@ -492,16 +565,22 @@ public class StringArithmeticTests {
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    List<String> expected = new ArrayList<>();
-    expected.add("3");
-    expected.add("8");
-    List<String> output = string_arithmetic.divide(lvalue, rvalue);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "/", rvalue, output);
+    List<String> result = string_arithmetic.divide(lvalue, rvalue);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "/",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
   }
 
   @Test
   public void divide_base_5() {
+    List<String> expected = new ArrayList<>();
+    expected.add("2");
+    expected.add("3");
+    System.out.format("%s:\n", name.getMethodName());
     List<String> lvalue = new ArrayList<>();
     lvalue.add("0");
     lvalue.add("0");
@@ -510,11 +589,13 @@ public class StringArithmeticTests {
     List<String> rvalue = new ArrayList<>();
     rvalue.add("2");
     rvalue.add("1");
-    List<String> expected = new ArrayList<>();
-    expected.add("2");
-    expected.add("3");
-    List<String> output = string_arithmetic.divide(lvalue, rvalue, 5);
-    assertEquals(expected, output);
-    print_test(name.getMethodName(), lvalue, "/", rvalue, output);
+    List<String> result = string_arithmetic.divide(lvalue, rvalue, 5);
+    assertEquals(expected, result);
+    System.out.printf(
+        "\t%s %s %s = %s\n",
+        string_arithmetic.convert(lvalue),
+        "/",
+        string_arithmetic.convert(rvalue),
+        string_arithmetic.convert(result));
   }
 }

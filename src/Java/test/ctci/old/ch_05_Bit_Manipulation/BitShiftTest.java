@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import Java.code.ctci.old.ch_05_Bit_Manipulation.BitShift;
-import java.util.ArrayList;
-import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -19,93 +17,106 @@ public class BitShiftTest {
 
   @Test
   public void BitShift() {
+    System.out.format("%s:\n", name.getMethodName());
     BitShift bitShift = new BitShift();
     assertNotNull(bitShift);
-    System.out.format("%s:\n", name.getMethodName());
   }
 
   @Test
   public void updateBits() {
+    System.out.format("%s:\n", name.getMethodName());
     int base = ~23423;
     int insert = 5;
     int indexStart = 28;
     int indexStop = 30;
     int result = BitShift.updateBits(base, insert, indexStart, indexStop);
     System.out.format(
-        "%s: base %d insert %d start index %d stop index %d results with %d\n",
-        name.getMethodName(), base, insert, indexStart, indexStop, result);
+        "\tbase %d insert %d start index %d stop index %d results with %d\n",
+        base, insert, indexStart, indexStop, result);
   }
 
   @Test
   public void convertBinaryLessThanOne() {
-    ArrayList<Double> values = new ArrayList<>(Arrays.asList(0.5, 0.1, 0.25, 0.75));
+    String[] expected = {"0.001", "Error", "0.01", "0.1", "0.11"};
     System.out.format("%s:\n", name.getMethodName());
-    int index = 1;
-    for (Double value : values) {
-      String result = BitShift.convertBinaryLessThanOne(value);
-      System.out.format("\t%d: %f converted to binary is %s\n", index++, value, result);
+    double[] values = {.125, 0.1, 0.25, 0.5, 0.75};
+    for (int i = 0; i < values.length; i++) {
+      String result = BitShift.convertBinaryLessThanOne(values[i]);
+      assertEquals(expected[i], result);
+      System.out.format("\t%.3f converted to binary is %s\n", values[i], result);
     }
   }
 
   @Test
   public void longestSequence() {
-    int base = 28;
-    int result = BitShift.longestSequence(base);
-    assertEquals(4, result);
-    System.out.format("%s: base %d longestSequence %d\n", name.getMethodName(), base, result);
+    int[] expected = {5, 7, 8, 5, 8};
+    System.out.format("%s:\n", name.getMethodName());
+    int[] values = {15, 3003, 9694, 9945, 1775};
+    for (int i = 0; i < values.length; i++) {
+      int result = BitShift.longestSequence(values[i]);
+      assertEquals(expected[i], result);
+      System.out.format(
+          "\tThe largest bit sequence in %s allowing a single bit skip %d\n",
+          Integer.toBinaryString(values[i]), result);
+    }
   }
 
   @Test
   public void getNext() {
-    int base = 28;
-    int result = BitShift.getNext(base);
-    assertEquals(35, result);
-    System.out.format("%s: base %d getNext %d\n", name.getMethodName(), base, result);
+    int[] expected = {207, 198, 7735, 13967};
+    System.out.format("%s:\n", name.getMethodName());
+    int[] values = {190, 197, 7727, 13948};
+    for (int i = 0; i < values.length; i++) {
+      int result = BitShift.getNext(values[i]);
+      assertEquals(expected[i], result);
+      System.out.format("\tInitial number is %d with %d as next\n", values[i], result);
+    }
   }
 
   @Test
   public void getPrev() {
-    int base = 28;
-    int result = BitShift.getPrev(base);
-    assertEquals(26, result);
-    System.out.format("%s: base %d getNext %d\n", name.getMethodName(), base, result);
+    int[] expected = {189, 195, 7711, 13946};
+    System.out.format("%s:\n", name.getMethodName());
+    int[] values = {190, 197, 7727, 13948};
+    for (int i = 0; i < values.length; i++) {
+      int result = BitShift.getPrev(values[i]);
+      assertEquals(expected[i], result);
+      System.out.format("\tInitial number is %d with %d as previous\n", values[i], result);
+    }
   }
 
   @Test
   public void bitSwapRequired() {
+    int[] expected = {10, 15, 13, 14, 13, 0, 23};
     System.out.format("%s:\n", name.getMethodName());
     int left = 512132;
-    ArrayList<Integer> values =
-        new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
+    int[] data = {15, 3003, 9694, 9945, 1775, 512132, -23432};
     int index = 1;
-    for (Integer value : values) {
-      int conversionCount = BitShift.bitSwapRequired(left, value);
+    for (int i = 0; i < data.length; i++) {
+      int result = BitShift.bitSwapRequired(left, data[i]);
+      assertEquals(expected[i], result);
       System.out.format(
           "\t%d: It takes %d bit flips to convert %d (%s) to %d (%s)\n",
           index++,
-          conversionCount,
+          result,
           left,
           Integer.toBinaryString(left),
-          value,
-          Integer.toBinaryString(value));
+          data[i],
+          Integer.toBinaryString(data[i]));
     }
   }
 
   @Test
   public void swapOddEvenBits() {
+    int[] expected = {15, 1911, 6893, 6630, 2527, 778312, -42828};
     System.out.format("%s:\n", name.getMethodName());
-    ArrayList<Integer> values =
-        new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
-    int index = 1;
-    for (Integer value : values) {
-      int converted = BitShift.swapOddEvenBits(value);
+    int[] values = {15, 3003, 9694, 9945, 1775, 512132, -23432};
+    for (int i = 0; i < values.length; i++) {
+      int result = BitShift.swapOddEvenBits(values[i]);
+      assertEquals(expected[i], result);
       System.out.format(
-          "\t%d: %d (%s) converts to %d (%s)\n",
-          index++,
-          value,
-          Integer.toBinaryString(value),
-          converted,
-          Integer.toBinaryString(converted));
+          "\t%d (%s) converts to %d (%s)\n",
+          values[i], Integer.toBinaryString(values[i]), result, Integer.toBinaryString(result));
     }
   }
 

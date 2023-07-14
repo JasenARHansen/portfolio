@@ -1,9 +1,8 @@
 package Java.test.ctci.old.ch_05_Bit_Manipulation;
 
+import static org.junit.Assert.assertEquals;
+
 import Java.code.ctci.old.ch_05_Bit_Manipulation.BitShift;
-import Java.code.ctci.source.ctciLibrary.AssortedMethods;
-import java.util.ArrayList;
-import java.util.Arrays;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,65 +16,22 @@ public class Q5_06_Conversion_Test {
 
   @Test
   public void bitSwapRequired() {
+    int[] expected = {10, 15, 13, 14, 13, 0, 23};
     System.out.format("%s:\n", name.getMethodName());
     int left = 512132;
-    ArrayList<Integer> values =
-        new ArrayList<>(Arrays.asList(15, 3003, 9694, 9945, 1775, 512132, -23432));
-    for (Integer value : values) {
-      int conversionCount = BitShift.bitSwapRequired(left, value);
+    int[] data = {15, 3003, 9694, 9945, 1775, 512132, -23432};
+    int index = 1;
+    for (int i = 0; i < data.length; i++) {
+      int result = BitShift.bitSwapRequired(left, data[i]);
+      assertEquals(expected[i], result);
       System.out.format(
-          "%s: It takes %d bit flips to convert %d (%s) to %d (%s)\n",
-          name.getMethodName(),
-          conversionCount,
+          "\t%d: It takes %d bit flips to convert %d (%s) to %d (%s)\n",
+          index++,
+          result,
           left,
           Integer.toBinaryString(left),
-          value,
-          Integer.toBinaryString(value));
+          data[i],
+          Integer.toBinaryString(data[i]));
     }
-  }
-
-  @Test
-  public void bitSwapRequired_solution_1() {
-    System.out.format("%s:\n", name.getMethodName());
-    int a = -23432;
-    int b = 512132;
-    System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
-    System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
-    System.out.println("Required number of bits: " + bitSwapRequired_solution_1(a, b));
-  }
-
-  public static int bitSwapRequired_solution_1(int a, int b) {
-    int count = 0;
-    int c = a ^ b;
-    while (c != 0) {
-      count += c & 1; // Increment count if c ends with a 1
-      c >>>= 1; // Shift right by 1
-    }
-    return count;
-  }
-
-  @Test
-  public void bitSwapRequired_solution_2() {
-    System.out.format("%s:\n", name.getMethodName());
-    int a = -23432;
-    int b = 512132;
-    System.out.println(a + ": " + AssortedMethods.toFullBinaryString(a));
-    System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
-    System.out.println("Required number of bits: " + bitSwapRequired(a, b));
-  }
-
-  public static int bitSwapRequired(int a, int b) {
-    int count = 0;
-    int c = a ^ b;
-    System.out.println("****");
-    System.out.println(c + ": " + AssortedMethods.toFullBinaryString(c));
-    while (c != 0) {
-      System.out.println("c - 1: " + c + ": " + AssortedMethods.toFullBinaryString(c - 1));
-      c = c & (c - 1);
-      System.out.println("c: " + c + ": " + AssortedMethods.toFullBinaryString(c));
-      count++;
-      System.out.println("****");
-    }
-    return count;
   }
 }

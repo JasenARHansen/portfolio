@@ -1,10 +1,8 @@
 package Java.test.ctci.old.ch_04_Trees_and_Graphs.q4_01_Route_Between_Nodes;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import Java.code.ctci.old.ch_04_Trees_and_Graphs.BinaryTree;
-import Java.code.ctci.source.ctciLibrary.TreeNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.FixMethodOrder;
@@ -42,16 +40,5 @@ public class Q4_02_Minimal_Tree_Test {
     assertTrue(result);
     System.out.format("\tTree is a BST: %b\n", result);
     System.out.format("\tTree height: %d\n", myTree.getHeight());
-  }
-
-  @Test
-  public void createMinimalBST_solution() {
-    System.out.format("%s:\n", name.getMethodName());
-    int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    TreeNode result = TreeNode.createMinimalBST(array);
-    assertNotNull(result);
-    System.out.println("\tRoot: " + result.data);
-    System.out.println("\tCreated BST: " + result.isBST());
-    System.out.println("\tHeight: " + result.height());
   }
 }

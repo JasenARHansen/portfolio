@@ -63,7 +63,7 @@ public class Q2_07_Intersection_Test {
   }
 
   @Test
-  public void findIntersection_solution() {
+  public void findIntersection_solution_1() {
     System.out.format("%s:\n", name.getMethodName());
     /* Create linked list. */
     int[] vales = {-1, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8};

@@ -288,8 +288,8 @@ public class BinaryTree<T extends Comparable<T>> {
     return this.countPathsWithSum(this.root, sum, 0);
   }
 
-  public void outputInorder() {
-    System.out.print(dataInorder());
+  public String outputInorder() {
+    return dataInorder();
   }
 
   public T minValue() {
@@ -305,8 +305,8 @@ public class BinaryTree<T extends Comparable<T>> {
     return minValue;
   }
 
-  public void outputBreadth() {
-    System.out.print(dataBreadth());
+  public String outputBreadth() {
+    return dataBreadth();
   }
 
   public String dataBreadth() {
@@ -336,16 +336,16 @@ public class BinaryTree<T extends Comparable<T>> {
     return dataInorder(this.root).trim();
   }
 
-  public void outputPostorder() {
-    System.out.print(dataPostorder());
+  public String outputPostorder() {
+    return dataPostorder();
   }
 
   public String dataPostorder() {
     return dataPostorder(this.root).trim();
   }
 
-  public void outputPreorder() {
-    System.out.print(dataPreorder());
+  public String outputPreorder() {
+    return dataPreorder();
   }
 
   public String dataPreorder() {

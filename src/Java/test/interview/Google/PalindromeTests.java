@@ -10,66 +10,67 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
+@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection", "ConstantValue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalindromeTests {
   @Rule public final TestName name = new TestName();
 
   @Test
   public void detect_false() {
+    System.out.format("%s:\n", name.getMethodName());
     String source = "cat";
     boolean result = palindrome.detect(source);
-    print_palindrome(name.getMethodName(), source, result);
     assertFalse(result);
-  }
-
-  public void print_palindrome(String name, String value, boolean result) {
-    System.out.printf("%s: %s is a palindrome: %b\n", name, value, result);
+    System.out.printf("\tSource: %s\n", source);
+    System.out.printf("\tIs palindrome: %b\n", result);
   }
 
   @Test
   public void detect_true() {
+    System.out.format("%s:\n", name.getMethodName());
     String source = "Anna";
     boolean result = palindrome.detect(source);
-    print_palindrome(name.getMethodName(), source, result);
     assertTrue(result);
+    System.out.printf("\tSource: %s\n", source);
+    System.out.printf("\tIs palindrome: %b\n", result);
   }
 
   @Test
   public void convert_palindrome_even() {
+    String expected = "AnnA";
+    System.out.format("%s:\n", name.getMethodName());
     String source = "Ann";
     Map.Entry<String, String> transformed = palindrome.transform(source);
-    String value = palindrome.convert(transformed);
+    String result = palindrome.convert(transformed);
     String transform = palindrome.report(transformed);
-    print_palindrome(name.getMethodName(), source, value);
-    print_transform(name.getMethodName(), source, transform);
-  }
-
-  public void print_palindrome(String name, String value, String result) {
-    System.out.printf("%s: %s became the palindrome: %s\n", name, value, result);
-  }
-
-  public void print_transform(String name, String value, String transform) {
-    System.out.printf("%s: %s applied the transform: %s\n", name, value, transform);
+    assertEquals(expected, result);
+    System.out.printf("\t%s became the palindrome: %s\n", source, result);
+    System.out.printf("\t%s applied the transform: %s\n", source, transform);
   }
 
   @Test
   public void convert_palindrome_odd() {
+    String expected = "Level";
+    System.out.format("%s:\n", name.getMethodName());
     String source = "Lvel";
     Map.Entry<String, String> transformed = palindrome.transform(source);
-    String value = palindrome.convert(transformed);
+    String result = palindrome.convert(transformed);
     String transform = palindrome.report(transformed);
-    print_palindrome(name.getMethodName(), source, value);
-    print_transform(name.getMethodName(), source, transform);
+    assertEquals(expected, result);
+    System.out.printf("\t%s became the palindrome: %s\n", source, result);
+    System.out.printf("\t%s applied the transform: %s\n", source, transform);
   }
 
   @Test
   public void convert_non_palindrome() {
-    String source = "Racear";
+    String expected = "Raecear";
+    System.out.format("%s:\n", name.getMethodName());
+    String source = "Raecear";
     Map.Entry<String, String> transformed = palindrome.transform(source);
-    String value = palindrome.convert(transformed);
+    String result = palindrome.convert(transformed);
     String transform = palindrome.report(transformed);
-    print_palindrome(name.getMethodName(), source, value);
-    print_transform(name.getMethodName(), source, transform);
+    assertEquals(expected, result);
+    System.out.printf("\t%s became the palindrome: %s\n", source, result);
+    System.out.printf("\t%s applied the transform: %s\n", source, transform);
   }
 }
