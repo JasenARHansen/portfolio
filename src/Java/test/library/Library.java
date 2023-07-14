@@ -1,5 +1,6 @@
 package Java.test.library;
 
+@SuppressWarnings("unused")
 public class Library {
 
   public static void printTestHeader(String test) {
