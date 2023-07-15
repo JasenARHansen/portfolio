@@ -5,45 +5,45 @@ import java.util.HashMap;
 
 @SuppressWarnings("UnusedReturnValue")
 public class GraphNode {
-  private final ArrayList<GraphNode> neighbors;
-  private final HashMap<String, GraphNode> map;
-  private final String name;
-  private final int frequency;
-  private boolean visited = false;
+    private final int frequency;
+    private final HashMap<String, GraphNode> map;
+    private final String name;
+    private final ArrayList<GraphNode> neighbors;
+    private boolean visited = false;
 
-  public GraphNode(String nm, int freq) {
-    name = nm;
-    frequency = freq;
-    neighbors = new ArrayList<>();
-    map = new HashMap<>();
-  }
-
-  public int getFrequency() {
-    return frequency;
-  }
-
-  public boolean addNeighbor(GraphNode node) {
-    if (map.containsKey(node.getName())) {
-      return false;
+    public GraphNode(String nm, int freq) {
+        name = nm;
+        frequency = freq;
+        neighbors = new ArrayList<>();
+        map = new HashMap<>();
     }
-    neighbors.add(node);
-    map.put(node.getName(), node);
-    return true;
-  }
 
-  public String getName() {
-    return name;
-  }
+    public boolean addNeighbor(GraphNode node) {
+        if (map.containsKey(node.getName())) {
+            return false;
+        }
+        neighbors.add(node);
+        map.put(node.getName(), node);
+        return true;
+    }
 
-  public ArrayList<GraphNode> getNeighbors() {
-    return neighbors;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public boolean isVisited() {
-    return visited;
-  }
+    public int getFrequency() {
+        return frequency;
+    }
 
-  public void setIsVisited(boolean v) {
-    visited = v;
-  }
+    public ArrayList<GraphNode> getNeighbors() {
+        return neighbors;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setIsVisited(boolean v) {
+        visited = v;
+    }
 }

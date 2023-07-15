@@ -61,49 +61,49 @@ public class CountTriplets {
     The triplets satisfying are index (0, 1, 3), (0, 2, 3), (1, 3, 2), (2, 3, 4).
   */
 
-  public static long countTriplets(List<Long> arr, long r) {
-    Map<Long, Long> exponents = new HashMap<>();
-    // Extract exponent of value and populate map
-    for (Long element : arr) {
-      long exponent = -1L;
-      if (r == 1) {
-        if (element == 1) {
-          exponent = 1;
+    public static long countTriplets(List<Long> arr, long r) {
+        Map<Long, Long> exponents = new HashMap<>();
+        // Extract exponent of value and populate map
+        for (Long element : arr) {
+            long exponent = -1L;
+            if (r == 1) {
+                if (element == 1) {
+                    exponent = 1;
+                }
+            } else if (r == 0) {
+                if (element == 0) {
+                    exponent = 0;
+                }
+            } else {
+                double raw = Math.floor((Math.log(element) / Math.log(r)) * 10000) / 10000;
+                if ((raw == Math.floor(raw)) && !Double.isInfinite(raw)) {
+                    exponent = (long) raw;
+                }
+            }
+            if (exponent != -1L) {
+                if (exponents.containsKey(exponent)) {
+                    exponents.put(exponent, exponents.get(exponent) + 1);
+                } else {
+                    exponents.put(exponent, 1L);
+                }
+            }
         }
-      } else if (r == 0) {
-        if (element == 0) {
-          exponent = 0;
+        long count = 0;
+        for (Long key : exponents.keySet()) {
+            if ((r <= 1L) && (exponents.get(key) > 2)) {
+                count = partialFactorial(exponents.get(key), 3) / partialFactorial(3, 3);
+            } else if ((exponents.containsKey(key + 1)) && (exponents.containsKey(key + 2))) {
+                count += exponents.get(key) * exponents.get(key + 1) * exponents.get(key + 2);
+            }
         }
-      } else {
-        double raw = Math.floor((Math.log(element) / Math.log(r)) * 10000) / 10000;
-        if ((raw == Math.floor(raw)) && !Double.isInfinite(raw)) {
-          exponent = (long) raw;
-        }
-      }
-      if (exponent != -1L) {
-        if (exponents.containsKey(exponent)) {
-          exponents.put(exponent, exponents.get(exponent) + 1);
-        } else {
-          exponents.put(exponent, 1L);
-        }
-      }
+        return count;
     }
-    long count = 0;
-    for (Long key : exponents.keySet()) {
-      if ((r <= 1L) && (exponents.get(key) > 2)) {
-        count = partialFactorial(exponents.get(key), 3) / partialFactorial(3, 3);
-      } else if ((exponents.containsKey(key + 1)) && (exponents.containsKey(key + 2))) {
-        count += exponents.get(key) * exponents.get(key + 1) * exponents.get(key + 2);
-      }
-    }
-    return count;
-  }
 
-  private static long partialFactorial(long value, long count) {
-    long returnValue = value;
-    for (long i = count - 1; i > 0; i--) {
-      returnValue *= --value;
+    private static long partialFactorial(long value, long count) {
+        long returnValue = value;
+        for (long i = count - 1; i > 0; i--) {
+            returnValue *= --value;
+        }
+        return returnValue;
     }
-    return returnValue;
-  }
 }

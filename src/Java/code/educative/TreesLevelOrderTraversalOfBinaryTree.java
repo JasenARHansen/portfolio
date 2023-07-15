@@ -32,47 +32,47 @@ public class TreesLevelOrderTraversalOfBinaryTree {
    would be empty, you can terminate the loop.
   */
 
-  public static String level_order_traversal(Node node) {
-    StringBuilder sb = new StringBuilder();
-    Queue<Node> current = new LinkedList<>();
-    Queue<Node> next;
-    current.add(node);
-    int level = 0;
-    boolean afterFirst;
-    while (!current.isEmpty()) {
-      afterFirst = false;
-      level++;
-      sb.append("\n\t\tLevel ").append(level).append(":\t");
-      next = new LinkedList<>();
-      while (!current.isEmpty()) {
-        if (afterFirst) {
-          sb.append(", ");
-        } else {
-          afterFirst = true;
+    public static String level_order_traversal(Node node) {
+        StringBuilder sb = new StringBuilder();
+        Queue<Node> current = new LinkedList<>();
+        Queue<Node> next;
+        current.add(node);
+        int level = 0;
+        boolean afterFirst;
+        while (!current.isEmpty()) {
+            afterFirst = false;
+            level++;
+            sb.append("\n\t\tLevel ").append(level).append(":\t");
+            next = new LinkedList<>();
+            while (!current.isEmpty()) {
+                if (afterFirst) {
+                    sb.append(", ");
+                } else {
+                    afterFirst = true;
+                }
+                sb.append(current.peek().data);
+                if (current.peek().left != null) {
+                    next.add(current.peek().left);
+                }
+                if (current.peek().right != null) {
+                    next.add(current.peek().right);
+                }
+                current.remove();
+            }
+            current = next;
         }
-        sb.append(current.peek().data);
-        if (current.peek().left != null) {
-          next.add(current.peek().left);
-        }
-        if (current.peek().right != null) {
-          next.add(current.peek().right);
-        }
-        current.remove();
-      }
-      current = next;
+        return sb.toString();
     }
-    return sb.toString();
-  }
 
-  public static class Node {
-    public final int data;
-    public Node left;
-    public Node right;
+    public static class Node {
+        public final int data;
+        public Node left;
+        public Node right;
 
-    public Node(int data) {
-      this.data = data;
-      this.left = null;
-      this.right = null;
+        public Node(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
     }
-  }
 }

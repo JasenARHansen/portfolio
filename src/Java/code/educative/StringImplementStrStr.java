@@ -23,29 +23,29 @@ public class StringImplementStrStr {
       haystack and needle consist of only lower-case English characters.
   */
 
-  public static int strStr(String haystack, String needle) {
-    if (needle == null) {
-      return -1;
-    }
-    if (needle.isEmpty()) {
-      return 0;
-    }
-    for (int haystackIndex = 0;
-        haystackIndex < haystack.length() - needle.length();
-        haystackIndex++) {
-      if (haystack.charAt(haystackIndex) == needle.charAt(0)) {
-        boolean found = true;
-        for (int needleIndex = 1; needleIndex < needle.length() - 1; needleIndex++) {
-          if (haystack.charAt(haystackIndex + needleIndex) != needle.charAt(needleIndex)) {
-            found = false;
-            break;
-          }
+    public static int strStr(String haystack, String needle) {
+        if (needle == null) {
+            return -1;
         }
-        if (found) {
-          return haystackIndex;
+        if (needle.isEmpty()) {
+            return 0;
         }
-      }
+        for (int haystackIndex = 0;
+             haystackIndex < haystack.length() - needle.length();
+             haystackIndex++) {
+            if (haystack.charAt(haystackIndex) == needle.charAt(0)) {
+                boolean found = true;
+                for (int needleIndex = 1; needleIndex < needle.length() - 1; needleIndex++) {
+                    if (haystack.charAt(haystackIndex + needleIndex) != needle.charAt(needleIndex)) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return haystackIndex;
+                }
+            }
+        }
+        return -1;
     }
-    return -1;
-  }
 }

@@ -39,22 +39,22 @@ public class CountingValleys {
       \/\/
   The hiker enters and leaves one valley. */
 
-  public static int valleysTraversed(int steps, String path) {
-    int valleys = 0;
-    int elevation = 0;
-    int count = 0;
-    while ((count < steps) && (count < path.length())) {
-      switch (path.charAt(count)) {
-        case 'u', 'U' -> {
-          elevation++;
-          if (elevation == 0) {
-            valleys++;
-          }
+    public static int valleysTraversed(int steps, String path) {
+        int valleys = 0;
+        int elevation = 0;
+        int count = 0;
+        while ((count < steps) && (count < path.length())) {
+            switch (path.charAt(count)) {
+                case 'u', 'U' -> {
+                    elevation++;
+                    if (elevation == 0) {
+                        valleys++;
+                    }
+                }
+                case 'd', 'D' -> elevation--;
+            }
+            count++;
         }
-        case 'd', 'D' -> elevation--;
-      }
-      count++;
+        return valleys;
     }
-    return valleys;
-  }
 }

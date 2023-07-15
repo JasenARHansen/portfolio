@@ -34,19 +34,19 @@ public class MarkAndToys {
   Explanation
   He can buy only 4 toys at most. These toys have the following prices: 1, 12, 5, 10. */
 
-  public static int maximumToys(int[] prices, int k) {
-    int count = 0;
-    Arrays.sort(prices);
-    int index = 0;
-    while ((k > 0) && (index < prices.length)) {
-      if ((k - prices[index]) > 0) {
-        count++;
-        k -= prices[index];
-      } else {
-        break;
-      }
-      index++;
+    public static int maximumToys(int[] prices, int k) {
+        int count = 0;
+        Arrays.sort(prices);
+        int index = 0;
+        while ((k > 0) && (index < prices.length)) {
+            if ((k - prices[index]) > 0) {
+                count++;
+                k -= prices[index];
+            } else {
+                break;
+            }
+            index++;
+        }
+        return count;
     }
-    return count;
-  }
 }

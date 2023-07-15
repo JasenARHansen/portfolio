@@ -7,20 +7,24 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FizzBuzzTests {
-  @Rule public final TestName name = new TestName();
+    @Rule
+    public final TestName name = new TestName();
 
-  @Test
-  public void getDescription() {
-    System.out.format("%s: ", name.getMethodName());
-    FizzBuzz.getDescription();
-  }
+    @Test
+    public void fizzBuzz_1() {
+        printTestHeader(name.getMethodName());
+        int count = 21;
+        System.out.format("\tFizzBuzz with '%d' as the input:\n", count);
+        FizzBuzz.fizzBuzz(count);
+    }
 
-  @Test
-  public void fizzBuzz_1() {
-    int count = 21;
-    System.out.format("%s: FizzBuzz with '%d' as the input:\n", name.getMethodName(), count);
-    FizzBuzz.fizzBuzz(count);
-  }
+    @Test
+    public void getDescription() {
+        printTestHeader(name.getMethodName());
+        FizzBuzz.getDescription();
+    }
 }

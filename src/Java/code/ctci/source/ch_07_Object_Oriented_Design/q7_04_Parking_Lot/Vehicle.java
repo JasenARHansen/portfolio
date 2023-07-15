@@ -4,33 +4,33 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public abstract class Vehicle {
-  protected final ArrayList<ParkingSpot> parkingSpots = new ArrayList<>();
-  protected String licensePlate;
-  protected int spotsNeeded;
-  protected VehicleSize size;
+    protected final ArrayList<ParkingSpot> parkingSpots = new ArrayList<>();
+    protected String licensePlate;
+    protected VehicleSize size;
+    protected int spotsNeeded;
 
-  public int getSpotsNeeded() {
-    return spotsNeeded;
-  }
+    public abstract boolean canFitInSpot(ParkingSpot spot);
 
-  public VehicleSize getSize() {
-    return size;
-  }
-
-  public void parkInSpot(ParkingSpot spot) {
-    /* Park vehicle in this spot (among others, potentially). */
-    parkingSpots.add(spot);
-  }
-
-  public void clearSpots() {
-    /* Remove car from spot, and notify spot that it's gone. */
-    for (ParkingSpot parkingSpot : parkingSpots) {
-      parkingSpot.removeVehicle();
+    public void clearSpots() {
+        /* Remove car from spot, and notify spot that it's gone. */
+        for (ParkingSpot parkingSpot : parkingSpots) {
+            parkingSpot.removeVehicle();
+        }
+        parkingSpots.clear();
     }
-    parkingSpots.clear();
-  }
 
-  public abstract boolean canFitInSpot(ParkingSpot spot);
+    public VehicleSize getSize() {
+        return size;
+    }
 
-  public abstract void print();
+    public int getSpotsNeeded() {
+        return spotsNeeded;
+    }
+
+    public void parkInSpot(ParkingSpot spot) {
+        /* Park vehicle in this spot (among others, potentially). */
+        parkingSpots.add(spot);
+    }
+
+    public abstract void print();
 }

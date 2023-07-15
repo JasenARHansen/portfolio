@@ -48,43 +48,43 @@ public class StringMinimumAppendsForPalindrome {
    discussed above.
   */
 
-  public static int minimumAppends(String string) {
-    Map<String, Integer> history = new HashMap<>();
-    return _minimumAppends(string, history);
-  }
+    public static int _minimumAppends(String string, Map<String, Integer> history) {
+        if (string == null) {
+            return 0;
+        }
+        if (string.isEmpty() || string.length() == 1) {
+            return 0;
+        }
+        int offset = 0;
+        while ((string.charAt(offset) == string.charAt(string.length() - 1 - offset))
+                && (offset < string.length() / 2)) {
+            offset++;
+        }
+        if (string.length() - (2 * offset) > 1) {
+            String left = string.substring(offset + 1, string.length() - offset);
+            int trimLeft;
+            if (history.containsKey(left)) {
+                trimLeft = history.get(left);
+            } else {
+                trimLeft = _minimumAppends(left, history);
+                history.put(left, trimLeft);
+            }
+            String right = string.substring(offset, string.length() - offset - 1);
+            int trimRight;
+            if (history.containsKey(right)) {
+                trimRight = history.get(right);
+            } else {
+                trimRight = _minimumAppends(right, history);
+                history.put(right, trimRight);
+            }
+            return Math.min(trimLeft, trimRight) + 1;
+        } else {
+            return 0;
+        }
+    }
 
-  public static int _minimumAppends(String string, Map<String, Integer> history) {
-    if (string == null) {
-      return 0;
+    public static int minimumAppends(String string) {
+        Map<String, Integer> history = new HashMap<>();
+        return _minimumAppends(string, history);
     }
-    if (string.isEmpty() || string.length() == 1) {
-      return 0;
-    }
-    int offset = 0;
-    while ((string.charAt(offset) == string.charAt(string.length() - 1 - offset))
-        && (offset < string.length() / 2)) {
-      offset++;
-    }
-    if (string.length() - (2 * offset) > 1) {
-      String left = string.substring(offset + 1, string.length() - offset);
-      int trimLeft;
-      if (history.containsKey(left)) {
-        trimLeft = history.get(left);
-      } else {
-        trimLeft = _minimumAppends(left, history);
-        history.put(left, trimLeft);
-      }
-      String right = string.substring(offset, string.length() - offset - 1);
-      int trimRight;
-      if (history.containsKey(right)) {
-        trimRight = history.get(right);
-      } else {
-        trimRight = _minimumAppends(right, history);
-        history.put(right, trimRight);
-      }
-      return Math.min(trimLeft, trimRight) + 1;
-    } else {
-      return 0;
-    }
-  }
 }

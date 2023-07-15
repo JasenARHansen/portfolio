@@ -8,20 +8,23 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovieTreeTests {
-  @Rule public final TestName name = new TestName();
+    @Rule
+    public final TestName name = new TestName();
 
-  @Test
-  public void getDescription() {
-    System.out.format("%s: ", name.getMethodName());
-    MovieTree.getDescription();
-  }
+    @Test
+    public void constructor() {
+        System.out.format("\tMovieTree\n");
+        MovieNode movie = new MovieNode("Movie Title");
+        new MovieTree(movie);
+    }
 
-  @Test
-  public void constructor() {
-    System.out.format("%s: MovieTree\n", name.getMethodName());
-    MovieNode movie = new MovieNode("Movie Title");
-    new MovieTree(movie);
-  }
+    @Test
+    public void getDescription() {
+        printTestHeader(name.getMethodName());
+        MovieTree.getDescription();
+    }
 }

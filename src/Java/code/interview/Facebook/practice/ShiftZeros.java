@@ -18,19 +18,19 @@ public class ShiftZeros {
   Input #1: [4, 1, 3, 2, 0, 0, 0]
   */
 
-  public static int removeZeros(int[] array) {
-    int leftIndex = 0;
-    int rightIndex = array.length - 1;
-    while (leftIndex < rightIndex) {
-      while (array[leftIndex] == 0) {
-        if (array[rightIndex] != 0) {
-          array[leftIndex] = array[rightIndex];
-          array[rightIndex] = 0;
+    public static int removeZeros(int[] array) {
+        int leftIndex = 0;
+        int rightIndex = array.length - 1;
+        while (leftIndex < rightIndex) {
+            while (array[leftIndex] == 0) {
+                if (array[rightIndex] != 0) {
+                    array[leftIndex] = array[rightIndex];
+                    array[rightIndex] = 0;
+                }
+                rightIndex--;
+            }
+            leftIndex++;
         }
-        rightIndex--;
-      }
-      leftIndex++;
+        return leftIndex;
     }
-    return leftIndex;
-  }
 }

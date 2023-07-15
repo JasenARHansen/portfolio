@@ -2,45 +2,45 @@ package Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_05_Online_Book_Rea
 
 @SuppressWarnings("unused")
 public class OnlineReaderSystem {
-  private final Library library;
-  private final UserManager userManager;
-  private final Display display;
-  private Book activeBook;
-  private User activeUser;
+    private final Display display;
+    private final Library library;
+    private final UserManager userManager;
+    private Book activeBook;
+    private User activeUser;
 
-  public OnlineReaderSystem() {
-    userManager = new UserManager();
-    library = new Library();
-    display = new Display();
-  }
+    public OnlineReaderSystem() {
+        userManager = new UserManager();
+        library = new Library();
+        display = new Display();
+    }
 
-  public Library getLibrary() {
-    return library;
-  }
+    public Book getActiveBook() {
+        return activeBook;
+    }
 
-  public UserManager getUserManager() {
-    return userManager;
-  }
+    public void setActiveBook(Book book) {
+        display.displayBook(book);
+        activeBook = book;
+    }
 
-  public Display getDisplay() {
-    return display;
-  }
+    public User getActiveUser() {
+        return activeUser;
+    }
 
-  public Book getActiveBook() {
-    return activeBook;
-  }
+    public void setActiveUser(User user) {
+        activeUser = user;
+        display.displayUser(user);
+    }
 
-  public void setActiveBook(Book book) {
-    display.displayBook(book);
-    activeBook = book;
-  }
+    public Display getDisplay() {
+        return display;
+    }
 
-  public User getActiveUser() {
-    return activeUser;
-  }
+    public Library getLibrary() {
+        return library;
+    }
 
-  public void setActiveUser(User user) {
-    activeUser = user;
-    display.displayUser(user);
-  }
+    public UserManager getUserManager() {
+        return userManager;
+    }
 }

@@ -34,31 +34,31 @@ public class SalesByMatch {
   3
   There are three pairs of socks. */
 
-  public static int numberOfPairsMap(int[] array) {
-    Map<Integer, Integer> map = new HashMap<>();
-    for (int value : array) {
-      if (map.containsKey(value)) {
-        map.put(value, map.get(value) + 1);
-      } else {
-        map.put(value, 1);
-      }
+    public static int numberOfPairsMap(int[] array) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int value : array) {
+            if (map.containsKey(value)) {
+                map.put(value, map.get(value) + 1);
+            } else {
+                map.put(value, 1);
+            }
+        }
+        int pairs = 0;
+        for (int key : map.keySet()) {
+            pairs += map.get(key) / 2;
+        }
+        return pairs;
     }
-    int pairs = 0;
-    for (int key : map.keySet()) {
-      pairs += map.get(key) / 2;
-    }
-    return pairs;
-  }
 
-  public static int numberOfPairsSet(int[] array) {
-    Set<Integer> set = new HashSet<>();
-    int pairs = 0;
-    for (int value : array) {
-      if (!set.add(value)) {
-        pairs++;
-        set.remove(value);
-      }
+    public static int numberOfPairsSet(int[] array) {
+        Set<Integer> set = new HashSet<>();
+        int pairs = 0;
+        for (int value : array) {
+            if (!set.add(value)) {
+                pairs++;
+                set.remove(value);
+            }
+        }
+        return pairs;
     }
-    return pairs;
-  }
 }

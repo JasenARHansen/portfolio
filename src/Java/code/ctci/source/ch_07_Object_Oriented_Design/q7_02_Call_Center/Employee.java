@@ -2,62 +2,62 @@ package Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_02_Call_Center;
 
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 abstract class Employee {
-  /* Employee is a super class for the Director, Manager, and Respondent.
-  It is implemented as an abstract class, since there should be no reason
-   to instantiate an Employee type directly. */
-  private final CallHandler callHandler;
-  protected Rank rank;
-  private Call currentCall = null;
+    /* Employee is a super class for the Director, Manager, and Respondent.
+    It is implemented as an abstract class, since there should be no reason
+     to instantiate an Employee type directly. */
+    private final CallHandler callHandler;
+    protected Rank rank;
+    private Call currentCall = null;
 
-  public Employee(CallHandler handler) {
-    callHandler = handler;
-  }
-
-  public void receiveCall(Call call) {
-    /* Start the conversation. */
-    currentCall = call;
-  }
-
-  public void callCompleted() {
-    /* the issue is resolved, finish the call. */
-    if (currentCall != null) {
-      /* Disconnect the call. */
-      currentCall.disconnect();
-      /* Free the employee. */
-      currentCall = null;
+    public Employee(CallHandler handler) {
+        callHandler = handler;
     }
-    /* Check if there is a call waiting in queue. */
-    assignNewCall();
-  }
 
-  public boolean assignNewCall() {
-    /* Assign a new call to an employee, if the employee is free. */
-    if (!isFree()) {
-      return false;
+    public void callCompleted() {
+        /* the issue is resolved, finish the call. */
+        if (currentCall != null) {
+            /* Disconnect the call. */
+            currentCall.disconnect();
+            /* Free the employee. */
+            currentCall = null;
+        }
+        /* Check if there is a call waiting in queue. */
+        assignNewCall();
     }
-    return callHandler.assignCall(this);
-  }
 
-  public boolean isFree() {
-    /* Returns whether-or-not the employee is free. */
-    return currentCall == null;
-  }
+    public boolean assignNewCall() {
+        /* Assign a new call to an employee, if the employee is free. */
+        if (!isFree()) {
+            return false;
+        }
+        return callHandler.assignCall(this);
+    }
 
-  public void escalateAndReassign() {
+    public boolean isFree() {
+        /* Returns whether-or-not the employee is free. */
+        return currentCall == null;
+    }
+
+    public void escalateAndReassign() {
     /* The issue has not been resolved. Escalate the call, and assign a new call
     to the employee. */
-    if (currentCall != null) {
-      /* escalate call. */
-      currentCall.incrementRank();
-      callHandler.dispatchCall(currentCall);
-      /* free the employee. */
-      currentCall = null;
+        if (currentCall != null) {
+            /* escalate call. */
+            currentCall.incrementRank();
+            callHandler.dispatchCall(currentCall);
+            /* free the employee. */
+            currentCall = null;
+        }
+        /* assign a new call. */
+        assignNewCall();
     }
-    /* assign a new call. */
-    assignNewCall();
-  }
 
-  public Rank getRank() {
-    return rank;
-  }
+    public Rank getRank() {
+        return rank;
+    }
+
+    public void receiveCall(Call call) {
+        /* Start the conversation. */
+        currentCall = call;
+    }
 }

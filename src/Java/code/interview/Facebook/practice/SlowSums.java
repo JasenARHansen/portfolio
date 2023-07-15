@@ -32,18 +32,18 @@ public class SlowSums {
   Add 7 + 2 for a penalty of 9. Now the array is [9, 1]
   Add 9 + 1 for a penalty of 10. The penalties sum to 26. */
 
-  public static int getTotalTime(int[] arr) {
-    int total = 0;
-    Queue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
-    for (int element : arr) {
-      priorityQueue.add(element);
+    public static int getTotalTime(int[] arr) {
+        int total = 0;
+        Queue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+        for (int element : arr) {
+            priorityQueue.add(element);
+        }
+        int sum;
+        while (priorityQueue.size() > 1) {
+            sum = priorityQueue.poll() + priorityQueue.poll();
+            priorityQueue.add(sum);
+            total += sum;
+        }
+        return total;
     }
-    int sum;
-    while (priorityQueue.size() > 1) {
-      sum = priorityQueue.poll() + priorityQueue.poll();
-      priorityQueue.add(sum);
-      total += sum;
-    }
-    return total;
-  }
 }

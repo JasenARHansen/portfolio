@@ -36,52 +36,52 @@ public class StringsStringSegmentation {
    and memory complexities.
   */
 
-  public static boolean can_segment_string(String sentence, Set<String> dictionary) {
-    Set<String> failed = new HashSet<>();
-    return testString(sentence, dictionary, failed);
-  }
+    public static boolean can_segment_string(String sentence, Set<String> dictionary) {
+        Set<String> failed = new HashSet<>();
+        return testString(sentence, dictionary, failed);
+    }
 
-  private static boolean testString(String subString, Set<String> dictionary, Set<String> failed) {
-    // Test base string
-    if (dictionary.contains(subString)) {
-      return true;
+    private static boolean testString(String subString, Set<String> dictionary, Set<String> failed) {
+        // Test base string
+        if (dictionary.contains(subString)) {
+            return true;
+        }
+        if (subString.length() == 1) {
+            return false;
+        }
+        for (int index = 1; index < subString.length(); index++) {
+            String leftSubString = subString.substring(0, index);
+            boolean containsLeft;
+            if (dictionary.contains(leftSubString)) {
+                containsLeft = true;
+            } else if (failed.contains(leftSubString)) {
+                containsLeft = false;
+            } else {
+                containsLeft = testString(leftSubString, dictionary, failed);
+            }
+            if (containsLeft) {
+                dictionary.add(leftSubString);
+            } else {
+                failed.add(leftSubString);
+            }
+            String rightSubString = subString.substring(index);
+            boolean containsRight;
+            if (dictionary.contains(rightSubString)) {
+                containsRight = true;
+            } else if (failed.contains(rightSubString)) {
+                containsRight = false;
+            } else {
+                containsRight = testString(rightSubString, dictionary, failed);
+            }
+            if (containsRight) {
+                dictionary.add(rightSubString);
+            } else {
+                failed.add(rightSubString);
+            }
+            if (containsLeft && containsRight) {
+                return true;
+            }
+        }
+        return false;
     }
-    if (subString.length() == 1) {
-      return false;
-    }
-    for (int index = 1; index < subString.length(); index++) {
-      String leftSubString = subString.substring(0, index);
-      boolean containsLeft;
-      if (dictionary.contains(leftSubString)) {
-        containsLeft = true;
-      } else if (failed.contains(leftSubString)) {
-        containsLeft = false;
-      } else {
-        containsLeft = testString(leftSubString, dictionary, failed);
-      }
-      if (containsLeft) {
-        dictionary.add(leftSubString);
-      } else {
-        failed.add(leftSubString);
-      }
-      String rightSubString = subString.substring(index);
-      boolean containsRight;
-      if (dictionary.contains(rightSubString)) {
-        containsRight = true;
-      } else if (failed.contains(rightSubString)) {
-        containsRight = false;
-      } else {
-        containsRight = testString(rightSubString, dictionary, failed);
-      }
-      if (containsRight) {
-        dictionary.add(rightSubString);
-      } else {
-        failed.add(rightSubString);
-      }
-      if (containsLeft && containsRight) {
-        return true;
-      }
-    }
-    return false;
-  }
 }

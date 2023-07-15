@@ -2,76 +2,76 @@ package Java.code.ctci.old.ch_04_Trees_and_Graphs;
 
 @SuppressWarnings("unused")
 public class BinaryTreeNode<T extends Comparable<T>> {
-  private T data;
-  private int height;
-  private int weight;
-  private BinaryTreeNode<T> leftChild;
-  private BinaryTreeNode<T> rightChild;
+    private T data;
+    private int height;
+    private BinaryTreeNode<T> leftChild;
+    private BinaryTreeNode<T> rightChild;
+    private int weight;
 
-  public BinaryTreeNode(T input) {
-    this();
-    this.data = input;
-  }
+    public BinaryTreeNode(T input) {
+        this();
+        this.data = input;
+    }
 
-  public BinaryTreeNode() {
-    this.leftChild = null;
-    this.rightChild = null;
-    this.data = null;
-    this.height = 0;
-    this.weight = 0;
-  }
+    public BinaryTreeNode() {
+        this.leftChild = null;
+        this.rightChild = null;
+        this.data = null;
+        this.height = 0;
+        this.weight = 0;
+    }
 
-  public T getData() {
-    return this.data;
-  }
+    public T getData() {
+        return this.data;
+    }
 
-  public void setData(T input) {
-    this.data = input;
-  }
+    public void setData(T input) {
+        this.data = input;
+    }
 
-  public int getHeight() {
-    return this.height;
-  }
+    public int getHeight() {
+        return this.height;
+    }
 
-  public void setHeight(int input) {
-    this.height = input;
-  }
+    public void setHeight(int input) {
+        this.height = input;
+    }
 
-  public boolean hasLeftChild() {
-    return this.leftChild != null;
-  }
+    public BinaryTreeNode<T> getLeftChild() {
+        return this.leftChild;
+    }
 
-  public BinaryTreeNode<T> getLeftChild() {
-    return this.leftChild;
-  }
+    public void setLeftChild(BinaryTreeNode<T> input) {
+        this.leftChild = input;
+    }
 
-  public void setLeftChild(BinaryTreeNode<T> input) {
-    this.leftChild = input;
-  }
+    public BinaryTreeNode<T> getRightChild() {
+        return this.rightChild;
+    }
 
-  public boolean hasRightChild() {
-    return this.rightChild != null;
-  }
+    public void setRightChild(BinaryTreeNode<T> input) {
+        this.rightChild = input;
+    }
 
-  public BinaryTreeNode<T> getRightChild() {
-    return this.rightChild;
-  }
+    public int getWeight() {
+        return this.weight;
+    }
 
-  public void setRightChild(BinaryTreeNode<T> input) {
-    this.rightChild = input;
-  }
+    private void setWeight(int input) {
+        this.weight = input;
+    }
 
-  public int getWeight() {
-    return this.weight;
-  }
+    public boolean hasLeftChild() {
+        return this.leftChild != null;
+    }
 
-  private void setWeight(int input) {
-    this.weight = input;
-  }
+    public boolean hasRightChild() {
+        return this.rightChild != null;
+    }
 
-  @Override
-  public String toString() {
-    return String.format(
-        "(data: %s, height: %d , weight: %d)", this.data, this.height, this.weight);
-  }
+    @Override
+    public String toString() {
+        return String.format(
+                "(data: %s, height: %d , weight: %d)", this.data, this.height, this.weight);
+    }
 }

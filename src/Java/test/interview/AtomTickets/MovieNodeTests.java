@@ -7,19 +7,25 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+import static org.junit.Assert.assertNotNull;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovieNodeTests {
-  @Rule public final TestName name = new TestName();
+    @Rule
+    public final TestName name = new TestName();
 
-  @Test
-  public void getDescription() {
-    System.out.format("%s: ", name.getMethodName());
-    MovieNode.getDescription();
-  }
+    @Test
+    public void MovieNode() {
+        printTestHeader(name.getMethodName());
+        MovieNode result = new MovieNode("Movie Title");
+        assertNotNull(result);
+        System.out.format("\t%s\n", result);
+    }
 
-  @Test
-  public void MovieNode() {
-    System.out.format("%s: MovieNode\n", name.getMethodName());
-    new MovieNode("Movie Title");
-  }
+    @Test
+    public void getDescription() {
+        printTestHeader(name.getMethodName());
+        MovieNode.getDescription();
+    }
 }

@@ -41,18 +41,18 @@ public class JumpingOnTheClouds {
   Explanation 1:
   The only thundercloud to avoid is c[4]. The game can be won in 3 jumps. */
 
-  public static int jumpClouds(int[] c) {
-    if ((c.length == 1) && (c[0] == 0)) {
-      return 0;
+    public static int jumpClouds(int[] c) {
+        if ((c.length == 1) && (c[0] == 0)) {
+            return 0;
+        }
+        int shortJump = Integer.MAX_VALUE;
+        int longJump = Integer.MAX_VALUE;
+        if ((c.length > 1) && (c[1] == 0)) {
+            shortJump = jumpClouds(Arrays.copyOfRange(c, 1, c.length)) + 1;
+        }
+        if ((c.length > 2) && (c[2] == 0)) {
+            longJump = jumpClouds(Arrays.copyOfRange(c, 2, c.length)) + 1;
+        }
+        return Math.min(shortJump, longJump);
     }
-    int shortJump = Integer.MAX_VALUE;
-    int longJump = Integer.MAX_VALUE;
-    if ((c.length > 1) && (c[1] == 0)) {
-      shortJump = jumpClouds(Arrays.copyOfRange(c, 1, c.length)) + 1;
-    }
-    if ((c.length > 2) && (c[2] == 0)) {
-      longJump = jumpClouds(Arrays.copyOfRange(c, 2, c.length)) + 1;
-    }
-    return Math.min(shortJump, longJump);
-  }
 }

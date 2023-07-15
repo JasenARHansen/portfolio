@@ -69,28 +69,28 @@ public class HashTablesRansomNote {
     Harold's magazine is missing the word some.
   */
 
-  public static void checkMagazine(String[] magazine, String[] note) {
-    Map<String, Integer> words = new HashMap<>();
-    boolean printable = true;
-    for (String word : magazine) {
-      if (words.containsKey(word)) {
-        words.put(word, words.get(word) + 1);
-      } else {
-        words.put(word, 1);
-      }
+    public static void checkMagazine(String[] magazine, String[] note) {
+        Map<String, Integer> words = new HashMap<>();
+        boolean printable = true;
+        for (String word : magazine) {
+            if (words.containsKey(word)) {
+                words.put(word, words.get(word) + 1);
+            } else {
+                words.put(word, 1);
+            }
+        }
+        for (String word : note) {
+            if ((words.containsKey(word)) && (words.get(word) > 0)) {
+                words.put(word, words.get(word) - 1);
+            } else {
+                printable = false;
+                break;
+            }
+        }
+        if (printable) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
     }
-    for (String word : note) {
-      if ((words.containsKey(word)) && (words.get(word) > 0)) {
-        words.put(word, words.get(word) - 1);
-      } else {
-        printable = false;
-        break;
-      }
-    }
-    if (printable) {
-      System.out.println("Yes");
-    } else {
-      System.out.println("No");
-    }
-  }
 }

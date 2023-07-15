@@ -25,40 +25,40 @@ public class SpiralArray {
   23 44 43 42 41 40 39 14
   22 21 20 19 18 17 16 15. */
 
-  public static int[][] genSpiral(int n) {
-    int[][] spiral = new int[n][n];
-    int count = 1;
-    for (int shell = 0; shell < (n + 1) / 2; shell++) {
-      // Top
-      for (int x = 0; x < n - 2 * shell; x++) {
-        spiral[shell][x + shell] = count;
-        count++;
-      }
-      // Right Side
-      for (int y = 0; y < n - 2 * shell - 1; y++) {
-        spiral[y + shell + 1][n - shell - 1] = count;
-        count++;
-      }
-      // Bottom
-      for (int x = 0; x < n - 2 * shell - 1; x++) {
-        spiral[n - shell - 1][n - (x + shell) - 2] = count;
-        count++;
-      }
-      // Left Side
-      for (int y = 0; y < n - 2 * (shell + 1); y++) {
-        spiral[n - 2 - y - shell][shell] = count;
-        count++;
-      }
+    public static int[][] genSpiral(int n) {
+        int[][] spiral = new int[n][n];
+        int count = 1;
+        for (int shell = 0; shell < (n + 1) / 2; shell++) {
+            // Top
+            for (int x = 0; x < n - 2 * shell; x++) {
+                spiral[shell][x + shell] = count;
+                count++;
+            }
+            // Right Side
+            for (int y = 0; y < n - 2 * shell - 1; y++) {
+                spiral[y + shell + 1][n - shell - 1] = count;
+                count++;
+            }
+            // Bottom
+            for (int x = 0; x < n - 2 * shell - 1; x++) {
+                spiral[n - shell - 1][n - (x + shell) - 2] = count;
+                count++;
+            }
+            // Left Side
+            for (int y = 0; y < n - 2 * (shell + 1); y++) {
+                spiral[n - 2 - y - shell][shell] = count;
+                count++;
+            }
+        }
+        return spiral;
     }
-    return spiral;
-  }
 
-  public static void printSpiral(int[][] spiral) {
-    for (int[] ints : spiral) {
-      for (int col = 0; col < spiral.length; col++) {
-        System.out.printf("%5d", ints[col]);
-      }
-      System.out.print("\n");
+    public static void printSpiral(int[][] spiral) {
+        for (int[] ints : spiral) {
+            for (int col = 0; col < spiral.length; col++) {
+                System.out.printf("%5d", ints[col]);
+            }
+            System.out.print("\n");
+        }
     }
-  }
 }

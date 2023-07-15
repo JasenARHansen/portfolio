@@ -50,14 +50,14 @@ public class PlayerComparator implements Comparator<Player> {
   Explanation
   The players are first sorted descending by score, then ascending by name. */
 
-  @Override
-  public int compare(Player a, Player b) {
-    if (b.score() > a.score()) {
-      return 1;
-    } else if (b.score() == a.score()) {
-      return a.name().compareTo(b.name());
-    } else {
-      return -1;
+    @Override
+    public int compare(Player a, Player b) {
+        if (b.score() > a.score()) {
+            return 1;
+        } else if (b.score() == a.score()) {
+            return a.name().compareTo(b.name());
+        } else {
+            return -1;
+        }
     }
-  }
 }

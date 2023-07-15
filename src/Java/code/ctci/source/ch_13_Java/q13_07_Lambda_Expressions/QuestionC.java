@@ -6,17 +6,17 @@ import java.util.stream.Stream;
 
 @SuppressWarnings("DuplicatedCode")
 public class QuestionC {
-  public static void main(String... args) {
-    ArrayList<Country> countries = new ArrayList<>();
-    countries.add(new Country("United States", "North America", 5));
-    countries.add(new Country("Canada", "North America", 10));
-    countries.add(new Country("India", "Asia", 30));
-    System.out.println(getPopulation(countries, "North America"));
-  }
+    public static void main(String... args) {
+        ArrayList<Country> countries = new ArrayList<>();
+        countries.add(new Country("United States", "North America", 5));
+        countries.add(new Country("Canada", "North America", 10));
+        countries.add(new Country("India", "Asia", 30));
+        System.out.println(getPopulation(countries, "North America"));
+    }
 
-  public static int getPopulation(List<Country> countries, String continent) {
-    Stream<Integer> populations =
-        countries.stream().map(c -> c.getContinent().equals(continent) ? c.getPopulation() : 0);
-    return populations.reduce(0, Integer::sum);
-  }
+    public static int getPopulation(List<Country> countries, String continent) {
+        Stream<Integer> populations =
+                countries.stream().map(c -> c.getContinent().equals(continent) ? c.getPopulation() : 0);
+        return populations.reduce(0, Integer::sum);
+    }
 }

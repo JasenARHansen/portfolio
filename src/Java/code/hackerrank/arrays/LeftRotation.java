@@ -64,37 +64,37 @@ public class LeftRotation {
     return a;
   }. */
 
-  public static int[] rotateLeft(int[] a, int d) {
-    if ((a.length == 0) || (d % a.length == 0)) {
-      return a;
+    public static int gcdByEuclidsAlgorithm(int n1, int n2) {
+        if (n2 == 0) {
+            return n1;
+        }
+        return gcdByEuclidsAlgorithm(n2, n1 % n2);
     }
-    int rotate;
-    if (d >= 0) {
-      rotate = d % a.length;
-    } else {
-      rotate = a.length + d % a.length;
-    }
-    int hold;
-    int greatestCommonDivisor = gcdByEuclidsAlgorithm(rotate, a.length);
-    for (int cycle = 0; cycle < greatestCommonDivisor; cycle++) {
-      hold = a[cycle];
-      int left;
-      int right;
-      for (int set = 0; set < (a.length / greatestCommonDivisor) - 1; set++) {
-        left = ((set * rotate) + cycle) % a.length;
-        right = (((set + 1) * rotate) + cycle) % a.length;
-        a[left] = a[right];
-      }
-      int result = (a.length - rotate % a.length + cycle) % a.length;
-      a[result] = hold;
-    }
-    return a;
-  }
 
-  public static int gcdByEuclidsAlgorithm(int n1, int n2) {
-    if (n2 == 0) {
-      return n1;
+    public static int[] rotateLeft(int[] a, int d) {
+        if ((a.length == 0) || (d % a.length == 0)) {
+            return a;
+        }
+        int rotate;
+        if (d >= 0) {
+            rotate = d % a.length;
+        } else {
+            rotate = a.length + d % a.length;
+        }
+        int hold;
+        int greatestCommonDivisor = gcdByEuclidsAlgorithm(rotate, a.length);
+        for (int cycle = 0; cycle < greatestCommonDivisor; cycle++) {
+            hold = a[cycle];
+            int left;
+            int right;
+            for (int set = 0; set < (a.length / greatestCommonDivisor) - 1; set++) {
+                left = ((set * rotate) + cycle) % a.length;
+                right = (((set + 1) * rotate) + cycle) % a.length;
+                a[left] = a[right];
+            }
+            int result = (a.length - rotate % a.length + cycle) % a.length;
+            a[result] = hold;
+        }
+        return a;
     }
-    return gcdByEuclidsAlgorithm(n2, n1 % n2);
-  }
 }

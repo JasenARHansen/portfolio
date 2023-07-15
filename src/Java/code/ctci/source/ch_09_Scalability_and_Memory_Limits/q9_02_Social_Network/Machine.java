@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 @SuppressWarnings("unused")
 public class Machine {
-  public HashMap<Integer, Person> persons = new HashMap<>();
-  public int machineID;
+    public int machineID;
+    public HashMap<Integer, Person> persons = new HashMap<>();
 
-  public Person getPersonWithID(int personID) {
-    return persons.get(personID);
-  }
+    public Person getPersonWithID(int personID) {
+        return persons.get(personID);
+    }
 }

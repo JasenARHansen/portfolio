@@ -64,22 +64,22 @@ public class BubbleSort {
     3. {2, 1, 2} --> {1, 2, 3}
   At this point the array is sorted and the three lines of output are printed to stdout. */
 
-  public static void countSwaps(int[] arr) {
-    int swap;
-    int swaps = 0;
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr.length - 1; j++) {
-        // Swap adjacent elements if they are in decreasing order
-        if (arr[j] > arr[j + 1]) {
-          swap = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = swap;
-          swaps++;
+    public static void countSwaps(int[] arr) {
+        int swap;
+        int swaps = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                // Swap adjacent elements if they are in decreasing order
+                if (arr[j] > arr[j + 1]) {
+                    swap = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = swap;
+                    swaps++;
+                }
+            }
         }
-      }
+        System.out.format("Array is sorted in %d swaps.\n", swaps);
+        System.out.format("First Element: %d\n", arr[0]);
+        System.out.format("Last Element: %d\n", arr[arr.length - 1]);
     }
-    System.out.format("Array is sorted in %d swaps.\n", swaps);
-    System.out.format("First Element: %d\n", arr[0]);
-    System.out.format("Last Element: %d\n", arr[arr.length - 1]);
-  }
 }

@@ -16,33 +16,33 @@ public class NumberTheoryFindNthFibonacciNumber {
       Negative values of n:\tXn-2 = Xn - Xn-1
   */
 
-  public static int getFibonacci(int count) {
-    int even = 0;
-    int odd = 1;
-    boolean flip = true;
-    if (count > 1) {
-      int iterate = count - 1;
-      while (iterate > 0) {
-        if (flip) {
-          even += odd;
-        } else {
-          odd += even;
+    public static int getFibonacci(int count) {
+        int even = 0;
+        int odd = 1;
+        boolean flip = true;
+        if (count > 1) {
+            int iterate = count - 1;
+            while (iterate > 0) {
+                if (flip) {
+                    even += odd;
+                } else {
+                    odd += even;
+                }
+                flip = !flip;
+                iterate--;
+            }
+        } else if (count < 0) {
+            int iterate = count;
+            while (iterate < 0) {
+                if (flip) {
+                    even -= odd;
+                } else {
+                    odd -= even;
+                }
+                flip = !flip;
+                iterate++;
+            }
         }
-        flip = !flip;
-        iterate--;
-      }
-    } else if (count < 0) {
-      int iterate = count;
-      while (iterate < 0) {
-        if (flip) {
-          even -= odd;
-        } else {
-          odd -= even;
-        }
-        flip = !flip;
-        iterate++;
-      }
+        return (count % 2 == 0) ? even : odd;
     }
-    return (count % 2 == 0) ? even : odd;
-  }
 }

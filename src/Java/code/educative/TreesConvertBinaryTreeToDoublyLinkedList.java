@@ -44,38 +44,38 @@ public class TreesConvertBinaryTreeToDoublyLinkedList {
      result of the current recursive call.
   */
 
-  public static List<Node> convert_to_linked_list(Node node) {
-    List<Node> returnList = new ArrayList<>();
-    _convert_to_linked_list(returnList, node);
-    return returnList;
-  }
+    public static void _convert_to_linked_list(List<Node> returnList, Node node) {
+        // Left path
+        if (node.left != null) {
+            _convert_to_linked_list(returnList, node.left);
+        }
+        // Current
+        if (!returnList.isEmpty()) {
+            returnList.get(returnList.size() - 1).right = node;
+            node.left = returnList.get(returnList.size() - 1);
+        }
+        returnList.add(node);
+        // Right path
+        if (node.right != null) {
+            _convert_to_linked_list(returnList, node.right);
+        }
+    }
 
-  public static void _convert_to_linked_list(List<Node> returnList, Node node) {
-    // Left path
-    if (node.left != null) {
-      _convert_to_linked_list(returnList, node.left);
+    public static List<Node> convert_to_linked_list(Node node) {
+        List<Node> returnList = new ArrayList<>();
+        _convert_to_linked_list(returnList, node);
+        return returnList;
     }
-    // Current
-    if (!returnList.isEmpty()) {
-      returnList.get(returnList.size() - 1).right = node;
-      node.left = returnList.get(returnList.size() - 1);
-    }
-    returnList.add(node);
-    // Right path
-    if (node.right != null) {
-      _convert_to_linked_list(returnList, node.right);
-    }
-  }
 
-  public static class Node {
-    public final int data;
-    public Node left;
-    public Node right;
+    public static class Node {
+        public final int data;
+        public Node left;
+        public Node right;
 
-    public Node(int data) {
-      this.data = data;
-      this.left = null;
-      this.right = null;
+        public Node(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
     }
-  }
 }

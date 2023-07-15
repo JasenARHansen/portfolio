@@ -60,20 +60,20 @@ public class HourglassArray {
       2
     1 2 4. */
 
-  public static int hourglassSum(int[][] arr) {
-    int largest = Integer.MIN_VALUE;
-    int local;
-    for (int xIndex = 0; xIndex < arr.length - 2; xIndex++) {
-      for (int yIndex = 0; yIndex < arr.length - 2; yIndex++) {
-        local = arr[yIndex][xIndex] + arr[yIndex][xIndex + 1] + arr[yIndex][xIndex + 2];
-        local += arr[yIndex + 1][xIndex + 1];
-        local +=
-            arr[yIndex + 2][xIndex] + arr[yIndex + 2][xIndex + 1] + arr[yIndex + 2][xIndex + 2];
-        if (local > largest) {
-          largest = local;
+    public static int hourglassSum(int[][] arr) {
+        int largest = Integer.MIN_VALUE;
+        int local;
+        for (int xIndex = 0; xIndex < arr.length - 2; xIndex++) {
+            for (int yIndex = 0; yIndex < arr.length - 2; yIndex++) {
+                local = arr[yIndex][xIndex] + arr[yIndex][xIndex + 1] + arr[yIndex][xIndex + 2];
+                local += arr[yIndex + 1][xIndex + 1];
+                local +=
+                        arr[yIndex + 2][xIndex] + arr[yIndex + 2][xIndex + 1] + arr[yIndex + 2][xIndex + 2];
+                if (local > largest) {
+                    largest = local;
+                }
+            }
         }
-      }
+        return largest;
     }
-    return largest;
-  }
 }

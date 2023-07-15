@@ -4,20 +4,20 @@ import java.util.Queue;
 
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class Playlist {
-  private final Song song;
-  private final Queue<Song> queue;
+    private final Queue<Song> queue;
+    private final Song song;
 
-  public Playlist(Song song, Queue<Song> queue) {
-    super();
-    this.song = song;
-    this.queue = queue;
-  }
+    public Playlist(Song song, Queue<Song> queue) {
+        super();
+        this.song = song;
+        this.queue = queue;
+    }
 
-  public Song getNextSongToPlay() {
-    return queue.peek();
-  }
+    public Song getNextSongToPlay() {
+        return queue.peek();
+    }
 
-  public void queueUpSong(Song s) {
-    queue.add(s);
-  }
+    public void queueUpSong(Song s) {
+        queue.add(s);
+    }
 }

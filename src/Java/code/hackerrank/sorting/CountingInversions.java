@@ -41,36 +41,36 @@ public class CountingInversions {
     2. arr = [2, 1, 3, 1, 2] -> [1, 2, 3, 1, 2] (1 swap) -> [1, 1, 2, 3, 2] (2 swap) -> [1, 1, 2, 2, 3] (1 swap)
       We performed a total of 1 + 2 + 1 = 4 swaps to correct inversions. */
 
-  public static long countInversions(int[] arr) {
-    return mergeSort(arr, 0, arr.length - 1);
-  }
-
-  private static long mergeSort(int[] arr, int leftIndex, int rightIndex) {
-    long inversions = 0;
-    if (leftIndex < rightIndex) {
-      int offset = (rightIndex - leftIndex) / 2;
-      inversions += mergeSort(arr, leftIndex, leftIndex + offset);
-      inversions += mergeSort(arr, leftIndex + offset + 1, rightIndex);
-      int[] leftSubarray = Arrays.copyOfRange(arr, leftIndex, leftIndex + offset + 1);
-      int[] rightSubarray = Arrays.copyOfRange(arr, leftIndex + offset + 1, rightIndex + 1);
-      int left = 0;
-      int right = 0;
-      int index = leftIndex;
-      while ((left < leftSubarray.length) && (right < rightSubarray.length)) {
-        if (leftSubarray[left] <= rightSubarray[right]) {
-          arr[index++] = leftSubarray[left++];
-        } else {
-          arr[index++] = rightSubarray[right++];
-          inversions += (leftIndex + offset + 1) - (leftIndex + left);
-        }
-      }
-      while (left < leftSubarray.length) {
-        arr[index++] = leftSubarray[left++];
-      }
-      while (right < rightSubarray.length) {
-        arr[index++] = rightSubarray[right++];
-      }
+    public static long countInversions(int[] arr) {
+        return mergeSort(arr, 0, arr.length - 1);
     }
-    return inversions;
-  }
+
+    private static long mergeSort(int[] arr, int leftIndex, int rightIndex) {
+        long inversions = 0;
+        if (leftIndex < rightIndex) {
+            int offset = (rightIndex - leftIndex) / 2;
+            inversions += mergeSort(arr, leftIndex, leftIndex + offset);
+            inversions += mergeSort(arr, leftIndex + offset + 1, rightIndex);
+            int[] leftSubarray = Arrays.copyOfRange(arr, leftIndex, leftIndex + offset + 1);
+            int[] rightSubarray = Arrays.copyOfRange(arr, leftIndex + offset + 1, rightIndex + 1);
+            int left = 0;
+            int right = 0;
+            int index = leftIndex;
+            while ((left < leftSubarray.length) && (right < rightSubarray.length)) {
+                if (leftSubarray[left] <= rightSubarray[right]) {
+                    arr[index++] = leftSubarray[left++];
+                } else {
+                    arr[index++] = rightSubarray[right++];
+                    inversions += (leftIndex + offset + 1) - (leftIndex + left);
+                }
+            }
+            while (left < leftSubarray.length) {
+                arr[index++] = leftSubarray[left++];
+            }
+            while (right < rightSubarray.length) {
+                arr[index++] = rightSubarray[right++];
+            }
+        }
+        return inversions;
+    }
 }

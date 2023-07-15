@@ -36,19 +36,19 @@ public class RepeatedString {
   Explanation 1
     Because all the first n = 1000000000000 letters of the infinite string are a, we return 1000000000000. */
 
-  public static long repeatedString(String s, long n) {
-    long count = 0;
-    for (int index = 0; index < s.length(); index++) {
-      if (s.charAt(index % s.length()) == 'a') {
-        count++;
-      }
+    public static long repeatedString(String s, long n) {
+        long count = 0;
+        for (int index = 0; index < s.length(); index++) {
+            if (s.charAt(index % s.length()) == 'a') {
+                count++;
+            }
+        }
+        count *= n / s.length();
+        for (int index = 0; index < n % s.length(); index++) {
+            if (s.charAt(index % s.length()) == 'a') {
+                count++;
+            }
+        }
+        return count;
     }
-    count *= n / s.length();
-    for (int index = 0; index < n % s.length(); index++) {
-      if (s.charAt(index % s.length()) == 'a') {
-        count++;
-      }
-    }
-    return count;
-  }
 }

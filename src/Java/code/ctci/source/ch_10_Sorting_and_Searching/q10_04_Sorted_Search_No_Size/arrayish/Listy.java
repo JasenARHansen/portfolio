@@ -2,16 +2,16 @@ package Java.code.ctci.source.ch_10_Sorting_and_Searching.q10_04_Sorted_Search_N
 
 @SuppressWarnings("SpellCheckingInspection")
 public class Listy {
-  final int[] array;
+    final int[] array;
 
-  public Listy(int[] arr) {
-    array = arr.clone();
-  }
-
-  public int elementAt(int index) {
-    if (index >= array.length) {
-      return -1;
+    public Listy(int[] arr) {
+        array = arr.clone();
     }
-    return array[index];
-  }
+
+    public int elementAt(int index) {
+        if (index >= array.length) {
+            return -1;
+        }
+        return array[index];
+    }
 }

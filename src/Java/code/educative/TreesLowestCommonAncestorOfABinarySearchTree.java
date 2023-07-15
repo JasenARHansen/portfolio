@@ -41,48 +41,48 @@ public class TreesLowestCommonAncestorOfABinarySearchTree {
   Output: 2
   */
 
-  public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    List<TreeNode> p_path = getPath(root, p);
-    List<TreeNode> q_path = getPath(root, q);
-    TreeNode return_node = null;
-    while ((!p_path.isEmpty()) && (!q_path.isEmpty()) && (p_path.get(0) == q_path.get(0))) {
-      return_node = p_path.remove(0);
-      q_path.remove(0);
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        List<TreeNode> p_path = getPath(root, p);
+        List<TreeNode> q_path = getPath(root, q);
+        TreeNode return_node = null;
+        while ((!p_path.isEmpty()) && (!q_path.isEmpty()) && (p_path.get(0) == q_path.get(0))) {
+            return_node = p_path.remove(0);
+            q_path.remove(0);
+        }
+        return return_node;
     }
-    return return_node;
-  }
 
-  private static List<TreeNode> getPath(TreeNode root, TreeNode node) {
-    List<TreeNode> returnList = new ArrayList<>();
-    boolean notFound = true;
-    TreeNode current = root;
-    while (notFound) {
-      if (node.data == current.data) {
-        returnList.add(current);
-        notFound = false;
-      } else if ((node.data < current.data) && (current.left != null)) {
-        returnList.add(current);
-        current = current.left;
-      } else if ((node.data > current.data) && (current.right != null)) {
-        returnList.add(current);
-        current = current.right;
-      } else {
-        returnList.clear();
-        notFound = false;
-      }
+    private static List<TreeNode> getPath(TreeNode root, TreeNode node) {
+        List<TreeNode> returnList = new ArrayList<>();
+        boolean notFound = true;
+        TreeNode current = root;
+        while (notFound) {
+            if (node.data == current.data) {
+                returnList.add(current);
+                notFound = false;
+            } else if ((node.data < current.data) && (current.left != null)) {
+                returnList.add(current);
+                current = current.left;
+            } else if ((node.data > current.data) && (current.right != null)) {
+                returnList.add(current);
+                current = current.right;
+            } else {
+                returnList.clear();
+                notFound = false;
+            }
+        }
+        return returnList;
     }
-    return returnList;
-  }
 
-  public static class TreeNode {
-    public final int data;
-    public TreeNode left;
-    public TreeNode right;
+    public static class TreeNode {
+        public final int data;
+        public TreeNode left;
+        public TreeNode right;
 
-    public TreeNode(int data) {
-      this.data = data;
-      this.left = null;
-      this.right = null;
+        public TreeNode(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
     }
-  }
 }

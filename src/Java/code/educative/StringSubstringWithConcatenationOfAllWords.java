@@ -36,25 +36,25 @@ public class StringSubstringWithConcatenationOfAllWords {
       words[i] consists of lower-case English letters.
   */
 
-  public static List<Integer> findSubstring(String string, String[] words) {
-    List<Integer> returnList = new ArrayList<>();
-    if ((words.length > 0) && (words[0] != null) && (!words[0].isEmpty())) {
-      int length = words[0].length();
-      List<String> available = new ArrayList<>(Arrays.asList(words));
-      for (int start = 0; start < (string.length() - words.length * length); start++) {
-        int offset = 0;
-        while (available.contains(string.substring(start + offset, start + offset + length))) {
-          available.remove(string.substring(start + offset, start + offset + length));
-          offset += length;
+    public static List<Integer> findSubstring(String string, String[] words) {
+        List<Integer> returnList = new ArrayList<>();
+        if ((words.length > 0) && (words[0] != null) && (!words[0].isEmpty())) {
+            int length = words[0].length();
+            List<String> available = new ArrayList<>(Arrays.asList(words));
+            for (int start = 0; start < (string.length() - words.length * length); start++) {
+                int offset = 0;
+                while (available.contains(string.substring(start + offset, start + offset + length))) {
+                    available.remove(string.substring(start + offset, start + offset + length));
+                    offset += length;
+                }
+                if (available.isEmpty()) {
+                    returnList.add(start);
+                }
+                if (available.size() != words.length) {
+                    available = new ArrayList<>(Arrays.asList(words));
+                }
+            }
         }
-        if (available.isEmpty()) {
-          returnList.add(start);
-        }
-        if (available.size() != words.length) {
-          available = new ArrayList<>(Arrays.asList(words));
-        }
-      }
+        return returnList;
     }
-    return returnList;
-  }
 }

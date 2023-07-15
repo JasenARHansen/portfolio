@@ -43,19 +43,19 @@ public class ArrayManipulation {
     After the third update list is 100 200 200 200 100.
   The maximum value is 200. */
 
-  public static long arrayManipulation(int n, int[][] queries) {
-    long[] array = new long[n];
-    for (int[] query : queries) {
-      for (int index = query[0] - 1; index < query[1]; index++) {
-        array[index] += query[2];
-      }
+    public static long arrayManipulation(int n, int[][] queries) {
+        long[] array = new long[n];
+        for (int[] query : queries) {
+            for (int index = query[0] - 1; index < query[1]; index++) {
+                array[index] += query[2];
+            }
+        }
+        long largest = 0;
+        for (long l : array) {
+            if (l > largest) {
+                largest = l;
+            }
+        }
+        return largest;
     }
-    long largest = 0;
-    for (long l : array) {
-      if (l > largest) {
-        largest = l;
-      }
-    }
-    return largest;
-  }
 }

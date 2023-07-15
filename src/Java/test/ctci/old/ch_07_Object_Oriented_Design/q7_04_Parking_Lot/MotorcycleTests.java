@@ -1,7 +1,5 @@
 package Java.test.ctci.old.ch_07_Object_Oriented_Design.q7_04_Parking_Lot;
 
-import static org.junit.Assert.*;
-
 import Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_04_Parking_Lot.Level;
 import Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_04_Parking_Lot.Motorcycle;
 import Java.code.ctci.source.ch_07_Object_Oriented_Design.q7_04_Parking_Lot.ParkingSpot;
@@ -12,36 +10,42 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 @SuppressWarnings({"ConstantValue", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MotorcycleTests {
-  @Rule public final TestName name = new TestName();
+    @Rule
+    public final TestName name = new TestName();
 
-  @Test
-  public void Motorcycle() {
-    Motorcycle motorcycle = new Motorcycle();
-    assertNotNull(motorcycle);
-    System.out.format("%s:\n", name.getMethodName());
-  }
+    @Test
+    public void Motorcycle() {
+        printTestHeader(name.getMethodName());
+        Motorcycle motorcycle = new Motorcycle();
+        assertNotNull(motorcycle);
+    }
 
-  @Test
-  public void print() {
-    Motorcycle motorcycle = new Motorcycle();
-    System.out.format("%s:\n", name.getMethodName());
-    motorcycle.print();
-  }
+    @Test
+    public void canFitInSpot() {
+        printTestHeader(name.getMethodName());
+        Motorcycle motorcycle = new Motorcycle();
+        int flr = 1;
+        int numberSpots = 2;
+        Level lvl = new Level(flr, numberSpots);
+        int r = 1;
+        int n = 1;
+        ParkingSpot parkingSpot = new ParkingSpot(lvl, r, n, VehicleSize.Large);
+        boolean result = motorcycle.canFitInSpot(parkingSpot);
+        assertTrue(result);
+        System.out.format("\tcanFitInSpot - %b\n", result);
+    }
 
-  @Test
-  public void canFitInSpot() {
-    Motorcycle motorcycle = new Motorcycle();
-    int flr = 1;
-    int numberSpots = 2;
-    Level lvl = new Level(flr, numberSpots);
-    int r = 1;
-    int n = 1;
-    ParkingSpot parkingSpot = new ParkingSpot(lvl, r, n, VehicleSize.Large);
-    boolean result = motorcycle.canFitInSpot(parkingSpot);
-    assertTrue(result);
-    System.out.format("%s: canFitInSpot - %b\n", name.getMethodName(), result);
-  }
+    @Test
+    public void print() {
+        printTestHeader(name.getMethodName());
+        Motorcycle motorcycle = new Motorcycle();
+        motorcycle.print();
+    }
 }

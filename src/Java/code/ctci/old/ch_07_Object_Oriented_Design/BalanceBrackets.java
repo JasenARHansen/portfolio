@@ -36,24 +36,24 @@ public class BalanceBrackets {
   output: false
   */
 
-  public static boolean isBalanced(String s) {
-    List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).toList();
-    List<Character> close = "}])".chars().mapToObj((i) -> (char) i).toList();
-    Stack<Character> stack = new Stack<>();
-    for (int index = 0; index < s.length(); index++) {
-      if (close.contains(s.charAt(index))) {
-        if (stack.isEmpty()) {
-          return false;
+    public static boolean isBalanced(String s) {
+        List<Character> open = "{[(".chars().mapToObj((i) -> (char) i).toList();
+        List<Character> close = "}])".chars().mapToObj((i) -> (char) i).toList();
+        Stack<Character> stack = new Stack<>();
+        for (int index = 0; index < s.length(); index++) {
+            if (close.contains(s.charAt(index))) {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                if (stack.peek().equals(open.get(close.indexOf(s.charAt(index))))) {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            } else if (open.contains(s.charAt(index))) {
+                stack.push(s.charAt(index));
+            }
         }
-        if (stack.peek().equals(open.get(close.indexOf(s.charAt(index))))) {
-          stack.pop();
-        } else {
-          return false;
-        }
-      } else if (open.contains(s.charAt(index))) {
-        stack.push(s.charAt(index));
-      }
+        return stack.isEmpty();
     }
-    return stack.isEmpty();
-  }
 }

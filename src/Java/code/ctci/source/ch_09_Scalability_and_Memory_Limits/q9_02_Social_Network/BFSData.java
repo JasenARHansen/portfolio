@@ -6,16 +6,16 @@ import java.util.Queue;
 
 @SuppressWarnings("BooleanMethodIsAlwaysInverted")
 public class BFSData {
-  public final Queue<PathNode> toVisit = new LinkedList<>();
-  public final HashMap<Integer, PathNode> visited = new HashMap<>();
+    public final Queue<PathNode> toVisit = new LinkedList<>();
+    public final HashMap<Integer, PathNode> visited = new HashMap<>();
 
-  public BFSData(Person root) {
-    PathNode sourcePath = new PathNode(root, null);
-    toVisit.add(sourcePath);
-    visited.put(root.getID(), sourcePath);
-  }
+    public BFSData(Person root) {
+        PathNode sourcePath = new PathNode(root, null);
+        toVisit.add(sourcePath);
+        visited.put(root.getID(), sourcePath);
+    }
 
-  public boolean isFinished() {
-    return toVisit.isEmpty();
-  }
+    public boolean isFinished() {
+        return toVisit.isEmpty();
+    }
 }

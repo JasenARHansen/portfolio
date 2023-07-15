@@ -7,13 +7,16 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TreesAndGraphsTests {
-  @Rule public final TestName name = new TestName();
+    @Rule
+    public final TestName name = new TestName();
 
-  @Test
-  public void getDescription() {
-    System.out.format("%s: ", name.getMethodName());
-    TreesAndGraphs.getDescription();
-  }
+    @Test
+    public void getDescription() {
+        printTestHeader(name.getMethodName());
+        TreesAndGraphs.getDescription();
+    }
 }

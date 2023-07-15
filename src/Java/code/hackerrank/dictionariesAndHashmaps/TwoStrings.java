@@ -57,28 +57,28 @@ public class TwoStrings {
       2, s1 = 'hi', s2 = 'world'. s1 and s2 share no common substrings.
   */
 
-  public static String twoStrings(String s1, String s2) {
-    String left;
-    String right;
-    if (s1.length() < s2.length()) {
-      left = s1;
-      right = s2;
-    } else {
-      left = s2;
-      right = s1;
-    }
-    Set<String> searched = new HashSet<>();
-    String substring;
-    for (int leftIndex = 0; leftIndex < left.length(); leftIndex++) {
-      for (int rightIndex = leftIndex + 1; rightIndex <= left.length(); rightIndex++) {
-        substring = left.substring(leftIndex, rightIndex);
-        if (searched.add(substring)) {
-          if (right.contains(substring)) {
-            return "YES";
-          }
+    public static String twoStrings(String s1, String s2) {
+        String left;
+        String right;
+        if (s1.length() < s2.length()) {
+            left = s1;
+            right = s2;
+        } else {
+            left = s2;
+            right = s1;
         }
-      }
+        Set<String> searched = new HashSet<>();
+        String substring;
+        for (int leftIndex = 0; leftIndex < left.length(); leftIndex++) {
+            for (int rightIndex = leftIndex + 1; rightIndex <= left.length(); rightIndex++) {
+                substring = left.substring(leftIndex, rightIndex);
+                if (searched.add(substring)) {
+                    if (right.contains(substring)) {
+                        return "YES";
+                    }
+                }
+            }
+        }
+        return "NO";
     }
-    return "NO";
-  }
 }

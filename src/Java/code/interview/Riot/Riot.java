@@ -13,10 +13,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SuppressWarnings({
-  "DuplicatedCode",
-  "GrazieInspection",
-  "SpellCheckingInspection",
-  "DataFlowIssue"
+        "DuplicatedCode",
+        "GrazieInspection",
+        "SpellCheckingInspection",
+        "DataFlowIssue"
 })
 public class Riot {
 
@@ -58,155 +58,155 @@ public class Riot {
   ./lib/riot-core-remoting/secrets.cpp
      . . . and so on . . . */
 
-  /* Object to hold processed files the Key will be the file path and the List will be a list
-  of SHAs found in the file. */
-  static final Map<String, ArrayList<String>> shaList = new LinkedHashMap<>();
-  // Comparator to sort by value
-  static final Comparator<Entry<String, Integer>> valueComparator =
-      (e1, e2) -> {
-        Integer v1 = e1.getValue();
-        Integer v2 = e2.getValue();
-        return v1.compareTo(v2);
-      };
-  // Comparator to sort by path depth
-  static final Comparator<Entry<String, Integer>> depthComparatorBonus =
-      (e1, e2) -> {
-        Integer v1 = e1.getKey().length() - e1.getKey().replace(File.separator, "").length();
-        Integer v2 = e2.getKey().length() - e2.getKey().replace(File.separator, "").length();
-        return v1.compareTo(v2);
-      };
-  // Comparator to sort by path depth
-  static final Comparator<Entry<String, ArrayList<String>>> depthComparator =
-      (e1, e2) -> {
-        Integer v1 = e1.getKey().length() - e1.getKey().replace(File.separator, "").length();
-        Integer v2 = e2.getKey().length() - e2.getKey().replace(File.separator, "").length();
-        return v1.compareTo(v2);
-      };
+    // Comparator to sort by path depth
+    static final Comparator<Entry<String, ArrayList<String>>> depthComparator =
+            (e1, e2) -> {
+                Integer v1 = e1.getKey().length() - e1.getKey().replace(File.separator, "").length();
+                Integer v2 = e2.getKey().length() - e2.getKey().replace(File.separator, "").length();
+                return v1.compareTo(v2);
+            };
+    // Comparator to sort by path depth
+    static final Comparator<Entry<String, Integer>> depthComparatorBonus =
+            (e1, e2) -> {
+                Integer v1 = e1.getKey().length() - e1.getKey().replace(File.separator, "").length();
+                Integer v2 = e2.getKey().length() - e2.getKey().replace(File.separator, "").length();
+                return v1.compareTo(v2);
+            };
+    /* Object to hold processed files the Key will be the file path and the List will be a list
+    of SHAs found in the file. */
+    static final Map<String, ArrayList<String>> shaList = new LinkedHashMap<>();
+    // Comparator to sort by value
+    static final Comparator<Entry<String, Integer>> valueComparator =
+            (e1, e2) -> {
+                Integer v1 = e1.getValue();
+                Integer v2 = e2.getValue();
+                return v1.compareTo(v2);
+            };
 
-  public static void main(String[] argv) throws Exception {
-    // Folder of source files
-    String folderPath = "c:/test";
-    // RegEX definition
-    String regex = "[a-f0-9]{40}";
-    // Process all files recursively
-    processFiles(folderPath, regex);
-    // Print all SHA's sorted by source file
-    System.out.println("Print Case 1: SHA's sorted by source file\n");
-    printShaPerFile();
-    // Print SHA count per file
-    System.out.println("\nPrint Case 2: SHA count per file\n");
-    printShaCountPerFile();
-    // Print Ordered list of number of times a SHA is found
-    System.out.println("\nPrint Case 3: Ordered list of SHA instance count\n");
-    printShaCount();
-    // Print Ordered list of number of times a SHA is found per directory
-    System.out.println("\nBonus Case: SHA count per directory\n");
-    printBonus();
-  }
+    public static void main(String[] argv) throws Exception {
+        // Folder of source files
+        String folderPath = "c:/test";
+        // RegEX definition
+        String regex = "[a-f0-9]{40}";
+        // Process all files recursively
+        processFiles(folderPath, regex);
+        // Print all SHA's sorted by source file
+        System.out.println("Print Case 1: SHA's sorted by source file\n");
+        printShaPerFile();
+        // Print SHA count per file
+        System.out.println("\nPrint Case 2: SHA count per file\n");
+        printShaCountPerFile();
+        // Print Ordered list of number of times a SHA is found
+        System.out.println("\nPrint Case 3: Ordered list of SHA instance count\n");
+        printShaCount();
+        // Print Ordered list of number of times a SHA is found per directory
+        System.out.println("\nBonus Case: SHA count per directory\n");
+        printBonus();
+    }
 
-  private static void printBonus() {
-    // Print Ordered list of number of times a SHA is found per directory
-    Map<String, Integer> shaBonus = new LinkedHashMap<>();
-    for (String key : shaList.keySet()) {
-      String path = key.substring(0, key.lastIndexOf(File.separator) + 1);
-      Integer count = shaList.get(key).size();
-      shaBonus.merge(path, count, Integer::sum);
+    private static void printBonus() {
+        // Print Ordered list of number of times a SHA is found per directory
+        Map<String, Integer> shaBonus = new LinkedHashMap<>();
+        for (String key : shaList.keySet()) {
+            String path = key.substring(0, key.lastIndexOf(File.separator) + 1);
+            Integer count = shaList.get(key).size();
+            shaBonus.merge(path, count, Integer::sum);
+        }
+        Set<Entry<String, Integer>> keySet = shaBonus.entrySet();
+        List<Entry<String, Integer>> keySetList = new ArrayList<>(keySet);
+        keySetList.sort(depthComparatorBonus);
+        LinkedHashMap<String, Integer> sorteMap = new LinkedHashMap<>(keySetList.size());
+        for (Entry<String, Integer> key : keySetList) {
+            sorteMap.put(key.getKey(), key.getValue());
+        }
+        Set<Entry<String, Integer>> entrySetSortedByValue = sorteMap.entrySet();
+        for (Entry<String, Integer> mapping : entrySetSortedByValue) {
+            System.out.format("%-5s  %s\n", mapping.getValue(), mapping.getKey());
+        }
     }
-    Set<Entry<String, Integer>> keySet = shaBonus.entrySet();
-    List<Entry<String, Integer>> keySetList = new ArrayList<>(keySet);
-    keySetList.sort(depthComparatorBonus);
-    LinkedHashMap<String, Integer> sorteMap = new LinkedHashMap<>(keySetList.size());
-    for (Entry<String, Integer> key : keySetList) {
-      sorteMap.put(key.getKey(), key.getValue());
-    }
-    Set<Entry<String, Integer>> entrySetSortedByValue = sorteMap.entrySet();
-    for (Entry<String, Integer> mapping : entrySetSortedByValue) {
-      System.out.format("%-5s  %s\n", mapping.getValue(), mapping.getKey());
-    }
-  }
 
-  private static void printShaCount() {
-    // Print Ordered list of number of times a SHA is found
-    // Object to hold the sha counts per file
-    Map<String, Integer> shacount = new LinkedHashMap<>();
-    for (String key : shaList.keySet()) {
-      for (String sha : shaList.get(key)) {
-        shacount.merge(sha, 1, Integer::sum);
-      }
+    private static void printShaCount() {
+        // Print Ordered list of number of times a SHA is found
+        // Object to hold the sha counts per file
+        Map<String, Integer> shacount = new LinkedHashMap<>();
+        for (String key : shaList.keySet()) {
+            for (String sha : shaList.get(key)) {
+                shacount.merge(sha, 1, Integer::sum);
+            }
+        }
+        Set<Entry<String, Integer>> keySet = shacount.entrySet();
+        List<Entry<String, Integer>> keySetList = new ArrayList<>(keySet);
+        keySetList.sort(valueComparator);
+        LinkedHashMap<String, Integer> sortMap = new LinkedHashMap<>(keySetList.size());
+        for (Entry<String, Integer> key : keySetList) {
+            sortMap.put(key.getKey(), key.getValue());
+        }
+        Set<Entry<String, Integer>> entrySetSortedByValue = sortMap.entrySet();
+        for (Entry<String, Integer> mapping : entrySetSortedByValue) {
+            System.out.format("%-5s  %s\n", mapping.getValue(), mapping.getKey());
+        }
     }
-    Set<Entry<String, Integer>> keySet = shacount.entrySet();
-    List<Entry<String, Integer>> keySetList = new ArrayList<>(keySet);
-    keySetList.sort(valueComparator);
-    LinkedHashMap<String, Integer> sortMap = new LinkedHashMap<>(keySetList.size());
-    for (Entry<String, Integer> key : keySetList) {
-      sortMap.put(key.getKey(), key.getValue());
-    }
-    Set<Entry<String, Integer>> entrySetSortedByValue = sortMap.entrySet();
-    for (Entry<String, Integer> mapping : entrySetSortedByValue) {
-      System.out.format("%-5s  %s\n", mapping.getValue(), mapping.getKey());
-    }
-  }
 
-  private static void printShaCountPerFile() {
-    // Print SHA count per file
-    Set<Entry<String, ArrayList<String>>> keySet = shaList.entrySet();
-    List<Entry<String, ArrayList<String>>> keySetList = new ArrayList<>(keySet);
-    keySetList.sort(depthComparator);
-    LinkedHashMap<String, ArrayList<String>> sorteMap = new LinkedHashMap<>(keySetList.size());
-    for (Entry<String, ArrayList<String>> key : keySetList) {
-      sorteMap.put(key.getKey(), key.getValue());
+    private static void printShaCountPerFile() {
+        // Print SHA count per file
+        Set<Entry<String, ArrayList<String>>> keySet = shaList.entrySet();
+        List<Entry<String, ArrayList<String>>> keySetList = new ArrayList<>(keySet);
+        keySetList.sort(depthComparator);
+        LinkedHashMap<String, ArrayList<String>> sorteMap = new LinkedHashMap<>(keySetList.size());
+        for (Entry<String, ArrayList<String>> key : keySetList) {
+            sorteMap.put(key.getKey(), key.getValue());
+        }
+        Set<Entry<String, ArrayList<String>>> entrySetSortedByValue = sorteMap.entrySet();
+        for (Entry<String, ArrayList<String>> mapping : entrySetSortedByValue) {
+            System.out.format("%s  %s\n", mapping.getKey(), mapping.getValue().size());
+        }
     }
-    Set<Entry<String, ArrayList<String>>> entrySetSortedByValue = sorteMap.entrySet();
-    for (Entry<String, ArrayList<String>> mapping : entrySetSortedByValue) {
-      System.out.format("%s  %s\n", mapping.getKey(), mapping.getValue().size());
-    }
-  }
 
-  private static void printShaPerFile() {
-    // Print all SHA's sorted by source file
-    Set<Entry<String, ArrayList<String>>> keySet = shaList.entrySet();
-    List<Entry<String, ArrayList<String>>> keySetList = new ArrayList<>(keySet);
-    keySetList.sort(depthComparator);
-    LinkedHashMap<String, ArrayList<String>> sortMap = new LinkedHashMap<>(keySetList.size());
-    for (Entry<String, ArrayList<String>> key : keySetList) {
-      sortMap.put(key.getKey(), key.getValue());
+    private static void printShaPerFile() {
+        // Print all SHA's sorted by source file
+        Set<Entry<String, ArrayList<String>>> keySet = shaList.entrySet();
+        List<Entry<String, ArrayList<String>>> keySetList = new ArrayList<>(keySet);
+        keySetList.sort(depthComparator);
+        LinkedHashMap<String, ArrayList<String>> sortMap = new LinkedHashMap<>(keySetList.size());
+        for (Entry<String, ArrayList<String>> key : keySetList) {
+            sortMap.put(key.getKey(), key.getValue());
+        }
+        Set<Entry<String, ArrayList<String>>> entrySetSortedByValue = sortMap.entrySet();
+        for (Entry<String, ArrayList<String>> mapping : entrySetSortedByValue) {
+            for (String value : mapping.getValue()) {
+                System.out.format("%s  %s\n", mapping.getKey(), value);
+            }
+        }
     }
-    Set<Entry<String, ArrayList<String>>> entrySetSortedByValue = sortMap.entrySet();
-    for (Entry<String, ArrayList<String>> mapping : entrySetSortedByValue) {
-      for (String value : mapping.getValue()) {
-        System.out.format("%s  %s\n", mapping.getKey(), value);
-      }
-    }
-  }
 
-  private static void processFile(String filename, Pattern pattern) throws IOException {
-    FileInputStream inputStream = new FileInputStream(filename);
-    FileChannel fc = inputStream.getChannel();
-    ByteBuffer byteBuffer = fc.map(FileChannel.MapMode.READ_ONLY, 0, (int) fc.size());
-    CharBuffer characterBuffer = StandardCharsets.ISO_8859_1.newDecoder().decode(byteBuffer);
-    Matcher matcher = pattern.matcher(characterBuffer);
-    // Create list to hold SHA's
-    ArrayList<String> shaValues = new ArrayList<>();
-    // Find all matches to the defined RegEx
-    while (matcher.find()) {
-      shaValues.add(matcher.group());
+    private static void processFile(String filename, Pattern pattern) throws IOException {
+        FileInputStream inputStream = new FileInputStream(filename);
+        FileChannel fc = inputStream.getChannel();
+        ByteBuffer byteBuffer = fc.map(FileChannel.MapMode.READ_ONLY, 0, (int) fc.size());
+        CharBuffer characterBuffer = StandardCharsets.ISO_8859_1.newDecoder().decode(byteBuffer);
+        Matcher matcher = pattern.matcher(characterBuffer);
+        // Create list to hold SHA's
+        ArrayList<String> shaValues = new ArrayList<>();
+        // Find all matches to the defined RegEx
+        while (matcher.find()) {
+            shaValues.add(matcher.group());
+        }
+        fc.close();
+        inputStream.close();
+        shaList.put(filename, shaValues);
     }
-    fc.close();
-    inputStream.close();
-    shaList.put(filename, shaValues);
-  }
 
-  private static void processFiles(String folderPath, String regex) throws IOException {
-    // Process all files recursively
-    File folder = new File(folderPath);
-    File[] listOfFiles = folder.listFiles();
-    Pattern pattern = Pattern.compile(regex);
-    for (File listOfFile : listOfFiles) {
-      if (listOfFile.isFile()) {
-        processFile(listOfFile.getAbsolutePath(), pattern);
-      } else if (listOfFile.isDirectory()) {
-        processFiles(listOfFile.getAbsolutePath(), regex);
-      }
+    private static void processFiles(String folderPath, String regex) throws IOException {
+        // Process all files recursively
+        File folder = new File(folderPath);
+        File[] listOfFiles = folder.listFiles();
+        Pattern pattern = Pattern.compile(regex);
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                processFile(listOfFile.getAbsolutePath(), pattern);
+            } else if (listOfFile.isDirectory()) {
+                processFiles(listOfFile.getAbsolutePath(), regex);
+            }
+        }
     }
-  }
 }

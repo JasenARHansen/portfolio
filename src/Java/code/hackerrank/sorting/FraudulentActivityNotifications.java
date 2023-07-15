@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 @SuppressWarnings({
-  "IntegerDivisionInFloatingPointContext",
-  "GrazieInspection",
-  "SpellCheckingInspection"
+        "IntegerDivisionInFloatingPointContext",
+        "GrazieInspection",
+        "SpellCheckingInspection"
 })
 public class FraudulentActivityNotifications {
   /*
@@ -68,55 +68,55 @@ public class FraudulentActivityNotifications {
    expenditures are [1, 2, 3, 4, 4] with a median of 2.5 The client spends 4 which is less than
    2*2.5 so no notification is sent. */
 
-  public static int activityNotifications2(int[] expenditure, int d) {
-    int notifications = 0;
-    double median;
-    boolean even = d % 2 == 0;
-    int index = d / 2;
-    int[] subArray;
-    for (int startIndex = 0; startIndex < expenditure.length - d; startIndex++) {
-      subArray = Arrays.copyOfRange(expenditure, startIndex, startIndex + d);
-      Arrays.sort(subArray);
-      if (even) {
-        median = (subArray[index] + subArray[index + 1]) / 2;
-      } else {
-        median = subArray[index];
-      }
-      if (expenditure[startIndex + d] >= median * 2) {
-        notifications++;
-      }
-    }
-    return notifications;
-  }
-
-  public static int activityNotifications(int[] expenditure, int d) {
-    int notifications = 0;
-    double median;
-    boolean even = d % 2 == 0;
-    int size = d / 2 + 1;
-    PriorityQueue<Integer> numbers;
-    for (int startIndex = 0; startIndex < expenditure.length - d; startIndex++) {
-      // subArray = Arrays.copyOfRange(expenditure, startIndex, startIndex + d);
-      numbers = new PriorityQueue<>();
-      for (int index = startIndex; index < startIndex + d; index++) {
-        if (numbers.size() < size) {
-          numbers.add(expenditure[index]);
-        } else {
-          if (!numbers.isEmpty() && (expenditure[index] > numbers.peek())) {
-            numbers.poll();
-            numbers.add(expenditure[index]);
-          }
+    public static int activityNotifications(int[] expenditure, int d) {
+        int notifications = 0;
+        double median;
+        boolean even = d % 2 == 0;
+        int size = d / 2 + 1;
+        PriorityQueue<Integer> numbers;
+        for (int startIndex = 0; startIndex < expenditure.length - d; startIndex++) {
+            // subArray = Arrays.copyOfRange(expenditure, startIndex, startIndex + d);
+            numbers = new PriorityQueue<>();
+            for (int index = startIndex; index < startIndex + d; index++) {
+                if (numbers.size() < size) {
+                    numbers.add(expenditure[index]);
+                } else {
+                    if (!numbers.isEmpty() && (expenditure[index] > numbers.peek())) {
+                        numbers.poll();
+                        numbers.add(expenditure[index]);
+                    }
+                }
+            }
+            median = numbers.remove();
+            if (even) {
+                median += numbers.remove();
+                median /= 2;
+            }
+            if (expenditure[startIndex + d] >= median * 2) {
+                notifications++;
+            }
         }
-      }
-      median = numbers.remove();
-      if (even) {
-        median += numbers.remove();
-        median /= 2;
-      }
-      if (expenditure[startIndex + d] >= median * 2) {
-        notifications++;
-      }
+        return notifications;
     }
-    return notifications;
-  }
+
+    public static int activityNotifications2(int[] expenditure, int d) {
+        int notifications = 0;
+        double median;
+        boolean even = d % 2 == 0;
+        int index = d / 2;
+        int[] subArray;
+        for (int startIndex = 0; startIndex < expenditure.length - d; startIndex++) {
+            subArray = Arrays.copyOfRange(expenditure, startIndex, startIndex + d);
+            Arrays.sort(subArray);
+            if (even) {
+                median = (subArray[index] + subArray[index + 1]) / 2;
+            } else {
+                median = subArray[index];
+            }
+            if (expenditure[startIndex + d] >= median * 2) {
+                notifications++;
+            }
+        }
+        return notifications;
+    }
 }

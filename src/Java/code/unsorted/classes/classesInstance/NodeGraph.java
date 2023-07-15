@@ -1,132 +1,132 @@
 package Java.code.unsorted.classes.classesInstance;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.*;
+
+import static org.junit.Assert.assertNotNull;
 
 @SuppressWarnings({"unchecked", "unused", "DuplicatedCode", "SuspiciousMethodCalls"})
 public class NodeGraph<X extends Comparable<X>, Y, Z> implements Comparable<NodeGraph<X, Y, Z>> {
-  private final Map<X, Edge<X, Z>> adjacent = new HashMap<>();
-  private X id;
-  private Y data;
+    private final Map<X, Edge<X, Z>> adjacent = new HashMap<>();
+    private Y data;
+    private X id;
 
-  public NodeGraph(Object id, Object data) {
-    this(id);
-    this.data = (Y) data;
-  }
-
-  public NodeGraph(Object id) {
-    assertNotNull(id);
-    this.id = (X) id;
-  }
-
-  public void addAdjacent(Object... values) {
-    X id = null;
-    Object edgeData = null;
-    if (values.length > 0) {
-      if (values[0] instanceof NodeGraph<?, ?, ?>) {
-        id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
-      } else {
-        id = (X) values[0];
-      }
+    public NodeGraph(Object id, Object data) {
+        this(id);
+        this.data = (Y) data;
     }
-    if (values.length > 1) {
-      edgeData = values[1];
+
+    public NodeGraph(Object id) {
+        assertNotNull(id);
+        this.id = (X) id;
     }
-    this.adjacent.put(id, new Edge<>(id, edgeData));
-  }
 
-  public X getId() {
-    return this.id;
-  }
-
-  public void setId(Object id) {
-    this.id = (X) id;
-  }
-
-  @Override
-  public int compareTo(NodeGraph<X, Y, Z> target) {
-    return this.id.compareTo(target.getId());
-  }
-
-  public int getAdjacencyCount() {
-    return adjacent.size();
-  }
-
-  public Y getData() {
-    return this.data;
-  }
-
-  public void setData(Object data) {
-    this.data = (Y) data;
-  }
-
-  public boolean isAdjacent(Object value) {
-    Object id;
-    if (value instanceof NodeGraph<?, ?, ?>) {
-      id = ((NodeGraph<?, ?, ?>) value).getId();
-    } else {
-      id = value;
+    public void addAdjacent(Object... values) {
+        X id = null;
+        Object edgeData = null;
+        if (values.length > 0) {
+            if (values[0] instanceof NodeGraph<?, ?, ?>) {
+                id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
+            } else {
+                id = (X) values[0];
+            }
+        }
+        if (values.length > 1) {
+            edgeData = values[1];
+        }
+        this.adjacent.put(id, new Edge<>(id, edgeData));
     }
-    return this.adjacent.containsKey(id);
-  }
 
-  public void removeAdjacent(Object value) {
-    Object id;
-    if (value instanceof NodeGraph<?, ?, ?>) {
-      id = ((NodeGraph<?, ?, ?>) value).getId();
-    } else {
-      id = value;
+    public X getId() {
+        return this.id;
     }
-    this.adjacent.remove(id);
-  }
 
-  public void setAdjacent(Object... values) {
-    X id = null;
-    Object data = null;
-    if (values.length > 0) {
-      if (values[0] instanceof NodeGraph<?, ?, ?>) {
-        id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
-      } else {
-        id = (X) values[0];
-      }
+    public void setId(Object id) {
+        this.id = (X) id;
     }
-    if (values.length > 1) {
-      if (values[1] instanceof NodeGraph<?, ?, ?>) {
-        data = ((NodeGraph<?, ?, ?>) values[1]).getId();
-      } else {
-        data = values[1];
-      }
-    }
-    this.adjacent.put(id, new Edge<>(id, data));
-  }
 
-  @Override
-  public String toString() {
-    if (this.adjacent.isEmpty()) {
-      if (data == null) {
-        return String.format("(id: %s, data: null)", this.id.toString());
-      } else {
-        return String.format("(id: %s, data: %s)", this.id.toString(), this.data.toString());
-      }
-    } else {
-      if (data == null) {
-        return String.format(
-            "(id: %s, data: null, adjacent to: %s)",
-            this.id.toString(), getAdjacencyList().toString().replace("[", "").replace("]", ""));
-      } else {
-        return String.format(
-            "(id: %s, data: %s, adjacent to: %s)",
-            this.id.toString(),
-            this.data.toString(),
-            getAdjacencyList().toString().replace("[", "").replace("]", ""));
-      }
+    @Override
+    public int compareTo(NodeGraph<X, Y, Z> target) {
+        return this.id.compareTo(target.getId());
     }
-  }
 
-  public List<X> getAdjacencyList() {
-    List<X> forSorting = new ArrayList<>(this.adjacent.keySet());
-    Collections.sort(forSorting);
-    return forSorting;
-  }
+    public int getAdjacencyCount() {
+        return adjacent.size();
+    }
+
+    public Y getData() {
+        return this.data;
+    }
+
+    public void setData(Object data) {
+        this.data = (Y) data;
+    }
+
+    public boolean isAdjacent(Object value) {
+        Object id;
+        if (value instanceof NodeGraph<?, ?, ?>) {
+            id = ((NodeGraph<?, ?, ?>) value).getId();
+        } else {
+            id = value;
+        }
+        return this.adjacent.containsKey(id);
+    }
+
+    public void removeAdjacent(Object value) {
+        Object id;
+        if (value instanceof NodeGraph<?, ?, ?>) {
+            id = ((NodeGraph<?, ?, ?>) value).getId();
+        } else {
+            id = value;
+        }
+        this.adjacent.remove(id);
+    }
+
+    public void setAdjacent(Object... values) {
+        X id = null;
+        Object data = null;
+        if (values.length > 0) {
+            if (values[0] instanceof NodeGraph<?, ?, ?>) {
+                id = (X) ((NodeGraph<?, ?, ?>) values[0]).getId();
+            } else {
+                id = (X) values[0];
+            }
+        }
+        if (values.length > 1) {
+            if (values[1] instanceof NodeGraph<?, ?, ?>) {
+                data = ((NodeGraph<?, ?, ?>) values[1]).getId();
+            } else {
+                data = values[1];
+            }
+        }
+        this.adjacent.put(id, new Edge<>(id, data));
+    }
+
+    @Override
+    public String toString() {
+        if (this.adjacent.isEmpty()) {
+            if (data == null) {
+                return String.format("(id: %s, data: null)", this.id.toString());
+            } else {
+                return String.format("(id: %s, data: %s)", this.id.toString(), this.data.toString());
+            }
+        } else {
+            if (data == null) {
+                return String.format(
+                        "(id: %s, data: null, adjacent to: %s)",
+                        this.id.toString(), getAdjacencyList().toString().replace("[", "").replace("]", ""));
+            } else {
+                return String.format(
+                        "(id: %s, data: %s, adjacent to: %s)",
+                        this.id.toString(),
+                        this.data.toString(),
+                        getAdjacencyList().toString().replace("[", "").replace("]", ""));
+            }
+        }
+    }
+
+    public List<X> getAdjacencyList() {
+        List<X> forSorting = new ArrayList<>(this.adjacent.keySet());
+        Collections.sort(forSorting);
+        return forSorting;
+    }
 }

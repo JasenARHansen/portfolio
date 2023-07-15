@@ -4,101 +4,101 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"DuplicatedCode", "GrazieInspection"})
 public class Question {
-  public static void main(String[] args) {
-    String[] projects = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
-    String[][] dependencies = {
-      {"a", "b"},
-      {"b", "c"},
-      {"a", "c"},
-      {"a", "c"},
-      {"d", "e"},
-      {"b", "d"},
-      {"e", "f"},
-      {"a", "f"},
-      {"h", "i"},
-      {"h", "j"},
-      {"i", "j"},
-      {"g", "j"}
-    };
-    String[] buildOrder = buildOrderWrapper(projects, dependencies);
-    if (buildOrder == null) {
-      System.out.println("Circular Dependency.");
-    } else {
-      for (String s : buildOrder) {
-        System.out.println(s);
-      }
+    public static void main(String[] args) {
+        String[] projects = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+        String[][] dependencies = {
+                {"a", "b"},
+                {"b", "c"},
+                {"a", "c"},
+                {"a", "c"},
+                {"d", "e"},
+                {"b", "d"},
+                {"e", "f"},
+                {"a", "f"},
+                {"h", "i"},
+                {"h", "j"},
+                {"i", "j"},
+                {"g", "j"}
+        };
+        String[] buildOrder = buildOrderWrapper(projects, dependencies);
+        if (buildOrder == null) {
+            System.out.println("Circular Dependency.");
+        } else {
+            for (String s : buildOrder) {
+                System.out.println(s);
+            }
+        }
     }
-  }
 
-  public static String[] buildOrderWrapper(String[] projects, String[][] dependencies) {
-    Project[] buildOrder = findBuildOrder(projects, dependencies);
-    if (buildOrder == null) return null;
-    return convertToStringList(buildOrder);
-  }
-
-  public static String[] convertToStringList(Project[] projects) {
-    String[] buildOrder = new String[projects.length];
-    for (int i = 0; i < projects.length; i++) {
-      buildOrder[i] = projects[i].getName();
+    public static String[] buildOrderWrapper(String[] projects, String[][] dependencies) {
+        Project[] buildOrder = findBuildOrder(projects, dependencies);
+        if (buildOrder == null) return null;
+        return convertToStringList(buildOrder);
     }
-    return buildOrder;
-  }
 
-  public static Project[] findBuildOrder(String[] projects, String[][] dependencies) {
-    Graph graph = buildGraph(projects, dependencies);
-    return orderProjects(graph.getNodes());
-  }
+    public static Project[] findBuildOrder(String[] projects, String[][] dependencies) {
+        Graph graph = buildGraph(projects, dependencies);
+        return orderProjects(graph.getNodes());
+    }
 
-  public static Graph buildGraph(String[] projects, String[][] dependencies) {
+    public static String[] convertToStringList(Project[] projects) {
+        String[] buildOrder = new String[projects.length];
+        for (int i = 0; i < projects.length; i++) {
+            buildOrder[i] = projects[i].getName();
+        }
+        return buildOrder;
+    }
+
+    public static Graph buildGraph(String[] projects, String[][] dependencies) {
     /* Build the graph, adding the edge (a, b) if b is dependent on a.
     Assumes a pair is listed in “build order”. The pair (a, b) in
     dependencies indicates that b depends on a and a must be built
     before b. */
-    Graph graph = new Graph();
-    for (String project : projects) {
-      graph.getOrCreateNode(project);
+        Graph graph = new Graph();
+        for (String project : projects) {
+            graph.getOrCreateNode(project);
+        }
+        for (String[] dependency : dependencies) {
+            String first = dependency[0];
+            String second = dependency[1];
+            graph.addEdge(first, second);
+        }
+        return graph;
     }
-    for (String[] dependency : dependencies) {
-      String first = dependency[0];
-      String second = dependency[1];
-      graph.addEdge(first, second);
-    }
-    return graph;
-  }
 
-  public static Project[] orderProjects(ArrayList<Project> projects) {
-    Project[] order = new Project[projects.size()];
-    /* Add “roots” to the build order first. */
-    int endOfList = addNonDependent(order, projects, 0);
-    int toBeProcessed = 0;
-    while (toBeProcessed < order.length) {
-      Project current = order[toBeProcessed];
+    public static Project[] orderProjects(ArrayList<Project> projects) {
+        Project[] order = new Project[projects.size()];
+        /* Add “roots” to the build order first. */
+        int endOfList = addNonDependent(order, projects, 0);
+        int toBeProcessed = 0;
+        while (toBeProcessed < order.length) {
+            Project current = order[toBeProcessed];
       /* We have a circular dependency since there are no remaining
       projects with zero dependencies. */
-      if (current == null) {
-        return null;
-      }
-      /* Remove myself as a dependency. */
-      ArrayList<Project> children = current.getChildren();
-      for (Project child : children) {
-        child.decrementDependencies();
-      }
-      /* Add children that have no one depending on them. */
-      endOfList = addNonDependent(order, children, endOfList);
-      toBeProcessed++;
+            if (current == null) {
+                return null;
+            }
+            /* Remove myself as a dependency. */
+            ArrayList<Project> children = current.getChildren();
+            for (Project child : children) {
+                child.decrementDependencies();
+            }
+            /* Add children that have no one depending on them. */
+            endOfList = addNonDependent(order, children, endOfList);
+            toBeProcessed++;
+        }
+        return order;
     }
-    return order;
-  }
 
-  public static int addNonDependent(Project[] order, ArrayList<Project> projects, int offset) {
+    public static int addNonDependent(Project[] order, ArrayList<Project> projects, int offset) {
     /* A helper function to insert projects with zero dependencies
     into the order array, starting at index offset. */
-    for (Project project : projects) {
-      if (project.getNumberDependencies() == 0) {
-        order[offset] = project;
-        offset++;
-      }
+        for (Project project : projects) {
+            if (project.getNumberDependencies() == 0) {
+                order[offset] = project;
+                offset++;
+            }
+        }
+        return offset;
     }
-    return offset;
-  }
 }
