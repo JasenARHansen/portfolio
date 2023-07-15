@@ -2,7 +2,6 @@ package Java.code.ctci.source.ch_05_Bit_Manipulation.q5_03_Flip_Bit_to_Win;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("DuplicatedCode")
 public class QuestionB {
     public static void main(String[] args) {
         int original_number = 1775;

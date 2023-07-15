@@ -14,16 +14,19 @@ public class Display {
         refreshPage();
     }
 
-    public void refreshTitle() {
-        /* updates title display. */
-    }
-
     public void refreshDetails() {
         /* updates details display. */
+        System.out.println("Refreshing details display");
     }
 
     public void refreshPage() {
         /* updated page display. */
+        System.out.println("Refreshing page display");
+    }
+
+    public void refreshTitle() {
+        /* updates title display. */
+        System.out.println("Refreshing title display");
     }
 
     public void displayUser(User user) {
@@ -33,6 +36,7 @@ public class Display {
 
     public void refreshUsername() {
         /* updates username display. */
+        System.out.println("Refreshing username display");
     }
 
     public void turnPageBackward() {

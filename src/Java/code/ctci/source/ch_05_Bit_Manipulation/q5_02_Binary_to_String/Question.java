@@ -1,6 +1,5 @@
 package Java.code.ctci.source.ch_05_Bit_Manipulation.q5_02_Binary_to_String;
 
-@SuppressWarnings("DuplicatedCode")
 public class Question {
     public static void main(String[] args) {
         String bs = printBinary(.125);

@@ -13,7 +13,7 @@ import java.util.Arrays;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.assertEquals;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_02_Stack_Min_Test {
     @Rule

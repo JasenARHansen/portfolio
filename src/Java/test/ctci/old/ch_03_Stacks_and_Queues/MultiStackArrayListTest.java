@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.*;
 
-@SuppressWarnings({"ConstantValue", "DuplicatedCode", "DataFlowIssue"})
+@SuppressWarnings({"ConstantValue", "DataFlowIssue"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MultiStackArrayListTest {
     @Rule

@@ -38,5 +38,6 @@ public class User {
     }
 
     public void renewMembership() {
+        System.out.println("Membership renewed");
     }
 }

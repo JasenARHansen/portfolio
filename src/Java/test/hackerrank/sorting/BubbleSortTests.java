@@ -12,7 +12,6 @@ import java.util.Arrays;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.assertEquals;
 
-@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BubbleSortTests {
     @Rule

@@ -13,7 +13,7 @@ import java.util.Queue;
 
 import static Java.test.library.Library.printTestHeader;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q3_04_Queue_via_Stacks_Test {
     @Rule

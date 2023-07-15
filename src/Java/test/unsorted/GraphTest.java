@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import static Java.test.library.Library.printTestHeader;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GraphTest {
     @Rule
@@ -15,6 +17,7 @@ public class GraphTest {
 
     @Test
     public void graphAdjacency_Int() {
+        printTestHeader(name.getMethodName());
         GraphAdjacency<Integer, Integer> graph = new GraphAdjacency<>();
         graph.addEdge(1, 2, 1);
         graph.addEdge(1, 3, 1);
@@ -26,6 +29,7 @@ public class GraphTest {
 
     @Test
     public void graphAdjacency_String() {
+        printTestHeader(name.getMethodName());
         GraphAdjacency<String, Integer> graph = new GraphAdjacency<>();
         graph.addEdge("Cat", "Dog", 1);
         graph.addEdge("Cat", "Bird", 1);
@@ -44,8 +48,8 @@ public class GraphTest {
 
     @Test
     public void graph_Int() {
+        printTestHeader(name.getMethodName());
         Graph<Integer, String, Integer> graph = new Graph<>();
-        System.out.println("Node Inserts:");
         graph.addNode(1, "Cat");
         graph.addNode(2, "Dog");
         graph.addNode(3, "Bird");

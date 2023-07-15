@@ -1,6 +1,5 @@
 package Java.test.interview.Facebook.practice;
 
-import Java.code.interview.Facebook.practice.EditDistance;
 import Java.code.interview.Facebook.practice.ElementSwapping;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -47,6 +46,6 @@ public class ElementSwappingTests {
     @Test
     public void getDescription() {
         printTestHeader(name.getMethodName());
-        EditDistance.getDescription();
+        ElementSwapping.getDescription();
     }
 }

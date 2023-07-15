@@ -1,6 +1,5 @@
 package Java.code.ctci.source.ch_05_Bit_Manipulation.q5_08_Draw_Line;
 
-@SuppressWarnings("DuplicatedCode")
 public class Question {
     public static void main(String[] args) {
         int width = 8;

@@ -15,7 +15,7 @@ import java.util.stream.IntStream;
 
 import static Java.test.library.Library.printTestHeader;
 
-@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
+@SuppressWarnings({"NewClassNamingConvention"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q4_11_Random_Node_Test {
     @Rule

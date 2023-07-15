@@ -42,7 +42,7 @@ public class Moderate {
     }
 
     public static int maxNumber(int left, int right) {
-        return 0;
+        return Math.max(left, right);
     }
 
     public static int minimumDistance(int[] left, int[] right) {

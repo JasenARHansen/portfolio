@@ -13,7 +13,6 @@ import java.util.Arrays;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.assertArrayEquals;
 
-@SuppressWarnings("DuplicatedCode")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReverseOperationsTests {
     @Rule

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@SuppressWarnings({"GrazieInspection", "DuplicatedCode", "ConfusingMainMethod"})
+@SuppressWarnings({"GrazieInspection", "DuplicatedCode"})
 public class Scrabble {
     /*
     Given a list of letters, the assistant must return all possible words (in some language) that can be created with those letters.
@@ -58,10 +58,6 @@ public class Scrabble {
                         .mapToObj(e -> (char) e) // Stream<Character>
                         .collect(Collectors.toList());
         dictionary.getPaths(chars, words);
-    }
-
-    public void main(String[] args) {
-        this.getWords("CHAT");
     }
 
     public void setup(List<String> wordList) {

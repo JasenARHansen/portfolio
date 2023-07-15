@@ -81,7 +81,7 @@ public class NewYearChaos {
             for (int j = 0; j < n; j++) {
                 q.add(scan.nextInt());
             }
-            // If a person is at a lower index than their own number they MUST have cut at some point..
+            // If a person is at a lower index than their own number they MUST have cut at some point.
             int position;
             boolean pass = false;
             for (int person = q.size(); person > 0; person--) {

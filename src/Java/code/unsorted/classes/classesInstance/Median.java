@@ -21,8 +21,7 @@ public class Median<T extends Comparable<T>> {
         if (median.isEmpty()) {
             System.out.format("\nMedian values: NA");
         } else if (median.size() == 2) {
-            System.out.format(
-                    "\nMedian values: '%s' and '%s'", median.get(0).toString(), median.get(1).toString());
+            System.out.format("\nMedian values: '%s' and '%s'", median.get(0).toString(), median.get(1).toString());
         } else {
             System.out.format("\nMedian value: '%s'", median.get(0).toString());
         }
@@ -50,7 +49,7 @@ public class Median<T extends Comparable<T>> {
     }
 
     public void printMedian() {
-        smaller.printHeap();
-        larger.printHeap();
+        System.out.println(smaller.getHeap());
+        System.out.println(larger.getHeap());
     }
 }

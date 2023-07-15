@@ -4,9 +4,6 @@ package Java.code.ctci.old.ch_05_Bit_Manipulation;
 public class BitShift {
     public static final int SEQUENCE_LENGTH = 32;
 
-    public BitShift() {
-    }
-
     public static int bitSwapRequired(int left, int right) {
         int xor = left ^ right;
         int count = 0;

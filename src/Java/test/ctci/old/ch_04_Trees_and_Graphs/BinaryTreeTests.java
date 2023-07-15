@@ -379,7 +379,7 @@ public class BinaryTreeTests {
         binaryTree.insert(15);
         String result = binaryTree.outputInorder();
         assertEquals(expected, result);
-        System.out.format("\tInorde: %s\n", result);
+        System.out.format("\tIn order: %s\n", result);
     }
 
     @Test

@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.assertEquals;
 
-@SuppressWarnings("NewClassNamingConvention")
+@SuppressWarnings({"NewClassNamingConvention", "DuplicatedCode"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Q5_07_Pairwise_Swap_Test {
     @Rule

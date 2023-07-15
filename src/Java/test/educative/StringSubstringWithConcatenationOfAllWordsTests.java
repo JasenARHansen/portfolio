@@ -13,7 +13,7 @@ import java.util.List;
 import static Java.test.library.Library.printTestHeader;
 import static org.junit.Assert.assertEquals;
 
-@SuppressWarnings({"DuplicatedCode", "SpellCheckingInspection"})
+@SuppressWarnings({"SpellCheckingInspection"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StringSubstringWithConcatenationOfAllWordsTests {
     @Rule

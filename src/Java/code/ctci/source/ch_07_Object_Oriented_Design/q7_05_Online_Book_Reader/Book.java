@@ -25,7 +25,4 @@ public class Book {
     public void setID(int id) {
         bookId = id;
     }
-
-    public void update() {
-    }
 }

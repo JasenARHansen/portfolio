@@ -1,6 +1,5 @@
 package Java.code.ctci.source.ch_05_Bit_Manipulation.q5_03_Flip_Bit_to_Win;
 
-@SuppressWarnings("DuplicatedCode")
 public class QuestionD {
     public static void main(String[] args) {
         int[][] cases = {

@@ -1,91 +1,54 @@
 package Java.test.unsorted;
 
 import Java.code.unsorted.classes.classesInstance.Heap;
+import org.junit.FixMethodOrder;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestName;
+import org.junit.runners.MethodSorters;
 
-@SuppressWarnings("DuplicatedCode")
+import java.util.Arrays;
+import java.util.List;
+
+import static Java.test.library.Library.printTestHeader;
+import static org.junit.Assert.assertEquals;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HeapTest {
-    /* Class BinaryHeapTest. */
-    public static void main(String[] args) {
-        System.out.println("Heap Test:");
-        Heap<Integer> minHeap = new Heap<>();
-        minHeap.insert(17);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(5);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(3);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(10);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(84);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(19);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(6);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(22);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.insert(9);
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.remove();
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.remove();
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.remove();
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
-        minHeap.remove();
-        System.out.format("\nTop: '%s'", minHeap.peek().toString());
-        minHeap.printHeap();
+    @Rule
+    public TestName name = new TestName();
+
+    @Test
+    public void maxHeap() {
+        int expected = 17;
+        printTestHeader(name.getMethodName());
+        List<Integer> insert = Arrays.asList(17, 9, 22, 9, 5, 67);
         Heap<Integer> maxHeap = new Heap<>(false);
-        maxHeap.insert(17);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(5);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(3);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(10);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(84);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(19);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(6);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(22);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.insert(9);
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.remove();
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.remove();
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.remove();
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
-        maxHeap.remove();
-        System.out.format("\nTop: '%s'", maxHeap.peek().toString());
-        maxHeap.printHeap();
+        for (int number : insert) {
+            maxHeap.insert(number);
+        }
+        int result = 0;
+        for (int i = 0; i < 3; i++) {
+            result = maxHeap.remove();
+        }
+        assertEquals(expected, result);
+        System.out.format("\tHeap:  %s\n", maxHeap.getHeap());
+    }
+
+    @Test
+    public void minHeap() {
+        int expected = 9;
+        printTestHeader(name.getMethodName());
+        List<Integer> insert = Arrays.asList(17, 9, 22, 9, 5, 67);
+        Heap<Integer> minHeap = new Heap<>();
+        for (Integer number : insert) {
+            minHeap.insert(number);
+        }
+        int result = 0;
+        for (int i = 0; i < 3; i++) {
+            result = minHeap.remove();
+        }
+        assertEquals(expected, result);
+        System.out.format("\tHeap: %s\n", minHeap.getHeap());
     }
 }

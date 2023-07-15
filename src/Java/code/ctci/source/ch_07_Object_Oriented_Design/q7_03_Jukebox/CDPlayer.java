@@ -35,5 +35,6 @@ public class CDPlayer {
     }
 
     public void playSong(Song s) {
+        System.out.format("Playing %s\n", s.toString());
     }
 }

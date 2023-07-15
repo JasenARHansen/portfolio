@@ -19,6 +19,22 @@ public class Heap<T extends Comparable<T>> {
         this.heapItems = new ArrayList<>();
     }
 
+    public String getHeap() {
+        return String.format("\n%s: '%s'", getHeapType(), this.heapItems.toString());
+    }
+
+    public String getHeapType() {
+        if (this.heapType) {
+            return "MinHeap";
+        } else {
+            return "MaxHeap";
+        }
+    }
+
+    public void setHeapType(boolean heapType) {
+        this.heapType = heapType;
+    }
+
     public void insert(T input) {
         this.heapItems.add(input);
         heapifyUp();
@@ -74,22 +90,6 @@ public class Heap<T extends Comparable<T>> {
         this.heapItems.clear();
     }
 
-    public void printHeap() {
-        System.out.format("\n%s: '%s'", getHeapType(), this.heapItems.toString());
-    }
-
-    public String getHeapType() {
-        if (this.heapType) {
-            return "MinHeap";
-        } else {
-            return "MaxHeap";
-        }
-    }
-
-    public void setHeapType(boolean heapType) {
-        this.heapType = heapType;
-    }
-
     public T remove() {
         if (this.heapItems.size() == 0) {
             throw new IllegalStateException("Empty Heap");
@@ -118,22 +118,14 @@ public class Heap<T extends Comparable<T>> {
         int index = 0;
         while (hasLeftChild(index)) {
             int childIndex = getLeftChildIndex(index);
-            if (this.heapType
-                    && hasRightChild(index)
-                    && (getRightChild(index).compareTo(getLeftChild(index)) < 0)) {
+            if (this.heapType && hasRightChild(index) && (getRightChild(index).compareTo(getLeftChild(index)) < 0)) {
                 childIndex = getRightChildIndex(index);
-            } else if (!this.heapType
-                    && hasRightChild(index)
-                    && (getRightChild(index).compareTo(getLeftChild(index)) > 0)) {
+            } else if (!this.heapType && hasRightChild(index) && (getRightChild(index).compareTo(getLeftChild(index)) > 0)) {
                 childIndex = getRightChildIndex(index);
             }
-            if (this.heapType
-                    && hasRightChild(index)
-                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) < 0)) {
+            if (this.heapType && hasRightChild(index) && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) < 0)) {
                 break;
-            } else if (!this.heapType
-                    && hasRightChild(index)
-                    && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) > 0)) {
+            } else if (!this.heapType && hasRightChild(index) && (this.heapItems.get(index).compareTo(this.heapItems.get(childIndex)) > 0)) {
                 break;
             } else {
                 swapData(childIndex, index);

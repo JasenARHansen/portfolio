@@ -1,6 +1,5 @@
 package Java.code.ctci.source.ch_05_Bit_Manipulation.q5_03_Flip_Bit_to_Win;
 
-@SuppressWarnings("DuplicatedCode")
 public class QuestionC {
     public static final int SEQUENCE_LENGTH = 32;
 
