@@ -2294,6 +2294,14 @@ public class AssortedMethods {
         return array;
     }
 
+    public static int randomIntInRange(int min, int max) {
+        return randomInt(max + 1 - min) + min;
+    }
+
+    public static int randomInt(int n) {
+        return (int) (Math.random() * n);
+    }
+
     public static TreeNode randomBST(int N, int min, int max) {
         int d = randomIntInRange(min, max);
         TreeNode root = new TreeNode(d);
@@ -2305,14 +2313,6 @@ public class AssortedMethods {
 
     public static boolean randomBoolean() {
         return randomIntInRange(0, 1) == 0;
-    }
-
-    public static int randomIntInRange(int min, int max) {
-        return randomInt(max + 1 - min) + min;
-    }
-
-    public static int randomInt(int n) {
-        return (int) (Math.random() * n);
     }
 
     public static boolean[][] randomBooleanMatrix(int M, int N, int percentTrue) {

@@ -22,6 +22,24 @@ public class Hasher<K, V> {
         return node == null ? null : node.value;
     }
 
+    private LinkedListNode<K, V> getNodeForKey(K key) {
+        /* Get linked list node associated with a given key. */
+        int index = getIndexForKey(key);
+        LinkedListNode<K, V> current = arr.get(index);
+        while (current != null) {
+            if (current.key == key) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    public int getIndexForKey(K key) {
+        /* Really stupid function to map a key to an index. */
+        return Math.abs(key.hashCode() % arr.size());
+    }
+
     public void printTable() {
         for (int i = 0; i < arr.size(); i++) {
             String s = arr.get(i) == null ? "" : arr.get(i).printForward();
@@ -45,24 +63,6 @@ public class Hasher<K, V> {
         }
         arr.set(index, node);
         return null;
-    }
-
-    private LinkedListNode<K, V> getNodeForKey(K key) {
-        /* Get linked list node associated with a given key. */
-        int index = getIndexForKey(key);
-        LinkedListNode<K, V> current = arr.get(index);
-        while (current != null) {
-            if (current.key == key) {
-                return current;
-            }
-            current = current.next;
-        }
-        return null;
-    }
-
-    public int getIndexForKey(K key) {
-        /* Really stupid function to map a key to an index. */
-        return Math.abs(key.hashCode() % arr.size());
     }
 
     public V remove(K key) {

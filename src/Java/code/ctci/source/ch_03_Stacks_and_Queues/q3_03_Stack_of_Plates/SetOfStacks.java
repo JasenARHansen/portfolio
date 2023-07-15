@@ -16,6 +16,13 @@ public class SetOfStacks {
         return last == null || last.isEmpty();
     }
 
+    public Stack getLastStack() {
+        if (stacks.size() == 0) {
+            return null;
+        }
+        return stacks.get(stacks.size() - 1);
+    }
+
     public int leftShift(int index, boolean removeTop) {
         Stack stack = stacks.get(index);
         int removed_item;
@@ -53,12 +60,5 @@ public class SetOfStacks {
             stack.push(v);
             stacks.add(stack);
         }
-    }
-
-    public Stack getLastStack() {
-        if (stacks.size() == 0) {
-            return null;
-        }
-        return stacks.get(stacks.size() - 1);
     }
 }

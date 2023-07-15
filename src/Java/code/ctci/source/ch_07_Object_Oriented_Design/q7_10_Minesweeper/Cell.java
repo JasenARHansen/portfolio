@@ -38,6 +38,16 @@ public class Cell {
         }
     }
 
+    public String getUndersideState() {
+        if (isBomb) {
+            return "* ";
+        } else if (number > 0) {
+            return number + " ";
+        } else {
+            return "  ";
+        }
+    }
+
     public void incrementNumber() {
         number++;
     }
@@ -71,16 +81,6 @@ public class Cell {
     @Override
     public String toString() {
         return getUndersideState();
-    }
-
-    public String getUndersideState() {
-        if (isBomb) {
-            return "* ";
-        } else if (number > 0) {
-            return number + " ";
-        } else {
-            return "  ";
-        }
     }
 
     public boolean toggleGuess() {

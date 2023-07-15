@@ -102,6 +102,29 @@ public class Primes {
         return returnValue;
     }
 
+    public static List<Integer> primeFactors(int value) {
+        List<Integer> factorList = new ArrayList<>();
+        if (value < 0) {
+            factorList.add(-1);
+            value *= -1;
+        }
+        int currentIndex = 2;
+        int maxIndex = (int) Math.sqrt(value);
+        while ((currentIndex <= maxIndex) && (value != 1)) {
+            if (value % currentIndex == 0) {
+                factorList.add(currentIndex);
+                value /= currentIndex;
+                maxIndex = (int) Math.sqrt(value);
+            } else {
+                currentIndex++;
+            }
+        }
+        if (value > 1) {
+            factorList.add(value);
+        }
+        return factorList;
+    }
+
     public static boolean isPrime(int value) {
         List<Integer> factors = primeFactors(value);
         return factors.size() == 1;
@@ -176,28 +199,5 @@ public class Primes {
             returnString.append(factorCurrent).append("^").append(factorCount);
         }
         return returnString.toString();
-    }
-
-    public static List<Integer> primeFactors(int value) {
-        List<Integer> factorList = new ArrayList<>();
-        if (value < 0) {
-            factorList.add(-1);
-            value *= -1;
-        }
-        int currentIndex = 2;
-        int maxIndex = (int) Math.sqrt(value);
-        while ((currentIndex <= maxIndex) && (value != 1)) {
-            if (value % currentIndex == 0) {
-                factorList.add(currentIndex);
-                value /= currentIndex;
-                maxIndex = (int) Math.sqrt(value);
-            } else {
-                currentIndex++;
-            }
-        }
-        if (value > 1) {
-            factorList.add(value);
-        }
-        return factorList;
     }
 }

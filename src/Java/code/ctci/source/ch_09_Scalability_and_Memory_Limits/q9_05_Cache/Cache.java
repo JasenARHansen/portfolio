@@ -23,29 +23,6 @@ public class Cache {
         return null;
     }
 
-    public void insertResults(String query, String[] results) {
-        if (map.containsKey(query)) {
-            Node node = map.get(query);
-            node.results = results;
-            moveToFront(node);
-            return;
-        }
-
-        Node node = new Node(query, results);
-        moveToFront(node);
-        map.put(query, node);
-
-        if (size > MAX_SIZE) {
-            map.remove(tail.query);
-            removeFromLinkedList(tail);
-        }
-    }
-
-    public void moveToFront(String query) {
-        Node node = map.get(query);
-        moveToFront(node);
-    }
-
     public void moveToFront(Node node) {
         if (node == head) {
             return;
@@ -92,5 +69,28 @@ public class Cache {
 
         node.next = null;
         node.prev = null;
+    }
+
+    public void insertResults(String query, String[] results) {
+        if (map.containsKey(query)) {
+            Node node = map.get(query);
+            node.results = results;
+            moveToFront(node);
+            return;
+        }
+
+        Node node = new Node(query, results);
+        moveToFront(node);
+        map.put(query, node);
+
+        if (size > MAX_SIZE) {
+            map.remove(tail.query);
+            removeFromLinkedList(tail);
+        }
+    }
+
+    public void moveToFront(String query) {
+        Node node = map.get(query);
+        moveToFront(node);
     }
 }

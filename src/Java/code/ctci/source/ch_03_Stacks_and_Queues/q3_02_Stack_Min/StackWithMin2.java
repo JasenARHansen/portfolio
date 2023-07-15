@@ -17,18 +17,18 @@ public class StackWithMin2 extends Stack<Integer> {
         return value;
     }
 
-    public void push(int value) {
-        if (value <= min()) {
-            s2.push(value);
-        }
-        super.push(value);
-    }
-
     public int min() {
         if (s2.isEmpty()) {
             return Integer.MAX_VALUE;
         } else {
             return s2.peek();
         }
+    }
+
+    public void push(int value) {
+        if (value <= min()) {
+            s2.push(value);
+        }
+        super.push(value);
     }
 }

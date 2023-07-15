@@ -58,6 +58,18 @@ public class Tester {
         return isEqual(array1, array2);
     }
 
+    public static boolean isEqual(int[] array1, int[] array2) {
+        if (array1.length != array2.length) {
+            return false;
+        }
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] != array2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static int max(int[] array, int left, int right) {
         int max = Integer.MIN_VALUE;
         for (int i = left; i <= right; i++) {
@@ -99,18 +111,6 @@ public class Tester {
             System.out.println("Ranked Array:   " + AssortedMethods.arrayToString(array2));
             System.out.println("Sorted Array:   " + AssortedMethods.arrayToString(array1));
             return false;
-        }
-        return true;
-    }
-
-    public static boolean isEqual(int[] array1, int[] array2) {
-        if (array1.length != array2.length) {
-            return false;
-        }
-        for (int i = 0; i < array1.length; i++) {
-            if (array1[i] != array2[i]) {
-                return false;
-            }
         }
         return true;
     }

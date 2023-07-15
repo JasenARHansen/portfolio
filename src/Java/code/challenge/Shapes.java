@@ -44,6 +44,22 @@ public class Shapes {
         }
     }
 
+    private static String inscribedLine(int count, char... symbolIn) {
+        char symbol1 = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
+        char symbol2 = symbolIn.length > 1 ? symbolIn[1] : defaultSymbol2;
+        StringBuilder step = new StringBuilder();
+        if (count > 0) {
+            step.append(symbol1);
+        }
+        if (count > 2) {
+            step.append(String.valueOf(symbol2).repeat(Math.max(0, count - 2)));
+        }
+        if (count > 1) {
+            step.append(symbol1);
+        }
+        return step.toString();
+    }
+
     public static void getDescription() {
         System.out.println(
                 """
@@ -306,22 +322,6 @@ public class Shapes {
             }
             System.out.println(symbol1);
         }
-    }
-
-    private static String inscribedLine(int count, char... symbolIn) {
-        char symbol1 = symbolIn.length > 0 ? symbolIn[0] : defaultSymbol1;
-        char symbol2 = symbolIn.length > 1 ? symbolIn[1] : defaultSymbol2;
-        StringBuilder step = new StringBuilder();
-        if (count > 0) {
-            step.append(symbol1);
-        }
-        if (count > 2) {
-            step.append(String.valueOf(symbol2).repeat(Math.max(0, count - 2)));
-        }
-        if (count > 1) {
-            step.append(symbol1);
-        }
-        return step.toString();
     }
 
     public static void triangleLeftJustifiedPointUp(int count, char... symbolIn) {

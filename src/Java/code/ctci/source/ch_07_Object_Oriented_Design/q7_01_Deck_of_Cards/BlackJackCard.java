@@ -13,14 +13,6 @@ public class BlackJackCard extends Card {
         }
     }
 
-    public int minValue() {
-        if (isAce()) { // Ace
-            return 1;
-        } else {
-            return value();
-        }
-    }
-
     public boolean isAce() {
         return faceValue == 1;
     }
@@ -37,5 +29,13 @@ public class BlackJackCard extends Card {
 
     public boolean isFaceCard() {
         return faceValue >= 11 && faceValue <= 13;
+    }
+
+    public int minValue() {
+        if (isAce()) { // Ace
+            return 1;
+        } else {
+            return value();
+        }
     }
 }

@@ -26,6 +26,18 @@ public class FixedMultiStack {
         return values[indexOfTop(stackNum)];
     }
 
+    public boolean isEmpty(int stackNum) {
+        /* Return if stack is empty. */
+        return sizes[stackNum] == 0;
+    }
+
+    private int indexOfTop(int stackNum) {
+        /* Returns index of the top of the stack. */
+        int offset = stackNum * stackCapacity;
+        int size = sizes[stackNum];
+        return offset + size - 1;
+    }
+
     public int pop(int stackNum) {
         /* Pop item from top stack. */
         if (isEmpty(stackNum)) {
@@ -36,11 +48,6 @@ public class FixedMultiStack {
         values[topIndex] = 0; // Clear
         sizes[stackNum]--; // Shrink
         return value;
-    }
-
-    public boolean isEmpty(int stackNum) {
-        /* Return if stack is empty. */
-        return sizes[stackNum] == 0;
     }
 
     public void push(int stackNum, int value) throws FullStackException {
@@ -57,13 +64,6 @@ public class FixedMultiStack {
     public boolean isFull(int stackNum) {
         /* Return if stack is full. */
         return sizes[stackNum] == stackCapacity;
-    }
-
-    private int indexOfTop(int stackNum) {
-        /* Returns index of the top of the stack. */
-        int offset = stackNum * stackCapacity;
-        int size = sizes[stackNum];
-        return offset + size - 1;
     }
 
     public String stackToString(int stackNum) {

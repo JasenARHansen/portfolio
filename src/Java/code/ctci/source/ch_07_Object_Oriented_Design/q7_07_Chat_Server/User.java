@@ -31,6 +31,10 @@ public class User {
         }
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void addConversation(PrivateChat conversation) {
         User otherUser = conversation.getOtherParticipant(this);
         privateChats.put(otherUser.getId(), conversation);
@@ -92,10 +96,6 @@ public class User {
         }
         Message message = new Message(content, new Date());
         return chat.addMessage(message);
-    }
-
-    public int getId() {
-        return id;
     }
 
     public void sentAddRequest(AddRequest req) {

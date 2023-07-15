@@ -44,6 +44,10 @@ public class MultiStackArrayList {
         return true;
     }
 
+    public boolean isEmpty(int stack) {
+        return this.stackIndex.get(stack) == 0;
+    }
+
     public int peek(int stack) {
         if (this.isEmpty(stack)) {
             throw new EmptyStackException();
@@ -55,10 +59,6 @@ public class MultiStackArrayList {
         }
         index += this.stackIndex.get(stack) - 1;
         return this.stackValues[index];
-    }
-
-    public boolean isEmpty(int stack) {
-        return this.stackIndex.get(stack) == 0;
     }
 
     public int pop(int stack) {

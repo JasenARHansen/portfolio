@@ -20,19 +20,19 @@ public class CircularArray<T> implements Iterable<T> {
         return items[convert(i)];
     }
 
+    private int convert(int index) {
+        if (index < 0) {
+            index += items.length;
+        }
+        return (head + index) % items.length;
+    }
+
     public @NotNull Iterator<T> iterator() {
         return new CircularArrayIterator();
     }
 
     public void rotate(int shiftRight) {
         head = convert(shiftRight);
-    }
-
-    private int convert(int index) {
-        if (index < 0) {
-            index += items.length;
-        }
-        return (head + index) % items.length;
     }
 
     public void set(int i, T item) {

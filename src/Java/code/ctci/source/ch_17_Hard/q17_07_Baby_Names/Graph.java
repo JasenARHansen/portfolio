@@ -22,6 +22,10 @@ public class Graph {
         }
     }
 
+    private GraphNode getNode(String name) {
+        return map.get(name);
+    }
+
     public GraphNode createNode(String name, int freq) {
         if (map.containsKey(name)) {
             return getNode(name);
@@ -30,10 +34,6 @@ public class Graph {
         nodes.add(node);
         map.put(name, node);
         return node;
-    }
-
-    private GraphNode getNode(String name) {
-        return map.get(name);
     }
 
     public ArrayList<GraphNode> getNodes() {

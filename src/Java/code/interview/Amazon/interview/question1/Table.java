@@ -78,11 +78,6 @@ public class Table {
         return rowIndex;
     }
 
-    public void deleteRowByUserID(int UserID) {
-        int index = this.rows.indexOf(UserID);
-        this.deleteRow(index);
-    }
-
     public void deleteRow(Integer... rows) {
         List<Integer> rowIndex = Arrays.asList(rows);
         rowIndex.sort(Collections.reverseOrder());
@@ -102,6 +97,11 @@ public class Table {
             }
             this.data.remove(Userid);
         }
+    }
+
+    public void deleteRowByUserID(int UserID) {
+        int index = this.rows.indexOf(UserID);
+        this.deleteRow(index);
     }
 
     public void insert(Object @NotNull ... row) {

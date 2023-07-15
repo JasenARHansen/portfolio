@@ -77,16 +77,16 @@ public class QuestionE {
             }
         }
 
+        public boolean contains(int v) {
+            return lookup.containsKey(v);
+        }
+
         public void incrementIfFound(int v) {
             if (!contains(v)) return;
             if (lookup.getOrDefault(v, 0) == 0) {
                 fulfilled += 1;
             }
             lookup.put(v, lookup.getOrDefault(v, 0) + 1);
-        }
-
-        public boolean contains(int v) {
-            return lookup.containsKey(v);
         }
     }
 }
