@@ -1,3 +1,6 @@
+#ifndef CTCI_CH_1_IS_UNIQUE
+#define CTCI_CH_1_IS_UNIQUE
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -65,3 +68,5 @@ class ch1_isUnique {
         return 0;
     }
 };
+
+#endif

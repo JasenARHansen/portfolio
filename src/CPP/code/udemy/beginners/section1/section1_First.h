@@ -4,13 +4,12 @@
 #include <iostream>
 
 using namespace std;
+#pragma once
 
 class section1_First {
+public:
 
-    int main() {
-        cout << "!!! Hello there World!!!" << endl;
-        return 0;
-    }
+    int main();
 };
 
 #endif
