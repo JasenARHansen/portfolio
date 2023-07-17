@@ -1,16 +1,13 @@
-#ifndef CTCI_CH_1_IS_UNIQUE
-#define CTCI_CH_1_IS_UNIQUE
+#ifndef CTCI_CH_1_IS_UNIQUE_H
+#define CTCI_CH_1_IS_UNIQUE_H
 
-#include <string>
-#include <vector>
-#include <iostream>
-#include <bitset>
-#include <algorithm> // for sort() 
-
-using namespace std;
 #pragma once
 
-class ch1_isUnique {
+#include <string>
+
+using namespace std;
+
+class Ch1_isUnique {
 public:
     static bool isUniqueChars(const string &str);
 
@@ -18,7 +15,7 @@ public:
 
     static bool isUniqueChars_noDS(string str);
 
-    int main();
+    static void test();
 };
 
 #endif

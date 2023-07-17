@@ -1,7 +1,8 @@
 # For IDE
-.idea
+/.idea
 cmake-build-debug
-out
+/cmake-build-*/
+/out
 portfolio.iml
 
 # From CTCI
@@ -33,9 +34,6 @@ portfolio.iml
 *.exe
 *.out
 *.app
-
-
-
 
 # Blocklist files/folders in same directory as the .gitignore file
 #/*
