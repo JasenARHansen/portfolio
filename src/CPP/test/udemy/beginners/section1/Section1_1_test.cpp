@@ -8,7 +8,7 @@ using namespace std;
 class Section1_1_test {
 
     void test() {
-        Section1_1::hello();
+        auto result = Section1_1::hello();
     }
 };
 #endif

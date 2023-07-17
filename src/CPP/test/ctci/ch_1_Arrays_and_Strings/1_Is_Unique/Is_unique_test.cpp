@@ -5,8 +5,11 @@
 
 class IsUnique_test {
 
-    void Test() {
-        Ch1_isUnique::test();
+    void Test1() {
+        bool result = Ch1_isUnique::isUniqueChars("abd");
+    }
+    void Test2() {
+        bool result = Ch1_isUnique::isUniqueChars("abd");
     }
 };
 #endif

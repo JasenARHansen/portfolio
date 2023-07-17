@@ -3,6 +3,6 @@
 
 using namespace std;
 
-void Section1_1::hello() {
-    cout << "!!! Hello there World!!!" << endl;
+std::string Section1_1::hello() {
+    return "!!! Hello there World!!!";
 }
