@@ -1,8 +1,6 @@
 #ifndef CTCI_CH_1_IS_UNIQUE_H
 #define CTCI_CH_1_IS_UNIQUE_H
 
-#pragma once
-
 #include <string>
 
 using namespace std;

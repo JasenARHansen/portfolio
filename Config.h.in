@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define portfolio_VERSION_MAJOR @portfolio_VERSION_MAJOR@
+#define portfolio_VERSION_MINOR @portfolio_VERSION_MINOR@

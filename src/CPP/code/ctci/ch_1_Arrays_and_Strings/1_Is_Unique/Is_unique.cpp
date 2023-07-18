@@ -35,9 +35,7 @@ bool Ch1_isUnique::isUniqueChars_bitvector(const string &str) {
 }
 
 bool Ch1_isUnique::isUniqueChars_noDS(string str) {
-
     sort(str.begin(), str.end()); // O(nlogn) sort from <algorithm>
-
     bool noRepeat = true;
     for (int i = 0; i < str.size() - 1; i++) {
         if (str[i] == str[i + 1]) {
@@ -45,7 +43,6 @@ bool Ch1_isUnique::isUniqueChars_noDS(string str) {
             break;
         }
     }
-
     return noRepeat;
 }
 
