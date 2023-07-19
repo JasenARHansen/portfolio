@@ -32,7 +32,7 @@ public class Q2_03_Delete_Middle_Node {
     }
 
     public static boolean removeXFromHead(LinkedListNode head, int index) {
-        // Since this is a single linked list I have limits.
+        // Since this is a single linked list I have integerType.
         if (head == null) {
             // Either the node is null or it is the end of the list.
             return false;

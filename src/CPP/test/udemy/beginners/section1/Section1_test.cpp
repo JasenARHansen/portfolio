@@ -16,14 +16,14 @@ TEST(Section1_test, hello_neq) {
     EXPECT_NE(expected, result);
 }
 
-TEST(Section1_test, hello_out_end_eq) {
+TEST(Section1_test, hello_out_endl_eq) {
     std::string expected = "!!! Hello there World!!!\n";
     testing::internal::CaptureStdout();
     Section1::hello_out_endl();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section1_test, hello_out_end_neq) {
+TEST(Section1_test, hello_out_endl_neq) {
     std::string expected = "Cat";
     testing::internal::CaptureStdout();
     Section1::hello_out_endl();
