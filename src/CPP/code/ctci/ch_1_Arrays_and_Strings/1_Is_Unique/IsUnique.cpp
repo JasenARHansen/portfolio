@@ -1,4 +1,4 @@
-#include "Is_unique.h"
+#include "IsUnique.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -7,21 +7,21 @@
 
 using namespace std;
 
-bool Ch1_isUnique::isUniqueChars(const string &str) {
+bool ch1IsUnique::isUniqueChars(const string &str) {
     if (str.length() > 128) {
         return false;
     }
-    vector<bool> char_set(128);
+    vector<bool> charSet(128);
     for (int val: str) {
-        if (char_set[val]) {
+        if (charSet[val]) {
             return false;
         }
-        char_set[val] = true;
+        charSet[val] = true;
     }
     return true;
 }
 
-bool Ch1_isUnique::isUniqueChars_bitvector(const string &str) {
+bool ch1IsUnique::isUniqueCharsBitvector(const string &str) {
     //Reduce space usage by a factor of 8 using bitvector.
     //Each boolean otherwise occupies a size of 8 bits.
     bitset<256> bits(0);
@@ -34,7 +34,7 @@ bool Ch1_isUnique::isUniqueChars_bitvector(const string &str) {
     return true;
 }
 
-bool Ch1_isUnique::isUniqueChars_noDS(string str) {
+bool ch1IsUnique::isUniqueCharsNoDs(string str) {
     sort(str.begin(), str.end()); // O(nlogn) sort from <algorithm>
     bool noRepeat = true;
     for (int i = 0; i < str.size() - 1; i++) {
@@ -46,17 +46,17 @@ bool Ch1_isUnique::isUniqueChars_noDS(string str) {
     return noRepeat;
 }
 
-void Ch1_isUnique::test() {
+void ch1IsUnique::test() {
     vector<string> words = {"abcde", "hello", "apple", "kite", "padle"};
     for (const auto &word: words) {
         cout << word << string(": ") << boolalpha << isUniqueChars(word) << endl;
     }
     cout << endl << "Using bit vector" << endl;
     for (const auto &word: words) {
-        cout << word << string(": ") << boolalpha << isUniqueChars_bitvector(word) << endl;
+        cout << word << string(": ") << boolalpha << isUniqueCharsBitvector(word) << endl;
     }
     cout << endl << "Using no Data Structures" << endl;
     for (const auto &word: words) {
-        cout << word << string(": ") << boolalpha << isUniqueChars_noDS(word) << endl;
+        cout << word << string(": ") << boolalpha << isUniqueCharsNoDs(word) << endl;
     }
 };

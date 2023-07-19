@@ -1,6 +1,6 @@
-#include "Section2_variables.h"
+#include "section2Variables.h"
 
-string Section2_variables::numAnimals() {
+string section2Variables::numAnimals() {
     int numberCats = 5;
     int numberDogs = 7;
     int numberAnimals = numberCats + numberDogs;
@@ -13,7 +13,7 @@ string Section2_variables::numAnimals() {
     return cats + "\n" + dogs + "\n" + animals + "\n" + newDog + "\n" + dogsNew;
 }
 
-void Section2_variables::numAnimals_out() {
+void section2Variables::numAnimalsOut() {
     int numberCats = 5;
     int numberDogs = 7;
     int numberAnimals = numberCats + numberDogs;

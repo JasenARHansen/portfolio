@@ -1,13 +1,13 @@
-#include "Section2_strings.h"
+#include "section2Strings.h"
 
-string Section2_strings::hello() {
+string section2Strings::hello() {
     string text1 = "Hello ";
     string text2 = "Jasen";
     string text3 = text1 + text2;
     return text3;
 }
 
-void Section2_strings::hello_out() {
+void section2Strings::helloOut() {
     string text1 = "Hello ";
     string text2 = "Jasen";
     string text3 = text1 + text2;

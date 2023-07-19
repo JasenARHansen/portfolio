@@ -1,11 +1,10 @@
-#include "Section2_input.h"
+#include "section2Input.h"
 
-void Section2_input::input() {
+void section2Input::input() {
     cout << "Enter your name: " << flush;
     string name;
     cin >> name;
     cout << "You entered: " << name << endl;
-
     cout << "Enter your age: " << flush;
     int age;
     cin >> age;
