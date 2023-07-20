@@ -124,15 +124,13 @@ void section2Logic::conditions() {
 }
 
 void section2Logic::whileLoop() {
-    while (true)
-    {
+    while (true) {
         cout << "Infinite while loop with break." << endl;
         break;
     }
     cout << "Infinite while loop over." << endl;
     int counter1 = 0;
-    while (counter1 < 3)
-    {
+    while (counter1 < 3) {
         counter1++;
         cout << "While loop execution " << counter1 << endl;
     }
@@ -141,44 +139,48 @@ void section2Logic::whileLoop() {
 
 void section2Logic::doWhileLoop() {
     const int counter1 = 11;
-    do
-    {
+    do {
         cout << "Do while loop with condition already met" << endl;
     } while (counter1 < 3);
     int counter2 = 0;
-    do
-    {
+    do {
         counter2++;
         cout << "Do while loop execution " << counter2 << endl;
     } while (counter2 < 3);
 
 
-
 }
 
 void section2Logic::forLoop() {
-    for(;;)
-    {
+    for (;;) {
         cout << "For loop no inputs with a break" << endl;
         break;
     }
-    for(int counter = 0;;)
-    {
+    for (int counter = 0;;) {
         cout << "For loop with a break, only counter defined execution " << counter << endl;
         break;
     }
-    for(int counter = 0;counter < 3;)
-    {
+    for (int counter = 0; counter < 3;) {
         counter++;
         cout << "For loop increment in loop execution " << counter << endl;
     }
-    for(int counter = 0; counter < 3; counter++)
-    {
+    for (int counter = 0; counter < 3; counter++) {
         cout << "For loop fully defined execution " << counter << endl;
     }
 
+    for (int counter = 0; counter < 4; counter++) {
+        if (counter % 2) {
+            continue;
+        }
+        cout << "For loop mod 2 continue execution " << counter << endl;
+    }
 
-
+    for (int counter = 0; counter < 4; counter++) {
+        if (counter % 2) {
+            break;
+        }
+        cout << "For loop mod 2 break execution " << counter << endl;
+    }
 }
 
 #pragma clang diagnostic pop

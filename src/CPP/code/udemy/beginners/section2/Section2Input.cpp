@@ -1,4 +1,4 @@
-#include "section2Input.h"
+#include "Section2Input.h"
 
 void section2Input::input() {
     cout << "Enter your name: " << flush;

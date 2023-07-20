@@ -2,9 +2,9 @@
 #define TEST_UDEMY_BEGINNERS_2_VARIABLES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/udemy/beginners/section2/section2Variables.h"
+#include "../../../../code/udemy/beginners/section2/Section2Variables.h"
 
-TEST(Section2_variables_test, numAnimals) {
+TEST(Section2VariablesTest, numAnimals) {
     std::string expected = "Number of cats: 5\n"
                            "Number of dogs: 7\n"
                            "Total number of animals: 12\n"
@@ -14,7 +14,7 @@ TEST(Section2_variables_test, numAnimals) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Section2_variables_test, numAnimalsOut) {
+TEST(Section2VariablesTest, numAnimalsOut) {
     std::string expected = "Number of cats: 5\n"
                            "Number of dogs: 7\n"
                            "Total number of animals: 12\n"

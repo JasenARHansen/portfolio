@@ -1,4 +1,4 @@
-#include "section2Types.h"
+#include "Section2Types.h"
 
 void section2Types::integerType() {
     int value = 1234;
@@ -43,7 +43,7 @@ void section2Types::boolType() {
 void section2Types::charType() {
     char numberValue = 106;
     char characterValue = 'j';
-    cout << "Char number value: " << (int)numberValue << endl;
+    cout << "Char number value: " << (int) numberValue << endl;
     cout << "Char character value: " << characterValue << endl;
     cout << "Size of Char: " << sizeof(char) << endl;
 }
@@ -51,7 +51,7 @@ void section2Types::charType() {
 void section2Types::wcharType() {
     wchar_t numberValue = 106;
     wchar_t characterValue = 'j';
-    cout << "Wchar_t number value: " << (int)numberValue << endl;
-    cout << "Wchar_t character value: " << (char)characterValue << endl;
+    cout << "Wchar_t number value: " << (int) numberValue << endl;
+    cout << "Wchar_t character value: " << (char) characterValue << endl;
     cout << "Size of Wchar_t: " << sizeof(wchar_t) << endl;
 }

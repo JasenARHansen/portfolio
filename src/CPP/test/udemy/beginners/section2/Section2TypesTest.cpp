@@ -2,9 +2,9 @@
 #define TEST_UDEMY_BEGINNERS_2_TYPES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/udemy/beginners/section2/section2Types.h"
+#include "../../../../code/udemy/beginners/section2/Section2Types.h"
 
-TEST(Section2_types_test, integerType) {
+TEST(Section2TypesTest, integerType) {
     std::string expected = "Int value: 1234\n"
                            "Size of Int: 4\n"
                            "Max in value is: 2147483647\n"
@@ -20,7 +20,7 @@ TEST(Section2_types_test, integerType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2_types_test, floatType) {
+TEST(Section2TypesTest, floatType) {
     std::string expected = "Float value: 123.457\n"
                            "Size of Float: 4\n"
                            "Float value precision: 123.45678710937500000000\n"
@@ -35,7 +35,7 @@ TEST(Section2_types_test, floatType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2_types_test, boolType) {
+TEST(Section2TypesTest, boolType) {
     std::string expected = "Bool True value: 1\n"
                            "Bool False value: 0\n"
                            "Size of Bool: 1\n";
@@ -44,7 +44,7 @@ TEST(Section2_types_test, boolType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2_types_test, charType) {
+TEST(Section2TypesTest, charType) {
     std::string expected = "Char number value: 106\n"
                            "Char character value: j\n"
                            "Size of Char: 1\n";
@@ -53,7 +53,7 @@ TEST(Section2_types_test, charType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2_types_test, wcharType) {
+TEST(Section2TypesTest, wcharType) {
     std::string expected = "Wchar_t number value: 106\n"
                            "Wchar_t character value: j\n"
                            "Size of Wchar_t: 2\n";

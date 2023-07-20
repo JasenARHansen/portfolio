@@ -17,4 +17,5 @@ public:
     static void fruit();
 };
 
+
 #endif
