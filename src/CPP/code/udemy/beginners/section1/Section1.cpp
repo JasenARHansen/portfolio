@@ -1,17 +1,17 @@
 #include "Section1.h"
 
-string section1::hello() {
+string Section1::hello() {
     return "!!! Hello there World!!!";
 }
 
-void section1::helloOutEndl() {
+void Section1::helloOutEndl() {
     cout << "!!! Hello there World!!!" << std::endl;
 }
 
-void section1::helloOutFlush() {
+void Section1::helloOutFlush() {
     cout << "!!! Hello there World!!!" << std::flush;
 }
 
-void section1::fruit() {
+void Section1::fruit() {
     cout << "Banana. " << "Apple. " << "Orange." << std::flush;
 }

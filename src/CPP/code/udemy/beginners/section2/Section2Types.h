@@ -1,5 +1,7 @@
-#ifndef PORTFOLIO_SECTION2TYPES_H
-#define PORTFOLIO_SECTION2TYPES_H
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+#ifndef PORTFOLIO_SECTION_2_TYPES_H
+#define PORTFOLIO_SECTION_2_TYPES_H
 
 #include <string>
 #include <iostream>
@@ -8,7 +10,7 @@
 
 using namespace std;
 
-class section2Types {
+class Section2Types {
 public:
 
     static void integerType();
@@ -25,3 +27,4 @@ public:
 
 
 #endif
+#pragma clang diagnostic pop

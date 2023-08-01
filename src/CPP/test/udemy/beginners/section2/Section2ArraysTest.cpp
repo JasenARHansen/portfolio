@@ -23,9 +23,15 @@ TEST(Section2ArraysTest, arrays) {
                            "Fourth index 1 has a value of dog\n"
                            "Fifth (partial initialization) index 0 has a value of first\n"
                            "Fifth (partial initialization) index 1 has a value of second\n"
-                           "Fifth (partial initialization) index 2 has a value of \n";
+                           "Fifth (partial initialization) index 2 has a value of \n"
+                           "Character 0 is: h\n"
+                           "Character 1 is: e\n"
+                           "Character 2 is: l\n"
+                           "Character 3 is: l\n"
+                           "Character 4 is: o\n"
+                           "hello\n";
     testing::internal::CaptureStdout();
-    section2Arrays::arrays();
+    Section2Arrays::arrays();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -36,7 +42,7 @@ TEST(Section2ArraysTest, arraysMultiDimensional) {
                            "Animals Row 0: Fox Cat Dog\n"
                            "Animals Row 1: Mouse Squirrel Parrot\n";
     testing::internal::CaptureStdout();
-    section2Arrays::arraysMultiDimensional();
+    Section2Arrays::arraysMultiDimensional();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 

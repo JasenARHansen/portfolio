@@ -1,19 +1,25 @@
 #include "Section4Classes.h"
 
+#include <utility>
 
-section4Classes::section4Classes() {
+
+Section4Classes::Section4Classes() {
     this->mood = true;
     this->name = "Unnamed";
+    this->age = 0;
 }
 
-section4Classes::section4Classes(const string &input) {
+Section4Classes::Section4Classes(const string &name) {
     this->mood = true;
-    this->name = input;
+    this->name = name;
+    this->age = 0;
 }
 
-section4Classes::~section4Classes() = default;
+Section4Classes::Section4Classes(std::string name, const int age) : name(std::move(name)), age(age), mood(true){}
 
-string section4Classes::sound() const {
+Section4Classes::~Section4Classes() = default;
+
+string Section4Classes::sound() const {
     if (this->mood) {
         return "Meeeeow";
     } else {
@@ -21,23 +27,27 @@ string section4Classes::sound() const {
     }
 }
 
-string section4Classes::move() {
+string Section4Classes::move() {
     return "Moving away.";
 }
 
 
-void section4Classes::setHappy() {
+void Section4Classes::setHappy() {
     this->mood = true;
 }
 
-void section4Classes::setUnHappy() {
+void Section4Classes::setUnHappy() {
     this->mood = false;
 }
 
-const string &section4Classes::getName() const {
+const string &Section4Classes::getName() const {
     return this->name;
 }
 
-void section4Classes::setName(const string &input) {
+void Section4Classes::setName(const string &input) {
     this->name = input;
+}
+
+int Section4Classes::getAge() const {
+    return this->age;
 }

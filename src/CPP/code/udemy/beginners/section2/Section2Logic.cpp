@@ -6,7 +6,7 @@
 #pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
 
-void section2Logic::ifStatement() {
+void Section2Logic::ifStatement() {
     string password = "hello";
     cout << "Enter your password: " << flush;
     string input;
@@ -18,7 +18,7 @@ void section2Logic::ifStatement() {
     }
 }
 
-void section2Logic::ifElseStatement() {
+void Section2Logic::ifElseStatement() {
     string password = "hello";
     cout << "Enter your password: " << flush;
     string input;
@@ -30,7 +30,7 @@ void section2Logic::ifElseStatement() {
     }
 }
 
-void section2Logic::ifElseIfStatement() {
+void Section2Logic::ifElseIfStatement() {
     cout << "1.\tAdd a record." << endl;
     cout << "2.\tDelete a record." << endl;
     cout << "3.\tView a record." << endl;
@@ -54,7 +54,7 @@ void section2Logic::ifElseIfStatement() {
     }
 }
 
-void section2Logic::switchStatement() {
+void Section2Logic::switchStatement() {
     cout << "1.\tAdd a record." << endl;
     cout << "2.\tDelete a record." << endl;
     cout << "3.\tView a record." << endl;
@@ -84,7 +84,7 @@ void section2Logic::switchStatement() {
     }
 }
 
-void section2Logic::conditions() {
+void Section2Logic::conditions() {
     int value1 = 7;
     int value2 = 4;
     if (value1 >= 5) {
@@ -123,7 +123,7 @@ void section2Logic::conditions() {
     }
 }
 
-void section2Logic::whileLoop() {
+void Section2Logic::whileLoop() {
     while (true) {
         cout << "Infinite while loop with break." << endl;
         break;
@@ -137,7 +137,7 @@ void section2Logic::whileLoop() {
     cout << "While loop over." << endl;
 }
 
-void section2Logic::doWhileLoop() {
+void Section2Logic::doWhileLoop() {
     const int counter1 = 11;
     do {
         cout << "Do while loop with condition already met" << endl;
@@ -151,7 +151,7 @@ void section2Logic::doWhileLoop() {
 
 }
 
-void section2Logic::forLoop() {
+void Section2Logic::forLoop() {
     for (;;) {
         cout << "For loop no inputs with a break" << endl;
         break;

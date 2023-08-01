@@ -1,22 +1,19 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef PORTFOLIO_SECTION_1_H
-#define PORTFOLIO_SECTION_1_H
+#ifndef PORTFOLIO_SECTION_5_ARRAYS_H
+#define PORTFOLIO_SECTION_5_ARRAYS_H
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-class Section1 {
+class Section5Arrays {
 public:
-    static string hello();
 
-    static void helloOutEndl();
+    static void incrementArrayPointer(int size, int *pInt);
 
-    static void helloOutFlush();
-
-    static void fruit();
 };
 
 

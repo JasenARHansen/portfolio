@@ -1,14 +1,15 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
-#ifndef PORTFOLIO_SECTION2_LOGIC_H
-#define PORTFOLIO_SECTION2_LOGIC_H
+#ifndef PORTFOLIO_SECTION_2_LOGIC_H
+#define PORTFOLIO_SECTION_2_LOGIC_H
 
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class section2Logic {
+class Section2Logic {
 public:
 
     static void ifStatement();

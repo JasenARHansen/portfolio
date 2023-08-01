@@ -1,6 +1,6 @@
 #include "Section3Functions.h"
 
-string section3Functions::menuSelection(int selection) {
+string Section3Functions::menuSelection(const int selection) {
     switch (selection) {
         case 1:
             return "Adding a record.";

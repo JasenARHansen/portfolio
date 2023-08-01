@@ -10,7 +10,7 @@ TEST(Section2VariablesTest, numAnimals) {
                            "Total number of animals: 12\n"
                            "New dog acquired\n"
                            "Number of dogs: 8";
-    auto result = section2Variables::numAnimals();
+    auto result = Section2Variables::numAnimals();
     EXPECT_EQ(expected, result);
 }
 
@@ -21,7 +21,7 @@ TEST(Section2VariablesTest, numAnimalsOut) {
                            "New dog acquired\n"
                            "Number of dogs: 8\n";
     testing::internal::CaptureStdout();
-    section2Variables::numAnimalsOut();
+    Section2Variables::numAnimalsOut();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 

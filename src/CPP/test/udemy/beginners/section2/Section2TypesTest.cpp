@@ -16,7 +16,7 @@ TEST(Section2TypesTest, integerType) {
                            "Unsigned Int value: 123456789\n"
                            "Size of Short Unsigned Int: 4\n";
     testing::internal::CaptureStdout();
-    section2Types::integerType();
+    Section2Types::integerType();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -31,7 +31,7 @@ TEST(Section2TypesTest, floatType) {
                            "Size of Long Double: 16\n"
                            "Long Double value precision: 123.45678710937500000000\n";
     testing::internal::CaptureStdout();
-    section2Types::floatType();
+    Section2Types::floatType();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -40,7 +40,7 @@ TEST(Section2TypesTest, boolType) {
                            "Bool False value: 0\n"
                            "Size of Bool: 1\n";
     testing::internal::CaptureStdout();
-    section2Types::boolType();
+    Section2Types::boolType();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -49,7 +49,7 @@ TEST(Section2TypesTest, charType) {
                            "Char character value: j\n"
                            "Size of Char: 1\n";
     testing::internal::CaptureStdout();
-    section2Types::charType();
+    Section2Types::charType();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -58,7 +58,7 @@ TEST(Section2TypesTest, wcharType) {
                            "Wchar_t character value: j\n"
                            "Size of Wchar_t: 2\n";
     testing::internal::CaptureStdout();
-    section2Types::wcharType();
+    Section2Types::wcharType();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 

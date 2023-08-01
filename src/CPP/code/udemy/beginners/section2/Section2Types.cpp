@@ -1,6 +1,6 @@
 #include "Section2Types.h"
 
-void section2Types::integerType() {
+void Section2Types::integerType() {
     int value = 1234;
     cout << "Int value: " << value << endl;
     cout << "Size of Int: " << sizeof(int) << endl;
@@ -17,7 +17,7 @@ void section2Types::integerType() {
     cout << "Size of Short Unsigned Int: " << sizeof(unsigned int) << endl;
 }
 
-void section2Types::floatType() {
+void Section2Types::floatType() {
     float value = 123.456789;
     cout << "Float value: " << value << endl;
     cout << "Size of Float: " << sizeof(float) << endl;
@@ -32,7 +32,7 @@ void section2Types::floatType() {
     cout << "Long Double value precision: " << setprecision(20) << fixed << value << endl;
 }
 
-void section2Types::boolType() {
+void Section2Types::boolType() {
     bool trueValue = true;
     bool falseValue = false;
     cout << "Bool True value: " << trueValue << endl;
@@ -40,7 +40,7 @@ void section2Types::boolType() {
     cout << "Size of Bool: " << sizeof(bool) << endl;
 }
 
-void section2Types::charType() {
+void Section2Types::charType() {
     char numberValue = 106;
     char characterValue = 'j';
     cout << "Char number value: " << (int) numberValue << endl;
@@ -48,7 +48,7 @@ void section2Types::charType() {
     cout << "Size of Char: " << sizeof(char) << endl;
 }
 
-void section2Types::wcharType() {
+void Section2Types::wcharType() {
     wchar_t numberValue = 106;
     wchar_t characterValue = 'j';
     cout << "Wchar_t number value: " << (int) numberValue << endl;

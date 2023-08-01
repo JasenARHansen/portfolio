@@ -1,6 +1,6 @@
 #include "Section2Input.h"
 
-void section2Input::input() {
+void Section2Input::input() {
     cout << "Enter your name: " << flush;
     string name;
     cin >> name;

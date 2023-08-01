@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_3_TEST
-#define TEST_UDEMY_BEGINNERS_3_TEST
+#ifndef TEST_UDEMY_BEGINNERS_3_FUNCTIONS_TEST
+#define TEST_UDEMY_BEGINNERS_3_FUNCTIONS_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section3/Section3Functions.h"
@@ -12,7 +12,7 @@ TEST(Section3FunctionsTest, menuSelection) {
                          "Searching a record.",
                          "Quiting."};
     for (int i = 0; i < 6; i++) {
-        auto result = section3Functions::menuSelection(i);
+        auto result = Section3Functions::menuSelection(i);
         EXPECT_EQ(expected[i], result);
     }
 }

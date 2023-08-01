@@ -14,7 +14,7 @@ TEST(Section2LogicTest, conditions) {
                            "Condition 7 1\n"
                            "Condition 8 true.\n";
     testing::internal::CaptureStdout();
-    section2Logic::conditions();
+    Section2Logic::conditions();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -26,7 +26,7 @@ TEST(Section2LogicTest, whileLoop) {
                            "While loop execution 3\n"
                            "While loop over.\n";
     testing::internal::CaptureStdout();
-    section2Logic::whileLoop();
+    Section2Logic::whileLoop();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -36,7 +36,7 @@ TEST(Section2LogicTest, doWhileLoop) {
                            "Do while loop execution 2\n"
                            "Do while loop execution 3\n";
     testing::internal::CaptureStdout();
-    section2Logic::doWhileLoop();
+    Section2Logic::doWhileLoop();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
@@ -53,7 +53,7 @@ TEST(Section2LogicTest, forLoop) {
                            "For loop mod 2 continue execution 2\n"
                            "For loop mod 2 break execution 0\n";
     testing::internal::CaptureStdout();
-    section2Logic::forLoop();
+    Section2Logic::forLoop();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 

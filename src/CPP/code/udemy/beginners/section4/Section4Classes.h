@@ -1,21 +1,27 @@
-#ifndef PORTFOLIO_SECTION4CLASSES_H
-#define PORTFOLIO_SECTION4CLASSES_H
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+#ifndef PORTFOLIO_SECTION_4_CLASSES_H
+#define PORTFOLIO_SECTION_4_CLASSES_H
 
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class section4Classes {
+class Section4Classes {
 private:
     string name;
     bool mood;
+    int age;
+
 public:
-    section4Classes();
+    Section4Classes();
 
-    explicit section4Classes(const string &name);
+    explicit Section4Classes(const string &name);
 
-    ~section4Classes();
+    explicit Section4Classes(string name, int age);
+
+    ~Section4Classes();
 
     [[nodiscard]] string sound() const;
 
@@ -25,12 +31,14 @@ public:
 
     void setUnHappy();
 
-    const string &getName() const;
+    [[nodiscard]] const string &getName() const;
 
     void setName(const string &name);
 
+    [[nodiscard]] int getAge() const;
 
 };
 
 
 #endif
+#pragma clang diagnostic pop

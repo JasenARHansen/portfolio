@@ -6,13 +6,13 @@
 
 TEST(Section2StringsTest, hello_eq) {
     std::string expected = "Hello Jasen";
-    auto result = section2Strings::hello();
+    auto result = Section2Strings::hello();
     EXPECT_EQ(expected, result);
 }
 
 TEST(Section2StringsTest, hello_neq) {
     std::string expected = "Cat";
-    auto result = section2Strings::hello();
+    auto result = Section2Strings::hello();
     EXPECT_NE(expected, result);
 }
 
@@ -20,14 +20,14 @@ TEST(Section2StringsTest, helloOut_eq) {
     std::string expected = "Hello Jasen\n"
                            "Hello Jasen\n";
     testing::internal::CaptureStdout();
-    section2Strings::helloOut();
+    Section2Strings::helloOut();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
 TEST(Section2StringsTest, helloOut_neq) {
     std::string expected = "Cat";
     testing::internal::CaptureStdout();
-    section2Strings::helloOut();
+    Section2Strings::helloOut();
     EXPECT_NE(expected, testing::internal::GetCapturedStdout());
 }
 

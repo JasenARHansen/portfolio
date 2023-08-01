@@ -3,7 +3,7 @@
 
 #include "Section2Arrays.h"
 
-void section2Arrays::arrays() {
+void Section2Arrays::arrays() {
     cout << "Array with individual assignments" << endl;
     int first[3];
     first[0] = 7;
@@ -32,9 +32,22 @@ void section2Arrays::arrays() {
     for (int i = 0; i < sizeof(fifth) / sizeof(fifth[0]); i++) {
         cout << "Fifth (partial initialization) index " << i << " has a value of " << fifth[i] << endl;
     }
+    char text[] = "hello";
+    for (int i = 0; i < sizeof(text) - 1; i++) {
+        cout << "Character " << i << " is: " << text[i] << endl;
+    }
+    int k = 0;
+    while (true) {
+        if (text[k] == 0) {
+            cout << endl;
+            break;
+        }
+        cout << text[k] << flush;
+        k++;
+    }
 }
 
-void section2Arrays::arraysMultiDimensional() {
+void Section2Arrays::arraysMultiDimensional() {
     string animals[2][3] = {{"Fox",   "Cat",      "Dog"},
                             {"Mouse", "Squirrel", "Parrot"}};
     cout << "Animals array size: " << sizeof(animals) << endl;
