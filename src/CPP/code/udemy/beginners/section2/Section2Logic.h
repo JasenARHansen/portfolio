@@ -1,8 +1,8 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
-#ifndef PORTFOLIO_SECTION_2_LOGIC_H
-#define PORTFOLIO_SECTION_2_LOGIC_H
+#ifndef UDEMY_BEGINNERS_2_LOGIC_H
+#define UDEMY_BEGINNERS_2_LOGIC_H
 
 #include <string>
 #include <iostream>

@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_1_FIRST
-#define TEST_UDEMY_BEGINNERS_1_FIRST
+#ifndef UDEMY_BEGINNERS_1_FIRST_TEST
+#define UDEMY_BEGINNERS_1_FIRST_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/ctci/ch_1_Arrays_and_Strings/1_Is_Unique/IsUnique.h"

@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef TEST_UDEMY_BEGINNERS_5_NAMESPACE_TEST
-#define TEST_UDEMY_BEGINNERS_5_NAMESPACE_TEST
+#ifndef UDEMY_BEGINNERS_5_NAMESPACE_TEST
+#define UDEMY_BEGINNERS_5_NAMESPACE_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Classes.h"

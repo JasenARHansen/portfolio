@@ -1,8 +1,8 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "HidingNonVirtualFunction"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef PORTFOLIO_SECTION_6_INHERITANCE_H
-#define PORTFOLIO_SECTION_6_INHERITANCE_H
+#ifndef UDEMY_BEGINNERS_6_INHERITANCE_H
+#define UDEMY_BEGINNERS_6_INHERITANCE_H
 
 #include <string>
 #include <iostream>

@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_4_CLASSES_TEST
-#define TEST_UDEMY_BEGINNERS_4_CLASSES_TEST
+#ifndef UDEMY_BEGINNERS_4_CLASSES_TEST
+#define UDEMY_BEGINNERS_4_CLASSES_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section4/Section4Classes.h"

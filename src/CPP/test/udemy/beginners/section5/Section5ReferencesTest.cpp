@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_5_REFERENCES_TEST
-#define TEST_UDEMY_BEGINNERS_5_REFERENCES_TEST
+#ifndef UDEMY_BEGINNERS_5_REFERENCES_TEST
+#define UDEMY_BEGINNERS_5_REFERENCES_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5References.h"

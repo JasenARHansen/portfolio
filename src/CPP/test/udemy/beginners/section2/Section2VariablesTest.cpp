@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_2_VARIABLES_TEST
-#define TEST_UDEMY_BEGINNERS_2_VARIABLES_TEST
+#ifndef UDEMY_BEGINNERS_2_VARIABLES_TEST
+#define UDEMY_BEGINNERS_2_VARIABLES_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section2/Section2Variables.h"

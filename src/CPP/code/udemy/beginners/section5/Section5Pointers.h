@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef PORTFOLIO_SECTION_5_POINTERS_H
-#define PORTFOLIO_SECTION_5_POINTERS_H
+#ifndef UDEMY_BEGINNERS_5_POINTERS_H
+#define UDEMY_BEGINNERS_5_POINTERS_H
 
 #include <string>
 #include <iostream>

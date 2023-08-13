@@ -1,5 +1,5 @@
-#ifndef TEST_UDEMY_BEGINNERS_5_ARRAYS_TEST
-#define TEST_UDEMY_BEGINNERS_5_ARRAYS_TEST
+#ifndef UDEMY_BEGINNERS_5_ARRAYS_TEST
+#define UDEMY_BEGINNERS_5_ARRAYS_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Arrays.h"

@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef TEST_UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
-#define TEST_UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
+#ifndef UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
+#define UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section6/Section6Encapsulation.h"

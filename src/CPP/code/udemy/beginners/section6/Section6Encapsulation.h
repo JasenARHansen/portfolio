@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef PORTFOLIO_SECTION_6_ENCAPSULATION_H
-#define PORTFOLIO_SECTION_6_ENCAPSULATION_H
+#ifndef UDEMY_BEGINNERS_6_ENCAPSULATION_H
+#define UDEMY_BEGINNERS_6_ENCAPSULATION_H
 
 #include <string>
 #include <iostream>

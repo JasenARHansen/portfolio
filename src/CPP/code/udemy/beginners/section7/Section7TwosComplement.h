@@ -1,21 +1,20 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef UDEMY_BEGINNERS_2_STRINGS_H
-#define UDEMY_BEGINNERS_2_STRINGS_H
+#ifndef UDEMY_BEGINNERS_7_TWOS_COMPLEMENT_H
+#define UDEMY_BEGINNERS_7_TWOS_COMPLEMENT_H
 
-#include <string>
+#include <bitset>
 #include <iostream>
 
 using namespace std;
 
-class Section2Strings {
-public:
-    static string hello();
+class Section7TwosComplement {
 
-    static void helloOut();
+public:
+
+    static int performTwosComplement(int input);
 
 };
-
 
 #endif
 #pragma clang diagnostic pop
