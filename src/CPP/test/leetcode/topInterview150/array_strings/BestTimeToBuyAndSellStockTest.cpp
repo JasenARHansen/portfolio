@@ -4,7 +4,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BEST_TIME_TO_BUY_AND_SELL_STOCK_TEST
 
 #include "gtest/gtest.h"
-#include "../../../code/leetcode/topInterview150/BestTimeToBuyAndSellStock.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/BestTimeToBuyAndSellStock.cpp"
 
 TEST(BestTimeToBuyAndSellStockTest, description) {
     testing::internal::CaptureStdout();
@@ -41,14 +41,14 @@ TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_2) {
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_3) {
-    // prices[i] <= 104
+    // 0 <= prices[i]
     int value = -1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_4) {
-    // prices[i] <= 104
+    // prices[i] <= 10^4
     int value = pow(10, 4) + 1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");

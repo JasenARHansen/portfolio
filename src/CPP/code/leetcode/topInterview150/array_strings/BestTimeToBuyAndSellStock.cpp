@@ -42,6 +42,7 @@ public:
         int buy = INT_MAX;
         int sell = INT_MIN;
         for (int index = 0; index < prices.size(); index++) {
+            assert (0 <= prices[index]);
             assert (prices[index] <= pow(10, 4));
             if (prices[index] < buy) {
                 buy = prices[index];

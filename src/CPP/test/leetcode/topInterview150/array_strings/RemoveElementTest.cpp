@@ -4,7 +4,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REMOVE_ELEMENT_TEST
 
 #include "gtest/gtest.h"
-#include "../../../code/leetcode/topInterview150/RemoveElement.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/RemoveElement.cpp"
 
 TEST(RemoveElementTest, description) {
     testing::internal::CaptureStdout();

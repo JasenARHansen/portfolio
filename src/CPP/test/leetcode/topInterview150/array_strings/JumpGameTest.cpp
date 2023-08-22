@@ -4,7 +4,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_JUMP_GAME_TEST
 
 #include "gtest/gtest.h"
-#include "../../../code/leetcode/topInterview150/JumpGame.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/JumpGame.cpp"
 
 TEST(JumpGameTest, description) {
     testing::internal::CaptureStdout();

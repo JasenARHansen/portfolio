@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "misc-no-recursion"
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
@@ -7,7 +8,6 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <list>
 
 using namespace std;
 
@@ -15,23 +15,27 @@ class JumpGameII {
 public:
 
     static void description() {
-        cout << R"(55. Jump Game
-    You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
-    Return true if you can reach the last index, or false otherwise.
+        cout << R"(45. Jump Game II
+    You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
+    Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where:
+        0 <= j <= nums[i] and
+        i + j < n
+    Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
+
 
     Example 1:
         Input: nums = [2,3,1,1,4]
-        Output: true
-        Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+        Output: 2
+        Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
 
     Example 2:
-        Input: nums = [3,2,1,0,4]
-        Output: false
-        Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+        Input: nums = [2,3,0,1,4]
+        Output: 2
 
     Constraints:
         1 <= nums.length <= 10^4
-        0 <= nums[i] <= 10^5)" << endl;
+        0 <= nums[i] <= 1000
+        It's guaranteed that you can reach nums[n - 1].)" << endl;
     }
 
     static int jump(vector<int> &nums) {
