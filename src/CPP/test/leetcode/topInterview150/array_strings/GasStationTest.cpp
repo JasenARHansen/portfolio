@@ -30,20 +30,19 @@ TEST(GasStationTest, canCompleteCircuit_2) {
 
 TEST(GasStationTest, canCompleteCircuit_3) {
     int expected = -1;
-    vector<int> gas{4,5,2,6,5,3};
-    vector<int> cost{3,2,7,3,2,9};
+    vector<int> gas{4, 5, 2, 6, 5, 3};
+    vector<int> cost{3, 2, 7, 3, 2, 9};
     int result = GasStation::canCompleteCircuit(gas, cost);
     EXPECT_EQ(expected, result);
 }
 
 TEST(GasStationTest, canCompleteCircuit_4) {
     int expected = -1;
-    vector<int> gas{4,0,1};
-    vector<int> cost{3,2,1};
+    vector<int> gas{4, 0, 1};
+    vector<int> cost{3, 2, 1};
     int result = GasStation::canCompleteCircuit(gas, cost);
     EXPECT_EQ(expected, result);
 }
-
 
 TEST(GasStationTest, canCompleteCircuit_5) {
     int expected = 0;
@@ -52,7 +51,6 @@ TEST(GasStationTest, canCompleteCircuit_5) {
     int result = GasStation::canCompleteCircuit(gas, cost);
     EXPECT_EQ(expected, result);
 }
-
 
 TEST(GasStationTest, canCompleteCircuit_fail_1) {
     // gas.size() == cost.size();
