@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-#ifndef LEETCODE_TOP_INTERVIEW_150_Gas_Station_TEST
-#define LEETCODE_TOP_INTERVIEW_150_Gas_Station_TEST
+#ifndef LEETCODE_TOP_INTERVIEW_150_GAS_STATION_TEST
+#define LEETCODE_TOP_INTERVIEW_150_GAS_STATION_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/GasStation.cpp"
@@ -86,7 +86,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_4) {
 
 TEST(GasStationTest, canCompleteCircuit_fail_5) {
     // gas[i] <= 10^4
-    int value = pow(10, 4) + 1;;
+    int value = pow(10, 4) + 1;
     vector<int> gas{1, 2, value, 4, 5};
     vector<int> cost{3, 4, 5, 1, 2};
     EXPECT_EXIT(GasStation::canCompleteCircuit(gas, cost), ::testing::ExitedWithCode(3), "");
@@ -102,7 +102,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_6) {
 
 TEST(GasStationTest, canCompleteCircuit_fail_7) {
     //cost[i] <= 10^4
-    int value = pow(10, 4) + 1;;
+    int value = pow(10, 4) + 1;
     vector<int> gas{1, 2, 3, 4, 5};
     vector<int> cost{3, 4, value, 1, 2};
     EXPECT_EXIT(GasStation::canCompleteCircuit(gas, cost), ::testing::ExitedWithCode(3), "");
