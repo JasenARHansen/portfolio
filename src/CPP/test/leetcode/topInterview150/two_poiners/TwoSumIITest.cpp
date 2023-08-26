@@ -4,7 +4,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_Two_Sum_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150//two_poiners/TwoSumII.cpp"
+#include "../../../../code/leetcode/topInterview150/two_poiners/TwoSumII.cpp"
 
 TEST(TwoSumIITest, description) {
     testing::internal::CaptureStdout();
