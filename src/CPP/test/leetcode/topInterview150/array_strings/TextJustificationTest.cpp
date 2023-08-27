@@ -13,7 +13,7 @@ TEST(TextJustificationTest, description) {
 }
 
 TEST(TextJustificationTest, fullJustify_1) {
-    vector<string> expected = {"This    is    an", "example  of text", "justification.  "};
+    vector<string> expected{"This    is    an", "example  of text", "justification.  "};
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};
     int maxWidth = 16;
     vector<string> result = TextJustification::fullJustify(words, maxWidth);
@@ -24,9 +24,9 @@ TEST(TextJustificationTest, fullJustify_1) {
 }
 
 TEST(TextJustificationTest, fullJustify_2) {
-    vector<string> expected = {"What   must   be",
-                               "acknowledgment  ",
-                               "shall be        "};
+    vector<string> expected{"What   must   be",
+                            "acknowledgment  ",
+                            "shall be        "};
     vector<string> words{"What", "must", "be", "acknowledgment", "shall", "be"};
     int maxWidth = 16;
     vector<string> result = TextJustification::fullJustify(words, maxWidth);
@@ -37,12 +37,12 @@ TEST(TextJustificationTest, fullJustify_2) {
 }
 
 TEST(TextJustificationTest, fullJustify_3) {
-    vector<string> expected = {"Science  is  what we",
-                               "understand      well",
-                               "enough to explain to",
-                               "a  computer.  Art is",
-                               "everything  else  we",
-                               "do                  "};
+    vector<string> expected{"Science  is  what we",
+                            "understand      well",
+                            "enough to explain to",
+                            "a  computer.  Art is",
+                            "everything  else  we",
+                            "do                  "};
     vector<string> words{"Science", "is", "what", "we", "understand", "well", "enough", "to",
                          "explain", "to", "a", "computer.", "Art", "is", "everything", "else",
                          "we", "do"};

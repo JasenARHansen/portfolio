@@ -48,13 +48,13 @@ public:
         int sum = 0;
         unordered_map<int, int> test_map;
         // make a map to group the numbers
-        for (int index = 0; index < nums.size(); index++) {
-            assert (1 <= nums[index]);
-            assert (nums[index] <= pow(10, 4));
-            if (!test_map.count(nums[index])) {
-                test_map[nums[index]] = 0;
+        for (int num: nums) {
+            assert (1 <= num);
+            assert (num <= pow(10, 4));
+            if (!test_map.count(num)) {
+                test_map[num] = 0;
             }
-            test_map[nums[index]]++;
+            test_map[num]++;
         }
         // Creat a set to find unique values in order of least to greatest
         set<int> keys;

@@ -42,26 +42,26 @@ Given a string s, find the length of the longest substring without repeating cha
         assert (s.size() <= 5 * pow(10, 4));
         int index1 = 0;
         int index2 = 0;
-        bitset<256> bits;
+        bitset<256> characters;
         int detected = 0;
-        if (s.empty()){
+        if (s.empty()) {
             return detected;
         }
         char lastChar;
         // expand window to find a potential value
         while (index2 < s.size()) {
-            while ((index2 < s.size()) && !bits.test(s.at(index2))) {
-                bits.flip(s.at(index2));
+            while ((index2 < s.size()) && !characters.test(s.at(index2))) {
+                characters.flip(s.at(index2));
                 index2++;
                 detected = max(detected, (index2 - index1));
             }
-            if (index2 >= s.size()){
+            if (index2 >= s.size()) {
                 return detected;
             }
             lastChar = s.at(index2);
             // contract the window
-            while ((index1 < index2) && bits.test(lastChar)) {
-                bits.flip(s.at(index1));
+            while ((index1 < index2) && characters.test(lastChar)) {
+                characters.flip(s.at(index1));
                 index1++;
             }
         }

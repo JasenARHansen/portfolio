@@ -68,7 +68,7 @@ public:
         assert (words.size() <= 300);
         assert (1 <= maxWidth);
         assert (maxWidth <= 100);
-        vector<string> result = {};
+        vector<string> result{};
         int currentWords = 0;
         int currentCharacters = 0;
         int startIndex = 0;

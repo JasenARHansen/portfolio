@@ -48,7 +48,7 @@ void Section2Arrays::arrays() {
 }
 
 void Section2Arrays::arraysMultiDimensional() {
-    string animals[2][3] = {{"Fox",   "Cat",      "Dog"},
+    string animals[2][3] {{"Fox",   "Cat",      "Dog"},
                             {"Mouse", "Squirrel", "Parrot"}};
     cout << "Animals array size: " << sizeof(animals) << endl;
     cout << "Animals row size: " << sizeof(animals[0]) << endl;

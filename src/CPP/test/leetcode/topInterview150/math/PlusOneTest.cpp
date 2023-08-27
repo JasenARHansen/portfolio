@@ -33,14 +33,14 @@ TEST(PlusOneTest, plusOne_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(PlusOneTest, maxProfit_fail_1) {
+TEST(PlusOneTest, plusOne_fail_1) {
     // 1 <= digits.length
     int size = 0;
     vector<int> digits(size);
     EXPECT_EXIT(PlusOne::plusOne(digits), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(PlusOneTest, maxProfit_fail_2) {
+TEST(PlusOneTest, plusOne_fail_2) {
     // digits.length <= 100
     int size = 100 + 1;
     vector<int> digits(size);

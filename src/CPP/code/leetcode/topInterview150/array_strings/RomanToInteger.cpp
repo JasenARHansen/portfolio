@@ -86,7 +86,7 @@ public:
 private:
 
     static int getValue(char input) {
-        unordered_set<char> valid = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+        unordered_set<char> valid{'I', 'V', 'X', 'L', 'C', 'D', 'M'};
         char data = toupper(input);
         assert (valid.find(data) != valid.end());
         int value;

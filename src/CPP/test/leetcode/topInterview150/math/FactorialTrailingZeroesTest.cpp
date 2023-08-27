@@ -47,13 +47,13 @@ TEST(FactorialTrailingZeroesTest, trailingZeroes_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(FactorialTrailingZeroesTest, maxProfit_fail_1) {
+TEST(FactorialTrailingZeroesTest, trailingZeroes_fail_1) {
     // 0 <= n
     int n = 0 - 1;
     EXPECT_EXIT(FactorialTrailingZeroes::trailingZeroes(n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(FactorialTrailingZeroesTest, maxProfit_fail_2) {
+TEST(FactorialTrailingZeroesTest, trailingZeroes_fail_2) {
     // n <= 10^4
     int n = pow(10, 4) + 1;
     EXPECT_EXIT(FactorialTrailingZeroes::trailingZeroes(n), ::testing::ExitedWithCode(3), "");
