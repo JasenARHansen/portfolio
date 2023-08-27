@@ -41,7 +41,7 @@ TEST(RansomNoteTest, canConstruct_fail_1) {
     int size = 1 - 1;
     string ransomNote(size, ' ');
     string magazine = "aab";
-    EXPECT_EXIT(bool result = RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RansomNoteTest, canConstruct_fail_2) {
@@ -49,7 +49,7 @@ TEST(RansomNoteTest, canConstruct_fail_2) {
     int size = pow(10, 5) + 1;
     string ransomNote(size, ' ');
     string magazine = "aab";
-    EXPECT_EXIT(bool result = RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RansomNoteTest, canConstruct_fail_3) {
@@ -57,7 +57,7 @@ TEST(RansomNoteTest, canConstruct_fail_3) {
     int size = 1 - 1;
     string ransomNote = "aa";
     string magazine(size, ' ');
-    EXPECT_EXIT(bool result = RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RansomNoteTest, canConstruct_fail_4) {
@@ -65,7 +65,7 @@ TEST(RansomNoteTest, canConstruct_fail_4) {
     int size = pow(10, 5) + 1;
     string ransomNote = "aa";
     string magazine(size, ' ');
-    EXPECT_EXIT(bool result = RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

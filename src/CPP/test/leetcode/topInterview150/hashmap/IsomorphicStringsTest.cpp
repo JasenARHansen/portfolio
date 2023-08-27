@@ -57,7 +57,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_1) {
     int size = 1 - 1;
     string s(size, ' ');
     string t = "aab";
-    EXPECT_EXIT(bool result = IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
@@ -65,7 +65,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
     int size = 5 * pow(10, 4) + 1;
     string s(size, ' ');
     string t = "aab";
-    EXPECT_EXIT(bool result = IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
@@ -73,7 +73,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
     int size = 1 - 1;
     string s = "aa";
     string t(size, ' ');
-    EXPECT_EXIT(bool result = IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_4) {
@@ -81,7 +81,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_4) {
     int size = 5 * pow(10, 4) + 1;
     string s = "aa";
     string t(size, ' ');
-    EXPECT_EXIT(bool result = IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
