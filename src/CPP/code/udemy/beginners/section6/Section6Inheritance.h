@@ -18,7 +18,7 @@ public:
 
     static string getAction();
 
-    int getId() const;
+    [[nodiscard]] int getId() const;
 };
 
 class Section6SubClass : public Section6Base {

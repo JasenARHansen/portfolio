@@ -39,6 +39,7 @@ TEST(IntegerToRomanTest, intToRoman_4) {
     string result = IntegerToRoman::intToRoman(num);
     EXPECT_EQ(expected, result);
 }
+
 TEST(IntegerToRomanTest, intToRoman_fail_1) {
     // 1 <= num
     int num = 1 - 1;

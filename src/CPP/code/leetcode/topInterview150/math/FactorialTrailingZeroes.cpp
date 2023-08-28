@@ -41,7 +41,6 @@ public:
         assert (0 <= n);
         assert (n <= pow(10, 4));
         int result = 0;
-        long double factorial = 1;
         while (n / 5) {
             result += n / 5;
             n /= 5;

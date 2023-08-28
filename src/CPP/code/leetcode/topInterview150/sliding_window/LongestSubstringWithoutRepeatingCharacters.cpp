@@ -38,7 +38,7 @@ Given a string s, find the length of the longest substring without repeating cha
         s consists of English letters, digits, symbols and spaces.)" << endl;
     }
 
-    static int lengthOfLongestSubstring(string s) {
+    static int lengthOfLongestSubstring(const string &s) {
         assert (s.size() <= 5 * pow(10, 4));
         int index1 = 0;
         int index2 = 0;

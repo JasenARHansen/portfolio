@@ -65,10 +65,9 @@ private:
                 }
             }
         }
-        if ((-1 < jumps) && (jumps < INT_MAX)){
+        if ((-1 < jumps) && (jumps < INT_MAX)) {
             processed[position] = jumps + 1;
-        }
-        else {
+        } else {
             processed[position] = 0;
         }
         return processed[position];

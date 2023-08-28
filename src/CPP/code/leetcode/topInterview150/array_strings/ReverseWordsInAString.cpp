@@ -40,7 +40,7 @@ public:
     }
 
 
-    static string reverseWords(string s) {
+    static string reverseWords(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
         string result;

@@ -41,7 +41,7 @@ public:
         All the words in s are separated by a single space.)" << endl;
     }
 
-    static bool wordPattern(string pattern, const string &s) {
+    static bool wordPattern(const string &pattern, const string &s) {
         assert (!pattern.empty());
         assert (pattern.size() <= 300);
         assert (!s.empty());

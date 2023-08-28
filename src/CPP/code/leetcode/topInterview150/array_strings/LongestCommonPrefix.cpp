@@ -44,7 +44,7 @@ public:
                 break;
             }
             current = strs[0].at(index);
-            for (string entry: strs) {
+            for (const string &entry: strs) {
                 if ((index >= entry.size()) || (current != entry.at(index))) {
                     process = false;
                     break;

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class MajorityElement{
+class MajorityElement {
 public:
 
     static void description() {
@@ -36,23 +36,23 @@ public:
         assert (nums.size() <= 5 * pow(10, 4));
         unordered_map<int, int> test_map;
         // populate map to count occurrences of each value
-        for (int index = 0; index < nums.size(); index++) {
-            assert (-pow(10, 9) <= nums[index]);
-            assert (nums[index] <= pow(10, 9));
-            if (!test_map.count(nums[index])){
-                test_map[nums[index]] = 0;
+        for (int num: nums) {
+            assert (-pow(10, 9) <= num);
+            assert (num <= pow(10, 9));
+            if (!test_map.count(num)) {
+                test_map[num] = 0;
             }
-            test_map[nums[index]]++;
+            test_map[num]++;
         }
         int key;
         int count = 0;
         for (auto it = test_map.begin(); it != test_map.end(); it++) {
-            if (test_map[it->first] > count){
+            if (test_map[it->first] > count) {
                 key = it->first;
                 count = it->second;
             }
         }
-        assert (count >= nums.size()/2);
+        assert (count >= nums.size() / 2);
         return key;
     }
 };

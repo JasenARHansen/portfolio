@@ -70,7 +70,6 @@ TEST(RotateImageTest, rotate_fail_5) {
     vector<vector<int>> matrix(size);
     size++;
     matrix[0] = vector<int>(size);
-    int foo = matrix.size();
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 

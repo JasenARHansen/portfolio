@@ -18,7 +18,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, RandomizedSet) {
 
 TEST(Insert_Delete_GetRandom_O_1Test, insert_1) {
     bool expected = true;
-    RandomizedSet randomizedSet =  RandomizedSet();
+    RandomizedSet randomizedSet = RandomizedSet();
     int value = 0;
     bool result = randomizedSet.insert(value);
     EXPECT_EQ(expected, result);
@@ -26,7 +26,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, insert_1) {
 
 TEST(Insert_Delete_GetRandom_O_1Test, insert_2) {
     bool expected = false;
-    RandomizedSet randomizedSet =  RandomizedSet();
+    RandomizedSet randomizedSet = RandomizedSet();
     int value = 0;
     randomizedSet.insert(value);
     bool result = randomizedSet.insert(value);
@@ -35,7 +35,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, insert_2) {
 
 TEST(Insert_Delete_GetRandom_O_1Test, remove_1) {
     bool expected = true;
-    RandomizedSet randomizedSet =  RandomizedSet();
+    RandomizedSet randomizedSet = RandomizedSet();
     int value = 0;
     randomizedSet.insert(value);
     bool result = randomizedSet.remove(value);
@@ -44,7 +44,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, remove_1) {
 
 TEST(Insert_Delete_GetRandom_O_1Test, remove_2) {
     bool expected = false;
-    RandomizedSet randomizedSet =  RandomizedSet();
+    RandomizedSet randomizedSet = RandomizedSet();
     int value = 0;
     bool result = randomizedSet.remove(value);
     EXPECT_EQ(expected, result);
@@ -53,16 +53,16 @@ TEST(Insert_Delete_GetRandom_O_1Test, remove_2) {
 TEST(Insert_Delete_GetRandom_O_1Test, getRandom_1) {
     int value = 0;
     int expected = value;
-    RandomizedSet randomizedSet =  RandomizedSet();
+    RandomizedSet randomizedSet = RandomizedSet();
     randomizedSet.insert(value);
     int result = randomizedSet.getRandom();
     EXPECT_EQ(expected, result);
 }
 
 TEST(Insert_Delete_GetRandom_O_1Test, getRandom_2) {
-    vector<int> data {1,2,3,4,5};
-    RandomizedSet randomizedSet =  RandomizedSet();
-    for(auto value :data) {
+    vector<int> data{1, 2, 3, 4, 5};
+    RandomizedSet randomizedSet = RandomizedSet();
+    for (auto value: data) {
         randomizedSet.insert(value);
     }
     int result = randomizedSet.getRandom();

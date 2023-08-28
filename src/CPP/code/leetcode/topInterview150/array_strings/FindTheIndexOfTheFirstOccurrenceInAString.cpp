@@ -33,7 +33,7 @@ public:
     }
 
 
-    static int strStr(const string& haystack, const string& needle) {
+    static int strStr(const string &haystack, const string &needle) {
         assert (!haystack.empty());
         assert (haystack.size() <= pow(10, 4));
         assert (!needle.empty());

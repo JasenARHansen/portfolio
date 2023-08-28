@@ -14,14 +14,14 @@ TEST(CandyTest, description) {
 
 TEST(CandyTest, candy_1) {
     int expected = 5;
-    vector<int> ratings{1,0,2};
+    vector<int> ratings{1, 0, 2};
     //int result = Candy::candy(ratings);
     //EXPECT_EQ(expected, result);
 }
 
 TEST(CandyTest, candy_2) {
     int expected = 4;
-    vector<int> ratings{1,2,2};
+    vector<int> ratings{1, 2, 2};
     //int result = Candy::candy(ratings);
     //EXPECT_EQ(expected, result);
 }

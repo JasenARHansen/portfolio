@@ -8,7 +8,6 @@
 #include <cmath>
 #include <unordered_map>
 #include <bitset>
-#include <set>
 
 using namespace std;
 
@@ -39,7 +38,7 @@ public:
         s and t consist of any valid ascii character.)" << endl;
     }
 
-    static bool isIsomorphic(string s, string t) {
+    static bool isIsomorphic(const string &s, const string &t) {
         // This version does not force a change so "a" would be Isomorphic to "a"
         assert (!s.empty());
         assert (s.size() <= 5 * pow(10, 4));

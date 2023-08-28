@@ -49,7 +49,7 @@ public:
     }
 
     static int removeDuplicates(vector<int> &nums) {
-        assert (1 <= nums.size());
+        assert (!nums.empty());
         assert (nums.size() <= 3 * pow(10, 4));
         set<int> test_set;
         int returnCount = 0;
@@ -59,10 +59,10 @@ public:
         for (int index = 0; index < nums.size(); index++) {
             assert (-100 <= nums[index]);
             assert (nums[index] <= 100);
-            if (!test_set.count(nums[index])){
+            if (!test_set.count(nums[index])) {
                 test_set.insert(nums[index]);
                 returnCount++;
-                if (previous){
+                if (previous) {
                     assert(nums[writeIndex - 1] <= nums[index]);
                 }
                 previous = true;

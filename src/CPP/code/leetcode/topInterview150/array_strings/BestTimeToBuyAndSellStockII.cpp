@@ -38,9 +38,7 @@ public:
 
     Constraints:
         1 <= prices.length <= 3 * 10^4
-        0 <= prices[i] <= 10^4
-
-)" << endl;
+        0 <= prices[i] <= 10^4)" << endl;
     }
 
     static int maxProfit(vector<int> &prices) {
@@ -48,15 +46,15 @@ public:
         assert (prices.size() <= 3 * pow(10, 4));
         int profit = 0;
         int buy = prices[0];
-        for (int index = 0; index < prices.size(); index++) {
-            assert (0 <= prices[index]);
-            assert (prices[index] <= pow(10, 4));
-            if (prices[index] <= buy) {
-                buy = prices[index];
+        for (int price: prices) {
+            assert (0 <= price);
+            assert (price <= pow(10, 4));
+            if (price <= buy) {
+                buy = price;
             }
-            if (prices[index] > buy) {
-                profit += prices[index] - buy;
-                buy = prices[index];
+            if (price > buy) {
+                profit += price - buy;
+                buy = price;
             }
         }
         return profit;

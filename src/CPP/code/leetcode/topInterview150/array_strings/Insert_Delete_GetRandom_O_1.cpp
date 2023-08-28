@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-msc50-cpp"
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
@@ -49,8 +50,7 @@ public:
         There will be at least one element in the data structure when getRandom is called.)" << endl;
     }
 
-    RandomizedSet() {
-    }
+    RandomizedSet() = default;
 
 
     bool insert(int val) {

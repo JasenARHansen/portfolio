@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <algorithm>
 
 using namespace std;
 
@@ -31,14 +30,14 @@ public:
         s and t consist only of lowercase English letters.)" << endl;
     }
 
-    static bool isSubsequence(string s, string t) {
+    static bool isSubsequence(const string &s, const string &t) {
         assert (s.size() <= 100);
         assert (t.size() <= pow(10, 4));
         int tIndex = 0;
         int find = s.size();
-        for (int sIndex = 0; sIndex < s.size(); sIndex++) {
+        for (char sIndex: s) {
             while (tIndex < t.size()) {
-                if (s.at(sIndex) == t.at(tIndex++)) {
+                if (sIndex == t.at(tIndex++)) {
                     find--;
                     break;
                 }

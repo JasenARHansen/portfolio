@@ -42,14 +42,14 @@ TEST(H_IndexTest, hIndex_4) {
 
 TEST(H_IndexTest, hIndex_5) {
     int expected = 2;
-    vector<int> citations{4,4,0,0};
+    vector<int> citations{4, 4, 0, 0};
     int result = H_Index::hIndex(citations);
     EXPECT_EQ(expected, result);
 }
 
 TEST(H_IndexTest, hIndex_6) {
     int expected = 3;
-    vector<int> citations{1,7,9,4};
+    vector<int> citations{1, 7, 9, 4};
     int result = H_Index::hIndex(citations);
     EXPECT_EQ(expected, result);
 }

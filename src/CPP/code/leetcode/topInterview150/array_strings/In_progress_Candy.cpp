@@ -70,29 +70,29 @@ public:
         // 3 regions to process defined by index 0 to left index. left index to right index, right index to end point:
         //     !---!------!---!
         // find the left side to start processing.  This is the first non '1' value, after a '1' has been found.
-        int leftIndex= 1;
-        while (leftIndex < ratings.size()){
-            if (candies[leftIndex] == 1){
+        int leftIndex = 1;
+        while (leftIndex < ratings.size()) {
+            if (candies[leftIndex] == 1) {
                 break;
             }
             leftIndex++;
         }
-        while (leftIndex < ratings.size()){
-            if (candies[leftIndex] != 1){
+        while (leftIndex < ratings.size()) {
+            if (candies[leftIndex] != 1) {
                 break;
             }
             leftIndex++;
         }
         // find the right side to start processing.  This is the first non '1' value, after a '1' has been found.
-        int rightIndex= ratings.size() - 1 ;
-        while (0  < rightIndex){
-            if (candies[rightIndex] == 1){
+        int rightIndex = ratings.size() - 1;
+        while (0 < rightIndex) {
+            if (candies[rightIndex] == 1) {
                 break;
             }
             rightIndex--;
         }
-        while (0 < rightIndex){
-            if (candies[rightIndex] != 1){
+        while (0 < rightIndex) {
+            if (candies[rightIndex] != 1) {
                 break;
             }
             rightIndex--;
@@ -106,9 +106,9 @@ public:
         // process middle section
 
 
-        int tempIndex=leftIndex;
+        int tempIndex = leftIndex;
         while (leftIndex < rightIndex) {
-            while ( (tempIndex < rightIndex) && (-1 == candies[tempIndex] )){
+            while ((tempIndex < rightIndex) && (-1 == candies[tempIndex])) {
                 tempIndex++;
             }
 

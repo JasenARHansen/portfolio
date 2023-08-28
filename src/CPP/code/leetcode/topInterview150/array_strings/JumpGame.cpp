@@ -47,7 +47,7 @@ private:
         if (position == nums.size() - 1) {
             return true;
         }
-        if (processed[position] ){
+        if (processed[position]) {
             return false;
         }
         for (int i = nums[position]; 0 < i; i--) {

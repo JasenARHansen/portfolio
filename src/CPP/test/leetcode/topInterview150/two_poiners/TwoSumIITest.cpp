@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-#ifndef LEETCODE_TOP_INTERVIEW_150_Two_Sum_II_TEST
-#define LEETCODE_TOP_INTERVIEW_150_Two_Sum_II_TEST
+#ifndef LEETCODE_TOP_INTERVIEW_150_TWO_SUM_II_TEST
+#define LEETCODE_TOP_INTERVIEW_150_TWO_SUM_II_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/two_poiners/TwoSumII.cpp"

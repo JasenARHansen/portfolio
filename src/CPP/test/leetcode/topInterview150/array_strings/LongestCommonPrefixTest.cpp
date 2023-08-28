@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-#ifndef LEETCODE_TOP_INTERVIEW_150_LENGTH_OF_LAST_WORD_TEST
-#define LEETCODE_TOP_INTERVIEW_150_LENGTH_OF_LAST_WORD_TEST
+#ifndef LEETCODE_TOP_INTERVIEW_150_LONGEST_COMMON_PREFIX_TEST
+#define LEETCODE_TOP_INTERVIEW_150_LONGEST_COMMON_PREFIX_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/LongestCommonPrefix.cpp"
@@ -20,7 +20,7 @@ TEST(LongestCommonPrefixTest, longestCommonPrefix_1) {
 }
 
 TEST(LongestCommonPrefixTest, longestCommonPrefix_2) {
-    string expected = "";
+    string expected;
     vector<string> strs{"dog", "racecar", "car"};
     string result = LongestCommonPrefix::longestCommonPrefix(strs);
     EXPECT_EQ(expected, result);

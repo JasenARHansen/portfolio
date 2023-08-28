@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main_test() {
-    std::cout << "Main for compilation." << std::endl;
+int mainTest() {
+    std::cout << "Main for testing." << std::endl;
     return 0;
 }

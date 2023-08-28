@@ -46,7 +46,7 @@ public:
     }
 
 
-    static string convert(const string& s, int numRows) {
+    static string convert(const string &s, int numRows) {
         assert (!s.empty());
         assert (s.size() <= 1000);
         assert (0 < numRows);
@@ -55,16 +55,15 @@ public:
         vector<string> data(numRows, "");
         bool down = true;
         int target = 0;
-        for (char index : s) {
+        for (char index: s) {
             data[target].push_back(index);
             if (down) {
                 target++;
                 if (target >= numRows) {
                     down = false;
-                    if (numRows > 1){
+                    if (numRows > 1) {
                         target -= 2;
-                    }
-                    else{
+                    } else {
                         target = 0;
                     }
                 }
@@ -72,16 +71,15 @@ public:
                 target--;
                 if (target < 0) {
                     down = true;
-                    if (numRows > 1){
+                    if (numRows > 1) {
                         target += 2;
-                    }
-                    else{
+                    } else {
                         target = 0;
                     }
                 }
             }
         }
-        for (const string& value: data) {
+        for (const string &value: data) {
             result.append(value);
         }
         return result;

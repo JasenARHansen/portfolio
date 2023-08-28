@@ -31,5 +31,6 @@ TEST(HappyNumberTest, isHappy_fail_1) {
     int n = 1 - 1;
     EXPECT_EXIT(HappyNumber::isHappy(n), ::testing::ExitedWithCode(3), "");
 }
+
 #endif
 #pragma clang diagnostic pop

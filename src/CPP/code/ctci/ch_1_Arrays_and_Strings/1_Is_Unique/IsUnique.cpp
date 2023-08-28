@@ -12,7 +12,7 @@ bool ch1IsUnique::isUniqueChars(const string &str) {
         return false;
     }
     vector<bool> charSet(128);
-    for (int val: str) {
+    for (char val: str) {
         if (charSet[val]) {
             return false;
         }
@@ -25,7 +25,7 @@ bool ch1IsUnique::isUniqueCharsBitvector(const string &str) {
     //Reduce space usage by a factor of 8 using bitvector.
     //Each boolean otherwise occupies a size of 8 bits.
     bitset<256> bits(0);
-    for (int val: str) {
+    for (char val: str) {
         if (bits.test(val) > 0) {
             return false;
         }
@@ -59,4 +59,4 @@ void ch1IsUnique::test() {
     for (const auto &word: words) {
         cout << word << string(": ") << boolalpha << isUniqueCharsNoDs(word) << endl;
     }
-};
+}

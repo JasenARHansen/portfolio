@@ -31,9 +31,7 @@ Example 2:
 
 Constraints:
     0 <= nums.length <= 10^5
-    -10^9 <= nums[i] <= 10^9
-
-)" << endl;
+    -10^9 <= nums[i] <= 10^9)" << endl;
     }
 
     static int longestConsecutive(vector<int> &nums) {

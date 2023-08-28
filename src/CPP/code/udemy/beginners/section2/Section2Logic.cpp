@@ -138,10 +138,10 @@ void Section2Logic::whileLoop() {
 }
 
 void Section2Logic::doWhileLoop() {
-    const int counter1 = 11;
+    int counter1 = 11;
     do {
         cout << "Do while loop with condition already met" << endl;
-    } while (counter1 < 3);
+    } while (counter1-- < 3);
     int counter2 = 0;
     do {
         counter2++;

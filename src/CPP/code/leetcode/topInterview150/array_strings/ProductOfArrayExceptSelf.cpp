@@ -33,31 +33,32 @@ public:
         -30 <= nums[i] <= 30
         The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
-    Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.))" << endl;
+    Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.))"
+             << endl;
     }
 
-    static vector<int> productExceptSelf(vector<int>& nums) {
+    static vector<int> productExceptSelf(vector<int> &nums) {
         assert (2 <= nums.size());
         assert (nums.size() <= pow(10, 5));
-        vector<int> left (nums.size(), 1);
-        vector<int> right (nums.size(), 1);
-        vector<int> result (nums.size(), 1);
+        vector<int> left(nums.size(), 1);
+        vector<int> right(nums.size(), 1);
+        vector<int> result(nums.size(), 1);
         assert(-30 <= nums[0]);
         assert(nums[0] <= 30);
         left[0] = nums[0];
-        for (int i = 1; i < nums.size(); i++){
+        for (int i = 1; i < nums.size(); i++) {
             assert(-30 <= nums[i]);
             assert(nums[i] <= 30);
             left[i] = left[i - 1] * nums[i];
         }
-        right[nums.size()-1] = nums[nums.size() - 1];
-        for (int i = nums.size() - 2; i > 0; i--){
+        right[nums.size() - 1] = nums[nums.size() - 1];
+        for (int i = nums.size() - 2; i > 0; i--) {
             right[i] = right[i + 1] * nums[i];
         }
         result[0] = right[1];
         result[nums.size() - 1] = left[nums.size() - 2];
-        for (int i = 1; i < nums.size() - 1; i++){
-            result[i] = left[i- 1] *  right[i + 1];
+        for (int i = 1; i < nums.size() - 1; i++) {
+            result[i] = left[i - 1] * right[i + 1];
         }
         return result;
     }

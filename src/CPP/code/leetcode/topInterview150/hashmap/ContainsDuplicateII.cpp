@@ -36,22 +36,22 @@ public:
         0 <= k <= 10^5)" << endl;
     }
 
-    static bool containsNearbyDuplicate(vector<int>& nums, int k)  {
+    static bool containsNearbyDuplicate(vector<int> &nums, int k) {
         assert (!nums.empty());
-        assert (nums.size() <= pow(10,5));
+        assert (nums.size() <= pow(10, 5));
         assert (0 <= k);
-        assert (k <= pow(10,5));
+        assert (k <= pow(10, 5));
         unordered_map<int, int> used;
         vector<int> digits;
-        for (int index = 0; index< nums.size(); index++) {
-            assert (-pow(10,9) <= nums[index]);
-            assert ( nums[index] <= pow(10,9));
-            if (used.count( nums[index])) {
-                if ((index - used.at(nums[index])) <= k){
+        for (int index = 0; index < nums.size(); index++) {
+            assert (-pow(10, 9) <= nums[index]);
+            assert (nums[index] <= pow(10, 9));
+            if (used.count(nums[index])) {
+                if ((index - used.at(nums[index])) <= k) {
                     return true;
                 }
             }
-            used[ nums[index]] = index;
+            used[nums[index]] = index;
         }
         return false;
     }

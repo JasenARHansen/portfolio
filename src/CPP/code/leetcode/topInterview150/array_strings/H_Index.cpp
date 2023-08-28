@@ -49,10 +49,10 @@ public:
         int count = 0;
         int hIndex = 0;
         for (auto it = citations_map.rbegin(); it != citations_map.rend(); ++it) {
-            if (it->first <= 0){
+            if (it->first <= 0) {
                 break;
             }
-            if (it->first < count){
+            if (it->first < count) {
                 break;
             }
             count += it->second;

@@ -40,7 +40,7 @@ public:
     }
 
 
-    static int lengthOfLastWord(string s) {
+    static int lengthOfLastWord(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
         int right = s.size() - 1;

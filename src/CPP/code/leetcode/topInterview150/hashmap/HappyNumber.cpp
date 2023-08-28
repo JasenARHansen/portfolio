@@ -50,7 +50,7 @@ public:
             while (n > 0) {
                 digits.push_back(n % 10);
                 n /= 10;
-            };
+            }
             for (const auto &value: digits) {
                 n += pow(value, 2);
             }

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class RotateArray{
+class RotateArray {
 public:
 
     static void description() {
@@ -37,7 +37,7 @@ public:
         0 <= k <= 10^5)" << endl;
     }
 
-    static void rotate(vector<int>& nums, int k) {
+    static void rotate(vector<int> &nums, int k) {
         assert (!nums.empty());
         assert (nums.size() <= pow(10, 5));
         assert (0 <= k);
@@ -48,13 +48,13 @@ public:
         int next;
         int lastIndex;
         int nextIndex;
-        for (int i = 0; i < nums.size(); i++){
-            if (!read[i]){
+        for (int i = 0; i < nums.size(); i++) {
+            if (!read[i]) {
                 lastIndex = i;
                 current = nums[lastIndex];
                 nextIndex = (lastIndex + offset) % nums.size();
                 read[lastIndex] = true;
-                while (!read[nextIndex]){
+                while (!read[nextIndex]) {
                     read[nextIndex] = true;
                     next = nums[nextIndex];
                     nums[nextIndex] = current;

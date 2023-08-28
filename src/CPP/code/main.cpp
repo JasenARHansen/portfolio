@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main_source() {
+int mainSource() {
     std::cout << "Main for compilation." << std::endl;
     return 0;
 }

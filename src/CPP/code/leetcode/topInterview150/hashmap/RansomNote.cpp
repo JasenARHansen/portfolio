@@ -32,8 +32,7 @@ public:
 
     Constraints:
         1 <= ransomNote.length, magazine.length <= 10^5
-        ransomNote and magazine consist of lowercase English letters.)"
-             << endl;
+        ransomNote and magazine consist of lowercase English letters.)" << endl;
     }
 
     static bool canConstruct(const string &ransomNote, const string &magazine) {

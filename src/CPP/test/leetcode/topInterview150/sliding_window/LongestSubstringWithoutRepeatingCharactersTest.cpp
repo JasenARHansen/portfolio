@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-#ifndef LEETCODE_TOP_INTERVIEW_150_Longest_Substring_Without_Repeating_Characters_TEST
-#define LEETCODE_TOP_INTERVIEW_150_Longest_Substring_Without_Repeating_Characters_TEST
+#ifndef LEETCODE_TOP_INTERVIEW_150_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS_TEST
+#define LEETCODE_TOP_INTERVIEW_150_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/sliding_window/LongestSubstringWithoutRepeatingCharacters.cpp"
