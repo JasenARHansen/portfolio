@@ -37,33 +37,35 @@ public:
         0 <= start <= end <= 10^5)" << endl;
     }
 
-    static vector<vector<int>> insert(vector<vector<int>> &intervals, const vector<int> &newInterval) {
+    static vector<vector<int>> insert(const vector<vector<int>> &intervals, const vector<int> &newInterval) {
         assert (intervals.size() <= pow(10, 4));
+        // Generate new copy with deep copy so original data is not mutated
         vector<vector<int>> result;
-        bool detected;
-        bool processed;
-        vector<int> processing;
-        copy(newInterval.begin(), newInterval.end(), back_inserter(processing));
-        for (int index = 0; index < intervals.size(); index++) {
-            if (!detected && !processed && !detect(intervals[index], newInterval)) {
-                copyAndAdd(result, intervals[index]);
-            } else if (!detected && !processed && detect(intervals[index], newInterval)) {
-                processing[0] = min(processing[0], intervals[index][0]);
-                processing[1] = max(processing[1], intervals[index][1]);
-                detected = true;
-            } else if (detected && !processed && detect(intervals[index], newInterval)) {
-                processing[0] = min(processing[0], intervals[index][0]);
-                processing[1] = max(processing[1], intervals[index][1]);
-            } else if (detected && !processed && !detect(intervals[index], newInterval)) {
-                copyAndAdd(result, processing);
-                processed = true;
-                index--;
-            } else {
-                copyAndAdd(result, intervals[index]);
+        if (intervals.empty()) {
+            copyAndAdd(result, newInterval);
+        } else {
+            bool insert = true;
+            for (const auto &interval: intervals) {
+                if (insert && (newInterval[0] <= interval[0])) {
+                    copyAndAdd(result, newInterval);
+                    insert = false;
+                }
+                copyAndAdd(result, interval);
+            }
+            if (insert) {
+                copyAndAdd(result, newInterval);
             }
         }
-        if ((!detected && !processed) || (detected && !processed)){
-            copyAndAdd(result, processing);
+        // Process vector am make all necessary merges
+        for (int index = result.size() - 2; index >= 0; index--) {
+            // Based on index 0 of the 2 vectors, detect and merge
+            if (detect(result[index], result[index + 1])) {
+                mergeAndRemove(result, index);
+                // If a merge happened, move up the vector checking based on the 1 index
+                while (index < (result.size() - 1) && detect(result[index], result[index + 1])) {
+                    mergeAndRemove(result, index);
+                }
+            }
         }
         return result;
     }
@@ -82,29 +84,36 @@ private:
         intervals.push_back(processing);
     }
 
-    static bool detect(const vector<int> interval1, const vector<int> interval2) {
-        bool process = false;
+    static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
+        bool overlap = false;
         // case 1.  result[index][0] <= processing[0] <= result[index][1]
         if ((interval1[0] <= interval2[0]) &&
             (interval2[0] <= interval1[1])) {
-            process = true;
+            overlap = true;
         }
             // case 2.  interval1[0] <= interval2[1] <= interval1[1]
         else if ((interval1[0] <= interval2[1]) &&
                  (interval2[1] <= interval1[1])) {
-            process = true;
+            overlap = true;
         }
             // case 3.  interval2[0] <= interval1[0] <= interval2[1]
         else if ((interval2[0] <= interval1[0]) &&
                  (interval1[0] <= interval2[1])) {
-            process = true;
+            overlap = true;
         }
             // case 3.  interval2[0] <= interval1[1] <= interval2[1]
         else if ((interval2[0] <= interval1[1]) &&
                  (interval1[1] <= interval2[1])) {
-            process = true;
+            overlap = true;
         }
-        return process;
+        return overlap;
+    }
+
+    static void mergeAndRemove(vector<vector<int>> &intervals, const int leftIndex) {
+        // merge element n and n+1, stores the value in element n, and removes n+1
+        intervals[leftIndex][0] = min(intervals[leftIndex][0], intervals[leftIndex + 1][0]);
+        intervals[leftIndex][1] = max(intervals[leftIndex][1], intervals[leftIndex + 1][1]);
+        intervals.erase(intervals.begin() + leftIndex + 1);
     }
 };
 

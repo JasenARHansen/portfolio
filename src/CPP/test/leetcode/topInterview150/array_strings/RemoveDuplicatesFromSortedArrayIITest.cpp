@@ -43,7 +43,7 @@ TEST(RemoveDuplicatesFromSortedArrayIITest, removeDuplicates_fail_1) {
 }
 
 TEST(RemoveDuplicatesFromSortedArrayIITest, removeDuplicates_fail_2) {
-    // nums.length <= 3 * 104
+    // nums.length <= 3 * 10^4
     int size = 3 * pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(RemoveDuplicatesFromSortedArrayII::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");

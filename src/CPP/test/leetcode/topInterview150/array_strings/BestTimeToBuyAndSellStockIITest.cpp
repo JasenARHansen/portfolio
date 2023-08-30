@@ -55,7 +55,7 @@ TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_3) {
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_4) {
-    // prices[i] <= 104
+    // prices[i] <= 10^4
     int value = pow(10, 4) + 1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStockII::maxProfit(prices), ::testing::ExitedWithCode(3), "");

@@ -36,6 +36,24 @@ TEST(InsertIntervalTest, insert_2) {
     EXPECT_EQ(expected, result);
 }
 
+TEST(InsertIntervalTest, insert_3) {
+    vector<vector<int>> expected{{0, 10}};
+    vector<vector<int>> intervals{{2, 5},
+                                  {6, 7},
+                                  {8, 9}};
+    vector<int> newInterval = {0, 10};
+    vector<vector<int>> result = InsertInterval::insert(intervals, newInterval);
+    EXPECT_EQ(expected, result);
+}
+
+TEST(InsertIntervalTest, insert_4) {
+    vector<vector<int>> expected{{1, 7}};
+    vector<vector<int>> intervals{{1, 5}};
+    vector<int> newInterval = {2, 7};
+    vector<vector<int>> result = InsertInterval::insert(intervals, newInterval);
+    EXPECT_EQ(expected, result);
+}
+
 TEST(InsertIntervalTest, insert_fail_1) {
     // intervals.length <= 10^4
     int size = pow(10, 4) + 1;
