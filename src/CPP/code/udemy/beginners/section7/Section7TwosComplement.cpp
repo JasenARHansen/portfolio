@@ -5,7 +5,7 @@ int Section7TwosComplement::performTwosComplement(int input) {
     // Generate bitset to determine bits
     bitset<sizeof(input)*8> data(input);
     std::cout << "input = " << input << " as bits: " << data.to_string() << endl;
-    // Perform 1]s complement to flip all bits
+    // Perform 1's complement to flip all bits
     for (int index = 0; index < data.size(); index++){
         data.flip(index);
     }

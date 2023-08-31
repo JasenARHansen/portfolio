@@ -1,6 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "modernize-loop-convert"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <vector>
@@ -41,15 +39,15 @@ public:
         int profit = 0;
         int buy = INT_MAX;
         int sell = INT_MIN;
-        for (int index = 0; index < prices.size(); index++) {
-            assert (0 <= prices[index]);
-            assert (prices[index] <= pow(10, 4));
-            if (prices[index] < buy) {
-                buy = prices[index];
+        for (int price: prices) {
+            assert (0 <= price);
+            assert (price <= pow(10, 4));
+            if (price < buy) {
+                buy = price;
                 sell = INT_MIN;
             }
-            if (prices[index] > sell) {
-                sell = prices[index];
+            if (price > sell) {
+                sell = price;
             }
             if (profit < sell - buy) {
                 profit = sell - buy;

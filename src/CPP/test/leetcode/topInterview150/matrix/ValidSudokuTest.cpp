@@ -60,7 +60,7 @@ TEST(ValidSudokuTest, isValidSudoku_3) {
 }
 
 TEST(ValidSudokuTest, isValidSudoku_4) {
-    // matrix[1][]1] is bad
+    // matrix[1][1] is bad
     bool expected = false;
     vector<vector<char>> board{{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
                                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},

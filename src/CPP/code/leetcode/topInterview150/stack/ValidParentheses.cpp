@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++23-extensions"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
+#pragma ide diagnostic ignored "hicpp-multiway-paths-covered"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -38,7 +37,7 @@ public:
         s consists of parentheses only '()[]{}'.)" << endl;
     }
 
-    static bool isValid(string s) {
+    static bool isValid(const string& s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
         stack<char> base;

@@ -1,7 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "bugprone-branch-clone"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -17,7 +15,7 @@ class CoinChange {
 public:
 
     static void description() {
-        cout << R"(49. Group Anagrams
+        cout << R"(322. Coin Change
     You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
     Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
     You may assume that you have an infinite number of each kind of coin.
@@ -80,7 +78,6 @@ private:
                 }
             }
             amount_map[amount] = result;
-            return result;
         }
         return amount_map.at(amount);
     }

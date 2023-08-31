@@ -1,7 +1,6 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "hicpp-multiway-paths-covered"
-#pragma ide diagnostic ignored "bugprone-branch-clone"
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
+#pragma ide diagnostic ignored "hicpp-multiway-paths-covered"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>

@@ -1,11 +1,11 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+
 #include <vector>
 #include <iostream>
 #include <cassert>
 #include <cmath>
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wtautological-constant-out-of-range-compare"
-#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 using namespace std;
 
 class MergeSortedArray {
