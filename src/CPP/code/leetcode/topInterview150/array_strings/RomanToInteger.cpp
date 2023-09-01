@@ -52,7 +52,6 @@ public:
         It is guaranteed that s is a valid roman numeral in the range [1, 3999].)" << endl;
     }
 
-
     static int romanToInt(string s) {
         assert (!s.empty());
         assert (s.size() <= 15);

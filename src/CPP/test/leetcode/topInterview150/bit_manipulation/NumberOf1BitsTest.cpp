@@ -26,7 +26,6 @@ TEST(NumberOf1BitsTest, hammingWeight_2) {
     EXPECT_EQ(expected, result);
 }
 
-
 TEST(NumberOf1BitsTest, hammingWeight_3) {
     int expected = 31;
     uint32_t n = 0b11111111111111111111111111111101;

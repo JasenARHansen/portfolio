@@ -20,6 +20,5 @@ TEST(Section5NamespaceTest, getName) {
     EXPECT_EQ(nullptr, result_2);
 }
 
-
 #endif
 #pragma clang diagnostic pop

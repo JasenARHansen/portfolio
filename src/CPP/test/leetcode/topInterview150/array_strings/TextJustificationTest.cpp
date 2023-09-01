@@ -113,6 +113,5 @@ TEST(TextJustificationTest, fullJustify_fail_7) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

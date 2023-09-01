@@ -7,7 +7,6 @@
 
 using namespace std;
 
-//Definition for singly-linked list.
 struct ListNode {
     int val;
     ListNode *next;
@@ -18,7 +17,6 @@ struct ListNode {
 
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-
 
 class AddTwoNumbers {
 public:
@@ -52,11 +50,11 @@ public:
         assert(numbers.size() <= 100);
         assert(0 <= numbers[0]);
         assert(numbers[0] <= 9);
-        ListNode *current = new ListNode(numbers[numbers.size() - 1]);
+        auto *current = new ListNode(numbers[numbers.size() - 1]);
         for (int index = numbers.size() - 2; index >= 0; index--) {
             assert(0 <= numbers[index]);
             assert(numbers[index] <= 9);
-            ListNode *node = new ListNode(numbers[index], current);
+            auto *node = new ListNode(numbers[index], current);
             current = node;
         }
         return current;
@@ -91,7 +89,7 @@ public:
             rVal = rVal->next;
             sum = (lVal->val + rVal->val + carry) % 10;
             carry = (lVal->val + rVal->val + carry) / 10;
-            ListNode *working = new ListNode(sum);
+            auto *working = new ListNode(sum);
             current->next = working;
             current = working;
         }
@@ -100,7 +98,7 @@ public:
             lVal = lVal->next;
             sum = (lVal->val + carry) % 10;
             carry = (lVal->val + carry) / 10;
-            ListNode *working = new ListNode(sum);
+            auto *working = new ListNode(sum);
             current->next = working;
             current = working;
         }
@@ -109,13 +107,13 @@ public:
             rVal = rVal->next;
             sum = (rVal->val + carry) % 10;
             carry = (rVal->val + carry) / 10;
-            ListNode *working = new ListNode(sum);
+            auto *working = new ListNode(sum);
             current->next = working;
             current = working;
         }
         // if there is still a carry
         if (carry) {
-            ListNode *working = new ListNode(carry);
+            auto *working = new ListNode(carry);
             current->next = working;
         }
         return result;

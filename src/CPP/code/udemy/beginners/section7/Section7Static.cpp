@@ -10,4 +10,3 @@ int Section7Static::getCount() {
     return count;
 }
 
-

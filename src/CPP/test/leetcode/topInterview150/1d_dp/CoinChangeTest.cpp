@@ -82,6 +82,5 @@ TEST(CoinChangeTest, coinChange_fail_5) {
     EXPECT_EXIT(CoinChange::coinChange(coins, amount), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

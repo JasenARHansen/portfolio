@@ -51,7 +51,6 @@ TEST(UniquePathsIITest, uniquePathsWithObstacles_5) {
     EXPECT_EQ(expected, result);
 }
 
-
 TEST(UniquePathsIITest, uniquePathsWithObstacles_fail_1) {
     // 1 <= obstacleGrid.length
     int size = 1 - 1;

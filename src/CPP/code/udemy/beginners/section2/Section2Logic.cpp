@@ -148,7 +148,6 @@ void Section2Logic::doWhileLoop() {
         cout << "Do while loop execution " << counter2 << endl;
     } while (counter2 < 3);
 
-
 }
 
 void Section2Logic::forLoop() {

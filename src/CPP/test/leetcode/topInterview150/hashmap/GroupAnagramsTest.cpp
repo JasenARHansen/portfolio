@@ -61,6 +61,5 @@ TEST(GroupAnagramsTest, groupAnagrams_fail_3) {
     EXPECT_EXIT(GroupAnagrams::groupAnagrams(strs), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

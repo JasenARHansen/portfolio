@@ -52,7 +52,6 @@ public:
 
     RandomizedSet() = default;
 
-
     bool insert(int val) {
         if (this->dataSet.count(val)) {
             return false;

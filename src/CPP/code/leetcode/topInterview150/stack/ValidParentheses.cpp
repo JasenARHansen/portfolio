@@ -37,7 +37,7 @@ public:
         s consists of parentheses only '()[]{}'.)" << endl;
     }
 
-    static bool isValid(const string& s) {
+    static bool isValid(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
         stack<char> base;

@@ -2,7 +2,6 @@
 
 #include <utility>
 
-
 Section4Classes::Section4Classes() {
     this->mood = true;
     this->name = "Unnamed";
@@ -15,7 +14,7 @@ Section4Classes::Section4Classes(const string &name) {
     this->age = 0;
 }
 
-Section4Classes::Section4Classes(std::string name, const int age) : name(std::move(name)), age(age), mood(true){}
+Section4Classes::Section4Classes(std::string name, const int age) : name(std::move(name)), age(age), mood(true) {}
 
 Section4Classes::~Section4Classes() = default;
 
@@ -30,7 +29,6 @@ string Section4Classes::sound() const {
 string Section4Classes::move() {
     return "Moving away.";
 }
-
 
 void Section4Classes::setHappy() {
     this->mood = true;

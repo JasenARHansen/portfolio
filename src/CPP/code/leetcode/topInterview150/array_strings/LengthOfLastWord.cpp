@@ -38,7 +38,6 @@ public:
         There will be at least one word in s.)" << endl;
     }
 
-
     static int lengthOfLastWord(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));

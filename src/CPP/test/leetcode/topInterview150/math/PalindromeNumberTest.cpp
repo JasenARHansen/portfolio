@@ -41,6 +41,5 @@ TEST(PalindromeNumberTest, isPalindrome_4) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif
 #pragma clang diagnostic pop

@@ -11,6 +11,4 @@ TEST(Section5ReferencesTest, reassign) {
     EXPECT_EQ(expected, result);
 }
 
-
-
 #endif

@@ -43,7 +43,6 @@ public:
         1 <= numRows <= 1000)" << endl;
     }
 
-
     static string convert(const string &s, int numRows) {
         assert (!s.empty());
         assert (s.size() <= 1000);

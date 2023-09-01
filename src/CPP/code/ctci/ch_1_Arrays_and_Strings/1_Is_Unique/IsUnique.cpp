@@ -47,7 +47,7 @@ bool ch1IsUnique::isUniqueCharsNoDs(string str) {
 }
 
 void ch1IsUnique::test() {
-    vector<string> words {"abcde", "hello", "apple", "kite", "padle"};
+    vector<string> words{"abcde", "hello", "apple", "kite", "padle"};
     for (const auto &word: words) {
         cout << word << string(": ") << boolalpha << isUniqueChars(word) << endl;
     }

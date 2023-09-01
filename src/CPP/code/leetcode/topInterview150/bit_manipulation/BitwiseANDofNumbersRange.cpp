@@ -6,6 +6,7 @@
 #include <cassert>
 
 using namespace std;
+
 class BitwiseANDofNumbersRange {
 public:
 

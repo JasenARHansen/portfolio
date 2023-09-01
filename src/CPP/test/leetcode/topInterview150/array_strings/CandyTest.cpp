@@ -68,6 +68,5 @@ TEST(CandyTest, candy_fail_4) {
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

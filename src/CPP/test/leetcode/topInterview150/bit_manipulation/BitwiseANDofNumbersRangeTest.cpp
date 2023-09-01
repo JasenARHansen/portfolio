@@ -57,6 +57,5 @@ TEST(BitwiseANDofNumbersRangeTest, rangeBitwiseAnd_fail_3) {
     EXPECT_EXIT(BitwiseANDofNumbersRange::rangeBitwiseAnd(left, right), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

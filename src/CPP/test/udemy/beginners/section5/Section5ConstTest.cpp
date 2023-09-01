@@ -12,5 +12,4 @@ TEST(Section5ConstTest, reassign) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif

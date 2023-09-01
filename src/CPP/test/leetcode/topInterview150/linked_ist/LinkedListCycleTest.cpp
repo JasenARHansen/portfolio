@@ -18,7 +18,7 @@ TEST(LinkedListCycleTest, hasCycle_1) {
     int pos = 1;
     ListNode *head = LinkedListCycle::generateListWithCycle(pos, values);
     bool result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteListWithCycle(values.size(), &head);
+    LinkedListCycle::deleteList(values.size(), &head);
     EXPECT_EQ(expected, result);
 }
 
@@ -28,7 +28,7 @@ TEST(LinkedListCycleTest, hasCycle_2) {
     int pos = 0;
     ListNode *head = LinkedListCycle::generateListWithCycle(pos, values);
     bool result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteListWithCycle(values.size(), &head);
+    LinkedListCycle::deleteList(values.size(), &head);
     EXPECT_EQ(expected, result);
 }
 
@@ -38,7 +38,7 @@ TEST(LinkedListCycleTest, hasCycle_3) {
     int pos = -1;
     ListNode *head = LinkedListCycle::generateListWithCycle(pos, values);
     bool result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteListWithCycle(values.size(), &head);
+    LinkedListCycle::deleteList(values.size(), &head);
     EXPECT_EQ(expected, result);
 }
 
@@ -48,7 +48,7 @@ TEST(LinkedListCycleTest, hasCycle_4) {
     int pos = -1;
     ListNode *head = LinkedListCycle::generateListWithCycle(pos, values);
     bool result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteListWithCycle(values.size(), &head);
+    LinkedListCycle::deleteList(values.size(), &head);
     EXPECT_EQ(expected, result);
 }
 

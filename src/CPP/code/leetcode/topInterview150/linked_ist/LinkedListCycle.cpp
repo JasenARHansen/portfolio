@@ -9,14 +9,12 @@
 
 using namespace std;
 
-//Definition for singly-linked list.
 struct ListNode {
     int val;
     ListNode *next;
 
     explicit ListNode(int x) : val(x), next(nullptr) {}
 };
-
 
 class LinkedListCycle {
 public:
@@ -78,7 +76,7 @@ public:
         return root;
     }
 
-    static void deleteListWithCycle(const int size, ListNode **head) {
+    static void deleteList(const int size, ListNode **head) {
         int index = size;
         ListNode *current = *head;
         ListNode *next;
@@ -95,7 +93,7 @@ public:
         if (head == nullptr) {
             return false;
         }
-        unordered_set < ListNode * > pointers;
+        unordered_set<ListNode *> pointers;
         ListNode *current = head;
         while ((!pointers.count(current)) && (current->next != nullptr)) {
             pointers.insert(current);

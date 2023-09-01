@@ -94,7 +94,6 @@ TEST(RemoveElementTest, removeElement_7) {
     EXPECT_EQ(expected, count);
 }
 
-
 TEST(RemoveElementTest, removeElement_fail_2) {
     // nums.length <= 100
     int size = 101;
@@ -123,7 +122,6 @@ TEST(RemoveElementTest, removeElement_fail_5) {
     int val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
-
 
 TEST(RemoveElementTest, removeElement_fail_6) {
     // nums[i] <= 50
@@ -159,7 +157,6 @@ TEST(RemoveElementTest, removeElement_fail_10) {
     int val = 101;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
-
 
 #endif
 #pragma clang diagnostic pop

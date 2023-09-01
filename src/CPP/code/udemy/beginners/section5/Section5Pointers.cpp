@@ -1,6 +1,5 @@
 #include "Section5Pointers.h"
 
-
 void Section5Pointers::pointerDemo() {
     int value = 10;
     int *pnValue = &value;

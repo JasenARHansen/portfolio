@@ -51,7 +51,6 @@ public:
         1 <= num <= 3999)" << endl;
     }
 
-
     static string intToRoman(int num) {
         assert (1 <= num);
         assert (num <= 3999);

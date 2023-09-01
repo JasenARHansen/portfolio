@@ -63,6 +63,5 @@ TEST(MajorityElementTest, majorityElement_fail_5) {
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

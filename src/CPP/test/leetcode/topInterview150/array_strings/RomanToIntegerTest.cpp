@@ -115,6 +115,5 @@ TEST(RomanToIntegerTest, romanToInt_fail_4) {
     EXPECT_EXIT(RomanToInteger::romanToInt(s), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

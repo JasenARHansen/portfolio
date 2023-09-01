@@ -76,6 +76,5 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, strStr_fail_4) {
     EXPECT_EXIT(FindTheIndexOfTheFirstOccurrenceInAString::strStr(haystack, needle), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

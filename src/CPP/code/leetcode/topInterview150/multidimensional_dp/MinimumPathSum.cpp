@@ -39,7 +39,7 @@ public:
         assert (grid.size() <= 200);
         int n = grid[0].size();
         vector<vector<int>> testGrid;
-        for (const auto& row: grid) {
+        for (const auto &row: grid) {
             assert (!row.empty());
             assert (row.size() <= 200);
             assert (n == row.size());
@@ -76,4 +76,5 @@ private:
         return testGrid[row][column];
     }
 };
+
 #pragma clang diagnostic pop

@@ -2,7 +2,6 @@
 
 #include <utility>
 
-
 Section5Classes::Section5Classes() {
     this->name = "Default";
 }

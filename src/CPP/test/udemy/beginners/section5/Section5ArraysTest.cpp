@@ -14,5 +14,4 @@ TEST(Section5ArraysTest, incrementArrayPointer) {
     }
 }
 
-
 #endif

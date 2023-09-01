@@ -98,19 +98,15 @@ public:
         }
         // process left section
 
-
         // process right section
 
-
         // process middle section
-
 
         int tempIndex = leftIndex;
         while (leftIndex < rightIndex) {
             while ((tempIndex < rightIndex) && (-1 == candies[tempIndex])) {
                 tempIndex++;
             }
-
 
             leftIndex = tempIndex;
         }

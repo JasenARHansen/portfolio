@@ -54,6 +54,5 @@ TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_4) {
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif
 #pragma clang diagnostic pop

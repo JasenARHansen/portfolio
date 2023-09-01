@@ -31,7 +31,7 @@ public:
         s consist of only digits and English letters.)" << endl;
     }
 
-    static string longestPalindrome(const string& s) {
+    static string longestPalindrome(const string &s) {
         assert (!s.empty());
         assert (s.size() <= 1000);
         map<string, string> wordMap;
@@ -56,7 +56,7 @@ private:
     }
 
     static string
-    longestPalindrome(const string& s, int index, int length, map<string, string> &wordMap, string &longest) {
+    longestPalindrome(const string &s, int index, int length, map<string, string> &wordMap, string &longest) {
         string key = s + "-" + to_string(index) + "-" + to_string(length);
         if (!wordMap.count(key)) {
             if (length >= longest.size()) {

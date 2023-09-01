@@ -38,7 +38,6 @@ public:
         There is at least one word in s.)" << endl;
     }
 
-
     static string reverseWords(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));

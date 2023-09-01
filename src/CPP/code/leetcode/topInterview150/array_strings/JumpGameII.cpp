@@ -21,7 +21,6 @@ public:
         i + j < n
     Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
 
-
     Example 1:
         Input: nums = [2,3,1,1,4]
         Output: 2
