@@ -9,6 +9,7 @@
 using namespace std;
 
 class RotateImage {
+
 public:
 
     static void description() {
@@ -75,6 +76,7 @@ public:
     }
 
 private:
+
     static void store(vector<vector<int>> &matrix, int value, int row, int column) {
         assert (-1000 <= value);
         assert (value <= 1000);

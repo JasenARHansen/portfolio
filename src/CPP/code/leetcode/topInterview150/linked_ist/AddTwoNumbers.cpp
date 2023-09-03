@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -19,6 +20,7 @@ struct ListNode {
 };
 
 class AddTwoNumbers {
+
 public:
 
     static void description() {
@@ -29,7 +31,8 @@ public:
     Example 1:
         Input: l1 = [2,4,3], l2 = [5,6,4]
         Output: [7,0,8]
-        Explanation: 342 + 465 = 807.
+        Explanation:
+            342 + 465 = 807.
 
     Example 2:
         Input: l1 = [0], l2 = [0]

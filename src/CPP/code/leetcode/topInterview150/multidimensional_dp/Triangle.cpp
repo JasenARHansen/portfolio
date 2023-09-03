@@ -10,6 +10,7 @@
 using namespace std;
 
 class Triangle {
+
 public:
 
     static void description() {
@@ -20,7 +21,8 @@ public:
     Example 1:
         Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
         Output: 11
-        Explanation: The triangle looks like:
+        Explanation:
+            The triangle looks like:
                2
               3 4
              6 5 7
@@ -51,6 +53,7 @@ public:
     }
 
 private:
+
     static vector<int> minimumTotal(const vector<vector<int>> &triangle, int row) {
         assert (triangle[row].size() + 1 == triangle[row + 1].size());
         vector<int> result;

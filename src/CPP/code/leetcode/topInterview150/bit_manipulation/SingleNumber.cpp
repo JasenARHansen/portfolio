@@ -9,6 +9,7 @@
 using namespace std;
 
 class SingleNumber {
+
 public:
 
     static void description() {

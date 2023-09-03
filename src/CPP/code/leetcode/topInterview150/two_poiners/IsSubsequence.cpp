@@ -9,6 +9,7 @@
 using namespace std;
 
 class IsSubsequence {
+
 public:
 
     static void description() {

@@ -8,6 +8,7 @@
 using namespace std;
 
 class ZigzagConversion {
+
 public:
 
     static void description() {
@@ -28,10 +29,10 @@ public:
         Input: s = "PAYPALISHIRING", numRows = 4
         Output: "PINALSIGYAHRPI"
         Explanation:
-        P     I    N
-        A   L S  I G
-        Y A   H R
-        P     I
+            P     I    N
+            A   L S  I G
+            Y A   H R
+            P     I
 
     Example 3:
         Input: s = "A", numRows = 1

@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-#ifndef LEETCODE_TOP_INTERVIEW_150_REVERSE_LINKED_LIST_II_TEST
-#define LEETCODE_TOP_INTERVIEW_150_REVERSE_LINKED_LIST_II_TEST
+#ifndef LEETCODE_TOP_INTERVIEW_150_ROTATE_LIST_TEST
+#define LEETCODE_TOP_INTERVIEW_150_ROTATE_LIST_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/linked_ist/RotateList.cpp"
@@ -110,7 +110,7 @@ TEST(RotateListTest, rotateRight_fail_1) {
 }
 
 TEST(RotateListTest, rotateRight_fail_2) {
-    // -100 <= Node.va
+    // -100 <= Node.val
     int size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(RotateList::generateList(values), ::testing::ExitedWithCode(3), "");

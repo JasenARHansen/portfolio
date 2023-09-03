@@ -9,6 +9,7 @@
 using namespace std;
 
 class RansomNote {
+
 public:
 
     static void description() {

@@ -10,6 +10,7 @@
 using namespace std;
 
 class ValidParentheses {
+
 public:
 
     static void description() {

@@ -10,6 +10,7 @@
 using namespace std;
 
 class SpiralMatrix {
+
 public:
 
     static void description() {
@@ -79,6 +80,7 @@ public:
     }
 
 private:
+
     static void
     validate(const vector<vector<int>> &matrix, vector<bitset<10>> &test, vector<int> &result, int row,
              int column) {

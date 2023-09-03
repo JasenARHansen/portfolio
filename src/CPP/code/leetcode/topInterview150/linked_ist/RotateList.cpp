@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -20,6 +21,7 @@ struct ListNode {
 };
 
 class RotateList {
+
 public:
 
     static void description() {

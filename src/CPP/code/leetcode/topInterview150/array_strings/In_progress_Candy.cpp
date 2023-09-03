@@ -24,13 +24,15 @@ public:
     Example 1:
         Input: ratings = [1,0,2]
         Output: 5
-        Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+        Explanation:
+            You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
 
     Example 2:
         Input: ratings = [1,2,2]
         Output: 4
-        Explanation: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
-        The third child gets 1 candy because it satisfies the above two conditions.
+        Explanation:
+            You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
+            The third child gets 1 candy because it satisfies the above two conditions.
 
     Constraints:
         n == ratings.length
@@ -67,6 +69,7 @@ public:
         }
 
         // 3 regions to process defined by index 0 to left index. left index to right index, right index to end point:
+
         //     !---!------!---!
         // find the left side to start processing.  This is the first non '1' value, after a '1' has been found.
         int leftIndex = 1;

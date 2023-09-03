@@ -8,6 +8,7 @@
 using namespace std;
 
 class BitwiseANDofNumbersRange {
+
 public:
 
     static void description() {

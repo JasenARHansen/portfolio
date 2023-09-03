@@ -12,6 +12,7 @@
 using namespace std;
 
 class CoinChange {
+
 public:
 
     static void description() {
@@ -23,7 +24,8 @@ public:
     Example 1:
         Input: coins = [1,2,5], amount = 11
         Output: 3
-        Explanation: 11 = 5 + 5 + 1
+        Explanation:
+            11 = 5 + 5 + 1
 
     Example 2:
         Input: coins = [2], amount = 3
@@ -54,6 +56,7 @@ public:
     }
 
 private:
+
     static int coinChange(vector<int> &coins, int amount, unordered_map<int, int> &amount_map) {
         if (!amount_map.count(amount)) {
             vector<int> values;

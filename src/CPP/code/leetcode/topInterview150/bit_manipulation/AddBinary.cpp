@@ -9,6 +9,7 @@
 using namespace std;
 
 class AddBinary {
+
 public:
 
     static void description() {

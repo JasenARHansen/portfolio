@@ -10,6 +10,7 @@
 using namespace std;
 
 class SingleNumberII {
+
 public:
 
     static void description() {

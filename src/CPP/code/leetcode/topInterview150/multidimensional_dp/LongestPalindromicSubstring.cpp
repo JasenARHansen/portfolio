@@ -11,6 +11,7 @@
 using namespace std;
 
 class LongestPalindromicSubstring {
+
 public:
 
     static void description() {
@@ -20,7 +21,8 @@ public:
     Example 1:
         Input: s = "babad"
         Output: "bab"
-        Explanation: "aba" is also a valid answer.
+        Explanation:
+            "aba" is also a valid answer.
 
     Example 2:
         Input: s = "cbbd"
@@ -40,6 +42,7 @@ public:
     }
 
 private:
+
     static bool isPalindrome(string s) {
         bool result = true;
         int left = 0;

@@ -10,7 +10,9 @@
 using namespace std;
 
 class Node {
+
 public:
+
     int val;
     Node *next;
     Node *random;
@@ -23,6 +25,7 @@ public:
 };
 
 class CopyListWithRandomPointer {
+
 public:
 
     static void description() {

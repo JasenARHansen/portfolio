@@ -10,6 +10,7 @@
 using namespace std;
 
 class IsomorphicStrings {
+
 public:
 
     static void description() {

@@ -9,6 +9,7 @@
 using namespace std;
 
 class ValidAnagram {
+
 public:
 
     static void description() {

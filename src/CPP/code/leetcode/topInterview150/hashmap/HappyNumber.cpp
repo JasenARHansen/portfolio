@@ -11,6 +11,7 @@
 using namespace std;
 
 class HappyNumber {
+
 public:
 
     static void description() {

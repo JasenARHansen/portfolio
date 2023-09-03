@@ -11,6 +11,7 @@
 using namespace std;
 
 class WordPattern {
+
 public:
 
     static void description() {
