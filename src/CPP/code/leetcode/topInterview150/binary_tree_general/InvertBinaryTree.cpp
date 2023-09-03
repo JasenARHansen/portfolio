@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -21,28 +20,28 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class BinaryTreeZigzagLevelOrderTraversal {
+class InvertBinaryTree {
 
 public:
 
     static void description() {
-        cout << R"(103. Binary Tree Zigzag Level Order Traversal
-    Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+        cout << R"(226. Invert Binary Tree
+    Given the root of a binary tree, invert the tree, and return its root.
 
     Example 1:
-        Input: root = [3,9,20,null,null,15,7]
-        Output: [[3],[20,9],[15,7]]
+        Input: root = [4,2,7,1,3,6,9]
+        Output: [4,7,2,9,6,3,1]
 
     Example 2:
-        Input: root = [1]
-        Output: [[1]]
+        Input: root = [2,1,3]
+        Output: [2,3,1]
 
     Example 3:
         Input: root = []
         Output: []
 
     Constraints:
-        The number of nodes in the tree is in the range [0, 2000].
+        The number of nodes in the tree is in the range [0, 100].
         -100 <= Node.val <= 100)" << endl;
     }
 
@@ -89,42 +88,39 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
-        vector<vector<int>> result{};
-        if (root != nullptr) {
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
-            levelA.push(root);
-            TreeNode *processing;
-            while (!levelA.empty() || !levelB.empty()) {
-                if (!levelA.empty()) {
-                    result.emplace_back();
-                    while (!levelA.empty()) {
-                        processing = levelA.front();
-                        result[result.size() - 1].push_back(processing->val);
-                        levelA.pop();
-                        if (processing->left != nullptr) {
-                            levelB.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelB.push(processing->right);
-                        }
-                    }
+    static vector<string> serialize(TreeNode *head) {
+        vector<string> data;
+        if (head != nullptr) {
+            queue<TreeNode *> nodes;
+            TreeNode *current = head;
+            nodes.push(head);
+            data.push_back(to_string(current->val));
+            while (!nodes.empty()) {
+                current = nodes.front();
+                nodes.pop();
+                if (current->left != nullptr) {
+                    nodes.push(current->left);
+                    data.push_back(to_string(current->left->val));
                 } else {
-                    result.emplace_back();
-                    while (!levelB.empty()) {
-                        processing = levelB.front();
-                        result[result.size() - 1].insert(result[result.size() - 1].begin(), processing->val);
-                        levelB.pop();
-                        if (processing->left != nullptr) {
-                            levelA.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelA.push(processing->right);
-                        }
-                    }
+                    data.emplace_back("null");
+                }
+                if (current->right != nullptr) {
+                    nodes.push(current->right);
+                    data.push_back(to_string(current->right->val));
+                } else {
+                    data.emplace_back("null");
                 }
             }
+        }
+        return data;
+    }
+
+    static TreeNode *invertTree(TreeNode *root) {
+        TreeNode *result = nullptr;
+        if (root != nullptr) {
+            result = new TreeNode(root->val);
+            result->left = invertTree(root->right);
+            result->right = invertTree(root->left);
         }
         return result;
     }

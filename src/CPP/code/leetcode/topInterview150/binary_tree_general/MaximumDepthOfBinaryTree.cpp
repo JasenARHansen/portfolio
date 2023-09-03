@@ -21,28 +21,25 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class BinaryTreeZigzagLevelOrderTraversal {
+class MaximumDepthOfBinaryTree {
 
 public:
 
     static void description() {
-        cout << R"(103. Binary Tree Zigzag Level Order Traversal
-    Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+        cout << R"(104. Maximum Depth of Binary Tree
+    Given the root of a binary tree, return its maximum depth.
+    A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
     Example 1:
         Input: root = [3,9,20,null,null,15,7]
-        Output: [[3],[20,9],[15,7]]
+        Output: 3
 
     Example 2:
-        Input: root = [1]
-        Output: [[1]]
-
-    Example 3:
-        Input: root = []
-        Output: []
+        Input: root = [1,null,2]
+        Output: 2
 
     Constraints:
-        The number of nodes in the tree is in the range [0, 2000].
+        The number of nodes in the tree is in the range [0, 10^4].
         -100 <= Node.val <= 100)" << endl;
     }
 
@@ -89,42 +86,19 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
-        vector<vector<int>> result{};
+    static int maxDepth(TreeNode *root) {
+        auto result = 0;
         if (root != nullptr) {
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
-            levelA.push(root);
-            TreeNode *processing;
-            while (!levelA.empty() || !levelB.empty()) {
-                if (!levelA.empty()) {
-                    result.emplace_back();
-                    while (!levelA.empty()) {
-                        processing = levelA.front();
-                        result[result.size() - 1].push_back(processing->val);
-                        levelA.pop();
-                        if (processing->left != nullptr) {
-                            levelB.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelB.push(processing->right);
-                        }
-                    }
-                } else {
-                    result.emplace_back();
-                    while (!levelB.empty()) {
-                        processing = levelB.front();
-                        result[result.size() - 1].insert(result[result.size() - 1].begin(), processing->val);
-                        levelB.pop();
-                        if (processing->left != nullptr) {
-                            levelA.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelA.push(processing->right);
-                        }
-                    }
-                }
+            result = 1;
+            int left = 0;
+            if (root->left != nullptr) {
+                left = maxDepth(root->left);
             }
+            int right = 0;
+            if (root->right != nullptr) {
+                right = maxDepth(root->right);
+            }
+            result += max(left, right);
         }
         return result;
     }

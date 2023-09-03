@@ -21,29 +21,30 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class BinaryTreeZigzagLevelOrderTraversal {
+class SameTree {
 
 public:
 
     static void description() {
-        cout << R"(103. Binary Tree Zigzag Level Order Traversal
-    Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+        cout << R"(100. Same Tree
+    Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+    Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 
     Example 1:
-        Input: root = [3,9,20,null,null,15,7]
-        Output: [[3],[20,9],[15,7]]
+        Input: p = [1,2,3], q = [1,2,3]
+        Output: true
 
     Example 2:
-        Input: root = [1]
-        Output: [[1]]
+        Input: p = [1,2], q = [1,null,2]
+        Output: false
 
     Example 3:
-        Input: root = []
-        Output: []
+        Input: p = [1,2,1], q = [1,1,2]
+        Output: false
 
     Constraints:
-        The number of nodes in the tree is in the range [0, 2000].
-        -100 <= Node.val <= 100)" << endl;
+        The number of nodes in both trees is in the range [0, 100].
+        -10^4 <= Node.val <= 10^4)" << endl;
     }
 
     static TreeNode *generateTree(vector<string> values) {
@@ -89,42 +90,28 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
-        vector<vector<int>> result{};
-        if (root != nullptr) {
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
-            levelA.push(root);
-            TreeNode *processing;
-            while (!levelA.empty() || !levelB.empty()) {
-                if (!levelA.empty()) {
-                    result.emplace_back();
-                    while (!levelA.empty()) {
-                        processing = levelA.front();
-                        result[result.size() - 1].push_back(processing->val);
-                        levelA.pop();
-                        if (processing->left != nullptr) {
-                            levelB.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelB.push(processing->right);
-                        }
-                    }
-                } else {
-                    result.emplace_back();
-                    while (!levelB.empty()) {
-                        processing = levelB.front();
-                        result[result.size() - 1].insert(result[result.size() - 1].begin(), processing->val);
-                        levelB.pop();
-                        if (processing->left != nullptr) {
-                            levelA.push(processing->left);
-                        }
-                        if (processing->right != nullptr) {
-                            levelA.push(processing->right);
-                        }
-                    }
-                }
+    static bool isSameTree(TreeNode *p, TreeNode *q) {
+        bool result = false;
+        if ((p == nullptr) && (q == nullptr)) {
+            result = true;
+        } else if ((p != nullptr) && (q != nullptr)) {
+            result = true;
+            if (p->val != q->val) {
+                return false;
             }
+            bool left = false;
+            if ((p->left == nullptr) && ((q->left == nullptr))) {
+                left = true;
+            } else if ((p->left != nullptr) && ((q->left != nullptr))) {
+                left = isSameTree(p->left, q->left);
+            }
+            bool right = false;
+            if ((p->right == nullptr) && ((q->right == nullptr))) {
+                right = true;
+            } else if ((p->right != nullptr) && ((q->right != nullptr))) {
+                right = isSameTree(p->right, q->right);
+            }
+            result = left && right;
         }
         return result;
     }

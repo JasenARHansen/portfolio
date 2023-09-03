@@ -46,7 +46,8 @@ public:
         0 <= Node.val <= 100
         1 <= n <= sz
 
-    Follow up: Could you do this in one pass?)" << endl;
+    Follow up:
+        Could you do this in one pass?)" << endl;
     }
 
     static ListNode *generateList(const vector<int> &numbers) {

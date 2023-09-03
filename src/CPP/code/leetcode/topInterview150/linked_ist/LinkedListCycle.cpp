@@ -49,7 +49,8 @@ public:
         -10^5 <= Node.val <= 10^5
         pos is -1 or a valid index in the linked-list.
 
-    Follow up: Can you solve it using O(1) (i.e. constant) memory?)" << endl;
+    Follow up:
+        Can you solve it using O(1) (i.e. constant) memory?)" << endl;
     }
 
     static ListNode *generateListWithCycle(const int pos, const vector<int> &numbers) {

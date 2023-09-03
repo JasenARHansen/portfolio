@@ -35,7 +35,8 @@ public:
     Constraints:
         0 <= n <= 10^4
 
-    Follow up: Could you write a solution that works in logarithmic time complexity?)" << endl;
+    Follow up:
+        Could you write a solution that works in logarithmic time complexity?)" << endl;
     }
 
     static int trailingZeroes(int n) {
