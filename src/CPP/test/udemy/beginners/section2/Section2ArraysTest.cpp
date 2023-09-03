@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section2/Section2Arrays.h"
 
 TEST(Section2ArraysTest, arrays) {
-    std::string expected = "Array with individual assignments\n"
+    auto expected = "Array with individual assignments\n"
                            "First array size: 12\n"
                            "First array element size: 4\n"
                            "First index 0 has a value of 7\n"
@@ -36,7 +36,7 @@ TEST(Section2ArraysTest, arrays) {
 }
 
 TEST(Section2ArraysTest, arraysMultiDimensional) {
-    std::string expected = "Animals array size: 192\n"
+    auto expected = "Animals array size: 192\n"
                            "Animals row size: 96\n"
                            "Animal size: 32\n"
                            "Animals Row 0: Fox Cat Dog\n"

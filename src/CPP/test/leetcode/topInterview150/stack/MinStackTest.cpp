@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_MIN_STACK_TEST
 #define LEETCODE_TOP_INTERVIEW_150_MIN_STACK_TEST
 
@@ -17,7 +15,7 @@ TEST(MinStackTest, MinStack_1) {
     auto myStack = MinStack();
     myStack.push(expected[0]);
     myStack.push(expected[1]);
-    int result = myStack.top();
+    auto result = myStack.top();
     EXPECT_EQ(expected[1], result);
     result = myStack.getMin();
     EXPECT_EQ(expected[0], result);
@@ -30,10 +28,10 @@ TEST(MinStackTest, MinStack_1) {
 
 TEST(MinStackTest, MinStack_2) {
     vector<int> expected{1, 2, 2, 1, 1, 1};
-    auto *myStack = new MinStack();
+    auto myStack = new MinStack();
     myStack->push(expected[0]);
     myStack->push(expected[1]);
-    int result = myStack->top();
+    auto result = myStack->top();
     EXPECT_EQ(expected[1], result);
     result = myStack->getMin();
     EXPECT_EQ(expected[0], result);
@@ -45,4 +43,3 @@ TEST(MinStackTest, MinStack_2) {
 }
 
 #endif
-#pragma clang diagnostic pop

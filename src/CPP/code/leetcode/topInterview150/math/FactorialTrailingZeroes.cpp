@@ -42,7 +42,7 @@ public:
     static int trailingZeroes(int n) {
         assert (0 <= n);
         assert (n <= pow(10, 4));
-        int result = 0;
+        auto result = 0;
         while (n / 5) {
             result += n / 5;
             n /= 5;

@@ -14,7 +14,7 @@ TEST(SymmetricTreeTest, isSymmetric_1) {
     auto expected = true;
     vector<string> values{"1", "2", "2", "3", "4", "4", "3", "null", "null", "null", "null", "null", "null", "null",
                           "null"};
-    auto *root = SymmetricTree::generateTree(values);
+    auto root = SymmetricTree::generateTree(values);
     auto result = SymmetricTree::isSymmetric(root);
     EXPECT_EQ(expected, result);
     SymmetricTree::deleteTree(&root);
@@ -23,11 +23,10 @@ TEST(SymmetricTreeTest, isSymmetric_1) {
 TEST(SymmetricTreeTest, isSymmetric_2) {
     auto expected = false;
     vector<string> values{"1", "2", "2", "null", "3", "null", "3", "null", "null", "null", "null"};
-    auto *root = SymmetricTree::generateTree(values);
+    auto root = SymmetricTree::generateTree(values);
     auto result = SymmetricTree::isSymmetric(root);
     EXPECT_EQ(expected, result);
     SymmetricTree::deleteTree(&root);
 }
-
 
 #endif

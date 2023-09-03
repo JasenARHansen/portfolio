@@ -76,8 +76,8 @@ public:
         return root;
     }
 
-    static void deleteList(const int size, Node **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, Node **head) {
+        auto index = size;
         Node *current = *head;
         Node *next;
         while (index > 0) {
@@ -92,7 +92,7 @@ public:
     static Node *copyRandomList(Node *head) {
         Node *result = nullptr;
         if (head != nullptr) {
-            int index = 0;
+            auto index = 0;
             vector<Node *> indexes;
             unordered_map<Node *, int> pointerMap;
             result = new Node(head->val);

@@ -42,7 +42,7 @@ public:
         assert (!nums.empty());
         assert (nums.size() <= pow(10, 4));
         vector<int> processed(nums.size(), -1);
-        int result = jump(0, nums, processed) - 1;
+        auto result = jump(0, nums, processed) - 1;
         return max(0, result);
     }
 
@@ -57,10 +57,10 @@ private:
         if (processed[position] >= 0) {
             return processed[position];
         }
-        int jumps = INT_MAX;
+        auto jumps = INT_MAX;
         for (int i = nums[position]; 0 < i; i--) {
             if ((nums.size() - 1 >= position + i)) {
-                int value = jump(position + i, nums, processed);
+                auto value = jump(position + i, nums, processed);
                 if ((value > 0) && (value < jumps)) {
                     jumps = value;
                 }

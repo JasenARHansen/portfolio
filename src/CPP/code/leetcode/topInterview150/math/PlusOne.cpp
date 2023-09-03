@@ -51,7 +51,7 @@ public:
         assert (!digits.empty());
         assert (digits.size() <= 100);
         vector<int> result(digits.size());
-        bool carry = true;
+        auto carry = true;
         int value;
         for (int index = digits.size() - 1; index >= 0; index--) {
             value = digits[index];

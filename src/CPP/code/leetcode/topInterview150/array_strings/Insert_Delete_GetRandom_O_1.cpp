@@ -70,7 +70,7 @@ public:
 
     int getRandom() {
         assert(!this->dataSet.empty());
-        int index = rand() % dataSet.size();
+        auto index = rand() % dataSet.size();
         auto it = next(dataSet.begin(), index);
         return *it;
     }

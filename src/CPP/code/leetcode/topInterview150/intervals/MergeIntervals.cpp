@@ -75,7 +75,7 @@ public:
             if (result.empty()) {
                 result.push_back(processing);
             } else {
-                bool process = true;
+                auto process = true;
                 while (process) {
                     process = false;
                     for (int index = 0; index < result.size(); index++) {
@@ -132,7 +132,7 @@ private:
     }
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
-        bool overlap = false;
+        auto overlap = false;
         // case 1.  result[index][0] <= processing[0] <= result[index][1]
         if ((interval1[0] <= interval2[0]) &&
             (interval2[0] <= interval1[1])) {

@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_SPIRAL_ORDER_TEST
 #define LEETCODE_TOP_INTERVIEW_150_SPIRAL_ORDER_TEST
 
@@ -17,7 +15,7 @@ TEST(SpiralMatrixTest, spiralOrder_1) {
     vector<vector<int>> matrix{{1, 2, 3},
                                {4, 5, 6},
                                {7, 8, 9}};
-    vector<int> result = SpiralMatrix::spiralOrder(matrix);
+    auto result = SpiralMatrix::spiralOrder(matrix);
     EXPECT_EQ(expected, result);
 }
 
@@ -26,7 +24,7 @@ TEST(SpiralMatrixTest, spiralOrder_2) {
     vector<vector<int>> matrix{{1, 2,  3,  4},
                                {5, 6,  7,  8},
                                {9, 10, 11, 12}};
-    vector<int> result = SpiralMatrix::spiralOrder(matrix);
+    auto result = SpiralMatrix::spiralOrder(matrix);
     EXPECT_EQ(expected, result);
 }
 
@@ -36,7 +34,7 @@ TEST(SpiralMatrixTest, spiralOrder_3) {
                                {5,  6,  7,  8},
                                {9,  10, 11, 12},
                                {13, 14, 15, 16}};
-    vector<int> result = SpiralMatrix::spiralOrder(matrix);
+    auto result = SpiralMatrix::spiralOrder(matrix);
     EXPECT_EQ(expected, result);
 }
 
@@ -46,7 +44,7 @@ TEST(SpiralMatrixTest, spiralOrder_4) {
                                {4,  5,  6},
                                {7,  8,  9},
                                {10, 11, 12}};
-    vector<int> result = SpiralMatrix::spiralOrder(matrix);
+    auto result = SpiralMatrix::spiralOrder(matrix);
     EXPECT_EQ(expected, result);
 }
 
@@ -57,37 +55,36 @@ TEST(SpiralMatrixTest, spiralOrder_5) {
                                {11, 12, 13, 14, 15},
                                {16, 17, 18, 19, 20},
                                {21, 22, 23, 24, 25}};
-    vector<int> result = SpiralMatrix::spiralOrder(matrix);
+    auto result = SpiralMatrix::spiralOrder(matrix);
     EXPECT_EQ(expected, result);
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_1) {
     // 1 <= matrix.length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_2) {
     // matrix.length <= 10
-    int size = 10 + 1;
+    auto size = 10 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_3) {
     // 1 <= matrix[i].length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_4) {
     // matrix[i].length <= 10
-    int size = 10 + 1;
+    auto size = 10 + 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

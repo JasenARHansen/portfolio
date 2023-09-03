@@ -51,7 +51,7 @@ public:
     static TreeNode *generateTree(vector<string> values) {
         TreeNode *root = nullptr;
         if (!values.empty()) {
-            int index = 0;
+            auto index = 0;
             if (values[index] != "null") {
                 queue<TreeNode *> nodes;
                 root = new TreeNode(stoi(values[index]));
@@ -89,7 +89,7 @@ public:
     }
 
     static bool isValidBST(TreeNode *root) {
-        bool result = true;
+        auto result = true;
         if (root != nullptr) {
             auto range = validNode(root);
             if ((range.first == LLONG_MIN) || (range.second == LLONG_MAX)) {

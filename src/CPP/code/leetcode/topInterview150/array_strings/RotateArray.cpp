@@ -43,7 +43,7 @@ public:
         assert (nums.size() <= pow(10, 5));
         assert (0 <= k);
         assert (k <= pow(10, 5));
-        int offset = k % nums.size();
+        auto offset = k % nums.size();
         vector<bool> read(nums.size(), false);
         int current;
         int next;

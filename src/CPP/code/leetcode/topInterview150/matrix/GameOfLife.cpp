@@ -48,7 +48,7 @@ public:
         assert (!board.empty());
         assert (board.size() <= 25);
         vector<vector<bool>> test;
-        int size = board[0].size();
+        auto size = board[0].size();
         for (const auto &i: board) {
             assert (!i.empty());
             assert (i.size() == size);

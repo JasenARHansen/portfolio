@@ -39,9 +39,9 @@ public:
     static int maxProfit(vector<int> &prices) {
         assert (!prices.empty());
         assert (prices.size() <= pow(10, 5));
-        int profit = 0;
-        int buy = INT_MAX;
-        int sell = INT_MIN;
+        auto profit = 0;
+        auto buy = INT_MAX;
+        auto sell = INT_MIN;
         for (int price: prices) {
             assert (0 <= price);
             assert (price <= pow(10, 4));

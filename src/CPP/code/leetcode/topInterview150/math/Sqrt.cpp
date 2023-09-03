@@ -41,7 +41,7 @@ public:
         // using a number that will fail the first while check
         double xn = x;
         // using a number that will fail the first while check
-        double result = 5 * xn;
+        auto result = 5 * xn;
         // Test to see if result is within the precision of the answer
         while (abs(result - xn) >= 0.001) {
             // Update result

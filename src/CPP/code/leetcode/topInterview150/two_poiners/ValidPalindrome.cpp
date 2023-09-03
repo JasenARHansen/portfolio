@@ -44,7 +44,7 @@ public:
     static bool isPalindrome(string s) {
         assert (!s.empty());
         assert (s.size() <= 2 * pow(10, 5));
-        bool result = true;
+        auto result = true;
         s.erase(remove_if(s.begin(), s.end(), [](char c) { return !iswalnum(c); }), s.end());
         for (int index = 0; index < s.size() / 2; index++) {
             if (tolower(s[index]) != tolower(s[s.size() - index - 1])) {

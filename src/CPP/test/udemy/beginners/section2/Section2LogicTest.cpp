@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section2/Section2Logic.h"
 
 TEST(Section2LogicTest, conditions) {
-    std::string expected = "Condition 1 true.\n"
+    auto expected = "Condition 1 true.\n"
                            "Condition 2 false.\n"
                            "Condition 3 true.\n"
                            "Condition 4 true.\n"
@@ -19,7 +19,7 @@ TEST(Section2LogicTest, conditions) {
 }
 
 TEST(Section2LogicTest, whileLoop) {
-    std::string expected = "Infinite while loop with break.\n"
+    auto expected = "Infinite while loop with break.\n"
                            "Infinite while loop over.\n"
                            "While loop execution 1\n"
                            "While loop execution 2\n"
@@ -31,7 +31,7 @@ TEST(Section2LogicTest, whileLoop) {
 }
 
 TEST(Section2LogicTest, doWhileLoop) {
-    std::string expected = "Do while loop with condition already met\n"
+    auto expected = "Do while loop with condition already met\n"
                            "Do while loop execution 1\n"
                            "Do while loop execution 2\n"
                            "Do while loop execution 3\n";
@@ -41,7 +41,7 @@ TEST(Section2LogicTest, doWhileLoop) {
 }
 
 TEST(Section2LogicTest, forLoop) {
-    std::string expected = "For loop no inputs with a break\n"
+    auto expected = "For loop no inputs with a break\n"
                            "For loop with a break, only counter defined execution 0\n"
                            "For loop increment in loop execution 1\n"
                            "For loop increment in loop execution 2\n"

@@ -54,8 +54,8 @@ public:
         assert (gas.size() <= pow(10, 5));
         vector<bool> valid(gas.size(), true);
         // Try to short circuit operation by identifying invalid start points
-        int total_gas = 0;
-        int total_cost = 0;
+        auto total_gas = 0;
+        auto total_cost = 0;
         for (int i = 0; i < gas.size(); i++) {
             assert (0 <= gas[i]);
             assert (gas[i] <= pow(10, 4));
@@ -70,8 +70,8 @@ public:
             // Sequential shortcut
             if (i < gas.size() - 1) {
                 if ((gas[i] == gas[i + 1]) && (cost[i] == cost[i + 1])) {
-                    int sum1 = gas[i] - cost[i];
-                    int sum2 = gas[i + 1] - cost[i + 1];
+                    auto sum1 = gas[i] - cost[i];
+                    auto sum2 = gas[i + 1] - cost[i + 1];
                     if ((sum1 >= 0) && (sum2 >= 0)) {
                         // If both are increasing, then n+1 can not be te start point
                         valid[i + 1] = false;
@@ -94,14 +94,14 @@ public:
         }
         for (int start = 0; start < gas.size(); start++) {
             if (valid[start]) {
-                int gasTank = 0;
+                auto gasTank = 0;
                 for (int offset = 1; offset <= cost.size(); offset++) {
-                    int current = (start + offset - 1) % cost.size();
+                    auto current = (start + offset - 1) % cost.size();
                     // Fill tank
                     gasTank += gas[current];
-                    int used = cost[current];
+                    auto used = cost[current];
                     if (gasTank >= used) {
-                        int next = (start + offset) % cost.size();
+                        auto next = (start + offset) % cost.size();
                         if (next == start) {
                             return start;
                         }

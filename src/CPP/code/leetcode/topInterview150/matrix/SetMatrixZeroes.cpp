@@ -36,7 +36,7 @@ public:
         assert (!matrix.empty());
         assert (matrix.size() <= 200);
         vector<vector<bool>> test;
-        int size = matrix[0].size();
+        auto size = matrix[0].size();
         for (const auto &i: matrix) {
             assert (!i.empty());
             assert (i.size() == size);

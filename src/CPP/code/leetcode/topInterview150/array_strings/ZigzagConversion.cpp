@@ -51,8 +51,8 @@ public:
         assert (numRows <= 1000);
         string result;
         vector<string> data(numRows, "");
-        bool down = true;
-        int target = 0;
+        auto down = true;
+        auto target = 0;
         for (char index: s) {
             data[target].push_back(index);
             if (down) {

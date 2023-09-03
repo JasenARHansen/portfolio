@@ -67,8 +67,8 @@ public:
         return result;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {
@@ -83,16 +83,16 @@ public:
     static ListNode *removeNthFromEnd(ListNode *head, int n) {
         // Prep for processing
         auto data = copyList(head);
-        ListNode *result = data.first;
+        auto result = data.first;
         if (result == nullptr) {
             return result;
         }
-        int size = data.second;
+        auto size = data.second;
         assert(1 <= n);
         assert(n <= size);
         ListNode *working = result;
         ListNode *previous = nullptr;
-        int index = 0;
+        auto index = 0;
         while (index <= size - n) {
             if (size - n == index) {
                 ListNode *temp = working;
@@ -117,7 +117,7 @@ private:
 
     static pair<ListNode *, int> copyList(ListNode *head) {
         ListNode *result = nullptr;
-        int count = 0;
+        auto count = 0;
         if (head != nullptr) {
             ListNode *current = head;
             result = new ListNode(current->val);

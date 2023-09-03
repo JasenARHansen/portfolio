@@ -47,7 +47,7 @@ public:
     static TreeNode *generateTree(vector<string> values) {
         TreeNode *root = nullptr;
         if (!values.empty()) {
-            int index = 0;
+            auto index = 0;
             if (values[index] != "null") {
                 queue<TreeNode *> nodes;
                 root = new TreeNode(stoi(values[index]));
@@ -103,8 +103,8 @@ private:
             return false;
         }
         if (treeA->val == treeB->val) {
-            bool outer = isSymmetric(treeA->left, treeB->right);
-            bool inner = isSymmetric(treeA->right, treeB->left);
+            auto outer = isSymmetric(treeA->left, treeB->right);
+            auto inner = isSymmetric(treeA->right, treeB->left);
             return outer && inner;
         }
         return false;

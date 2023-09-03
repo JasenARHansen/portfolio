@@ -60,17 +60,17 @@ public:
         assert (nums.size() <= 100);
         assert (0 <= val);
         assert (val <= 100);
-        int returnCount = nums.size();
+        auto returnCount = nums.size();
         if (nums.empty()) {
             return returnCount;
         }
-        int startIndex = 0;
+        auto startIndex = 0;
         int stopIndex = nums.size() - 1;
         do {
             assert (0 <= nums[startIndex]);
             assert (nums[startIndex] <= 50);
             if (nums[startIndex] == val) {
-                bool ifBreak = false;
+                auto ifBreak = false;
                 while (startIndex <= stopIndex) {
                     if (nums[stopIndex] != val) {
                         nums[startIndex] = nums[stopIndex];

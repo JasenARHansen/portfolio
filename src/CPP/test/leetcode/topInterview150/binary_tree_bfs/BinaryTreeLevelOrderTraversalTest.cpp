@@ -15,8 +15,8 @@ TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_1) {
                                  {9,  20},
                                  {15, 7}};
     vector<string> values{"3", "9", "20", "null", "null", "15", "7", "null", "null", "null", "null"};
-    auto *root = BinaryTreeLevelOrderTraversal::generateTree(values);
-    vector<vector<int>> result = BinaryTreeLevelOrderTraversal::levelOrder(root);
+    auto root = BinaryTreeLevelOrderTraversal::generateTree(values);
+    auto result = BinaryTreeLevelOrderTraversal::levelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeLevelOrderTraversal::deleteTree(&root);
 }
@@ -24,8 +24,8 @@ TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_1) {
 TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_2) {
     vector<vector<int>> expected{{1}};
     vector<string> values{"1", "null", "null"};
-    auto *root = BinaryTreeLevelOrderTraversal::generateTree(values);
-    vector<vector<int>> result = BinaryTreeLevelOrderTraversal::levelOrder(root);
+    auto root = BinaryTreeLevelOrderTraversal::generateTree(values);
+    auto result = BinaryTreeLevelOrderTraversal::levelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeLevelOrderTraversal::deleteTree(&root);
 }
@@ -33,7 +33,7 @@ TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_2) {
 TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_3) {
     vector<vector<int>> expected{};
     TreeNode *root = nullptr;
-    vector<vector<int>> result = BinaryTreeLevelOrderTraversal::levelOrder(root);
+    auto result = BinaryTreeLevelOrderTraversal::levelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeLevelOrderTraversal::deleteTree(&root);
 }

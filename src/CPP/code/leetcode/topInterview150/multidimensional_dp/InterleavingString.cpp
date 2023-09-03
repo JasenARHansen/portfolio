@@ -77,10 +77,10 @@ private:
     static bool
     isInterleave(const string &s1, int s1Index, const string &s2, int s2Index, const string &s3, int s3Index,
                  map<string, bool> &processed) {
-        string key = to_string(s1Index) + "-" + to_string(s2Index) + "-" + s3.substr(s3Index, s3.size() - s3Index);
+        auto key = to_string(s1Index) + "-" + to_string(s2Index) + "-" + s3.substr(s3Index, s3.size() - s3Index);
         if (!processed.count(key)) {
-            bool first = false;
-            bool second = false;
+            auto first = false;
+            auto second = false;
             // end of all 3 strings: success
             if ((s1Index == s1.size()) && (s2Index == s2.size()) && (s3Index == s3.size())) {
                 return true;
@@ -115,8 +115,8 @@ private:
 
     static bool
     isInterleave_2(const string &s1, int s1Index, const string &s2, int s2Index, const string &s3, int s3Index) {
-        bool first = false;
-        bool second = false;
+        auto first = false;
+        auto second = false;
         // end of all 3 strings: success
         if ((s1Index == s1.size()) && (s2Index == s2.size()) && (s3Index == s3.size())) {
             return true;

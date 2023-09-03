@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_BEST_TIME_TO_BUY_AND_SELL_STOCK_II_TEST
 #define LEETCODE_TOP_INTERVIEW_150_BEST_TIME_TO_BUY_AND_SELL_STOCK_II_TEST
 
@@ -13,53 +11,52 @@ TEST(BestTimeToBuyAndSellStockIITest, description) {
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_1) {
-    int expected = 7;
+    auto expected = 7;
     vector<int> prices{7, 1, 5, 3, 6, 4};
-    int result = BestTimeToBuyAndSellStockII::maxProfit(prices);
+    auto result = BestTimeToBuyAndSellStockII::maxProfit(prices);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_2) {
-    int expected = 4;
+    auto expected = 4;
     vector<int> prices{1, 2, 3, 4, 5};
-    int result = BestTimeToBuyAndSellStockII::maxProfit(prices);
+    auto result = BestTimeToBuyAndSellStockII::maxProfit(prices);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_3) {
-    int expected = 0;
+    auto expected = 0;
     vector<int> prices{7, 6, 4, 3, 1};
-    int result = BestTimeToBuyAndSellStockII::maxProfit(prices);
+    auto result = BestTimeToBuyAndSellStockII::maxProfit(prices);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_1) {
     // 1 <= prices.length
-    int size = 0;
+    auto size = 0;
     vector<int> prices(size);
     EXPECT_EXIT(BestTimeToBuyAndSellStockII::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_2) {
-    // prices.length <= 3 * pow(10, 4)
-    int size = 3 * pow(10, 4) + 1;
+    // prices.length <= 3 * (int)pow(10, 4)
+    auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> prices(size);
     EXPECT_EXIT(BestTimeToBuyAndSellStockII::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_3) {
     // 0 <= prices[i]
-    int value = -1;
+    auto value = -1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStockII::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockIITest, maxProfit_fail_4) {
     // prices[i] <= 10^4
-    int value = pow(10, 4) + 1;
+    auto value = (int) pow(10, 4) + 1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStockII::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

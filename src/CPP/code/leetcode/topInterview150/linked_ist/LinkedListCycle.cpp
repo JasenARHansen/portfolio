@@ -60,7 +60,7 @@ public:
             assert(-pow(10, 5) <= numbers[0]);
             assert(numbers[0] <= pow(10, 5));
             root = new ListNode(numbers[0]);
-            ListNode *last = root;
+            auto last = root;
             for (int index = 1; index < numbers.size(); index++) {
                 assert(-pow(10, 5) <= numbers[index]);
                 assert(numbers[index] <= pow(10, 5));
@@ -69,7 +69,7 @@ public:
                 last = node;
             }
             if ((0 <= pos) && (pos < numbers.size())) {
-                int index = pos;
+                auto index = pos;
                 ListNode *cycleTarget = root;
                 while (index > 0) {
                     cycleTarget = cycleTarget->next;
@@ -81,8 +81,8 @@ public:
         return root;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {

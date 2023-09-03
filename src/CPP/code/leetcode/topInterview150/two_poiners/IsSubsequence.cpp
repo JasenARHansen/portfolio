@@ -34,8 +34,8 @@ public:
     static bool isSubsequence(const string &s, const string &t) {
         assert (s.size() <= 100);
         assert (t.size() <= pow(10, 4));
-        int tIndex = 0;
-        int find = s.size();
+        auto tIndex = 0;
+        auto find = s.size();
         for (char sIndex: s) {
             while (tIndex < t.size()) {
                 if (sIndex == t.at(tIndex++)) {

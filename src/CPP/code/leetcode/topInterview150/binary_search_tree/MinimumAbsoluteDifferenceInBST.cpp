@@ -65,7 +65,7 @@ public:
     }
 
     static int getMinimumDifference(TreeNode *root) {
-        int result = INT_MAX;
+        auto result = INT_MAX;
         if (root != nullptr) {
             vector<int> inorder;
             inorderTraversal(root, inorder);

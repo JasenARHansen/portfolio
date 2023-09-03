@@ -38,7 +38,7 @@ public:
     static int singleNumber(vector<int> &nums) {
         assert (!nums.empty());
         assert (nums.size() <= 3 * pow(10, 4));
-        int result = 0;
+        auto result = 0;
         for (auto number: nums) {
             assert (-3 * pow(10, 4) <= number);
             assert (number <= 3 * pow(10, 4));

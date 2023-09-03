@@ -68,7 +68,7 @@ public:
                 current = board[row][column];
                 assert (isdigit(current) || current == '.');
                 if (isdigit(current)) {
-                    int value = current - '0';
+                    auto value = current - '0';
                     if (numbers.test(value)) {
                         return false;
                     }
@@ -82,7 +82,7 @@ public:
             for (int row = 0; row < 9; row++) {
                 current = board[row][column];
                 if (isdigit(current)) {
-                    int value = current - '0';
+                    auto value = current - '0';
                     if (numbers.test(value)) {
                         return false;
                     }
@@ -98,7 +98,7 @@ public:
                     for (int column = 0; column < 3; column++) {
                         current = board[3 * x + row][3 * y + column];
                         if (isdigit(current)) {
-                            int value = current - '0';
+                            auto value = current - '0';
                             if (numbers.test(value)) {
                                 return false;
                             }

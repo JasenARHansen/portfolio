@@ -56,8 +56,8 @@ private:
             return 2;
         }
         if (!stairs_map.count(n)) {
-            int one = climbStairs(n - 1, stairs_map);
-            int two = climbStairs(n - 2, stairs_map);
+            auto one = climbStairs(n - 1, stairs_map);
+            auto two = climbStairs(n - 2, stairs_map);
             stairs_map[n] = one + two;
         }
         return stairs_map.at(n);

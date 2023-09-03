@@ -59,8 +59,8 @@ public:
         return result;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {

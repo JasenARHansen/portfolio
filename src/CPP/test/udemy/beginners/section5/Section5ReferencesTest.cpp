@@ -5,8 +5,8 @@
 #include "../../../../code/udemy/beginners/section5/Section5References.h"
 
 TEST(Section5ReferencesTest, reassign) {
-    int result = 5;
-    int expected = 10;
+    auto result = 5;
+    auto expected = 10;
     Section5References::reassign(result, expected);
     EXPECT_EQ(expected, result);
 }

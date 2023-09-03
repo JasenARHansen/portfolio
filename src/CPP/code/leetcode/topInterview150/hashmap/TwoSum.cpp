@@ -58,7 +58,7 @@ public:
             nums_map.at(nums[index]).push_back(index);
         }
         for (auto &myPair: nums_map) {
-            int value = target - myPair.first;
+            auto value = target - myPair.first;
             if (nums_map.count(value)) {
                 if ((value == myPair.first) && (myPair.second.size() > 1)) {
                     result.push_back(myPair.second[0]);

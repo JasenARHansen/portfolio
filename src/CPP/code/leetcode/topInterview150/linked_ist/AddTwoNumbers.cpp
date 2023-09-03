@@ -63,8 +63,8 @@ public:
         return current;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {
@@ -81,10 +81,10 @@ public:
         if ((l1 == nullptr) || (l2 == nullptr)) {
             return result;
         }
-        ListNode *lVal = l1;
-        ListNode *rVal = l2;
-        int sum = (lVal->val + rVal->val) % 10;
-        int carry = (lVal->val + rVal->val) / 10;
+        auto lVal = l1;
+        auto rVal = l2;
+        auto sum = (lVal->val + rVal->val) % 10;
+        auto carry = (lVal->val + rVal->val) / 10;
         result = new ListNode(sum);
         ListNode *current = result;
         while ((lVal->next != nullptr) && ((rVal->next != nullptr))) {

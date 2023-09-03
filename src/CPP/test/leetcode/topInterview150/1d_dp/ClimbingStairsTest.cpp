@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_CLIMBING_STAIRS_TEST
 #define LEETCODE_TOP_INTERVIEW_150_CLIMBING_STAIRS_TEST
 
@@ -13,30 +11,29 @@ TEST(ClimbingStairsTest, description) {
 }
 
 TEST(ClimbingStairsTest, climbStairs_1) {
-    int expected = 2;
-    int n = 2;
-    int result = ClimbingStairs::climbStairs(n);
+    auto expected = 2;
+    auto n = 2;
+    auto result = ClimbingStairs::climbStairs(n);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ClimbingStairsTest, climbStairs_2) {
-    int expected = 3;
-    int n = 3;
-    int result = ClimbingStairs::climbStairs(n);
+    auto expected = 3;
+    auto n = 3;
+    auto result = ClimbingStairs::climbStairs(n);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ClimbingStairsTest, climbStairs_fail_1) {
     // 1 <= n
-    int n = 1 - 1;
+    auto n = 1 - 1;
     EXPECT_EXIT(ClimbingStairs::climbStairs(n), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ClimbingStairsTest, climbStairs_fail_2) {
     // n <= 45
-    int n = 45 + 1;
+    auto n = 45 + 1;
     EXPECT_EXIT(ClimbingStairs::climbStairs(n), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

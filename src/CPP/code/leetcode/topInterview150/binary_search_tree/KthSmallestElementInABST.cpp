@@ -72,7 +72,7 @@ public:
     static int kthSmallest(TreeNode *root, int k) {
         assert(1 <= k);
         assert(k <= pow(10, 4));
-        int result = INT_MAX;
+        auto result = INT_MAX;
         if (root != nullptr) {
             vector<int> inorder;
             inorderTraversal(root, inorder);

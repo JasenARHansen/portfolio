@@ -48,7 +48,7 @@ public:
     static TreeNode *generateTree(vector<string> values) {
         TreeNode *root = nullptr;
         if (!values.empty()) {
-            int index = 0;
+            auto index = 0;
             if (values[index] != "null") {
                 queue<TreeNode *> nodes;
                 root = new TreeNode(stoi(values[index]));

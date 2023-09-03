@@ -46,7 +46,7 @@ public:
         if (intervals.empty()) {
             copyAndAdd(result, newInterval);
         } else {
-            bool insert = true;
+            auto insert = true;
             for (const auto &interval: intervals) {
                 if (insert && (newInterval[0] <= interval[0])) {
                     copyAndAdd(result, newInterval);
@@ -87,7 +87,7 @@ private:
     }
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
-        bool overlap = false;
+        auto overlap = false;
         // case 1.  result[index][0] <= processing[0] <= result[index][1]
         if ((interval1[0] <= interval2[0]) &&
             (interval2[0] <= interval1[1])) {

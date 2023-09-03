@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_SQRT_TEST
 #define LEETCODE_TOP_INTERVIEW_150_SQRT_TEST
 
@@ -13,24 +11,23 @@ TEST(SqrtTest, description) {
 }
 
 TEST(SqrtTest, mySqrt_1) {
-    int expected = 2;
-    int x = 4;
-    int result = Sqrt::mySqrt(x);
+    auto expected = 2;
+    auto x = 4;
+    auto result = Sqrt::mySqrt(x);
     EXPECT_EQ(expected, result);
 }
 
 TEST(SqrtTest, mySqrt_2) {
-    int expected = 2;
-    int x = 8;
-    int result = Sqrt::mySqrt(x);
+    auto expected = 2;
+    auto x = 8;
+    auto result = Sqrt::mySqrt(x);
     EXPECT_EQ(expected, result);
 }
 
 TEST(SqrtTest, mySqrt_fail_1) {
     // 0 <= x
-    int x = 0 - 1;
+    auto x = 0 - 1;
     EXPECT_EXIT(Sqrt::mySqrt(x), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

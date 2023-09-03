@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #ifndef UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
 #define UDEMY_BEGINNERS_6_ENCAPSULATION_TEST
 
@@ -14,4 +12,3 @@ TEST(Section6EncapsulationTest, Encapsulation) {
 }
 
 #endif
-#pragma clang diagnostic pop

@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section4/Section4Classes.h"
 
 TEST(Section4ClassesTest, section4Classes) {
-    string expected[] = {"Smokey",
+    string expected[]{"Smokey",
                          "Hisssss",
                          "Meeeeow",
                          "Moving away."};
@@ -20,7 +20,7 @@ TEST(Section4ClassesTest, section4Classes) {
 }
 
 TEST(Section4ClassesTest, Section4ClassesName) {
-    string expected[] = {"Smokey",
+    string expected[]{"Smokey",
                          "Hisssss",
                          "Meeeeow",
                          "Moving away."};
@@ -34,11 +34,11 @@ TEST(Section4ClassesTest, Section4ClassesName) {
 }
 
 TEST(Section4ClassesTest, Section4ClassesInitilizationList) {
-    string expected[] = {"Smokey",
+    string expected[]{"Smokey",
                          "Hisssss",
                          "Meeeeow",
                          "Moving away."};
-    int age = 5;
+    auto age = 5;
     Section4Classes cat(expected[0], age);
     EXPECT_EQ(expected[0], cat.getName());
     EXPECT_EQ(age, cat.getAge());

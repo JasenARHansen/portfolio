@@ -38,12 +38,12 @@ public:
         assert (haystack.size() <= pow(10, 4));
         assert (!needle.empty());
         assert (needle.size() <= pow(10, 4));
-        int result = -1;
+        auto result = -1;
         if (haystack.size() < needle.size()) {
             return result;
         }
         for (int index = 0; index <= haystack.size() - needle.size(); index++) {
-            string foo = haystack.substr(index, needle.size());
+            auto foo = haystack.substr(index, needle.size());
             if (needle == haystack.substr(index, needle.size())) {
                 result = index;
                 break;

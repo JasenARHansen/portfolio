@@ -36,9 +36,9 @@ public:
         assert (!strs.empty());
         assert (strs.size() <= 200);
         string result;
-        bool process = true;
+        auto process = true;
         char current;
-        int index = 0;
+        auto index = 0;
         while (process) {
             if (index >= strs[0].size()) {
                 break;

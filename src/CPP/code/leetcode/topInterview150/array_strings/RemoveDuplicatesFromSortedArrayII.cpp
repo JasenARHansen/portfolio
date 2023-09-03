@@ -55,9 +55,9 @@ public:
         assert (!nums.empty());
         assert (nums.size() <= 3 * pow(10, 4));
         unordered_map<int, int> test_map;
-        int returnCount = 0;
-        int writeIndex = 0;
-        bool previous = false;
+        auto returnCount = 0;
+        auto writeIndex = 0;
+        auto previous = false;
         // add assert for non-decreasing order
         for (int index = 0; index < nums.size(); index++) {
             assert (-pow(10, 4) <= nums[index]);

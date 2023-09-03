@@ -60,8 +60,8 @@ public:
         }
         vector<int> uniques(used.size());
         copy(used.begin(), used.end(), uniques.begin());
-        int startIndex = 0;
-        int stopIndex = 0;
+        auto startIndex = 0;
+        auto stopIndex = 0;
         for (int index = 1; index < uniques.size(); index++) {
             if (uniques[index - 1] + 1 == uniques[index]) {
                 stopIndex++;

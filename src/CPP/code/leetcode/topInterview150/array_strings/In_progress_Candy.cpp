@@ -49,14 +49,14 @@ public:
         // When there are 3, or more, of the same value ( not counting vector endpoints, the middle values will be
         // 1 candy:  3, 3, 3 would have the middle get 1 candy
         for (int index = 1; index < ratings.size() - 1; index++) {
-            int difference = ratings[index] - ratings[index - 1];
+            auto difference = ratings[index] - ratings[index - 1];
             // 3 same in a row
             if ((ratings[index - 1] == ratings[index]) && (ratings[index] == ratings[index + 1])) {
                 candies[index] = 1;
             }
                 // local minimum, the vally can be more than a single item
             else if ((ratings[index - 1] > ratings[index]) && (ratings[index] <= ratings[index + 1])) {
-                int offset = 0;
+                auto offset = 0;
                 // find out length of local minimum
                 while (((index + offset) < ratings.size() - 1) && (ratings[index] == ratings[index + offset])) {
                     offset++;
@@ -72,7 +72,7 @@ public:
 
         //     !---!------!---!
         // find the left side to start processing.  This is the first non '1' value, after a '1' has been found.
-        int leftIndex = 1;
+        auto leftIndex = 1;
         while (leftIndex < ratings.size()) {
             if (candies[leftIndex] == 1) {
                 break;
@@ -86,7 +86,7 @@ public:
             leftIndex++;
         }
         // find the right side to start processing.  This is the first non '1' value, after a '1' has been found.
-        int rightIndex = ratings.size() - 1;
+        auto rightIndex = ratings.size() - 1;
         while (0 < rightIndex) {
             if (candies[rightIndex] == 1) {
                 break;
@@ -105,7 +105,7 @@ public:
 
         // process middle section
 
-        int tempIndex = leftIndex;
+        auto tempIndex = leftIndex;
         while (leftIndex < rightIndex) {
             while ((tempIndex < rightIndex) && (-1 == candies[tempIndex])) {
                 tempIndex++;

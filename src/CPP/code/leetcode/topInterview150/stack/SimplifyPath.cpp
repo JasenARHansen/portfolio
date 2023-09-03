@@ -53,7 +53,7 @@ public:
         assert (path.size() <= 3000);
         string result;
         stack<string> processing;
-        int startIndex = 0;
+        auto startIndex = 0;
         for (int index = 1; index < path.size(); index++) {
             if (path.at(index) == '/') {
                 if ((index - startIndex) == 1) {
@@ -81,7 +81,7 @@ public:
 private:
 
     static void processSubstring(const string &path, stack<string> &processing, int startIndex, int length) {
-        string substring = path.substr(startIndex + 1, length);
+        auto substring = path.substr(startIndex + 1, length);
         if (substring == ".") {
             // if string is '.' do nothing
         } else if (substring == "..") {

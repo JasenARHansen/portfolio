@@ -74,9 +74,9 @@ public:
         assert (1 <= maxWidth);
         assert (maxWidth <= 100);
         vector<string> result{};
-        int currentWords = 0;
-        int currentCharacters = 0;
-        int startIndex = 0;
+        auto currentWords = 0;
+        auto currentCharacters = 0;
+        auto startIndex = 0;
         int stopIndex;
         bool last;
         bool generate;
@@ -99,7 +99,7 @@ public:
             if (generate) {
                 // Process the data
                 string line;
-                int process = startIndex;
+                auto process = startIndex;
                 line.append(words[process++]);
                 if (last) {
                     for (; process <= stopIndex; process++) {
@@ -113,8 +113,8 @@ public:
                     }
                 } else {
                     --currentWords;
-                    int filler = maxWidth - currentCharacters;
-                    int paddingLength = filler;
+                    auto filler = maxWidth - currentCharacters;
+                    auto paddingLength = filler;
                     int excess;
                     if (currentWords) {
                         paddingLength = filler / currentWords;

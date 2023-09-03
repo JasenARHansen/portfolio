@@ -59,8 +59,8 @@ public:
         return result;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {
@@ -77,15 +77,15 @@ public:
         assert(k <= 2 * pow(10, 9));
         // Prep for processing
         auto data = copyList(head);
-        ListNode *result = data.first;
+        auto result = data.first;
         if ((k == 0) || (result == nullptr)) {
             return result;
         }
-        int size = data.second;
-        int rotate = k % size;
+        auto size = data.second;
+        auto rotate = k % size;
         ListNode *working = result;
         vector<ListNode *> pointerList;
-        int index = 0;
+        auto index = 0;
         while (index < size) {
             if (size - index - 1 == rotate) {
                 ListNode *temp = working;
@@ -110,7 +110,7 @@ private:
 
     static pair<ListNode *, int> copyList(ListNode *head) {
         ListNode *result = nullptr;
-        int count = 0;
+        auto count = 0;
         if (head != nullptr) {
             ListNode *current = head;
             result = new ListNode(current->val);

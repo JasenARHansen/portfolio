@@ -109,7 +109,7 @@ public:
 private:
 
     static bool isValidNumber(const string &token) {
-        int index = 0;
+        auto index = 0;
         if ((token.at(0) == '+') || (token.at(0) == '-')) {
             index++;
         }
@@ -118,7 +118,7 @@ private:
                 return false;
             }
         }
-        int number = stoi(token);
+        auto number = stoi(token);
         assert(-200 <= number);
         assert(number <= 200);
         return true;

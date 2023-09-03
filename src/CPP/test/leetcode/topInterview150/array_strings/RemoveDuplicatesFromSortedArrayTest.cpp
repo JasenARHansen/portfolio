@@ -1,6 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
-
 #ifndef LEETCODE_TOP_INTERVIEW_150_REMOVE_DUPLICATES_FROM_SORTED_ARRAY_TEST
 #define LEETCODE_TOP_INTERVIEW_150_REMOVE_DUPLICATES_FROM_SORTED_ARRAY_TEST
 
@@ -15,9 +12,9 @@ TEST(RemoveDuplicatesFromSortedArrayTest, description) {
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_1) {
     vector<int> expected{1, 2, 0};
-    int expectedCount = 2;
+    auto expectedCount = 2;
     vector<int> nums{1, 1, 2};
-    int result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
+    auto result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
     EXPECT_EQ(expectedCount, result);
     for (int i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
@@ -26,9 +23,9 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_1) {
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_2) {
     vector<int> expected{0, 1, 2, 3, 4, 0, 0, 0, 0, 0};
-    int expectedCount = 5;
+    auto expectedCount = 5;
     vector<int> nums{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-    int result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
+    auto result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
     EXPECT_EQ(expectedCount, result);
     for (int i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
@@ -37,14 +34,14 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_2) {
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_1) {
     // 1 <= nums.length
-    int size = 0;
+    auto size = 0;
     vector<int> nums(size);
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_2) {
     // nums.length <= 3 * 10^4
-    int size = 3 * pow(10, 4) + 1;
+    auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
@@ -74,4 +71,3 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_6) {
 }
 
 #endif
-#pragma clang diagnostic pop

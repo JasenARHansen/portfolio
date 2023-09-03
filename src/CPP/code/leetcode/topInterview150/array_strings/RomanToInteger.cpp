@@ -60,13 +60,13 @@ public:
         assert (!s.empty());
         assert (s.size() <= 15);
         transform(s.begin(), s.end(), s.begin(), ::toupper);
-        int total = 0;
-        int index = 0;
+        auto total = 0;
+        auto index = 0;
         for (; index < s.size() - 1; index++) {
-            char leftCharacter = toupper(s.at(index));
-            int leftValue = getValue(leftCharacter);
-            char rightCharacter = toupper(s.at(index + 1));
-            int rightValue = getValue(rightCharacter);
+            auto leftCharacter = toupper(s.at(index));
+            auto leftValue = getValue(leftCharacter);
+            auto rightCharacter = toupper(s.at(index + 1));
+            auto rightValue = getValue(rightCharacter);
             if (leftValue < rightValue) {
                 total += rightValue - leftValue;
                 index++;
@@ -75,8 +75,8 @@ public:
             }
         }
         if (index <= s.size() - 1) {
-            char lastCharacter = toupper(s.at(index));
-            int lastValue = getValue(lastCharacter);
+            auto lastCharacter = toupper(s.at(index));
+            auto lastValue = getValue(lastCharacter);
             total += lastValue;
         }
         assert (0 < total);
@@ -88,7 +88,7 @@ private:
 
     static int getValue(char input) {
         unordered_set<char> valid{'I', 'V', 'X', 'L', 'C', 'D', 'M'};
-        char data = toupper(input);
+        auto data = toupper(input);
         assert (valid.find(data) != valid.end());
         int value;
         switch (data) {

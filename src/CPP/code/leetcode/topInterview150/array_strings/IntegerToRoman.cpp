@@ -60,7 +60,7 @@ public:
         vector<int> values{1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
         vector<string> numerals{"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
         string result;
-        int index = numerals.size() - 1;
+        auto index = numerals.size() - 1;
         int current;
         while (num > 0) {
             current = values[index];

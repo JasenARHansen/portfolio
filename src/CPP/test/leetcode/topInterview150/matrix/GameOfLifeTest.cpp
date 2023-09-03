@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_GAME_OF_LIFE_TEST
 #define LEETCODE_TOP_INTERVIEW_150_GAME_OF_LIFE_TEST
 
@@ -36,31 +34,30 @@ TEST(GameOfLifeTest, gameOfLife_2) {
 
 TEST(GameOfLifeTest, gameOfLife_fail_1) {
     // 1 <= board.length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> board(size);
     EXPECT_EXIT(GameOfLife::gameOfLife(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GameOfLifeTest, gameOfLife_fail_2) {
     // board.length <= 25
-    int size = 25 + 1;
+    auto size = 25 + 1;
     vector<vector<int>> board(size);
     EXPECT_EXIT(GameOfLife::gameOfLife(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GameOfLifeTest, gameOfLife_fail_3) {
     // 1 <= board[i].length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> board{vector<int>(size)};
     EXPECT_EXIT(GameOfLife::gameOfLife(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GameOfLifeTest, gameOfLife_fail_4) {
     // board[i].length <= 25
-    int size = 25 + 1;
+    auto size = 25 + 1;
     vector<vector<int>> board{vector<int>(size)};
     EXPECT_EXIT(GameOfLife::gameOfLife(board), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

@@ -40,10 +40,10 @@ public:
     static double myPow(double x, int n) {
         assert(-100.0 <= x);
         assert(x <= 100.1);
-        double result = x;
+        auto result = x;
         bool isNegative = (n & 0x80000000);
-        int groupSize = 1000000;
-        int groupCount = 0;
+        auto groupSize = 1000000;
+        auto groupCount = 0;
         if (isNegative) {
             while (n < -groupSize) {
                 groupCount++;
@@ -84,7 +84,7 @@ public:
                 result = 1 / result;
             }
         }
-        int value = 100000;
+        auto value = 100000;
         return ((((long int) (result * value))) / (double) value);
     }
 };

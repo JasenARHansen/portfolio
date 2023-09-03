@@ -45,8 +45,8 @@ public:
         assert (target <= pow(10, 9));
         assert (!nums.empty());
         assert (nums.size() <= pow(10, 4));
-        int result = 0;
-        int sum = 0;
+        auto result = 0;
+        auto sum = 0;
         unordered_map<int, int> test_map;
         // make a map to group the numbers
         for (int num: nums) {

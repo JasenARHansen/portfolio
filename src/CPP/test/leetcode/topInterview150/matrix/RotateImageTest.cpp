@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_ROTATE_IMAGE_TEST
 #define LEETCODE_TOP_INTERVIEW_150_ROTATE_IMAGE_TEST
 
@@ -38,35 +36,35 @@ TEST(RotateImageTest, rotate_2) {
 
 TEST(RotateImageTest, rotate_fail_1) {
     // 1 <= matrix.length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_2) {
     // matrix.length <= 20
-    int size = 10 + 1;
+    auto size = 10 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_3) {
     // matrix.length ==  matrix[i].length
-    int size = 1;
+    auto size = 1;
     vector<vector<int>> matrix{vector<int>(size), vector<int>(size)};
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_4) {
     // 0 <= matrix[i].length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_5) {
     // matrix[i].length <= 20
-    int size = 20;
+    auto size = 20;
     vector<vector<int>> matrix(size);
     size++;
     matrix[0] = vector<int>(size);
@@ -74,4 +72,3 @@ TEST(RotateImageTest, rotate_fail_5) {
 }
 
 #endif
-#pragma clang diagnostic pop

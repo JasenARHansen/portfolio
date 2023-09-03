@@ -42,10 +42,10 @@ Given a string s, find the length of the longest substring without repeating cha
 
     static int lengthOfLongestSubstring(const string &s) {
         assert (s.size() <= 5 * pow(10, 4));
-        int index1 = 0;
-        int index2 = 0;
+        auto index1 = 0;
+        auto index2 = 0;
         bitset<256> characters;
-        int detected = 0;
+        auto detected = 0;
         if (s.empty()) {
             return detected;
         }

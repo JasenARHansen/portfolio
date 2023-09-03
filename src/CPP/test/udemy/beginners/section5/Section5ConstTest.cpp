@@ -5,10 +5,10 @@
 #include "../../../../code/udemy/beginners/section5/Section5Const.h"
 
 TEST(Section5ConstTest, reassign) {
-    string expected = "Jasen";
+    auto expected = "Jasen";
     Section5Const person;
     person.setName(expected);
-    string result = person.getName();
+    auto result = person.getName();
     EXPECT_EQ(expected, result);
 }
 

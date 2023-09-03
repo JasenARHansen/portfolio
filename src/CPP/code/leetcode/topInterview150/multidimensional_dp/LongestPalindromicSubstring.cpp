@@ -44,9 +44,9 @@ public:
 private:
 
     static bool isPalindrome(string s) {
-        bool result = true;
-        int left = 0;
-        int right = s.size() - 1;
+        auto result = true;
+        auto left = 0;
+        auto right = s.size() - 1;
         while (left < right) {
             if (s[left] != s[right]) {
                 result = false;
@@ -60,17 +60,17 @@ private:
 
     static string
     longestPalindrome(const string &s, int index, int length, map<string, string> &wordMap, string &longest) {
-        string key = s + "-" + to_string(index) + "-" + to_string(length);
+        auto key = s + "-" + to_string(index) + "-" + to_string(length);
         if (!wordMap.count(key)) {
             if (length >= longest.size()) {
-                string word = s.substr(index, length);
+                auto word = s.substr(index, length);
                 if (word.size() == 1) {
                     wordMap[key] = word;
                 } else if (isPalindrome(word)) {
                     wordMap[key] = word;
                 } else {
-                    string left = longestPalindrome(word, 0, word.size() - 1, wordMap, longest);
-                    string right = longestPalindrome(word, 1, word.size() - 1, wordMap, longest);
+                    auto left = longestPalindrome(word, 0, word.size() - 1, wordMap, longest);
+                    auto right = longestPalindrome(word, 1, word.size() - 1, wordMap, longest);
                     if (left.size() >= right.size()) {
                         wordMap[key] = left;
                     } else {

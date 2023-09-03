@@ -46,7 +46,7 @@ public:
             test_map[num]++;
         }
         int key;
-        int count = 0;
+        auto count = 0;
         for (auto it = test_map.begin(); it != test_map.end(); it++) {
             if (test_map[it->first] > count) {
                 key = it->first;

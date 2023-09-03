@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section2/Section2Variables.h"
 
 TEST(Section2VariablesTest, numAnimals) {
-    std::string expected = "Number of cats: 5\n"
+    auto expected = "Number of cats: 5\n"
                            "Number of dogs: 7\n"
                            "Total number of animals: 12\n"
                            "New dog acquired\n"
@@ -15,7 +15,7 @@ TEST(Section2VariablesTest, numAnimals) {
 }
 
 TEST(Section2VariablesTest, numAnimalsOut) {
-    std::string expected = "Number of cats: 5\n"
+    auto expected = "Number of cats: 5\n"
                            "Number of dogs: 7\n"
                            "Total number of animals: 12\n"
                            "New dog acquired\n"

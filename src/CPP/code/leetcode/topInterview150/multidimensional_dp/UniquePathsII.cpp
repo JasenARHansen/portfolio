@@ -43,7 +43,7 @@ public:
     static int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid) {
         assert (!obstacleGrid.empty());
         assert (obstacleGrid.size() <= 100);
-        int n = obstacleGrid[0].size();
+        auto n = obstacleGrid[0].size();
         vector<vector<int>> testGrid;
         for (const auto &row: obstacleGrid) {
             assert (!row.empty());
@@ -66,8 +66,8 @@ private:
         assert (obstacleGrid[row][column] <= 200);
         if (testGrid[row][column] < 0) {
             // end point reached
-            int down = 0;
-            int right = 0;
+            auto down = 0;
+            auto right = 0;
             if ((obstacleGrid.size() - 1 == row) && (obstacleGrid[row].size() - 1 == column)) {
                 if (!obstacleGrid[row][column]) {
                     // using an arbitrary variable for storage

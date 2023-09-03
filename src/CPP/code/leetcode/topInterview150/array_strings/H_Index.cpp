@@ -47,8 +47,8 @@ public:
             }
             citations_map[citation]++;
         }
-        int count = 0;
-        int hIndex = 0;
+        auto count = 0;
+        auto hIndex = 0;
         for (auto it = citations_map.rbegin(); it != citations_map.rend(); ++it) {
             if (it->first <= 0) {
                 break;

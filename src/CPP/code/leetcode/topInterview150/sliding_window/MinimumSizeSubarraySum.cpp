@@ -41,14 +41,14 @@ public:
         assert (target <= pow(10, 9));
         assert (!nums.empty());
         assert (nums.size() <= pow(10, 5));
-        int index1 = 0;
-        int index2 = 0;
-        int sum = 0;
-        int detected = INT_MAX;
+        auto index1 = 0;
+        auto index2 = 0;
+        auto sum = 0;
+        auto detected = INT_MAX;
         while (index2 < nums.size()) {
             // expand window to find a potential value
             while ((sum < target) && (index2 < nums.size())) {
-                int value = nums[index2];
+                auto value = nums[index2];
                 assert (1 <= value);
                 assert (value <= pow(10, 4));
                 sum += value;
@@ -57,14 +57,14 @@ public:
             // contract the window
             while ((sum > target) && (index1 < index2)) {
                 detected = min(detected, (index2 - index1));
-                int value = nums[index1];
+                auto value = nums[index1];
                 sum -= value;
                 index1++;
 
             }
             if (sum == target) {
                 detected = min(detected, (index2 - index1));
-                int value = nums[index1];
+                auto value = nums[index1];
                 sum -= value;
                 index1++;
             }

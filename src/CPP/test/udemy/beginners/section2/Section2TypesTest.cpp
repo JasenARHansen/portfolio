@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section2/Section2Types.h"
 
 TEST(Section2TypesTest, integerType) {
-    std::string expected = "Int value: 1234\n"
+    auto expected = "Int value: 1234\n"
                            "Size of Int: 4\n"
                            "Max in value is: 2147483647\n"
                            "Min in value is: -2147483648\n"
@@ -21,7 +21,7 @@ TEST(Section2TypesTest, integerType) {
 }
 
 TEST(Section2TypesTest, floatType) {
-    std::string expected = "Float value: 123.457\n"
+    auto expected = "Float value: 123.457\n"
                            "Size of Float: 4\n"
                            "Float value precision: 123.45678710937500000000\n"
                            "Double value: 123.45678900000000055570\n"
@@ -36,7 +36,7 @@ TEST(Section2TypesTest, floatType) {
 }
 
 TEST(Section2TypesTest, boolType) {
-    std::string expected = "Bool True value: 1\n"
+    auto expected = "Bool True value: 1\n"
                            "Bool False value: 0\n"
                            "Size of Bool: 1\n";
     testing::internal::CaptureStdout();
@@ -45,7 +45,7 @@ TEST(Section2TypesTest, boolType) {
 }
 
 TEST(Section2TypesTest, charType) {
-    std::string expected = "Char number value: 106\n"
+    auto expected = "Char number value: 106\n"
                            "Char character value: j\n"
                            "Size of Char: 1\n";
     testing::internal::CaptureStdout();
@@ -54,7 +54,7 @@ TEST(Section2TypesTest, charType) {
 }
 
 TEST(Section2TypesTest, wcharType) {
-    std::string expected = "Wchar_t number value: 106\n"
+    auto expected = "Wchar_t number value: 106\n"
                            "Wchar_t character value: j\n"
                            "Size of Wchar_t: 2\n";
     testing::internal::CaptureStdout();

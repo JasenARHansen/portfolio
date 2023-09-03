@@ -39,7 +39,7 @@ public:
     static int minPathSum(const vector<vector<int>> &grid) {
         assert (!grid.empty());
         assert (grid.size() <= 200);
-        int n = grid[0].size();
+        auto n = grid[0].size();
         vector<vector<int>> testGrid;
         for (const auto &row: grid) {
             assert (!row.empty());
@@ -70,8 +70,8 @@ private:
             }
                 // compare the 2 paths:  go down 1 row, go down 1 column
             else {
-                int right = minPathSum(grid, row, column + 1, testGrid);
-                int down = minPathSum(grid, row + 1, column, testGrid);
+                auto right = minPathSum(grid, row, column + 1, testGrid);
+                auto down = minPathSum(grid, row + 1, column, testGrid);
                 testGrid[row][column] = min(right, down) + grid[row][column];
             }
         }

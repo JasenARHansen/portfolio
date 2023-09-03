@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section3/Section3Functions.h"
 
 TEST(Section3FunctionsTest, menuSelection) {
-    string expected[] = {"Invalid option, quitting.",
+    string expected[]{"Invalid option, quitting.",
                          "Adding a record.",
                          "Deleting a record.",
                          "Viewing a record.",

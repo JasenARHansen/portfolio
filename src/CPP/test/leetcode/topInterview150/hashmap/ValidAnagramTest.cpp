@@ -1,5 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #ifndef LEETCODE_TOP_INTERVIEW_150_VALID_ANAGRAM_TEST
 #define LEETCODE_TOP_INTERVIEW_150_VALID_ANAGRAM_TEST
 
@@ -13,60 +11,59 @@ TEST(ValidAnagramTest, description) {
 }
 
 TEST(ValidAnagramTest, isAnagram_1) {
-    bool expected = true;
-    string s = "anagram";
-    string t = "nagaram";
-    bool result = ValidAnagram::isAnagram(s, t);
+    auto expected = true;
+    auto s = "anagram";
+    auto t = "nagaram";
+    auto result = ValidAnagram::isAnagram(s, t);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ValidAnagramTest, isAnagram_2) {
-    bool expected = false;
-    string s = "rat";
-    string t = "car";
-    bool result = ValidAnagram::isAnagram(s, t);
+    auto expected = false;
+    auto s = "rat";
+    auto t = "car";
+    auto result = ValidAnagram::isAnagram(s, t);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ValidAnagramTest, isAnagram_3) {
-    bool expected = false;
-    string s = "cart";
-    string t = "car";
-    bool result = ValidAnagram::isAnagram(s, t);
+    auto expected = false;
+    auto s = "cart";
+    auto t = "car";
+    auto result = ValidAnagram::isAnagram(s, t);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_1) {
     // 1 <= s.length
-    int size = 1 - 1;
+    auto size = 1 - 1;
     string s(size, ' ');
-    string t = "nagaram";
+    auto t = "nagaram";
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_2) {
     // s.length <= 5 * 10^4
-    int size = 5 * pow(10, 4) + 1;
+    auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
-    string t = "nagaram";
+    auto t = "nagaram";
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_3) {
     // 1 <= t.length
-    int size = 1 - 1;
-    string s = "anagram";
+    auto size = 1 - 1;
+    auto s = "anagram";
     string t(size, ' ');
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_4) {
     // t.length <= 5 * 10^4
-    int size = 5 * pow(10, 4) + 1;
-    string s = "anagram";
+    auto size = 5 * (int) pow(10, 4) + 1;
+    auto s = "anagram";
     string t(size, ' ');
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
-#pragma clang diagnostic pop

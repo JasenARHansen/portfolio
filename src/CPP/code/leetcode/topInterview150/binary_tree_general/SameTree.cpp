@@ -50,7 +50,7 @@ public:
     static TreeNode *generateTree(vector<string> values) {
         TreeNode *root = nullptr;
         if (!values.empty()) {
-            int index = 0;
+            auto index = 0;
             if (values[index] != "null") {
                 queue<TreeNode *> nodes;
                 root = new TreeNode(stoi(values[index]));
@@ -91,21 +91,20 @@ public:
     }
 
     static bool isSameTree(TreeNode *p, TreeNode *q) {
-        bool result = false;
+        auto result = false;
         if ((p == nullptr) && (q == nullptr)) {
             result = true;
         } else if ((p != nullptr) && (q != nullptr)) {
-            result = true;
             if (p->val != q->val) {
                 return false;
             }
-            bool left = false;
+            auto left = false;
             if ((p->left == nullptr) && ((q->left == nullptr))) {
                 left = true;
             } else if ((p->left != nullptr) && ((q->left != nullptr))) {
                 left = isSameTree(p->left, q->left);
             }
-            bool right = false;
+            auto right = false;
             if ((p->right == nullptr) && ((q->right == nullptr))) {
                 right = true;
             } else if ((p->right != nullptr) && ((q->right != nullptr))) {

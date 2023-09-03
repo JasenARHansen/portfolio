@@ -46,7 +46,7 @@ public:
     static TreeNode *generateTree(vector<string> values) {
         TreeNode *root = nullptr;
         if (!values.empty()) {
-            int index = 0;
+            auto index = 0;
             if (values[index] != "null") {
                 queue<TreeNode *> nodes;
                 root = new TreeNode(stoi(values[index]));
@@ -90,11 +90,11 @@ public:
         auto result = 0;
         if (root != nullptr) {
             result = 1;
-            int left = 0;
+            auto left = 0;
             if (root->left != nullptr) {
                 left = maxDepth(root->left);
             }
-            int right = 0;
+            auto right = 0;
             if (root->right != nullptr) {
                 right = maxDepth(root->right);
             }

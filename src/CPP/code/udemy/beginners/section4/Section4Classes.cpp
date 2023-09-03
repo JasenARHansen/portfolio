@@ -14,7 +14,7 @@ Section4Classes::Section4Classes(const string &name) {
     this->age = 0;
 }
 
-Section4Classes::Section4Classes(std::string name, const int age) : name(std::move(name)), age(age), mood(true) {}
+Section4Classes::Section4Classes(string name, const int age) : name(std::move(name)), age(age), mood(true) {}
 
 Section4Classes::~Section4Classes() = default;
 

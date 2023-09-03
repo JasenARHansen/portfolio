@@ -65,8 +65,8 @@ public:
         return current;
     }
 
-    static void deleteList(const int size, ListNode **head) {
-        int index = size;
+    static void deleteList(const unsigned long int size, ListNode **head) {
+        auto index = size;
         ListNode *current = *head;
         ListNode *next;
         while (index > 0) {
@@ -84,8 +84,8 @@ public:
         if ((list1 == nullptr) && (list2 == nullptr)) {
             return result;
         }
-        ListNode *lVal = list1;
-        ListNode *rVal = list2;
+        auto lVal = list1;
+        auto rVal = list2;
         if (lVal == nullptr) {
             result = rVal;
             rVal = rVal->next;
@@ -131,8 +131,8 @@ public:
         if ((list1 == nullptr) && (list2 == nullptr)) {
             return result;
         }
-        ListNode *lVal = list1;
-        ListNode *rVal = list2;
+        auto lVal = list1;
+        auto rVal = list2;
         if (lVal == nullptr) {
             result = new ListNode(rVal->val);
             rVal = rVal->next;

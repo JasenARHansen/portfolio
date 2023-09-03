@@ -60,7 +60,7 @@ private:
     static int coinChange(vector<int> &coins, int amount, unordered_map<int, int> &amount_map) {
         if (!amount_map.count(amount)) {
             vector<int> values;
-            int result = -1;
+            auto result = -1;
             for (int index = 0; index < coins.size(); index++) {
                 if (amount == coins[index]) {
                     values.push_back(0);

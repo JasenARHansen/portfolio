@@ -65,8 +65,8 @@ private:
             n1 = triangle[row + 1];
         }
         for (int index = 0; index < n0.size(); index++) {
-            int first = n0[index] + n1[index];
-            int second = n0[index] + n1[index + 1];
+            auto first = n0[index] + n1[index];
+            auto second = n0[index] + n1[index + 1];
             if (first < second) {
                 result.push_back(first);
             } else {

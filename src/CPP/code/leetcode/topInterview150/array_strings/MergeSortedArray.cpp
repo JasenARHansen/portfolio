@@ -57,7 +57,7 @@ public:
         assert (n <= 200);
         assert (1 <= m + n);
         assert (m + n <= 200);
-        int indexOut = m + n;
+        auto indexOut = m + n;
         bool assign;
         while (indexOut > 0) {
             if (m == 0) {

@@ -35,8 +35,8 @@ public:
     static vector<int> spiralOrder(vector<vector<int>> &matrix) {
         assert (!matrix.empty());
         assert (matrix.size() <= 10);
-        int rows = matrix.size();
-        int columns = matrix[0].size();
+        auto rows = matrix.size();
+        auto columns = matrix[0].size();
         for (const auto &i: matrix) {
             assert (!i.empty());
             assert (i.size() <= 10);
@@ -86,7 +86,7 @@ private:
              int column) {
         if (!test[row].test(column)) {
             test[row].flip(column);
-            int value = matrix[row][column];
+            auto value = matrix[row][column];
             assert (-100 <= value);
             assert (value <= 100);
             result.push_back(value);
