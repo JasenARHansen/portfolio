@@ -54,7 +54,7 @@ public:
         string result;
         stack<string> processing;
         auto startIndex = 0;
-        for (int index = 1; index < path.size(); index++) {
+        for (auto index = 1; index < path.size(); index++) {
             if (path.at(index) == '/') {
                 if ((index - startIndex) == 1) {
                     startIndex = index;

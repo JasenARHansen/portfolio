@@ -48,7 +48,7 @@ public:
         // Local minimums will be 1:  3, 2, 3 would have the middle value be 1 regardless of that the others are
         // When there are 3, or more, of the same value ( not counting vector endpoints, the middle values will be
         // 1 candy:  3, 3, 3 would have the middle get 1 candy
-        for (int index = 1; index < ratings.size() - 1; index++) {
+        for (auto index = 1; index < ratings.size() - 1; index++) {
             auto difference = ratings[index] - ratings[index - 1];
             // 3 same in a row
             if ((ratings[index - 1] == ratings[index]) && (ratings[index] == ratings[index + 1])) {
@@ -61,7 +61,7 @@ public:
                 while (((index + offset) < ratings.size() - 1) && (ratings[index] == ratings[index + offset])) {
                     offset++;
                 }
-                for (int i = 0; i < offset; i++) {
+                for (auto i = 0; i < offset; i++) {
                     candies[index + i] = 1;
                 }
                 index += offset;

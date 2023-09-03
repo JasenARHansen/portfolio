@@ -76,7 +76,7 @@ public:
     }
 
     static void deleteTree(TreeNode **head) {
-        TreeNode *current = *head;
+        auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
                 deleteTree(&current->left);

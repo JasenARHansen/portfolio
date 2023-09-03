@@ -61,10 +61,10 @@ public:
             assert(numbers[0] <= pow(10, 5));
             root = new ListNode(numbers[0]);
             auto last = root;
-            for (int index = 1; index < numbers.size(); index++) {
+            for (auto index = 1; index < numbers.size(); index++) {
                 assert(-pow(10, 5) <= numbers[index]);
                 assert(numbers[index] <= pow(10, 5));
-                auto *node = new ListNode(numbers[index]);
+                auto node = new ListNode(numbers[index]);
                 last->next = node;
                 last = node;
             }
@@ -83,7 +83,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -99,7 +99,7 @@ public:
             return false;
         }
         unordered_set<ListNode *> pointers;
-        ListNode *current = head;
+        auto current = head;
         while ((!pointers.count(current)) && (current->next != nullptr)) {
             pointers.insert(current);
             current = current->next;

@@ -53,12 +53,12 @@ public:
         assert (target <= 1000);
         vector<int> result;
         unordered_set<int> tested;
-        for (int index1 = 0; index1 < numbers.size() - 1; index1++) {
+        for (auto index1 = 0; index1 < numbers.size() - 1; index1++) {
             assert (-1000 <= numbers[index1]);
             assert (numbers[index1] <= 1000);
             if (!tested.count(numbers[index1])) {
                 tested.insert(numbers[index1]);
-                for (int index2 = index1 + 1; index2 < numbers.size(); index2++) {
+                for (auto index2 = index1 + 1; index2 < numbers.size(); index2++) {
                     if (numbers[index1] + numbers[index2] == target) {
                         result.push_back(index1 + 1);
                         result.push_back(index2 + 1);

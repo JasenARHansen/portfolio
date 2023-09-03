@@ -15,7 +15,7 @@ TEST(RotateArrayTest, rotate_1) {
     vector<int> nums{1, 2, 3, 4, 5, 6, 7};
     auto k = 3;
     RotateArray::rotate(nums, k);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -25,7 +25,7 @@ TEST(RotateArrayTest, rotate_2) {
     vector<int> nums{-1, -100, 3, 99};
     auto k = 2;
     RotateArray::rotate(nums, k);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }

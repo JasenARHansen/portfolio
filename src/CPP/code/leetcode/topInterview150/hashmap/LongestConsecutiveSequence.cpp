@@ -40,7 +40,7 @@ public:
         }
         set<int> used;
         auto result = 1;
-        for (int num: nums) {
+        for (auto num: nums) {
             assert (-pow(10, 9) <= num);
             assert (num <= pow(10, 9));
             used.insert(num);
@@ -48,7 +48,7 @@ public:
         vector<int> uniques(used.size());
         copy(used.begin(), used.end(), uniques.begin());
         auto local = 1;
-        for (int index = 0; index < uniques.size() - 1; index++) {
+        for (auto index = 0; index < uniques.size() - 1; index++) {
             if (uniques[index] + 1 == uniques[index + 1]) {
                 local++;
             } else {

@@ -64,11 +64,11 @@ public:
             assert(-pow(10, 4) <= numbers[0]);
             assert(numbers[0] <= pow(10, 4));
             root = new Node(numbers[0]);
-            Node *last = root;
-            for (int index = 1; index < numbers.size(); index++) {
+            auto last = root;
+            for (auto index = 1; index < numbers.size(); index++) {
                 assert(-pow(10, 4) <= numbers[index]);
                 assert(numbers[index] <= pow(10, 4));
-                auto *node = new Node(numbers[index]);
+                auto node = new Node(numbers[index]);
                 last->next = node;
                 last = node;
             }
@@ -78,7 +78,7 @@ public:
 
     static void deleteList(const unsigned long int size, Node **head) {
         auto index = size;
-        Node *current = *head;
+        auto current = *head;
         Node *next;
         while (index > 0) {
             next = current->next;
@@ -96,15 +96,15 @@ public:
             vector<Node *> indexes;
             unordered_map<Node *, int> pointerMap;
             result = new Node(head->val);
-            Node *copyHead = head;
+            auto copyHead = head;
             pointerMap[copyHead] = index;
-            Node *current = result;
+            auto current = result;
             indexes.push_back(current);
             while (copyHead->next != nullptr) {
                 index++;
                 copyHead = copyHead->next;
                 pointerMap[copyHead] = index;
-                auto *node = new Node(copyHead->val);
+                auto node = new Node(copyHead->val);
                 current->next = node;
                 current = current->next;
                 indexes.push_back(current);

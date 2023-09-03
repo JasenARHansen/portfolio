@@ -53,11 +53,11 @@ public:
         assert(numbers.size() <= 100);
         assert(0 <= numbers[0]);
         assert(numbers[0] <= 9);
-        auto *current = new ListNode(numbers[numbers.size() - 1]);
+        auto current = new ListNode(numbers[numbers.size() - 1]);
         for (int index = numbers.size() - 2; index >= 0; index--) {
             assert(0 <= numbers[index]);
             assert(numbers[index] <= 9);
-            auto *node = new ListNode(numbers[index], current);
+            auto node = new ListNode(numbers[index], current);
             current = node;
         }
         return current;
@@ -65,7 +65,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -86,13 +86,13 @@ public:
         auto sum = (lVal->val + rVal->val) % 10;
         auto carry = (lVal->val + rVal->val) / 10;
         result = new ListNode(sum);
-        ListNode *current = result;
+        auto current = result;
         while ((lVal->next != nullptr) && ((rVal->next != nullptr))) {
             lVal = lVal->next;
             rVal = rVal->next;
             sum = (lVal->val + rVal->val + carry) % 10;
             carry = (lVal->val + rVal->val + carry) / 10;
-            auto *working = new ListNode(sum);
+            auto working = new ListNode(sum);
             current->next = working;
             current = working;
         }
@@ -101,7 +101,7 @@ public:
             lVal = lVal->next;
             sum = (lVal->val + carry) % 10;
             carry = (lVal->val + carry) / 10;
-            auto *working = new ListNode(sum);
+            auto working = new ListNode(sum);
             current->next = working;
             current = working;
         }
@@ -110,13 +110,13 @@ public:
             rVal = rVal->next;
             sum = (rVal->val + carry) % 10;
             carry = (rVal->val + carry) / 10;
-            auto *working = new ListNode(sum);
+            auto working = new ListNode(sum);
             current->next = working;
             current = working;
         }
         // if there is still a carry
         if (carry) {
-            auto *working = new ListNode(carry);
+            auto working = new ListNode(carry);
             current->next = working;
         }
         return result;

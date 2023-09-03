@@ -46,7 +46,7 @@ public:
         // Process the s string
         unordered_map<char, char> translation_map;
         unordered_map<char, char> translation_reverse_map;
-        for (int index = 0; index < s.size(); index++) {
+        for (auto index = 0; index < s.size(); index++) {
             if ((!translation_map.count(s.at(index))) && (!translation_reverse_map.count(t.at(index)))) {
                 translation_map[s.at(index)] = t.at(index);
                 translation_reverse_map[t.at(index)] = s.at(index);

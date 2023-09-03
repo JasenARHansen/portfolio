@@ -16,7 +16,7 @@ TEST(TwoSumIITest, TwoSumII_1) {
     auto target = 9;
     auto result = TwoSumII::twoSum(numbers, target);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -27,7 +27,7 @@ TEST(TwoSumIITest, TwoSumII_2) {
     auto target = 6;
     auto result = TwoSumII::twoSum(numbers, target);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -38,7 +38,7 @@ TEST(TwoSumIITest, TwoSumII_3) {
     auto target = -1;
     auto result = TwoSumII::twoSum(numbers, target);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }

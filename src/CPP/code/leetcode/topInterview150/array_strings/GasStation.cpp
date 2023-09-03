@@ -56,7 +56,7 @@ public:
         // Try to short circuit operation by identifying invalid start points
         auto total_gas = 0;
         auto total_cost = 0;
-        for (int i = 0; i < gas.size(); i++) {
+        for (auto i = 0; i < gas.size(); i++) {
             assert (0 <= gas[i]);
             assert (gas[i] <= pow(10, 4));
             assert (0 <= cost[i]);
@@ -92,10 +92,10 @@ public:
                 return 0;
             }
         }
-        for (int start = 0; start < gas.size(); start++) {
+        for (auto start = 0; start < gas.size(); start++) {
             if (valid[start]) {
                 auto gasTank = 0;
-                for (int offset = 1; offset <= cost.size(); offset++) {
+                for (auto offset = 1; offset <= cost.size(); offset++) {
                     auto current = (start + offset - 1) % cost.size();
                     // Fill tank
                     gasTank += gas[current];

@@ -49,7 +49,7 @@ public:
         assert (target <= pow(10, 9));
         vector<int> result;
         unordered_map<int, vector<int>> nums_map;
-        for (int index = 0; index < nums.size(); index++) {
+        for (auto index = 0; index < nums.size(); index++) {
             assert(-pow(10, 9) <= nums[index]);
             assert(nums[index] <= pow(10, 9));
             if (!nums_map.count(nums[index])) {

@@ -39,9 +39,9 @@ public:
 
     static uint32_t reverseBits(const uint32_t n) {
         uint32_t result = 0;
-        uint32_t processing = n;
+        auto processing = n;
         uint32_t mask = 0b1;
-        for (int index = 0; index < 8 * sizeof(uint32_t); index++) {
+        for (auto index = 0; index < 8 * sizeof(uint32_t); index++) {
             result <<= 1;
             if (processing & mask) {
                 result += 1;

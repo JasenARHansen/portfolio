@@ -76,7 +76,7 @@ public:
                 result *= x;
             }
             if (groupCount > 0) {
-                for (int i = 0; i < groupCount; i++) {
+                for (auto i = 0; i < groupCount; i++) {
                     result *= groupResult;
                 }
             }

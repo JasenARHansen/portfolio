@@ -61,10 +61,10 @@ public:
         bitset<256> numbers;
         char current;
         // validate rows
-        for (int row = 0; row < 9; row++) {
+        for (auto row = 0; row < 9; row++) {
             assert (board[row].size() == 9);
             numbers.reset();
-            for (int column = 0; column < 9; column++) {
+            for (auto column = 0; column < 9; column++) {
                 current = board[row][column];
                 assert (isdigit(current) || current == '.');
                 if (isdigit(current)) {
@@ -77,9 +77,9 @@ public:
             }
         }
         // validate columns
-        for (int column = 0; column < 9; column++) {
+        for (auto column = 0; column < 9; column++) {
             numbers.reset();
-            for (int row = 0; row < 9; row++) {
+            for (auto row = 0; row < 9; row++) {
                 current = board[row][column];
                 if (isdigit(current)) {
                     auto value = current - '0';
@@ -91,11 +91,11 @@ public:
             }
         }
         // validate squares
-        for (int x = 0; x < 3; x++) {
-            for (int y = 0; y < 3; y++) {
+        for (auto x = 0; x < 3; x++) {
+            for (auto y = 0; y < 3; y++) {
                 numbers.reset();
-                for (int row = 0; row < 3; row++) {
-                    for (int column = 0; column < 3; column++) {
+                for (auto row = 0; row < 3; row++) {
+                    for (auto column = 0; column < 3; column++) {
                         current = board[3 * x + row][3 * y + column];
                         if (isdigit(current)) {
                             auto value = current - '0';

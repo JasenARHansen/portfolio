@@ -14,7 +14,7 @@ TEST(ProductOfArrayExceptSelfTest, productExceptSelf_1) {
     vector<int> expected{24, 12, 8, 6};
     vector<int> nums{1, 2, 3, 4};
     auto result = ProductOfArrayExceptSelf::productExceptSelf(nums);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], result[i]);
     }
 }
@@ -23,7 +23,7 @@ TEST(ProductOfArrayExceptSelfTest, productExceptSelf_2) {
     vector<int> expected{0, 0, 9, 0, 0};
     vector<int> nums{-1, 1, 0, -3, 3};
     auto result = ProductOfArrayExceptSelf::productExceptSelf(nums);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], result[i]);
     }
 }

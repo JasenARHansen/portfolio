@@ -43,11 +43,11 @@ public:
             assert (i.size() <= 200);
             test.emplace_back(size, true);
         }
-        for (int row = 0; row < matrix.size(); row++) {
-            for (int column = 0; column < matrix[row].size(); column++) {
+        for (auto row = 0; row < matrix.size(); row++) {
+            for (auto column = 0; column < matrix[row].size(); column++) {
                 if ((matrix[row][column] == 0) && test[row][column]) {
                     // flip row
-                    for (int index = 0; index < matrix[row].size(); index++) {
+                    for (auto index = 0; index < matrix[row].size(); index++) {
                         if (matrix[row][index] != 0) {
                             {
                                 matrix[row][index] = 0;
@@ -56,7 +56,7 @@ public:
                         }
                     }
                     // flip column
-                    for (int index = 0; index < matrix.size(); index++) {
+                    for (auto index = 0; index < matrix.size(); index++) {
                         if (matrix[index][column] != 0) {
                             matrix[index][column] = 0;
                             test[index][column] = false;

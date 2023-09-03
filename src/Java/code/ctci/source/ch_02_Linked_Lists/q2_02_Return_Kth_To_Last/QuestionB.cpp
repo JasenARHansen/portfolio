@@ -23,7 +23,7 @@ node* createList(int count) {
 	node* head = new node();
 	head->data = 0;
 	node* last = head;
-	for (int i = 1; i < count; i++) {
+	for (auto i = 1; i < count; i++) {
 		node* n = new node();
 		n->data = i;
 		last->next = n;
@@ -42,7 +42,7 @@ int main() {
 	node* head = createList(count);
 	printList(head);
 	printf("\n");
-	for (int k = 0; k <= count; k++) {
+	for (auto k = 0; k <= count; k++) {
 		node* n = nthToLast(head, k);
 		if (n != NULL) {
 			int data = n->data;

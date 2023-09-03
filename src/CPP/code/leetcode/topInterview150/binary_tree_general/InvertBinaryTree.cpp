@@ -75,7 +75,7 @@ public:
     }
 
     static void deleteTree(TreeNode **head) {
-        TreeNode *current = *head;
+        auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
                 deleteTree(&current->left);
@@ -92,7 +92,7 @@ public:
         vector<string> data;
         if (head != nullptr) {
             queue<TreeNode *> nodes;
-            TreeNode *current = head;
+            auto current = head;
             nodes.push(head);
             data.push_back(to_string(current->val));
             while (!nodes.empty()) {

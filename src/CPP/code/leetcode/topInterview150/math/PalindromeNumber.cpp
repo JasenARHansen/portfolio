@@ -48,7 +48,7 @@ public:
             digits.push_back(x % 10);
             x /= 10;
         }
-        for (int index = 0; index < digits.size() / 2; index++) {
+        for (auto index = 0; index < digits.size() / 2; index++) {
             if (digits[index] != digits[digits.size() - index - 1]) {
                 return false;
             }

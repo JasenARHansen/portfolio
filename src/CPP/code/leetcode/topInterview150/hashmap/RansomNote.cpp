@@ -40,13 +40,13 @@ public:
         assert (!magazine.empty());
         assert (magazine.size() <= pow(10, 5));
         unordered_map<char, int> test_map;
-        for (char c: magazine) {
+        for (auto c: magazine) {
             if (!test_map.count(c)) {
                 test_map[c] = 0;
             }
             test_map.at(c)++;
         }
-        for (char c: ransomNote) {
+        for (auto c: ransomNote) {
             if ((!test_map.count(c)) || (test_map.at(c) == 0)) {
                 return false;
             }

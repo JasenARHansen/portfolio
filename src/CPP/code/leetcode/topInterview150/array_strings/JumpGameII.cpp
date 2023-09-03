@@ -58,7 +58,7 @@ private:
             return processed[position];
         }
         auto jumps = INT_MAX;
-        for (int i = nums[position]; 0 < i; i--) {
+        for (auto i = nums[position]; 0 < i; i--) {
             if ((nums.size() - 1 >= position + i)) {
                 auto value = jump(position + i, nums, processed);
                 if ((value > 0) && (value < jumps)) {

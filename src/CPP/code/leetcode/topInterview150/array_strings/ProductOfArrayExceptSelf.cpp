@@ -46,7 +46,7 @@ public:
         assert(-30 <= nums[0]);
         assert(nums[0] <= 30);
         left[0] = nums[0];
-        for (int i = 1; i < nums.size(); i++) {
+        for (auto i = 1; i < nums.size(); i++) {
             assert(-30 <= nums[i]);
             assert(nums[i] <= 30);
             left[i] = left[i - 1] * nums[i];
@@ -57,7 +57,7 @@ public:
         }
         result[0] = right[1];
         result[nums.size() - 1] = left[nums.size() - 2];
-        for (int i = 1; i < nums.size() - 1; i++) {
+        for (auto i = 1; i < nums.size() - 1; i++) {
             result[i] = left[i - 1] * right[i + 1];
         }
         return result;

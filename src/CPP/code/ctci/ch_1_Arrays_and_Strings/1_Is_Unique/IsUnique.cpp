@@ -12,7 +12,7 @@ bool ch1IsUnique::isUniqueChars(const string &str) {
         return false;
     }
     vector<bool> charSet(128);
-    for (char val: str) {
+    for (auto val: str) {
         if (charSet[val]) {
             return false;
         }
@@ -25,7 +25,7 @@ bool ch1IsUnique::isUniqueCharsBitvector(const string &str) {
     //Reduce space usage by a factor of 8 using bitvector.
     //Each boolean otherwise occupies a size of 8 bits.
     bitset<256> bits(0);
-    for (char val: str) {
+    for (auto val: str) {
         if (bits.test(val) > 0) {
             return false;
         }
@@ -37,7 +37,7 @@ bool ch1IsUnique::isUniqueCharsBitvector(const string &str) {
 bool ch1IsUnique::isUniqueCharsNoDs(string str) {
     sort(str.begin(), str.end()); // O(nlogn) sort from <algorithm>
     bool noRepeat = true;
-    for (int i = 0; i < str.size() - 1; i++) {
+    for (auto i = 0; i < str.size() - 1; i++) {
         if (str[i] == str[i + 1]) {
             noRepeat = false;
             break;

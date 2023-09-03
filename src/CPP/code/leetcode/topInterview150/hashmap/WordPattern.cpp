@@ -54,7 +54,7 @@ public:
         }
         unordered_map<char, string> test_map;
         unordered_set<string> used;
-        for (int index = 0; index < pattern.size(); index++) {
+        for (auto index = 0; index < pattern.size(); index++) {
             if (!test_map.count(pattern.at(index))) {
                 if (used.find(words[index]) != used.end()) {
                     return false;

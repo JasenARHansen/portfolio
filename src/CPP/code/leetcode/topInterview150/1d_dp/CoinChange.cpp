@@ -61,7 +61,7 @@ private:
         if (!amount_map.count(amount)) {
             vector<int> values;
             auto result = -1;
-            for (int index = 0; index < coins.size(); index++) {
+            for (auto index = 0; index < coins.size(); index++) {
                 if (amount == coins[index]) {
                     values.push_back(0);
                     result = 1;
@@ -74,7 +74,7 @@ private:
                 }
             }
             sort(values.begin(), values.end(), [](int a, int b) { return a < b; });
-            for (int value: values) {
+            for (auto value: values) {
                 if (result < value) {
                     result = value + 1;
                     break;

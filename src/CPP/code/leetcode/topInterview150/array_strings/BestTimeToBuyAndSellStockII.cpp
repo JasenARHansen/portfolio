@@ -49,7 +49,7 @@ public:
         assert (prices.size() <= 3 * pow(10, 4));
         auto profit = 0;
         auto buy = prices[0];
-        for (int price: prices) {
+        for (auto price: prices) {
             assert (0 <= price);
             assert (price <= pow(10, 4));
             if (price <= buy) {

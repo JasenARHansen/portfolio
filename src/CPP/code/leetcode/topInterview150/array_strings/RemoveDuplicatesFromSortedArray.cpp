@@ -59,7 +59,7 @@ public:
         auto writeIndex = 0;
         auto previous = false;
         // add assert for non-decreasing order
-        for (int index = 0; index < nums.size(); index++) {
+        for (auto index = 0; index < nums.size(); index++) {
             assert (-100 <= nums[index]);
             assert (nums[index] <= 100);
             if (!test_set.count(nums[index])) {
@@ -73,7 +73,7 @@ public:
             }
         }
         // I do not like dead data so I am setting the excess to zero
-        for (int index = writeIndex; index < nums.size(); index++) {
+        for (auto index = writeIndex; index < nums.size(); index++) {
             nums[index] = 0;
         }
         return returnCount;

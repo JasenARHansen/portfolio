@@ -9,7 +9,7 @@ TEST(Section5ArraysTest, incrementArrayPointer) {
     int result[]{1, 2, 3};
     int size = sizeof(result) / sizeof(result[0]);
     Section5Arrays::incrementArrayPointer(size, result);
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         EXPECT_EQ(expected[i], result[i]);
     }
 }

@@ -155,26 +155,26 @@ void Section2Logic::forLoop() {
         cout << "For loop no inputs with a break" << endl;
         break;
     }
-    for (int counter = 0;;) {
+    for (auto counter = 0;;) {
         cout << "For loop with a break, only counter defined execution " << counter << endl;
         break;
     }
-    for (int counter = 0; counter < 3;) {
+    for (auto counter = 0; counter < 3;) {
         counter++;
         cout << "For loop increment in loop execution " << counter << endl;
     }
-    for (int counter = 0; counter < 3; counter++) {
+    for (auto counter = 0; counter < 3; counter++) {
         cout << "For loop fully defined execution " << counter << endl;
     }
 
-    for (int counter = 0; counter < 4; counter++) {
+    for (auto counter = 0; counter < 4; counter++) {
         if (counter % 2) {
             continue;
         }
         cout << "For loop mod 2 continue execution " << counter << endl;
     }
 
-    for (int counter = 0; counter < 4; counter++) {
+    for (auto counter = 0; counter < 4; counter++) {
         if (counter % 2) {
             break;
         }

@@ -26,7 +26,7 @@ TEST(Section5PointersTest, reverseCharArray) {
     char result[]{'h', 'e', 'l', 'l', 'o'};
     int size = sizeof(result) / sizeof(result[0]);
     Section5Pointers::reverseCharArray(size, result);
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         EXPECT_EQ(expected[i], result[i]);
     }
 }

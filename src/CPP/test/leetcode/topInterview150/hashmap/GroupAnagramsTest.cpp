@@ -17,7 +17,7 @@ TEST(GroupAnagramsTest, groupAnagrams_1) {
     vector<string> strs{"eat", "tea", "tan", "ate", "nat", "bat"};
     auto result = GroupAnagrams::groupAnagrams(strs);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < result.size(); index++) {
+    for (auto index = 0; index < result.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 

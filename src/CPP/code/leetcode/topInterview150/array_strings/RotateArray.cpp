@@ -49,7 +49,7 @@ public:
         int next;
         int lastIndex;
         int nextIndex;
-        for (int i = 0; i < nums.size(); i++) {
+        for (auto i = 0; i < nums.size(); i++) {
             if (!read[i]) {
                 lastIndex = i;
                 current = nums[lastIndex];

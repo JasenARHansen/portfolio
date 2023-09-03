@@ -55,14 +55,14 @@ public:
             return result;
         }
         set<int> used;
-        for (int num: nums) {
+        for (auto num: nums) {
             used.insert(num);
         }
         vector<int> uniques(used.size());
         copy(used.begin(), used.end(), uniques.begin());
         auto startIndex = 0;
         auto stopIndex = 0;
-        for (int index = 1; index < uniques.size(); index++) {
+        for (auto index = 1; index < uniques.size(); index++) {
             if (uniques[index - 1] + 1 == uniques[index]) {
                 stopIndex++;
             } else {

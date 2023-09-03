@@ -16,7 +16,7 @@ TEST(TextJustificationTest, fullJustify_1) {
     auto maxWidth = 16;
     auto result = TextJustification::fullJustify(words, maxWidth);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < result.size(); index++) {
+    for (auto index = 0; index < result.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -29,7 +29,7 @@ TEST(TextJustificationTest, fullJustify_2) {
     auto maxWidth = 16;
     auto result = TextJustification::fullJustify(words, maxWidth);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < result.size(); index++) {
+    for (auto index = 0; index < result.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -47,7 +47,7 @@ TEST(TextJustificationTest, fullJustify_3) {
     auto maxWidth = 20;
     auto result = TextJustification::fullJustify(words, maxWidth);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < result.size(); index++) {
+    for (auto index = 0; index < result.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }

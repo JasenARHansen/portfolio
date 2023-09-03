@@ -39,7 +39,7 @@ public:
         assert (!citations.empty());
         assert (citations.size() <= 5000);
         map<int, int> citations_map;
-        for (int citation: citations) {
+        for (auto citation: citations) {
             assert (0 <= citation);
             assert (citation <= 1000);
             if (!citations_map.count(citation)) {

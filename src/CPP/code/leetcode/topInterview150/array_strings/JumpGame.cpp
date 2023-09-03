@@ -53,7 +53,7 @@ private:
         if (processed[position]) {
             return false;
         }
-        for (int i = nums[position]; 0 < i; i--) {
+        for (auto i = nums[position]; 0 < i; i--) {
             if ((nums.size() - 1 >= position + i)) {
                 if (canJump(position + i, nums, processed)) {
                     return true;

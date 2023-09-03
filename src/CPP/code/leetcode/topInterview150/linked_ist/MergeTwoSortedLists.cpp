@@ -58,7 +58,7 @@ public:
             for (int index = numbers.size() - 2; index >= 0; index--) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto *node = new ListNode(numbers[index], current);
+                auto node = new ListNode(numbers[index], current);
                 current = node;
             }
         }
@@ -67,7 +67,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -99,7 +99,7 @@ public:
             result = rVal;
             rVal = rVal->next;
         }
-        ListNode *current = result;
+        auto current = result;
         while ((lVal != nullptr) && ((rVal != nullptr))) {
             if (lVal->val < rVal->val) {
                 current->next = lVal;
@@ -146,7 +146,7 @@ public:
             result = new ListNode(rVal->val);
             rVal = rVal->next;
         }
-        ListNode *current = result;
+        auto current = result;
         while ((lVal != nullptr) && ((rVal != nullptr))) {
             ListNode *working;
             if (lVal->val < rVal->val) {
@@ -161,14 +161,14 @@ public:
         }
         // process if lval has remaining digits
         while (lVal != nullptr) {
-            auto *working = new ListNode(lVal->val);
+            auto working = new ListNode(lVal->val);
             current->next = working;
             current = working;
             lVal = lVal->next;
         }
         // process if rval has remaining digits
         while (rVal != nullptr) {
-            auto *working = new ListNode(rVal->val);
+            auto working = new ListNode(rVal->val);
             current->next = working;
             current = working;
             rVal = rVal->next;

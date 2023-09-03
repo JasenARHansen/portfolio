@@ -52,7 +52,7 @@ public:
             for (int index = numbers.size() - 2; index >= 0; index--) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto *node = new ListNode(numbers[index], result);
+                auto node = new ListNode(numbers[index], result);
                 result = node;
             }
         }
@@ -61,7 +61,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -83,12 +83,12 @@ public:
         }
         auto size = data.second;
         auto rotate = k % size;
-        ListNode *working = result;
+        auto working = result;
         vector<ListNode *> pointerList;
         auto index = 0;
         while (index < size) {
             if (size - index - 1 == rotate) {
-                ListNode *temp = working;
+                auto temp = working;
                 working = working->next;
                 temp->next = nullptr;
                 index++;
@@ -112,10 +112,10 @@ private:
         ListNode *result = nullptr;
         auto count = 0;
         if (head != nullptr) {
-            ListNode *current = head;
+            auto current = head;
             result = new ListNode(current->val);
             count++;
-            ListNode *working = result;
+            auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
                 working->next = new ListNode(current->val);

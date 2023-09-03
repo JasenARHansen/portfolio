@@ -49,7 +49,7 @@ public:
         auto sum = 0;
         unordered_map<int, int> test_map;
         // make a map to group the numbers
-        for (int num: nums) {
+        for (auto num: nums) {
             assert (1 <= num);
             assert (num <= pow(10, 4));
             if (!test_map.count(num)) {

@@ -16,7 +16,7 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_1) {
     vector<int> nums{1, 1, 2};
     auto result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -27,7 +27,7 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_2) {
     vector<int> nums{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
     auto result = RemoveDuplicatesFromSortedArray::removeDuplicates(nums);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }

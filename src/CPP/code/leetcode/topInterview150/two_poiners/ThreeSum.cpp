@@ -51,7 +51,7 @@ public:
         assert (nums.size() <= 3000);
         vector<vector<int>> result;
         unordered_map<int, vector<int>> test_map;
-        for (int index = 0; index < nums.size(); index++) {
+        for (auto index = 0; index < nums.size(); index++) {
             if (!test_map.count(nums[index])) {
                 vector<int> inner;
                 test_map[nums[index]] = inner;
@@ -75,7 +75,7 @@ public:
             result.push_back({0, 0, 0});
         }
         // generate solutions in ascending order
-        for (int index1 = 0; index1 < keys.size() - 1; index1++) {
+        for (auto index1 = 0; index1 < keys.size() - 1; index1++) {
             first = values[index1];
             // generate solutions based on double first value
             if (2 <= test_map[first].size()) {
@@ -87,7 +87,7 @@ public:
                 }
             }
             // generate solutions based on second value
-            for (int index2 = index1 + 1; index2 < keys.size(); index2++) {
+            for (auto index2 = index1 + 1; index2 < keys.size(); index2++) {
                 second = values[index2];
                 third = -(first + second);
                 if (keys.find(second) != keys.end()) {

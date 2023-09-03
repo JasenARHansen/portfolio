@@ -17,7 +17,7 @@ TEST(RemoveElementTest, removeElement_1) {
     auto val = 3;
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -29,7 +29,7 @@ TEST(RemoveElementTest, removeElement_2) {
     auto val = 2;
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -41,7 +41,7 @@ TEST(RemoveElementTest, removeElement_3) {
     auto val = 2;
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -53,7 +53,7 @@ TEST(RemoveElementTest, removeElement_4) {
     vector<int> nums{val};
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -65,7 +65,7 @@ TEST(RemoveElementTest, removeElement_5) {
     vector<int> nums{val + 1, val, val + 1};
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }
@@ -77,7 +77,7 @@ TEST(RemoveElementTest, removeElement_6) {
     vector<int> nums{val, val, val, val, val, val, val, val};
     auto result = RemoveElement::removeElement(nums, val);
     EXPECT_EQ(expectedCount, result);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums[i]);
     }
 }

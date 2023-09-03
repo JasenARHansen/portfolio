@@ -46,7 +46,7 @@ public:
         assert (s.size() <= 2 * pow(10, 5));
         auto result = true;
         s.erase(remove_if(s.begin(), s.end(), [](char c) { return !iswalnum(c); }), s.end());
-        for (int index = 0; index < s.size() / 2; index++) {
+        for (auto index = 0; index < s.size() / 2; index++) {
             if (tolower(s[index]) != tolower(s[s.size() - index - 1])) {
                 result = false;
                 break;

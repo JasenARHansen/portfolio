@@ -42,7 +42,7 @@ public:
         if (haystack.size() < needle.size()) {
             return result;
         }
-        for (int index = 0; index <= haystack.size() - needle.size(); index++) {
+        for (auto index = 0; index <= haystack.size() - needle.size(); index++) {
             auto foo = haystack.substr(index, needle.size());
             if (needle == haystack.substr(index, needle.size())) {
                 result = index;

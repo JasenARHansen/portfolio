@@ -11,7 +11,7 @@ TEST(Section3FunctionsTest, menuSelection) {
                          "Viewing a record.",
                          "Searching a record.",
                          "Quiting."};
-    for (int i = 0; i < 6; i++) {
+    for (auto i = 0; i < 6; i++) {
         auto result = Section3Functions::menuSelection(i);
         EXPECT_EQ(expected[i], result);
     }

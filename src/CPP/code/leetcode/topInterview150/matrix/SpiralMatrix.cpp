@@ -43,22 +43,22 @@ public:
             assert (i.size() == columns);
         }
         vector<bitset<10>> test;
-        for (int i = 0; i < matrix.size(); i++) {
+        for (auto i = 0; i < matrix.size(); i++) {
             bitset<10> temp;
             test.push_back(temp);
         }
         vector<int> result;
         int row;
         int column;
-        for (int ring = 0; ring < (min(rows, columns) + 1) / 2; ring++) {
+        for (auto ring = 0; ring < (min(rows, columns) + 1) / 2; ring++) {
             // Navigate right
-            for (int index = 0 + ring; index < matrix[ring].size() - ring; index++) {
+            for (auto index = 0 + ring; index < matrix[ring].size() - ring; index++) {
                 row = ring;
                 column = index;
                 validate(matrix, test, result, row, column);
             }
             // Navigate down
-            for (int index = ring + 1; index < matrix.size() - ring; index++) {
+            for (auto index = ring + 1; index < matrix.size() - ring; index++) {
                 row = index;
                 column = columns - ring - 1;
                 validate(matrix, test, result, row, column);

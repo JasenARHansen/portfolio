@@ -42,7 +42,7 @@ public:
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
         stack<char> base;
-        for (char character: s) {
+        for (auto character: s) {
             switch (character) {
                 case '(':
                 case '[':

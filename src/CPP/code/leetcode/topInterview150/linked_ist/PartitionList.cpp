@@ -52,7 +52,7 @@ public:
             for (int index = numbers.size() - 2; index >= 0; index--) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto *node = new ListNode(numbers[index], result);
+                auto node = new ListNode(numbers[index], result);
                 result = node;
             }
         }
@@ -61,7 +61,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -80,7 +80,7 @@ public:
         if (result == nullptr) {
             return result;
         }
-        ListNode *working = result;
+        auto working = result;
         ListNode *last = nullptr;
         while ((working != nullptr) && (working->val >= x)) {
             last = working;
@@ -89,7 +89,7 @@ public:
         if (working == nullptr) {
             return result;
         }
-        ListNode *partition = working;
+        auto partition = working;
         if (last != nullptr) {
             last->next = partition->next;
             partition->next = result;
@@ -105,7 +105,7 @@ public:
                 // if the current is the node after the partition, move the partition pointer
                 if (partition->next != working) {
                     // remove node from list
-                    ListNode *temp = working;
+                    auto temp = working;
                     last->next = working->next;
                     // insert node at end of partition
                     temp->next = partition->next;
@@ -125,9 +125,9 @@ private:
     static ListNode *copyList(ListNode *head) {
         ListNode *result = nullptr;
         if (head != nullptr) {
-            ListNode *current = head;
+            auto current = head;
             result = new ListNode(current->val);
-            ListNode *working = result;
+            auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
                 working->next = new ListNode(current->val);

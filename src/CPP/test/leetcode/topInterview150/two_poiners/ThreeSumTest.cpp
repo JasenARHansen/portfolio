@@ -16,7 +16,7 @@ TEST(ThreeSumTest, threeSum_1) {
     vector<int> numbers{-1, 0, 1, 2, -1, -4};
     auto result = ThreeSum::threeSum(numbers);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -26,7 +26,7 @@ TEST(ThreeSumTest, threeSum_2) {
     vector<int> numbers{-0, 1, 1};
     auto result = ThreeSum::threeSum(numbers);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }
@@ -36,7 +36,7 @@ TEST(ThreeSumTest, threeSum_3) {
     vector<int> numbers{0, 0, 0};
     auto result = ThreeSum::threeSum(numbers);
     EXPECT_EQ(expected.size(), result.size());
-    for (int index = 0; index < expected.size(); index++) {
+    for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
 }

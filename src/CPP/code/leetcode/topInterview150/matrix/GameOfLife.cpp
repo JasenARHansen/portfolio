@@ -56,8 +56,8 @@ public:
             test.emplace_back(size, false);
         }
         int liveCount;
-        for (int row = 0; row < board.size(); row++) {
-            for (int column = 0; column < board[row].size(); column++) {
+        for (auto row = 0; row < board.size(); row++) {
+            for (auto column = 0; column < board[row].size(); column++) {
                 liveCount = 0;
                 if ((row > 0) && (column > 0) && (board[row - 1][column - 1])) {
                     liveCount++;
@@ -113,8 +113,8 @@ public:
                 }
             }
         }
-        for (int row = 0; row < board.size(); row++) {
-            for (int column = 0; column < board[row].size(); column++) {
+        for (auto row = 0; row < board.size(); row++) {
+            for (auto column = 0; column < board[row].size(); column++) {
                 if (test[row][column]) {
                     board[row][column] = !board[row][column];
                 }

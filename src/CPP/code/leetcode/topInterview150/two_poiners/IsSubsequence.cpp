@@ -36,7 +36,7 @@ public:
         assert (t.size() <= pow(10, 4));
         auto tIndex = 0;
         auto find = s.size();
-        for (char sIndex: s) {
+        for (auto sIndex: s) {
             while (tIndex < t.size()) {
                 if (sIndex == t.at(tIndex++)) {
                     find--;

@@ -19,11 +19,11 @@ void Section5Pointers::printAllString(const int size, string *pString) {
     string *last = &(pString[size - 1]);
     cout << "First: " << *first << " and Last: " << *last << endl;
     cout << "Using index counter" << endl;
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         cout << "Element: " << i << " is: " << pString[i] << endl;
     }
     cout << "Using pString++" << endl;
-    for (int i = 0; i < size; i++, pString++) {
+    for (auto i = 0; i < size; i++, pString++) {
         cout << "Element: " << i << " is: " << *pString << endl;
     }
 }

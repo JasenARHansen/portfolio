@@ -47,11 +47,11 @@ public:
         assert(numbers.size() <= 500);
         assert(-500 <= numbers[0]);
         assert(numbers[0] <= 500);
-        auto *current = new ListNode(numbers[numbers.size() - 1]);
+        auto current = new ListNode(numbers[numbers.size() - 1]);
         for (int index = numbers.size() - 2; index >= 0; index--) {
             assert(-500 <= numbers[index]);
             assert(numbers[index] <= 500);
-            auto *node = new ListNode(numbers[index], current);
+            auto node = new ListNode(numbers[index], current);
             current = node;
         }
         return current;
@@ -59,7 +59,7 @@ public:
 
     static void deleteList(const unsigned long int size, ListNode **head) {
         auto index = size;
-        ListNode *current = *head;
+        auto current = *head;
         ListNode *next;
         while (index > 0) {
             next = current->next;
@@ -80,7 +80,7 @@ public:
         assert(data.second <= 500);
         ListNode *before = nullptr;
         ListNode *after = nullptr;
-        ListNode *working = result;
+        auto working = result;
         vector<ListNode *> pointerList;
         auto index = 0;
         while ((working != nullptr) && (index <= right + 1)) {
@@ -121,10 +121,10 @@ private:
         ListNode *result = nullptr;
         auto count = 0;
         if (head != nullptr) {
-            ListNode *current = head;
+            auto current = head;
             result = new ListNode(current->val);
             count++;
-            ListNode *working = result;
+            auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
                 working->next = new ListNode(current->val);

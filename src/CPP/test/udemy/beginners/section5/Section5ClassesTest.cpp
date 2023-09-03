@@ -27,7 +27,7 @@ TEST(Section5ClassesTest, createArray) {
     auto expected = "Default";
     auto size = 3;
     auto result = Section5Classes::createArray(size);
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         EXPECT_EQ(expected, result[i].getName());
     }
     Section5Classes::deleteArray(&result);

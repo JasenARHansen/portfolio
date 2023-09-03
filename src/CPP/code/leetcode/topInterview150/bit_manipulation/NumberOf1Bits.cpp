@@ -46,9 +46,9 @@ public:
 
     static int hammingWeight(const uint32_t n) {
         auto result = 0;
-        uint32_t processing = n;
+        auto processing = n;
         uint32_t mask = 0b1;
-        for (int index = 0; index < 8 * sizeof(uint32_t); index++) {
+        for (auto index = 0; index < 8 * sizeof(uint32_t); index++) {
             if (processing & mask) {
                 result += 1;
             }

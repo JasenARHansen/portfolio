@@ -80,7 +80,7 @@ public:
         int stopIndex;
         bool last;
         bool generate;
-        for (int index = 0; index < words.size(); index++) {
+        for (auto index = 0; index < words.size(); index++) {
             assert (words[index].size() <= maxWidth);
             assert (!words[index].empty());
             assert (words[index].size() <= 20);

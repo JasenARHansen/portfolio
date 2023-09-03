@@ -38,7 +38,7 @@ public:
         string result;
         int indexA = a.size() - 1;
         int indexB = b.size() - 1;
-        int carry = 0;
+        auto carry = 0;
         int current;
         while ((indexA >= 0) & (indexB >= 0)) {
             current = carry + a.at(indexA--) + b.at(indexB--) - 2 * '0';

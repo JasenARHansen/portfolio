@@ -21,7 +21,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
         indexes.push_back(copy);
         copy = copy->next;
     }
-    for (int index = 0; index < pointerIndexes.size(); index++) {
+    for (auto index = 0; index < pointerIndexes.size(); index++) {
         if (pointerIndexes[index] >= 0) {
             indexes[index]->random = indexes[pointerIndexes[index]];
         }
@@ -36,7 +36,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
         resultTest = resultTest->next;
         testindexes.push_back(resultTest);
     }
-    for (int i = 0; i < pointerIndexes.size(); i++) {
+    for (auto i = 0; i < pointerIndexes.size(); i++) {
         if (pointerIndexes[i] >= 0) {
             EXPECT_EQ(testindexes[i]->random, testindexes[pointerIndexes[i]]);
         }
@@ -56,7 +56,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
         indexes.push_back(copy);
         copy = copy->next;
     }
-    for (int index = 0; index < pointerIndexes.size(); index++) {
+    for (auto index = 0; index < pointerIndexes.size(); index++) {
         if (pointerIndexes[index] >= 0) {
             indexes[index]->random = indexes[pointerIndexes[index]];
         }
@@ -71,7 +71,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
         resultTest = resultTest->next;
         testindexes.push_back(resultTest);
     }
-    for (int i = 0; i < pointerIndexes.size(); i++) {
+    for (auto i = 0; i < pointerIndexes.size(); i++) {
         if (pointerIndexes[i] >= 0) {
             EXPECT_EQ(testindexes[i]->random, testindexes[pointerIndexes[i]]);
         }
@@ -91,7 +91,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
         indexes.push_back(copy);
         copy = copy->next;
     }
-    for (int index = 0; index < pointerIndexes.size(); index++) {
+    for (auto index = 0; index < pointerIndexes.size(); index++) {
         if (pointerIndexes[index] >= 0) {
             indexes[index]->random = indexes[pointerIndexes[index]];
         }
@@ -106,7 +106,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
         resultTest = resultTest->next;
         testindexes.push_back(resultTest);
     }
-    for (int i = 0; i < pointerIndexes.size(); i++) {
+    for (auto i = 0; i < pointerIndexes.size(); i++) {
         if (pointerIndexes[i] >= 0) {
             EXPECT_EQ(testindexes[i]->random, testindexes[pointerIndexes[i]]);
         }

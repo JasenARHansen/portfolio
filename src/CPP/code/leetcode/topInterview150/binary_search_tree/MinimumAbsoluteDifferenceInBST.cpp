@@ -46,7 +46,7 @@ public:
         TreeNode *root = nullptr;
         if (!numbers.empty()) {
             root = new TreeNode(numbers[0]);
-            for (int index = 1; index < numbers.size(); index++) {
+            for (auto index = 1; index < numbers.size(); index++) {
                 insertNode(root, numbers[index]);
             }
         }
@@ -69,7 +69,7 @@ public:
         if (root != nullptr) {
             vector<int> inorder;
             inorderTraversal(root, inorder);
-            for (int index = 1; index < inorder.size(); index++) {
+            for (auto index = 1; index < inorder.size(); index++) {
                 result = min(result, inorder[index] - inorder[index - 1]);
             }
         }

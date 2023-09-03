@@ -42,7 +42,7 @@ public:
         auto profit = 0;
         auto buy = INT_MAX;
         auto sell = INT_MIN;
-        for (int price: prices) {
+        for (auto price: prices) {
             assert (0 <= price);
             assert (price <= pow(10, 4));
             if (price < buy) {

@@ -53,7 +53,7 @@ public:
         vector<string> data(numRows, "");
         auto down = true;
         auto target = 0;
-        for (char index: s) {
+        for (auto index: s) {
             data[target].push_back(index);
             if (down) {
                 target++;
@@ -77,7 +77,7 @@ public:
                 }
             }
         }
-        for (const string &value: data) {
+        for (const auto &value: data) {
             result.append(value);
         }
         return result;

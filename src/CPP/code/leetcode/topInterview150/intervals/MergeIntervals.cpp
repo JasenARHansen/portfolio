@@ -63,7 +63,7 @@ public:
         assert (intervals.size() <= pow(10, 4));
         // Generate new copy with deep copy so original data is not mutated
         vector<vector<int>> result;
-        for (const vector<int> &interval: intervals) {
+        for (const auto &interval: intervals) {
             assert (interval.size() == 2);
             assert (0 <= interval[0]);
             assert (interval[0] <= pow(10, 4));
@@ -78,7 +78,7 @@ public:
                 auto process = true;
                 while (process) {
                     process = false;
-                    for (int index = 0; index < result.size(); index++) {
+                    for (auto index = 0; index < result.size(); index++) {
                         // case 1.  result[index][0] <= processing[0] <= result[index][1]
                         if ((result[index][0] <= processing[0]) &&
                             (processing[0] <= result[index][1])) {

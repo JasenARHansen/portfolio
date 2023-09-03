@@ -59,7 +59,7 @@ public:
         auto writeIndex = 0;
         auto previous = false;
         // add assert for non-decreasing order
-        for (int index = 0; index < nums.size(); index++) {
+        for (auto index = 0; index < nums.size(); index++) {
             assert (-pow(10, 4) <= nums[index]);
             assert (nums[index] <= pow(10, 4));
             if (!test_map.count(nums[index])) {
@@ -76,7 +76,7 @@ public:
             test_map[nums[index]]++;
         }
         // I do not like dead data so I am setting the excess to zero
-        for (int index = writeIndex; index < nums.size(); index++) {
+        for (auto index = writeIndex; index < nums.size(); index++) {
             nums[index] = 0;
         }
         return returnCount;

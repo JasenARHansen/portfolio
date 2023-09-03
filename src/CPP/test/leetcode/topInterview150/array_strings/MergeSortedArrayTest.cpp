@@ -17,7 +17,7 @@ TEST(MergeSortedArrayTest, merge_1) {
     vector<int> nums2{2, 5, 6};
     auto n = 3;
     MergeSortedArray::merge(nums1, m, nums2, n);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums1[i]);
     }
 }
@@ -29,7 +29,7 @@ TEST(MergeSortedArrayTest, merge2_) {
     vector<int> nums2{};
     auto n = 0;
     MergeSortedArray::merge(nums1, m, nums2, n);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums1[i]);
     }
 }
@@ -41,7 +41,7 @@ TEST(MergeSortedArrayTest, merge_3) {
     vector<int> nums2{1};
     auto n = 1;
     MergeSortedArray::merge(nums1, m, nums2, n);
-    for (int i = 0; i < expected.size(); i++) {
+    for (auto i = 0; i < expected.size(); i++) {
         EXPECT_EQ(expected[i], nums1[i]);
     }
 }

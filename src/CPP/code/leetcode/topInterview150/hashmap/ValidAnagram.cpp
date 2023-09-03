@@ -43,14 +43,14 @@ public:
             return false;
         }
         unordered_map<char, int> s_map;
-        for (char index: s) {
+        for (auto index: s) {
             if (!s_map.count(index)) {
                 s_map[index] = 0;
             }
             s_map.at(index)++;
         }
         unordered_map<char, int> t_map;
-        for (char index: t) {
+        for (auto index: t) {
             if (!t_map.count(index)) {
                 t_map[index] = 0;
             }

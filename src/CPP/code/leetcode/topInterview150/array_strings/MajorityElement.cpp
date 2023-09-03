@@ -37,7 +37,7 @@ public:
         assert (nums.size() <= 5 * pow(10, 4));
         unordered_map<int, int> test_map;
         // populate map to count occurrences of each value
-        for (int num: nums) {
+        for (auto num: nums) {
             assert (-pow(10, 9) <= num);
             assert (num <= pow(10, 9));
             if (!test_map.count(num)) {

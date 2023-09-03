@@ -43,8 +43,8 @@ public:
         int columnTarget;
         int rowSource;
         int columnSource;
-        for (int ring = 0; ring < (matrix.size() + 1) / 2; ring++) {
-            for (int index = 0 + ring; index < matrix.size() - ring - 1; index++) {
+        for (auto ring = 0; ring < (matrix.size() + 1) / 2; ring++) {
+            for (auto index = 0 + ring; index < matrix.size() - ring - 1; index++) {
                 // Store upper left
                 rowSource = ring;
                 columnSource = index;
