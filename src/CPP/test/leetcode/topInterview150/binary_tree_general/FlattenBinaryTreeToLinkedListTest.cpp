@@ -15,7 +15,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, connect_1) {
     vector<string> values{"1", "2", "5", "3", "4", "null", "6"};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);
     FlattenBinaryTreeToLinkedList::flatten(root);
-    auto result = FlattenBinaryTreeToLinkedList::serialize(root);
+    auto result = FlattenBinaryTreeToLinkedList::serializeTree(root);
     EXPECT_EQ(expected, result);
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
@@ -25,7 +25,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, connect_2) {
     vector<string> values{};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);
     FlattenBinaryTreeToLinkedList::flatten(root);
-    auto result = FlattenBinaryTreeToLinkedList::serialize(root);
+    auto result = FlattenBinaryTreeToLinkedList::serializeTree(root);
     EXPECT_EQ(expected, result);
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
@@ -35,7 +35,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, connect_3) {
     vector<string> values{"0"};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);
     FlattenBinaryTreeToLinkedList::flatten(root);
-    auto result = FlattenBinaryTreeToLinkedList::serialize(root);
+    auto result = FlattenBinaryTreeToLinkedList::serializeTree(root);
     EXPECT_EQ(expected, result);
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }

@@ -8,17 +8,18 @@
 
 using namespace std;
 
-struct BinaryTreeLevelOrderTraversalNode {
+struct BinaryTreeLevelOrderTraversalTreeNode {
     int val;
-    BinaryTreeLevelOrderTraversalNode *left;
-    BinaryTreeLevelOrderTraversalNode *right;
+    BinaryTreeLevelOrderTraversalTreeNode *left;
+    BinaryTreeLevelOrderTraversalTreeNode *right;
 
-    BinaryTreeLevelOrderTraversalNode() : val(0), left(nullptr), right(nullptr) {}
+    BinaryTreeLevelOrderTraversalTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit BinaryTreeLevelOrderTraversalNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit BinaryTreeLevelOrderTraversalTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    BinaryTreeLevelOrderTraversalNode(int x, BinaryTreeLevelOrderTraversalNode *left,
-                                      BinaryTreeLevelOrderTraversalNode *right) : val(x), left(left), right(right) {}
+    BinaryTreeLevelOrderTraversalTreeNode(int x, BinaryTreeLevelOrderTraversalTreeNode *left,
+                                          BinaryTreeLevelOrderTraversalTreeNode *right) : val(x), left(left),
+                                                                                          right(right) {}
 };
 
 class BinaryTreeLevelOrderTraversal {
@@ -46,40 +47,40 @@ public:
         -1000 <= Node.val <= 1000)" << endl;
     }
 
-    static BinaryTreeLevelOrderTraversalNode *deserialize(vector<string> values) {
-        BinaryTreeLevelOrderTraversalNode *root = nullptr;
+    static BinaryTreeLevelOrderTraversalTreeNode *deserialize(vector<string> values) {
+        BinaryTreeLevelOrderTraversalTreeNode *root = nullptr;
         if (!values.empty()) {
-            queue<BinaryTreeLevelOrderTraversalNode *> nodes;
+            queue<BinaryTreeLevelOrderTraversalTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new BinaryTreeLevelOrderTraversalNode(stoi(values[index]));
+                root = new BinaryTreeLevelOrderTraversalTreeNode(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new BinaryTreeLevelOrderTraversalNode(stoi(values[index]));
+                        root->left = new BinaryTreeLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new BinaryTreeLevelOrderTraversalNode(stoi(values[index]));
+                        root->right = new BinaryTreeLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                BinaryTreeLevelOrderTraversalNode *temp;
+                BinaryTreeLevelOrderTraversalTreeNode *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new BinaryTreeLevelOrderTraversalNode(stoi(values[index]));
+                        temp->left = new BinaryTreeLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new BinaryTreeLevelOrderTraversalNode(stoi(values[index]));
+                            temp->right = new BinaryTreeLevelOrderTraversalTreeNode(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -90,7 +91,7 @@ public:
         return root;
     }
 
-    static void deleteTree(BinaryTreeLevelOrderTraversalNode **head) {
+    static void deleteTree(BinaryTreeLevelOrderTraversalTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -104,13 +105,13 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> levelOrder(BinaryTreeLevelOrderTraversalNode *root) {
+    static vector<vector<int>> levelOrder(BinaryTreeLevelOrderTraversalTreeNode *root) {
         vector<vector<int>> result{};
         if (root != nullptr) {
-            queue<BinaryTreeLevelOrderTraversalNode *> levelA;
-            queue<BinaryTreeLevelOrderTraversalNode *> levelB;
+            queue<BinaryTreeLevelOrderTraversalTreeNode *> levelA;
+            queue<BinaryTreeLevelOrderTraversalTreeNode *> levelB;
             levelA.push(root);
-            BinaryTreeLevelOrderTraversalNode *processing;
+            BinaryTreeLevelOrderTraversalTreeNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 if (!levelA.empty()) {
                     result.emplace_back();

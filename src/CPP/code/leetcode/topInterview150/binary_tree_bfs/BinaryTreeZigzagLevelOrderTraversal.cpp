@@ -8,18 +8,19 @@
 
 using namespace std;
 
-struct BinaryTreeZigzagLevelOrderTraversalNode {
+struct BinaryTreeZigzagLevelOrderTraversalTreeNode {
     int val;
-    BinaryTreeZigzagLevelOrderTraversalNode *left;
-    BinaryTreeZigzagLevelOrderTraversalNode *right;
+    BinaryTreeZigzagLevelOrderTraversalTreeNode *left;
+    BinaryTreeZigzagLevelOrderTraversalTreeNode *right;
 
-    BinaryTreeZigzagLevelOrderTraversalNode() : val(0), left(nullptr), right(nullptr) {}
+    BinaryTreeZigzagLevelOrderTraversalTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit BinaryTreeZigzagLevelOrderTraversalNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit BinaryTreeZigzagLevelOrderTraversalTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    BinaryTreeZigzagLevelOrderTraversalNode(int x, BinaryTreeZigzagLevelOrderTraversalNode *left,
-                                            BinaryTreeZigzagLevelOrderTraversalNode *right) : val(x), left(left),
-                                                                                              right(right) {}
+    BinaryTreeZigzagLevelOrderTraversalTreeNode(int x, BinaryTreeZigzagLevelOrderTraversalTreeNode *left,
+                                                BinaryTreeZigzagLevelOrderTraversalTreeNode *right) : val(x),
+                                                                                                      left(left),
+                                                                                                      right(right) {}
 };
 
 class BinaryTreeZigzagLevelOrderTraversal {
@@ -47,40 +48,40 @@ public:
         -100 <= Node.val <= 100)" << endl;
     }
 
-    static BinaryTreeZigzagLevelOrderTraversalNode *deserialize(vector<string> values) {
-        BinaryTreeZigzagLevelOrderTraversalNode *root = nullptr;
+    static BinaryTreeZigzagLevelOrderTraversalTreeNode *deserialize(vector<string> values) {
+        BinaryTreeZigzagLevelOrderTraversalTreeNode *root = nullptr;
         if (!values.empty()) {
-            queue<BinaryTreeZigzagLevelOrderTraversalNode *> nodes;
+            queue<BinaryTreeZigzagLevelOrderTraversalTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                root = new BinaryTreeZigzagLevelOrderTraversalTreeNode(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                        root->left = new BinaryTreeZigzagLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                        root->right = new BinaryTreeZigzagLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                BinaryTreeZigzagLevelOrderTraversalNode *temp;
+                BinaryTreeZigzagLevelOrderTraversalTreeNode *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                        temp->left = new BinaryTreeZigzagLevelOrderTraversalTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                            temp->right = new BinaryTreeZigzagLevelOrderTraversalTreeNode(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -91,7 +92,7 @@ public:
         return root;
     }
 
-    static void deleteTree(BinaryTreeZigzagLevelOrderTraversalNode **head) {
+    static void deleteTree(BinaryTreeZigzagLevelOrderTraversalTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -105,13 +106,13 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> zigzagLevelOrder(BinaryTreeZigzagLevelOrderTraversalNode *root) {
+    static vector<vector<int>> zigzagLevelOrder(BinaryTreeZigzagLevelOrderTraversalTreeNode *root) {
         vector<vector<int>> result{};
         if (root != nullptr) {
-            queue<BinaryTreeZigzagLevelOrderTraversalNode *> levelA;
-            queue<BinaryTreeZigzagLevelOrderTraversalNode *> levelB;
+            queue<BinaryTreeZigzagLevelOrderTraversalTreeNode *> levelA;
+            queue<BinaryTreeZigzagLevelOrderTraversalTreeNode *> levelB;
             levelA.push(root);
-            BinaryTreeZigzagLevelOrderTraversalNode *processing;
+            BinaryTreeZigzagLevelOrderTraversalTreeNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 if (!levelA.empty()) {
                     result.emplace_back();

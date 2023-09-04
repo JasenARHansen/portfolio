@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "misc-no-recursion"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
@@ -9,17 +10,18 @@
 
 using namespace std;
 
-struct FlattenBinaryTreeToLinkedListNode {
+struct FlattenBinaryTreeToLinkedListTreeNode {
     int val;
-    FlattenBinaryTreeToLinkedListNode *left;
-    FlattenBinaryTreeToLinkedListNode *right;
+    FlattenBinaryTreeToLinkedListTreeNode *left;
+    FlattenBinaryTreeToLinkedListTreeNode *right;
 
-    FlattenBinaryTreeToLinkedListNode() : val(0), left(nullptr), right(nullptr) {}
+    FlattenBinaryTreeToLinkedListTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit FlattenBinaryTreeToLinkedListNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit FlattenBinaryTreeToLinkedListTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    FlattenBinaryTreeToLinkedListNode(int x, FlattenBinaryTreeToLinkedListNode *left,
-                                      FlattenBinaryTreeToLinkedListNode *right) : val(x), left(left), right(right) {}
+    FlattenBinaryTreeToLinkedListTreeNode(int x, FlattenBinaryTreeToLinkedListTreeNode *left,
+                                          FlattenBinaryTreeToLinkedListTreeNode *right) : val(x), left(left),
+                                                                                          right(right) {}
 };
 
 class FlattenBinaryTreeToLinkedList {
@@ -52,40 +54,40 @@ public:
         Can you flatten the tree in-place (with O(1) extra space)?)" << endl;
     }
 
-    static FlattenBinaryTreeToLinkedListNode *deserialize(vector<string> values) {
-        FlattenBinaryTreeToLinkedListNode *root = nullptr;
+    static FlattenBinaryTreeToLinkedListTreeNode *deserialize(vector<string> values) {
+        FlattenBinaryTreeToLinkedListTreeNode *root = nullptr;
         if (!values.empty()) {
-            queue<FlattenBinaryTreeToLinkedListNode *> nodes;
+            queue<FlattenBinaryTreeToLinkedListTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new FlattenBinaryTreeToLinkedListNode(stoi(values[index]));
+                root = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new FlattenBinaryTreeToLinkedListNode(stoi(values[index]));
+                        root->left = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new FlattenBinaryTreeToLinkedListNode(stoi(values[index]));
+                        root->right = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                FlattenBinaryTreeToLinkedListNode *temp;
+                FlattenBinaryTreeToLinkedListTreeNode *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new FlattenBinaryTreeToLinkedListNode(stoi(values[index]));
+                        temp->left = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new FlattenBinaryTreeToLinkedListNode(stoi(values[index]));
+                            temp->right = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -96,50 +98,104 @@ public:
         return root;
     }
 
-    static vector<string> serialize(FlattenBinaryTreeToLinkedListNode *head) {
+    static vector<string> serializeTree(FlattenBinaryTreeToLinkedListTreeNode *head) {
         vector<string> data;
         if (head != nullptr) {
-            queue<FlattenBinaryTreeToLinkedListNode *> nodes;
-            auto current = head;
-            queue<FlattenBinaryTreeToLinkedListNode *> levelA;
-            queue<FlattenBinaryTreeToLinkedListNode *> levelB;
-            levelA.push(current);
+            queue<FlattenBinaryTreeToLinkedListTreeNode *> nodes;
+            vector<FlattenBinaryTreeToLinkedListTreeNode *> levelA;
+            vector<FlattenBinaryTreeToLinkedListTreeNode *> levelB;
+            levelA.push_back(head);
+            if (levelA[0]->left != nullptr) {
+                levelB.push_back(levelA[0]->left);
+
+            }
+            if (levelA[0]->right != nullptr) {
+                levelB.push_back(levelA[0]->right);
+            }
+            data.emplace_back(to_string((levelA[0]->val)));
+            bool odd = true;
             while (!levelA.empty() || !levelB.empty()) {
-                if (!levelA.empty()) {
-                    while (!levelA.empty()) {
-                        current = levelA.front();
-                        levelA.pop();
-                        if (current == nullptr) {
+                if (odd) {
+                    int indexA = 0;
+                    for (int i = 0; i < levelB.size();) {
+                        while ((indexA < levelA.size()) && (levelA[indexA]->left != levelB[i]) &&
+                               (levelA[indexA]->right != levelB[i])) {
                             data.emplace_back("null");
-                        } else {
-                            data.push_back(to_string((current->val)));
-                            if ((current->left != nullptr) || (current->right != nullptr)) {
-                                levelB.push(current->left);
-                                levelB.push(current->right);
+                            data.emplace_back("null");
+                            indexA++;
+                        }
+                        if (i < levelB.size()) {
+                            if (levelA[indexA]->left == levelB[i]) {
+                                data.emplace_back(to_string((levelB[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
                             }
                         }
-                    }
-                } else if (!levelB.empty()) {
-                    while (!levelB.empty()) {
-                        current = levelB.front();
-                        levelB.pop();
-                        if (current == nullptr) {
-                            data.emplace_back("null");
-                        } else {
-                            data.push_back(to_string((current->val)));
-                            if ((current->left != nullptr) || (current->right != nullptr)) {
-                                levelA.push(current->left);
-                                levelA.push(current->right);
+                        if (i < levelB.size()) {
+                            if (levelA[indexA]->right == levelB[i]) {
+                                data.emplace_back(to_string((levelB[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
                             }
                         }
+                        indexA++;
                     }
+                    levelA.clear();
+                    for (auto &i: levelB) {
+                        if (i->left != nullptr) {
+                            levelA.push_back(i->left);
+                        }
+                        if (i->right != nullptr) {
+                            levelA.push_back(i->right);
+                        }
+                    }
+                    odd = !odd;
+                } else {
+                    int indexB = 0;
+                    for (int i = 0; i < levelA.size();) {
+                        while ((indexB < levelB.size()) && (levelB[indexB]->left != levelA[i]) &&
+                               (levelB[indexB]->right != levelA[i])) {
+                            data.emplace_back("null");
+                            data.emplace_back("null");
+                            indexB++;
+                        }
+                        if (i < levelA.size()) {
+                            if (levelB[indexB]->left == levelA[i]) {
+                                data.emplace_back(to_string((levelA[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
+                            }
+                        }
+                        if (i < levelA.size()) {
+                            if (levelB[indexB]->right == levelA[i]) {
+                                data.emplace_back(to_string((levelA[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
+                            }
+                        }
+                        indexB++;
+                    }
+                    levelB.clear();
+                    for (auto &i: levelA) {
+                        if (i->left != nullptr) {
+                            levelB.push_back(i->left);
+                        }
+                        if (i->right != nullptr) {
+                            levelB.push_back(i->right);
+                        }
+                    }
+                    odd = !odd;
                 }
             }
         }
         return data;
     }
 
-    static void deleteTree(FlattenBinaryTreeToLinkedListNode **head) {
+    static void deleteTree(FlattenBinaryTreeToLinkedListTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -153,9 +209,9 @@ public:
         *head = nullptr;
     }
 
-    static void flatten(FlattenBinaryTreeToLinkedListNode *root) {
+    static void flatten(FlattenBinaryTreeToLinkedListTreeNode *root) {
         if (root != nullptr) {
-            stack<FlattenBinaryTreeToLinkedListNode *> branches;
+            stack<FlattenBinaryTreeToLinkedListTreeNode *> branches;
             if (root->right != nullptr) {
                 branches.push(root->right);
             }

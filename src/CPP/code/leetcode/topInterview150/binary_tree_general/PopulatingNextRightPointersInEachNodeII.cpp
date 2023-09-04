@@ -8,24 +8,24 @@
 
 using namespace std;
 
-class PopulatingNextRightPointersInEachNodeIINode {
+class PopulatingNextRightPointersInEachNodeIITreeNode {
 public:
     int val;
-    PopulatingNextRightPointersInEachNodeIINode *left;
-    PopulatingNextRightPointersInEachNodeIINode *right;
-    PopulatingNextRightPointersInEachNodeIINode *next;
+    PopulatingNextRightPointersInEachNodeIITreeNode *left;
+    PopulatingNextRightPointersInEachNodeIITreeNode *right;
+    PopulatingNextRightPointersInEachNodeIITreeNode *next;
 
-    PopulatingNextRightPointersInEachNodeIINode() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
+    PopulatingNextRightPointersInEachNodeIITreeNode() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
 
-    explicit PopulatingNextRightPointersInEachNodeIINode(int val) : val(val), left(nullptr), right(nullptr),
-                                                                    next(nullptr) {}
+    explicit PopulatingNextRightPointersInEachNodeIITreeNode(int val) : val(val), left(nullptr), right(nullptr),
+                                                                        next(nullptr) {}
 
-    PopulatingNextRightPointersInEachNodeIINode(int val, PopulatingNextRightPointersInEachNodeIINode *left,
-                                                PopulatingNextRightPointersInEachNodeIINode *right,
-                                                PopulatingNextRightPointersInEachNodeIINode *next) : val(val),
-                                                                                                     left(left),
-                                                                                                     right(right),
-                                                                                                     next(next) {}
+    PopulatingNextRightPointersInEachNodeIITreeNode(int val, PopulatingNextRightPointersInEachNodeIITreeNode *left,
+                                                    PopulatingNextRightPointersInEachNodeIITreeNode *right,
+                                                    PopulatingNextRightPointersInEachNodeIITreeNode *next) : val(val),
+                                                                                                             left(left),
+                                                                                                             right(right),
+                                                                                                             next(next) {}
 };
 
 class PopulatingNextRightPointersInEachNodeII {
@@ -64,40 +64,40 @@ public:
              << endl;
     }
 
-    static PopulatingNextRightPointersInEachNodeIINode *deserialize(vector<string> values) {
-        PopulatingNextRightPointersInEachNodeIINode *root = nullptr;
+    static PopulatingNextRightPointersInEachNodeIITreeNode *deserialize(vector<string> values) {
+        PopulatingNextRightPointersInEachNodeIITreeNode *root = nullptr;
         if (!values.empty()) {
-            queue<PopulatingNextRightPointersInEachNodeIINode *> nodes;
+            queue<PopulatingNextRightPointersInEachNodeIITreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new PopulatingNextRightPointersInEachNodeIINode(stoi(values[index]));
+                root = new PopulatingNextRightPointersInEachNodeIITreeNode(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new PopulatingNextRightPointersInEachNodeIINode(stoi(values[index]));
+                        root->left = new PopulatingNextRightPointersInEachNodeIITreeNode(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new PopulatingNextRightPointersInEachNodeIINode(stoi(values[index]));
+                        root->right = new PopulatingNextRightPointersInEachNodeIITreeNode(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                PopulatingNextRightPointersInEachNodeIINode *temp;
+                PopulatingNextRightPointersInEachNodeIITreeNode *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new PopulatingNextRightPointersInEachNodeIINode(stoi(values[index]));
+                        temp->left = new PopulatingNextRightPointersInEachNodeIITreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new PopulatingNextRightPointersInEachNodeIINode(stoi(values[index]));
+                            temp->right = new PopulatingNextRightPointersInEachNodeIITreeNode(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -108,7 +108,7 @@ public:
         return root;
     }
 
-    static void deleteTree(PopulatingNextRightPointersInEachNodeIINode **head) {
+    static void deleteTree(PopulatingNextRightPointersInEachNodeIITreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -122,12 +122,13 @@ public:
         *head = nullptr;
     }
 
-    static PopulatingNextRightPointersInEachNodeIINode *connect(PopulatingNextRightPointersInEachNodeIINode *root) {
-        PopulatingNextRightPointersInEachNodeIINode *result = nullptr;
+    static PopulatingNextRightPointersInEachNodeIITreeNode *
+    connect(PopulatingNextRightPointersInEachNodeIITreeNode *root) {
+        PopulatingNextRightPointersInEachNodeIITreeNode *result = nullptr;
         if (root != nullptr) {
             result = copyTree(root);
-            vector<PopulatingNextRightPointersInEachNodeIINode *> oddRow;
-            vector<PopulatingNextRightPointersInEachNodeIINode *> evenRow;
+            vector<PopulatingNextRightPointersInEachNodeIITreeNode *> oddRow;
+            vector<PopulatingNextRightPointersInEachNodeIITreeNode *> evenRow;
             oddRow.push_back(result);
             while (!oddRow.empty() || !evenRow.empty()) {
                 if (!oddRow.empty()) {
@@ -168,10 +169,11 @@ public:
 
 private:
 
-    static PopulatingNextRightPointersInEachNodeIINode *copyTree(PopulatingNextRightPointersInEachNodeIINode *node) {
-        PopulatingNextRightPointersInEachNodeIINode *result = nullptr;
+    static PopulatingNextRightPointersInEachNodeIITreeNode *
+    copyTree(PopulatingNextRightPointersInEachNodeIITreeNode *node) {
+        PopulatingNextRightPointersInEachNodeIITreeNode *result = nullptr;
         if (node != nullptr) {
-            result = new PopulatingNextRightPointersInEachNodeIINode(node->val);
+            result = new PopulatingNextRightPointersInEachNodeIITreeNode(node->val);
             result->left = copyTree(node->left);
             result->right = copyTree(node->right);
         }

@@ -13,9 +13,9 @@ TEST(InvertBinaryTreeTest, description) {
 TEST(InvertBinaryTreeTest, invertTree_1) {
     vector<string> valuesExpected{"4", "7", "2", "9", "6", "3", "1"};
     vector<string> values{"4", "2", "7", "1", "3", "6", "9"};
-    auto root = InvertBinaryTree::deserialize(values);
+    auto root = InvertBinaryTree::deserializeTree(values);
     auto result = InvertBinaryTree::invertTree(root);
-    auto resultValues = InvertBinaryTree::serialize(result);
+    auto resultValues = InvertBinaryTree::serializeTree(result);
     EXPECT_EQ(valuesExpected, resultValues);
     InvertBinaryTree::deleteTree(&root);
 }
@@ -23,9 +23,9 @@ TEST(InvertBinaryTreeTest, invertTree_1) {
 TEST(InvertBinaryTreeTest, invertTree_2) {
     vector<string> valuesExpected{"2", "3", "1"};
     vector<string> values{"2", "1", "3"};
-    auto root = InvertBinaryTree::deserialize(values);
+    auto root = InvertBinaryTree::deserializeTree(values);
     auto result = InvertBinaryTree::invertTree(root);
-    auto resultValues = InvertBinaryTree::serialize(result);
+    auto resultValues = InvertBinaryTree::serializeTree(result);
     EXPECT_EQ(valuesExpected, resultValues);
     InvertBinaryTree::deleteTree(&root);
 }
@@ -33,9 +33,9 @@ TEST(InvertBinaryTreeTest, invertTree_2) {
 TEST(InvertBinaryTreeTest, invertTree_3) {
     vector<string> valuesExpected{};
     vector<string> values{};
-    auto root = InvertBinaryTree::deserialize(values);
+    auto root = InvertBinaryTree::deserializeTree(values);
     auto result = InvertBinaryTree::invertTree(root);
-    auto resultValues = InvertBinaryTree::serialize(result);
+    auto resultValues = InvertBinaryTree::serializeTree(result);
     EXPECT_EQ(valuesExpected, resultValues);
     InvertBinaryTree::deleteTree(&root);
 }

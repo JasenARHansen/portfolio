@@ -57,7 +57,7 @@ public:
         Node.random is null or is pointing to some node in the linked list.)" << endl;
     }
 
-    static vector<pair<int, string>> serialize(RandomPointerNode *head) {
+    static vector<pair<int, string>> serializeListRandomPointer(RandomPointerNode *head) {
         vector<pair<int, string>> result;
         if (head != nullptr) {
             int index = 0;

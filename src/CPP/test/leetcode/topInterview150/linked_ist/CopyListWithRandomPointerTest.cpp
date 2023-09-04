@@ -18,8 +18,8 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
                                        {1,  "0"}};
     auto head = CopyListWithRandomPointer::deserialize(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
-    auto result = CopyListWithRandomPointer::serialize(head);
-    auto foo = CopyListWithRandomPointer::serialize(head);
+    auto result = CopyListWithRandomPointer::serializeListRandomPointer(head);
+    auto foo = CopyListWithRandomPointer::serializeListRandomPointer(head);
     for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index].first, result[index].first);
         EXPECT_EQ(expected[index].second, result[index].second);
@@ -33,7 +33,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
                                        {2, "1"}};
     auto head = CopyListWithRandomPointer::deserialize(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
-    auto result = CopyListWithRandomPointer::serialize(copy);
+    auto result = CopyListWithRandomPointer::serializeListRandomPointer(copy);
     for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index].first, result[index].first);
         EXPECT_EQ(expected[index].second, result[index].second);
@@ -48,7 +48,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
                                        {3, "null"}};
     auto head = CopyListWithRandomPointer::deserialize(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
-    auto result = CopyListWithRandomPointer::serialize(copy);
+    auto result = CopyListWithRandomPointer::serializeListRandomPointer(copy);
     for (auto index = 0; index < expected.size(); index++) {
         EXPECT_EQ(expected[index].first, result[index].first);
         EXPECT_EQ(expected[index].second, result[index].second);

@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "misc-no-recursion"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
@@ -46,7 +47,7 @@ public:
         -100 <= Node.val <= 100)" << endl;
     }
 
-    static InvertBinaryTreeNode *deserialize(vector<string> values) {
+    static InvertBinaryTreeNode *deserializeTree(vector<string> values) {
         InvertBinaryTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<InvertBinaryTreeNode *> nodes;
@@ -90,43 +91,97 @@ public:
         return root;
     }
 
-    static vector<string> serialize(InvertBinaryTreeNode *head) {
+    static vector<string> serializeTree(InvertBinaryTreeNode *head) {
         vector<string> data;
         if (head != nullptr) {
             queue<InvertBinaryTreeNode *> nodes;
-            auto current = head;
-            queue<InvertBinaryTreeNode *> levelA;
-            queue<InvertBinaryTreeNode *> levelB;
-            levelA.push(current);
+            vector<InvertBinaryTreeNode *> levelA;
+            vector<InvertBinaryTreeNode *> levelB;
+            levelA.push_back(head);
+            if (levelA[0]->left != nullptr) {
+                levelB.push_back(levelA[0]->left);
+
+            }
+            if (levelA[0]->right != nullptr) {
+                levelB.push_back(levelA[0]->right);
+            }
+            data.emplace_back(to_string((levelA[0]->val)));
+            bool odd = true;
             while (!levelA.empty() || !levelB.empty()) {
-                if (!levelA.empty()) {
-                    while (!levelA.empty()) {
-                        current = levelA.front();
-                        levelA.pop();
-                        if (current == nullptr) {
+                if (odd) {
+                    int indexA = 0;
+                    for (int i = 0; i < levelB.size();) {
+                        while ((indexA < levelA.size()) && (levelA[indexA]->left != levelB[i]) &&
+                               (levelA[indexA]->right != levelB[i])) {
                             data.emplace_back("null");
-                        } else {
-                            data.push_back(to_string((current->val)));
-                            if ((current->left != nullptr) || (current->right != nullptr)) {
-                                levelB.push(current->left);
-                                levelB.push(current->right);
+                            data.emplace_back("null");
+                            indexA++;
+                        }
+                        if (i < levelB.size()) {
+                            if (levelA[indexA]->left == levelB[i]) {
+                                data.emplace_back(to_string((levelB[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
                             }
                         }
-                    }
-                } else if (!levelB.empty()) {
-                    while (!levelB.empty()) {
-                        current = levelB.front();
-                        levelB.pop();
-                        if (current == nullptr) {
-                            data.emplace_back("null");
-                        } else {
-                            data.push_back(to_string((current->val)));
-                            if ((current->left != nullptr) || (current->right != nullptr)) {
-                                levelA.push(current->left);
-                                levelA.push(current->right);
+                        if (i < levelB.size()) {
+                            if (levelA[indexA]->right == levelB[i]) {
+                                data.emplace_back(to_string((levelB[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
                             }
                         }
+                        indexA++;
                     }
+                    levelA.clear();
+                    for (auto &i: levelB) {
+                        if (i->left != nullptr) {
+                            levelA.push_back(i->left);
+                        }
+                        if (i->right != nullptr) {
+                            levelA.push_back(i->right);
+                        }
+                    }
+                    odd = !odd;
+                } else {
+                    int indexB = 0;
+                    for (int i = 0; i < levelA.size();) {
+                        while ((indexB < levelB.size()) && (levelB[indexB]->left != levelA[i]) &&
+                               (levelB[indexB]->right != levelA[i])) {
+                            data.emplace_back("null");
+                            data.emplace_back("null");
+                            indexB++;
+                        }
+                        if (i < levelA.size()) {
+                            if (levelB[indexB]->left == levelA[i]) {
+                                data.emplace_back(to_string((levelA[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
+                            }
+                        }
+                        if (i < levelA.size()) {
+                            if (levelB[indexB]->right == levelA[i]) {
+                                data.emplace_back(to_string((levelA[i]->val)));
+                                i++;
+                            } else {
+                                data.emplace_back("null");
+                            }
+                        }
+                        indexB++;
+                    }
+                    levelB.clear();
+                    for (auto &i: levelA) {
+                        if (i->left != nullptr) {
+                            levelB.push_back(i->left);
+                        }
+                        if (i->right != nullptr) {
+                            levelB.push_back(i->right);
+                        }
+                    }
+                    odd = !odd;
                 }
             }
         }
