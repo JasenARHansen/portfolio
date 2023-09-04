@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,16 +8,17 @@
 
 using namespace std;
 
-struct TreeNode {
+struct AverageOfLevelsInBinaryTreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    AverageOfLevelsInBinaryTreeNode *left;
+    AverageOfLevelsInBinaryTreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    AverageOfLevelsInBinaryTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit AverageOfLevelsInBinaryTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    AverageOfLevelsInBinaryTreeNode(int x, AverageOfLevelsInBinaryTreeNode *left,
+                                    AverageOfLevelsInBinaryTreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class AverageOfLevelsInBinaryTree {
@@ -45,27 +45,42 @@ public:
         -2^31 <= Node.val <= 2^31 - 1)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static AverageOfLevelsInBinaryTreeNode *deserialize(vector<string> values) {
+        AverageOfLevelsInBinaryTreeNode *root = nullptr;
         if (!values.empty()) {
+            queue<AverageOfLevelsInBinaryTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new AverageOfLevelsInBinaryTreeNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new AverageOfLevelsInBinaryTreeNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new AverageOfLevelsInBinaryTreeNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                AverageOfLevelsInBinaryTreeNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new AverageOfLevelsInBinaryTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new AverageOfLevelsInBinaryTreeNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -74,7 +89,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(AverageOfLevelsInBinaryTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -88,15 +103,15 @@ public:
         *head = nullptr;
     }
 
-    static vector<double> averageOfLevels(TreeNode *root) {
+    static vector<double> averageOfLevels(AverageOfLevelsInBinaryTreeNode *root) {
         vector<double> result{};
         if (root != nullptr) {
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
+            queue<AverageOfLevelsInBinaryTreeNode *> levelA;
+            queue<AverageOfLevelsInBinaryTreeNode *> levelB;
             levelA.push(root);
             long long int sum;
-            int count;
-            TreeNode *processing;
+            double count;
+            AverageOfLevelsInBinaryTreeNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 sum = 0;
                 count = 0;
@@ -113,7 +128,7 @@ public:
                             levelB.push(processing->left);
                         }
                     }
-                    result.push_back(sum / (double) count);
+                    result.push_back(sum / count);
                 } else {
                     while (!levelB.empty()) {
                         processing = levelB.front();
@@ -127,7 +142,7 @@ public:
                             levelA.push(processing->left);
                         }
                     }
-                    result.push_back(sum / (double) count);
+                    result.push_back(sum / count);
                 }
             }
         }

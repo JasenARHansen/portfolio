@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -46,7 +45,7 @@ public:
         assert (s.size() <= pow(10, 4));
         string result;
         bool first = true;
-        int index = s.size() - 1;
+        int index = (int) s.size() - 1;
         while (true) {
             int right = index;
             while ((0 <= right) && (isspace(s.at(right)))) {

@@ -4,7 +4,7 @@ string Section1::hello() {
     return "!!! Hello there World!!!";
 }
 
-void Section1::helloOutEndl() {
+void Section1::helloOutEndL() {
     cout << "!!! Hello there World!!!" << std::endl;
 }
 

@@ -14,8 +14,8 @@ TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_1) {
     vector<vector<int>> expected{{3},
                                  {20, 9},
                                  {15, 7}};
-    vector<string> values{"3", "9", "20", "null", "null", "15", "7", "null", "null", "null", "null"};
-    auto root = BinaryTreeZigzagLevelOrderTraversal::generateTree(values);
+    vector<string> values{"3", "9", "20", "null", "null", "15", "7"};
+    auto root = BinaryTreeZigzagLevelOrderTraversal::deserialize(values);
     auto result = BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeZigzagLevelOrderTraversal::deleteTree(&root);
@@ -23,8 +23,8 @@ TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_1) {
 
 TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_2) {
     vector<vector<int>> expected{{1}};
-    vector<string> values{"1", "null", "null"};
-    auto root = BinaryTreeZigzagLevelOrderTraversal::generateTree(values);
+    vector<string> values{"1"};
+    auto root = BinaryTreeZigzagLevelOrderTraversal::deserialize(values);
     auto result = BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeZigzagLevelOrderTraversal::deleteTree(&root);
@@ -32,7 +32,8 @@ TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_2) {
 
 TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_3) {
     vector<vector<int>> expected{};
-    TreeNode *root = nullptr;
+    vector<string> values{};
+    auto root = BinaryTreeZigzagLevelOrderTraversal::deserialize(values);
     auto result = BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(root);
     EXPECT_EQ(expected, result);
     BinaryTreeZigzagLevelOrderTraversal::deleteTree(&root);

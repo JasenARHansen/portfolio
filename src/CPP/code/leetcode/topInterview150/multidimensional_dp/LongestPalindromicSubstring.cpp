@@ -1,7 +1,6 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "bugprone-branch-clone"
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -38,7 +37,7 @@ public:
         assert (s.size() <= 1000);
         map<string, string> wordMap;
         string longest;
-        return longestPalindrome(s, 0, s.size(), wordMap, longest);
+        return longestPalindrome(s, 0, (int) s.size(), wordMap, longest);
     }
 
 private:
@@ -69,8 +68,8 @@ private:
                 } else if (isPalindrome(word)) {
                     wordMap[key] = word;
                 } else {
-                    auto left = longestPalindrome(word, 0, word.size() - 1, wordMap, longest);
-                    auto right = longestPalindrome(word, 1, word.size() - 1, wordMap, longest);
+                    auto left = longestPalindrome(word, 0, (int) word.size() - 1, wordMap, longest);
+                    auto right = longestPalindrome(word, 1, (int) word.size() - 1, wordMap, longest);
                     if (left.size() >= right.size()) {
                         wordMap[key] = left;
                     } else {

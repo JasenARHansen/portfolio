@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -8,15 +7,16 @@
 
 using namespace std;
 
-struct ListNode {
+struct PartitionListNode {
+
     int val;
-    ListNode *next;
+    PartitionListNode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    PartitionListNode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit PartitionListNode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    PartitionListNode(int x, PartitionListNode *next) : val(x), next(next) {}
 };
 
 class PartitionList {
@@ -42,37 +42,37 @@ public:
         -200 <= x <= 200)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static PartitionListNode *deserialize(const vector<int> &numbers) {
         assert(numbers.size() <= 200);
-        ListNode *result = nullptr;
+        PartitionListNode *result = nullptr;
         if (!numbers.empty()) {
             assert(-100 <= numbers[0]);
             assert(numbers[0] <= 100);
-            result = new ListNode(numbers[numbers.size() - 1]);
-            for (int index = numbers.size() - 2; index >= 0; index--) {
+            result = new PartitionListNode(numbers[numbers.size() - 1]);
+            for (int index = (int) numbers.size() - 2; index >= 0; index--) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto node = new ListNode(numbers[index], result);
+                auto node = new PartitionListNode(numbers[index], result);
                 result = node;
             }
         }
         return result;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(PartitionListNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            PartitionListNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *partition(ListNode *head, int x) {
+    static PartitionListNode *partition(PartitionListNode *head, int x) {
         assert(-200 <= x);
         assert(x <= 200);
         // Prep for processing
@@ -81,7 +81,7 @@ public:
             return result;
         }
         auto working = result;
-        ListNode *last = nullptr;
+        PartitionListNode *last = nullptr;
         while ((working != nullptr) && (working->val >= x)) {
             last = working;
             working = working->next;
@@ -122,15 +122,15 @@ public:
 
 private:
 
-    static ListNode *copyList(ListNode *head) {
-        ListNode *result = nullptr;
+    static PartitionListNode *copyList(PartitionListNode *head) {
+        PartitionListNode *result = nullptr;
         if (head != nullptr) {
             auto current = head;
-            result = new ListNode(current->val);
+            result = new PartitionListNode(current->val);
             auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
-                working->next = new ListNode(current->val);
+                working->next = new PartitionListNode(current->val);
                 working = working->next;
             }
         }

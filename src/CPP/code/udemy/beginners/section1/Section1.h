@@ -12,7 +12,7 @@ class Section1 {
 public:
     static string hello();
 
-    static void helloOutEndl();
+    static void helloOutEndL();
 
     static void helloOutFlush();
 

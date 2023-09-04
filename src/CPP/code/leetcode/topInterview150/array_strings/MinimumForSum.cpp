@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -66,7 +65,7 @@ public:
         vector<int> values(keys.size());
         copy(keys.begin(), keys.end(), values.begin());
         // using ordered data, find answer
-        for (int index = values.size() - 1; index >= 0; index--) {
+        for (int index = (int) values.size() - 1; index >= 0; index--) {
             while (test_map[values[index]] > 0) {
                 sum += values[index];
                 test_map[values[index]]--;

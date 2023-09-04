@@ -63,42 +63,42 @@ TEST(MergeIntervalsTest, merge_fail_3) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_4) {
-    //  0 <= starti
-    auto starti = 0 - 1;
-    auto endi = (int) pow(10, 4);
-    vector<vector<int>> intervals{{starti, endi}};
+    //  0 <= startI
+    auto startI = 0 - 1;
+    auto endI = (int) pow(10, 4);
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, merge_fail_5) {
-    // starti <= 10^4
-    auto starti = (int) pow(10, 4) + 1;
-    auto endi = (int) pow(10, 4);
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= 10^4
+    auto startI = (int) pow(10, 4) + 1;
+    auto endI = (int) pow(10, 4);
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, merge_fail_6) {
-    // 0 <= endi
-    auto starti = (int) pow(10, 4);
-    auto endi = 0 - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // 0 <= endI
+    auto startI = (int) pow(10, 4);
+    auto endI = 0 - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, merge_fail_7) {
-    // endi <= 10^4
-    auto starti = (int) pow(10, 4);
-    auto endi = (int) pow(10, 4) + 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // endI <= 10^4
+    auto startI = (int) pow(10, 4);
+    auto endI = (int) pow(10, 4) + 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, merge_fail_8) {
-    // starti <= endi
-    auto starti = (int) pow(10, 4);
-    auto endi = (int) pow(10, 4) - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= endI
+    auto startI = (int) pow(10, 4);
+    auto endI = (int) pow(10, 4) - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
@@ -155,42 +155,42 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_3) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_4) {
-    //  0 <= starti
-    auto starti = 0 - 1;
-    auto endi = (int) pow(10, 4);
-    vector<vector<int>> intervals{{starti, endi}};
+    //  0 <= startI
+    auto startI = 0 - 1;
+    auto endI = (int) pow(10, 4);
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_5) {
-    // starti <= 10^4
-    auto starti = (int) pow(10, 4) + 1;
-    auto endi = (int) pow(10, 4);
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= 10^4
+    auto startI = (int) pow(10, 4) + 1;
+    auto endI = (int) pow(10, 4);
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_6) {
-    // 0 <= endi
-    auto starti = (int) pow(10, 4);
-    auto endi = 0 - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // 0 <= endI
+    auto startI = (int) pow(10, 4);
+    auto endI = 0 - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_7) {
-    // endi <= 10^4
-    auto starti = (int) pow(10, 4);
-    auto endi = (int) pow(10, 4) + 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // endI <= 10^4
+    auto startI = (int) pow(10, 4);
+    auto endI = (int) pow(10, 4) + 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_8) {
-    // starti <= endi
-    auto starti = (int) pow(10, 4);
-    auto endi = (int) pow(10, 4) - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= endI
+    auto startI = (int) pow(10, 4);
+    auto endI = (int) pow(10, 4) - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 

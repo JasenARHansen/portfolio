@@ -9,11 +9,16 @@
 
 using namespace std;
 
-struct ListNode {
-    int val;
-    ListNode *next;
+struct LinkedListCycleNode {
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    int val;
+    LinkedListCycleNode *next;
+
+    LinkedListCycleNode() : val(0), next(nullptr) {}
+
+    explicit LinkedListCycleNode(int x) : val(x), next(nullptr) {}
+
+    LinkedListCycleNode(int x, LinkedListCycleNode *next) : val(x), next(next) {}
 };
 
 class LinkedListCycle {
@@ -53,24 +58,24 @@ public:
         Can you solve it using O(1) (i.e. constant) memory?)" << endl;
     }
 
-    static ListNode *generateListWithCycle(const int pos, const vector<int> &numbers) {
+    static LinkedListCycleNode *deserializeWithCycle(const int pos, const vector<int> &numbers) {
         assert(numbers.size() <= pow(10, 4));
-        ListNode *root = nullptr;
+        LinkedListCycleNode *root = nullptr;
         if (!numbers.empty()) {
             assert(-pow(10, 5) <= numbers[0]);
             assert(numbers[0] <= pow(10, 5));
-            root = new ListNode(numbers[0]);
+            root = new LinkedListCycleNode(numbers[0]);
             auto last = root;
             for (auto index = 1; index < numbers.size(); index++) {
                 assert(-pow(10, 5) <= numbers[index]);
                 assert(numbers[index] <= pow(10, 5));
-                auto node = new ListNode(numbers[index]);
+                auto node = new LinkedListCycleNode(numbers[index]);
                 last->next = node;
                 last = node;
             }
             if ((0 <= pos) && (pos < numbers.size())) {
                 auto index = pos;
-                ListNode *cycleTarget = root;
+                auto cycleTarget = root;
                 while (index > 0) {
                     cycleTarget = cycleTarget->next;
                     index--;
@@ -81,24 +86,30 @@ public:
         return root;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(LinkedListCycleNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            LinkedListCycleNode *next;
+            unordered_set<LinkedListCycleNode *> removed;
+            while (current->next != nullptr) {
+                next = current->next;
+                if (removed.count(current)) {
+                    break;
+                }
+                delete current;
+                //removed.
+                current = next;
+                removed.insert(current);
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static bool hasCycle(ListNode *head) {
+    static bool hasCycle(LinkedListCycleNode *head) {
         if (head == nullptr) {
             return false;
         }
-        unordered_set<ListNode *> pointers;
+        unordered_set<LinkedListCycleNode *> pointers;
         auto current = head;
         while ((!pointers.count(current)) && (current->next != nullptr)) {
             pointers.insert(current);

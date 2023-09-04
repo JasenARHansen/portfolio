@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -8,15 +7,15 @@
 
 using namespace std;
 
-struct ListNode {
+struct AddTwoNumbersNode {
     int val;
-    ListNode *next;
+    AddTwoNumbersNode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    AddTwoNumbersNode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit AddTwoNumbersNode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    AddTwoNumbersNode(int x, AddTwoNumbersNode *next) : val(x), next(next) {}
 };
 
 class AddTwoNumbers {
@@ -48,36 +47,36 @@ public:
         It is guaranteed that the list represents a number that does not have leading zeros.)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static AddTwoNumbersNode *deserialize(const vector<int> &numbers) {
         assert(!numbers.empty());
         assert(numbers.size() <= 100);
         assert(0 <= numbers[0]);
         assert(numbers[0] <= 9);
-        auto current = new ListNode(numbers[numbers.size() - 1]);
-        for (int index = numbers.size() - 2; index >= 0; index--) {
+        auto current = new AddTwoNumbersNode(numbers[numbers.size() - 1]);
+        for (int index = (int) numbers.size() - 2; index >= 0; index--) {
             assert(0 <= numbers[index]);
             assert(numbers[index] <= 9);
-            auto node = new ListNode(numbers[index], current);
+            auto node = new AddTwoNumbersNode(numbers[index], current);
             current = node;
         }
         return current;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(AddTwoNumbersNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            AddTwoNumbersNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        ListNode *result = nullptr;
+    static AddTwoNumbersNode *addTwoNumbers(AddTwoNumbersNode *l1, AddTwoNumbersNode *l2) {
+        AddTwoNumbersNode *result = nullptr;
         if ((l1 == nullptr) || (l2 == nullptr)) {
             return result;
         }
@@ -85,38 +84,38 @@ public:
         auto rVal = l2;
         auto sum = (lVal->val + rVal->val) % 10;
         auto carry = (lVal->val + rVal->val) / 10;
-        result = new ListNode(sum);
+        result = new AddTwoNumbersNode(sum);
         auto current = result;
         while ((lVal->next != nullptr) && ((rVal->next != nullptr))) {
             lVal = lVal->next;
             rVal = rVal->next;
             sum = (lVal->val + rVal->val + carry) % 10;
             carry = (lVal->val + rVal->val + carry) / 10;
-            auto working = new ListNode(sum);
+            auto working = new AddTwoNumbersNode(sum);
             current->next = working;
             current = working;
         }
-        // process if lval has remaining digits
+        // process if lVal has remaining digits
         while (lVal->next != nullptr) {
             lVal = lVal->next;
             sum = (lVal->val + carry) % 10;
             carry = (lVal->val + carry) / 10;
-            auto working = new ListNode(sum);
+            auto working = new AddTwoNumbersNode(sum);
             current->next = working;
             current = working;
         }
-        // process if rval has remaining digits
+        // process if rVal has remaining digits
         while (rVal->next != nullptr) {
             rVal = rVal->next;
             sum = (rVal->val + carry) % 10;
             carry = (rVal->val + carry) / 10;
-            auto working = new ListNode(sum);
+            auto working = new AddTwoNumbersNode(sum);
             current->next = working;
             current = working;
         }
         // if there is still a carry
         if (carry) {
-            auto working = new ListNode(carry);
+            auto working = new AddTwoNumbersNode(carry);
             current->next = working;
         }
         return result;

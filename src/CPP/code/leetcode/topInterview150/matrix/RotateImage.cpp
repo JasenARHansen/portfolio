@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -52,20 +51,20 @@ public:
                 // Move lower left to upper left
                 rowTarget = rowSource;
                 columnTarget = columnSource;
-                rowSource = matrix.size() - index - 1;
+                rowSource = (int) matrix.size() - index - 1;
                 columnSource = ring;
                 store(matrix, matrix[rowSource][columnSource], rowTarget, columnTarget);
                 // Move lower right to lower left
                 rowTarget = rowSource;
                 columnTarget = columnSource;
-                rowSource = matrix.size() - ring - 1;
-                columnSource = matrix.size() - index - 1;
+                rowSource = (int) matrix.size() - ring - 1;
+                columnSource = (int) matrix.size() - index - 1;
                 store(matrix, matrix[rowSource][columnSource], rowTarget, columnTarget);
                 // Move upper right to lower right
                 rowTarget = rowSource;
                 columnTarget = columnSource;
                 rowSource = index;
-                columnSource = matrix.size() - ring - 1;
+                columnSource = (int) matrix.size() - ring - 1;
                 store(matrix, matrix[rowSource][columnSource], rowTarget, columnTarget);
                 // Move stored value to upper right
                 rowTarget = rowSource;

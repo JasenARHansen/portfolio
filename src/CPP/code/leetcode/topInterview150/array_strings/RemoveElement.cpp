@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 
 #include <vector>
 #include <iostream>
@@ -60,12 +59,12 @@ public:
         assert (nums.size() <= 100);
         assert (0 <= val);
         assert (val <= 100);
-        auto returnCount = nums.size();
+        auto returnCount = (int) nums.size();
         if (nums.empty()) {
             return returnCount;
         }
         auto startIndex = 0;
-        int stopIndex = nums.size() - 1;
+        int stopIndex = (int) nums.size() - 1;
         do {
             assert (0 <= nums[startIndex]);
             assert (nums[startIndex] <= 50);

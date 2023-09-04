@@ -69,46 +69,46 @@ TEST(InsertIntervalTest, insert_fail_2) {
 }
 
 TEST(InsertIntervalTest, insert_fail_3) {
-    //  0 <= starti
-    auto starti = 0 - 1;
-    auto endi = (int) pow(10, 5);
-    vector<vector<int>> intervals{{starti, endi}};
+    //  0 <= startI
+    auto startI = 0 - 1;
+    auto endI = (int) pow(10, 5);
+    vector<vector<int>> intervals{{startI, endI}};
     vector<int> newInterval{4, 8};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_4) {
-    // starti <= 10^5
-    auto starti = (int) pow(10, 5) + 1;
-    auto endi = (int) pow(10, 5);
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= 10^5
+    auto startI = (int) pow(10, 5) + 1;
+    auto endI = (int) pow(10, 5);
+    vector<vector<int>> intervals{{startI, endI}};
     vector<int> newInterval{4, 8};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_5) {
-    // 0 <= endi
-    auto starti = (int) pow(10, 5);
-    auto endi = 0 - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // 0 <= endI
+    auto startI = (int) pow(10, 5);
+    auto endI = 0 - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     vector<int> newInterval{4, 8};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_6) {
-    // endi <= 10^5
-    auto starti = (int) pow(10, 5);
-    auto endi = (int) pow(10, 5) + 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // endI <= 10^5
+    auto startI = (int) pow(10, 5);
+    auto endI = (int) pow(10, 5) + 1;
+    vector<vector<int>> intervals{{startI, endI}};
     vector<int> newInterval{4, 8};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_7) {
-    // starti <= endi
-    auto starti = (int) pow(10, 5);
-    auto endi = (int) pow(10, 5) - 1;
-    vector<vector<int>> intervals{{starti, endi}};
+    // startI <= endI
+    auto startI = (int) pow(10, 5);
+    auto endI = (int) pow(10, 5) - 1;
+    vector<vector<int>> intervals{{startI, endI}};
     vector<int> newInterval{4, 8};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
@@ -122,47 +122,47 @@ TEST(InsertIntervalTest, insert_fail_8) {
 }
 
 TEST(InsertIntervalTest, insert_fail_9) {
-    //  0 <= starti
-    auto starti = 0 - 1;
-    auto endi = (int) pow(10, 5);
+    //  0 <= startI
+    auto startI = 0 - 1;
+    auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{};
-    vector<int> newInterval{starti, endi};
+    vector<int> newInterval{startI, endI};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_10) {
-    // starti <= 10^5
-    auto starti = (int) pow(10, 5) + 1;
-    auto endi = (int) pow(10, 5);
+    // startI <= 10^5
+    auto startI = (int) pow(10, 5) + 1;
+    auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{};
-    vector<int> newInterval{starti, endi};
+    vector<int> newInterval{startI, endI};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_11) {
-    // 0 <= endi
-    auto starti = (int) pow(10, 5);
-    auto endi = 0 - 1;
+    // 0 <= endI
+    auto startI = (int) pow(10, 5);
+    auto endI = 0 - 1;
     vector<vector<int>> intervals{};
-    vector<int> newInterval{starti, endi};
+    vector<int> newInterval{startI, endI};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_13) {
-    // endi <= 10^5
-    auto starti = (int) pow(10, 5);
-    auto endi = (int) pow(10, 5) + 1;
+    // endI <= 10^5
+    auto startI = (int) pow(10, 5);
+    auto endI = (int) pow(10, 5) + 1;
     vector<vector<int>> intervals{};
-    vector<int> newInterval{starti, endi};
+    vector<int> newInterval{startI, endI};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(InsertIntervalTest, insert_fail_14) {
-    // starti <= endi
-    auto starti = (int) pow(10, 5);
-    auto endi = (int) pow(10, 5) - 1;
+    // startI <= endI
+    auto startI = (int) pow(10, 5);
+    auto endI = (int) pow(10, 5) - 1;
     vector<vector<int>> intervals{};
-    vector<int> newInterval{starti, endi};
+    vector<int> newInterval{startI, endI};
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 

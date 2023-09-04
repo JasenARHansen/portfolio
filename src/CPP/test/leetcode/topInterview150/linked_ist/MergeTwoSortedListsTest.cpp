@@ -12,11 +12,11 @@ TEST(MergeTwoSortedListsTest, description) {
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_1) {
     vector<int> expectedValues{1, 1, 2, 3, 4, 4};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{1, 2, 4};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{1, 3, 4};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
     auto expectedTest = expected;
     auto resultTest = result;
@@ -25,17 +25,17 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_1) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_2) {
     vector<int> expectedValues{};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
     auto expectedTest = expected;
     auto resultTest = result;
@@ -44,17 +44,17 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_2) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_3) {
     vector<int> expectedValues{0};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{0};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
     auto expectedTest = expected;
     auto resultTest = result;
@@ -63,20 +63,20 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_3) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_1) {
     vector<int> expectedValues{1, 1, 2, 3, 4, 4};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{1, 2, 4};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{1, 3, 4};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
-    MergeTwoSortedLists::deleteList(l1Values.size(), &l1);
-    MergeTwoSortedLists::deleteList(l2Values.size(), &l2);
+    MergeTwoSortedLists::deleteList(&l1);
+    MergeTwoSortedLists::deleteList(&l2);
     auto expectedTest = expected;
     auto resultTest = result;
     while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
@@ -84,20 +84,20 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_new_1) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_2) {
     vector<int> expectedValues{};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
-    MergeTwoSortedLists::deleteList(l1Values.size(), &l1);
-    MergeTwoSortedLists::deleteList(l2Values.size(), &l2);
+    MergeTwoSortedLists::deleteList(&l1);
+    MergeTwoSortedLists::deleteList(&l2);
     auto expectedTest = expected;
     auto resultTest = result;
     while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
@@ -105,20 +105,20 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_new_2) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_3) {
     vector<int> expectedValues{0};
-    auto expected = MergeTwoSortedLists::generateList(expectedValues);
+    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::generateList(l1Values);
+    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{0};
-    auto l2 = MergeTwoSortedLists::generateList(l2Values);
+    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
     auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
-    MergeTwoSortedLists::deleteList(l1Values.size(), &l1);
-    MergeTwoSortedLists::deleteList(l2Values.size(), &l2);
+    MergeTwoSortedLists::deleteList(&l1);
+    MergeTwoSortedLists::deleteList(&l2);
     auto expectedTest = expected;
     auto resultTest = result;
     while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
@@ -126,29 +126,29 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_new_3) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &expected);
-    MergeTwoSortedLists::deleteList(expectedValues.size(), &result);
+    MergeTwoSortedLists::deleteList(&expected);
+    MergeTwoSortedLists::deleteList(&result);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_1) {
     // values.length  <= 50 + 1
     auto size = 50 + 1;
     vector<int> values(size);
-    EXPECT_EXIT(MergeTwoSortedLists::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_2) {
     // -100 <= Node.val
     auto size = -100 - 1;
     vector<int> values{size};
-    EXPECT_EXIT(MergeTwoSortedLists::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_3) {
     // Node.val <= 100
     auto size = 100 + 1;
     vector<int> values{size};
-    EXPECT_EXIT(MergeTwoSortedLists::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

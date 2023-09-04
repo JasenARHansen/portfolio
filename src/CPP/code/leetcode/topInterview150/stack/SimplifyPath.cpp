@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -65,7 +64,7 @@ public:
             }
         }
         if ((startIndex != path.size() - 1)) {
-            processSubstring(path, processing, startIndex, path.size() - startIndex - 1);
+            processSubstring(path, processing, startIndex, (int) path.size() - startIndex - 1);
         }
         while (!processing.empty()) {
             result.insert(0, processing.top());

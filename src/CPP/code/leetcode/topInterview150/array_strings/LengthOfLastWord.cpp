@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -45,7 +44,7 @@ public:
     static int lengthOfLastWord(const string &s) {
         assert (!s.empty());
         assert (s.size() <= pow(10, 4));
-        int right = s.size() - 1;
+        int right = (int) s.size() - 1;
         while ((0 <= right) && (isspace(s.at(right)))) {
             right--;
         }

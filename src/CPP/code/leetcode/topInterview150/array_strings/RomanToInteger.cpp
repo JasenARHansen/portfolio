@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -64,9 +63,9 @@ public:
         auto index = 0;
         for (; index < s.size() - 1; index++) {
             auto leftCharacter = toupper(s.at(index));
-            auto leftValue = getValue(leftCharacter);
+            auto leftValue = getValue((char) leftCharacter);
             auto rightCharacter = toupper(s.at(index + 1));
-            auto rightValue = getValue(rightCharacter);
+            auto rightValue = getValue((char) rightCharacter);
             if (leftValue < rightValue) {
                 total += rightValue - leftValue;
                 index++;
@@ -76,7 +75,7 @@ public:
         }
         if (index <= s.size() - 1) {
             auto lastCharacter = toupper(s.at(index));
-            auto lastValue = getValue(lastCharacter);
+            auto lastValue = getValue((char) lastCharacter);
             total += lastValue;
         }
         assert (0 < total);

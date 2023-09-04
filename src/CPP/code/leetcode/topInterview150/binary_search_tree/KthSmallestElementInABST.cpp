@@ -6,19 +6,21 @@
 #include <vector>
 #include <cmath>
 #include <cassert>
+#include <queue>
 
 using namespace std;
 
-struct TreeNode {
+struct KthSmallestElementInABSTNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    KthSmallestElementInABSTNode *left;
+    KthSmallestElementInABSTNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    KthSmallestElementInABSTNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit KthSmallestElementInABSTNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    KthSmallestElementInABSTNode(int x, KthSmallestElementInABSTNode *left, KthSmallestElementInABSTNode *right) : val(
+            x), left(left), right(right) {}
 };
 
 class KthSmallestElementInABST {
@@ -47,18 +49,51 @@ public:
              << endl;
     }
 
-    static TreeNode *generateTree(vector<int> numbers) {
-        TreeNode *root = nullptr;
-        if (!numbers.empty()) {
-            root = new TreeNode(numbers[0]);
-            for (auto index = 1; index < numbers.size(); index++) {
-                insertNode(root, numbers[index]);
+    static KthSmallestElementInABSTNode *deserialize(vector<string> values) {
+        KthSmallestElementInABSTNode *root = nullptr;
+        if (!values.empty()) {
+            queue<KthSmallestElementInABSTNode *> nodes;
+            auto index = 0;
+            if (values[index] != "null") {
+                root = new KthSmallestElementInABSTNode(stoi(values[index]));
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                KthSmallestElementInABSTNode *temp;
+                while (index < values.size()) {
+                    temp = nodes.front();
+                    nodes.pop();
+                    if (values[index] != "null") {
+                        temp->left = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        nodes.push(temp->left);
+                    }
+                    index++;
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new KthSmallestElementInABSTNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
+                    }
+                    index++;
+                }
             }
         }
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(KthSmallestElementInABSTNode **head) {
         if ((*head)->left != nullptr) {
             deleteTree(&(*head)->left);
         }
@@ -69,7 +104,7 @@ public:
         *head = nullptr;
     }
 
-    static int kthSmallest(TreeNode *root, int k) {
+    static int kthSmallest(KthSmallestElementInABSTNode *root, int k) {
         assert(1 <= k);
         assert(k <= pow(10, 4));
         auto result = INT_MAX;
@@ -83,7 +118,7 @@ public:
 
 private:
 
-    static void inorderTraversal(TreeNode *root, vector<int> &inorder) {
+    static void inorderTraversal(KthSmallestElementInABSTNode *root, vector<int> &inorder) {
         if (root->left != nullptr) {
             inorderTraversal(root->left, inorder);
         }
@@ -93,16 +128,16 @@ private:
         }
     }
 
-    static void insertNode(TreeNode *head, int value) {
+    static void insertNode(KthSmallestElementInABSTNode *head, int value) {
         if (value < head->val) {
             if (head->left == nullptr) {
-                head->left = new TreeNode(value);
+                head->left = new KthSmallestElementInABSTNode(value);
             } else {
                 insertNode(head->left, value);
             }
         } else {
             if (head->right == nullptr) {
-                head->right = new TreeNode(value);
+                head->right = new KthSmallestElementInABSTNode(value);
             } else {
                 insertNode(head->right, value);
             }

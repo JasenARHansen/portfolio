@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,16 +8,16 @@
 
 using namespace std;
 
-struct TreeNode {
+struct SameTreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    SameTreeNode *left;
+    SameTreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    SameTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit SameTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    SameTreeNode(int x, SameTreeNode *left, SameTreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class SameTree {
@@ -47,27 +46,42 @@ public:
         -10^4 <= Node.val <= 10^4)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static SameTreeNode *deserialize(vector<string> values) {
+        SameTreeNode *root = nullptr;
         if (!values.empty()) {
+            queue<SameTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new SameTreeNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new SameTreeNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new SameTreeNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                SameTreeNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new SameTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new SameTreeNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -76,7 +90,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(SameTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -90,7 +104,7 @@ public:
         *head = nullptr;
     }
 
-    static bool isSameTree(TreeNode *p, TreeNode *q) {
+    static bool isSameTree(SameTreeNode *p, SameTreeNode *q) {
         auto result = false;
         if ((p == nullptr) && (q == nullptr)) {
             result = true;

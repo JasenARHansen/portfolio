@@ -1,5 +1,5 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
+#pragma ide diagnostic ignored "misc-no-recursion"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,15 +9,16 @@
 
 using namespace std;
 
-struct ListNode {
+struct RotateListNode {
+
     int val;
-    ListNode *next;
+    RotateListNode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    RotateListNode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit RotateListNode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    RotateListNode(int x, RotateListNode *next) : val(x), next(next) {}
 };
 
 class RotateList {
@@ -42,83 +43,87 @@ public:
         0 <= k <= 2 * 10^9)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static RotateListNode *deserialize(const vector<int> &numbers) {
         assert(numbers.size() <= 500);
-        ListNode *result = nullptr;
+        RotateListNode *result = nullptr;
         if (!numbers.empty()) {
             assert(-100 <= numbers[0]);
             assert(numbers[0] <= 100);
-            result = new ListNode(numbers[numbers.size() - 1]);
-            for (int index = numbers.size() - 2; index >= 0; index--) {
+            auto current = new RotateListNode(numbers[0]);
+            result = current;
+            for (int index = 1; index < numbers.size(); index++) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto node = new ListNode(numbers[index], result);
-                result = node;
+                current->next = new RotateListNode(numbers[index]);
+                current = current->next;
             }
         }
         return result;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(RotateListNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            RotateListNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *rotateRight(ListNode *head, int k) {
-        assert(0 <= k);
-        assert(k <= 2 * pow(10, 9));
-        // Prep for processing
-        auto data = copyList(head);
-        auto result = data.first;
-        if ((k == 0) || (result == nullptr)) {
-            return result;
-        }
-        auto size = data.second;
-        auto rotate = k % size;
-        auto working = result;
-        vector<ListNode *> pointerList;
-        auto index = 0;
-        while (index < size) {
-            if (size - index - 1 == rotate) {
-                auto temp = working;
-                working = working->next;
-                temp->next = nullptr;
-                index++;
-                continue;
-            } else if (size - index <= rotate) {
-                pointerList.push_back(working);
+    static RotateListNode *rotateRight(RotateListNode *head, int k) {
+        RotateListNode *result = nullptr;
+        if (head != nullptr) {
+            assert(0 <= k);
+            assert(k <= 2 * pow(10, 9));
+            // Prep for processing
+            auto data = copyList(head);
+            result = data.first;
+            if ((k == 0) || (result == nullptr)) {
+                return result;
             }
-            index++;
-            working = working->next;
-        }
-        if (!pointerList.empty()) {
-            pointerList[pointerList.size() - 1]->next = result;
-            result = pointerList[0];
+            auto size = data.second;
+            auto rotate = k % size;
+            auto working = result;
+            vector<RotateListNode *> pointerList;
+            auto index = 0;
+            while (index < size) {
+                if (size - index - 1 == rotate) {
+                    auto temp = working;
+                    working = working->next;
+                    temp->next = nullptr;
+                    index++;
+                    continue;
+                } else if (size - index <= rotate) {
+                    pointerList.push_back(working);
+                }
+                index++;
+                working = working->next;
+            }
+            if (!pointerList.empty()) {
+                pointerList[pointerList.size() - 1]->next = result;
+                result = pointerList[0];
+            }
         }
         return result;
     }
 
 private:
 
-    static pair<ListNode *, int> copyList(ListNode *head) {
-        ListNode *result = nullptr;
+    static pair<RotateListNode *, int> copyList(RotateListNode *head) {
+        RotateListNode *result = nullptr;
         auto count = 0;
         if (head != nullptr) {
             auto current = head;
-            result = new ListNode(current->val);
+            result = new RotateListNode(current->val);
             count++;
             auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
-                working->next = new ListNode(current->val);
+                working->next = new RotateListNode(current->val);
                 count++;
                 working = working->next;
             }

@@ -6,7 +6,7 @@
 
 TEST(Section6InheritanceTest, Inheritance) {
     string expected[]{"Section6Base action.",
-                         "Section6Inheritance action."};
+                      "Section6Inheritance action."};
     auto result1 = Section6Base::getAction();
     EXPECT_EQ(expected[0], result1);
     auto result2 = Section6SubClass::getAction();

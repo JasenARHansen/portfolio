@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -56,9 +55,7 @@ public:
             }
         }
         n = abs(n);
-        if (n == 0) {
-            result = 1;
-        } else if (x == 1) {
+        if ((n == 0) || (x == 1)) {
             result = 1;
         } else if (x == -1) {
             result = 1;

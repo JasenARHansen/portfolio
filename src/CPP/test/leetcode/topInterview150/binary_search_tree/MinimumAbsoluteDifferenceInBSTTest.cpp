@@ -12,8 +12,8 @@ TEST(MinimumAbsoluteDifferenceInBSTTest, description) {
 
 TEST(MinimumAbsoluteDifferenceInBSTTest, getMinimumDifference_1) {
     auto expected = 1;
-    vector<int> numbers{4, 2, 6, 1, 3};
-    auto root = MinimumAbsoluteDifferenceInBST::generateTree(numbers);
+    vector<string> values{"4", "2", "6", "1", "3"};
+    auto root = MinimumAbsoluteDifferenceInBST::deserialize(values);
     auto result = MinimumAbsoluteDifferenceInBST::getMinimumDifference(root);
     EXPECT_EQ(expected, result);
     MinimumAbsoluteDifferenceInBST::deleteTree(&root);
@@ -21,17 +21,8 @@ TEST(MinimumAbsoluteDifferenceInBSTTest, getMinimumDifference_1) {
 
 TEST(MinimumAbsoluteDifferenceInBSTTest, getMinimumDifference_2) {
     auto expected = 1;
-    vector<int> numbers{1, 0, 48, 12, 49};
-    auto root = MinimumAbsoluteDifferenceInBST::generateTree(numbers);
-    auto result = MinimumAbsoluteDifferenceInBST::getMinimumDifference(root);
-    EXPECT_EQ(expected, result);
-    MinimumAbsoluteDifferenceInBST::deleteTree(&root);
-}
-
-TEST(MinimumAbsoluteDifferenceInBSTTest, getMinimumDifference_3) {
-    auto expected = 9;
-    vector<int> numbers{236, 104, 227, 701, 911};
-    auto root = MinimumAbsoluteDifferenceInBST::generateTree(numbers);
+    vector<string> values{"1", "0", "48", "null", "null", "12", "49"};
+    auto root = MinimumAbsoluteDifferenceInBST::deserialize(values);
     auto result = MinimumAbsoluteDifferenceInBST::getMinimumDifference(root);
     EXPECT_EQ(expected, result);
     MinimumAbsoluteDifferenceInBST::deleteTree(&root);

@@ -14,9 +14,9 @@ TEST(LinkedListCycleTest, hasCycle_1) {
     auto expected = true;
     vector<int> values{3, 2, 0, -4};
     auto pos = 1;
-    auto head = LinkedListCycle::generateListWithCycle(pos, values);
+    auto head = LinkedListCycle::deserializeWithCycle(pos, values);
     auto result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteList(values.size(), &head);
+    LinkedListCycle::deleteList(&head);
     EXPECT_EQ(expected, result);
 }
 
@@ -24,9 +24,9 @@ TEST(LinkedListCycleTest, hasCycle_2) {
     auto expected = true;
     vector<int> values{1, 2};
     auto pos = 0;
-    auto head = LinkedListCycle::generateListWithCycle(pos, values);
+    auto head = LinkedListCycle::deserializeWithCycle(pos, values);
     auto result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteList(values.size(), &head);
+    LinkedListCycle::deleteList(&head);
     EXPECT_EQ(expected, result);
 }
 
@@ -34,9 +34,9 @@ TEST(LinkedListCycleTest, hasCycle_3) {
     auto expected = false;
     vector<int> values{1};
     auto pos = -1;
-    auto head = LinkedListCycle::generateListWithCycle(pos, values);
+    auto head = LinkedListCycle::deserializeWithCycle(pos, values);
     auto result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteList(values.size(), &head);
+    LinkedListCycle::deleteList(&head);
     EXPECT_EQ(expected, result);
 }
 
@@ -44,9 +44,9 @@ TEST(LinkedListCycleTest, hasCycle_4) {
     auto expected = false;
     vector<int> values{};
     auto pos = -1;
-    auto head = LinkedListCycle::generateListWithCycle(pos, values);
+    auto head = LinkedListCycle::deserializeWithCycle(pos, values);
     auto result = LinkedListCycle::hasCycle(head);
-    LinkedListCycle::deleteList(values.size(), &head);
+    LinkedListCycle::deleteList(&head);
     EXPECT_EQ(expected, result);
 }
 
@@ -55,7 +55,7 @@ TEST(LinkedListCycleTest, hasCycle_fail_1) {
     auto size = (int) pow(10, 4) + 1;
     vector<int> values(size);
     auto pos = 0;
-    EXPECT_EXIT(LinkedListCycle::generateListWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(LinkedListCycle::deserializeWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LinkedListCycleTest, hasCycle_fail_2) {
@@ -63,7 +63,7 @@ TEST(LinkedListCycleTest, hasCycle_fail_2) {
     auto size = (int) -pow(10, 5) - 1;
     vector<int> values{size};
     auto pos = 0;
-    EXPECT_EXIT(LinkedListCycle::generateListWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(LinkedListCycle::deserializeWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LinkedListCycleTest, hasCycle_fail_3) {
@@ -71,7 +71,7 @@ TEST(LinkedListCycleTest, hasCycle_fail_3) {
     auto size = (int) pow(10, 5) + 1;
     vector<int> values{size};
     auto pos = 0;
-    EXPECT_EXIT(LinkedListCycle::generateListWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(LinkedListCycle::deserializeWithCycle(pos, values), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

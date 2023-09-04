@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -8,15 +7,16 @@
 
 using namespace std;
 
-struct ListNode {
+struct ReverseLinkedListIINode {
+
     int val;
-    ListNode *next;
+    ReverseLinkedListIINode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    ReverseLinkedListIINode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit ReverseLinkedListIINode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    ReverseLinkedListIINode(int x, ReverseLinkedListIINode *next) : val(x), next(next) {}
 };
 
 class ReverseLinkedListII {
@@ -42,35 +42,35 @@ public:
         1 <= left <= right <= n)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static ReverseLinkedListIINode *deserialize(const vector<int> &numbers) {
         assert(!numbers.empty());
         assert(numbers.size() <= 500);
         assert(-500 <= numbers[0]);
         assert(numbers[0] <= 500);
-        auto current = new ListNode(numbers[numbers.size() - 1]);
-        for (int index = numbers.size() - 2; index >= 0; index--) {
+        auto current = new ReverseLinkedListIINode(numbers[numbers.size() - 1]);
+        for (int index = (int) numbers.size() - 2; index >= 0; index--) {
             assert(-500 <= numbers[index]);
             assert(numbers[index] <= 500);
-            auto node = new ListNode(numbers[index], current);
+            auto node = new ReverseLinkedListIINode(numbers[index], current);
             current = node;
         }
         return current;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(ReverseLinkedListIINode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            ReverseLinkedListIINode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *reverseBetween(ListNode *head, int left, int right) {
+    static ReverseLinkedListIINode *reverseBetween(ReverseLinkedListIINode *head, int left, int right) {
         assert(1 <= left);
         assert(1 <= right);
         assert(left <= right);
@@ -78,10 +78,10 @@ public:
         auto data = copyList(head);
         auto result = data.first;
         assert(data.second <= 500);
-        ListNode *before = nullptr;
-        ListNode *after = nullptr;
+        ReverseLinkedListIINode *before = nullptr;
+        ReverseLinkedListIINode *after = nullptr;
         auto working = result;
-        vector<ListNode *> pointerList;
+        vector<ReverseLinkedListIINode *> pointerList;
         auto index = 0;
         while ((working != nullptr) && (index <= right + 1)) {
             index++;
@@ -98,7 +98,7 @@ public:
             working = working->next;
         }
         // reverse values
-        for (index = pointerList.size() - 1; index >= 1; index--) {
+        for (index = (int) pointerList.size() - 1; index >= 1; index--) {
             pointerList[index]->next = pointerList[index - 1];
         }
         // Process edge point
@@ -117,17 +117,17 @@ public:
 
 private:
 
-    static pair<ListNode *, int> copyList(ListNode *head) {
-        ListNode *result = nullptr;
+    static pair<ReverseLinkedListIINode *, int> copyList(ReverseLinkedListIINode *head) {
+        ReverseLinkedListIINode *result = nullptr;
         auto count = 0;
         if (head != nullptr) {
             auto current = head;
-            result = new ListNode(current->val);
+            result = new ReverseLinkedListIINode(current->val);
             count++;
             auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
-                working->next = new ListNode(current->val);
+                working->next = new ReverseLinkedListIINode(current->val);
                 count++;
                 working = working->next;
             }

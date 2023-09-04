@@ -6,8 +6,8 @@
 
 TEST(Section7TwosComplementTest, performTwosComplement) {
     auto expectedOutput = "input = 5 as bits: 00000000000000000000000000000101\n"
-                           "1's Complement: 11111111111111111111111111111010\n"
-                           "2's Complement: 11111111111111111111111111111011\n";
+                          "1's Complement: 11111111111111111111111111111010\n"
+                          "2's Complement: 11111111111111111111111111111011\n";
     auto expected = -5;
     auto input = expected * -1;
     testing::internal::CaptureStdout();

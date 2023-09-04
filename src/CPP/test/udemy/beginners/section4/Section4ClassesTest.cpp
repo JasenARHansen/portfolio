@@ -6,9 +6,9 @@
 
 TEST(Section4ClassesTest, section4Classes) {
     string expected[]{"Smokey",
-                         "Hisssss",
-                         "Meeeeow",
-                         "Moving away."};
+                      "Hisssss",
+                      "Meeeeow",
+                      "Moving away."};
     Section4Classes cat;
     cat.setName(expected[0]);
     EXPECT_EQ(expected[0], cat.getName());
@@ -21,9 +21,9 @@ TEST(Section4ClassesTest, section4Classes) {
 
 TEST(Section4ClassesTest, Section4ClassesName) {
     string expected[]{"Smokey",
-                         "Hisssss",
-                         "Meeeeow",
-                         "Moving away."};
+                      "Hisssss",
+                      "Meeeeow",
+                      "Moving away."};
     Section4Classes cat(expected[0]);
     EXPECT_EQ(expected[0], cat.getName());
     cat.setUnHappy();
@@ -35,9 +35,9 @@ TEST(Section4ClassesTest, Section4ClassesName) {
 
 TEST(Section4ClassesTest, Section4ClassesInitilizationList) {
     string expected[]{"Smokey",
-                         "Hisssss",
-                         "Meeeeow",
-                         "Moving away."};
+                      "Hisssss",
+                      "Meeeeow",
+                      "Moving away."};
     auto age = 5;
     Section4Classes cat(expected[0], age);
     EXPECT_EQ(expected[0], cat.getName());

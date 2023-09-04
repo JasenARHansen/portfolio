@@ -9,19 +9,19 @@
 
 using namespace std;
 
-class Node {
+class RandomPointerNode {
 
 public:
 
     int val;
-    Node *next;
-    Node *random;
+    RandomPointerNode *next;
+    RandomPointerNode *random;
 
-    explicit Node(int _val) {
-        val = _val;
-        next = nullptr;
-        random = nullptr;
-    }
+    RandomPointerNode() : val(0), next(nullptr), random(nullptr) {}
+
+    explicit RandomPointerNode(int val) : val(val), next(nullptr), random(nullptr) {}
+
+    RandomPointerNode(int val, RandomPointerNode *next) : val(val), next(next), random(nullptr) {}
 };
 
 class CopyListWithRandomPointer {
@@ -57,69 +57,105 @@ public:
         Node.random is null or is pointing to some node in the linked list.)" << endl;
     }
 
-    static Node *generateList(const vector<int> &numbers) {
-        assert(numbers.size() <= 1000);
-        Node *root = nullptr;
-        if (!numbers.empty()) {
-            assert(-pow(10, 4) <= numbers[0]);
-            assert(numbers[0] <= pow(10, 4));
-            root = new Node(numbers[0]);
-            auto last = root;
-            for (auto index = 1; index < numbers.size(); index++) {
-                assert(-pow(10, 4) <= numbers[index]);
-                assert(numbers[index] <= pow(10, 4));
-                auto node = new Node(numbers[index]);
-                last->next = node;
-                last = node;
-            }
-        }
-        return root;
-    }
-
-    static void deleteList(const unsigned long int size, Node **head) {
-        auto index = size;
-        auto current = *head;
-        Node *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
-        }
-        *head = nullptr;
-    }
-
-    static Node *copyRandomList(Node *head) {
-        Node *result = nullptr;
+    static vector<pair<int, string>> serialize(RandomPointerNode *head) {
+        vector<pair<int, string>> result;
         if (head != nullptr) {
-            auto index = 0;
-            vector<Node *> indexes;
-            unordered_map<Node *, int> pointerMap;
-            result = new Node(head->val);
-            auto copyHead = head;
-            pointerMap[copyHead] = index;
-            auto current = result;
-            indexes.push_back(current);
-            while (copyHead->next != nullptr) {
+            int index = 0;
+            auto current = head;
+            unordered_map<RandomPointerNode *, int> indexes;
+            while (current != nullptr) {
+                indexes[current] = index;
                 index++;
-                copyHead = copyHead->next;
-                pointerMap[copyHead] = index;
-                auto node = new Node(copyHead->val);
-                current->next = node;
+                current = current->next;
+            }
+            current = head;
+            while (current != nullptr) {
+                result.emplace_back(current->val,
+                                    (current->random == nullptr) ? "null" : to_string(indexes.at(current->random)));
+                current = current->next;
+            }
+            indexes.clear();
+        }
+        return result;
+    }
+
+    static RandomPointerNode *deserialize(const vector<pair<int, string>> &numbers) {
+        assert(numbers.size() <= 500);
+        vector<RandomPointerNode *> indexes;
+        RandomPointerNode *head = nullptr;
+        if (!numbers.empty()) {
+            assert(-pow(10, 4) <= numbers[0].first);
+            assert(numbers[0].first <= pow(10, 4));
+            head = new RandomPointerNode(numbers[0].first);
+            auto current = head;
+            indexes.push_back(current);
+            for (int index = 1; index < numbers.size(); index++) {
+                assert(-pow(10, 4) <= numbers[index].first);
+                assert(numbers[index].first <= pow(10, 4));
+                current->next = new RandomPointerNode(numbers[index].first);
                 current = current->next;
                 indexes.push_back(current);
             }
-            // assign random pointer
-            copyHead = head;
-            index = 0;
-            while (copyHead != nullptr) {
-                if (copyHead->random != nullptr) {
-                    indexes[index]->random = indexes[pointerMap.at(copyHead->random)];
+            current = head;
+            for (const auto &number: numbers) {
+                if (number.second != "null") {
+                    current->random = indexes[stoi(number.second)];
                 }
-                copyHead = copyHead->next;
-                index++;
+                current = current->next;
             }
+        }
+        return head;
+    }
 
+    static void deleteList(RandomPointerNode **head) {
+        auto current = *head;
+        if (current != nullptr) {
+            RandomPointerNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
+        }
+    }
+
+    static RandomPointerNode *copyRandomList(RandomPointerNode *head) {
+        RandomPointerNode *result = nullptr;
+        if (head != nullptr) {
+            auto source = head;
+            unordered_map<RandomPointerNode *, int> pointerMap;
+            vector<RandomPointerNode *> indexes;
+            int index = 0;
+            // generate node to index map
+            while (source != nullptr) {
+                pointerMap[source] = index;
+                index++;
+                source = source->next;
+            }
+            // Generate new list and auto data
+            source = head;
+            result = new RandomPointerNode(source->val);
+            auto current = result;
+            indexes.push_back(current);
+            while (source->next != nullptr) {
+                current->next = new RandomPointerNode(source->next->val);
+                indexes.push_back(current->next);
+                source = source->next;
+                current = current->next;
+            }
+            // Populate random data
+            source = head;
+            current = result;
+            while (source != nullptr) {
+                if (source->random != nullptr) {
+                    current->random = indexes[pointerMap.at(source->random)];
+                }
+                source = source->next;
+                current = current->next;
+            }
+            indexes.clear();
+            pointerMap.clear();
         }
         return result;
     }

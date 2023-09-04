@@ -8,16 +8,17 @@
 
 using namespace std;
 
-struct TreeNode {
+struct ValidateBinarySearchTreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    ValidateBinarySearchTreeNode *left;
+    ValidateBinarySearchTreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    ValidateBinarySearchTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit ValidateBinarySearchTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    ValidateBinarySearchTreeNode(int x, ValidateBinarySearchTreeNode *left, ValidateBinarySearchTreeNode *right) : val(
+            x), left(left), right(right) {}
 };
 
 class ValidateBinarySearchTree {
@@ -48,27 +49,43 @@ public:
         -2^31 <= Node.val <= 2^31 - 1)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+
+    static ValidateBinarySearchTreeNode *deserialize(vector<string> values) {
+        ValidateBinarySearchTreeNode *root = nullptr;
         if (!values.empty()) {
+            queue<ValidateBinarySearchTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new ValidateBinarySearchTreeNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new ValidateBinarySearchTreeNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new ValidateBinarySearchTreeNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                ValidateBinarySearchTreeNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new ValidateBinarySearchTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new ValidateBinarySearchTreeNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -77,7 +94,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(ValidateBinarySearchTreeNode **head) {
         if ((*head)->left != nullptr) {
             deleteTree(&(*head)->left);
         }
@@ -88,7 +105,7 @@ public:
         *head = nullptr;
     }
 
-    static bool isValidBST(TreeNode *root) {
+    static bool isValidBST(ValidateBinarySearchTreeNode *root) {
         auto result = true;
         if (root != nullptr) {
             auto range = validNode(root);
@@ -101,7 +118,7 @@ public:
 
 private:
 
-    static pair<long long, long long> validNode(TreeNode *node) {
+    static pair<long long, long long> validNode(ValidateBinarySearchTreeNode *node) {
         pair<long long int, long long> fail = make_pair(LLONG_MIN, LLONG_MAX);
         if (node != nullptr) {
             pair<long long, long long> left;
@@ -130,16 +147,16 @@ private:
         return fail;
     }
 
-    static void insertNode(TreeNode *head, int value) {
+    static void insertNode(ValidateBinarySearchTreeNode *head, int value) {
         if (value < head->val) {
             if (head->left == nullptr) {
-                head->left = new TreeNode(value);
+                head->left = new ValidateBinarySearchTreeNode(value);
             } else {
                 insertNode(head->left, value);
             }
         } else {
             if (head->right == nullptr) {
-                head->right = new TreeNode(value);
+                head->right = new ValidateBinarySearchTreeNode(value);
             } else {
                 insertNode(head->right, value);
             }

@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,16 +8,17 @@
 
 using namespace std;
 
-struct TreeNode {
+struct MaximumDepthOfBinaryTreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    MaximumDepthOfBinaryTreeNode *left;
+    MaximumDepthOfBinaryTreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    MaximumDepthOfBinaryTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit MaximumDepthOfBinaryTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    MaximumDepthOfBinaryTreeNode(int x, MaximumDepthOfBinaryTreeNode *left, MaximumDepthOfBinaryTreeNode *right) : val(
+            x), left(left), right(right) {}
 };
 
 class MaximumDepthOfBinaryTree {
@@ -43,27 +43,42 @@ public:
         -100 <= Node.val <= 100)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static MaximumDepthOfBinaryTreeNode *deserialize(vector<string> values) {
+        MaximumDepthOfBinaryTreeNode *root = nullptr;
         if (!values.empty()) {
+            queue<MaximumDepthOfBinaryTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                MaximumDepthOfBinaryTreeNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -72,7 +87,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(MaximumDepthOfBinaryTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -86,7 +101,7 @@ public:
         *head = nullptr;
     }
 
-    static int maxDepth(TreeNode *root) {
+    static int maxDepth(MaximumDepthOfBinaryTreeNode *root) {
         auto result = 0;
         if (root != nullptr) {
             result = 1;

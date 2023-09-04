@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -53,7 +52,7 @@ public:
         vector<int> result(digits.size());
         auto carry = true;
         int value;
-        for (int index = digits.size() - 1; index >= 0; index--) {
+        for (int index = (int) digits.size() - 1; index >= 0; index--) {
             value = digits[index];
             if (carry) {
                 carry = false;

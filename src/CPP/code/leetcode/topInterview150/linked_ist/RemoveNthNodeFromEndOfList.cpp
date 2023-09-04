@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,15 +8,16 @@
 
 using namespace std;
 
-struct ListNode {
+struct RemoveNthNodeFromEndOfListNode {
+
     int val;
-    ListNode *next;
+    RemoveNthNodeFromEndOfListNode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    RemoveNthNodeFromEndOfListNode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit RemoveNthNodeFromEndOfListNode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    RemoveNthNodeFromEndOfListNode(int x, RemoveNthNodeFromEndOfListNode *next) : val(x), next(next) {}
 };
 
 class RemoveNthNodeFromEndOfList {
@@ -50,37 +50,37 @@ public:
         Could you do this in one pass?)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static RemoveNthNodeFromEndOfListNode *deserialize(const vector<int> &numbers) {
         assert(numbers.size() <= 30);
-        ListNode *result = nullptr;
+        RemoveNthNodeFromEndOfListNode *result = nullptr;
         if (!numbers.empty()) {
             assert(0 <= numbers[0]);
             assert(numbers[0] <= 100);
-            result = new ListNode(numbers[numbers.size() - 1]);
-            for (int index = numbers.size() - 2; index >= 0; index--) {
+            result = new RemoveNthNodeFromEndOfListNode(numbers[numbers.size() - 1]);
+            for (int index = (int) numbers.size() - 2; index >= 0; index--) {
                 assert(0 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto node = new ListNode(numbers[index], result);
+                auto node = new RemoveNthNodeFromEndOfListNode(numbers[index], result);
                 result = node;
             }
         }
         return result;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(RemoveNthNodeFromEndOfListNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            RemoveNthNodeFromEndOfListNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *removeNthFromEnd(ListNode *head, int n) {
+    static RemoveNthNodeFromEndOfListNode *removeNthFromEnd(RemoveNthNodeFromEndOfListNode *head, int n) {
         // Prep for processing
         auto data = copyList(head);
         auto result = data.first;
@@ -91,7 +91,7 @@ public:
         assert(1 <= n);
         assert(n <= size);
         auto working = result;
-        ListNode *previous = nullptr;
+        RemoveNthNodeFromEndOfListNode *previous = nullptr;
         auto index = 0;
         while (index <= size - n) {
             if (size - n == index) {
@@ -115,17 +115,17 @@ public:
 
 private:
 
-    static pair<ListNode *, int> copyList(ListNode *head) {
-        ListNode *result = nullptr;
+    static pair<RemoveNthNodeFromEndOfListNode *, int> copyList(RemoveNthNodeFromEndOfListNode *head) {
+        RemoveNthNodeFromEndOfListNode *result = nullptr;
         auto count = 0;
         if (head != nullptr) {
             auto current = head;
-            result = new ListNode(current->val);
+            result = new RemoveNthNodeFromEndOfListNode(current->val);
             count++;
             auto working = result;
             while (current->next != nullptr) {
                 current = current->next;
-                working->next = new ListNode(current->val);
+                working->next = new RemoveNthNodeFromEndOfListNode(current->val);
                 count++;
                 working = working->next;
             }

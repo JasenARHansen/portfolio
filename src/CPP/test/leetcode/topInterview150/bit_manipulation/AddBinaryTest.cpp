@@ -39,7 +39,7 @@ TEST(AddBinaryTest, addBinary_fail_1) {
     auto size = 1 - 1;
     string a(size, ' ');
     auto b = "1";
-    EXPECT_EXIT(AddBinary::addBinary(a,b), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddBinaryTest, addBinary_fail_2) {
@@ -47,7 +47,7 @@ TEST(AddBinaryTest, addBinary_fail_2) {
     auto size = (int) pow(10, 4) + 1;
     string a(size, ' ');
     auto b = "1";
-    EXPECT_EXIT(AddBinary::addBinary(a,b), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddBinaryTest, addBinary_fail_3) {
@@ -55,7 +55,7 @@ TEST(AddBinaryTest, addBinary_fail_3) {
     auto size = 1 - 1;
     auto a = "11";
     string b(size, ' ');
-    EXPECT_EXIT(AddBinary::addBinary(a,b), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddBinaryTest, addBinary_fail_4) {
@@ -63,7 +63,7 @@ TEST(AddBinaryTest, addBinary_fail_4) {
     auto size = (int) pow(10, 4) + 1;
     auto a = "11";
     string b(size, ' ');
-    EXPECT_EXIT(AddBinary::addBinary(a,b), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

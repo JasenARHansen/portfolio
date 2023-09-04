@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -36,8 +35,8 @@ public:
         assert (!b.empty());
         assert (b.size() <= pow(10, 4));
         string result;
-        int indexA = a.size() - 1;
-        int indexB = b.size() - 1;
+        int indexA = (int) a.size() - 1;
+        int indexB = (int) b.size() - 1;
         auto carry = 0;
         int current;
         while ((indexA >= 0) & (indexB >= 0)) {

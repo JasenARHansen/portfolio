@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <vector>
@@ -53,7 +52,7 @@ public:
             if (!read[i]) {
                 lastIndex = i;
                 current = nums[lastIndex];
-                nextIndex = (lastIndex + offset) % nums.size();
+                nextIndex = (int) ((lastIndex + offset) % nums.size());
                 read[lastIndex] = true;
                 while (!read[nextIndex]) {
                     read[nextIndex] = true;
@@ -61,7 +60,7 @@ public:
                     nums[nextIndex] = current;
                     lastIndex = nextIndex;
                     current = next;
-                    nextIndex = (lastIndex + offset) % nums.size();
+                    nextIndex = (int) ((lastIndex + offset) % nums.size());
                 }
                 nums[nextIndex] = current;
             }

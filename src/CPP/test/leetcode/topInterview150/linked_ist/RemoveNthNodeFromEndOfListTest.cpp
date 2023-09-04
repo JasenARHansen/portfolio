@@ -12,9 +12,9 @@ TEST(RemoveNthNodeFromEndOfListTest, description) {
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_1) {
     vector<int> expectedValues{1, 2, 3, 5};
-    auto expected = RemoveNthNodeFromEndOfList::generateList(expectedValues);
+    auto expected = RemoveNthNodeFromEndOfList::deserialize(expectedValues);
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 2;
     auto result = RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n);
     auto expectedTest = expected;
@@ -24,15 +24,15 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_1) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &expected);
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &result);
+    RemoveNthNodeFromEndOfList::deleteList(&expected);
+    RemoveNthNodeFromEndOfList::deleteList(&result);
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_2) {
     vector<int> expectedValues{};
-    auto expected = RemoveNthNodeFromEndOfList::generateList(expectedValues);
+    auto expected = RemoveNthNodeFromEndOfList::deserialize(expectedValues);
     vector<int> headValues{1};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 1;
     auto result = RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n);
     auto expectedTest = expected;
@@ -42,15 +42,15 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_2) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &expected);
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &result);
+    RemoveNthNodeFromEndOfList::deleteList(&expected);
+    RemoveNthNodeFromEndOfList::deleteList(&result);
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_3) {
     vector<int> expectedValues{1};
-    auto expected = RemoveNthNodeFromEndOfList::generateList(expectedValues);
+    auto expected = RemoveNthNodeFromEndOfList::deserialize(expectedValues);
     vector<int> headValues{1, 2};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 1;
     auto result = RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n);
     auto expectedTest = expected;
@@ -60,15 +60,15 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_3) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &expected);
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &result);
+    RemoveNthNodeFromEndOfList::deleteList(&expected);
+    RemoveNthNodeFromEndOfList::deleteList(&result);
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
     vector<int> expectedValues{2};
-    auto expected = RemoveNthNodeFromEndOfList::generateList(expectedValues);
+    auto expected = RemoveNthNodeFromEndOfList::deserialize(expectedValues);
     vector<int> headValues{1, 2};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 2;
     auto result = RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n);
     auto expectedTest = expected;
@@ -78,47 +78,47 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
         expectedTest = expectedTest->next;
         resultTest = resultTest->next;
     }
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &expected);
-    RemoveNthNodeFromEndOfList::deleteList(expectedValues.size(), &result);
+    RemoveNthNodeFromEndOfList::deleteList(&expected);
+    RemoveNthNodeFromEndOfList::deleteList(&result);
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_1) {
     // sz <= 30
     auto size = 30 + 1;
     vector<int> values(size);
-    EXPECT_EXIT(RemoveNthNodeFromEndOfList::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_2) {
-    // 0 <= Node.val
+    // 0 <= ListNode.val
     auto size = 0 - 1;
     vector<int> values{size};
-    EXPECT_EXIT(RemoveNthNodeFromEndOfList::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_3) {
-    // Node.val <= 100
+    // ListNode.val <= 100
     auto size = 100 + 1;
     vector<int> values{size};
-    EXPECT_EXIT(RemoveNthNodeFromEndOfList::generateList(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
     // 1 <= n
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 1 - 1;
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n), ::testing::ExitedWithCode(3), "");
-    RemoveNthNodeFromEndOfList::deleteList(headValues.size(), &head);
+    RemoveNthNodeFromEndOfList::deleteList(&head);
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_5) {
     // n <= sz
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RemoveNthNodeFromEndOfList::generateList(headValues);
+    auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = headValues.size() + 1;
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::removeNthFromEnd(head, n), ::testing::ExitedWithCode(3), "");
-    RemoveNthNodeFromEndOfList::deleteList(headValues.size(), &head);
+    RemoveNthNodeFromEndOfList::deleteList(&head);
 }
 
 #endif

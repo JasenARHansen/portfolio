@@ -6,11 +6,11 @@
 
 TEST(Section3FunctionsTest, menuSelection) {
     string expected[]{"Invalid option, quitting.",
-                         "Adding a record.",
-                         "Deleting a record.",
-                         "Viewing a record.",
-                         "Searching a record.",
-                         "Quiting."};
+                      "Adding a record.",
+                      "Deleting a record.",
+                      "Viewing a record.",
+                      "Searching a record.",
+                      "Quiting."};
     for (auto i = 0; i < 6; i++) {
         auto result = Section3Functions::menuSelection(i);
         EXPECT_EQ(expected[i], result);

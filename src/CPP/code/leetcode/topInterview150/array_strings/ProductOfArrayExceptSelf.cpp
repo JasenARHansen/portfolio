@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -52,7 +51,7 @@ public:
             left[i] = left[i - 1] * nums[i];
         }
         right[nums.size() - 1] = nums[nums.size() - 1];
-        for (int i = nums.size() - 2; i > 0; i--) {
+        for (int i = (int) nums.size() - 2; i > 0; i--) {
             right[i] = right[i + 1] * nums[i];
         }
         result[0] = right[1];

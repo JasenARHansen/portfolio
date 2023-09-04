@@ -12,8 +12,8 @@ TEST(BinaryTreeRightSideViewTest, description) {
 
 TEST(BinaryTreeRightSideViewTest, rightSideView_1) {
     vector<int> expected{1, 3, 4};
-    vector<string> values{"1", "2", "3", "null", "5", "null", "4", "null", "null", "null", "null"};
-    auto root = BinaryTreeRightSideView::generateTree(values);
+    vector<string> values{"1", "2", "3", "null", "5", "null", "4"};
+    auto root = BinaryTreeRightSideView::deserialize(values);
     auto result = BinaryTreeRightSideView::rightSideView(root);
     EXPECT_EQ(expected, result);
     BinaryTreeRightSideView::deleteTree(&root);
@@ -21,8 +21,8 @@ TEST(BinaryTreeRightSideViewTest, rightSideView_1) {
 
 TEST(BinaryTreeRightSideViewTest, rightSideView_2) {
     vector<int> expected{1, 3};
-    vector<string> values{"1", "null", "3", "null", "null"};
-    auto root = BinaryTreeRightSideView::generateTree(values);
+    vector<string> values{"1", "null", "3",};
+    auto root = BinaryTreeRightSideView::deserialize(values);
     auto result = BinaryTreeRightSideView::rightSideView(root);
     EXPECT_EQ(expected, result);
     BinaryTreeRightSideView::deleteTree(&root);
@@ -30,7 +30,8 @@ TEST(BinaryTreeRightSideViewTest, rightSideView_2) {
 
 TEST(BinaryTreeRightSideViewTest, rightSideView_3) {
     vector<int> expected{};
-    TreeNode *root = nullptr;
+    vector<string> values{};
+    auto root = BinaryTreeRightSideView::deserialize(values);
     auto result = BinaryTreeRightSideView::rightSideView(root);
     EXPECT_EQ(expected, result);
     BinaryTreeRightSideView::deleteTree(&root);

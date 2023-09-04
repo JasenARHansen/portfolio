@@ -12,9 +12,9 @@ TEST(SameTreeTest, description) {
 
 TEST(SameTreeTest, isSameTree_1) {
     auto expected = true;
-    vector<string> values{"1", "2", "3", "null", "null", "null", "null"};
-    auto p = SameTree::generateTree(values);
-    auto q = SameTree::generateTree(values);
+    vector<string> values{"1", "2", "3"};
+    auto p = SameTree::deserialize(values);
+    auto q = SameTree::deserialize(values);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -23,10 +23,10 @@ TEST(SameTreeTest, isSameTree_1) {
 
 TEST(SameTreeTest, isSameTree_2) {
     auto expected = false;
-    vector<string> valuesP{"1", "2", "null", "null", "null"};
-    auto p = SameTree::generateTree(valuesP);
-    vector<string> valuesQ{"1", "null", "2", "null", "null"};
-    auto q = SameTree::generateTree(valuesQ);
+    vector<string> valuesP{"1", "2"};
+    auto p = SameTree::deserialize(valuesP);
+    vector<string> valuesQ{"1", "null", "2"};
+    auto q = SameTree::deserialize(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -35,10 +35,10 @@ TEST(SameTreeTest, isSameTree_2) {
 
 TEST(SameTreeTest, isSameTree_3) {
     auto expected = false;
-    vector<string> valuesP{"1", "2", "1", "null", "null", "null", "null"};
-    auto p = SameTree::generateTree(valuesP);
-    vector<string> valuesQ{"1", "1", "2", "null", "null", "null", "null"};
-    auto q = SameTree::generateTree(valuesQ);
+    vector<string> valuesP{"1", "2", "1"};
+    auto p = SameTree::deserialize(valuesP);
+    vector<string> valuesQ{"1", "1", "2"};
+    auto q = SameTree::deserialize(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -48,9 +48,9 @@ TEST(SameTreeTest, isSameTree_3) {
 TEST(SameTreeTest, isSameTree_4) {
     auto expected = false;
     vector<string> valuesP{};
-    auto p = SameTree::generateTree(valuesP);
-    vector<string> valuesQ{"1", "null", "null"};
-    auto q = SameTree::generateTree(valuesQ);
+    auto p = SameTree::deserialize(valuesP);
+    vector<string> valuesQ{"1"};
+    auto q = SameTree::deserialize(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);

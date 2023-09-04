@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnusedValue"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -85,7 +84,7 @@ public:
             assert (!words[index].empty());
             assert (words[index].size() <= 20);
             if ((currentCharacters + words[index].size() + currentWords) <= maxWidth) {
-                currentCharacters += words[index].size();
+                currentCharacters += (int) words[index].size();
                 // special justification if the last word is included
                 if (index == words.size() - 1) {
                     last = true;

@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "bugprone-branch-clone"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,15 +8,16 @@
 
 using namespace std;
 
-struct ListNode {
+struct MergeTwoSortedListsNode {
+
     int val;
-    ListNode *next;
+    MergeTwoSortedListsNode *next;
 
-    ListNode() : val(0), next(nullptr) {}
+    MergeTwoSortedListsNode() : val(0), next(nullptr) {}
 
-    explicit ListNode(int x) : val(x), next(nullptr) {}
+    explicit MergeTwoSortedListsNode(int x) : val(x), next(nullptr) {}
 
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    MergeTwoSortedListsNode(int x, MergeTwoSortedListsNode *next) : val(x), next(next) {}
 };
 
 class MergeTwoSortedLists {
@@ -48,39 +48,40 @@ public:
         Both list1 and list2 are sorted in non-decreasing order.)" << endl;
     }
 
-    static ListNode *generateList(const vector<int> &numbers) {
+    static MergeTwoSortedListsNode *deserialize(const vector<int> &numbers) {
         assert(numbers.size() <= 50);
-        ListNode *current = nullptr;
+        MergeTwoSortedListsNode *current = nullptr;
         if (!numbers.empty()) {
             assert(-100 <= numbers[0]);
             assert(numbers[0] <= 100);
-            current = new ListNode(numbers[numbers.size() - 1]);
-            for (int index = numbers.size() - 2; index >= 0; index--) {
+            current = new MergeTwoSortedListsNode(numbers[numbers.size() - 1]);
+            for (int index = (int) numbers.size() - 2; index >= 0; index--) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                auto node = new ListNode(numbers[index], current);
+                auto node = new MergeTwoSortedListsNode(numbers[index], current);
                 current = node;
             }
         }
         return current;
     }
 
-    static void deleteList(const unsigned long int size, ListNode **head) {
-        auto index = size;
+    static void deleteList(MergeTwoSortedListsNode **head) {
         auto current = *head;
-        ListNode *next;
-        while (index > 0) {
-            next = current->next;
-            delete current;
-            current = next;
-            index--;
+        if (current != nullptr) {
+            MergeTwoSortedListsNode *next;
+            while (current->next != nullptr) {
+                next = current->next;
+                delete current;
+                current = next;
+            }
+            *head = nullptr;
         }
-        *head = nullptr;
     }
 
-    static ListNode *mergeTwoLists_splice(ListNode *list1, ListNode *list2) {
+    static MergeTwoSortedListsNode *
+    mergeTwoLists_splice(MergeTwoSortedListsNode *list1, MergeTwoSortedListsNode *list2) {
         // This version makes a new list using the pieces of the original lists, it will mutate the source data.
-        ListNode *result = nullptr;
+        MergeTwoSortedListsNode *result = nullptr;
         if ((list1 == nullptr) && (list2 == nullptr)) {
             return result;
         }
@@ -110,13 +111,13 @@ public:
             }
             current = current->next;
         }
-        // process if lval has remaining digits
+        // process if lVal has remaining digits
         while (lVal != nullptr) {
             current->next = lVal;
             current = current->next;
             lVal = lVal->next;
         }
-        // process if rval has remaining digits
+        // process if rVal has remaining digits
         while (rVal != nullptr) {
             current->next = rVal;
             current = current->next;
@@ -125,50 +126,50 @@ public:
         return result;
     }
 
-    static ListNode *mergeTwoLists_new(ListNode *list1, ListNode *list2) {
+    static MergeTwoSortedListsNode *mergeTwoLists_new(MergeTwoSortedListsNode *list1, MergeTwoSortedListsNode *list2) {
         // This version makes a new list with the values.  It does not mutate the source data.
-        ListNode *result = nullptr;
+        MergeTwoSortedListsNode *result = nullptr;
         if ((list1 == nullptr) && (list2 == nullptr)) {
             return result;
         }
         auto lVal = list1;
         auto rVal = list2;
         if (lVal == nullptr) {
-            result = new ListNode(rVal->val);
+            result = new MergeTwoSortedListsNode(rVal->val);
             rVal = rVal->next;
         } else if (rVal == nullptr) {
-            result = new ListNode(lVal->val);
+            result = new MergeTwoSortedListsNode(lVal->val);
             lVal = lVal->next;
         } else if (lVal->val < rVal->val) {
-            result = new ListNode(lVal->val);
+            result = new MergeTwoSortedListsNode(lVal->val);
             lVal = lVal->next;
         } else {
-            result = new ListNode(rVal->val);
+            result = new MergeTwoSortedListsNode(rVal->val);
             rVal = rVal->next;
         }
         auto current = result;
         while ((lVal != nullptr) && ((rVal != nullptr))) {
-            ListNode *working;
+            MergeTwoSortedListsNode *working;
             if (lVal->val < rVal->val) {
-                working = new ListNode(lVal->val);
+                working = new MergeTwoSortedListsNode(lVal->val);
                 lVal = lVal->next;
             } else {
-                working = new ListNode(rVal->val);
+                working = new MergeTwoSortedListsNode(rVal->val);
                 rVal = rVal->next;
             }
             current->next = working;
             current = working;
         }
-        // process if lval has remaining digits
+        // process if lVal has remaining digits
         while (lVal != nullptr) {
-            auto working = new ListNode(lVal->val);
+            auto working = new MergeTwoSortedListsNode(lVal->val);
             current->next = working;
             current = working;
             lVal = lVal->next;
         }
-        // process if rval has remaining digits
+        // process if rVal has remaining digits
         while (rVal != nullptr) {
-            auto working = new ListNode(rVal->val);
+            auto working = new MergeTwoSortedListsNode(rVal->val);
             current->next = working;
             current = working;
             rVal = rVal->next;

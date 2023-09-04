@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -35,8 +34,8 @@ public:
     static vector<int> spiralOrder(vector<vector<int>> &matrix) {
         assert (!matrix.empty());
         assert (matrix.size() <= 10);
-        auto rows = matrix.size();
-        auto columns = matrix[0].size();
+        auto rows = (int) matrix.size();
+        auto columns = (int) matrix[0].size();
         for (const auto &i: matrix) {
             assert (!i.empty());
             assert (i.size() <= 10);
@@ -64,13 +63,13 @@ public:
                 validate(matrix, test, result, row, column);
             }
             // Navigate left
-            for (int index = matrix[ring].size() - ring - 2; index >= ring; index--) {
-                row = matrix.size() - ring - 1;
+            for (int index = (int) matrix[ring].size() - ring - 2; index >= ring; index--) {
+                row = (int) matrix.size() - ring - 1;
                 column = index;
                 validate(matrix, test, result, row, column);
             }
             // Navigate up
-            for (int index = matrix.size() - ring - 2; index > ring; index--) {
+            for (int index = (int) matrix.size() - ring - 2; index > ring; index--) {
                 row = index;
                 column = ring;
                 validate(matrix, test, result, row, column);

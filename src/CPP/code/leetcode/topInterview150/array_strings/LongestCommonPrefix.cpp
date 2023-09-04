@@ -17,34 +17,34 @@ public:
     If there is no common prefix, return an empty string "".
 
     Example 1:
-    Input: strs = ["flower","flow","flight"]
+    Input: strings = ["flower","flow","flight"]
         Output: "fl"
 
     Example 2:
-        Input: strs = ["dog","racecar","car"]
+        Input: strings = ["dog","racecar","car"]
         Output: ""
         Explanation:
             There is no common prefix among the input strings.
 
     Constraints:
-        1 <= strs.length <= 200
-        0 <= strs[i].length <= 200
-        strs[i] consists of only lowercase English letters.)" << endl;
+        1 <= strings.length <= 200
+        0 <= strings[i].length <= 200
+        strings[i] consists of only lowercase English letters.)" << endl;
     }
 
-    static string longestCommonPrefix(vector<string> &strs) {
-        assert (!strs.empty());
-        assert (strs.size() <= 200);
+    static string longestCommonPrefix(vector<string> &strings) {
+        assert (!strings.empty());
+        assert (strings.size() <= 200);
         string result;
         auto process = true;
         char current;
         auto index = 0;
         while (process) {
-            if (index >= strs[0].size()) {
+            if (index >= strings[0].size()) {
                 break;
             }
-            current = strs[0].at(index);
-            for (const auto &entry: strs) {
+            current = strings[0].at(index);
+            for (const auto &entry: strings) {
                 if ((index >= entry.size()) || (current != entry.at(index))) {
                     process = false;
                     break;

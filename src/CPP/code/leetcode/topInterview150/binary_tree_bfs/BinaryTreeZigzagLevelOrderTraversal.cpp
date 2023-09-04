@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,16 +8,18 @@
 
 using namespace std;
 
-struct TreeNode {
+struct BinaryTreeZigzagLevelOrderTraversalNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    BinaryTreeZigzagLevelOrderTraversalNode *left;
+    BinaryTreeZigzagLevelOrderTraversalNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    BinaryTreeZigzagLevelOrderTraversalNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit BinaryTreeZigzagLevelOrderTraversalNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    BinaryTreeZigzagLevelOrderTraversalNode(int x, BinaryTreeZigzagLevelOrderTraversalNode *left,
+                                            BinaryTreeZigzagLevelOrderTraversalNode *right) : val(x), left(left),
+                                                                                              right(right) {}
 };
 
 class BinaryTreeZigzagLevelOrderTraversal {
@@ -46,27 +47,42 @@ public:
         -100 <= Node.val <= 100)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static BinaryTreeZigzagLevelOrderTraversalNode *deserialize(vector<string> values) {
+        BinaryTreeZigzagLevelOrderTraversalNode *root = nullptr;
         if (!values.empty()) {
+            queue<BinaryTreeZigzagLevelOrderTraversalNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                BinaryTreeZigzagLevelOrderTraversalNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new BinaryTreeZigzagLevelOrderTraversalNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -75,7 +91,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(BinaryTreeZigzagLevelOrderTraversalNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -89,13 +105,13 @@ public:
         *head = nullptr;
     }
 
-    static vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
+    static vector<vector<int>> zigzagLevelOrder(BinaryTreeZigzagLevelOrderTraversalNode *root) {
         vector<vector<int>> result{};
         if (root != nullptr) {
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
+            queue<BinaryTreeZigzagLevelOrderTraversalNode *> levelA;
+            queue<BinaryTreeZigzagLevelOrderTraversalNode *> levelB;
             levelA.push(root);
-            TreeNode *processing;
+            BinaryTreeZigzagLevelOrderTraversalNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 if (!levelA.empty()) {
                     result.emplace_back();

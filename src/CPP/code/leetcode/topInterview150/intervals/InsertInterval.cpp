@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "bugprone-branch-clone"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
@@ -16,8 +15,8 @@ public:
 
     static void description() {
         cout << R"(57. Insert Interval
-    You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
-    Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+    You are given an array of non-overlapping intervals intervals where intervals[i] = [startI, endI] represent the start and the end of the ith interval and intervals is sorted in ascending order by startI. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
+    Insert newInterval into intervals such that intervals is still sorted in ascending order by startI and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
     Return intervals after the insertion.
 
     Example 1:
@@ -33,8 +32,8 @@ public:
     Constraints:
         0 <= intervals.length <= 10^4
         intervals[i].length == 2
-        0 <= starti <= endi <= 10^5
-        intervals is sorted by starti in ascending order.
+        0 <= startI <= endI <= 10^5
+        intervals is sorted by startI in ascending order.
         newInterval.length == 2
         0 <= start <= end <= 10^5)" << endl;
     }
@@ -59,7 +58,7 @@ public:
             }
         }
         // Process vector am make all necessary merges
-        for (int index = result.size() - 2; index >= 0; index--) {
+        for (int index = (int) result.size() - 2; index >= 0; index--) {
             // Based on index 0 of the 2 vectors, detect and merge
             if (detect(result[index], result[index + 1])) {
                 mergeAndRemove(result, index);

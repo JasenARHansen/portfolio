@@ -18,7 +18,7 @@ TEST(Section2StringsTest, hello_neq) {
 
 TEST(Section2StringsTest, helloOut_eq) {
     auto expected = "Hello Jasen\n"
-                           "Hello Jasen\n";
+                    "Hello Jasen\n";
     testing::internal::CaptureStdout();
     Section2Strings::helloOut();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());

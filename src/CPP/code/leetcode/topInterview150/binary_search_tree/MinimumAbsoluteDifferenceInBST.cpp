@@ -4,19 +4,21 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
-struct TreeNode {
+struct MinimumAbsoluteDifferenceInBSTNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    MinimumAbsoluteDifferenceInBSTNode *left;
+    MinimumAbsoluteDifferenceInBSTNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    MinimumAbsoluteDifferenceInBSTNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit MinimumAbsoluteDifferenceInBSTNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    MinimumAbsoluteDifferenceInBSTNode(int x, MinimumAbsoluteDifferenceInBSTNode *left,
+                                       MinimumAbsoluteDifferenceInBSTNode *right) : val(x), left(left), right(right) {}
 };
 
 class MinimumAbsoluteDifferenceInBST {
@@ -42,18 +44,51 @@ public:
     Note: This question is the same as 783: https://leetcode.com/problems/minimum-distance-between-bst-nodes/)" << endl;
     }
 
-    static TreeNode *generateTree(vector<int> numbers) {
-        TreeNode *root = nullptr;
-        if (!numbers.empty()) {
-            root = new TreeNode(numbers[0]);
-            for (auto index = 1; index < numbers.size(); index++) {
-                insertNode(root, numbers[index]);
+    static MinimumAbsoluteDifferenceInBSTNode *deserialize(vector<string> values) {
+        MinimumAbsoluteDifferenceInBSTNode *root = nullptr;
+        if (!values.empty()) {
+            queue<MinimumAbsoluteDifferenceInBSTNode *> nodes;
+            auto index = 0;
+            if (values[index] != "null") {
+                root = new MinimumAbsoluteDifferenceInBSTNode(stoi(values[index]));
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new MinimumAbsoluteDifferenceInBSTNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new MinimumAbsoluteDifferenceInBSTNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                MinimumAbsoluteDifferenceInBSTNode *temp;
+                while (index < values.size()) {
+                    temp = nodes.front();
+                    nodes.pop();
+                    if (values[index] != "null") {
+                        temp->left = new MinimumAbsoluteDifferenceInBSTNode(stoi(values[index]));
+                        nodes.push(temp->left);
+                    }
+                    index++;
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new MinimumAbsoluteDifferenceInBSTNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
+                    }
+                    index++;
+                }
             }
         }
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(MinimumAbsoluteDifferenceInBSTNode **head) {
         if ((*head)->left != nullptr) {
             deleteTree(&(*head)->left);
         }
@@ -64,7 +99,7 @@ public:
         *head = nullptr;
     }
 
-    static int getMinimumDifference(TreeNode *root) {
+    static int getMinimumDifference(MinimumAbsoluteDifferenceInBSTNode *root) {
         auto result = INT_MAX;
         if (root != nullptr) {
             vector<int> inorder;
@@ -78,7 +113,7 @@ public:
 
 private:
 
-    static void inorderTraversal(TreeNode *root, vector<int> &inorder) {
+    static void inorderTraversal(MinimumAbsoluteDifferenceInBSTNode *root, vector<int> &inorder) {
         if (root->left != nullptr) {
             inorderTraversal(root->left, inorder);
         }
@@ -88,16 +123,16 @@ private:
         }
     }
 
-    static void insertNode(TreeNode *head, int value) {
+    static void insertNode(MinimumAbsoluteDifferenceInBSTNode *head, int value) {
         if (value < head->val) {
             if (head->left == nullptr) {
-                head->left = new TreeNode(value);
+                head->left = new MinimumAbsoluteDifferenceInBSTNode(value);
             } else {
                 insertNode(head->left, value);
             }
         } else {
             if (head->right == nullptr) {
-                head->right = new TreeNode(value);
+                head->right = new MinimumAbsoluteDifferenceInBSTNode(value);
             } else {
                 insertNode(head->right, value);
             }

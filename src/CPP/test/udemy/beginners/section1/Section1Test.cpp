@@ -19,14 +19,14 @@ TEST(Section1Test, hello_neq) {
 TEST(Section1Test, helloOutEndl_eq) {
     auto expected = "!!! Hello there World!!!\n";
     testing::internal::CaptureStdout();
-    Section1::helloOutEndl();
+    Section1::helloOutEndL();
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
 TEST(Section1Test, helloOutEndl_neq) {
     auto expected = "Cat";
     testing::internal::CaptureStdout();
-    Section1::helloOutEndl();
+    Section1::helloOutEndL();
     EXPECT_NE(expected, testing::internal::GetCapturedStdout());
 }
 

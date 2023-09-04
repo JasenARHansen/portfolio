@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -39,7 +38,7 @@ public:
         while ((left & mask) != (right & mask)) {
             mask <<= 1;
         }
-        return left & mask;
+        return (int) (left & mask);
     }
 };
 

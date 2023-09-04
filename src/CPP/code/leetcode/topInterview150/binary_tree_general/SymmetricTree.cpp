@@ -8,16 +8,16 @@
 
 using namespace std;
 
-struct TreeNode {
+struct SymmetricTreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    SymmetricTreeNode *left;
+    SymmetricTreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    SymmetricTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit SymmetricTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    SymmetricTreeNode(int x, SymmetricTreeNode *left, SymmetricTreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class SymmetricTree {
@@ -44,27 +44,42 @@ public:
         Could you solve it both recursively and iteratively?)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static SymmetricTreeNode *deserialize(vector<string> values) {
+        SymmetricTreeNode *root = nullptr;
         if (!values.empty()) {
+            queue<SymmetricTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new SymmetricTreeNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new SymmetricTreeNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new SymmetricTreeNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                SymmetricTreeNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new SymmetricTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new SymmetricTreeNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -73,7 +88,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(SymmetricTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -87,7 +102,7 @@ public:
         *head = nullptr;
     }
 
-    static bool isSymmetric(TreeNode *root) {
+    static bool isSymmetric(SymmetricTreeNode *root) {
         if (root == nullptr) {
             return true;
         }
@@ -96,7 +111,7 @@ public:
 
 private:
 
-    static bool isSymmetric(TreeNode *treeA, TreeNode *treeB) {
+    static bool isSymmetric(SymmetricTreeNode *treeA, SymmetricTreeNode *treeB) {
         if ((treeA == nullptr) && (treeB == nullptr)) {
             return true;
         } else if ((treeA == nullptr) || (treeB == nullptr)) {

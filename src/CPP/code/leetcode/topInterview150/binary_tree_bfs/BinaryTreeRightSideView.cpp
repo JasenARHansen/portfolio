@@ -1,6 +1,5 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
-#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -9,16 +8,18 @@
 
 using namespace std;
 
-struct TreeNode {
+struct BinaryTreeRightSideViewNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    BinaryTreeRightSideViewNode *left;
+    BinaryTreeRightSideViewNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    BinaryTreeRightSideViewNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    explicit BinaryTreeRightSideViewNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    BinaryTreeRightSideViewNode(int x, BinaryTreeRightSideViewNode *left, BinaryTreeRightSideViewNode *right) : val(x),
+                                                                                                                left(left),
+                                                                                                                right(right) {}
 };
 
 class BinaryTreeRightSideView {
@@ -46,27 +47,42 @@ public:
         -100 <= Node.val <= 100)" << endl;
     }
 
-    static TreeNode *generateTree(vector<string> values) {
-        TreeNode *root = nullptr;
+    static BinaryTreeRightSideViewNode *deserialize(vector<string> values) {
+        BinaryTreeRightSideViewNode *root = nullptr;
         if (!values.empty()) {
+            queue<BinaryTreeRightSideViewNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                queue<TreeNode *> nodes;
-                root = new TreeNode(stoi(values[index]));
+                root = new BinaryTreeRightSideViewNode(stoi(values[index]));
                 index++;
-                nodes.push(root);
-                TreeNode *temp;
-                while (!nodes.empty()) {
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new BinaryTreeRightSideViewNode(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new BinaryTreeRightSideViewNode(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                BinaryTreeRightSideViewNode *temp;
+                while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new TreeNode(stoi(values[index]));
+                        temp->left = new BinaryTreeRightSideViewNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
-                    if (values[index] != "null") {
-                        temp->right = new TreeNode(stoi(values[index]));
-                        nodes.push(temp->right);
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new BinaryTreeRightSideViewNode(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
                     }
                     index++;
                 }
@@ -75,7 +91,7 @@ public:
         return root;
     }
 
-    static void deleteTree(TreeNode **head) {
+    static void deleteTree(BinaryTreeRightSideViewNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -89,14 +105,14 @@ public:
         *head = nullptr;
     }
 
-    static vector<int> rightSideView(TreeNode *root) {
+    static vector<int> rightSideView(BinaryTreeRightSideViewNode *root) {
         vector<int> result{};
         if (root != nullptr) {
             vector<vector<int>> data{};
-            queue<TreeNode *> levelA;
-            queue<TreeNode *> levelB;
+            queue<BinaryTreeRightSideViewNode *> levelA;
+            queue<BinaryTreeRightSideViewNode *> levelB;
             levelA.push(root);
-            TreeNode *processing;
+            BinaryTreeRightSideViewNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 if (!levelA.empty()) {
                     data.emplace_back();

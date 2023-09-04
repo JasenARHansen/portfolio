@@ -15,7 +15,7 @@ public:
 
     static void description() {
         cout << R"(56. Merge Intervals
-    Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+    Given an array of intervals where intervals[i] = [startI, endI], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
     Example 1:
         Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
@@ -32,7 +32,7 @@ public:
     Constraints:
         1 <= intervals.length <= 10^4
         intervals[i].length == 2
-        0 <= starti <= endi <= 10^4)" << endl;
+        0 <= startI <= endI <= 10^4)" << endl;
     }
 
     static vector<vector<int>> merge(const vector<vector<int>> &intervals) {
@@ -45,7 +45,7 @@ public:
         }
         // Input being sorted is not a requirement, so sort for easy processing.
         sort(result.begin(), result.end(), [](vector<int> &a, vector<int> &b) { return a[0] < b[0]; });
-        for (int index = result.size() - 2; index >= 0; index--) {
+        for (int index = (int) result.size() - 2; index >= 0; index--) {
             // Based on index 0 of the 2 vectors, detect and merge
             if (detect(result[index], result[index + 1])) {
                 mergeAndRemove(result, index);
@@ -79,26 +79,7 @@ public:
                 while (process) {
                     process = false;
                     for (auto index = 0; index < result.size(); index++) {
-                        // case 1.  result[index][0] <= processing[0] <= result[index][1]
-                        if ((result[index][0] <= processing[0]) &&
-                            (processing[0] <= result[index][1])) {
-                            process = true;
-                        }
-                            // case 2.  result[index][0] <= processing[1] <= result[index][1]
-                        else if ((result[index][0] <= processing[1]) &&
-                                 (processing[1] <= result[index][1])) {
-                            process = true;
-                        }
-                            // case 3.  processing[0] <= result[index][0] <= processing[1]
-                        else if ((processing[0] <= result[index][0]) &&
-                                 (result[index][0] <= processing[1])) {
-                            process = true;
-                        }
-                            // case 3.  processing[0] <= result[index][1] <= processing[1]
-                        else if ((processing[0] <= result[index][1]) &&
-                                 (result[index][1] <= processing[1])) {
-                            process = true;
-                        }
+                        process = detect(result[index], processing);
                         if (process) {
                             // merge
                             processing[0] = min(processing[0], result[index][0]);
@@ -134,23 +115,13 @@ private:
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
         auto overlap = false;
         // case 1.  result[index][0] <= processing[0] <= result[index][1]
-        if ((interval1[0] <= interval2[0]) &&
-            (interval2[0] <= interval1[1])) {
-            overlap = true;
-        }
+        if (((interval1[0] <= interval2[0]) && (interval2[0] <= interval1[1])) ||
             // case 2.  interval1[0] <= interval2[1] <= interval1[1]
-        else if ((interval1[0] <= interval2[1]) &&
-                 (interval2[1] <= interval1[1])) {
-            overlap = true;
-        }
+            ((interval1[0] <= interval2[1]) && (interval2[1] <= interval1[1])) ||
             // case 3.  interval2[0] <= interval1[0] <= interval2[1]
-        else if ((interval2[0] <= interval1[0]) &&
-                 (interval1[0] <= interval2[1])) {
-            overlap = true;
-        }
+            ((interval2[0] <= interval1[0]) && (interval1[0] <= interval2[1])) ||
             // case 3.  interval2[0] <= interval1[1] <= interval2[1]
-        else if ((interval2[0] <= interval1[1]) &&
-                 (interval1[1] <= interval2[1])) {
+            ((interval2[0] <= interval1[1]) && (interval1[1] <= interval2[1]))) {
             overlap = true;
         }
         return overlap;
