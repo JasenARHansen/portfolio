@@ -1,5 +1,5 @@
-#ifndef INTERVIEW_FACEBOOK_PREPARATION_Look_And_Say_TEST
-#define INTERVIEW_FACEBOOK_PREPARATION_Look_And_Say_TEST
+#ifndef INTERVIEW_FACEBOOK_PREPARATION_LOOK_AND_SAY_TEST
+#define INTERVIEW_FACEBOOK_PREPARATION_LOOK_AND_SAY_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/interview/facebook/preparation/LookAndSay.cpp"
