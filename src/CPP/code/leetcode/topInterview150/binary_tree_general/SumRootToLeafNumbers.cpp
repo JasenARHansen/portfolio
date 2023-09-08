@@ -60,7 +60,7 @@ public:
     static SumRootToLeafNumbersTreeNode *deserialize(vector<string> values) {
         SumRootToLeafNumbersTreeNode *root = nullptr;
         if (!values.empty()) {
-            queue < SumRootToLeafNumbersTreeNode * > nodes;
+            queue<SumRootToLeafNumbersTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
                 root = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
@@ -130,13 +130,13 @@ public:
 
 private:
     static vector<vector<int>> traverseTree(SumRootToLeafNumbersTreeNode *node) {
-        vector <vector<int>> result;
+        vector<vector<int>> result;
         if (node != nullptr) {
             if ((node->left == nullptr) && (node->right == nullptr)) {
-                result.push_back(vector < int > {node->val});
+                result.push_back(vector<int>{node->val});
             } else {
-                vector <vector<int>> left = traverseTree(node->left);
-                vector <vector<int>> right = traverseTree(node->right);
+                vector<vector<int>> left = traverseTree(node->left);
+                vector<vector<int>> right = traverseTree(node->right);
                 for (auto digits: left) {
                     digits.push_back(node->val);
                     result.push_back(digits);
