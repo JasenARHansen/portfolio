@@ -2,7 +2,7 @@
 #define INTERVIEW_FACEBOOK_PREPARATION_EDIT_DISTANCE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/facebook/preparation/EditDistance.cpp"
+#include "../../../../code/interview/meta/preparation/EditDistance.cpp"
 
 TEST(EditDistanceTest, description) {
     testing::internal::CaptureStdout();

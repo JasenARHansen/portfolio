@@ -4,7 +4,7 @@
 #define INTERVIEW_FACEBOOK_PREPARATION_SPIRAL_ARRAY_2D_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/facebook/preparation/SpiralArray2D.cpp"
+#include "../../../../code/interview/meta/preparation/SpiralArray2D.cpp"
 
 TEST(SpiralArray2dTest, description) {
     testing::internal::CaptureStdout();

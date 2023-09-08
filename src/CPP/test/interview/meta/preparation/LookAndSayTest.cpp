@@ -2,7 +2,7 @@
 #define INTERVIEW_FACEBOOK_PREPARATION_LOOK_AND_SAY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/facebook/preparation/LookAndSay.cpp"
+#include "../../../../code/interview/meta/preparation/LookAndSay.cpp"
 
 TEST(LookAndSayTest, description) {
     testing::internal::CaptureStdout();
