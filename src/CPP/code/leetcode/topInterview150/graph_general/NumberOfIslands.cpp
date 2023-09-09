@@ -48,11 +48,11 @@ public:
         auto result = 0;
         vector<vector<bool>> available;
         auto length = grid[0].size();
-        for (auto row: grid) {
+        for (const auto row: grid) {
             assert (!row.empty());
             assert (row.size() <= 300);
             assert (row.size() == length);
-            available.push_back(vector<bool>(row.size(), true));
+            available.emplace_back(vector<bool>(row.size(), true));
         }
         for (auto row = 0; row < grid.size(); row++) {
             for (auto column = 0; column < grid[row].size(); column++) {

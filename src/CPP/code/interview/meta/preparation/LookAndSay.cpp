@@ -11,35 +11,35 @@ class LookAndSay {
 public:
     static void description() {
         cout << R"(Question 2: Look and Say
-        Implement a function that outputs the Look and Say sequence:
-            https://en.wikipedia.org/wiki/Look-and-say_sequence
+    Implement a function that outputs the Look and Say sequence:
+        https://en.wikipedia.org/wiki/Look-and-say_sequence
 
-        Example 1:
-            Input: 1
-            Output:
-                1
+    Example 1:
+        Input: 1
+        Output:
+            1
 
-        Example 2:
-            Input: 4
-            Output:
-                1
-                11
-                21
-                1211
+    Example 2:
+        Input: 4
+        Output:
+            1
+            11
+            21
+            1211
 
-        Example 3:
-            Input: 10
-            Output:
-                1
-                11
-                21
-                1211
-                111221
-                312211
-                13112221
-                1113213211
-                31131211131221
-                13211311123113112211)" << endl;
+    Example 3:
+        Input: 10
+        Output:
+            1
+            11
+            21
+            1211
+            111221
+            312211
+            13112221
+            1113213211
+            31131211131221
+            13211311123113112211)" << endl;
     }
 
     static vector<string> lookAndSay(const int iterations) {

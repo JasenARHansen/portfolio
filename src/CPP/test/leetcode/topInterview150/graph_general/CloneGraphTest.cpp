@@ -10,7 +10,7 @@ TEST(CloneGraphTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CloneGraphTest, solve_1) {
+TEST(CloneGraphTest, cloneGraph_1) {
     vector<vector<int>> expected{{2, 4},
                                  {1, 3},
                                  {2, 4},
@@ -30,7 +30,7 @@ TEST(CloneGraphTest, solve_1) {
     CloneGraph::deleteGraph(&clone);
 }
 
-TEST(CloneGraphTest, solve_2) {
+TEST(CloneGraphTest, cloneGraph_2) {
     vector<vector<int>> expected{{}};
     vector<vector<int>> input{{}};
     auto head = CloneGraph::deserializeGraph(input);
@@ -44,7 +44,7 @@ TEST(CloneGraphTest, solve_2) {
     CloneGraph::deleteGraph(&clone);
 }
 
-TEST(CloneGraphTest, solve_3) {
+TEST(CloneGraphTest, cloneGraph_3) {
     vector<vector<int>> expected{};
     vector<vector<int>> input{};
     auto head = CloneGraph::deserializeGraph(input);

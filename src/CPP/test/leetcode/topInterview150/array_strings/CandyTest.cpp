@@ -61,7 +61,7 @@ TEST(CandyTest, candy_fail_3) {
 
 TEST(CandyTest, candy_fail_4) {
     // ratings[i] <= 2 * 10^4
-    auto value = 2 * (int) pow(10, 4) + 1;;
+    auto value = 2 * (int) pow(10, 4) + 1;
     vector<int> ratings{1, 2, value, 4, 5};
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");
 }

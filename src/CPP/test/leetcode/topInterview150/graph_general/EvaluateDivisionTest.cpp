@@ -10,7 +10,7 @@ TEST(EvaluateDivisionTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(EvaluateDivisionTest, solve_1) {
+TEST(EvaluateDivisionTest, calcEquation_1) {
     vector<double> expected{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
 //    vector<vector<string>> equations{{"a", "b"},
 //                                     {"b", "c"}};
@@ -24,7 +24,7 @@ TEST(EvaluateDivisionTest, solve_1) {
 //    EXPECT_EQ(expected, result);
 }
 
-TEST(EvaluateDivisionTest, solve_2) {
+TEST(EvaluateDivisionTest, calcEquation_2) {
     vector<double> expected{360.00000, 0.00833};
     vector<vector<string>> equations{{"x1", "x2"},
                                      {"x2", "x3"},

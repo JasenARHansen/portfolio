@@ -10,21 +10,21 @@ TEST(LetterCombinationsOfAPhoneNumberTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(LetterCombinationsOfAPhoneNumberTest, solve_1) {
+TEST(LetterCombinationsOfAPhoneNumberTest, letterCombinations_1) {
     vector<string> expected{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
     string digits = "23";
     auto result = LetterCombinationsOfAPhoneNumber::letterCombinations(digits);
     EXPECT_EQ(expected, result);
 }
 
-TEST(LetterCombinationsOfAPhoneNumberTest, solve_2) {
+TEST(LetterCombinationsOfAPhoneNumberTest, letterCombinations_2) {
     vector<string> expected{};
     string digits;
     auto result = LetterCombinationsOfAPhoneNumber::letterCombinations(digits);
     EXPECT_EQ(expected, result);
 }
 
-TEST(LetterCombinationsOfAPhoneNumberTest, solve_3) {
+TEST(LetterCombinationsOfAPhoneNumberTest, letterCombinations_3) {
     vector<string> expected{"a", "b", "c"};
     string digits = "2";
     auto result = LetterCombinationsOfAPhoneNumber::letterCombinations(digits);
