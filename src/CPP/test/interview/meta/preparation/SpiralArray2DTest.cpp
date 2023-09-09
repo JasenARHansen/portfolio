@@ -1,7 +1,7 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef INTERVIEW_FACEBOOK_PREPARATION_SPIRAL_ARRAY_2D_TEST
-#define INTERVIEW_FACEBOOK_PREPARATION_SPIRAL_ARRAY_2D_TEST
+#ifndef INTERVIEW_META_PREPARATION_SPIRAL_ARRAY_2D_TEST
+#define INTERVIEW_META_PREPARATION_SPIRAL_ARRAY_2D_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/preparation/SpiralArray2D.cpp"

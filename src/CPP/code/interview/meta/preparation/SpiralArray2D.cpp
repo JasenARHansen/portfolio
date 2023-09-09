@@ -46,6 +46,7 @@ public:
     static vector<vector<int>> spiral(const int n) {
         // initialize vector so the spaces are available
         vector<vector<int>> result;
+        result.reserve(n);
         for (auto index = 0; index < n; index++) {
             result.emplace_back(n, 0);
         }
