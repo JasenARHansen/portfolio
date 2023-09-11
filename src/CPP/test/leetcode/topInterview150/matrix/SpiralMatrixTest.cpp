@@ -60,28 +60,28 @@ TEST(SpiralMatrixTest, spiralOrder_5) {
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_1) {
-    // 1 <= matrix.length
+    // 1 ≤ matrix.length
     auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_2) {
-    // matrix.length <= 10
+    // matrix.length ≤ 10
     auto size = 10 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_3) {
-    // 1 <= matrix[i].length
+    // 1 ≤ matrix[i].length
     auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SpiralMatrixTest, spiralOrder_fail_4) {
-    // matrix[i].length <= 10
+    // matrix[i].length ≤ 10
     auto size = 10 + 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SpiralMatrix::spiralOrder(matrix), ::testing::ExitedWithCode(3), "");

@@ -35,7 +35,7 @@ TEST(RansomNoteTest, canConstruct_3) {
 }
 
 TEST(RansomNoteTest, canConstruct_fail_1) {
-    // 1 <= ransomNote.length
+    // 1 ≤ ransomNote.length
     auto size = 1 - 1;
     string ransomNote(size, ' ');
     auto magazine = "aab";
@@ -43,7 +43,7 @@ TEST(RansomNoteTest, canConstruct_fail_1) {
 }
 
 TEST(RansomNoteTest, canConstruct_fail_2) {
-    // magazine.length <= 10^5
+    // magazine.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     string ransomNote(size, ' ');
     auto magazine = "aab";
@@ -51,7 +51,7 @@ TEST(RansomNoteTest, canConstruct_fail_2) {
 }
 
 TEST(RansomNoteTest, canConstruct_fail_3) {
-    // 1 <= magazine.length
+    // 1 ≤ magazine.length
     auto size = 1 - 1;
     auto ransomNote = "aa";
     string magazine(size, ' ');
@@ -59,7 +59,7 @@ TEST(RansomNoteTest, canConstruct_fail_3) {
 }
 
 TEST(RansomNoteTest, canConstruct_fail_4) {
-    // magazine.length <= 10^5
+    // magazine.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     auto ransomNote = "aa";
     string magazine(size, ' ');

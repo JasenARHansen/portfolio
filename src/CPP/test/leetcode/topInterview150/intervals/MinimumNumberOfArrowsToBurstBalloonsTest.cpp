@@ -54,14 +54,14 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_4) {
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_1) {
-    // 1 <= points.length
+    // 1 ≤ points.length
     auto size = 1 - 1;
     vector<vector<int>> points(size);
     EXPECT_EXIT(MinimumNumberOfArrowsToBurstBalloons::findMinArrowShots(points), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_2) {
-    // points.length <= 10^5
+    // points.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<vector<int>> points(size);
     EXPECT_EXIT(MinimumNumberOfArrowsToBurstBalloons::findMinArrowShots(points), ::testing::ExitedWithCode(3), "");

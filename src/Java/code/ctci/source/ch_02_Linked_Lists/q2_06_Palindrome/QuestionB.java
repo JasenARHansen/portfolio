@@ -26,7 +26,7 @@ public class QuestionB {
         System.out.println(isPalindrome(head));
     }
 
-    public static boolean isPalindrome(LinkedListNode head) {
+    public static boolean isPalindromeInRange(LinkedListNode head) {
         LinkedListNode fast = head;
         LinkedListNode slow = head;
         Stack<Integer> stack = new Stack<>();

@@ -59,7 +59,7 @@ public class DetectPalindromeTests {
     public void isPalindrome_4() {
         printTestHeader(name.getMethodName());
         String input = "123ab321";
-        boolean result = DetectPalindrome.isPalindrome(input);
+        boolean result = DetectPalindrome.isPalindromeInRange(input);
         System.out.format(
                 "\tThe string '%s' is a palindrome ignoring non alpha numeric characters: %b\n",
                 input, result);

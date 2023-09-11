@@ -25,13 +25,13 @@ TEST(ClimbingStairsTest, climbStairs_2) {
 }
 
 TEST(ClimbingStairsTest, climbStairs_fail_1) {
-    // 1 <= n
+    // 1 ≤ n
     auto n = 1 - 1;
     EXPECT_EXIT(ClimbingStairs::climbStairs(n), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ClimbingStairsTest, climbStairs_fail_2) {
-    // n <= 45
+    // n ≤ 45
     auto n = 45 + 1;
     EXPECT_EXIT(ClimbingStairs::climbStairs(n), ::testing::ExitedWithCode(3), "");
 }

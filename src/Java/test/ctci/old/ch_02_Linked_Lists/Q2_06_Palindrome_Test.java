@@ -81,7 +81,7 @@ public class Q2_06_Palindrome_Test {
         integerValues.insert(2);
         integerValues.insert(3);
         System.out.format("\tSource: %s\n", integerValues);
-        boolean result = LinkedList.isPalindrome(integerValues);
+        boolean result = LinkedList.isPalindromeInRange(integerValues);
         assertFalse(result);
         System.out.format("\tList is Palindrome: %s\n", result);
     }

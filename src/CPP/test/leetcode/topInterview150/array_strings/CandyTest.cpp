@@ -39,28 +39,28 @@ TEST(CandyTest, candy_4) {
 }
 
 TEST(CandyTest, candy_fail_1) {
-    // 1 <= ratings.length
+    // 1 ≤ ratings.length
     auto size = 1 - 1;
     vector<int> ratings(size);
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CandyTest, candy_fail_2) {
-    // ratings.length <= 10^4
+    // ratings.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<int> ratings(size);
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CandyTest, candy_fail_3) {
-    // 0 <= ratings[i]
+    // 0 ≤ ratings[i]
     auto value = 0 - 1;
     vector<int> ratings{1, 2, value, 4, 5};
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CandyTest, candy_fail_4) {
-    // ratings[i] <= 2 * 10^4
+    // ratings[i] ≤ 2 * 10^4
     auto value = 2 * (int) pow(10, 4) + 1;
     vector<int> ratings{1, 2, value, 4, 5};
     EXPECT_EXIT(Candy::candy(ratings), ::testing::ExitedWithCode(3), "");

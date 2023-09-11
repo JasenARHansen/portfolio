@@ -10,7 +10,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, connect_1) {
+TEST(FlattenBinaryTreeToLinkedListTest, flatten_1) {
     vector<string> expected{"1", "null", "2", "null", "3", "null", "4", "null", "5", "null", "6"};
     vector<string> values{"1", "2", "5", "3", "4", "null", "6"};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);
@@ -20,7 +20,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, connect_1) {
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, connect_2) {
+TEST(FlattenBinaryTreeToLinkedListTest, flatten_2) {
     vector<string> expected{};
     vector<string> values{};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);
@@ -30,7 +30,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, connect_2) {
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, connect_3) {
+TEST(FlattenBinaryTreeToLinkedListTest, flatten_3) {
     vector<string> expected{"0"};
     vector<string> values{"0"};
     auto root = FlattenBinaryTreeToLinkedList::deserialize(values);

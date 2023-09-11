@@ -31,7 +31,7 @@ TEST(KthSmallestElementInABSTTest, kthSmallest_2) {
 }
 
 TEST(KthSmallestElementInABSTTest, kthSmallest_fail_1) {
-    // 1 <= k
+    // 1 ≤ k
     vector<string> values{"5", "3", "6", "2", "4", "null", "null", "1"};
     auto root = KthSmallestElementInABST::deserialize(values);
     auto k = 1 - 1;
@@ -40,7 +40,7 @@ TEST(KthSmallestElementInABSTTest, kthSmallest_fail_1) {
 }
 
 TEST(KthSmallestElementInABSTTest, kthSmallest_fail_2) {
-    // n <= 10^4
+    // n ≤ 10^4
     vector<string> values{"5", "3", "6", "2", "4", "null", "null", "1"};
     auto root = KthSmallestElementInABST::deserialize(values);
     auto k = (int) pow(10, 4) + 1;

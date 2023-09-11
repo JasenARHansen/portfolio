@@ -59,7 +59,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_1) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_2) {
-    // 1 <= gas.length
+    // 1 ≤ gas.length
     auto size = 0;
     vector<int> gas(size);
     vector<int> cost(size);
@@ -67,7 +67,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_2) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_3) {
-    // gas.length <= 10^5
+    // gas.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> gas(size);
     vector<int> cost(size);
@@ -75,7 +75,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_3) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_4) {
-    // 0 <= gas[i]
+    // 0 ≤ gas[i]
     auto value = 0 - 1;
     vector<int> gas{1, 2, value, 4, 5};
     vector<int> cost{3, 4, 5, 1, 2};
@@ -83,7 +83,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_4) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_5) {
-    // gas[i] <= 10^4
+    // gas[i] ≤ 10^4
     auto value = (int) pow(10, 4) + 1;
     vector<int> gas{1, 2, value, 4, 5};
     vector<int> cost{3, 4, 5, 1, 2};
@@ -91,7 +91,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_5) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_6) {
-    // 0 <= cost[i]
+    // 0 ≤ cost[i]
     auto value = 0 - 1;
     vector<int> gas{1, 2, 3, 4, 5};
     vector<int> cost{3, 4, value, 1, 2};
@@ -99,7 +99,7 @@ TEST(GasStationTest, canCompleteCircuit_fail_6) {
 }
 
 TEST(GasStationTest, canCompleteCircuit_fail_7) {
-    //cost[i] <= 10^4
+    //cost[i] ≤ 10^4
     auto value = (int) pow(10, 4) + 1;
     vector<int> gas{1, 2, 3, 4, 5};
     vector<int> cost{3, 4, value, 1, 2};

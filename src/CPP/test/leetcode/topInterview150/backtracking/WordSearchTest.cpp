@@ -41,7 +41,7 @@ TEST(WordSearchTest, exist_3) {
 }
 
 TEST(AddBinaryTest, exist_fail_1) {
-    // 1 <= board.length
+    // 1 ≤ board.length
     auto size = 1 - 1;
     vector<vector<char>> board(size);
     string word = "ABCB";
@@ -49,7 +49,7 @@ TEST(AddBinaryTest, exist_fail_1) {
 }
 
 TEST(AddBinaryTest, exist_fail_2) {
-    // board.length  <= 6
+    // board.length  ≤ 6
     auto size = 6 + 1;
     vector<vector<char>> board(size);
     string word = "ABCB";
@@ -57,7 +57,7 @@ TEST(AddBinaryTest, exist_fail_2) {
 }
 
 TEST(AddBinaryTest, exist_fail_3) {
-    // 1 <= board[i].length
+    // 1 ≤ board[i].length
     auto size = 1 - 1;
     vector<vector<char>> board{vector<char>(size)};
     string word = "ABCB";
@@ -65,7 +65,7 @@ TEST(AddBinaryTest, exist_fail_3) {
 }
 
 TEST(AddBinaryTest, exist_fail_4) {
-    // board[i].length <= 6
+    // board[i].length ≤ 6
     auto size = 6 + 1;
     vector<vector<char>> board{vector<char>(size)};
     string word = "ABCB";
@@ -73,7 +73,7 @@ TEST(AddBinaryTest, exist_fail_4) {
 }
 
 TEST(AddBinaryTest, exist_fail_5) {
-    //  1 <= word.length
+    // 1 ≤ word.length
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
                                   {'A', 'D', 'E', 'E'}};
@@ -83,7 +83,7 @@ TEST(AddBinaryTest, exist_fail_5) {
 }
 
 TEST(AddBinaryTest, exist_fail_6) {
-    //  word.length <= 15
+    // word.length ≤ 15
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
                                   {'A', 'D', 'E', 'E'}};

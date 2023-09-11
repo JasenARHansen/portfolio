@@ -33,13 +33,13 @@ TEST(GenerateParenthesesTest, generateParenthesis_3) {
 }
 
 TEST(GenerateParenthesesTest, generateParenthesis_fail_1) {
-    // 1 <= n
+    // 1 ≤ n
     int n = 1 - 1;
     EXPECT_EXIT(GenerateParentheses::generateParenthesis(n), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GenerateParenthesesTest, generateParenthesis_fail_2) {
-    // n <= 8
+    // n ≤ 8
     int n = 8 + 1;
     EXPECT_EXIT(GenerateParentheses::generateParenthesis(n), ::testing::ExitedWithCode(3), "");
 }

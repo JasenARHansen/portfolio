@@ -35,7 +35,7 @@ TEST(AddBinaryTest, addBinary_3) {
 }
 
 TEST(AddBinaryTest, addBinary_fail_1) {
-    // 1 <= a.length
+    // 1 ≤ a.length
     auto size = 1 - 1;
     string a(size, ' ');
     auto b = "1";
@@ -43,7 +43,7 @@ TEST(AddBinaryTest, addBinary_fail_1) {
 }
 
 TEST(AddBinaryTest, addBinary_fail_2) {
-    // b.length <= 10^4
+    // b.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string a(size, ' ');
     auto b = "1";
@@ -51,7 +51,7 @@ TEST(AddBinaryTest, addBinary_fail_2) {
 }
 
 TEST(AddBinaryTest, addBinary_fail_3) {
-    // 1 <= b.length
+    // 1 ≤ b.length
     auto size = 1 - 1;
     auto a = "11";
     string b(size, ' ');
@@ -59,7 +59,7 @@ TEST(AddBinaryTest, addBinary_fail_3) {
 }
 
 TEST(AddBinaryTest, addBinary_fail_4) {
-    // b.length <= 10^4
+    // b.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto a = "11";
     string b(size, ' ');

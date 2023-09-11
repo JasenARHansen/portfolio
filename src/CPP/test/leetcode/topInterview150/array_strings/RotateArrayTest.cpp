@@ -31,7 +31,7 @@ TEST(RotateArrayTest, rotate_2) {
 }
 
 TEST(RotateArrayTest, rotate_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 0;
     vector<int> nums(size);
     auto val = 5;
@@ -39,7 +39,7 @@ TEST(RotateArrayTest, rotate_fail_1) {
 }
 
 TEST(RotateArrayTest, rotate_fail_2) {
-    // nums.length <= 10^5
+    // nums.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> nums(size);
     auto val = 5;
@@ -47,14 +47,14 @@ TEST(RotateArrayTest, rotate_fail_2) {
 }
 
 TEST(RotateArrayTest, rotate_fail_3) {
-    // 0 <= k
+    // 0 ≤ k
     vector<int> nums{1, 2, 3, 4, 5, 6, 7};
     auto val = -1;
     EXPECT_EXIT(RotateArray::rotate(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateArrayTest, rotate_fail_4) {
-    // k <= 10^5
+    // k ≤ 10^5
     vector<int> nums{1, 2, 3, 4, 5, 6, 7};
     auto val = (int) pow(10, 5) + 1;
     EXPECT_EXIT(RotateArray::rotate(nums, val), ::testing::ExitedWithCode(3), "");

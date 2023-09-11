@@ -53,7 +53,7 @@ TEST(TextJustificationTest, fullJustify_3) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_1) {
-    // 1 <= words.length;
+    // 1 ≤ words.length;
     auto size = 1 - 1;
     vector<string> words(size);
     auto maxWidth = size;
@@ -61,7 +61,7 @@ TEST(TextJustificationTest, fullJustify_fail_1) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_2) {
-    // words.length <= 300
+    // words.length ≤ 300
     auto size = 300 + 1;
     vector<string> words(size);
     auto maxWidth = size;
@@ -69,7 +69,7 @@ TEST(TextJustificationTest, fullJustify_fail_2) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_3) {
-    // 1 <= words[i].length
+    // 1 ≤ words[i].length
     auto size = 1 - 1;
     string word(size, ' ');
     vector<string> words{word};
@@ -78,7 +78,7 @@ TEST(TextJustificationTest, fullJustify_fail_3) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_4) {
-    // words[i].length <= 20
+    // words[i].length ≤ 20
     auto size = 20 + 1;
     string word(size, ' ');
     vector<string> words{word};
@@ -87,7 +87,7 @@ TEST(TextJustificationTest, fullJustify_fail_4) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_5) {
-    // words[i].length <= maxWidth
+    // words[i].length ≤ maxWidth
     auto size = 20;
     string word(size, ' ');
     vector<string> words{word};
@@ -96,7 +96,7 @@ TEST(TextJustificationTest, fullJustify_fail_5) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_6) {
-    // 1 <= maxWidth
+    // 1 ≤ maxWidth
     auto size = 1 - 1;
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};
     auto maxWidth = size;
@@ -104,7 +104,7 @@ TEST(TextJustificationTest, fullJustify_fail_6) {
 }
 
 TEST(TextJustificationTest, fullJustify_fail_7) {
-    // maxWidth <= 100
+    // maxWidth ≤ 100
     auto size = 100 + 1;
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};
     auto maxWidth = size;

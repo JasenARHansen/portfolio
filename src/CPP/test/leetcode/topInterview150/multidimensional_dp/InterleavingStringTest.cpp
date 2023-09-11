@@ -56,7 +56,7 @@ TEST(InterleavingStringTest, isInterleave_5) {
 }
 
 TEST(InterleavingStringTest, isInterleave_fail_1) {
-    // s1.length <= 100
+    // s1.length ≤ 100
     auto size = 100 + 1;
     string s1(size, ' ');
     string s2 = "dbbca";
@@ -65,7 +65,7 @@ TEST(InterleavingStringTest, isInterleave_fail_1) {
 }
 
 TEST(InterleavingStringTest, isInterleave_fail_2) {
-    // s2.length <= 100
+    // s2.length ≤ 100
     auto size = 100 + 1;
     string s1 = "aabcc";
     string s2(size, ' ');
@@ -74,7 +74,7 @@ TEST(InterleavingStringTest, isInterleave_fail_2) {
 }
 
 TEST(InterleavingStringTest, isInterleave_fail_3) {
-    // s3.length <= 200
+    // s3.length ≤ 200
     auto size = 200 + 1;
     string s1 = "aabcc";
     string s2 = "dbbca";
@@ -128,7 +128,7 @@ TEST(InterleavingStringTest, isInterleave_2_5) {
 }
 
 TEST(InterleavingStringTest, isInterleave_2_fail_1) {
-    // s1.length <= 100
+    // s1.length ≤ 100
     auto size = 100 + 1;
     string s1(size, ' ');
     string s2 = "dbbca";
@@ -137,7 +137,7 @@ TEST(InterleavingStringTest, isInterleave_2_fail_1) {
 }
 
 TEST(InterleavingStringTest, isInterleave_2_fail_2) {
-    // s2.length <= 100
+    // s2.length ≤ 100
     auto size = 100 + 1;
     string s1 = "aabcc";
     string s2(size, ' ');
@@ -146,7 +146,7 @@ TEST(InterleavingStringTest, isInterleave_2_fail_2) {
 }
 
 TEST(InterleavingStringTest, isInterleave_2_fail_3) {
-    // s3.length <= 200
+    // s3.length ≤ 200
     auto size = 200 + 1;
     string s1 = "aabcc";
     string s2 = "dbbca";

@@ -51,7 +51,7 @@ TEST(WordPatternTest, wordPattern_5) {
 }
 
 TEST(WordPatternTest, wordPattern_fail_1) {
-    // 1 <= pattern.length
+    // 1 ≤ pattern.length
     auto size = 1 - 1;
     string pattern(size, ' ');
     auto s = "dog cat cat dog";
@@ -59,7 +59,7 @@ TEST(WordPatternTest, wordPattern_fail_1) {
 }
 
 TEST(WordPatternTest, wordPattern_fail_2) {
-    // pattern.length <= 300
+    // pattern.length ≤ 300
     auto size = 300 + 1;
     string pattern(size, ' ');
     auto s = "dog cat cat dog";
@@ -67,7 +67,7 @@ TEST(WordPatternTest, wordPattern_fail_2) {
 }
 
 TEST(WordPatternTest, wordPattern_fail_3) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     auto pattern = "abba";
     string s(size, ' ');
@@ -75,7 +75,7 @@ TEST(WordPatternTest, wordPattern_fail_3) {
 }
 
 TEST(WordPatternTest, wordPattern_fail_4) {
-    // s.length <= 3000
+    // s.length ≤ 3000
     auto size = 3000 + 1;
     auto pattern = "abba";
     string s(size, ' ');

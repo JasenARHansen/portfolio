@@ -51,21 +51,21 @@ TEST(MinimumForSumTest, minForSum_5) {
 }
 
 TEST(MinimumForSumTest, minForSum_fail_1) {
-    // 1 <= target
+    // 1 ≤ target
     auto target = 1 - 1;
     vector<int> nums{2, 3, 1, 2, 4, 3};
     EXPECT_EXIT(MinimumForSum::minForSum(target, nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumForSumTest, minForSum_fail_2) {
-    // target <= 10^9
+    // target ≤ 10^9
     auto target = (int) pow(10, 9) + 1;
     vector<int> nums{2, 3, 1, 2, 4, 3};
     EXPECT_EXIT(MinimumForSum::minForSum(target, nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumForSumTest, minForSum_fail_3) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto target = 7;
     auto size = 1 - 1;
     vector<int> nums(size);
@@ -73,7 +73,7 @@ TEST(MinimumForSumTest, minForSum_fail_3) {
 }
 
 TEST(MinimumForSumTest, minForSum_fail_4) {
-    // nums.length <= 10^5
+    // nums.length ≤ 10^5
     auto target = 7;
     auto size = (int) pow(10, 5) + 1;
     vector<int> nums(size);
@@ -81,7 +81,7 @@ TEST(MinimumForSumTest, minForSum_fail_4) {
 }
 
 TEST(MinimumForSumTest, minForSum_fail_5) {
-    // 1 <= nums[i]
+    // 1 ≤ nums[i]
     auto target = 7;
     auto size = 1 - 1;
     vector<int> nums{2, 3, size, 2, 4, 3};
@@ -89,7 +89,7 @@ TEST(MinimumForSumTest, minForSum_fail_5) {
 }
 
 TEST(MinimumForSumTest, minForSum_fail_6) {
-    // nums[i] <= 10^4
+    // nums[i] ≤ 10^4
     auto target = 7;
     auto size = (int) pow(10, 4) + 1;
     vector<int> nums{2, 3, size, 2, 4, 3};

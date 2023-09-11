@@ -83,7 +83,7 @@ TEST(RemoveElementTest, removeElement_6) {
 }
 
 TEST(RemoveElementTest, removeElement_7) {
-    // 0 <= nums.length Cant test for the fail condition
+    // 0 ≤ nums.length Cant test for the fail condition
     auto expected = 0;
     auto size = 0;
     vector<int> nums(size);
@@ -93,7 +93,7 @@ TEST(RemoveElementTest, removeElement_7) {
 }
 
 TEST(RemoveElementTest, removeElement_fail_2) {
-    // nums.length <= 100
+    // nums.length ≤ 100
     auto size = 101;
     vector<int> nums(size);
     auto val = 5;
@@ -101,56 +101,56 @@ TEST(RemoveElementTest, removeElement_fail_2) {
 }
 
 TEST(RemoveElementTest, removeElement_fail_3) {
-    // 0 <= nums[i]
+    // 0 ≤ nums[i]
     vector<int> nums{-1};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_4) {
-    // 0 <= nums[i]
+    // 0 ≤ nums[i]
     vector<int> nums{1, -1, 0};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_5) {
-    // 0 <= nums[i]
+    // 0 ≤ nums[i]
     vector<int> nums{1, 2, -1};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_6) {
-    // nums[i] <= 50
+    // nums[i] ≤ 50
     vector<int> nums{51};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_7) {
-    // nums[i] <= 50
+    // nums[i] ≤ 50
     vector<int> nums{1, 51, 0};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_8) {
-    // nums[i] <= 50
+    // nums[i] ≤ 50
     vector<int> nums{1, 2, 51};
     auto val = 5;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_9) {
-    // 0 <= val
+    // 0 ≤ val
     vector<int> nums{3, 2, 2, 3};
     auto val = -1;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveElementTest, removeElement_fail_10) {
-    // val <= 100
+    // val ≤ 100
     vector<int> nums{3, 2, 2, 3};
     auto val = 101;
     EXPECT_EXIT(RemoveElement::removeElement(nums, val), ::testing::ExitedWithCode(3), "");

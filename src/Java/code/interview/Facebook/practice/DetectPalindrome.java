@@ -21,7 +21,7 @@ public class DetectPalindrome {
                         .indent(2));
     }
 
-    public static boolean isPalindrome(String s) {
+    public static boolean isPalindromeInRange(String s) {
         int left = 0;
         int right = s.length() - 1;
         while (left < right) {

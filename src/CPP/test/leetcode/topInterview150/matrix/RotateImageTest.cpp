@@ -35,14 +35,14 @@ TEST(RotateImageTest, rotate_2) {
 }
 
 TEST(RotateImageTest, rotate_fail_1) {
-    // 1 <= matrix.length
+    // 1 ≤ matrix.length
     auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_2) {
-    // matrix.length <= 20
+    // matrix.length ≤ 20
     auto size = 10 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
@@ -56,14 +56,14 @@ TEST(RotateImageTest, rotate_fail_3) {
 }
 
 TEST(RotateImageTest, rotate_fail_4) {
-    // 0 <= matrix[i].length
+    // 0 ≤ matrix[i].length
     auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateImageTest, rotate_fail_5) {
-    // matrix[i].length <= 20
+    // matrix[i].length ≤ 20
     auto size = 20;
     vector<vector<int>> matrix(size);
     size++;

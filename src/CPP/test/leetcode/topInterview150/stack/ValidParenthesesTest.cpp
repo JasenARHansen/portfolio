@@ -46,14 +46,14 @@ TEST(ValidParenthesesTest, isValid_5) {
 }
 
 TEST(ValidParenthesesTest, isValid_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, ' ');
     EXPECT_EXIT(ValidParentheses::isValid(s), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ValidParenthesesTest, isValid_fail_2) {
-    // s.length <= 10^4
+    // s.length ≤ 10^4
     auto size = (int) pow(10, 9) + 1;
     string s(size, ' ');
     EXPECT_EXIT(ValidParentheses::isValid(s), ::testing::ExitedWithCode(3), "");

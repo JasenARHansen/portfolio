@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_CONTIGUOUS_SUB_ARRAYS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/preparation/ContiguousSubArrays.cpp"
+#include "../../../../../code/interview/meta/preparation/arrays/ContiguousSubArrays.cpp"
 
 TEST(ContiguousSubArraysTest, description) {
     testing::internal::CaptureStdout();
@@ -25,28 +25,28 @@ TEST(ContiguousSubArraysTest, countSubArrays_2) {
 }
 
 TEST(ContiguousSubArraysTest, climbStairs_fail_1) {
-    // 1 <= array.length
+    // 1 ≤ array.length
     auto size = 1 - 1;
     vector<int> array(size);
     EXPECT_EXIT(ContiguousSubArrays::countSubArrays(array), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ContiguousSubArraysTest, climbStairs_fail_2) {
-    // array.length <= 1,000,000
+    // array.length ≤ 1,000,000
     auto size = (int) pow(10, 6) + 1;
     vector<int> array(size);
     EXPECT_EXIT(ContiguousSubArrays::countSubArrays(array), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ContiguousSubArraysTest, climbStairs_fail_3) {
-    // 1 <= array[i]
+    // 1 ≤ array[i]
     auto size = 1 - 1;
     vector<int> array{size};
     EXPECT_EXIT(ContiguousSubArrays::countSubArrays(array), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ContiguousSubArraysTest, climbStairs_fail_4) {
-    // array[i] <= 1,000,000,000
+    // array[i] ≤ 1,000,000,000
     auto size = (int) pow(10, 9) + 1;
     vector<int> array{size};
     EXPECT_EXIT(ContiguousSubArrays::countSubArrays(array), ::testing::ExitedWithCode(3), "");

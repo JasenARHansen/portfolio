@@ -35,28 +35,28 @@ TEST(JumpGameTest, canJump_3) {
 }
 
 TEST(JumpGameTest, canJump_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 0;
     vector<int> nums(size);
     EXPECT_EXIT(JumpGame::canJump(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(JumpGameTest, canJump_fail_2) {
-    // nums.length <= 10^4
+    // nums.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(JumpGame::canJump(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(JumpGameTest, canJump_fail_3) {
-    // 0 <= nums[i]
+    // 0 ≤ nums[i]
     auto value = -1;
     vector<int> nums{3, 2, value, 0, 4};
     EXPECT_EXIT(JumpGame::canJump(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(JumpGameTest, canJump_fail_4) {
-    // nums[i] <= 10^5
+    // nums[i] ≤ 10^5
     auto value = (int) pow(10, 5) + 1;
     vector<int> nums{3, value, 1, 0, 4};
     EXPECT_EXIT(JumpGame::canJump(nums), ::testing::ExitedWithCode(3), "");

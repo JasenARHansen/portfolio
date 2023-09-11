@@ -43,14 +43,14 @@ TEST(MergeIntervalsTest, merge_3) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_1) {
-    // 1 <= intervals.length
+    // 1 ≤ intervals.length
     auto size = 1 - 1;
     vector<vector<int>> intervals(size);
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, merge_fail_2) {
-    // intervals.length <= 10^4
+    // intervals.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals(size);
     EXPECT_EXIT(MergeIntervals::merge(intervals), ::testing::ExitedWithCode(3), "");
@@ -63,7 +63,7 @@ TEST(MergeIntervalsTest, merge_fail_3) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_4) {
-    //  0 <= startI
+    // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 4);
     vector<vector<int>> intervals{{startI, endI}};
@@ -71,7 +71,7 @@ TEST(MergeIntervalsTest, merge_fail_4) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_5) {
-    // startI <= 10^4
+    // startI ≤ 10^4
     auto startI = (int) pow(10, 4) + 1;
     auto endI = (int) pow(10, 4);
     vector<vector<int>> intervals{{startI, endI}};
@@ -79,7 +79,7 @@ TEST(MergeIntervalsTest, merge_fail_5) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_6) {
-    // 0 <= endI
+    // 0 ≤ endI
     auto startI = (int) pow(10, 4);
     auto endI = 0 - 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -87,7 +87,7 @@ TEST(MergeIntervalsTest, merge_fail_6) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_7) {
-    // endI <= 10^4
+    // endI ≤ 10^4
     auto startI = (int) pow(10, 4);
     auto endI = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -95,7 +95,7 @@ TEST(MergeIntervalsTest, merge_fail_7) {
 }
 
 TEST(MergeIntervalsTest, merge_fail_8) {
-    // startI <= endI
+    // startI ≤ endI
     auto startI = (int) pow(10, 4);
     auto endI = (int) pow(10, 4) - 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -135,14 +135,14 @@ TEST(MergeIntervalsTest, mergeNoSort_3) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_1) {
-    // 1 <= intervals.length
+    // 1 ≤ intervals.length
     auto size = 1 - 1;
     vector<vector<int>> intervals(size);
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_2) {
-    // intervals.length <= 10^4
+    // intervals.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals(size);
     EXPECT_EXIT(MergeIntervals::mergeNoSort(intervals), ::testing::ExitedWithCode(3), "");
@@ -155,7 +155,7 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_3) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_4) {
-    //  0 <= startI
+    // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 4);
     vector<vector<int>> intervals{{startI, endI}};
@@ -163,7 +163,7 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_4) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_5) {
-    // startI <= 10^4
+    // startI ≤ 10^4
     auto startI = (int) pow(10, 4) + 1;
     auto endI = (int) pow(10, 4);
     vector<vector<int>> intervals{{startI, endI}};
@@ -171,7 +171,7 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_5) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_6) {
-    // 0 <= endI
+    // 0 ≤ endI
     auto startI = (int) pow(10, 4);
     auto endI = 0 - 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -179,7 +179,7 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_6) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_7) {
-    // endI <= 10^4
+    // endI ≤ 10^4
     auto startI = (int) pow(10, 4);
     auto endI = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -187,7 +187,7 @@ TEST(MergeIntervalsTest, mergeNoSort_fail_7) {
 }
 
 TEST(MergeIntervalsTest, mergeNoSort_fail_8) {
-    // startI <= endI
+    // startI ≤ endI
     auto startI = (int) pow(10, 4);
     auto endI = (int) pow(10, 4) - 1;
     vector<vector<int>> intervals{{startI, endI}};

@@ -50,21 +50,21 @@ TEST(UniquePathsIITest, uniquePathsWithObstacles_5) {
 }
 
 TEST(UniquePathsIITest, uniquePathsWithObstacles_fail_1) {
-    // 1 <= obstacleGrid.length
+    // 1 ≤ obstacleGrid.length
     auto size = 1 - 1;
     vector<vector<int>> obstacleGrid(size);
     EXPECT_EXIT(UniquePathsII::uniquePathsWithObstacles(obstacleGrid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(UniquePathsIITest, uniquePathsWithObstacles_fail_2) {
-    // obstacleGrid.length <= 100
+    // obstacleGrid.length ≤ 100
     auto size = 100 + 1;
     vector<vector<int>> obstacleGrid(size);
     EXPECT_EXIT(UniquePathsII::uniquePathsWithObstacles(obstacleGrid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(UniquePathsIITest, uniquePathsWithObstacles_fail_3) {
-    // 1 <= obstacleGrid[0].length
+    // 1 ≤ obstacleGrid[0].length
     auto size = 1 - 1;
     vector<vector<int>> obstacleGrid{vector<int>(size)};
     EXPECT_EXIT(UniquePathsII::uniquePathsWithObstacles(obstacleGrid), ::testing::ExitedWithCode(3), "");

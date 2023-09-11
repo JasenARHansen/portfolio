@@ -53,14 +53,14 @@ TEST(LengthOfLastWordTest, lengthOfLastWord_7) {
 }
 
 TEST(LengthOfLastWordTest, lengthOfLastWord_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, 0);
     EXPECT_EXIT(LengthOfLastWord::lengthOfLastWord(s), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LengthOfLastWordTest, lengthOfLastWord_fail_2) {
-    // s.length <= 10^4
+    // s.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string s(size, 0);
     EXPECT_EXIT(LengthOfLastWord::lengthOfLastWord(s), ::testing::ExitedWithCode(3), "");

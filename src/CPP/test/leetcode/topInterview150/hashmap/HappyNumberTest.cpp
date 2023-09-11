@@ -25,7 +25,7 @@ TEST(HappyNumberTest, isHappy_2) {
 }
 
 TEST(HappyNumberTest, isHappy_fail_1) {
-    // 1 <= n
+    // 1 ≤ n
     auto n = 1 - 1;
     EXPECT_EXIT(HappyNumber::isHappy(n), ::testing::ExitedWithCode(3), "");
 }

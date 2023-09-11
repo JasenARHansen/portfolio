@@ -24,7 +24,7 @@ public class QuestionA {
         System.out.println(isPalindrome(head));
     }
 
-    public static boolean isPalindrome(LinkedListNode head) {
+    public static boolean isPalindromeInRange(LinkedListNode head) {
         LinkedListNode reversed = reverseAndClone(head);
         return isEqual(head, reversed);
     }

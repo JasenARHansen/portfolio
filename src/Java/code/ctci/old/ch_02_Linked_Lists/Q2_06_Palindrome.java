@@ -7,7 +7,7 @@ import java.util.Stack;
 
 @SuppressWarnings({"DuplicatedCode", "unused"})
 public class Q2_06_Palindrome {
-    public static boolean isPalindrome(CustomLinkedList<String> input) {
+    public static boolean isPalindromeInRange(CustomLinkedList<String> input) {
         int offset = 0;
         int size = input.getSize();
         while (offset < (size / 2)) {

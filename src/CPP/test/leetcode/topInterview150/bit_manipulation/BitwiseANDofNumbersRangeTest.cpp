@@ -35,21 +35,21 @@ TEST(BitwiseANDofNumbersRangeTest, rangeBitwiseAnd_3) {
 }
 
 TEST(BitwiseANDofNumbersRangeTest, rangeBitwiseAnd_fail_1) {
-    // 0 <= left
+    // 0 ≤ left
     auto left = 0 - 1;
     auto right = 7;
     EXPECT_EXIT(BitwiseANDofNumbersRange::rangeBitwiseAnd(left, right), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BitwiseANDofNumbersRangeTest, rangeBitwiseAnd_fail_2) {
-    // 0 <= right
+    // 0 ≤ right
     auto left = 5;
     auto right = 0 - 1;
     EXPECT_EXIT(BitwiseANDofNumbersRange::rangeBitwiseAnd(left, right), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BitwiseANDofNumbersRangeTest, rangeBitwiseAnd_fail_3) {
-    // left <= right
+    // left ≤ right
     auto left = 5;
     auto right = left - 1;
     EXPECT_EXIT(BitwiseANDofNumbersRange::rangeBitwiseAnd(left, right), ::testing::ExitedWithCode(3), "");

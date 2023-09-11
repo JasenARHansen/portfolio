@@ -29,28 +29,28 @@ TEST(ConvertSortedArrayToBinarySearchTreeTest, climbStairs_2) {
 }
 
 TEST(ConvertSortedArrayToBinarySearchTreeTest, climbStairs_fail_1) {
-    //  1 <= nums.length
+    // 1 ≤ nums.length
     int size = 1 - 1;
     vector<int> nums(size);
     EXPECT_EXIT(ConvertSortedArrayToBinarySearchTree::sortedArrayToBST(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ConvertSortedArrayToBinarySearchTreeTest, climbStairs_fail_2) {
-    //  nums.length <= 10^4
+    // nums.length ≤ 10^4
     int size = (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(ConvertSortedArrayToBinarySearchTree::sortedArrayToBST(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ConvertSortedArrayToBinarySearchTreeTest, climbStairs_fail_3) {
-    // -10^4 <= nums[i]
+    // -10^4 ≤ nums[i]
     int size = (int) -pow(10, 4) - 1;
     vector<int> nums{size};
     EXPECT_EXIT(ConvertSortedArrayToBinarySearchTree::sortedArrayToBST(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ConvertSortedArrayToBinarySearchTreeTest, climbStairs_fail_4) {
-    // nums[i] <= 10^4
+    // nums[i] ≤ 10^4
     int size = (int) pow(10, 4) + 1;
     vector<int> nums{size};
     EXPECT_EXIT(ConvertSortedArrayToBinarySearchTree::sortedArrayToBST(nums), ::testing::ExitedWithCode(3), "");

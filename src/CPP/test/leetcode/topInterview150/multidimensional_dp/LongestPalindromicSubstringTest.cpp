@@ -32,14 +32,14 @@ TEST(LongestPalindromicSubstringTest, longestPalindrome_3) {
 }
 
 TEST(LongestPalindromicSubstringTest, longestPalindrome_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, ' ');
     EXPECT_EXIT(LongestPalindromicSubstring::longestPalindrome(s), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LongestPalindromicSubstringTest, longestPalindrome_fail_2) {
-    // s.length <= 1000
+    // s.length ≤ 1000
     auto size = 1000 + 1;
     string s(size, ' ');
     EXPECT_EXIT(LongestPalindromicSubstring::longestPalindrome(s), ::testing::ExitedWithCode(3), "");

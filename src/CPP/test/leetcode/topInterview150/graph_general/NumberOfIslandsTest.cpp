@@ -35,28 +35,28 @@ TEST(NumberOfIslandsTest, numIslands_2) {
 }
 
 TEST(NumberOfIslandsTest, numIslands_fail_1) {
-    // 1 <= grid.length
+    // 1 ≤ grid.length
     auto size = 1 - 1;
     vector<vector<char>> grid(size);
     EXPECT_EXIT(NumberOfIslands::numIslands(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(NumberOfIslandsTest, numIslands_fail_2) {
-    // grid.length <= 300
+    // grid.length ≤ 300
     auto size = 300 + 1;
     vector<vector<char>> grid(size);
     EXPECT_EXIT(NumberOfIslands::numIslands(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(NumberOfIslandsTest, numIslands_fail_3) {
-    // 1 <= grid[i].length
+    // 1 ≤ grid[i].length
     auto size = 1 - 1;
     vector<vector<char>> grid{vector<char>(size)};
     EXPECT_EXIT(NumberOfIslands::numIslands(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(NumberOfIslandsTest, numIslands_fail_4) {
-    // grid[i].length <= 300
+    // grid[i].length ≤ 300
     auto size = 300 + 1;
     vector<vector<char>> grid{vector<char>(size)};
     EXPECT_EXIT(NumberOfIslands::numIslands(grid), ::testing::ExitedWithCode(3), "");

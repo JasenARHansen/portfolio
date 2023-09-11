@@ -83,28 +83,28 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_1) {
-    // sz <= 30
+    // sz ≤ 30
     auto size = 30 + 1;
     vector<int> values(size);
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_2) {
-    // 0 <= ListNode.val
+    // 0 ≤ ListNode.val
     auto size = 0 - 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_3) {
-    // ListNode.val <= 100
+    // ListNode.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
-    // 1 <= n
+    // 1 ≤ n
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = 1 - 1;
@@ -113,7 +113,7 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_5) {
-    // n <= sz
+    // n ≤ sz
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RemoveNthNodeFromEndOfList::deserialize(headValues);
     auto n = headValues.size() + 1;

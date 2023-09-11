@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_PASSING_YEARBOOKS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/preparation/PassingYearbooks.cpp"
+#include "../../../../../code/interview/meta/preparation/arrays/PassingYearbooks.cpp"
 
 TEST(PassingYearbooksTest, description) {
     testing::internal::CaptureStdout();

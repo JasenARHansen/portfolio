@@ -39,7 +39,7 @@ TEST(LongestSubstringWithoutRepeatingCharactersTest, lengthOfLongestSubstring_4)
 }
 
 TEST(LongestSubstringWithoutRepeatingCharactersTest, lengthOfLongestSubstring_fail_1) {
-    // 0 <= s.length
+    // 0 ≤ s.length
     auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
     EXPECT_EXIT(LongestSubstringWithoutRepeatingCharacters::lengthOfLongestSubstring(s), ::testing::ExitedWithCode(3),

@@ -68,35 +68,35 @@ TEST(ReverseLinkedListIITest, reverseBetween_3) {
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_1) {
-    // 1 <= n
+    // 1 ≤ n
     auto size = 1 - 1;
     vector<int> values(size);
     EXPECT_EXIT(ReverseLinkedListII::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_2) {
-    // n <= 500
+    // n ≤ 500
     auto size = 500 + 1;
     vector<int> values(size);
     EXPECT_EXIT(ReverseLinkedListII::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_3) {
-    // -500 <= ListNode.va
+    // -500 ≤ ListNode.va
     auto size = -500 - 1;
     vector<int> values{size};
     EXPECT_EXIT(ReverseLinkedListII::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_4) {
-    // ListNode.val <= 500
+    // ListNode.val ≤ 500
     auto size = 500 + 1;
     vector<int> values{size};
     EXPECT_EXIT(ReverseLinkedListII::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_5) {
-    // 1 <= left
+    // 1 ≤ left
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = ReverseLinkedListII::deserialize(headValues);
     auto left = 1 - 1;
@@ -106,7 +106,7 @@ TEST(ReverseLinkedListIITest, reverseBetween_fail_5) {
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_6) {
-    // 1 <= right
+    // 1 ≤ right
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = ReverseLinkedListII::deserialize(headValues);
     auto left = 2;
@@ -116,7 +116,7 @@ TEST(ReverseLinkedListIITest, reverseBetween_fail_6) {
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_7) {
-    // left <= right
+    // left ≤ right
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = ReverseLinkedListII::deserialize(headValues);
     auto left = 5;

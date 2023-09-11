@@ -51,7 +51,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_5) {
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_1) {
-    // 1 <= IsomorphicStrings.length
+    // 1 ≤ IsomorphicStrings.length
     auto size = 1 - 1;
     string s(size, ' ');
     auto t = "aab";
@@ -59,7 +59,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_1) {
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
-    // t.length <= 5 * 10^4
+    // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
     auto t = "aab";
@@ -67,7 +67,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
-    // 1 <= t.length
+    // 1 ≤ t.length
     auto size = 1 - 1;
     auto s = "aa";
     string t(size, ' ');
@@ -75,7 +75,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
 }
 
 TEST(IsomorphicStringsTest, isIsomorphic_fail_4) {
-    // t.length <= 5 * 10^4
+    // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     auto s = "aa";
     string t(size, ' ');

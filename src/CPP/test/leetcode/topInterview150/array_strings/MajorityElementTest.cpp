@@ -25,35 +25,35 @@ TEST(MajorityElementTest, majorityElement_2) {
 }
 
 TEST(MajorityElementTest, majorityElement_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 0;
     vector<int> nums(size);
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MajorityElementTest, majorityElement_fail_2) {
-    // nums.length <= 5 * 10^4
+    // nums.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MajorityElementTest, majorityElement_fail_3) {
-    // -10^9 <= nums[i]
+    // -10^9 ≤ nums[i]
     auto value = (int) -pow(10, 9) - 1;
     vector<int> nums{value};
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MajorityElementTest, majorityElement_fail_4) {
-    // nums[i] <= 10^9
+    // nums[i] ≤ 10^9
     auto value = (int) pow(10, 9) + 1;
     vector<int> nums{value};
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MajorityElementTest, majorityElement_fail_5) {
-    // nums[i] <= 109
+    // nums[i] ≤ 109
     auto value = (int) pow(10, 9) + 1;
     vector<int> nums{1, value};
     EXPECT_EXIT(MajorityElement::majorityElement(nums), ::testing::ExitedWithCode(3), "");

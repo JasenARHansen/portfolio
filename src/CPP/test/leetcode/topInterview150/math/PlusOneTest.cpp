@@ -32,14 +32,14 @@ TEST(PlusOneTest, plusOne_3) {
 }
 
 TEST(PlusOneTest, plusOne_fail_1) {
-    // 1 <= digits.length
+    // 1 ≤ digits.length
     auto size = 0;
     vector<int> digits(size);
     EXPECT_EXIT(PlusOne::plusOne(digits), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(PlusOneTest, plusOne_fail_2) {
-    // digits.length <= 100
+    // digits.length ≤ 100
     auto size = 100 + 1;
     vector<int> digits(size);
     EXPECT_EXIT(PlusOne::plusOne(digits), ::testing::ExitedWithCode(3), "");

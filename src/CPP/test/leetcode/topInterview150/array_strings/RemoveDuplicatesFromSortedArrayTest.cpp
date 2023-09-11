@@ -33,33 +33,33 @@ TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_2) {
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 0;
     vector<int> nums(size);
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_2) {
-    // nums.length <= 3 * 10^4
+    // nums.length ≤ 3 * 10^4
     auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_3) {
-    // -100 <= nums[i]
+    // -100 ≤ nums[i]
     vector<int> nums{-101};
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_4) {
-    // nums[i] <= 100
+    // nums[i] ≤ 100
     vector<int> nums{101};
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveDuplicatesFromSortedArrayTest, removeDuplicates_fail_5) {
-    // nums[i] <= 100
+    // nums[i] ≤ 100
     vector<int> nums{1, 101};
     EXPECT_EXIT(RemoveDuplicatesFromSortedArray::removeDuplicates(nums), ::testing::ExitedWithCode(3), "");
 }

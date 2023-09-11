@@ -25,14 +25,14 @@ TEST(LongestCommonPrefixTest, longestCommonPrefix_2) {
 }
 
 TEST(LongestCommonPrefixTest, longestCommonPrefix_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     vector<string> strings(size);
     EXPECT_EXIT(LongestCommonPrefix::longestCommonPrefix(strings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LongestCommonPrefixTest, longestCommonPrefix_fail_2) {
-    // s.length <= 200
+    // s.length ≤ 200
     auto size = 200 + 1;
     vector<string> strings(size);
     EXPECT_EXIT(LongestCommonPrefix::longestCommonPrefix(strings), ::testing::ExitedWithCode(3), "");

@@ -25,7 +25,7 @@ TEST(SqrtTest, mySqrt_2) {
 }
 
 TEST(SqrtTest, mySqrt_fail_1) {
-    // 0 <= x
+    // 0 ≤ x
     auto x = 0 - 1;
     EXPECT_EXIT(Sqrt::mySqrt(x), ::testing::ExitedWithCode(3), "");
 }

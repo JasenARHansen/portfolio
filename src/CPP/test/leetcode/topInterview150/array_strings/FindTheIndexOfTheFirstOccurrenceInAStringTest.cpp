@@ -43,7 +43,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_4) {
 }
 
 TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_1) {
-    // 1 <= haystack.length
+    // 1 ≤ haystack.length
     auto size = 1 - 1;
     string haystack(size, 0);
     auto needle = "leetcode";
@@ -52,7 +52,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_1) {
 }
 
 TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_2) {
-    // haystack.length <= 10^4
+    // haystack.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string haystack(size, 0);
     auto needle = "leetcode";
@@ -61,7 +61,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_2) {
 }
 
 TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_3) {
-    // 1 <= needle.length
+    // 1 ≤ needle.length
     auto size = 1 - 1;
     auto haystack = "leetcode";
     string needle(size, 0);
@@ -70,7 +70,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_3) {
 }
 
 TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_4) {
-    // needle.length <= 10^4
+    // needle.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto haystack = "leetcode";
     string needle(size, 0);

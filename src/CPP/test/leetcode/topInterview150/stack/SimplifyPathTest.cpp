@@ -39,14 +39,14 @@ TEST(SimplifyPathTest, simplifyPath_4) {
 }
 
 TEST(SimplifyPathTest, simplifyPath_fail_1) {
-    // 1 <= path.length
+    // 1 ≤ path.length
     auto size = 1 - 1;
     string path(size, ' ');
     EXPECT_EXIT(SimplifyPath::simplifyPath(path), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SimplifyPathTest, simplifyPath_fail_2) {
-    // path.length <= 3000
+    // path.length ≤ 3000
     auto size = 3000 + 1;
     string path(size, ' ');
     EXPECT_EXIT(SimplifyPath::simplifyPath(path), ::testing::ExitedWithCode(3), "");

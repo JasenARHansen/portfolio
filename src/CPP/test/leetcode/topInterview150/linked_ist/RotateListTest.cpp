@@ -101,28 +101,28 @@ TEST(RotateListTest, rotateRight_5) {
 }
 
 TEST(RotateListTest, rotateRight_fail_1) {
-    // n <= 500
+    // n ≤ 500
     auto size = 500 + 1;
     vector<int> values(size);
     EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_2) {
-    // -100 <= Node.val
+    // -100 ≤ Node.val
     auto size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_3) {
-    // Node.val <= 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_4) {
-    // 0 <= k
+    // 0 ≤ k
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RotateList::deserialize(headValues);
     auto k = 0 - 1;
@@ -131,7 +131,7 @@ TEST(RotateListTest, rotateRight_fail_4) {
 }
 
 TEST(RotateListTest, rotateRight_fail_5) {
-    // k <= 2 * 10^9
+    // k ≤ 2 * 10^9
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RotateList::deserialize(headValues);
     auto k = 2 * (int) pow(10, 9) + 1;

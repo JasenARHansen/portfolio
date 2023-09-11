@@ -49,7 +49,7 @@ public class LinkedList {
         return null;
     }
 
-    public static <T extends Comparable<T>> boolean isPalindrome(CustomLinkedList<T> input) {
+    public static <T extends Comparable<T>> boolean isPalindromeInRange(CustomLinkedList<T> input) {
         int offset = 0;
         int size = input.getSize();
         while (offset < (size / 2)) {

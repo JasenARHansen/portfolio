@@ -33,28 +33,28 @@ TEST(SetMatrixZeroesTest, setZeroes_2) {
 }
 
 TEST(SetMatrixZeroesTest, setZeroes_fail_1) {
-    // 1 <= matrix.length
+    // 1 ≤ matrix.length
     auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SetMatrixZeroesTest, setZeroes_fail_2) {
-    // matrix.length <= 200
+    // matrix.length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SetMatrixZeroesTest, setZeroes_fail_3) {
-    // 1 <= matrix[i].length
+    // 1 ≤ matrix[i].length
     auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SetMatrixZeroesTest, setZeroes_fail_4) {
-    // matrix[i].length <= 200
+    // matrix[i].length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");

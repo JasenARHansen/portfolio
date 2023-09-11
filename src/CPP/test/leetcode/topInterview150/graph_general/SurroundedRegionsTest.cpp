@@ -121,28 +121,28 @@ TEST(SurroundedRegionsTest, solve_6) {
 }
 
 TEST(SurroundedRegionsTest, solve_fail_1) {
-    // 1 <= board.length
+    // 1 ≤ board.length
     auto size = 1 - 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SurroundedRegionsTest, solve_fail_2) {
-    // board.length <= 200
+    // board.length ≤ 200
     auto size = 200 + 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SurroundedRegionsTest, solve_fail_3) {
-    // 1 <= board{i].length
+    // 1 ≤ board{i].length
     auto size = 1 - 1;
     vector<vector<char>> board{vector<char>(size)};
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SurroundedRegionsTest, solve_fail_4) {
-    // board{i].length <= 200
+    // board{i].length ≤ 200
     auto size = 200 + 1;
     vector<vector<char>> board{vector<char>(size)};
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");

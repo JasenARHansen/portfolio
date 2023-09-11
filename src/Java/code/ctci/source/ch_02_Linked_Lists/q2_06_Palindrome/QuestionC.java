@@ -56,7 +56,7 @@ public class QuestionC {
         // nodes[length - 2].data = 9; // Uncomment to ruin palindrome
         LinkedListNode head = nodes[0];
         System.out.println(head.printForward());
-        System.out.println(isPalindrome(head));
+        System.out.println(isPalindromeInRange(head));
     }
 
     public static class Result {

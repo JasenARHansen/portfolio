@@ -27,7 +27,7 @@ TEST(IsSubsequenceTest, isSubsequence_2) {
 }
 
 TEST(IsSubsequenceTest, isSubsequence_fail_1) {
-    // s.length <= 100
+    // s.length ≤ 100
     auto size = 100 + 1;
     string s(size, ' ');
     auto t = "ahbgdc";
@@ -35,7 +35,7 @@ TEST(IsSubsequenceTest, isSubsequence_fail_1) {
 }
 
 TEST(IsSubsequenceTest, isSubsequence_fail_2) {
-    // t.length <= 10^4
+    // t.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto s = "ahbgdc";
     string t(size, ' ');

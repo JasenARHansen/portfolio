@@ -131,21 +131,21 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_new_3) {
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_1) {
-    // values.length  <= 50 + 1
+    // values.length  ≤ 50 + 1
     auto size = 50 + 1;
     vector<int> values(size);
     EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_2) {
-    // -100 <= Node.val
+    // -100 ≤ Node.val
     auto size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_3) {
-    // Node.val <= 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");

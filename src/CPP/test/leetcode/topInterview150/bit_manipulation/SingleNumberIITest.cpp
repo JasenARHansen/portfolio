@@ -25,14 +25,14 @@ TEST(SingleNumberIITest, singleNumber_2) {
 }
 
 TEST(SingleNumberIITest, addBinary_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 1 - 1;
     vector<int> nums(size);
     EXPECT_EXIT(SingleNumberII::singleNumber(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SingleNumberIITest, addBinary_fail_2) {
-    // nums.length <= 3 * 10^4
+    // nums.length ≤ 3 * 10^4
     auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(SingleNumberII::singleNumber(nums), ::testing::ExitedWithCode(3), "");

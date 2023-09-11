@@ -25,21 +25,21 @@ TEST(LongestConsecutiveSequenceTest, longestConsecutive_2) {
 }
 
 TEST(LongestConsecutiveSequenceTest, longestConsecutive_fail_1) {
-    // nums.length <= 10^5
+    // nums.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(LongestConsecutiveSequence::longestConsecutive(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LongestConsecutiveSequenceTest, longestConsecutive_fail_2) {
-    // -10^9 <= nums[i]
+    // -10^9 ≤ nums[i]
     auto size = (int) -pow(10, 9) - 1;
     vector<int> nums{size};
     EXPECT_EXIT(LongestConsecutiveSequence::longestConsecutive(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(LongestConsecutiveSequenceTest, longestConsecutive_fail_3) {
-    //  nums[i] <= 10^9
+    // nums[i] ≤ 10^9
     auto size = (int) pow(10, 9) + 1;
     vector<int> nums{size};
     EXPECT_EXIT(LongestConsecutiveSequence::longestConsecutive(nums), ::testing::ExitedWithCode(3), "");

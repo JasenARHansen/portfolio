@@ -27,7 +27,7 @@ public class Tester {
                 System.out.println(head.printForward());
                 boolean resultA = QuestionA.isPalindrome(head);
                 boolean resultB = QuestionB.isPalindrome(head);
-                boolean resultC = QuestionC.isPalindrome(head);
+                boolean resultC = QuestionC.isPalindromeInRange(head);
                 System.out.println("A: " + resultA);
                 System.out.println("B: " + resultB);
                 System.out.println("C: " + resultC);

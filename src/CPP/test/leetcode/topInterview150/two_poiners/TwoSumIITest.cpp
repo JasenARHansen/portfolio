@@ -44,7 +44,7 @@ TEST(TwoSumIITest, TwoSumII_3) {
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_1) {
-    // 2 <= numbers.length
+    // 2 ≤ numbers.length
     auto size = 2 - 1;
     vector<int> numbers(size);
     auto target = 9;
@@ -52,7 +52,7 @@ TEST(TwoSumIITest, TwoSumII_fail_1) {
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_2) {
-    // numbers.length <= 3 * 10^4
+    // numbers.length ≤ 3 * 10^4
     auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> numbers(size);
     auto target = 9;
@@ -60,7 +60,7 @@ TEST(TwoSumIITest, TwoSumII_fail_2) {
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_3) {
-    // -1000 <= numbers[i]
+    // -1000 ≤ numbers[i]
     auto size = -1000 - 1;
     vector<int> numbers{size};
     auto target = 9;
@@ -68,7 +68,7 @@ TEST(TwoSumIITest, TwoSumII_fail_3) {
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_4) {
-    // numbers[i] <= 1000
+    // numbers[i] ≤ 1000
     auto size = 1000 + 1;
     vector<int> numbers{size};
     auto target = 9;
@@ -76,14 +76,14 @@ TEST(TwoSumIITest, TwoSumII_fail_4) {
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_5) {
-    // -1000 <= target
+    // -1000 ≤ target
     vector<int> numbers{2, 7, 11, 15};
     auto target = -1000 - 1;
     EXPECT_EXIT(TwoSumII::twoSum(numbers, target), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(TwoSumIITest, TwoSumII_fail_6) {
-    // target <= 1000
+    // target ≤ 1000
     vector<int> numbers{2, 7, 11, 15};
     auto target = 1000 + 1;
     EXPECT_EXIT(TwoSumII::twoSum(numbers, target), ::testing::ExitedWithCode(3), "");

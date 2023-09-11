@@ -81,21 +81,21 @@ TEST(AddTwoNumbersTest, addTwoNumbers_fail_1) {
 }
 
 TEST(AddTwoNumbersTest, addTwoNumbers_fail_2) {
-    // values.length  <= 100 + 1
+    // values.length  ≤ 100 + 1
     auto size = 100 + 1;
     vector<int> values(size);
     EXPECT_EXIT(AddTwoNumbers::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddTwoNumbersTest, addTwoNumbers_fail_3) {
-    // 0 <= Node.val
+    // 0 ≤ Node.val
     auto size = 0 - 1;
     vector<int> values{size};
     EXPECT_EXIT(AddTwoNumbers::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddTwoNumbersTest, addTwoNumbers_fail_4) {
-    // Node.val <= 9
+    // Node.val ≤ 9
     auto size = 9 + 1;
     vector<int> values{size};
     EXPECT_EXIT(AddTwoNumbers::deserialize(values), ::testing::ExitedWithCode(3), "");

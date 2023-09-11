@@ -32,7 +32,7 @@ TEST(SummaryRangesTest, summaryRanges_3) {
 }
 
 TEST(SummaryRangesTest, summaryRanges_fail_1) {
-    // nums.length <= 20
+    // nums.length ≤ 20
     auto size = 20 + 1;
     vector<int> nums(size);
     EXPECT_EXIT(SummaryRanges::summaryRanges(nums), ::testing::ExitedWithCode(3), "");

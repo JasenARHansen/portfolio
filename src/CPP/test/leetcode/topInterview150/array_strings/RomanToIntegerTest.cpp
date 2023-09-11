@@ -88,14 +88,14 @@ TEST(RomanToIntegerTest, romanToInt_11) {
 }
 
 TEST(RomanToIntegerTest, romanToInt_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, 0);
     EXPECT_EXIT(RomanToInteger::romanToInt(s), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RomanToIntegerTest, romanToInt_fail_2) {
-    // s.length <= 15
+    // s.length ≤ 15
     auto size = 15 + 1;
     string s(size, 0);
     EXPECT_EXIT(RomanToInteger::romanToInt(s), ::testing::ExitedWithCode(3), "");
@@ -108,7 +108,7 @@ TEST(RomanToIntegerTest, romanToInt_fail_3) {
 }
 
 TEST(RomanToIntegerTest, romanToInt_fail_4) {
-    // total <= 3999
+    // total ≤ 3999
     auto s = "MMMM";
     EXPECT_EXIT(RomanToInteger::romanToInt(s), ::testing::ExitedWithCode(3), "");
 }

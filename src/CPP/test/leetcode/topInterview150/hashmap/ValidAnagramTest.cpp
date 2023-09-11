@@ -35,7 +35,7 @@ TEST(ValidAnagramTest, isAnagram_3) {
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, ' ');
     auto t = "nagaram";
@@ -43,7 +43,7 @@ TEST(ValidAnagramTest, isAnagram_fail_1) {
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_2) {
-    // s.length <= 5 * 10^4
+    // s.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
     auto t = "nagaram";
@@ -51,7 +51,7 @@ TEST(ValidAnagramTest, isAnagram_fail_2) {
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_3) {
-    // 1 <= t.length
+    // 1 ≤ t.length
     auto size = 1 - 1;
     auto s = "anagram";
     string t(size, ' ');
@@ -59,7 +59,7 @@ TEST(ValidAnagramTest, isAnagram_fail_3) {
 }
 
 TEST(ValidAnagramTest, isAnagram_fail_4) {
-    // t.length <= 5 * 10^4
+    // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     auto s = "anagram";
     string t(size, ' ');

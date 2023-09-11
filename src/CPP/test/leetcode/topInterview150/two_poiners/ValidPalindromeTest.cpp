@@ -39,14 +39,14 @@ TEST(ValidPalindromeTest, isPalindrome_4) {
 }
 
 TEST(ValidPalindromeTest, isPalindrome_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, ' ');
     EXPECT_EXIT(ValidPalindrome::isPalindrome(s), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ValidPalindromeTest, isPalindrome_fail_2) {
-    // s.length <= 2 * 10^5
+    // s.length ≤ 2 * 10^5
     auto size = 2 * (int) pow(10, 5) + 1;
     string s(size, ' ');
     EXPECT_EXIT(ValidPalindrome::isPalindrome(s), ::testing::ExitedWithCode(3), "");

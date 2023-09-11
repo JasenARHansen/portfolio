@@ -25,28 +25,28 @@ TEST(BestTimeToBuyAndSellStockTest, maxProfit_2) {
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_1) {
-    // 1 <= prices.length
+    // 1 ≤ prices.length
     auto size = 0;
     vector<int> prices(size);
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_2) {
-    // prices.length <= 10^5
+    // prices.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> prices(size);
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_3) {
-    // 0 <= prices[i]
+    // 0 ≤ prices[i]
     auto value = -1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(BestTimeToBuyAndSellStockTest, maxProfit_fail_4) {
-    // prices[i] <= 10^4
+    // prices[i] ≤ 10^4
     auto value = (int) pow(10, 4) + 1;
     vector<int> prices{7, 6, value, 3, 1};
     EXPECT_EXIT(BestTimeToBuyAndSellStock::maxProfit(prices), ::testing::ExitedWithCode(3), "");

@@ -43,7 +43,7 @@ TEST(ZigzagConversionTest, convert_4) {
 }
 
 TEST(ZigzagConversionTest, convert_fail_1) {
-    // 1 <= s.length
+    // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, 0);
     auto numRow = 1;
@@ -51,7 +51,7 @@ TEST(ZigzagConversionTest, convert_fail_1) {
 }
 
 TEST(ZigzagConversionTest, convert_fail_2) {
-    // s.length <= 1000
+    // s.length ≤ 1000
     auto size = 1000 + 1;
     string s(size, 0);
     auto numRow = 1;
@@ -59,14 +59,14 @@ TEST(ZigzagConversionTest, convert_fail_2) {
 }
 
 TEST(ZigzagConversionTest, convert_fail_3) {
-    // 1 <= numRows
+    // 1 ≤ numRows
     auto s = "PAYPALISHIRING";
     auto numRow = 1 - 1;
     EXPECT_EXIT(ZigzagConversion::convert(s, numRow), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ZigzagConversionTest, convert_fail_4) {
-    // numRows <= 1000
+    // numRows ≤ 1000
     auto s = "PAYPALISHIRING";
     auto numRow = 1000 + 1;
     EXPECT_EXIT(ZigzagConversion::convert(s, numRow), ::testing::ExitedWithCode(3), "");

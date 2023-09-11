@@ -75,7 +75,7 @@ TEST(MergeSortedArrayTest, merge_fail_3) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_4) {
-    // n <= 200
+    // n ≤ 200
     auto m = 3;
     auto n = 201;
     vector<int> nums1(m + n);
@@ -84,7 +84,7 @@ TEST(MergeSortedArrayTest, merge_fail_4) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_5) {
-    // 1 <= m + n
+    // 1 ≤ m + n
     auto m = 0;
     auto n = 0;
     vector<int> nums1(m + n);
@@ -93,7 +93,7 @@ TEST(MergeSortedArrayTest, merge_fail_5) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_6) {
-    //  m + n <= 200
+    // m + n ≤ 200
     auto m = 100;
     auto n = 101;
     vector<int> nums1(m + n);
@@ -102,7 +102,7 @@ TEST(MergeSortedArrayTest, merge_fail_6) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_7) {
-    // -10^9 <= nums1[i]
+    // -10^9 ≤ nums1[i]
     auto value = (int) -pow(10, 9) - 1;
     vector<int> nums1{value, 2, 3, 0, 0, 0};
     auto m = 3;
@@ -112,7 +112,7 @@ TEST(MergeSortedArrayTest, merge_fail_7) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_8) {
-    // -10^9 <= nums2[i]
+    // -10^9 ≤ nums2[i]
     vector<int> nums1{1, 2, 3, 0, 0, 0};
     auto m = 3;
     auto value = (int) -pow(10, 9) - 1;
@@ -122,7 +122,7 @@ TEST(MergeSortedArrayTest, merge_fail_8) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_9) {
-    // nums1[i] <= 10^9
+    // nums1[i] ≤ 10^9
     auto value = (int) pow(10, 9) + 1;
     vector<int> nums1{1, 2, value, 0, 0, 0};
     auto m = 3;
@@ -132,7 +132,7 @@ TEST(MergeSortedArrayTest, merge_fail_9) {
 }
 
 TEST(MergeSortedArrayTest, merge_fail_10) {
-    // nums2[j] <= 10^9
+    // nums2[j] ≤ 10^9
     vector<int> nums1{1, 2, 3, 0, 0, 0};
     auto m = 3;
     auto value = (int) pow(10, 9) + 1;

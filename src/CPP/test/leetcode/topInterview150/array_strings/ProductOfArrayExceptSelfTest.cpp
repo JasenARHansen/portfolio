@@ -29,28 +29,28 @@ TEST(ProductOfArrayExceptSelfTest, productExceptSelf_2) {
 }
 
 TEST(ProductOfArrayExceptSelfTest, productExceptSelf_fail_1) {
-    // 2 <= nums.length
+    // 2 ≤ nums.length
     auto size = 2 - 1;
     vector<int> nums(size);
     EXPECT_EXIT(ProductOfArrayExceptSelf::productExceptSelf(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ProductOfArrayExceptSelfTest, productExceptSelf_fail_2) {
-    // nums.length <= 10^5
+    // nums.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(ProductOfArrayExceptSelf::productExceptSelf(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ProductOfArrayExceptSelfTest, productExceptSelf_fail_3) {
-    // -30 <= nums[i]
+    // -30 ≤ nums[i]
     auto value = -30 - 1;
     vector<int> nums{1, value, 1};
     EXPECT_EXIT(ProductOfArrayExceptSelf::productExceptSelf(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ProductOfArrayExceptSelfTest, productExceptSelf_fail_4) {
-    // nums[i] <= 30
+    // nums[i] ≤ 30
     auto value = 30 + 1;
     vector<int> nums{1, value, 1};
     EXPECT_EXIT(ProductOfArrayExceptSelf::productExceptSelf(nums), ::testing::ExitedWithCode(3), "");

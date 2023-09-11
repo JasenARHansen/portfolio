@@ -53,7 +53,7 @@ TEST(InsertIntervalTest, insert_4) {
 }
 
 TEST(InsertIntervalTest, insert_fail_1) {
-    // intervals.length <= 10^4
+    // intervals.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals(size);
     vector<int> newInterval{4, 8};
@@ -69,7 +69,7 @@ TEST(InsertIntervalTest, insert_fail_2) {
 }
 
 TEST(InsertIntervalTest, insert_fail_3) {
-    //  0 <= startI
+    // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{{startI, endI}};
@@ -78,7 +78,7 @@ TEST(InsertIntervalTest, insert_fail_3) {
 }
 
 TEST(InsertIntervalTest, insert_fail_4) {
-    // startI <= 10^5
+    // startI ≤ 10^5
     auto startI = (int) pow(10, 5) + 1;
     auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{{startI, endI}};
@@ -87,7 +87,7 @@ TEST(InsertIntervalTest, insert_fail_4) {
 }
 
 TEST(InsertIntervalTest, insert_fail_5) {
-    // 0 <= endI
+    // 0 ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = 0 - 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -96,7 +96,7 @@ TEST(InsertIntervalTest, insert_fail_5) {
 }
 
 TEST(InsertIntervalTest, insert_fail_6) {
-    // endI <= 10^5
+    // endI ≤ 10^5
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) + 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -105,7 +105,7 @@ TEST(InsertIntervalTest, insert_fail_6) {
 }
 
 TEST(InsertIntervalTest, insert_fail_7) {
-    // startI <= endI
+    // startI ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) - 1;
     vector<vector<int>> intervals{{startI, endI}};
@@ -122,7 +122,7 @@ TEST(InsertIntervalTest, insert_fail_8) {
 }
 
 TEST(InsertIntervalTest, insert_fail_9) {
-    //  0 <= startI
+    // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{};
@@ -131,7 +131,7 @@ TEST(InsertIntervalTest, insert_fail_9) {
 }
 
 TEST(InsertIntervalTest, insert_fail_10) {
-    // startI <= 10^5
+    // startI ≤ 10^5
     auto startI = (int) pow(10, 5) + 1;
     auto endI = (int) pow(10, 5);
     vector<vector<int>> intervals{};
@@ -140,7 +140,7 @@ TEST(InsertIntervalTest, insert_fail_10) {
 }
 
 TEST(InsertIntervalTest, insert_fail_11) {
-    // 0 <= endI
+    // 0 ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = 0 - 1;
     vector<vector<int>> intervals{};
@@ -149,7 +149,7 @@ TEST(InsertIntervalTest, insert_fail_11) {
 }
 
 TEST(InsertIntervalTest, insert_fail_13) {
-    // endI <= 10^5
+    // endI ≤ 10^5
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) + 1;
     vector<vector<int>> intervals{};
@@ -158,7 +158,7 @@ TEST(InsertIntervalTest, insert_fail_13) {
 }
 
 TEST(InsertIntervalTest, insert_fail_14) {
-    // startI <= endI
+    // startI ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) - 1;
     vector<vector<int>> intervals{};

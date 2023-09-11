@@ -28,21 +28,21 @@ TEST(MinimumPathSumTest, minPathSum_2) {
 }
 
 TEST(MinimumPathSumTest, minPathSum_fail_1) {
-    // 1 <= grid.length
+    // 1 ≤ grid.length
     auto size = 1 - 1;
     vector<vector<int>> grid(size);
     EXPECT_EXIT(MinimumPathSum::minPathSum(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumPathSumTest, minPathSum_fail_2) {
-    // grid.length <= 200
+    // grid.length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> grid(size);
     EXPECT_EXIT(MinimumPathSum::minPathSum(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumPathSumTest, minPathSum_fail_3) {
-    // 1 <= grid[0].length
+    // 1 ≤ grid[0].length
     auto size = 1 - 1;
     vector<vector<int>> grid{vector<int>(size)};
     EXPECT_EXIT(MinimumPathSum::minPathSum(grid), ::testing::ExitedWithCode(3), "");
@@ -63,14 +63,14 @@ TEST(MinimumPathSumTest, minPathSum_fail_5) {
 }
 
 TEST(MinimumPathSumTest, minPathSum_fail_6) {
-    //  0 <= grid[i][j]
+    // 0 ≤ grid[i][j]
     auto size = 0 - 1;
     vector<vector<int>> grid{{size}};
     EXPECT_EXIT(MinimumPathSum::minPathSum(grid), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MinimumPathSumTest, minPathSum_fail_7) {
-    //  grid[i][j] <= 200
+    // grid[i][j] ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> grid{{size}};
     EXPECT_EXIT(MinimumPathSum::minPathSum(grid), ::testing::ExitedWithCode(3), "");

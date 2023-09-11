@@ -32,28 +32,28 @@ TEST(SingleNumberTest, singleNumber_3) {
 }
 
 TEST(SingleNumberTest, addBinary_fail_1) {
-    // 1 <= nums.length
+    // 1 ≤ nums.length
     auto size = 1 - 1;
     vector<int> nums(size);
     EXPECT_EXIT(SingleNumber::singleNumber(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SingleNumberTest, addBinary_fail_2) {
-    // nums.length <= 3 * 10^4
+    // nums.length ≤ 3 * 10^4
     auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> nums(size);
     EXPECT_EXIT(SingleNumber::singleNumber(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SingleNumberTest, addBinary_fail_3) {
-    //  -3 * 10^4 <= nums[i]
+    // -3 * 10^4 ≤ nums[i]
     auto size = -3 * (int) pow(10, 4) - 1;
     vector<int> nums{size};
     EXPECT_EXIT(SingleNumber::singleNumber(nums), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(SingleNumberTest, addBinary_fail_4) {
-    // nums[i] <= 3 * 10^4
+    // nums[i] ≤ 3 * 10^4
     auto size = 3 * (int) pow(10, 4) + 1;
     vector<int> nums{size};
     EXPECT_EXIT(SingleNumber::singleNumber(nums), ::testing::ExitedWithCode(3), "");

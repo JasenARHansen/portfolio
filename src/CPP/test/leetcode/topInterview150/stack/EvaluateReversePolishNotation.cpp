@@ -32,28 +32,28 @@ TEST(EvaluateReversePolishNotationTest, EvaluateReversePolishNotation_3) {
 }
 
 TEST(EvaluateReversePolishNotationTest, simplifyPath_fail_1) {
-    // 1 <= tokens.length
+    // 1 ≤ tokens.length
     auto size = 1 - 1;
     vector<string> tokens(size);
     EXPECT_EXIT(EvaluateReversePolishNotation::evalRPN(tokens), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(EvaluateReversePolishNotationTest, simplifyPath_fail_2) {
-    // tokens.length <= 10^4
+    // tokens.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<string> tokens(size);
     EXPECT_EXIT(EvaluateReversePolishNotation::evalRPN(tokens), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(EvaluateReversePolishNotationTest, simplifyPath_fail_3) {
-    // -200 <= tokens[i]
+    // -200 ≤ tokens[i]
     auto size = -200 - 1;
     vector<string> tokens{to_string(size)};
     EXPECT_EXIT(EvaluateReversePolishNotation::evalRPN(tokens), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(EvaluateReversePolishNotationTest, simplifyPath_fail_4) {
-    // tokens[i] <= 200
+    // tokens[i] ≤ 200
     auto size = 200 + 1;
     vector<string> tokens{to_string(size)};
     EXPECT_EXIT(EvaluateReversePolishNotation::evalRPN(tokens), ::testing::ExitedWithCode(3), "");

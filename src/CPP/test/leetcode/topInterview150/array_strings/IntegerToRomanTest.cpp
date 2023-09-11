@@ -39,13 +39,13 @@ TEST(IntegerToRomanTest, intToRoman_4) {
 }
 
 TEST(IntegerToRomanTest, intToRoman_fail_1) {
-    // 1 <= num
+    // 1 ≤ num
     auto num = 1 - 1;
     EXPECT_EXIT(IntegerToRoman::intToRoman(num), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(IntegerToRomanTest, intToRoman_fail_2) {
-    // num <= 3999
+    // num ≤ 3999
     auto num = 3999 + 1;
     EXPECT_EXIT(IntegerToRoman::intToRoman(num), ::testing::ExitedWithCode(3), "");
 }

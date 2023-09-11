@@ -35,7 +35,7 @@ TEST(ContainsDuplicateIITest, containsNearbyDuplicate_3) {
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_1) {
-    // 0 <= nums.length
+    // 0 ≤ nums.length
     auto size = 1 - 1;
     vector<int> nums(size);
     auto k = 3;
@@ -43,7 +43,7 @@ TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_1) {
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_2) {
-    // nums.length <= 10^5
+    // nums.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> nums(size);
     auto k = 3;
@@ -51,7 +51,7 @@ TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_2) {
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_3) {
-    // -10^9 <= nums[i]
+    // -10^9 ≤ nums[i]
     auto size = (int) -pow(10, 9) - 1;
     vector<int> nums{size};
     auto k = 3;
@@ -59,7 +59,7 @@ TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_3) {
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_4) {
-    //  nums[i] <= 10^9
+    // nums[i] ≤ 10^9
     auto size = (int) pow(10, 9) + 1;
     vector<int> nums{size};
     auto k = 3;
@@ -67,14 +67,14 @@ TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_4) {
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_5) {
-    // 0 <= k
+    // 0 ≤ k
     vector<int> nums{1, 2, 3, 1};
     auto k = 0 - 1;
     EXPECT_EXIT(ContainsDuplicateII::containsNearbyDuplicate(nums, k), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ContainsDuplicateIITest, containsNearbyDuplicate_fail_6) {
-    // k <= 10^5)
+    // k ≤ 10^5)
     vector<int> nums{1, 2, 3, 1};
     auto k = (int) pow(10, 5) + 1;
     EXPECT_EXIT(ContainsDuplicateII::containsNearbyDuplicate(nums, k), ::testing::ExitedWithCode(3), "");

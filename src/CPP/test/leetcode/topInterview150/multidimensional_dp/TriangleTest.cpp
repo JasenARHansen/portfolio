@@ -28,14 +28,14 @@ TEST(TriangleTest, minimumTotal_2) {
 }
 
 TEST(TriangleTest, minimumTotal_fail_1) {
-    // 1 <= triangle.length
+    // 1 ≤ triangle.length
     auto size = 1 - 1;
     vector<vector<int>> triangle(size);
     EXPECT_EXIT(Triangle::minimumTotal(triangle), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(TriangleTest, minimumTotal_fail_2) {
-    // triangle.length <= 200
+    // triangle.length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> triangle(size);
     EXPECT_EXIT(Triangle::minimumTotal(triangle), ::testing::ExitedWithCode(3), "");
@@ -56,14 +56,14 @@ TEST(TriangleTest, minimumTotal_fail_4) {
 }
 
 TEST(TriangleTest, minimumTotal_fail_5) {
-    // -10^4 <= triangle[i][j]
+    // -10^4 ≤ triangle[i][j]
     auto size = (int) -pow(10, 4) - 1;
     vector<vector<int>> triangle{{size}};
     EXPECT_EXIT(Triangle::minimumTotal(triangle), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(TriangleTest, minimumTotal_fail_6) {
-    // triangle[i][j] <= 10^4
+    // triangle[i][j] ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<vector<int>> triangle{{size}};
     EXPECT_EXIT(Triangle::minimumTotal(triangle), ::testing::ExitedWithCode(3), "");

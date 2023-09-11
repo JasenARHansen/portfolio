@@ -144,7 +144,7 @@ public class LinkedListTest {
         stringList.insert("b");
         stringList.insert("c");
         System.out.format("\tSource: %s\n", stringList);
-        boolean result = LinkedList.isPalindrome(stringList);
+        boolean result = LinkedList.isPalindromeInRange(stringList);
         assertFalse(result);
         System.out.format("\tPalindrome: %s\n", result);
     }

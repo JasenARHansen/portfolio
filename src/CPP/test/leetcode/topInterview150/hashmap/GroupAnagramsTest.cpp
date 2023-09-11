@@ -38,21 +38,21 @@ TEST(GroupAnagramsTest, groupAnagrams_3) {
 }
 
 TEST(GroupAnagramsTest, groupAnagrams_fail_1) {
-    // 1 <= strings.length
+    // 1 ≤ strings.length
     auto size = 1 - 1;
     vector<string> strings(size);
     EXPECT_EXIT(GroupAnagrams::groupAnagrams(strings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GroupAnagramsTest, groupAnagrams_fail_2) {
-    // strings.length <= 10^4
+    // strings.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<string> strings(size);
     EXPECT_EXIT(GroupAnagrams::groupAnagrams(strings), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(GroupAnagramsTest, groupAnagrams_fail_3) {
-    // strings[i].length <= 100
+    // strings[i].length ≤ 100
     auto size = 100 + 1;
     string s(size, ' ');
     vector<string> strings{s};

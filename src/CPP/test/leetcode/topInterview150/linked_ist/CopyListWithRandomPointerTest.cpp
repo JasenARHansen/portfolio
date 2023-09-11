@@ -58,21 +58,21 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_1) {
-    // n <= 1000
+    // n ≤ 1000
     auto size = 1000 + 1;
     vector<pair<int, string>> values(size);
     EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_2) {
-    // -10^4 <= Node.val
+    // -10^4 ≤ Node.val
     auto size = (int) -pow(10, 4) - 1;
     vector<pair<int, string>> values{{size, "null"}};
     EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_3) {
-    // Node.val <= 10^4
+    // Node.val ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<pair<int, string>> values{{size, "null"}};
     EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");

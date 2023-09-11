@@ -101,28 +101,28 @@ TEST(PartitionListTest, partition_5) {
 }
 
 TEST(PartitionListTest, partition_fail_1) {
-    // n <= 200
+    // n ≤ 200
     auto size = 200 + 1;
     vector<int> values(size);
     EXPECT_EXIT(PartitionList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(PartitionListTest, partition_fail_2) {
-    // -100 <= Node.val
+    // -100 ≤ Node.val
     auto size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(PartitionList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(PartitionListTest, partition_fail_3) {
-    // Node.val <= 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(PartitionList::deserialize(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(PartitionListTest, partition_fail_4) {
-    // -200 <= x
+    // -200 ≤ x
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = PartitionList::deserialize(headValues);
     auto x = -200 - 1;
@@ -131,7 +131,7 @@ TEST(PartitionListTest, partition_fail_4) {
 }
 
 TEST(PartitionListTest, partition_fail_5) {
-    // x <= 200
+    // x ≤ 200
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = PartitionList::deserialize(headValues);
     auto x = 200 + 1;

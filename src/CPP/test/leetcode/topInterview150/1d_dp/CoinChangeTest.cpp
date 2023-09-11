@@ -43,7 +43,7 @@ TEST(CoinChangeTest, coinChange_4) {
 }
 
 TEST(CoinChangeTest, coinChange_fail_1) {
-    // 1 <= coins.length
+    // 1 ≤ coins.length
     auto size = 1 - 1;
     vector<int> coins(size);
     auto amount = 11;
@@ -51,7 +51,7 @@ TEST(CoinChangeTest, coinChange_fail_1) {
 }
 
 TEST(CoinChangeTest, coinChange_fail_2) {
-    // coins.length <= 12
+    // coins.length ≤ 12
     auto size = 12 + 1;
     vector<int> coins(size);
     auto amount = 11;
@@ -59,7 +59,7 @@ TEST(CoinChangeTest, coinChange_fail_2) {
 }
 
 TEST(CoinChangeTest, coinChange_fail_3) {
-    // 1 <= coins[i]
+    // 1 ≤ coins[i]
     auto size = 1 - 1;
     vector<int> coins{size};
     auto amount = 11;
@@ -67,14 +67,14 @@ TEST(CoinChangeTest, coinChange_fail_3) {
 }
 
 TEST(CoinChangeTest, coinChange_fail_4) {
-    // 0 <= amount
+    // 0 ≤ amount
     vector<int> coins{1, 2, 5};
     auto amount = -1;
     EXPECT_EXIT(CoinChange::coinChange(coins, amount), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CoinChangeTest, coinChange_fail_5) {
-    // amount <= 10^4
+    // amount ≤ 10^4
     vector<int> coins{1, 2, 5};
     auto amount = (int) pow(10, 4) + 1;
     EXPECT_EXIT(CoinChange::coinChange(coins, amount), ::testing::ExitedWithCode(3), "");

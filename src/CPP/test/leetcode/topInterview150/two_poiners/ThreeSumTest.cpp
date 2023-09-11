@@ -42,14 +42,14 @@ TEST(ThreeSumTest, threeSum_3) {
 }
 
 TEST(ThreeSumTest, threeSum_fail_1) {
-    // 3 <= nums.length
+    // 3 ≤ nums.length
     auto size = 3 - 1;
     vector<int> numbers(size);
     EXPECT_EXIT(ThreeSum::threeSum(numbers), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(ThreeSumTest, threeSum_fail_2) {
-    // nums.length <= 3000
+    // nums.length ≤ 3000
     auto size = 3000 + 1;
     vector<int> numbers(size);
     EXPECT_EXIT(ThreeSum::threeSum(numbers), ::testing::ExitedWithCode(3), "");
