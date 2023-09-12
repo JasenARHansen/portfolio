@@ -28,7 +28,7 @@ public:
         auto result = true;
         assert(!input.empty());
         auto left = 0;
-        auto right = (int)input.size() - 1;
+        auto right = (int) input.size() - 1;
         while (left < right) {
             if (input.at(left) != input.at(right)) {
                 result = isPalindromeInRange(input, left + 1, right - 1);
@@ -44,7 +44,7 @@ public:
         auto result = true;
         assert(!input.empty());
         auto left = 0;
-        auto right = (int)input.size() - 1;
+        auto right = (int) input.size() - 1;
         while (left < right) {
             if (input.at(left) != input.at(right)) {
                 result = isPalindromeInRange(input, left + 1, right) || isPalindromeInRange(input, left, right - 1);

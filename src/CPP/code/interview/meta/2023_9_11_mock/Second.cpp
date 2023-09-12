@@ -23,8 +23,8 @@ public:
 
     SecondTreeNode(int val, SecondTreeNode *left,
                    SecondTreeNode *right) : val(val),
-                                           left(left),
-                                           right(right) {}
+                                            left(left),
+                                            right(right) {}
 };
 
 class Second {
@@ -119,28 +119,28 @@ public:
         *head = nullptr;
     }
 
-    static vector<int> order(SecondTreeNode* input){
+    static vector<int> order(SecondTreeNode *input) {
         // pair<TreeNode*, col>
         map<int, vector<int>> myMap;
-        queue<pair<SecondTreeNode*, int>> processing;
+        queue<pair<SecondTreeNode *, int>> processing;
         auto column = 0;
         processing.emplace(input, column);
-        while (!processing.empty()){
+        while (!processing.empty()) {
             auto working = processing.front();
             processing.pop();
-            if (!myMap.count(working.second)){
+            if (!myMap.count(working.second)) {
                 myMap[working.second] = vector<int>();
             }
             myMap.at(working.second).push_back(working.first->val);
-            if (working.first->left != nullptr){
+            if (working.first->left != nullptr) {
                 processing.emplace(working.first->left, working.second - 1);
             }
-            if (working.first->right != nullptr){
+            if (working.first->right != nullptr) {
                 processing.emplace(working.first->right, working.second + 1);
             }
         }
         vector<int> result;
-        for (auto key: myMap){
+        for (auto key: myMap) {
             // Copying vector by copy function
             copy(key.second.begin(), key.second.end(), back_inserter(result));
         }

@@ -37,7 +37,7 @@ public:
         The 3rd element of output is 2*2*1 = 4, the 4th is 2*2*1 = 4, and the 5th is 2*2*2 = 8.)" << endl;
     }
 
-    static vector<int> findMaxProduct(const vector<int>& arr) {
+    static vector<int> findMaxProduct(const vector<int> &arr) {
         priority_queue<int> maxHeap;
         vector<int> result;
         for (auto value: arr) {
@@ -58,8 +58,8 @@ public:
         return result;
     }
 
-    static vector<int> findMinProduct(const vector<int>& arr) {
-        priority_queue<int, vector<int> , greater<>> minHeap;
+    static vector<int> findMinProduct(const vector<int> &arr) {
+        priority_queue<int, vector<int>, greater<>> minHeap;
         vector<int> result;
         for (auto value: arr) {
             minHeap.push(value);

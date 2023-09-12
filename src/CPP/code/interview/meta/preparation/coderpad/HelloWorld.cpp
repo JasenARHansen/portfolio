@@ -21,8 +21,8 @@ public:
     }
 
     static void helloWorld() {
-        auto words = { "Hello, ", "World!", "\n" };
-        for (const char* const& word : words) {
+        auto words = {"Hello, ", "World!", "\n"};
+        for (const char *const &word: words) {
             cout << word;
         }
     }

@@ -2,7 +2,6 @@
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
-#include <vector>
 #include <cmath>
 #include <cassert>
 
@@ -21,8 +20,8 @@ public:
         string rotationalCipher(string input, int rotationFactor)
 
     Input
-        1 <= |input| <= 1,000,000
-        0 <= rotationFactor <= 1,000,000
+        1 ≤ |input| ≤ 1,000,000
+        0 ≤ rotationFactor ≤ 1,000,000
 
     Output
         Return the result of rotating input a number of times equal to rotationFactor.
@@ -38,27 +37,39 @@ public:
         output = nopqrstuvwxyzABCDEFGHIJKLM9012345678)" << endl;
     }
 
-    static vector<int> countSubArrays(vector<int> array) {
-        assert(!array.empty());
-        assert(array.size() < pow(10, 6));
-        vector<int> result;
-        for (auto index = 0; index < array.size(); index++) {
-            assert(0 < array.at(index));
-            assert(array.at(index) < pow(10, 9));
-            int sum = 1;
-            auto subIndex = index;
-            // look left
-            while ((1 <= subIndex) && (array.at(subIndex - 1) < array.at(index))) {
-                subIndex--;
+    static string rotationalCipher(const string &input, int rotationFactor) {
+        assert(!input.empty());
+        assert(input.size() < pow(10, 6));
+        assert(0 <= rotationFactor);
+        assert(rotationFactor < pow(10, 6));
+        string result = "";
+        int startUpper = 'A';
+        int stopUpper = 'Z';
+        int startLower = 'a';
+        int stopLower = 'z';
+        int startNumber = '0';
+        int stopNumber = '9';
+        int letterRange = stopUpper - startUpper + 1;
+        int numberRange = stopNumber - startNumber + 1;
+        for (auto character: input) {
+            if (iswalnum(character)) {
+                // character is upper case
+                if ((startUpper <= character) && (character <= stopUpper)) {
+                    result += startUpper + (((character - startUpper) + rotationFactor) % letterRange);
+                }
+                // character is lower case
+                else if ((startLower <= character) && (character <= stopLower)) {
+                    result += startLower + (((character - startLower) + rotationFactor) % letterRange);
+                }
+                // character is number
+
+                else if ((startNumber <= character) && (character <= stopNumber)) {
+                    result += startNumber + (((character - startNumber) + rotationFactor) % numberRange);
+                }
             }
-            sum += index - subIndex;
-            //look right
-            subIndex = index;
-            while ((subIndex < array.size() - 1) && (array.at(subIndex + 1) < array.at(index))) {
-                subIndex++;
+            else{
+                result += character;
             }
-            sum += subIndex - index;
-            result.push_back(sum);
         }
         return result;
     }

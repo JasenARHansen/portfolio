@@ -1,5 +1,5 @@
-#ifndef INTERVIEW_META_PREPARATION_RotationalCipher_TEST
-#define INTERVIEW_META_PREPARATION_RotationalCipher_TEST
+#ifndef INTERVIEW_META_PREPARATION_ROTATIONAL_CIPHER_TEST
+#define INTERVIEW_META_PREPARATION_ROTATIONAL_CIPHER_TEST
 
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/strings/RotationalCipher.cpp"
@@ -10,46 +10,50 @@ TEST(RotationalCipherTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RotationalCipherTest, countSubArrays_1) {
-    vector<int> expected{1, 3, 1, 5, 1};
-    vector<int> array{3, 4, 1, 6, 2};
-    auto result = RotationalCipher::countSubArrays(array);
+TEST(RotationalCipherTest, rotationalCipher_1) {
+    auto expected = "Cheud-726?";
+    auto input = "Zebra-493?";
+    auto rotationFactor = 3;
+    auto result = RotationalCipher::rotationalCipher(input, rotationFactor);
     EXPECT_EQ(expected, result);
 }
 
-TEST(RotationalCipherTest, countSubArrays_2) {
-    vector<int> expected{1, 2, 6, 1, 3, 1};
-    vector<int> array{2, 4, 7, 1, 5, 3};
-    auto result = RotationalCipher::countSubArrays(array);
+TEST(RotationalCipherTest, rotationalCipher_2) {
+    auto expected = "nopqrstuvwxyzABCDEFGHIJKLM9012345678";
+    auto input = "abcdefghijklmNOPQRSTUVWXYZ0123456789";
+    auto rotationFactor = 39;
+    auto result = RotationalCipher::rotationalCipher(input, rotationFactor);
     EXPECT_EQ(expected, result);
 }
 
 TEST(RotationalCipherTest, climbStairs_fail_1) {
-    // 1 ≤ array.length
-    auto size = 1 - 1;
-    vector<int> array(size);
-    EXPECT_EXIT(RotationalCipher::countSubArrays(array), ::testing::ExitedWithCode(3), "");
+    // 1 ≤ input.length
+    auto size = 0;
+    string input(size, ' ');
+    auto rotationFactor = 3;
+    EXPECT_EXIT(RotationalCipher::rotationalCipher(input, rotationFactor), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotationalCipherTest, climbStairs_fail_2) {
-    // array.length ≤ 1,000,000
+    // input.length ≤ 1,000,000
     auto size = (int) pow(10, 6) + 1;
-    vector<int> array(size);
-    EXPECT_EXIT(RotationalCipher::countSubArrays(array), ::testing::ExitedWithCode(3), "");
+    string input(size, ' ');
+    auto rotationFactor = 3;
+    EXPECT_EXIT(RotationalCipher::rotationalCipher(input, rotationFactor), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotationalCipherTest, climbStairs_fail_3) {
-    // 1 ≤ array[i]
-    auto size = 1 - 1;
-    vector<int> array{size};
-    EXPECT_EXIT(RotationalCipher::countSubArrays(array), ::testing::ExitedWithCode(3), "");
+    // 0 ≤ rotationFactor
+    auto input = "Zebra-493?";
+    auto rotationFactor = 0 - 1;
+    EXPECT_EXIT(RotationalCipher::rotationalCipher(input, rotationFactor), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotationalCipherTest, climbStairs_fail_4) {
-    // array[i] ≤ 1,000,000,000
-    auto size = (int) pow(10, 9) + 1;
-    vector<int> array{size};
-    EXPECT_EXIT(RotationalCipher::countSubArrays(array), ::testing::ExitedWithCode(3), "");
+    // rotationFactor] ≤ 1,000,000,000
+    auto input = "Zebra-493?";
+    auto rotationFactor = (int) pow(10, 6) + 1;
+    EXPECT_EXIT(RotationalCipher::rotationalCipher(input, rotationFactor), ::testing::ExitedWithCode(3), "");
 }
 
 #endif
