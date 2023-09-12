@@ -48,7 +48,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 2000].
-        -100 <= ListNode.val <= 100
+        -100 ≤ ListNode.val ≤ 100
 
     Follow up:
         Can you flatten the tree in-place (with O(1) extra space)?)" << endl;

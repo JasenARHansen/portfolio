@@ -35,7 +35,7 @@ public:
             You need to reduce multiple spaces between two words to a single space in the reversed string.
 
     Constraints:
-        1 <= s.length <= 10^4
+        1 ≤ s.length ≤ 10^4
         s contains English letters (upper-case and lower-case), digits, and spaces ' '.
         There is at least one word in s.)" << endl;
     }

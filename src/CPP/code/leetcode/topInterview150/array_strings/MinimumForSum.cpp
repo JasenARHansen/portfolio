@@ -34,9 +34,9 @@ public:
         Output: 0
 
     Constraints:
-        1 <= target <= 10^9
-        1 <= nums.length <= 10^5
-        1 <= nums[i] <= 10^4)" << endl;
+        1 ≤ target ≤ 10^9
+        1 ≤ nums.length ≤ 10^5
+        1 ≤ nums[i] ≤ 10^4)" << endl;
     }
 
     static int minForSum(int target, vector<int> &nums) {

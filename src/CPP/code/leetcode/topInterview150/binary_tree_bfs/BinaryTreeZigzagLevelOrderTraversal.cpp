@@ -45,7 +45,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 2000].
-        -100 <= Node.val <= 100)" << endl;
+        -100 ≤ Node.val ≤ 100)" << endl;
     }
 
     static BinaryTreeZigzagLevelOrderTraversalTreeNode *deserialize(vector<string> values) {

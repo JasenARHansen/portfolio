@@ -16,7 +16,7 @@ public:
     static void description() {
         cout << R"(452. Minimum Number of Arrows to Burst Balloons
     There are some spherical balloons taped onto a flat wall that represents the XY-plane. The balloons are represented as a 2D integer array points where points[i] = [xstart, xend] denotes a balloon whose horizontal diameter stretches between xstart and xend. You do not know the exact y-coordinates of the balloons.
-    Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with xstart and xend is burst by an arrow shot at x if xstart <= x <= xend. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
+    Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with xstart and xend is burst by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
     Given the array points, return the minimum number of arrows that must be shot to burst all balloons.
 
     Example 1:
@@ -42,9 +42,9 @@ public:
             - Shoot an arrow at x = 4, bursting the balloons [3,4] and [4,5].
 
     Constraints:
-        1 <= points.length <= 10^5
+        1 ≤ points.length ≤ 10^5
         points[i].length == 2
-        -2^31 <= xStart < xEnd <= 2^31 - 1)" << endl;
+        -2^31 ≤ xStart < xEnd ≤ 2^31 - 1)" << endl;
     }
 
     static int findMinArrowShots(vector<vector<int>> points) {

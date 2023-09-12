@@ -49,9 +49,9 @@ public:
             It does not matter what you leave beyond the returned k (hence they are underscores).
 
     Constraints:
-        0 <= nums.length <= 100
-        0 <= nums[i] <= 50
-        0 <= val <= 100)" << endl;
+        0 ≤ nums.length ≤ 100
+        0 ≤ nums[i] ≤ 50
+        0 ≤ val ≤ 100)" << endl;
     }
 
     static int removeElement(vector<int> &nums, int val) {

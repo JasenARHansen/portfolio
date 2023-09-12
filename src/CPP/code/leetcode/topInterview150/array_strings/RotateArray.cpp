@@ -32,9 +32,9 @@ public:
             rotate 2 steps to the right: [3,99,-1,-100]
 
     Constraints:
-        1 <= nums.length <= 10^5
-        -2^31 <= nums[i] <= 2^31 - 1
-        0 <= k <= 10^5)" << endl;
+        1 ≤ nums.length ≤ 10^5
+        -2^31 ≤ nums[i] ≤ 2^31 - 1
+        0 ≤ k ≤ 10^5)" << endl;
     }
 
     static void rotate(vector<int> &nums, int k) {

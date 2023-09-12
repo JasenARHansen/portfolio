@@ -31,8 +31,8 @@ public:
     Constraints:
         m == grid.length
         n == grid[i].length
-        1 <= m, n <= 200
-        0 <= grid[i][j] <= 200)" << endl;
+        1 ≤ m, n ≤ 200
+        0 ≤ grid[i][j] ≤ 200)" << endl;
     }
 
     static int minPathSum(const vector<vector<int>> &grid) {

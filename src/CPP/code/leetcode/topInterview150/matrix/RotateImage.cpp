@@ -26,8 +26,8 @@ public:
 
     Constraints:
         n == matrix.length == matrix[i].length
-        1 <= n <= 20
-        -1000 <= matrix[i][j] <= 1000)" << endl;
+        1 ≤ n ≤ 20
+        -1000 ≤ matrix[i][j] ≤ 1000)" << endl;
     }
 
     static void rotate(vector<vector<int>> &matrix) {

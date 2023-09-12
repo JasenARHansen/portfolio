@@ -27,8 +27,8 @@ public:
             There is no common prefix among the input strings.
 
     Constraints:
-        1 <= strings.length <= 200
-        0 <= strings[i].length <= 200
+        1 ≤ strings.length ≤ 200
+        0 ≤ strings[i].length ≤ 200
         strings[i] consists of only lowercase English letters.)" << endl;
     }
 

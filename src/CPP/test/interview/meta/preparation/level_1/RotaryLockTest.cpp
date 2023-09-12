@@ -38,7 +38,7 @@ TEST(RotaryLockCh1Test, getMinCodeEntryTime_fail_1) {
 
 TEST(RotaryLockCh1Test, getMinCodeEntryTime_fail_2) {
     // n ≤ 50,000,000
-    auto n = 5 * (int) pow(10, 7);
+    auto n = 5 * (int) pow(10, 7) + 1;
     auto m = 3;
     vector<int> c{1, 2, 3};
     EXPECT_EXIT(RotaryLock::getMinCodeEntryTime(n, m, c), ::testing::ExitedWithCode(3), "");

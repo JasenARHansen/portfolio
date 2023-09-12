@@ -36,8 +36,8 @@ public:
 
     Constraints:
         n == ratings.length
-        1 <= n <= 2 * 10^4
-        0 <= ratings[i] <= 2 * 10^4)" << endl;
+        1 ≤ n ≤ 2 * 10^4
+        0 ≤ ratings[i] ≤ 2 * 10^4)" << endl;
     }
 
     static int candy(vector<int> &ratings) {

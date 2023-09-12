@@ -46,8 +46,8 @@ public:
             It does not matter what you leave beyond the returned k (hence they are underscores).
 
     Constraints:
-        1 <= nums.length <= 3 * 10^4
-        -10^4 <= nums[i] <= 10^4
+        1 ≤ nums.length ≤ 3 * 10^4
+        -10^4 ≤ nums[i] ≤ 10^4
         nums is sorted in non-decreasing order.)" << endl;
     }
 

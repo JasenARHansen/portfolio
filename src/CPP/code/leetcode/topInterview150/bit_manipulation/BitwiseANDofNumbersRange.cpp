@@ -27,7 +27,7 @@ public:
         Output: 0
 
     Constraints:
-        0 <= left <= right <= 2^31 - 1)" << endl;
+        0 ≤ left ≤ right ≤ 2^31 - 1)" << endl;
     }
 
     static int rangeBitwiseAnd(int left, int right) {

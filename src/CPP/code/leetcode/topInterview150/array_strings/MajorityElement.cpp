@@ -28,8 +28,8 @@ public:
 
     Constraints:
         n == nums.length
-        1 <= n <= 5 * 10^4
-        -10^9 <= nums[i] <= 10^9)" << endl;
+        1 ≤ n ≤ 5 * 10^4
+        -10^9 ≤ nums[i] ≤ 10^9)" << endl;
     }
 
     static int majorityElement(vector<int> &nums) {

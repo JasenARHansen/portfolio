@@ -32,8 +32,8 @@ public:
 
     Constraints:
         n == height.length
-        2 <= n <= 10^5
-        0 <= height[i] <= 10^4)" << endl;
+        2 ≤ n ≤ 10^5
+        0 ≤ height[i] ≤ 10^4)" << endl;
     }
 
     static int maxArea(vector<int> &height) {

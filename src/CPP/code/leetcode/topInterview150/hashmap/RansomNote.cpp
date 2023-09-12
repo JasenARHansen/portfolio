@@ -30,7 +30,7 @@ public:
         Output: true
 
     Constraints:
-        1 <= ransomNote.length, magazine.length <= 10^5
+        1 ≤ ransomNote.length, magazine.length ≤ 10^5
         ransomNote and magazine consist of lowercase English letters.)" << endl;
     }
 

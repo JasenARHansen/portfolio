@@ -34,10 +34,10 @@ public:
         Output: -10
 
     Constraints:
-        1 <= triangle.length <= 200
+        1 ≤ triangle.length ≤ 200
         triangle[0].length == 1
         triangle[i].length == triangle[i - 1].length + 1
-        -10^4 <= triangle[i][j] <= 10^4)" << endl;
+        -10^4 ≤ triangle[i][j] ≤ 10^4)" << endl;
     }
 
     static int minimumTotal(const vector<vector<int>> &triangle) {

@@ -38,8 +38,8 @@ public:
 
     Constraints:
         The number of nodes in the list is in the range [0, 200].
-        -100 <= Node.val <= 100
-        -200 <= x <= 200)" << endl;
+        -100 ≤ Node.val ≤ 100
+        -200 ≤ x ≤ 200)" << endl;
     }
 
     static PartitionListNode *deserialize(const vector<int> &numbers) {

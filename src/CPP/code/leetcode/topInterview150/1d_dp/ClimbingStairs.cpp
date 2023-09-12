@@ -35,7 +35,7 @@ public:
             3. 2 steps + 1 step
 
     Constraints:
-        1 <= n <= 45)" << endl;
+        1 ≤ n ≤ 45)" << endl;
     }
 
     static int climbStairs(int n) {

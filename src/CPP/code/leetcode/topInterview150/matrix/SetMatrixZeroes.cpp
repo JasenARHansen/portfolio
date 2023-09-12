@@ -27,8 +27,8 @@ public:
     Constraints:
         m == matrix.length
         n == matrix[0].length
-        1 <= m, n <= 200
-        -2^31 <= matrix[i][j] <= 2^31 - 1)" << endl;
+        1 ≤ m, n ≤ 200
+        -2^31 ≤ matrix[i][j] ≤ 2^31 - 1)" << endl;
     }
 
     static void setZeroes(vector<vector<int>> &matrix) {

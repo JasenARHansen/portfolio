@@ -30,12 +30,12 @@ public:
             Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
     Constraints:
-        0 <= intervals.length <= 10^4
+        0 ≤ intervals.length ≤ 10^4
         intervals[i].length == 2
-        0 <= startI <= endI <= 10^5
+        0 ≤ startI ≤ endI ≤ 10^5
         intervals is sorted by startI in ascending order.
         newInterval.length == 2
-        0 <= start <= end <= 10^5)" << endl;
+        0 ≤ start ≤ end ≤ 10^5)" << endl;
     }
 
     static vector<vector<int>> insert(const vector<vector<int>> &intervals, const vector<int> &newInterval) {
@@ -87,22 +87,22 @@ private:
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
         auto overlap = false;
-        // case 1.  result[index][0] <= processing[0] <= result[index][1]
+        // case 1.  result[index][0] ≤ processing[0] ≤ result[index][1]
         if ((interval1[0] <= interval2[0]) &&
             (interval2[0] <= interval1[1])) {
             overlap = true;
         }
-            // case 2.  interval1[0] <= interval2[1] <= interval1[1]
+            // case 2.  interval1[0] ≤ interval2[1] ≤ interval1[1]
         else if ((interval1[0] <= interval2[1]) &&
                  (interval2[1] <= interval1[1])) {
             overlap = true;
         }
-            // case 3.  interval2[0] <= interval1[0] <= interval2[1]
+            // case 3.  interval2[0] ≤ interval1[0] ≤ interval2[1]
         else if ((interval2[0] <= interval1[0]) &&
                  (interval1[0] <= interval2[1])) {
             overlap = true;
         }
-            // case 3.  interval2[0] <= interval1[1] <= interval2[1]
+            // case 3.  interval2[0] ≤ interval1[1] ≤ interval2[1]
         else if ((interval2[0] <= interval1[1]) &&
                  (interval1[1] <= interval2[1])) {
             overlap = true;

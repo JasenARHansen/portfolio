@@ -34,7 +34,7 @@ public:
     Constraints:
         m == board.length
         n == board[i].length
-        1 <= m, n <= 25
+        1 ≤ m, n ≤ 25
         board[i][j] is 0 or 1.
 
     Follow up:

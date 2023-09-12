@@ -50,7 +50,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [2, 10^5].
-        -109 <= Node.val <= 10^9
+        -109 ≤ Node.val ≤ 10^9
         All Node.val are unique.
         p != q
         p and q will exist in the tree.)" << endl;

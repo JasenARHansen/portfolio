@@ -44,7 +44,7 @@ public:
         randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
 
     Constraints:
-        -2^31 <= val <= 2^31 - 1
+        -2^31 ≤ val ≤ 2^31 - 1
         At most 2 * 10^5 calls will be made to insert, remove, and getRandom.
         There will be at least one element in the data structure when getRandom is called.)" << endl;
     }

@@ -25,8 +25,8 @@ public:
         Output: false
 
     Constraints:
-        0 <= s.length <= 100
-        0 <= t.length <= 10^4
+        0 ≤ s.length ≤ 100
+        0 ≤ t.length ≤ 10^4
         s and t consist only of lowercase English letters.)" << endl;
     }
 

@@ -50,7 +50,7 @@ public:
             M = 1000, CM = 900, XC = 90 and IV = 4.
 
     Constraints:
-        1 <= num <= 3999)" << endl;
+        1 ≤ num ≤ 3999)" << endl;
     }
 
     static string intToRoman(int num) {

@@ -30,9 +30,9 @@ public:
             Intervals [1,4] and [4,5] are considered overlapping.
 
     Constraints:
-        1 <= intervals.length <= 10^4
+        1 ≤ intervals.length ≤ 10^4
         intervals[i].length == 2
-        0 <= startI <= endI <= 10^4)" << endl;
+        0 ≤ startI ≤ endI ≤ 10^4)" << endl;
     }
 
     static vector<vector<int>> merge(const vector<vector<int>> &intervals) {
@@ -114,13 +114,13 @@ private:
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
         auto overlap = false;
-        // case 1.  result[index][0] <= processing[0] <= result[index][1]
+        // case 1.  result[index][0] ≤ processing[0] ≤ result[index][1]
         if (((interval1[0] <= interval2[0]) && (interval2[0] <= interval1[1])) ||
-            // case 2.  interval1[0] <= interval2[1] <= interval1[1]
+            // case 2.  interval1[0] ≤ interval2[1] ≤ interval1[1]
             ((interval1[0] <= interval2[1]) && (interval2[1] <= interval1[1])) ||
-            // case 3.  interval2[0] <= interval1[0] <= interval2[1]
+            // case 3.  interval2[0] ≤ interval1[0] ≤ interval2[1]
             ((interval2[0] <= interval1[0]) && (interval1[0] <= interval2[1])) ||
-            // case 3.  interval2[0] <= interval1[1] <= interval2[1]
+            // case 3.  interval2[0] ≤ interval1[1] ≤ interval2[1]
             ((interval2[0] <= interval1[1]) && (interval1[1] <= interval2[1]))) {
             overlap = true;
         }

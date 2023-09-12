@@ -40,8 +40,8 @@ public:
             There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
 
     Constraints:
-        1 <= prices.length <= 3 * 10^4
-        0 <= prices[i] <= 10^4)" << endl;
+        1 ≤ prices.length ≤ 3 * 10^4
+        0 ≤ prices[i] ≤ 10^4)" << endl;
     }
 
     static int maxProfit(vector<int> &prices) {

@@ -40,7 +40,7 @@ Example 1
     In total you can eat 7 + 4 + 3 = 14 pieces of candy.)" << endl;
     }
 
-    static int maxCandies(const vector<int>& arr, int k) {
+    static int maxCandies(const vector<int> &arr, int k) {
         assert(!arr.empty());
         assert(arr.size() < pow(10, 4));
         assert(0 < k);
@@ -56,7 +56,7 @@ Example 1
             auto eat = maxHeap.top();
             result += eat;
             maxHeap.pop();
-            maxHeap.push(eat/2);
+            maxHeap.push(eat / 2);
         }
         return result;
     }

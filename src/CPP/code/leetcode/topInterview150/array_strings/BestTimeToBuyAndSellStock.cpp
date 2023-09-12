@@ -32,8 +32,8 @@ public:
             In this case, no transactions are done and the max profit = 0.
 
     Constraints:
-        1 <= prices.length <= 10^5
-        0 <= prices[i] <= 10^4)" << endl;
+        1 ≤ prices.length ≤ 10^5
+        0 ≤ prices[i] ≤ 10^4)" << endl;
     }
 
     static int maxProfit(vector<int> &prices) {

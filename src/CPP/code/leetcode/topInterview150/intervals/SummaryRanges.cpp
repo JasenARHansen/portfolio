@@ -42,8 +42,8 @@ public:
             [8,9] --> "8->9"
 
     Constraints:
-        0 <= nums.length <= 20
-        -2^31 <= nums[i] <= 2^31 - 1
+        0 ≤ nums.length ≤ 20
+        -2^31 ≤ nums[i] ≤ 2^31 - 1
         All the values of nums are unique.
     nums is sorted in ascending order.)" << endl;
     }

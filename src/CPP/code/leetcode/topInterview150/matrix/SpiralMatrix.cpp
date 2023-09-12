@@ -27,8 +27,8 @@ public:
     Constraints:
         m == matrix.length
         n == matrix[i].length
-        1 <= m, n <= 10
-        -100 <= matrix[i][j] <= 100)" << endl;
+        1 ≤ m, n ≤ 10
+        -100 ≤ matrix[i][j] ≤ 100)" << endl;
     }
 
     static vector<int> spiralOrder(vector<vector<int>> &matrix) {

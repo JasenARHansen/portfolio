@@ -32,8 +32,8 @@ public:
         Output: [["a"]]
 
     Constraints:
-        1 <= strings.length <= 10^4
-        0 <= strings[i].length <= 100
+        1 ≤ strings.length ≤ 10^4
+        0 ≤ strings[i].length ≤ 100
         strings[i] consists of lowercase English letters.)" << endl;
     }
 

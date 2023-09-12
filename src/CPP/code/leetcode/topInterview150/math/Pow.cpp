@@ -30,10 +30,10 @@ public:
 
     Constraints:
         -100.0 < x < 100.0
-        -2^31 <= n <= 2^31-1
+        -2^31 ≤ n ≤ 2^31-1
         n is an integer.
         Either x is not zero or n > 0.
-        -10^4 <= xn <= 10^4)" << endl;
+        -10^4 ≤ xn ≤ 10^4)" << endl;
     }
 
     static double myPow(double x, int n) {

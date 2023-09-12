@@ -37,7 +37,7 @@ public:
             trie.search("app");     // return True
 
     Constraints:
-        1 <= word.length, prefix.length <= 2000
+        1 ≤ word.length, prefix.length ≤ 2000
         word and prefix consist only of lowercase English letters.
         At most 3 * 10^4 calls in total will be made to insert, search, and startsWith.)" << endl;
     }

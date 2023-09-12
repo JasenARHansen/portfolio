@@ -31,8 +31,8 @@ public:
 
     Constraints:
         n == citations.length
-        1 <= n <= 5000
-        0 <= citations[i] <= 1000)" << endl;
+        1 ≤ n ≤ 5000
+        0 ≤ citations[i] ≤ 1000)" << endl;
     }
 
     static int hIndex(vector<int> &citations) {

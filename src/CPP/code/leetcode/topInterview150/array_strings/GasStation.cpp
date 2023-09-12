@@ -43,8 +43,8 @@ public:
 
     Constraints:
         n == gas.length == cost.length
-        1 <= n <= 10^5
-        0 <= gas[i], cost[i] <= 10^4)" << endl;
+        1 ≤ n ≤ 10^5
+        0 ≤ gas[i], cost[i] ≤ 10^4)" << endl;
     }
 
     static int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {

@@ -35,9 +35,9 @@ public:
         Output: [0,1]
 
     Constraints:
-        2 <= nums.length <= 10^4
-        -10^9 <= nums[i] <= 10^9
-        -10^9 <= target <= 10^9
+        2 ≤ nums.length ≤ 10^4
+        -10^9 ≤ nums[i] ≤ 10^9
+        -10^9 ≤ target ≤ 10^9
         Only one valid answer exists.
     Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?)" << endl;
     }

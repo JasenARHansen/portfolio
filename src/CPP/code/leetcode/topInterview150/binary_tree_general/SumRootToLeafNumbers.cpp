@@ -53,7 +53,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [1, 1000].
-        0 <= Node.val <= 9
+        0 ≤ Node.val ≤ 9
         The depth of the tree will not exceed 10.)" << endl;
     }
 

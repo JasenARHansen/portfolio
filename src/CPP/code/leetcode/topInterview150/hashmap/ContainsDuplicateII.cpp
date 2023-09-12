@@ -15,7 +15,7 @@ public:
 
     static void description() {
         cout << R"(219. Contains Duplicate II
-    Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+    Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) ≤ k.
 
     Example 1:
         Input: nums = [1,2,3,1], k = 3
@@ -30,9 +30,9 @@ public:
         Output: false
 
     Constraints:
-        1 <= nums.length <= 10^5
-        -10^9 <= nums[i] <= 10^9
-        0 <= k <= 10^5)" << endl;
+        1 ≤ nums.length ≤ 10^5
+        -10^9 ≤ nums[i] ≤ 10^9
+        0 ≤ k ≤ 10^5)" << endl;
     }
 
     static bool containsNearbyDuplicate(vector<int> &nums, int k) {

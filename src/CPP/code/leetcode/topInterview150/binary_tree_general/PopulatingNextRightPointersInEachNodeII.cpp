@@ -56,7 +56,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 6000].
-        -100 <= ListNode.val <= 100
+        -100 ≤ ListNode.val ≤ 100
 
     Follow-up:
         You may only use constant extra space.

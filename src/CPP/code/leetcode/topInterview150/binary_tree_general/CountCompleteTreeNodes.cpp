@@ -52,7 +52,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 5 * 10^4].
-        0 <= Node.val <= 5 * 10^4
+        0 ≤ Node.val ≤ 5 * 10^4
         The tree is guaranteed to be complete.)" << endl;
     }
 

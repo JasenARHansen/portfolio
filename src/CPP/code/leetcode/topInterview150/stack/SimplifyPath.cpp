@@ -42,7 +42,7 @@ public:
             In the canonical path, multiple consecutive slashes are replaced by a single one.
 
     Constraints:
-        1 <= path.length <= 3000
+        1 ≤ path.length ≤ 3000
         path consists of English letters, digits, period '.', slash '/' or '_'.
         path is a valid absolute Unix path.)" << endl;
     }

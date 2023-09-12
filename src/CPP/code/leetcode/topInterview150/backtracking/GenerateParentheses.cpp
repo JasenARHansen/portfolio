@@ -25,7 +25,7 @@ public:
         Output: ['()']
 
     Constraints:
-        1 <= n <= 8)" << endl;
+        1 ≤ n ≤ 8)" << endl;
     }
 
     static vector<string> generateParenthesis(int n) {
