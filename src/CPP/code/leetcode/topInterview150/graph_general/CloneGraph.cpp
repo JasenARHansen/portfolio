@@ -11,16 +11,16 @@
 
 using namespace std;
 
-class Node {
+class CloneGraphNode {
 public:
     int val;
-    vector<Node *> neighbors;
+    vector<CloneGraphNode *> neighbors;
 
-    Node() : val(0), neighbors(vector<Node *>()) {}
+    CloneGraphNode() : val(0), neighbors(vector<CloneGraphNode *>()) {}
 
-    explicit Node(int val) : val(val), neighbors(vector<Node *>()) {}
+    explicit CloneGraphNode(int val) : val(val), neighbors(vector<CloneGraphNode *>()) {}
 
-    Node(int val, vector<Node *> neighbors) : val(val), neighbors(std::move(neighbors)) {}
+    CloneGraphNode(int val, vector<CloneGraphNode *> neighbors) : val(val), neighbors(std::move(neighbors)) {}
 };
 
 class CloneGraph {
@@ -31,10 +31,10 @@ public:
         cout << R"(133. Clone Graph
     Given a reference of a node in a connected undirected graph.
     Return a deep copy (clone) of the graph.
-    Each node in the graph contains a value (int) and a list (List[Node]) of its neighbors.
-        class Node {
+    Each node in the graph contains a value (int) and a list (List[CloneGraphNode]) of its neighbors.
+        class CloneGraphNode {
             public int val;
-            public List<Node> neighbors;
+            public List<CloneGraphNode> neighbors;
         }
 
     Test case format:
@@ -66,19 +66,19 @@ public:
 
     Constraints:
         The number of nodes in the graph is in the range [0, 100].
-        1 ≤ Node.val ≤ 100
-        Node.val is unique for each node.
+        1 ≤ CloneGraphNode.val ≤ 100
+        CloneGraphNode.val is unique for each node.
         There are no repeated edges and no self-loops in the graph.
         The Graph is connected and all nodes can be visited starting from the given node.)" << endl;
     }
 
-    static Node *deserializeGraph(const vector<vector<int>> &values) {
-        Node *result = nullptr;
+    static CloneGraphNode *deserializeGraph(const vector<vector<int>> &values) {
+        CloneGraphNode *result = nullptr;
         if (!values.empty()) {
-            vector<Node *> graph;
+            vector<CloneGraphNode *> graph;
             auto index = 1;
             for (auto node: values) {
-                graph.push_back(new Node(index++));
+                graph.push_back(new CloneGraphNode(index++));
             }
             index = 0;
             for (const auto &node: values) {
@@ -92,14 +92,14 @@ public:
         return result;
     }
 
-    static vector<vector<int>> serializeGraph(Node *head) {
+    static vector<vector<int>> serializeGraph(CloneGraphNode *head) {
         vector<vector<int>> data;
         if (head != nullptr) {
-            unordered_map<int, vector<Node *>> graph;
-            queue<Node *> processing;
+            unordered_map<int, vector<CloneGraphNode *>> graph;
+            queue<CloneGraphNode *> processing;
             processing.push(head);
             graph[head->val] = head->neighbors;
-            Node *working;
+            CloneGraphNode *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
@@ -126,14 +126,14 @@ public:
         return data;
     }
 
-    static void deleteGraph(Node **head) {
+    static void deleteGraph(CloneGraphNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            unordered_set<Node *> toDelete;
-            queue<Node *> processing;
+            unordered_set<CloneGraphNode *> toDelete;
+            queue<CloneGraphNode *> processing;
             processing.push(current);
             toDelete.insert(current);
-            Node *working;
+            CloneGraphNode *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
@@ -149,18 +149,18 @@ public:
         *head = nullptr;
     }
 
-    static Node *cloneGraph(Node *node) {
-        Node *result = nullptr;
+    static CloneGraphNode *cloneGraph(CloneGraphNode *node) {
+        CloneGraphNode *result = nullptr;
         if (node != nullptr) {
-            unordered_map<int, Node *> graph;
-            unordered_map<int, vector<Node *>> graphNeighbors;
-            queue<Node *> processing;
+            unordered_map<int, CloneGraphNode *> graph;
+            unordered_map<int, vector<CloneGraphNode *>> graphNeighbors;
+            queue<CloneGraphNode *> processing;
             processing.push(node);
-            Node *working;
+            CloneGraphNode *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
-                graph[working->val] = new Node(working->val);
+                graph[working->val] = new CloneGraphNode(working->val);
                 graphNeighbors[working->val] = working->neighbors;
                 for (auto neighbor: working->neighbors) {
                     if (!graphNeighbors.count(neighbor->val)) {

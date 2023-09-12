@@ -53,7 +53,7 @@ public:
         nums is sorted in a strictly increasing order.)" << endl;
     }
 
-    static ConvertSortedArrayToBinarySearchTreeNode *deserialize(vector<string> values) {
+    static ConvertSortedArrayToBinarySearchTreeNode *deserializeTree(vector<string> values) {
         ConvertSortedArrayToBinarySearchTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<ConvertSortedArrayToBinarySearchTreeNode *> nodes;

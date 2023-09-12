@@ -13,7 +13,7 @@ TEST(ValidateBinarySearchTreeTest, description) {
 TEST(ValidateBinarySearchTreeTest, isValidBST_1) {
     bool expected = true;
     vector<string> values{"2", "1", "3"};
-    auto root = ValidateBinarySearchTree::deserialize(values);
+    auto root = ValidateBinarySearchTree::deserializeTree(values);
     auto result = ValidateBinarySearchTree::isValidBST(root);
     EXPECT_EQ(expected, result);
     ValidateBinarySearchTree::deleteTree(&root);
@@ -22,7 +22,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_1) {
 TEST(ValidateBinarySearchTreeTest, isValidBST_2) {
     auto expected = false;
     vector<string> values{"5", "1", "4", "null", "null", "3", "6"};
-    auto root = ValidateBinarySearchTree::deserialize(values);
+    auto root = ValidateBinarySearchTree::deserializeTree(values);
     auto result = ValidateBinarySearchTree::isValidBST(root);
     EXPECT_EQ(expected, result);
     ValidateBinarySearchTree::deleteTree(&root);
@@ -31,7 +31,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_2) {
 TEST(ValidateBinarySearchTreeTest, isValidBST_3) {
     auto expected = false;
     vector<string> values{"2", "2", "2"};
-    auto root = ValidateBinarySearchTree::deserialize(values);
+    auto root = ValidateBinarySearchTree::deserializeTree(values);
     auto result = ValidateBinarySearchTree::isValidBST(root);
     EXPECT_EQ(expected, result);
     ValidateBinarySearchTree::deleteTree(&root);
@@ -40,7 +40,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_3) {
 TEST(ValidateBinarySearchTreeTest, isValidBST_4) {
     auto expected = true;
     vector<string> values{"2147483647"};
-    auto root = ValidateBinarySearchTree::deserialize(values);
+    auto root = ValidateBinarySearchTree::deserializeTree(values);
     auto result = ValidateBinarySearchTree::isValidBST(root);
     EXPECT_EQ(expected, result);
     ValidateBinarySearchTree::deleteTree(&root);

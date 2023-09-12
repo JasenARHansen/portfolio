@@ -25,7 +25,7 @@ class RemoveNthNodeFromEndOfList {
 public:
 
     static void description() {
-        cout << R"(19. Remove Nth Node From End of List
+        cout << R"(19. Remove Nth RemoveNthNodeFromEndOfListNode From End of List
     Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
     Example 1:
@@ -43,14 +43,24 @@ public:
     Constraints:
         The number of nodes in the list is sz.
         1 ≤ sz ≤ 30
-        0 ≤ Node.val ≤ 100
+        0 ≤ RemoveNthNodeFromEndOfListNode.val ≤ 100
         1 ≤ n ≤ sz
 
     Follow up:
         Could you do this in one pass?)" << endl;
     }
 
-    static RemoveNthNodeFromEndOfListNode *deserialize(const vector<int> &numbers) {
+
+    static vector<int> serializeList(RemoveNthNodeFromEndOfListNode *head) {
+        vector<int> result;
+        RemoveNthNodeFromEndOfListNode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static RemoveNthNodeFromEndOfListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 30);
         RemoveNthNodeFromEndOfListNode *result = nullptr;
         if (!numbers.empty()) {

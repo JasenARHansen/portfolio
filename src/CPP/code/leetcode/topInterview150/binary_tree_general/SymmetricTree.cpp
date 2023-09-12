@@ -38,13 +38,13 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [1, 1000].
-        -100 ≤ Node.val ≤ 100
+        -100 ≤ AddTwoNumbersListNode.val ≤ 100
 
     Follow up:
         Could you solve it both recursively and iteratively?)" << endl;
     }
 
-    static SymmetricTreeNode *deserialize(vector<string> values) {
+    static SymmetricTreeNode *deserializeTree(vector<string> values) {
         SymmetricTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<SymmetricTreeNode *> nodes;

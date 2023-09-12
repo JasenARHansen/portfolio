@@ -39,11 +39,20 @@ public:
 
     Constraints:
         The number of nodes in the list is in the range [0, 500].
-        -100 ≤ Node.val ≤ 100
+        -100 ≤ RotateListNode.val ≤ 100
         0 ≤ k ≤ 2 * 10^9)" << endl;
     }
 
-    static RotateListNode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(RotateListNode *head) {
+        vector<int> result;
+        RotateListNode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static RotateListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 500);
         RotateListNode *result = nullptr;
         if (!numbers.empty()) {

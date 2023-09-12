@@ -11,120 +11,90 @@ TEST(RotateListTest, description) {
 }
 
 TEST(RotateListTest, rotateRight_1) {
-    vector<int> expectedValues{4, 5, 1, 2, 3};
-    auto expected = RotateList::deserialize(expectedValues);
+    vector<int> expected{4, 5, 1, 2, 3};
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RotateList::deserialize(headValues);
     auto k = 2;
-    auto result = RotateList::rotateRight(head, k);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RotateList::deleteList(&expected);
-    RotateList::deleteList(&result);
+    auto head = RotateList::deserializeList(headValues);
+    auto values = RotateList::rotateRight(head, k);
+    auto result = RotateList::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RotateList::deleteList(&head);
+    RotateList::deleteList(&values);
 }
 
 TEST(RotateListTest, rotateRight_2) {
-    vector<int> expectedValues{2, 0, 1};
-    auto expected = RotateList::deserialize(expectedValues);
+    vector<int> expected{2, 0, 1};
     vector<int> headValues{0, 1, 2};
-    auto head = RotateList::deserialize(headValues);
     auto k = 4;
-    auto result = RotateList::rotateRight(head, k);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RotateList::deleteList(&expected);
-    RotateList::deleteList(&result);
+    auto head = RotateList::deserializeList(headValues);
+    auto values = RotateList::rotateRight(head, k);
+    auto result = RotateList::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RotateList::deleteList(&head);
+    RotateList::deleteList(&values);
 }
 
 TEST(RotateListTest, rotateRight_3) {
-    vector<int> expectedValues{1, 2, 3, 4, 5};
-    auto expected = RotateList::deserialize(expectedValues);
+    vector<int> expected{1, 2, 3, 4, 5};
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RotateList::deserialize(headValues);
     auto k = 0;
-    auto result = RotateList::rotateRight(head, k);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RotateList::deleteList(&expected);
-    RotateList::deleteList(&result);
+    auto head = RotateList::deserializeList(headValues);
+    auto values = RotateList::rotateRight(head, k);
+    auto result = RotateList::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RotateList::deleteList(&head);
+    RotateList::deleteList(&values);
 }
 
 TEST(RotateListTest, rotateRight_4) {
-    vector<int> expectedValues{1};
-    auto expected = RotateList::deserialize(expectedValues);
+    vector<int> expected{1};
     vector<int> headValues{1};
-    auto head = RotateList::deserialize(headValues);
     auto k = 5;
-    auto result = RotateList::rotateRight(head, k);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RotateList::deleteList(&expected);
-    RotateList::deleteList(&result);
+    auto head = RotateList::deserializeList(headValues);
+    auto values = RotateList::rotateRight(head, k);
+    auto result = RotateList::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RotateList::deleteList(&head);
+    RotateList::deleteList(&values);
 }
 
 TEST(RotateListTest, rotateRight_5) {
-    vector<int> expectedValues{};
-    auto expected = RotateList::deserialize(expectedValues);
+    vector<int> expected{};
     vector<int> headValues{};
-    auto head = RotateList::deserialize(headValues);
     auto k = 0;
-    auto result = RotateList::rotateRight(head, k);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RotateList::deleteList(&expected);
-    RotateList::deleteList(&result);
+    auto head = RotateList::deserializeList(headValues);
+    auto values = RotateList::rotateRight(head, k);
+    auto result = RotateList::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RotateList::deleteList(&head);
+    RotateList::deleteList(&values);
 }
 
 TEST(RotateListTest, rotateRight_fail_1) {
     // n ≤ 500
     auto size = 500 + 1;
     vector<int> values(size);
-    EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RotateList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_2) {
-    // -100 ≤ Node.val
+    // -100 ≤ AddTwoNumbersListNode.val
     auto size = -100 - 1;
     vector<int> values{size};
-    EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RotateList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_3) {
-    // Node.val ≤ 100
+    // AddTwoNumbersListNode.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
-    EXPECT_EXIT(RotateList::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(RotateList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RotateListTest, rotateRight_fail_4) {
     // 0 ≤ k
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RotateList::deserialize(headValues);
+    auto head = RotateList::deserializeList(headValues);
     auto k = 0 - 1;
     EXPECT_EXIT(RotateList::rotateRight(head, k), ::testing::ExitedWithCode(3), "");
     RotateList::deleteList(&head);
@@ -133,7 +103,7 @@ TEST(RotateListTest, rotateRight_fail_4) {
 TEST(RotateListTest, rotateRight_fail_5) {
     // k ≤ 2 * 10^9
     vector<int> headValues{1, 2, 3, 4, 5};
-    auto head = RotateList::deserialize(headValues);
+    auto head = RotateList::deserializeList(headValues);
     auto k = 2 * (int) pow(10, 9) + 1;
     EXPECT_EXIT(RotateList::rotateRight(head, k), ::testing::ExitedWithCode(3), "");
     RotateList::deleteList(&head);

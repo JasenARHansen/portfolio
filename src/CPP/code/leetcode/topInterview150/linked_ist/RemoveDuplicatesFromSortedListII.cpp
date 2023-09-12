@@ -38,11 +38,20 @@ public:
 
     Constraints:
         The number of nodes in the list is in the range [0, 300].
-        -100 ≤ Node.val ≤ 100
+        -100 ≤ RemoveDuplicatesFromSortedListIINode.val ≤ 100
         The list is guaranteed to be sorted in ascending order.)" << endl;
     }
 
-    static RemoveDuplicatesFromSortedListIINode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(RemoveDuplicatesFromSortedListIINode *head) {
+        vector<int> result;
+        RemoveDuplicatesFromSortedListIINode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static RemoveDuplicatesFromSortedListIINode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 30);
         RemoveDuplicatesFromSortedListIINode *result = nullptr;
         if (!numbers.empty()) {

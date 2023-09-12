@@ -44,10 +44,10 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 2000].
-        -1000 ≤ Node.val ≤ 1000)" << endl;
+        -1000 ≤ AddTwoNumbersListNode.val ≤ 1000)" << endl;
     }
 
-    static BinaryTreeLevelOrderTraversalTreeNode *deserialize(vector<string> values) {
+    static BinaryTreeLevelOrderTraversalTreeNode *deserializeTree(vector<string> values) {
         BinaryTreeLevelOrderTraversalTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<BinaryTreeLevelOrderTraversalTreeNode *> nodes;

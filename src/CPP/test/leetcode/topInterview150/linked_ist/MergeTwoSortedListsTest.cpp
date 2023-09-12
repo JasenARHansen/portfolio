@@ -11,144 +11,102 @@ TEST(MergeTwoSortedListsTest, description) {
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_1) {
-    vector<int> expectedValues{1, 1, 2, 3, 4, 4};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{1, 1, 2, 3, 4, 4};
     vector<int> l1Values{1, 2, 4};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{1, 3, 4};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_2) {
-    vector<int> expectedValues{};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{};
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_splice_3) {
-    vector<int> expectedValues{0};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{0};
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{0};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_splice(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_1) {
-    vector<int> expectedValues{1, 1, 2, 3, 4, 4};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{1, 1, 2, 3, 4, 4};
     vector<int> l1Values{1, 2, 4};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{1, 3, 4};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
     MergeTwoSortedLists::deleteList(&l1);
     MergeTwoSortedLists::deleteList(&l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_2) {
-    vector<int> expectedValues{};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{};
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
     MergeTwoSortedLists::deleteList(&l1);
     MergeTwoSortedLists::deleteList(&l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_new_3) {
-    vector<int> expectedValues{0};
-    auto expected = MergeTwoSortedLists::deserialize(expectedValues);
+    vector<int> expected{0};
     vector<int> l1Values{};
-    auto l1 = MergeTwoSortedLists::deserialize(l1Values);
     vector<int> l2Values{0};
-    auto l2 = MergeTwoSortedLists::deserialize(l2Values);
-    auto result = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto l1 = MergeTwoSortedLists::deserializeList(l1Values);
+    auto l2 = MergeTwoSortedLists::deserializeList(l2Values);
+    auto values = MergeTwoSortedLists::mergeTwoLists_new(l1, l2);
+    auto result = MergeTwoSortedLists::serializeList(values);
+    EXPECT_EQ(expected, result);
     MergeTwoSortedLists::deleteList(&l1);
     MergeTwoSortedLists::deleteList(&l2);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    MergeTwoSortedLists::deleteList(&expected);
-    MergeTwoSortedLists::deleteList(&result);
+    MergeTwoSortedLists::deleteList(&values);
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_1) {
     // values.length  ≤ 50 + 1
     auto size = 50 + 1;
     vector<int> values(size);
-    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_2) {
-    // -100 ≤ Node.val
+    // -100 ≤ AddTwoNumbersListNode.val
     auto size = -100 - 1;
     vector<int> values{size};
-    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_3) {
-    // Node.val ≤ 100
+    // AddTwoNumbersListNode.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
-    EXPECT_EXIT(MergeTwoSortedLists::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(MergeTwoSortedLists::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

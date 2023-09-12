@@ -13,7 +13,7 @@ TEST(CountCompleteTreeNodesTest, description) {
 TEST(CountCompleteTreeNodesTest, countNodes_1) {
     auto expected = 6;
     vector<string> values{"1", "2", "3", "4", "5", "6"};
-    auto root = CountCompleteTreeNodes::deserialize(values);
+    auto root = CountCompleteTreeNodes::deserializeTree(values);
     auto result = CountCompleteTreeNodes::countNodes(root);
     EXPECT_EQ(expected, result);
     CountCompleteTreeNodes::deleteTree(&root);
@@ -22,7 +22,7 @@ TEST(CountCompleteTreeNodesTest, countNodes_1) {
 TEST(CountCompleteTreeNodesTest, countNodes_2) {
     auto expected = 0;
     vector<string> values{};
-    auto root = CountCompleteTreeNodes::deserialize(values);
+    auto root = CountCompleteTreeNodes::deserializeTree(values);
     auto result = CountCompleteTreeNodes::countNodes(root);
     EXPECT_EQ(expected, result);
     CountCompleteTreeNodes::deleteTree(&root);

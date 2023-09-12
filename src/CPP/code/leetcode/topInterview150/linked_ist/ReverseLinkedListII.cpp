@@ -38,11 +38,20 @@ public:
     Constraints:
         The number of nodes in the list is n.
         1 ≤ n ≤ 500
-        -500 ≤ Node.val ≤ 500
+        -500 ≤ ReverseLinkedListIINode.val ≤ 500
         1 ≤ left ≤ right ≤ n)" << endl;
     }
 
-    static ReverseLinkedListIINode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(ReverseLinkedListIINode *head) {
+        vector<int> result;
+        ReverseLinkedListIINode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static ReverseLinkedListIINode *deserializeList(const vector<int> &numbers) {
         assert(!numbers.empty());
         assert(numbers.size() <= 500);
         assert(-500 <= numbers[0]);

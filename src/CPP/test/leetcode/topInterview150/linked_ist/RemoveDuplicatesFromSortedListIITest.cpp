@@ -11,37 +11,25 @@ TEST(RemoveDuplicatesFromSortedListIITest, description) {
 }
 
 TEST(RemoveDuplicatesFromSortedListIITest, deleteDuplicates_1) {
-    vector<int> expectedValues{1, 2, 5};
-    auto expected = RemoveDuplicatesFromSortedListII::deserialize(expectedValues);
+    vector<int> expected{1, 2, 5};
     vector<int> headValues{1, 2, 3, 3, 4, 4, 5};
-    auto head = RemoveDuplicatesFromSortedListII::deserialize(headValues);
-    auto result = RemoveDuplicatesFromSortedListII::deleteDuplicates(head);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RemoveDuplicatesFromSortedListII::deleteList(&expected);
-    RemoveDuplicatesFromSortedListII::deleteList(&result);
+    auto head = RemoveDuplicatesFromSortedListII::deserializeList(headValues);
+    auto values = RemoveDuplicatesFromSortedListII::deleteDuplicates(head);
+    auto result = RemoveDuplicatesFromSortedListII::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RemoveDuplicatesFromSortedListII::deleteList(&head);
+    RemoveDuplicatesFromSortedListII::deleteList(&values);
 }
 
 TEST(RemoveDuplicatesFromSortedListIITest, deleteDuplicates_2) {
-    vector<int> expectedValues{2, 3};
-    auto expected = RemoveDuplicatesFromSortedListII::deserialize(expectedValues);
+    vector<int> expected{2, 3};
     vector<int> headValues{1, 1, 1, 2, 3};
-    auto head = RemoveDuplicatesFromSortedListII::deserialize(headValues);
-    auto result = RemoveDuplicatesFromSortedListII::deleteDuplicates(head);
-    auto expectedTest = expected;
-    auto resultTest = result;
-    while ((expectedTest != nullptr) && ((resultTest != nullptr))) {
-        EXPECT_EQ(expectedTest->val, resultTest->val);
-        expectedTest = expectedTest->next;
-        resultTest = resultTest->next;
-    }
-    RemoveDuplicatesFromSortedListII::deleteList(&expected);
-    RemoveDuplicatesFromSortedListII::deleteList(&result);
+    auto head = RemoveDuplicatesFromSortedListII::deserializeList(headValues);
+    auto values = RemoveDuplicatesFromSortedListII::deleteDuplicates(head);
+    auto result = RemoveDuplicatesFromSortedListII::serializeList(values);
+    EXPECT_EQ(expected, result);
+    RemoveDuplicatesFromSortedListII::deleteList(&head);
+    RemoveDuplicatesFromSortedListII::deleteList(&values);
 }
 
 #endif

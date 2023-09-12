@@ -7,15 +7,15 @@
 
 using namespace std;
 
-struct AddTwoNumbersNode {
+struct AddTwoNumbersListNode {
     int val;
-    AddTwoNumbersNode *next;
+    AddTwoNumbersListNode *next;
 
-    AddTwoNumbersNode() : val(0), next(nullptr) {}
+    AddTwoNumbersListNode() : val(0), next(nullptr) {}
 
-    explicit AddTwoNumbersNode(int x) : val(x), next(nullptr) {}
+    explicit AddTwoNumbersListNode(int x) : val(x), next(nullptr) {}
 
-    AddTwoNumbersNode(int x, AddTwoNumbersNode *next) : val(x), next(next) {}
+    AddTwoNumbersListNode(int x, AddTwoNumbersListNode *next) : val(x), next(next) {}
 };
 
 class AddTwoNumbers {
@@ -43,29 +43,39 @@ public:
 
     Constraints:
         The number of nodes in each linked list is in the range [1, 100].
-        0 ≤ Node.val ≤ 9
+        0 ≤ AddTwoNumbersListNode.val ≤ 9
         It is guaranteed that the list represents a number that does not have leading zeros.)" << endl;
     }
 
-    static AddTwoNumbersNode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(AddTwoNumbersListNode *head) {
+        vector<int> result;
+        AddTwoNumbersListNode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+
+    static AddTwoNumbersListNode *deserializeList(const vector<int> &numbers) {
         assert(!numbers.empty());
         assert(numbers.size() <= 100);
         assert(0 <= numbers[0]);
         assert(numbers[0] <= 9);
-        auto current = new AddTwoNumbersNode(numbers[numbers.size() - 1]);
+        auto current = new AddTwoNumbersListNode(numbers[numbers.size() - 1]);
         for (int index = (int) numbers.size() - 2; index >= 0; index--) {
             assert(0 <= numbers[index]);
             assert(numbers[index] <= 9);
-            auto node = new AddTwoNumbersNode(numbers[index], current);
+            auto node = new AddTwoNumbersListNode(numbers[index], current);
             current = node;
         }
         return current;
     }
 
-    static void deleteList(AddTwoNumbersNode **head) {
+    static void deleteList(AddTwoNumbersListNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            AddTwoNumbersNode *next;
+            AddTwoNumbersListNode *next;
             while (current->next != nullptr) {
                 next = current->next;
                 delete current;
@@ -75,8 +85,8 @@ public:
         }
     }
 
-    static AddTwoNumbersNode *addTwoNumbers(AddTwoNumbersNode *l1, AddTwoNumbersNode *l2) {
-        AddTwoNumbersNode *result = nullptr;
+    static AddTwoNumbersListNode *addTwoNumbers(AddTwoNumbersListNode *l1, AddTwoNumbersListNode *l2) {
+        AddTwoNumbersListNode *result = nullptr;
         if ((l1 == nullptr) || (l2 == nullptr)) {
             return result;
         }
@@ -84,14 +94,14 @@ public:
         auto rVal = l2;
         auto sum = (lVal->val + rVal->val) % 10;
         auto carry = (lVal->val + rVal->val) / 10;
-        result = new AddTwoNumbersNode(sum);
+        result = new AddTwoNumbersListNode(sum);
         auto current = result;
         while ((lVal->next != nullptr) && ((rVal->next != nullptr))) {
             lVal = lVal->next;
             rVal = rVal->next;
             sum = (lVal->val + rVal->val + carry) % 10;
             carry = (lVal->val + rVal->val + carry) / 10;
-            auto working = new AddTwoNumbersNode(sum);
+            auto working = new AddTwoNumbersListNode(sum);
             current->next = working;
             current = working;
         }
@@ -100,7 +110,7 @@ public:
             lVal = lVal->next;
             sum = (lVal->val + carry) % 10;
             carry = (lVal->val + carry) / 10;
-            auto working = new AddTwoNumbersNode(sum);
+            auto working = new AddTwoNumbersListNode(sum);
             current->next = working;
             current = working;
         }
@@ -109,13 +119,13 @@ public:
             rVal = rVal->next;
             sum = (rVal->val + carry) % 10;
             carry = (rVal->val + carry) / 10;
-            auto working = new AddTwoNumbersNode(sum);
+            auto working = new AddTwoNumbersListNode(sum);
             current->next = working;
             current = working;
         }
         // if there is still a carry
         if (carry) {
-            auto working = new AddTwoNumbersNode(carry);
+            auto working = new AddTwoNumbersListNode(carry);
             current->next = working;
         }
         return result;

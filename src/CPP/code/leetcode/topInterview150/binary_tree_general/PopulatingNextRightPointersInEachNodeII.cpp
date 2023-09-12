@@ -33,13 +33,13 @@ class PopulatingNextRightPointersInEachNodeII {
 public:
 
     static void description() {
-        cout << R"(117. Populating Next Right Pointers in Each Node II
+        cout << R"(117. Populating Next Right Pointers in Each AddTwoNumbersListNode II
     Given a binary tree
-        struct ListNode {
+        struct AddTwoNumbersListNode {
           int val;
-          ListNode *left;
-          ListNode *right;
-          ListNode *next;
+          AddTwoNumbersListNode *left;
+          AddTwoNumbersListNode *right;
+          AddTwoNumbersListNode *next;
         }
     Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
     Initially, all next pointers are set to NULL.
@@ -56,7 +56,7 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 6000].
-        -100 ≤ ListNode.val ≤ 100
+        -100 ≤ AddTwoNumbersListNode.val ≤ 100
 
     Follow-up:
         You may only use constant extra space.
@@ -64,7 +64,7 @@ public:
              << endl;
     }
 
-    static PopulatingNextRightPointersInEachNodeIITreeNode *deserialize(vector<string> values) {
+    static PopulatingNextRightPointersInEachNodeIITreeNode *deserializeTree(vector<string> values) {
         PopulatingNextRightPointersInEachNodeIITreeNode *root = nullptr;
         if (!values.empty()) {
             queue<PopulatingNextRightPointersInEachNodeIITreeNode *> nodes;

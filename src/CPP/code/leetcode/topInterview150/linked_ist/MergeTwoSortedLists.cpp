@@ -44,11 +44,20 @@ public:
 
     Constraints:
         The number of nodes in both lists is in the range [0, 50].
-        -100 ≤ Node.val ≤ 100
+        -100 ≤ MergeTwoSortedListsNode.val ≤ 100
         Both list1 and list2 are sorted in non-decreasing order.)" << endl;
     }
 
-    static MergeTwoSortedListsNode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(MergeTwoSortedListsNode *head) {
+        vector<int> result;
+        MergeTwoSortedListsNode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static MergeTwoSortedListsNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 50);
         MergeTwoSortedListsNode *current = nullptr;
         if (!numbers.empty()) {
@@ -176,6 +185,7 @@ public:
         }
         return result;
     }
+
 };
 
 #pragma clang diagnostic pop

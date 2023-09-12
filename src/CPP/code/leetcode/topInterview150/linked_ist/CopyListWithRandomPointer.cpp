@@ -9,19 +9,19 @@
 
 using namespace std;
 
-class RandomPointerNode {
+class CopyListWithRandomPointerListNode {
 
 public:
 
     int val;
-    RandomPointerNode *next;
-    RandomPointerNode *random;
+    CopyListWithRandomPointerListNode *next;
+    CopyListWithRandomPointerListNode *random;
 
-    RandomPointerNode() : val(0), next(nullptr), random(nullptr) {}
+    CopyListWithRandomPointerListNode() : val(0), next(nullptr), random(nullptr) {}
 
-    explicit RandomPointerNode(int val) : val(val), next(nullptr), random(nullptr) {}
+    explicit CopyListWithRandomPointerListNode(int val) : val(val), next(nullptr), random(nullptr) {}
 
-    RandomPointerNode(int val, RandomPointerNode *next) : val(val), next(next), random(nullptr) {}
+    CopyListWithRandomPointerListNode(int val, CopyListWithRandomPointerListNode *next) : val(val), next(next), random(nullptr) {}
 };
 
 class CopyListWithRandomPointer {
@@ -35,7 +35,7 @@ public:
     For example, if there are two nodes X and Y in the original list, where X.random --> Y, then for the corresponding two nodes x and y in the copied list, x.random --> y.
     Return the head of the copied linked list.
     The linked list is represented in the input/output as a list of n nodes. Each node is represented as a pair of [val, random_index] where:
-        val: an integer representing Node.val
+        val: an integer representing AddTwoNumbersListNode.val
         random_index: the index of the node (range from 0 to n-1) that the random pointer points to, or null if it does not point to any node.
     Your code will only be given the head of the original linked list.
 
@@ -53,16 +53,16 @@ public:
 
     Constraints:
         0 ≤ n ≤ 1000
-        -10^4 ≤ Node.val ≤ 10^4
-        Node.random is null or is pointing to some node in the linked list.)" << endl;
+        -10^4 ≤ AddTwoNumbersListNode.val ≤ 10^4
+        AddTwoNumbersListNode.random is null or is pointing to some node in the linked list.)" << endl;
     }
 
-    static vector<pair<int, string>> serializeListRandomPointer(RandomPointerNode *head) {
+    static vector<pair<int, string>> serializeListRandomPointer(CopyListWithRandomPointerListNode *head) {
         vector<pair<int, string>> result;
         if (head != nullptr) {
             int index = 0;
             auto current = head;
-            unordered_map<RandomPointerNode *, int> indexes;
+            unordered_map<CopyListWithRandomPointerListNode *, int> indexes;
             while (current != nullptr) {
                 indexes[current] = index;
                 index++;
@@ -79,20 +79,20 @@ public:
         return result;
     }
 
-    static RandomPointerNode *deserialize(const vector<pair<int, string>> &numbers) {
+    static CopyListWithRandomPointerListNode *deserializeListRandomPointer(const vector<pair<int, string>> &numbers) {
         assert(numbers.size() <= 500);
-        vector<RandomPointerNode *> indexes;
-        RandomPointerNode *head = nullptr;
+        vector<CopyListWithRandomPointerListNode *> indexes;
+        CopyListWithRandomPointerListNode *head = nullptr;
         if (!numbers.empty()) {
             assert(-pow(10, 4) <= numbers[0].first);
             assert(numbers[0].first <= pow(10, 4));
-            head = new RandomPointerNode(numbers[0].first);
+            head = new CopyListWithRandomPointerListNode(numbers[0].first);
             auto current = head;
             indexes.push_back(current);
             for (int index = 1; index < numbers.size(); index++) {
                 assert(-pow(10, 4) <= numbers[index].first);
                 assert(numbers[index].first <= pow(10, 4));
-                current->next = new RandomPointerNode(numbers[index].first);
+                current->next = new CopyListWithRandomPointerListNode(numbers[index].first);
                 current = current->next;
                 indexes.push_back(current);
             }
@@ -107,10 +107,10 @@ public:
         return head;
     }
 
-    static void deleteList(RandomPointerNode **head) {
+    static void deleteList(CopyListWithRandomPointerListNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            RandomPointerNode *next;
+            CopyListWithRandomPointerListNode *next;
             while (current->next != nullptr) {
                 next = current->next;
                 delete current;
@@ -120,12 +120,12 @@ public:
         }
     }
 
-    static RandomPointerNode *copyRandomList(RandomPointerNode *head) {
-        RandomPointerNode *result = nullptr;
+    static CopyListWithRandomPointerListNode *copyRandomList(CopyListWithRandomPointerListNode *head) {
+        CopyListWithRandomPointerListNode *result = nullptr;
         if (head != nullptr) {
             auto source = head;
-            unordered_map<RandomPointerNode *, int> pointerMap;
-            vector<RandomPointerNode *> indexes;
+            unordered_map<CopyListWithRandomPointerListNode *, int> pointerMap;
+            vector<CopyListWithRandomPointerListNode *> indexes;
             int index = 0;
             // generate node to index map
             while (source != nullptr) {
@@ -135,11 +135,11 @@ public:
             }
             // Generate new list and auto data
             source = head;
-            result = new RandomPointerNode(source->val);
+            result = new CopyListWithRandomPointerListNode(source->val);
             auto current = result;
             indexes.push_back(current);
             while (source->next != nullptr) {
-                current->next = new RandomPointerNode(source->next->val);
+                current->next = new CopyListWithRandomPointerListNode(source->next->val);
                 indexes.push_back(current->next);
                 source = source->next;
                 current = current->next;

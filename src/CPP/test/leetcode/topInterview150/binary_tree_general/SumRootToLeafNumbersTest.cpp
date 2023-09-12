@@ -13,7 +13,7 @@ TEST(SumRootToLeafNumbersTest, description) {
 TEST(SumRootToLeafNumbersTest, sumNumbers_1) {
     auto expected = 25;
     vector<string> values{"1", "2", "3"};
-    auto root = SumRootToLeafNumbers::deserialize(values);
+    auto root = SumRootToLeafNumbers::deserializeTree(values);
     auto result = SumRootToLeafNumbers::sumNumbers(root);
     EXPECT_EQ(expected, result);
     SumRootToLeafNumbers::deleteTree(&root);
@@ -22,7 +22,7 @@ TEST(SumRootToLeafNumbersTest, sumNumbers_1) {
 TEST(SumRootToLeafNumbersTest, sumNumbers_2) {
     auto expected = 1026;
     vector<string> values{"4", "9", "0", "5", "1"};
-    auto root = SumRootToLeafNumbers::deserialize(values);
+    auto root = SumRootToLeafNumbers::deserializeTree(values);
     auto result = SumRootToLeafNumbers::sumNumbers(root);
     EXPECT_EQ(expected, result);
     SumRootToLeafNumbers::deleteTree(&root);

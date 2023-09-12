@@ -50,13 +50,13 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [2, 10^5].
-        -109 ≤ Node.val ≤ 10^9
-        All Node.val are unique.
+        -109 ≤ AddTwoNumbersListNode.val ≤ 10^9
+        All AddTwoNumbersListNode.val are unique.
         p != q
         p and q will exist in the tree.)" << endl;
     }
 
-    static LowestCommonAncestorOfABinaryTreeTreeNode *deserialize(vector<string> values) {
+    static LowestCommonAncestorOfABinaryTreeTreeNode *deserializeTree(vector<string> values) {
         LowestCommonAncestorOfABinaryTreeTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<LowestCommonAncestorOfABinaryTreeTreeNode *> nodes;

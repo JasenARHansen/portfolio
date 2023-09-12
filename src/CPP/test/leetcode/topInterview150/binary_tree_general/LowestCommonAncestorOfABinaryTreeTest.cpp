@@ -15,7 +15,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_1) {
     auto expectedVal = 3;
     auto pVal = 5;
     auto qVal = 1;
-    auto root = LowestCommonAncestorOfABinaryTree::deserialize(values);
+    auto root = LowestCommonAncestorOfABinaryTree::deserializeTree(values);
     auto expected = LowestCommonAncestorOfABinaryTree::findNode(root, expectedVal);
     auto p = LowestCommonAncestorOfABinaryTree::findNode(root, pVal);
     auto q = LowestCommonAncestorOfABinaryTree::findNode(root, qVal);
@@ -29,7 +29,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_2) {
     auto expectedVal = 5;
     auto pVal = 5;
     auto qVal = 4;
-    auto root = LowestCommonAncestorOfABinaryTree::deserialize(values);
+    auto root = LowestCommonAncestorOfABinaryTree::deserializeTree(values);
     auto expected = LowestCommonAncestorOfABinaryTree::findNode(root, expectedVal);
     auto p = LowestCommonAncestorOfABinaryTree::findNode(root, pVal);
     auto q = LowestCommonAncestorOfABinaryTree::findNode(root, qVal);
@@ -43,7 +43,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_3) {
     auto expectedVal = 1;
     auto pVal = 1;
     auto qVal = 2;
-    auto root = LowestCommonAncestorOfABinaryTree::deserialize(values);
+    auto root = LowestCommonAncestorOfABinaryTree::deserializeTree(values);
     auto expected = LowestCommonAncestorOfABinaryTree::findNode(root, expectedVal);
     auto p = LowestCommonAncestorOfABinaryTree::findNode(root, pVal);
     auto q = LowestCommonAncestorOfABinaryTree::findNode(root, qVal);
@@ -57,7 +57,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_4) {
     auto expectedVal = 1;
     auto pVal = 2;
     auto qVal = 3;
-    auto root = LowestCommonAncestorOfABinaryTree::deserialize(values);
+    auto root = LowestCommonAncestorOfABinaryTree::deserializeTree(values);
     auto expected = LowestCommonAncestorOfABinaryTree::findNode(root, expectedVal);
     auto p = LowestCommonAncestorOfABinaryTree::findNode(root, pVal);
     auto q = LowestCommonAncestorOfABinaryTree::findNode(root, qVal);

@@ -38,11 +38,20 @@ public:
 
     Constraints:
         The number of nodes in the list is in the range [0, 200].
-        -100 ≤ Node.val ≤ 100
+        -100 ≤ PartitionListNode.val ≤ 100
         -200 ≤ x ≤ 200)" << endl;
     }
 
-    static PartitionListNode *deserialize(const vector<int> &numbers) {
+    static vector<int> serializeList(PartitionListNode *head) {
+        vector<int> result;
+        PartitionListNode *working = head;
+        while (working != nullptr) {
+            result.push_back(working->val);
+            working = working->next;
+        }
+        return result;
+    }
+    static PartitionListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 200);
         PartitionListNode *result = nullptr;
         if (!numbers.empty()) {

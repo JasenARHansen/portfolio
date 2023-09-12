@@ -60,7 +60,7 @@ TEST(PopulatingNextRightPointersInEachNodeIITest, description) {
 TEST(PopulatingNextRightPointersInEachNodeIITest, connect_1) {
     vector<string> expected{"1", "#", "2", "3", "#", "4", "5", "7", "#"};
     vector<string> values{"1", "2", "3", "4", "5", "null", "7"};
-    auto root = PopulatingNextRightPointersInEachNodeII::deserialize(values);
+    auto root = PopulatingNextRightPointersInEachNodeII::deserializeTree(values);
     auto result = PopulatingNextRightPointersInEachNodeII::connect(root);
     auto resultValues = serialized(result);
     EXPECT_EQ(expected, resultValues);
@@ -71,7 +71,7 @@ TEST(PopulatingNextRightPointersInEachNodeIITest, connect_1) {
 TEST(PopulatingNextRightPointersInEachNodeIITest, connect_2) {
     vector<string> expected{};
     vector<string> values{};
-    auto root = PopulatingNextRightPointersInEachNodeII::deserialize(values);
+    auto root = PopulatingNextRightPointersInEachNodeII::deserializeTree(values);
     auto result = PopulatingNextRightPointersInEachNodeII::connect(root);
     auto resultValues = serialized(result);
     EXPECT_EQ(expected, resultValues);

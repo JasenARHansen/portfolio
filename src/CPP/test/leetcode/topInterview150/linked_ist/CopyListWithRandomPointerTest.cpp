@@ -16,7 +16,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
                                        {11, "4"},
                                        {10, "2"},
                                        {1,  "0"}};
-    auto head = CopyListWithRandomPointer::deserialize(expected);
+    auto head = CopyListWithRandomPointer::deserializeListRandomPointer(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
     auto result = CopyListWithRandomPointer::serializeListRandomPointer(head);
     auto foo = CopyListWithRandomPointer::serializeListRandomPointer(head);
@@ -31,7 +31,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
 TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
     vector<pair<int, string>> expected{{1, "1"},
                                        {2, "1"}};
-    auto head = CopyListWithRandomPointer::deserialize(expected);
+    auto head = CopyListWithRandomPointer::deserializeListRandomPointer(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
     auto result = CopyListWithRandomPointer::serializeListRandomPointer(copy);
     for (auto index = 0; index < expected.size(); index++) {
@@ -46,7 +46,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
     vector<pair<int, string>> expected{{3, "null"},
                                        {3, "0"},
                                        {3, "null"}};
-    auto head = CopyListWithRandomPointer::deserialize(expected);
+    auto head = CopyListWithRandomPointer::deserializeListRandomPointer(expected);
     auto copy = CopyListWithRandomPointer::copyRandomList(head);
     auto result = CopyListWithRandomPointer::serializeListRandomPointer(copy);
     for (auto index = 0; index < expected.size(); index++) {
@@ -61,21 +61,21 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_fail_1) {
     // n ≤ 1000
     auto size = 1000 + 1;
     vector<pair<int, string>> values(size);
-    EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_2) {
-    // -10^4 ≤ Node.val
+    // -10^4 ≤ AddTwoNumbersListNode.val
     auto size = (int) -pow(10, 4) - 1;
     vector<pair<int, string>> values{{size, "null"}};
-    EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_3) {
-    // Node.val ≤ 10^4
+    // AddTwoNumbersListNode.val ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<pair<int, string>> values{{size, "null"}};
-    EXPECT_EXIT(CopyListWithRandomPointer::deserialize(values), ::testing::ExitedWithCode(3), "");
+    EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
 #endif

@@ -40,10 +40,10 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 10^4].
-        -100 ≤ Node.val ≤ 100)" << endl;
+        -100 ≤ AddTwoNumbersListNode.val ≤ 100)" << endl;
     }
 
-    static MaximumDepthOfBinaryTreeNode *deserialize(vector<string> values) {
+    static MaximumDepthOfBinaryTreeNode *deserializeTree(vector<string> values) {
         MaximumDepthOfBinaryTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<MaximumDepthOfBinaryTreeNode *> nodes;

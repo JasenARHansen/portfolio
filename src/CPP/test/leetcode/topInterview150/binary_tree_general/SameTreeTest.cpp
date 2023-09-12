@@ -13,8 +13,8 @@ TEST(SameTreeTest, description) {
 TEST(SameTreeTest, isSameTree_1) {
     auto expected = true;
     vector<string> values{"1", "2", "3"};
-    auto p = SameTree::deserialize(values);
-    auto q = SameTree::deserialize(values);
+    auto p = SameTree::deserializeTree(values);
+    auto q = SameTree::deserializeTree(values);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -24,9 +24,9 @@ TEST(SameTreeTest, isSameTree_1) {
 TEST(SameTreeTest, isSameTree_2) {
     auto expected = false;
     vector<string> valuesP{"1", "2"};
-    auto p = SameTree::deserialize(valuesP);
+    auto p = SameTree::deserializeTree(valuesP);
     vector<string> valuesQ{"1", "null", "2"};
-    auto q = SameTree::deserialize(valuesQ);
+    auto q = SameTree::deserializeTree(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -36,9 +36,9 @@ TEST(SameTreeTest, isSameTree_2) {
 TEST(SameTreeTest, isSameTree_3) {
     auto expected = false;
     vector<string> valuesP{"1", "2", "1"};
-    auto p = SameTree::deserialize(valuesP);
+    auto p = SameTree::deserializeTree(valuesP);
     vector<string> valuesQ{"1", "1", "2"};
-    auto q = SameTree::deserialize(valuesQ);
+    auto q = SameTree::deserializeTree(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);
@@ -48,9 +48,9 @@ TEST(SameTreeTest, isSameTree_3) {
 TEST(SameTreeTest, isSameTree_4) {
     auto expected = false;
     vector<string> valuesP{};
-    auto p = SameTree::deserialize(valuesP);
+    auto p = SameTree::deserializeTree(valuesP);
     vector<string> valuesQ{"1"};
-    auto q = SameTree::deserialize(valuesQ);
+    auto q = SameTree::deserializeTree(valuesQ);
     auto result = SameTree::isSameTree(p, q);
     EXPECT_EQ(expected, result);
     SameTree::deleteTree(&p);

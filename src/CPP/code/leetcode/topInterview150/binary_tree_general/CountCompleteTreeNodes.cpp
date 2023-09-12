@@ -52,11 +52,11 @@ public:
 
     Constraints:
         The number of nodes in the tree is in the range [0, 5 * 10^4].
-        0 ≤ Node.val ≤ 5 * 10^4
+        0 ≤ AddTwoNumbersListNode.val ≤ 5 * 10^4
         The tree is guaranteed to be complete.)" << endl;
     }
 
-    static CountCompleteTreeNodesTreeNode *deserialize(vector<string> values) {
+    static CountCompleteTreeNodesTreeNode *deserializeTree(vector<string> values) {
         CountCompleteTreeNodesTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<CountCompleteTreeNodesTreeNode *> nodes;

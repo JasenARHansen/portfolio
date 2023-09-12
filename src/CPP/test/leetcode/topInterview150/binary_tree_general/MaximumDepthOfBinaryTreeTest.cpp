@@ -13,7 +13,7 @@ TEST(MaximumDepthOfBinaryTreeTest, description) {
 TEST(MaximumDepthOfBinaryTreeTest, maxDepth_1) {
     auto expected = 3;
     vector<string> values{"3", "9", "20", "null", "null", "15", "7"};
-    auto root = MaximumDepthOfBinaryTree::deserialize(values);
+    auto root = MaximumDepthOfBinaryTree::deserializeTree(values);
     auto result = MaximumDepthOfBinaryTree::maxDepth(root);
     EXPECT_EQ(expected, result);
     MaximumDepthOfBinaryTree::deleteTree(&root);
@@ -22,7 +22,7 @@ TEST(MaximumDepthOfBinaryTreeTest, maxDepth_1) {
 TEST(MaximumDepthOfBinaryTreeTest, maxDepth_2) {
     auto expected = 2;
     vector<string> values{"1", "null", "2"};
-    auto root = MaximumDepthOfBinaryTree::deserialize(values);
+    auto root = MaximumDepthOfBinaryTree::deserializeTree(values);
     auto result = MaximumDepthOfBinaryTree::maxDepth(root);
     EXPECT_EQ(expected, result);
     MaximumDepthOfBinaryTree::deleteTree(&root);
