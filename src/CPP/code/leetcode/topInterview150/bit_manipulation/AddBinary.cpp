@@ -8,9 +8,7 @@
 using namespace std;
 
 class AddBinary {
-
 public:
-
     static void description() {
         cout << R"(67. Add Binary
     Given two binary strings a and b, return their sum as a binary string.
@@ -58,7 +56,6 @@ public:
                 }
                 result.insert(0, to_string(current));
             }
-
         } else if (a.size() < b.size()) {
             while (indexB >= 0) {
                 current = carry + b.at(indexB--) - '0';

@@ -7,9 +7,7 @@
 using namespace std;
 
 class EvaluateReversePolishNotation {
-
 public:
-
     static void description() {
         cout << R"(150. Evaluate Reverse Polish Notation
     You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.
@@ -107,7 +105,6 @@ public:
     }
 
 private:
-
     static bool isValidNumber(const string &token) {
         auto index = 0;
         if ((token.at(0) == '+') || (token.at(0) == '-')) {

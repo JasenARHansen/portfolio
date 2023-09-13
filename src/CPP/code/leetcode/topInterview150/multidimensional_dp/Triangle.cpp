@@ -10,9 +10,7 @@
 using namespace std;
 
 class Triangle {
-
 public:
-
     static void description() {
         cout << R"(120. Triangle
     Given a triangle array, return the minimum path sum from top to bottom.
@@ -53,7 +51,6 @@ public:
     }
 
 private:
-
     static vector<int> minimumTotal(const vector<vector<int>> &triangle, int row) {
         assert (triangle[row].size() + 1 == triangle[row + 1].size());
         vector<int> result;

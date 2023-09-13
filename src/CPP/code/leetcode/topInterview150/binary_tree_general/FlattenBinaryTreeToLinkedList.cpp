@@ -25,9 +25,7 @@ struct FlattenBinaryTreeToLinkedListTreeNode {
 };
 
 class FlattenBinaryTreeToLinkedList {
-
 public:
-
     static void description() {
         cout << R"(114. Flatten Binary Tree to Linked List
     Given the root of a binary tree, flatten the tree into a "linked list":
@@ -107,7 +105,6 @@ public:
             levelA.push_back(head);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
-
             }
             if (levelA[0]->right != nullptr) {
                 levelB.push_back(levelA[0]->right);
@@ -234,7 +231,6 @@ public:
             }
         }
     }
-
 };
 
 #pragma clang diagnostic pop

@@ -10,9 +10,7 @@
 using namespace std;
 
 class Candy {
-
 public:
-
     static void description() {
         cout << R"(135. Candy
     There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings.
@@ -67,9 +65,7 @@ public:
                 index += offset;
             }
         }
-
         // 3 regions to process defined by index 0 to left index. left index to right index, right index to end point:
-
         //     !---!------!---!
         // find the left side to start processing.  This is the first non '1' value, after a '1' has been found.
         auto leftIndex = 1;
@@ -110,10 +106,8 @@ public:
             while ((tempIndex < rightIndex) && (-1 == candies[tempIndex])) {
                 tempIndex++;
             }
-
             leftIndex = tempIndex;
         }
-
         return accumulate(candies.begin(), candies.end(), 0);
     }
 };

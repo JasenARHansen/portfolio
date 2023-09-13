@@ -8,9 +8,7 @@
 using namespace std;
 
 class FactorialTrailingZeroes {
-
 public:
-
     static void description() {
         cout << R"(172. Factorial Trailing Zeroes
     Given an integer n, return the number of trailing zeroes in n!.

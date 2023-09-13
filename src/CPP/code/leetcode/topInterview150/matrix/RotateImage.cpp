@@ -8,9 +8,7 @@
 using namespace std;
 
 class RotateImage {
-
 public:
-
     static void description() {
         cout << R"(48. Rotate Image
     You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
@@ -75,7 +73,6 @@ public:
     }
 
 private:
-
     static void store(vector<vector<int>> &matrix, int value, int row, int column) {
         assert (-1000 <= value);
         assert (value <= 1000);

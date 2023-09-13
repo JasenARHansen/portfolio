@@ -8,9 +8,7 @@
 using namespace std;
 
 class SimplifyPath {
-
 public:
-
     static void description() {
         cout << R"(71. Simplify Path
     Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
@@ -78,7 +76,6 @@ public:
     }
 
 private:
-
     static void processSubstring(const string &path, stack<string> &processing, int startIndex, int length) {
         auto substring = path.substr(startIndex + 1, length);
         if (substring == ".") {

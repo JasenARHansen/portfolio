@@ -9,7 +9,6 @@
 using namespace std;
 
 struct RemoveNthNodeFromEndOfListNode {
-
     int val;
     RemoveNthNodeFromEndOfListNode *next;
 
@@ -21,9 +20,7 @@ struct RemoveNthNodeFromEndOfListNode {
 };
 
 class RemoveNthNodeFromEndOfList {
-
 public:
-
     static void description() {
         cout << R"(19. Remove Nth RemoveNthNodeFromEndOfListNode From End of List
     Given the head of a linked list, remove the nth node from the end of the list and return its head.
@@ -50,7 +47,6 @@ public:
         Could you do this in one pass?)" << endl;
     }
 
-
     static vector<int> serializeList(RemoveNthNodeFromEndOfListNode *head) {
         vector<int> result;
         RemoveNthNodeFromEndOfListNode *working = head;
@@ -60,6 +56,7 @@ public:
         }
         return result;
     }
+
     static RemoveNthNodeFromEndOfListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 30);
         RemoveNthNodeFromEndOfListNode *result = nullptr;
@@ -119,12 +116,10 @@ public:
             index++;
             working = working->next;
         }
-
         return result;
     }
 
 private:
-
     static pair<RemoveNthNodeFromEndOfListNode *, int> copyList(RemoveNthNodeFromEndOfListNode *head) {
         RemoveNthNodeFromEndOfListNode *result = nullptr;
         auto count = 0;
@@ -142,7 +137,6 @@ private:
         }
         return make_pair(result, count);
     }
-
 };
 
 #pragma clang diagnostic pop

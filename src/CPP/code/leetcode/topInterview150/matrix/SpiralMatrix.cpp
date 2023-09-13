@@ -9,9 +9,7 @@
 using namespace std;
 
 class SpiralMatrix {
-
 public:
-
     static void description() {
         cout << R"(54. Spiral Matrix
     Given an m x n matrix, return all elements of the matrix in spiral order.
@@ -79,7 +77,6 @@ public:
     }
 
 private:
-
     static void
     validate(const vector<vector<int>> &matrix, vector<bitset<10>> &test, vector<int> &result, int row,
              int column) {

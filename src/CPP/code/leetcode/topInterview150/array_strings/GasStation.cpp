@@ -9,9 +9,7 @@
 using namespace std;
 
 class GasStation {
-
 public:
-
     static void description() {
         cout << R"(134. Gas Station
     There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i].

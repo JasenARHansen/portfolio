@@ -11,9 +11,7 @@
 using namespace std;
 
 class JumpGameII {
-
 public:
-
     static void description() {
         cout << R"(45. Jump Game II
     You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
@@ -47,7 +45,6 @@ public:
     }
 
 private:
-
     static int jump(int position, vector<int> &nums, vector<int> &processed) {
         assert (0 <= nums[position]);
         assert (nums[position] <= pow(10, 5));

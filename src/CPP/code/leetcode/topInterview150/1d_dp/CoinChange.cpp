@@ -12,9 +12,7 @@
 using namespace std;
 
 class CoinChange {
-
 public:
-
     static void description() {
         cout << R"(322. Coin Change
     You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
@@ -56,7 +54,6 @@ public:
     }
 
 private:
-
     static int coinChange(vector<int> &coins, int amount, unordered_map<int, int> &amount_map) {
         if (!amount_map.count(amount)) {
             vector<int> values;

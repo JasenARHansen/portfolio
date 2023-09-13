@@ -8,9 +8,7 @@
 using namespace std;
 
 class LongestCommonPrefix {
-
 public:
-
     static void description() {
         cout << R"(14. Longest Common Prefix
     Write a function to find the longest common prefix string amongst an array of strings.

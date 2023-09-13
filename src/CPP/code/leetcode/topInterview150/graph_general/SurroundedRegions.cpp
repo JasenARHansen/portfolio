@@ -9,9 +9,7 @@
 using namespace std;
 
 class SurroundedRegions {
-
 public:
-
     static void description() {
         cout << R"(130. Surrounded Regions
     Given an m x n matrix board containing 'X' and 'O', capture all regions that are 4-directionally surrounded by 'X'.
@@ -103,7 +101,6 @@ public:
                     startIndex = stopIndex;
                 }
             }
-
         }
         // If a cell with a 'O' is adjacent to an 'O' that should not be flipped, so process 'O' chains
         // From top
@@ -142,7 +139,6 @@ public:
     }
 
 private:
-
     static void processChain(vector<vector<char>> &board, vector<vector<int>> &possibleFlip, int row, int column) {
         // Check up
         auto offset = row - 1;
@@ -177,7 +173,6 @@ private:
             }
         }
     }
-
 };
 
 #pragma clang diagnostic pop

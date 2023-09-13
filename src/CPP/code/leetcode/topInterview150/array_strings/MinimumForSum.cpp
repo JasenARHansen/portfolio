@@ -11,9 +11,7 @@
 using namespace std;
 
 class MinimumForSum {
-
 public:
-
     static void description() {
         cout << R"(XXX. Minimum for Sum:
     Note:  This was not a LeetCode challenge, rather it was a misunderstanding of a different challenge that I liked the answer for.

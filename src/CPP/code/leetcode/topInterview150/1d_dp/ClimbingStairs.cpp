@@ -9,9 +9,7 @@
 using namespace std;
 
 class ClimbingStairs {
-
 public:
-
     static void description() {
         cout << R"(70. Climbing Stairs
     You are climbing a staircase. It takes n steps to reach the top.
@@ -46,7 +44,6 @@ public:
     }
 
 private:
-
     static int climbStairs(int n, unordered_map<int, int> &stairs_map) {
         if (n <= 0) {
             return 0;

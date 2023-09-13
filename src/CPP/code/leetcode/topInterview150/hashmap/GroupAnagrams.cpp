@@ -11,9 +11,7 @@
 using namespace std;
 
 class GroupAnagrams {
-
 public:
-
     static void description() {
         cout << R"(49. Group Anagrams
     Given an array of strings strings, group the anagrams together. You can return the answer in any order.
@@ -58,7 +56,6 @@ public:
         }
         sort(result.begin(), result.end(),
              [](vector<string> &a, vector<string> &b) { return a.size() < b.size(); });
-
         return result;
     }
 };

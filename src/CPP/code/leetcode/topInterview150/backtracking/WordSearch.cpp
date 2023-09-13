@@ -9,9 +9,7 @@
 using namespace std;
 
 class WordSearch {
-
 public:
-
     static void description() {
         cout << R"(79. Word Search
     Given an m x n grid of characters board and a string word, return true if word exists in the grid.
@@ -69,7 +67,6 @@ public:
         return false;
     }
 
-
 private:
     static bool exist(vector<vector<char>> &board, int boardRow, int boardColumn, string word, int wordIndex,
                       vector<vector<bool>> &available) {
@@ -119,7 +116,6 @@ private:
         // not found
         return false;
     }
-
 };
 
 #pragma clang diagnostic pop

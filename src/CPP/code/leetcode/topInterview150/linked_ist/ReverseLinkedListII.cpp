@@ -8,7 +8,6 @@
 using namespace std;
 
 struct ReverseLinkedListIINode {
-
     int val;
     ReverseLinkedListIINode *next;
 
@@ -20,9 +19,7 @@ struct ReverseLinkedListIINode {
 };
 
 class ReverseLinkedListII {
-
 public:
-
     static void description() {
         cout << R"(92. Reverse Linked List II
     Given the head of a singly linked list and two integers left and right where left ≤ right, reverse the nodes of the list from position left to position right, and return the reversed list.
@@ -51,6 +48,7 @@ public:
         }
         return result;
     }
+
     static ReverseLinkedListIINode *deserializeList(const vector<int> &numbers) {
         assert(!numbers.empty());
         assert(numbers.size() <= 500);
@@ -125,7 +123,6 @@ public:
     }
 
 private:
-
     static pair<ReverseLinkedListIINode *, int> copyList(ReverseLinkedListIINode *head) {
         ReverseLinkedListIINode *result = nullptr;
         auto count = 0;
@@ -143,7 +140,6 @@ private:
         }
         return make_pair(result, count);
     }
-
 };
 
 #pragma clang diagnostic pop

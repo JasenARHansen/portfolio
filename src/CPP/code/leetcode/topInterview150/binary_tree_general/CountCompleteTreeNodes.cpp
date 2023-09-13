@@ -29,9 +29,7 @@ public:
 };
 
 class CountCompleteTreeNodes {
-
 public:
-
     static void description() {
         cout << R"(222. Count Complete Tree Nodes
     Given the root of a complete binary tree, return the number of the nodes in the tree.
@@ -127,7 +125,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

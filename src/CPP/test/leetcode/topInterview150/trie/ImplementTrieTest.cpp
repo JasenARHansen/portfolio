@@ -24,5 +24,4 @@ TEST(ImplementTrieTest, climbStairs_1) {
     EXPECT_TRUE(result);
 }
 
-
 #endif

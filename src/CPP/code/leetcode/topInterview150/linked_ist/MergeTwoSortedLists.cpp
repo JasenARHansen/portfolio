@@ -9,7 +9,6 @@
 using namespace std;
 
 struct MergeTwoSortedListsNode {
-
     int val;
     MergeTwoSortedListsNode *next;
 
@@ -21,9 +20,7 @@ struct MergeTwoSortedListsNode {
 };
 
 class MergeTwoSortedLists {
-
 public:
-
     static void description() {
         cout << R"(21. Merge Two Sorted Lists
     You are given the heads of two sorted linked lists list1 and list2.
@@ -57,6 +54,7 @@ public:
         }
         return result;
     }
+
     static MergeTwoSortedListsNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 50);
         MergeTwoSortedListsNode *current = nullptr;
@@ -185,7 +183,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

@@ -10,9 +10,7 @@
 using namespace std;
 
 class InsertInterval {
-
 public:
-
     static void description() {
         cout << R"(57. Insert Interval
     You are given an array of non-overlapping intervals intervals where intervals[i] = [startI, endI] represent the start and the end of the ith interval and intervals is sorted in ascending order by startI. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
@@ -72,7 +70,6 @@ public:
     }
 
 private:
-
     static void copyAndAdd(vector<vector<int>> &intervals, const vector<int> &interval) {
         assert (interval.size() == 2);
         assert (0 <= interval[0]);

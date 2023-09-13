@@ -10,9 +10,7 @@
 using namespace std;
 
 class CopyListWithRandomPointerListNode {
-
 public:
-
     int val;
     CopyListWithRandomPointerListNode *next;
     CopyListWithRandomPointerListNode *random;
@@ -21,13 +19,12 @@ public:
 
     explicit CopyListWithRandomPointerListNode(int val) : val(val), next(nullptr), random(nullptr) {}
 
-    CopyListWithRandomPointerListNode(int val, CopyListWithRandomPointerListNode *next) : val(val), next(next), random(nullptr) {}
+    CopyListWithRandomPointerListNode(int val, CopyListWithRandomPointerListNode *next) : val(val), next(next),
+                                                                                          random(nullptr) {}
 };
 
 class CopyListWithRandomPointer {
-
 public:
-
     static void description() {
         cout << R"(138. Copy List with Random Pointer
     A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null.

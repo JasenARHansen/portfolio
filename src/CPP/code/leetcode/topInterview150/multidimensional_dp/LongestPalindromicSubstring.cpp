@@ -10,9 +10,7 @@
 using namespace std;
 
 class LongestPalindromicSubstring {
-
 public:
-
     static void description() {
         cout << R"(5. Longest Palindromic Substring
     Given a string s, return the longest palindromic substring in s.
@@ -41,7 +39,6 @@ public:
     }
 
 private:
-
     static bool isPalindrome(string s) {
         auto result = true;
         auto left = 0;

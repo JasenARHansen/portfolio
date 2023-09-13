@@ -23,9 +23,7 @@ struct InvertBinaryTreeNode {
 };
 
 class InvertBinaryTree {
-
 public:
-
     static void description() {
         cout << R"(226. Invert Binary Tree
     Given the root of a binary tree, invert the tree, and return its root.
@@ -100,7 +98,6 @@ public:
             levelA.push_back(head);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
-
             }
             if (levelA[0]->right != nullptr) {
                 levelB.push_back(levelA[0]->right);
@@ -211,7 +208,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

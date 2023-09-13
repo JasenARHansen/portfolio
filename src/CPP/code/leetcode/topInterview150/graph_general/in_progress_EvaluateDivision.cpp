@@ -9,9 +9,7 @@
 using namespace std;
 
 class EvaluateDivision {
-
 public:
-
     static void description() {
         cout << R"(399. Evaluate Division
     You are given an array of variable pairs equations and an array of real numbers values, where equations[i] = [Ai, Bi] and values[i] represent the equation Ai / Bi = values[i]. Each Ai or Bi is a string that represents a single variable.
@@ -96,7 +94,6 @@ public:
     }
 
 private:
-
     static double
     findIntersection(unordered_map<string, vector<pair<string, double>>> &variables, const string &left,
                      const string &right) {
@@ -128,7 +125,6 @@ private:
         }
         return -1;
     }
-
 };
 
 #pragma clang diagnostic pop

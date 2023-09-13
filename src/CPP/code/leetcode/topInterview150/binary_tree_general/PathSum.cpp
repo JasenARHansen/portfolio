@@ -21,9 +21,7 @@ struct PathSumTreeNode {
 };
 
 class PathSum {
-
 public:
-
     static void description() {
         cout << R"(112. Path Sum
     Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
@@ -132,7 +130,6 @@ public:
         }
         return result || left || right;
     }
-
 };
 
 #pragma clang diagnostic pop

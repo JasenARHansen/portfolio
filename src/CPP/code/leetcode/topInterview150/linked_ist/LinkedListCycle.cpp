@@ -10,7 +10,6 @@
 using namespace std;
 
 struct LinkedListCycleNode {
-
     int val;
     LinkedListCycleNode *next;
 
@@ -22,9 +21,7 @@ struct LinkedListCycleNode {
 };
 
 class LinkedListCycle {
-
 public:
-
     static void description() {
         cout << R"(141. Linked List Cycle
     Given head, the head of a linked list, determine if the linked list has a cycle in it.

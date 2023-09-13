@@ -10,9 +10,7 @@
 using namespace std;
 
 class SummaryRanges {
-
 public:
-
     static void description() {
         cout << R"(228. Summary Ranges
     You are given a sorted unique integer array nums.

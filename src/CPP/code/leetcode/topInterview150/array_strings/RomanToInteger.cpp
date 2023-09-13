@@ -9,9 +9,7 @@
 using namespace std;
 
 class RomanToInteger {
-
 public:
-
     static void description() {
         cout << R"(13. Roman to Integer
     Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
@@ -84,7 +82,6 @@ public:
     }
 
 private:
-
     static int getValue(char input) {
         unordered_set<char> valid{'I', 'V', 'X', 'L', 'C', 'D', 'M'};
         auto data = toupper(input);
@@ -92,41 +89,31 @@ private:
         int value;
         switch (data) {
             case 'I':
-
                 value = 1;
                 break;
             case 'V':
-
                 value = 5;
                 break;
             case 'X':
-
                 value = 10;
                 break;
             case 'L':
-
                 value = 50;
                 break;
             case 'C':
-
                 value = 100;
                 break;
             case 'D':
-
                 value = 500;
                 break;
             case 'M':
-
                 value = 1000;
                 break;
             default:
-
                 value = 0;
         }
-
         return value;
     }
-
 };
 
 #pragma clang diagnostic pop

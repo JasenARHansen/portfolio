@@ -22,9 +22,7 @@ struct MaximumDepthOfBinaryTreeNode {
 };
 
 class MaximumDepthOfBinaryTree {
-
 public:
-
     static void description() {
         cout << R"(104. Maximum Depth of Binary Tree
     Given the root of a binary tree, return its maximum depth.
@@ -117,7 +115,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

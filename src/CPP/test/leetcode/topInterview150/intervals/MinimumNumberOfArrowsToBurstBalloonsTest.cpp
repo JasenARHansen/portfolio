@@ -11,7 +11,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, description) {
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_1) {
-    int expected = 2;
+    auto expected = 2;
     vector<vector<int>> points{{10, 16},
                                {2,  8},
                                {1,  6},
@@ -21,7 +21,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_1) {
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_2) {
-    int expected = 4;
+    auto expected = 4;
     vector<vector<int>> points{{1, 2},
                                {3, 4},
                                {5, 6},
@@ -31,7 +31,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_2) {
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_3) {
-    int expected = 2;
+    auto expected = 2;
     vector<vector<int>> points{{1, 2},
                                {2, 3},
                                {3, 4},
@@ -41,7 +41,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_3) {
 }
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_4) {
-    int expected = 2;
+    auto expected = 2;
     vector<vector<int>> points{{9, 12},
                                {1, 10},
                                {4, 11},

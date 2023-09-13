@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 static const unordered_map<char, vector<char>> digitsMap{{'2', vector<char>{'a', 'b', 'c'}},
                                                          {'3', vector<char>{'d', 'e', 'f'}},
                                                          {'4', vector<char>{'g', 'h', 'i'}},
@@ -19,9 +18,7 @@ static const unordered_map<char, vector<char>> digitsMap{{'2', vector<char>{'a',
                                                          {'9', vector<char>{'w', 'x', 'y', 'z'}}};
 
 class LetterCombinationsOfAPhoneNumber {
-
 public:
-
     static void description() {
         cout << R"(17. Letter Combinations of a Phone Number
     Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
@@ -56,10 +53,8 @@ public:
     }
 
 private:
-
     static vector<string> permute(char digit, const vector<string> &inputs) {
         vector<string> result;
-
         for (const auto &input: inputs) {
             for (char letter: digitsMap.at(digit)) {
                 result.push_back(input + letter);
@@ -67,7 +62,6 @@ private:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

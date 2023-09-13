@@ -11,9 +11,7 @@
 using namespace std;
 
 class WordPattern {
-
 public:
-
     static void description() {
         cout << R"(290. Word Pattern
     Given a pattern and a string s, find if s follows the same pattern.

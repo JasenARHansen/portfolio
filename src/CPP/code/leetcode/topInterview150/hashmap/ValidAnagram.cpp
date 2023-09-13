@@ -9,9 +9,7 @@
 using namespace std;
 
 class ValidAnagram {
-
 public:
-
     static void description() {
         cout << R"(242. Valid Anagram
     Given two strings s and t, return true if t is an anagram of s, and false otherwise.

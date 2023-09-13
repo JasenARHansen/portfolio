@@ -8,9 +8,7 @@
 using namespace std;
 
 class ReverseWordsInAString {
-
 public:
-
     static void description() {
         cout << R"(151. Reverse Words in a String
     Given an input string s, reverse the order of the words.

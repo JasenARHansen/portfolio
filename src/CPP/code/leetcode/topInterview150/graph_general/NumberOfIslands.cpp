@@ -9,9 +9,7 @@
 using namespace std;
 
 class NumberOfIslands {
-
 public:
-
     static void description() {
         cout << R"(200. Number of Islands
     Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
@@ -66,7 +64,6 @@ public:
     }
 
 private:
-
     static void traceIsland(vector<vector<char>> grid, vector<vector<bool>> &available, int row, int column) {
         // Mark current used
         available[row][column] = false;

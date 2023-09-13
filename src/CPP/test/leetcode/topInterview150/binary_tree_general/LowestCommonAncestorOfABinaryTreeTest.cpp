@@ -66,5 +66,4 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_4) {
     LowestCommonAncestorOfABinaryTree::deleteTree(&root);
 }
 
-
 #endif

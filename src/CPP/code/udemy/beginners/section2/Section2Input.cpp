@@ -10,4 +10,3 @@ void Section2Input::input() {
     cin >> age;
     cout << "You entered: " << name << endl;
 }
-

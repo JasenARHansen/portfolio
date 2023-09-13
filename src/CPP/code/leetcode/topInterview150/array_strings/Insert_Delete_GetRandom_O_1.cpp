@@ -9,13 +9,9 @@
 using namespace std;
 
 class RandomizedSet {
-
 private:
-
     unordered_set<int> dataSet;
-
 public:
-
     static void description() {
         cout << R"(380. Insert Delete GetRandom O(1)
     Implement the RandomizedSet class:

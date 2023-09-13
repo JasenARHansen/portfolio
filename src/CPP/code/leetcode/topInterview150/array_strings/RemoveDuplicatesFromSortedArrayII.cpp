@@ -10,9 +10,7 @@
 using namespace std;
 
 class RemoveDuplicatesFromSortedArrayII {
-
 public:
-
     static void description() {
         cout << R"(80. Remove Duplicates from Sorted Array II
     Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.
@@ -20,7 +18,6 @@ public:
     Return k after placing the final result in the first k slots of nums.
     Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
     Custom Judge:
-
         The judge will test your solution with the following code:
             int[] nums = [...]; // Input array
             int[] expectedNums = [...]; // The expected answer with correct length

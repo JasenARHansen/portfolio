@@ -9,9 +9,7 @@
 using namespace std;
 
 class GenerateParentheses {
-
 public:
-
     static void description() {
         cout << R"(22. Generate Parentheses
     Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -39,7 +37,6 @@ public:
         return result;
     }
 
-
 private:
     static void
     generateParenthesis(const string &base, int openParenthesis, int closedParenthesis, vector<string> &result) {
@@ -56,7 +53,6 @@ private:
             generateParenthesis(base + ")", openParenthesis, closedParenthesis - 1, result);
         }
     }
-
 };
 
 #pragma clang diagnostic pop

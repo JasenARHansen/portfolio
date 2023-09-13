@@ -9,9 +9,7 @@
 using namespace std;
 
 class IntegerToRoman {
-
 public:
-
     static void description() {
         cout << R"(112. Integer to Roman
     Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.

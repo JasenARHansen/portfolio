@@ -23,9 +23,7 @@ struct SumRootToLeafNumbersTreeNode {
 };
 
 class SumRootToLeafNumbers {
-
 public:
-
     static void description() {
         cout << R"(129. Sum Root to Leaf Numbers
     You are given the root of a binary tree containing digits from 0 to 9 only.
@@ -149,7 +147,6 @@ private:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

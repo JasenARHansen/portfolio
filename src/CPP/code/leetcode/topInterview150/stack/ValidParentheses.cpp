@@ -1,5 +1,4 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "hicpp-multiway-paths-covered"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -10,9 +9,7 @@
 using namespace std;
 
 class ValidParentheses {
-
 public:
-
     static void description() {
         cout << R"(20. Valid Parentheses
     Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -66,6 +63,8 @@ public:
                         return false;
                     }
                     base.pop();
+                    break;
+                default:
                     break;
             }
         }

@@ -21,9 +21,7 @@ struct SymmetricTreeNode {
 };
 
 class SymmetricTree {
-
 public:
-
     static void description() {
         cout << R"(101. Symmetric Tree
     Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
@@ -110,7 +108,6 @@ public:
     }
 
 private:
-
     static bool isSymmetric(SymmetricTreeNode *treeA, SymmetricTreeNode *treeB) {
         if ((treeA == nullptr) && (treeB == nullptr)) {
             return true;

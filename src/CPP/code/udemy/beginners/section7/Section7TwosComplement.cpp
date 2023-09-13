@@ -19,4 +19,3 @@ int Section7TwosComplement::performTwosComplement(int input) {
     std::cout << "2's Complement: " << data.to_string() << endl;
     return (int) data.to_ulong();
 }
-

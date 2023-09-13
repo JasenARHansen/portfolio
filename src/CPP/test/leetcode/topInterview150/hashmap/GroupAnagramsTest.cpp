@@ -20,7 +20,6 @@ TEST(GroupAnagramsTest, groupAnagrams_1) {
     for (auto index = 0; index < result.size(); index++) {
         EXPECT_EQ(expected[index], result[index]);
     }
-
 }
 
 TEST(GroupAnagramsTest, groupAnagrams_2) {

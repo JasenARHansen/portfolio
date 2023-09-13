@@ -1,7 +1,6 @@
 #include "Section5Namespace.h"
 
 namespace jsn {
-
     Section5Namespace::Section5Namespace() {
         this->name = "Section5Namespace";
     }

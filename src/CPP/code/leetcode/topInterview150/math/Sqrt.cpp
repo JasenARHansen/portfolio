@@ -7,9 +7,7 @@
 using namespace std;
 
 class Sqrt {
-
 public:
-
     static void description() {
         cout << R"(69. Sqrt(x)
     Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
@@ -31,7 +29,6 @@ public:
     Constraints:
         0 ≤ x ≤ 2^31 - 1
     Note:
-
         I am using Newton's method: https://en.wikipedia.org/wiki/Newton%27s_method)" << endl;
     }
 

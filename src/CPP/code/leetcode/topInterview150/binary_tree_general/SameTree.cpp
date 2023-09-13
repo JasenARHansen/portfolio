@@ -21,9 +21,7 @@ struct SameTreeNode {
 };
 
 class SameTree {
-
 public:
-
     static void description() {
         cout << R"(100. Same Tree
     Given the roots of two binary trees p and q, write a function to check if they are the same or not.
@@ -128,7 +126,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

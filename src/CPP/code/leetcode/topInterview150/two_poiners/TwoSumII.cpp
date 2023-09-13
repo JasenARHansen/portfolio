@@ -10,9 +10,7 @@
 using namespace std;
 
 class TwoSumII {
-
 public:
-
     static void description() {
         cout << R"(167. Two Sum II - Input Array Is Sorted
     Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 ≤ index1 < index2 ≤ numbers.length.
@@ -64,7 +62,6 @@ public:
                         result.push_back(index2 + 1);
                     }
                 }
-
             }
         }
         return result;

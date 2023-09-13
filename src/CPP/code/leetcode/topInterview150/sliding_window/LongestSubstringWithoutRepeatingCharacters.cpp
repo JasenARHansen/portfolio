@@ -9,9 +9,7 @@
 using namespace std;
 
 class LongestSubstringWithoutRepeatingCharacters {
-
 public:
-
     static void description() {
         cout << R"(3. Longest Substring Without Repeating Characters
 Given a string s, find the length of the longest substring without repeating characters.

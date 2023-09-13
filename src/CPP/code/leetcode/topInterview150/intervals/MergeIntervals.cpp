@@ -10,9 +10,7 @@
 using namespace std;
 
 class MergeIntervals {
-
 public:
-
     static void description() {
         cout << R"(56. Merge Intervals
     Given an array of intervals where intervals[i] = [startI, endI], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
@@ -99,7 +97,6 @@ public:
     }
 
 private:
-
     static void copyAndAdd(vector<vector<int>> &intervals, const vector<int> &interval) {
         assert (interval.size() == 2);
         assert (0 <= interval[0]);

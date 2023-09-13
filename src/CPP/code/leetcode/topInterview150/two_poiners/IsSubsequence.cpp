@@ -8,9 +8,7 @@
 using namespace std;
 
 class IsSubsequence {
-
 public:
-
     static void description() {
         cout << R"(392. Is Subsequence
     Given two strings s and t, return true if s is a subsequence of t, or false otherwise.

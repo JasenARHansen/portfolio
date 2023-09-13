@@ -10,9 +10,7 @@
 using namespace std;
 
 class IsomorphicStrings {
-
 public:
-
     static void description() {
         cout << R"(205. Isomorphic Strings
     Given two strings s and t, determine if they are isomorphic.

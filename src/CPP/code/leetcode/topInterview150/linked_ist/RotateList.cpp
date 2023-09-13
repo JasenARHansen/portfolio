@@ -10,7 +10,6 @@
 using namespace std;
 
 struct RotateListNode {
-
     int val;
     RotateListNode *next;
 
@@ -22,9 +21,7 @@ struct RotateListNode {
 };
 
 class RotateList {
-
 public:
-
     static void description() {
         cout << R"(61. Rotate List
     Given the head of a linked list, rotate the list to the right by k places.
@@ -52,6 +49,7 @@ public:
         }
         return result;
     }
+
     static RotateListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 500);
         RotateListNode *result = nullptr;
@@ -121,7 +119,6 @@ public:
     }
 
 private:
-
     static pair<RotateListNode *, int> copyList(RotateListNode *head) {
         RotateListNode *result = nullptr;
         auto count = 0;
@@ -139,7 +136,6 @@ private:
         }
         return make_pair(result, count);
     }
-
 };
 
 #pragma clang diagnostic pop

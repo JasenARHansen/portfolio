@@ -10,9 +10,7 @@
 using namespace std;
 
 class MajorityElement {
-
 public:
-
     static void description() {
         cout << R"(169. Majority Element
     Given an array nums of size n, return the majority element.

@@ -29,9 +29,7 @@ public:
 };
 
 class PopulatingNextRightPointersInEachNodeII {
-
 public:
-
     static void description() {
         cout << R"(117. Populating Next Right Pointers in Each AddTwoNumbersListNode II
     Given a binary tree
@@ -168,7 +166,6 @@ public:
     }
 
 private:
-
     static PopulatingNextRightPointersInEachNodeIITreeNode *
     copyTree(PopulatingNextRightPointersInEachNodeIITreeNode *node) {
         PopulatingNextRightPointersInEachNodeIITreeNode *result = nullptr;
@@ -179,7 +176,6 @@ private:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

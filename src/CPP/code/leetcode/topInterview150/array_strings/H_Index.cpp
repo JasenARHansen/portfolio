@@ -9,9 +9,7 @@
 using namespace std;
 
 class H_Index {
-
 public:
-
     static void description() {
         cout << R"(274. H-Index
     Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.

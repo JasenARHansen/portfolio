@@ -8,7 +8,6 @@
 using namespace std;
 
 struct PartitionListNode {
-
     int val;
     PartitionListNode *next;
 
@@ -20,9 +19,7 @@ struct PartitionListNode {
 };
 
 class PartitionList {
-
 public:
-
     static void description() {
         cout << R"(86. Partition List
     Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
@@ -51,6 +48,7 @@ public:
         }
         return result;
     }
+
     static PartitionListNode *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 200);
         PartitionListNode *result = nullptr;
@@ -130,7 +128,6 @@ public:
     }
 
 private:
-
     static PartitionListNode *copyList(PartitionListNode *head) {
         PartitionListNode *result = nullptr;
         if (head != nullptr) {
@@ -145,7 +142,6 @@ private:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

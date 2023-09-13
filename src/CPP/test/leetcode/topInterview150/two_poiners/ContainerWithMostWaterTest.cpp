@@ -11,14 +11,14 @@ TEST(ContainerWithMostWaterTest, description) {
 }
 
 TEST(ContainerWithMostWaterTest, maxArea_1) {
-    int expected = 49;
+    auto expected = 49;
     vector<int> height{1, 8, 6, 2, 5, 4, 8, 3, 7};
     auto result = ContainerWithMostWater::maxArea(height);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ContainerWithMostWaterTest, maxArea_2) {
-    int expected = 1;
+    auto expected = 1;
     vector<int> height{1, 1};
     auto result = ContainerWithMostWater::maxArea(height);
     EXPECT_EQ(expected, result);
@@ -67,14 +67,14 @@ TEST(ContainerWithMostWaterTest, maxArea_fail_6) {
 }
 
 TEST(ContainerWithMostWaterTest, maxArea_2_1) {
-    int expected = 49;
+    auto expected = 49;
     vector<int> height{1, 8, 6, 2, 5, 4, 8, 3, 7};
     auto result = ContainerWithMostWater::maxArea_2(height);
     EXPECT_EQ(expected, result);
 }
 
 TEST(ContainerWithMostWaterTest, maxArea_2_2) {
-    int expected = 1;
+    auto expected = 1;
     vector<int> height{1, 1};
     auto result = ContainerWithMostWater::maxArea_2(height);
     EXPECT_EQ(expected, result);

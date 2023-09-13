@@ -7,9 +7,7 @@
 using namespace std;
 
 class PalindromeNumber {
-
 public:
-
     static void description() {
         cout << R"(9. Palindrome Number
     Given an integer x, return true if x is a palindrome, and false otherwise.

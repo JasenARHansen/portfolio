@@ -40,5 +40,4 @@ TEST(PathSumTest, hasPathSum_3) {
     PathSum::deleteTree(&root);
 }
 
-
 #endif

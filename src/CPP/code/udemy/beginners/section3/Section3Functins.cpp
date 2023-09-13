@@ -16,4 +16,3 @@ string Section3Functions::menuSelection(const int selection) {
             return "Invalid option, quitting.";
     }
 }
-

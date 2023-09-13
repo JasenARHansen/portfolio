@@ -8,9 +8,7 @@
 using namespace std;
 
 class ZigzagConversion {
-
 public:
-
     static void description() {
         cout << R"(6. Zigzag Conversion
     The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
@@ -20,7 +18,6 @@ public:
     And then read line by line: "PAHNAPLSIIGYIR"
     Write the code that will take a string and make this conversion given a number of rows:
     string convert(string s, int numRows);
-
     Example 1:
         Input: s = "PAYPALISHIRING", numRows = 3
         Output: "PAHNAPLSIIGYIR"

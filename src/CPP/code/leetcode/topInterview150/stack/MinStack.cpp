@@ -8,14 +8,10 @@
 using namespace std;
 
 class MinStack {
-
 private:
-
     stack<int> min;
     stack<int> value;
-
 public:
-
     static void description() {
         cout << R"(155. Min Stack
     Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.

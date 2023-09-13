@@ -147,7 +147,6 @@ void Section2Logic::doWhileLoop() {
         counter2++;
         cout << "Do while loop execution " << counter2 << endl;
     } while (counter2 < 3);
-
 }
 
 void Section2Logic::forLoop() {
@@ -166,14 +165,12 @@ void Section2Logic::forLoop() {
     for (auto counter = 0; counter < 3; counter++) {
         cout << "For loop fully defined execution " << counter << endl;
     }
-
     for (auto counter = 0; counter < 4; counter++) {
         if (counter % 2) {
             continue;
         }
         cout << "For loop mod 2 continue execution " << counter << endl;
     }
-
     for (auto counter = 0; counter < 4; counter++) {
         if (counter % 2) {
             break;

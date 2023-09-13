@@ -10,9 +10,7 @@
 using namespace std;
 
 class MinimumPathSum {
-
 public:
-
     static void description() {
         cout << R"(64. Minimum Path Sum
     Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
@@ -50,7 +48,6 @@ public:
     }
 
 private:
-
     static int minPathSum(const vector<vector<int>> &grid, int row, int column, vector<vector<int>> &testGrid) {
         assert (0 <= grid[row][column]);
         assert (grid[row][column] <= 200);
