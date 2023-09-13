@@ -6,12 +6,10 @@
 #include <unordered_map>
 
 using namespace std;
-
 static unordered_map<char, char> letterMap{{'A', 'B'},
                                            {'B', 'A'}};
 
 class AllWrong {
-
 public:
     static void description() {
         cout << R"(All Wrong
@@ -21,7 +19,6 @@ public:
     Constraints
         1 ≤ N ≤ 100
         Ci∈{'A','B'}
-
     Sample test case #1
         N = 3
         C = ABA
@@ -48,7 +45,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

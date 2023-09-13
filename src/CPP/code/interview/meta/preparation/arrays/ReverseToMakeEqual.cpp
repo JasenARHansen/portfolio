@@ -9,7 +9,6 @@
 using namespace std;
 
 class ReverseToMakeEqual {
-
 public:
     static void description() {
         cout << R"(Reverse to Make Equal

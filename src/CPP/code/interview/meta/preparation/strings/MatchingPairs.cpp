@@ -8,7 +8,6 @@
 using namespace std;
 
 class MatchingPairs {
-
 public:
     static void description() {
         cout << R"(Matching Pairs
@@ -47,9 +46,9 @@ Example 2
     static int matchingPairs(string s, string t) {
         assert(s.size() == t.size());
         assert(2 <= t.size());
-        assert(t.size() <= pow(10,6));
+        assert(t.size() <= pow(10, 6));
         assert(2 <= s.size());
-        assert(s.size() <= pow(10,6));
+        assert(s.size() <= pow(10, 6));
         int result = 0;
         bool swap = true;
         for (auto indexLeft = 0; indexLeft < s.size(); indexLeft++) {

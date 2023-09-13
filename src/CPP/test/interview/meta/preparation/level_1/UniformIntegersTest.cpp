@@ -42,7 +42,6 @@ TEST(UniformIntegersTest, getUniformIntegerCountInInterval_4) {
     EXPECT_EQ(expected, result);
 }
 
-
 TEST(UniformIntegersTest, getUniformIntegerCountInInterval_fail_1) {
     // 1 ≤ a
     long long a = 1 - 1;

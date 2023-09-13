@@ -10,7 +10,6 @@
 using namespace std;
 
 class Cafeteria {
-
 public:
     static void description() {
         cout << R"(Cafeteria

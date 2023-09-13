@@ -7,7 +7,6 @@
 using namespace std;
 
 class ABCs {
-
 public:
     static void description() {
         cout << R"(ABCs
@@ -48,7 +47,6 @@ public:
         assert(c <= 100);
         return a + b + c;
     }
-
 };
 
 #pragma clang diagnostic pop

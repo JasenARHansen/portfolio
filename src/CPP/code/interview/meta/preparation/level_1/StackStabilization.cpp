@@ -9,7 +9,6 @@
 using namespace std;
 
 class StackStabilization {
-
 public:
     static void description() {
         cout << R"(Stack Stabilization (Chapter 1)

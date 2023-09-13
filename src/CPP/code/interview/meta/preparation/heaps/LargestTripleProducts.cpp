@@ -8,7 +8,6 @@
 using namespace std;
 
 class LargestTripleProducts {
-
 public:
     static void description() {
         cout << R"(Largest Triple Products
@@ -78,7 +77,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

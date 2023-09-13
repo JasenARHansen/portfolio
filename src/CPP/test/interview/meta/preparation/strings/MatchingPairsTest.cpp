@@ -30,15 +30,15 @@ TEST(MatchingPairsTest, matchingPairs_fail_1) {
     // 2 ≤ s.length
     auto size = 0;
     string s(size, ' ');
-    string t(size , ' ');
+    string t(size, ' ');
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MatchingPairsTest, matchingPairs_fail_2) {
     // s.length ≤ 1,000,000
-    auto size = (int)pow(10,6) + 1;
+    auto size = (int) pow(10, 6) + 1;
     string s(size, ' ');
-    string t(size , ' ');
+    string t(size, ' ');
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
@@ -46,15 +46,15 @@ TEST(MatchingPairsTest, matchingPairs_fail_3) {
     // 2 ≤ s.length
     auto size = 0;
     string s(size, ' ');
-    string t(size , ' ');
+    string t(size, ' ');
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MatchingPairsTest, matchingPairs_fail_4) {
     // s.length ≤ 1,000,000
-    auto size = (int)pow(10,6) + 1;
+    auto size = (int) pow(10, 6) + 1;
     string s(size, ' ');
-    string t(size , ' ');
+    string t(size, ' ');
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
@@ -62,7 +62,8 @@ TEST(MatchingPairsTest, matchingPairs_fail_5) {
     // s.length ≤ 1,000,000
     auto size = 5;
     string s(size, ' ');
-    string t(size + 1 , ' ');
+    string t(size + 1, ' ');
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
+
 #endif

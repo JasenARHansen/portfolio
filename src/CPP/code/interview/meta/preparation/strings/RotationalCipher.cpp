@@ -8,7 +8,6 @@
 using namespace std;
 
 class RotationalCipher {
-
 public:
     static void description() {
         cout << R"(Rotational Cipher
@@ -57,23 +56,21 @@ public:
                 if ((startUpper <= character) && (character <= stopUpper)) {
                     result += startUpper + (((character - startUpper) + rotationFactor) % letterRange);
                 }
-                // character is lower case
+                    // character is lower case
                 else if ((startLower <= character) && (character <= stopLower)) {
                     result += startLower + (((character - startLower) + rotationFactor) % letterRange);
                 }
-                // character is number
+                    // character is number
 
                 else if ((startNumber <= character) && (character <= stopNumber)) {
                     result += startNumber + (((character - startNumber) + rotationFactor) % numberRange);
                 }
-            }
-            else{
+            } else {
                 result += character;
             }
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

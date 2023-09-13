@@ -11,7 +11,7 @@ TEST(MagicalCandyBagsTest, description) {
 }
 
 TEST(MagicalCandyBagsTest, maxCandies_1) {
-    int expected = 14;
+    auto expected = 14;
     vector<int> arr{2, 1, 7, 4, 2};
     auto k = 3;
     auto result = MagicalCandyBags::maxCandies(arr, k);
@@ -19,7 +19,7 @@ TEST(MagicalCandyBagsTest, maxCandies_1) {
 }
 
 TEST(MagicalCandyBagsTest, maxCandies_2) {
-    int expected = 228;
+    auto expected = 228;
     vector<int> arr{19, 78, 76, 72, 48, 8, 24, 74, 29};
     auto k = 3;
     auto result = MagicalCandyBags::maxCandies(arr, k);

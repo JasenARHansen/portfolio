@@ -9,7 +9,6 @@
 using namespace std;
 
 class MinimumLengthSubstrings {
-
 public:
     static void description() {
         cout << R"(Minimum Length Substrings
@@ -106,7 +105,6 @@ private:
                 result = false;
                 break;
             }
-
         }
         return result;
     }

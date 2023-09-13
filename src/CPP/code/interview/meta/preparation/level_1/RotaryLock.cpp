@@ -9,7 +9,6 @@
 using namespace std;
 
 class RotaryLock {
-
 public:
     static void description() {
         cout << R"(Rotary Lock (Chapter 1)

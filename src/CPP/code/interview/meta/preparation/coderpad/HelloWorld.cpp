@@ -7,7 +7,6 @@
 using namespace std;
 
 class HelloWorld {
-
 public:
     static void description() {
         cout << R"(Welcome to Meta!
@@ -26,7 +25,6 @@ public:
             cout << word;
         }
     }
-
 };
 
 #pragma clang diagnostic pop

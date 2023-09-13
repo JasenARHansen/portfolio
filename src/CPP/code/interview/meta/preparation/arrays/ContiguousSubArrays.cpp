@@ -9,7 +9,6 @@
 using namespace std;
 
 class ContiguousSubArrays {
-
 public:
     static void description() {
         cout << R"(Contiguous Sub-arrays
@@ -59,7 +58,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

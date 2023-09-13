@@ -7,7 +7,6 @@
 using namespace std;
 
 class LookAndSay {
-
 public:
     static void description() {
         cout << R"(Question 2: Look and Say
@@ -68,7 +67,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

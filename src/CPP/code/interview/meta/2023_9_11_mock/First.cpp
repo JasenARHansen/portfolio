@@ -8,7 +8,6 @@
 using namespace std;
 
 class First {
-
 public:
     static void description() {
         cout << R"(Question 1:
@@ -57,7 +56,6 @@ public:
     }
 
 private:
-
     static bool isPalindromeInRange(const string &input, int left, int right) {
         assert(0 <= left);
         assert(left < input.size());
@@ -74,7 +72,6 @@ private:
         }
         return result;
     }
-
 
 };
 

@@ -10,7 +10,6 @@
 using namespace std;
 
 class MagicalCandyBags {
-
 public:
     static void description() {
         cout << R"(Magical Candy Bags

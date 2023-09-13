@@ -8,7 +8,6 @@
 using namespace std;
 
 class Battleship {
-
 public:
     static void description() {
         cout << R"(Battleship
@@ -59,7 +58,6 @@ public:
         }
         return hit / (double) (r * c);
     }
-
 };
 
 #pragma clang diagnostic pop

@@ -48,7 +48,6 @@ TEST(BattleshipTest, getHitProbability_fail_2) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-
 TEST(BattleshipTest, getHitProbability_fail_3) {
     // 1 ≤ c
     auto r = 3;

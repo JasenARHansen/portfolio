@@ -7,7 +7,6 @@
 using namespace std;
 
 class SpiralArray2D {
-
 public:
     static void description() {
         cout << R"(Question 1: 2D Spiral Array
@@ -71,7 +70,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

@@ -7,7 +7,6 @@
 using namespace std;
 
 class PassingYearbooks {
-
 public:
     static void description() {
         cout << R"(Passing Yearbooks
@@ -67,7 +66,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

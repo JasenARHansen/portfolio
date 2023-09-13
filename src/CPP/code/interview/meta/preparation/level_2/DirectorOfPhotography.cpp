@@ -8,7 +8,6 @@
 using namespace std;
 
 class DirectorOfPhotography {
-
 public:
     static void description() {
         cout << R"(Director of Photography (Chapter 2)

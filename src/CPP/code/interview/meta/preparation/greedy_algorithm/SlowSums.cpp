@@ -10,7 +10,6 @@
 using namespace std;
 
 class SlowSums {
-
 public:
     static void description() {
         cout << R"(Slow Sums
@@ -39,24 +38,23 @@ Example
     Add 9 + 1 for a penalty of 10. The penalties sum to 26.)" << endl;
     }
 
-    static int getTotalTime(vector <int> arr) {
+    static int getTotalTime(vector<int> arr) {
         assert(!arr.empty());
-        assert(arr.size() <= pow(10,6));
+        assert(arr.size() <= pow(10, 6));
         int result = 0;
         sort(arr.begin(), arr.end(), greater<>());
-        assert( 1 <= arr.at(0));
-        assert(arr.at(0) <= pow(10,7));
+        assert(1 <= arr.at(0));
+        assert(arr.at(0) <= pow(10, 7));
         auto current = arr.at(0);
-        for (int index = 1; index < arr.size(); index++){
-            assert( 1 <= arr.at(index));
-            assert(arr.at(index) <= pow(10,7));
+        for (int index = 1; index < arr.size(); index++) {
+            assert(1 <= arr.at(index));
+            assert(arr.at(index) <= pow(10, 7));
             result += current + arr.at(index);
             current += arr.at(index);
         }
-        assert(result <= 5 * pow(10,6));
+        assert(result <= 5 * pow(10, 6));
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

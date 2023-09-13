@@ -47,5 +47,4 @@ TEST(AllWrongTest, getWrongAnswers_fail_3) {
     EXPECT_EXIT(AllWrong::getWrongAnswers(n, c), ::testing::ExitedWithCode(3), "");
 }
 
-
 #endif

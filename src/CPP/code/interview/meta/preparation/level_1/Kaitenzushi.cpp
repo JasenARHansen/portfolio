@@ -10,7 +10,6 @@
 using namespace std;
 
 class Kaitenzushi {
-
 public:
     static void description() {
         cout << R"(Cafeteria

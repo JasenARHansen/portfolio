@@ -8,7 +8,6 @@
 using namespace std;
 
 class EditDistance {
-
 public:
     static void description() {
         cout << R"(Question 3: Edit Distance
@@ -79,7 +78,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

@@ -9,7 +9,6 @@
 using namespace std;
 
 class ScoreboardInference {
-
 public:
     static void description() {
         cout << R"(Scoreboard Inference (Chapter 1)

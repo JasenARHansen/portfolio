@@ -8,7 +8,6 @@
 using namespace std;
 
 class UniformIntegers {
-
 public:
     static void description() {
         cout << R"(Uniform Integers
@@ -132,12 +131,10 @@ public:
             // Ex, if A is 1 and B is 400, the 10's digit range would include all the uniform digits of that range
             if ((stringB.size() - stringA.size()) > 1) {
                 result += (((int) stringB.size() - (int) stringA.size()) - 1) * 9;
-
             }
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

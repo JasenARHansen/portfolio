@@ -10,7 +10,6 @@
 using namespace std;
 
 class MedianStream {
-
 public:
     static void description() {
         cout << R"(Median Stream
@@ -66,7 +65,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

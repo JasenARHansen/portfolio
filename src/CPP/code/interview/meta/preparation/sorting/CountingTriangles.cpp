@@ -9,7 +9,6 @@
 #include <algorithm>
 
 using namespace std;
-
 struct sides {
     long long a;
     long long b;
@@ -17,7 +16,6 @@ struct sides {
 };
 
 class CountingTriangles {
-
 public:
     static void description() {
         cout << R"(Counting Triangles
@@ -67,11 +65,9 @@ public:
             sort(sample.begin(), sample.end());
             string key(sample.begin(), sample.end());
             triangles.insert(key);
-
         }
         return triangles.size();
     }
-
 };
 
 #pragma clang diagnostic pop
