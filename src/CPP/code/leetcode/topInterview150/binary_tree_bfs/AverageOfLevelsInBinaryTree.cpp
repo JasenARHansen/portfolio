@@ -108,7 +108,7 @@ public:
             queue<AverageOfLevelsInBinaryTreeNode *> levelB;
             levelA.push(root);
             long long int sum;
-            int count;
+            double count;
             AverageOfLevelsInBinaryTreeNode *processing;
             while (!levelA.empty() || !levelB.empty()) {
                 sum = 0;
@@ -126,7 +126,7 @@ public:
                             levelB.push(processing->left);
                         }
                     }
-                    result.push_back((sum / (double) count));
+                    result.push_back((sum / count));
                 } else {
                     while (!levelB.empty()) {
                         processing = levelB.front();
@@ -140,7 +140,7 @@ public:
                             levelA.push(processing->left);
                         }
                     }
-                    result.push_back(sum / (double) count);
+                    result.push_back(sum / count);
                 }
             }
         }

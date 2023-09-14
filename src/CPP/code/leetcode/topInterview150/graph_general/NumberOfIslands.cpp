@@ -40,13 +40,13 @@ public:
         grid[i][j] is '0' or '1'.)" << endl;
     }
 
-    static int numIslands(vector<vector<char>> &grid) {
+    static int numIslands(const vector<vector<char>> &grid) {
         assert (!grid.empty());
         assert (grid.size() <= 300);
         auto result = 0;
         vector<vector<bool>> available;
         auto length = grid[0].size();
-        for (const auto row: grid) {
+        for (const auto &row: grid) {
             assert (!row.empty());
             assert (row.size() <= 300);
             assert (row.size() == length);
