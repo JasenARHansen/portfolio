@@ -33,6 +33,7 @@ TEST(ElementSwappingTest, findMinArray_3) {
     auto result = ElementSwapping::findMinArray(arr, k);
     EXPECT_EQ(expected, result);
 }
+
 TEST(ElementSwappingTest, findMinArray_4) {
     vector<int> expected{1, 2, 2, 2, 1, 2, 2};
     vector<int> arr{2, 1, 2, 2, 2, 2, 1};

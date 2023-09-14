@@ -24,7 +24,7 @@ public:
     Signature
         int countDistinctTriangles(ArrayList<Sides> arr)
             or
-        int countDistinctTrianges(int[][] arr)
+        int countDistinctTriangles(int[][] arr)
 
     Input
         In some languages, arr is an Nx3 array where arr[i] is a length-3 array that contains the side lengths of the ith triangle. In other languages, arr is a list of structs/objects that each represent a single triangle with side lengths a, b, and c.
@@ -51,22 +51,21 @@ public:
         All of these triangles are the same.)" << endl;
     }
 
-    static int countDistinctTriangles(vector<sides> arr) {
+    static int countDistinctTriangles(const vector<sides> &arr) {
         assert(!arr.empty());
         assert(arr.size() <= pow(10, 6));
         unordered_set<string> triangles;
-        int result = 0;
-        vector<int> sample;
+        vector<long long> toSort;
         for (auto triangle: arr) {
-            sample.clear();
-            sample.push_back(triangle.a);
-            sample.push_back(triangle.b);
-            sample.push_back(triangle.c);
-            sort(sample.begin(), sample.end());
-            string key(sample.begin(), sample.end());
+            toSort.clear();
+            toSort.push_back(triangle.a);
+            toSort.push_back(triangle.b);
+            toSort.push_back(triangle.c);
+            sort(toSort.begin(), toSort.end());
+            string key(toSort.begin(), toSort.end());
             triangles.insert(key);
         }
-        return triangles.size();
+        return (int) triangles.size();
     }
 };
 

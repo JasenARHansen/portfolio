@@ -42,7 +42,7 @@ public:
         We can swap [11, 2], followed by [9, 2], then [8, 2].)" << endl;
     }
 
-    static vector<int> findMinArray(vector<int> arr, int k) {
+    static vector<int> findMinArray(const vector<int> &arr, int k) {
         assert(!arr.empty());
         assert(arr.size() <= pow(10, 3));
         assert(1 <= k);
@@ -51,7 +51,7 @@ public:
         copy(arr.begin(), arr.end(), back_inserter(result));
         // find a possible indexStart for starting swapping
         auto indexStart = -1;
-        auto swapOffset = 0;
+        int swapOffset;
         auto kUsed = 0;
         do {
             do {
@@ -75,7 +75,7 @@ private:
     static int indexOfMinInRange(vector<int> arr, int indexStart, int length) {
         auto result = 0;
         auto min = INT_MAX;
-        for(auto index = 0; ((index < length + 1) && ((indexStart + index) < arr.size()));index++){
+        for (auto index = 0; ((index < length + 1) && ((indexStart + index) < arr.size())); index++) {
             if (arr.at(indexStart + index) < min) {
                 min = arr.at(indexStart + index);
                 result = index;

@@ -11,23 +11,23 @@
 
 using namespace std;
 
-class SecondTreeNode {
+class PrintTreeByColumnTreeNode {
 public:
     int val;
-    SecondTreeNode *left;
-    SecondTreeNode *right;
+    PrintTreeByColumnTreeNode *left;
+    PrintTreeByColumnTreeNode *right;
 
-    SecondTreeNode() : val(0), left(nullptr), right(nullptr) {}
+    PrintTreeByColumnTreeNode() : val(0), left(nullptr), right(nullptr) {}
 
-    explicit SecondTreeNode(int val) : val(val), left(nullptr), right(nullptr) {}
+    explicit PrintTreeByColumnTreeNode(int val) : val(val), left(nullptr), right(nullptr) {}
 
-    SecondTreeNode(int val, SecondTreeNode *left,
-                   SecondTreeNode *right) : val(val),
-                                            left(left),
-                                            right(right) {}
+    PrintTreeByColumnTreeNode(int val, PrintTreeByColumnTreeNode *left,
+                              PrintTreeByColumnTreeNode *right) : val(val),
+                                                                  left(left),
+                                                                  right(right) {}
 };
 
-class Second {
+class PrintTreeByColumn {
 public:
     static void description() {
         cout << R"(Question 2:
@@ -60,40 +60,40 @@ public:
         6, 1, 2, 5, 9, 7, 8, 4)" << endl;
     }
 
-    static SecondTreeNode *deserialize(vector<string> values) {
-        SecondTreeNode *root = nullptr;
+    static PrintTreeByColumnTreeNode *deserialize(vector<string> values) {
+        PrintTreeByColumnTreeNode *root = nullptr;
         if (!values.empty()) {
-            queue<SecondTreeNode *> nodes;
+            queue<PrintTreeByColumnTreeNode *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new SecondTreeNode(stoi(values[index]));
+                root = new PrintTreeByColumnTreeNode(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new SecondTreeNode(stoi(values[index]));
+                        root->left = new PrintTreeByColumnTreeNode(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new SecondTreeNode(stoi(values[index]));
+                        root->right = new PrintTreeByColumnTreeNode(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                SecondTreeNode *temp;
+                PrintTreeByColumnTreeNode *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new SecondTreeNode(stoi(values[index]));
+                        temp->left = new PrintTreeByColumnTreeNode(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new SecondTreeNode(stoi(values[index]));
+                            temp->right = new PrintTreeByColumnTreeNode(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -104,7 +104,7 @@ public:
         return root;
     }
 
-    static void deleteTree(SecondTreeNode **head) {
+    static void deleteTree(PrintTreeByColumnTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
             if (current->left != nullptr) {
@@ -118,10 +118,10 @@ public:
         *head = nullptr;
     }
 
-    static vector<int> order(SecondTreeNode *input) {
+    static vector<int> order(PrintTreeByColumnTreeNode *input) {
         // pair<TreeNode*, col>
         map<int, vector<int>> myMap;
-        queue<pair<SecondTreeNode *, int>> processing;
+        queue<pair<PrintTreeByColumnTreeNode *, int>> processing;
         auto column = 0;
         processing.emplace(input, column);
         while (!processing.empty()) {

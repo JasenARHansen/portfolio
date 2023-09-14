@@ -54,16 +54,16 @@ public:
             if (iswalnum(character)) {
                 // character is upper case
                 if ((startUpper <= character) && (character <= stopUpper)) {
-                    result += startUpper + (((character - startUpper) + rotationFactor) % letterRange);
+                    result += (char) (startUpper + (((character - startUpper) + rotationFactor) % letterRange));
                 }
                     // character is lower case
                 else if ((startLower <= character) && (character <= stopLower)) {
-                    result += startLower + (((character - startLower) + rotationFactor) % letterRange);
+                    result += (char) (startLower + (((character - startLower) + rotationFactor) % letterRange));
                 }
                     // character is number
 
                 else if ((startNumber <= character) && (character <= stopNumber)) {
-                    result += startNumber + (((character - startNumber) + rotationFactor) % numberRange);
+                    result += (char) (startNumber + (((character - startNumber) + rotationFactor) % numberRange));
                 }
             } else {
                 result += character;

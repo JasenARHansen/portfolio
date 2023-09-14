@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class First {
+class MakePalindromeByRemove {
 public:
     static void description() {
         cout << R"(Question 1:
@@ -72,7 +72,6 @@ private:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop
