@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_BATTLESHIP_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/warmup/Battleship.cpp"
+#include "../../../../../code/interview/meta/preparation/warmup/Battleship.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BattleshipTest, description) {
     testing::internal::CaptureStdout();

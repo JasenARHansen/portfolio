@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ROTARY_LOCK_CHAPTER_1_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/RotaryLock.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/RotaryLock.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RotaryLockCh1Test, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_MATCHING_PAIRS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/strings/MatchingPairs.cpp"
+#include "../../../../../code/interview/meta/preparation/strings/MatchingPairs.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MatchingPairsTest, description) {
     testing::internal::CaptureStdout();

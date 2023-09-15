@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_QUEUE_REMOVALS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/queues/QueueRemovals.cpp"
+#include "../../../../../code/interview/meta/preparation/queues/QueueRemovals.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(QueueRemovalsTest, description) {
     testing::internal::CaptureStdout();

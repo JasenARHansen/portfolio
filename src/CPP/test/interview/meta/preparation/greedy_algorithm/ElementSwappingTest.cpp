@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ELEMENT_SWAPPING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/greedy_algorithm/ElementSwapping.cpp"
+#include "../../../../../code/interview/meta/preparation/greedy_algorithm/ElementSwapping.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ElementSwappingTest, description) {
     testing::internal::CaptureStdout();

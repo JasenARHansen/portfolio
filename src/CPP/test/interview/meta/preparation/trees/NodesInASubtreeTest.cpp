@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_NODES_IN_A_SUBTREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/trees/NodesInASubtree.cpp"
+#include "../../../../../code/interview/meta/preparation/trees/NodesInASubtree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(NodesInASubtreeTest, description) {
     testing::internal::CaptureStdout();

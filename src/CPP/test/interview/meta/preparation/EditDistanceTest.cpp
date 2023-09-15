@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_EDIT_DISTANCE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/preparation/EditDistance.cpp"
+#include "../../../../code/interview/meta/preparation/EditDistance.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(EditDistanceTest, description) {
     testing::internal::CaptureStdout();

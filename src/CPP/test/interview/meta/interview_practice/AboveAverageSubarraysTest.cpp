@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_ABOVE_AVERAGE_SUB_ARRAYS_TEST
-#define INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_ABOVE_AVERAGE_SUB_ARRAYS_TEST
+#ifndef INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_ABOVE_AVERAGE_SUB_ARRAYS_TEST
+#define INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_ABOVE_AVERAGE_SUB_ARRAYS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/practice_interview/AboveAverageSubArrays.cpp"
+#include "../../../../code/interview/meta/interview_practice/AboveAverageSubArrays.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(AboveAverageSubArraysTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_UNIFORM_INTEGERS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/UniformIntegers.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/UniformIntegers.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(UniformIntegersTest, description) {
     testing::internal::CaptureStdout();

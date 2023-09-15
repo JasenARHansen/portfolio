@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_KAITENZUSHI_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/Kaitenzushi.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/Kaitenzushi.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(KaitenzushiTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_SEATING_ARRANGEMENTS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/greedy_algorithm/SeatingArrangements.cpp"
+#include "../../../../../code/interview/meta/preparation/greedy_algorithm/SeatingArrangements.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SeatingArrangementsTest, description) {
     testing::internal::CaptureStdout();

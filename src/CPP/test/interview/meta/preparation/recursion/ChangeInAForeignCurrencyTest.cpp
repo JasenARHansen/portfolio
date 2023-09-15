@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_CHANGE_IN_A_FOREIGN_CURRENCY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/recursion/ChangeInAForeignCurrency.cpp"
+#include "../../../../../code/interview/meta/preparation/recursion/ChangeInAForeignCurrency.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ChangeInAForeignCurrencyTest, description) {
     testing::internal::CaptureStdout();

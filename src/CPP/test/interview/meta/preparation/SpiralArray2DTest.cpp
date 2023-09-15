@@ -4,7 +4,7 @@
 #define INTERVIEW_META_PREPARATION_SPIRAL_ARRAY_2D_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/preparation/SpiralArray2D.cpp"
+#include "../../../../code/interview/meta/preparation/SpiralArray2D.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SpiralArray2dTest, description) {
     testing::internal::CaptureStdout();

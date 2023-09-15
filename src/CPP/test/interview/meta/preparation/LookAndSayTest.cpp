@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_LOOK_AND_SAY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/preparation/LookAndSay.cpp"
+#include "../../../../code/interview/meta/preparation/LookAndSay.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LookAndSayTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_STACK_STABILIZATION_CHAPTER_1_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/StackStabilization.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/StackStabilization.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(StackStabilizationCh1Test, description) {
     testing::internal::CaptureStdout();

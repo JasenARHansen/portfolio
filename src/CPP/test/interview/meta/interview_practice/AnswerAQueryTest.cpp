@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_ANSWER_A_QUERY_TEST
-#define INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_ANSWER_A_QUERY_TEST
+#ifndef INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_ANSWER_A_QUERY_TEST
+#define INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_ANSWER_A_QUERY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/practice_interview/AnswerAQuery.cpp"
+#include "../../../../code/interview/meta/interview_practice/AnswerAQuery.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PracticeInterviewFirstTest, description) {
     testing::internal::CaptureStdout();

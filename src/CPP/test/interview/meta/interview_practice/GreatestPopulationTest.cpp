@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_GREATEST_POPULATION_TEST
-#define INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_GREATEST_POPULATION_TEST
+#ifndef INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_GREATEST_POPULATION_TEST
+#define INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_GREATEST_POPULATION_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/practice_interview/GreatestPopulation.cpp"
+#include "../../../../code/interview/meta/interview_practice/GreatestPopulation.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(GreatestPopulationTest, description) {
     testing::internal::CaptureStdout();
@@ -10,7 +10,7 @@ TEST(GreatestPopulationTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(GreatestPopulationTest, averageByLevel_1) {
+TEST(GreatestPopulationTest, findGreatestPopulation_1) {
     int expected = 1803;
     vector<Person> people{{2000, 2010},
                           {1975, 2005},

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_MINIMIZING_PERMUTATIONS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/graphs/MinimizingPermutations.cpp"
+#include "../../../../../code/interview/meta/preparation/graphs/MinimizingPermutations.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimizingPermutationsTest, description) {
     testing::internal::CaptureStdout();

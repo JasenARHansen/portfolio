@@ -44,7 +44,7 @@ public:
         output: false)" << endl;
     }
 
-    static bool isBalanced(string s) {
+    static bool isBalanced(const string &s) {
         auto result = true;
         if (!s.empty()) {
             stack<char> base;

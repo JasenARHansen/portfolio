@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_SCOREBOARD_INFERENCE_CHAPTER_1_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/ScoreboardInference.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/ScoreboardInference.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ScoreboardInferenceCh1Test, description) {
     testing::internal::CaptureStdout();

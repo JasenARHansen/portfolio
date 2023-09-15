@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_REVERSE_TO_MAKE_EQUAL_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/arrays/ReverseToMakeEqual.cpp"
+#include "../../../../../code/interview/meta/preparation/arrays/ReverseToMakeEqual.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ReverseToMakeEqualTest, description) {
     testing::internal::CaptureStdout();

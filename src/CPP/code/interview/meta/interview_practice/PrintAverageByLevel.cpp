@@ -28,7 +28,7 @@ class PrintAverageByLevel {
 public:
     static void description() {
         cout << R"(Question 3:
-    Given a binary tree containing integers, print the avergae value at each level of the tree.
+    Given a binary tree containing integers, print the average value at each level of the tree.
     Input:
 
         4
@@ -92,20 +92,26 @@ public:
     static void deleteTree(PrintAverageByLevelTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            if (current->left != nullptr) {
-                deleteTree(&current->left);
+            queue<PrintAverageByLevelTreeNode *> working;
+            working.push(current);
+            while (!working.empty()) {
+                current = working.front();
+                working.pop();
+                if (current->left != nullptr) {
+                    working.push(current->left);
+                }
+                if (current->right != nullptr) {
+                    working.push(current->right);
+                }
+                delete current;
             }
-            if (current->right != nullptr) {
-                deleteTree(&current->right);
-            }
-            delete current;
         }
         *head = nullptr;
     }
 
     static vector<int> averageByLevel(PrintAverageByLevelTreeNode *input) {
         vector<int> result;
-        if (input == nullptr) {
+        if (input != nullptr) {
             queue<PrintAverageByLevelTreeNode *> evenLevel;
             queue<PrintAverageByLevelTreeNode *> oddLevel;
             auto odd = true;

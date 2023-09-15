@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_DIRECTOR_OF_PHOTOGRAPHY_CHAPTER_1_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/DirectorOfPhotography.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/DirectorOfPhotography.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(DirectorOfPhotographyCh1Test, description) {
     testing::internal::CaptureStdout();

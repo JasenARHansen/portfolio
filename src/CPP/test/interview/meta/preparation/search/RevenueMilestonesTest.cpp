@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_REVENUE_MILESTONES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/search/RevenueMilestones.cpp"
+#include "../../../../../code/interview/meta/preparation/search/RevenueMilestones.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RevenueMilestonesTest, description) {
     testing::internal::CaptureStdout();

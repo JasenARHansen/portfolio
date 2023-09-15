@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_CONTIGUOUS_SUB_ARRAYS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/arrays/ContiguousSubArrays.cpp"
+#include "../../../../../code/interview/meta/preparation/arrays/ContiguousSubArrays.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ContiguousSubArraysTest, description) {
     testing::internal::CaptureStdout();

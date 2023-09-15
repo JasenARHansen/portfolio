@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_BALANCE_BRACKETS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/stacks/BalanceBrackets.cpp"
+#include "../../../../../code/interview/meta/preparation/stacks/BalanceBrackets.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BalanceBracketsTest, description) {
     testing::internal::CaptureStdout();

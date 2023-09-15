@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_2023_9_11_MOCK_INTERVIEW_MAKE_PALINDROME_BY_REMOVE_TEST
-#define INTERVIEW_META_2023_9_11_MOCK_INTERVIEW_MAKE_PALINDROME_BY_REMOVE_TEST
+#ifndef INTERVIEW_META_INTERVIEW_MOCK_2023_9_11_MAKE_PALINDROME_BY_REMOVE_TEST
+#define INTERVIEW_META_INTERVIEW_MOCK_2023_9_11_MAKE_PALINDROME_BY_REMOVE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/2023_9_11_mock/MakePalindromeByRemove.cpp"
+#include "../../../../code/interview/meta/interview_mock_2023_9_11/MakePalindromeByRemove.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MakePalindromeByRemoveTest, description) {
     testing::internal::CaptureStdout();

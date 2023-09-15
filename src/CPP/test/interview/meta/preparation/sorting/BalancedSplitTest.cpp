@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_BALANCED_SPLIT_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/sorting/BalancedSplit.cpp"
+#include "../../../../../code/interview/meta/preparation/sorting/BalancedSplit.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BalancedSplitTest, description) {
     testing::internal::CaptureStdout();

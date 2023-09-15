@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_COUNTING_TRIANGLES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/sorting/CountingTriangles.cpp"
+#include "../../../../../code/interview/meta/preparation/sorting/CountingTriangles.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CountingTrianglesTest, description) {
     testing::internal::CaptureStdout();

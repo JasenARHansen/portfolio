@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_PAIR_SUMS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/hash_tables/PairSums.cpp"
+#include "../../../../../code/interview/meta/preparation/hash_tables/PairSums.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PairSumsTest, description) {
     testing::internal::CaptureStdout();

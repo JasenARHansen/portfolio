@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ALL_WRONG_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/warmup/AllWrong.cpp"
+#include "../../../../../code/interview/meta/preparation/warmup/AllWrong.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(AllWrongTest, description) {
     testing::internal::CaptureStdout();

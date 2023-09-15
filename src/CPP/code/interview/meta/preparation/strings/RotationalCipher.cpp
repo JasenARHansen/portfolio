@@ -41,7 +41,7 @@ public:
         assert(input.size() < pow(10, 6));
         assert(0 <= rotationFactor);
         assert(rotationFactor < pow(10, 6));
-        string result = "";
+        string result;
         int startUpper = 'A';
         int stopUpper = 'Z';
         int startLower = 'a';

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_MEDIAN_STREAM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/heaps/MedianStream.cpp"
+#include "../../../../../code/interview/meta/preparation/heaps/MedianStream.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MedianStreamTest, description) {
     testing::internal::CaptureStdout();

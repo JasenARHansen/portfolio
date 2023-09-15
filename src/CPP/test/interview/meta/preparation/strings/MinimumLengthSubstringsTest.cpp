@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_MIN_LENGTH_SUBSTRING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/strings/MinimumLengthSubstrings.cpp"
+#include "../../../../../code/interview/meta/preparation/strings/MinimumLengthSubstrings.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimumLengthSubstringsTest, description) {
     testing::internal::CaptureStdout();

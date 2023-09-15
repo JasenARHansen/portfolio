@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_REVERSE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/linked_lists/ReverseOperations.cpp"
+#include "../../../../../code/interview/meta/preparation/linked_lists/ReverseOperations.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ReverseOperationsTest, description) {
     testing::internal::CaptureStdout();

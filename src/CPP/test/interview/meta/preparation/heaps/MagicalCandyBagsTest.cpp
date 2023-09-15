@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_MAGICAL_CANDY_BAGS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/heaps/MagicalCandyBags.cpp"
+#include "../../../../../code/interview/meta/preparation/heaps/MagicalCandyBags.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MagicalCandyBagsTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ABCS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/warmup/ABCs.cpp"
+#include "../../../../../code/interview/meta/preparation/warmup/ABCs.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ABCsTest, description) {
     testing::internal::CaptureStdout();

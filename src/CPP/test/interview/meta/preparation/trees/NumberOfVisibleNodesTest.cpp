@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_NUMBER_OF_VISIBLE_NODES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/trees/NumberOfVisibleNodes.cpp"
+#include "../../../../../code/interview/meta/preparation/trees/NumberOfVisibleNodes.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(NumberOfVisibleNodesTest, description) {
     testing::internal::CaptureStdout();

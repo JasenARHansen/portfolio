@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_CAFETERIA_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/level_1/Cafeteria.cpp"
+#include "../../../../../code/interview/meta/preparation/level_1/Cafeteria.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CafeteriaTest, description) {
     testing::internal::CaptureStdout();

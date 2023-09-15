@@ -25,7 +25,7 @@ public:
         1803)" << endl;
     }
 
-    static int findGreatestPopulation(vector<Person> people) {
+    static int findGreatestPopulation(const vector<Person> &people) {
         priority_queue<int, vector<int>, greater<>> birthMinHeap;
         priority_queue<int, vector<int>, greater<>> deathMinHeap;
         // Map all the births and deaths to the years

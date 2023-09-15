@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_SLOW_SUMS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/greedy_algorithm/SlowSums.cpp"
+#include "../../../../../code/interview/meta/preparation/greedy_algorithm/SlowSums.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SlowSumsTest, description) {
     testing::internal::CaptureStdout();

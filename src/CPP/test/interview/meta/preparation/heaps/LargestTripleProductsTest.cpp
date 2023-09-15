@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_LARGEST_TRIPLE_PRODUCTS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/heaps/LargestTripleProducts.cpp"
+#include "../../../../../code/interview/meta/preparation/heaps/LargestTripleProducts.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LargestTripleProductsTest, description) {
     testing::internal::CaptureStdout();

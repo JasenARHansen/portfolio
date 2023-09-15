@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_2023_9_11_MOCK_INTERVIEW_PRINT_TREE_BY_COLUMN_TEST
-#define INTERVIEW_META_2023_9_11_MOCK_INTERVIEW_PRINT_TREE_BY_COLUMN_TEST
+#ifndef INTERVIEW_META_INTERVIEW_MOCK_2023_9_11_PRINT_TREE_BY_COLUMN_TEST
+#define INTERVIEW_META_INTERVIEW_MOCK_2023_9_11_PRINT_TREE_BY_COLUMN_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/2023_9_11_mock/PrintTreeByColumn.cpp"
+#include "../../../../code/interview/meta/interview_mock_2023_9_11/PrintTreeByColumn.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PrintTreeByColumnTest, description) {
     testing::internal::CaptureStdout();

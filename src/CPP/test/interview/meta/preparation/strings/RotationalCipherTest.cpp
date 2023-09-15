@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ROTATIONAL_CIPHER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/strings/RotationalCipher.cpp"
+#include "../../../../../code/interview/meta/preparation/strings/RotationalCipher.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RotationalCipherTest, description) {
     testing::internal::CaptureStdout();

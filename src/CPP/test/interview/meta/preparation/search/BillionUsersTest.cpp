@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_BILLION_USERS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/search/BillionUsers.cpp"
+#include "../../../../../code/interview/meta/preparation/search/BillionUsers.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BillionUsersTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define INTERVIEW_META_PREPARATION_ENCRYPTED_WORDS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/interview/meta/preparation/recursion/EncryptedWords.cpp"
+#include "../../../../../code/interview/meta/preparation/recursion/EncryptedWords.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(EncryptedWordsTest, description) {
     testing::internal::CaptureStdout();

@@ -1,8 +1,8 @@
-#ifndef INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_PRINT_AVERAGE_BY_LEVEL_TEST
-#define INTERVIEW_META_PREPARATION_PRACTICE_INTERVIEW_PRINT_AVERAGE_BY_LEVEL_TEST
+#ifndef INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_PRINT_AVERAGE_BY_LEVEL_TEST
+#define INTERVIEW_META_PREPARATION_INTERVIEW_PRACTICE_PRINT_AVERAGE_BY_LEVEL_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/interview/meta/practice_interview/PrintAverageByLevel.cpp"
+#include "../../../../code/interview/meta/interview_practice/PrintAverageByLevel.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PrintAverageByLevelTest, description) {
     testing::internal::CaptureStdout();
