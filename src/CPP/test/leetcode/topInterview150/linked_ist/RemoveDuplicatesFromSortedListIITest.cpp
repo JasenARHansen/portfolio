@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REMOVE_DUPLICATES_FROM_SORTED_LIST_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/RemoveDuplicatesFromSortedListII.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/RemoveDuplicatesFromSortedListII.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RemoveDuplicatesFromSortedListIITest, description) {
     testing::internal::CaptureStdout();

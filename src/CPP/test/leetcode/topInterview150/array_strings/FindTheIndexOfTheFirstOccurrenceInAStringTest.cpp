@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_FIND_THE_INDEX_OF_THE_FIRST_OCCURRENCE_IN_A_STRING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/FindTheIndexOfTheFirstOccurrenceInAString.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/FindTheIndexOfTheFirstOccurrenceInAString.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, description) {
     testing::internal::CaptureStdout();

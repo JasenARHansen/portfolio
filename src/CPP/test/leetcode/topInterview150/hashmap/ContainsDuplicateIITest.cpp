@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_CONTAINS_DUPLICATE_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/ContainsDuplicateII.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/ContainsDuplicateII.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ContainsDuplicateIITest, description) {
     testing::internal::CaptureStdout();

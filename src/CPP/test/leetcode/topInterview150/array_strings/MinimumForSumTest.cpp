@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MINIMUM_SIZE_SUBARRAY_SUM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/MinimumForSum.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/MinimumForSum.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimumForSumTest, description) {
     testing::internal::CaptureStdout();

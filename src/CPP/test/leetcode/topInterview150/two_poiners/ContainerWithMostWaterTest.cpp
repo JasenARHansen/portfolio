@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_CONTAINER_WITH_MOST_WATER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/two_poiners/ContainerWithMostWater.cpp"
+#include "../../../../code/leetcode/topInterview150/two_poiners/ContainerWithMostWater.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ContainerWithMostWaterTest, description) {
     testing::internal::CaptureStdout();

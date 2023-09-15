@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MERGE_INTERVALS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/intervals/MergeIntervals.cpp"
+#include "../../../../code/leetcode/topInterview150/intervals/MergeIntervals.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MergeIntervalsTest, description) {
     testing::internal::CaptureStdout();

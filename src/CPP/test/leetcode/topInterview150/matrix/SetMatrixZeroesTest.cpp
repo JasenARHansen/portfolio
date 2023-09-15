@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SET_MATRIX_ZEROES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/matrix/SetMatrixZeroes.cpp"
+#include "../../../../code/leetcode/topInterview150/matrix/SetMatrixZeroes.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SetMatrixZeroesTest, description) {
     testing::internal::CaptureStdout();

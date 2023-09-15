@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SURROUNDED_REGIONS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/graph_general/SurroundedRegions.cpp"
+#include "../../../../code/leetcode/topInterview150/graph_general/SurroundedRegions.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SurroundedRegionsTest, description) {
     testing::internal::CaptureStdout();

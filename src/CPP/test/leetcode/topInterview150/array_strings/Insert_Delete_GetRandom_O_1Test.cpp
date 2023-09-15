@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_INSERT_DELETE_GET_RANDOM_O_1_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/Insert_Delete_GetRandom_O_1.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/Insert_Delete_GetRandom_O_1.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(Insert_Delete_GetRandom_O_1Test, description) {
     testing::internal::CaptureStdout();

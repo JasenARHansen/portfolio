@@ -47,7 +47,6 @@ public:
         // When there are 3, or more, of the same value ( not counting vector endpoints, the middle values will be
         // 1 candy:  3, 3, 3 would have the middle get 1 candy
         for (auto index = 1; index < ratings.size() - 1; index++) {
-            auto difference = ratings[index] - ratings[index - 1];
             // 3 same in a row
             if ((ratings[index - 1] == ratings[index]) && (ratings[index] == ratings[index + 1])) {
                 candies[index] = 1;

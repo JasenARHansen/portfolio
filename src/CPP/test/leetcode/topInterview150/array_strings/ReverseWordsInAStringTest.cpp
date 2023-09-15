@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REVERSE_WORDS_IN_A_STRING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/ReverseWordsInAString.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/ReverseWordsInAString.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ReverseWordsInAStringTest, description) {
     testing::internal::CaptureStdout();

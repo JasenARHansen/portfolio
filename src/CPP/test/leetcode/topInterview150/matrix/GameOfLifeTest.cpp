@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_GAME_OF_LIFE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/matrix/GameOfLife.cpp"
+#include "../../../../code/leetcode/topInterview150/matrix/GameOfLife.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(GameOfLifeTest, description) {
     testing::internal::CaptureStdout();

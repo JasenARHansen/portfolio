@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_COUNT_COMPLETE_TREE_NODES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/CountCompleteTreeNodes.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/CountCompleteTreeNodes.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CountCompleteTreeNodesTest, description) {
     testing::internal::CaptureStdout();

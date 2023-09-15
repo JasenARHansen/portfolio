@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_GROUP_ANAGRAMS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/GroupAnagrams.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/GroupAnagrams.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(GroupAnagramsTest, description) {
     testing::internal::CaptureStdout();

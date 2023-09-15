@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_POW_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/math/Pow.cpp"
+#include "../../../../code/leetcode/topInterview150/math/Pow.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PowTest, description) {
     testing::internal::CaptureStdout();

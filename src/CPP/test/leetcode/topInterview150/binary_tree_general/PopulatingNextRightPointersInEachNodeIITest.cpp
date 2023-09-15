@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_POPULATING_NEXT_RIGHT_POINTERS_IN_EACH_NODE_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/PopulatingNextRightPointersInEachNodeII.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/PopulatingNextRightPointersInEachNodeII.cpp"  // NOLINT : Ignore .cpp import
 
 vector<string> serialized(PopulatingNextRightPointersInEachNodeIITreeNode *root) {
     vector<string> result;

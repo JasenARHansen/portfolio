@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ROTATE_IMAGE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/matrix/RotateImage.cpp"
+#include "../../../../code/leetcode/topInterview150/matrix/RotateImage.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RotateImageTest, description) {
     testing::internal::CaptureStdout();

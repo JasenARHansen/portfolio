@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LONGEST_PALINDROMIC_SUBSTRING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/multidimensional_dp/LongestPalindromicSubstring.cpp"
+#include "../../../../code/leetcode/topInterview150/multidimensional_dp/LongestPalindromicSubstring.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LongestPalindromicSubstringTest, description) {
     testing::internal::CaptureStdout();

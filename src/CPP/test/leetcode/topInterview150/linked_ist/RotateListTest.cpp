@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ROTATE_LIST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/RotateList.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/RotateList.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RotateListTest, description) {
     testing::internal::CaptureStdout();

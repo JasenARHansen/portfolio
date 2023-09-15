@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MIN_STACK_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/stack/MinStack.cpp"
+#include "../../../../code/leetcode/topInterview150/stack/MinStack.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinStackTest, description) {
     testing::internal::CaptureStdout();

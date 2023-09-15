@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BITWISE_AND_OF_NUMBERS_RANGE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/bit_manipulation/BitwiseANDofNumbersRange.cpp"
+#include "../../../../code/leetcode/topInterview150/bit_manipulation/BitwiseANDofNumbersRange.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BitwiseANDofNumbersRangeTest, description) {
     testing::internal::CaptureStdout();

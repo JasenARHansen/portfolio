@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/backtracking/LetterCombinationsOfAPhoneNumber.cpp"
+#include "../../../../code/leetcode/topInterview150/backtracking/LetterCombinationsOfAPhoneNumber.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LetterCombinationsOfAPhoneNumberTest, description) {
     testing::internal::CaptureStdout();

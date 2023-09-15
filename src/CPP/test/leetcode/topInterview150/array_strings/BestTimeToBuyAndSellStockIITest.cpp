@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BEST_TIME_TO_BUY_AND_SELL_STOCK_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/BestTimeToBuyAndSellStockII.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/BestTimeToBuyAndSellStockII.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BestTimeToBuyAndSellStockIITest, description) {
     testing::internal::CaptureStdout();

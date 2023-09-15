@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ADD_BINARY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/bit_manipulation/AddBinary.cpp"
+#include "../../../../code/leetcode/topInterview150/bit_manipulation/AddBinary.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(AddBinaryTest, description) {
     testing::internal::CaptureStdout();

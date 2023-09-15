@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_FACTORIAL_TRAILING_ZEROES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/math/FactorialTrailingZeroes.cpp"
+#include "../../../../code/leetcode/topInterview150/math/FactorialTrailingZeroes.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(FactorialTrailingZeroesTest, description) {
     testing::internal::CaptureStdout();

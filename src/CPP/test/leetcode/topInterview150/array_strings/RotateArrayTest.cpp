@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ROTATE_ARRAY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/RotateArray.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/RotateArray.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RotateArrayTest, description) {
     testing::internal::CaptureStdout();

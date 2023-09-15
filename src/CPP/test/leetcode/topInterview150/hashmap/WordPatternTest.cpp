@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_WORD_PATTERN_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/WordPattern.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/WordPattern.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(WordPatternTest, description) {
     testing::internal::CaptureStdout();

@@ -188,13 +188,19 @@ public:
     static void deleteTree(InvertBinaryTreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            if (current->left != nullptr) {
-                deleteTree(&current->left);
+            queue<InvertBinaryTreeNode *> working;
+            working.push(current);
+            while (!working.empty()) {
+                current = working.front();
+                working.pop();
+                if (current->left != nullptr) {
+                    working.push(current->left);
+                }
+                if (current->right != nullptr) {
+                    working.push(current->right);
+                }
+                delete current;
             }
-            if (current->right != nullptr) {
-                deleteTree(&current->right);
-            }
-            delete current;
         }
         *head = nullptr;
     }

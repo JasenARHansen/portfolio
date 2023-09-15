@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_NUMBER_OF_1_BITS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/bit_manipulation/NumberOf1Bits.cpp"
+#include "../../../../code/leetcode/topInterview150/bit_manipulation/NumberOf1Bits.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(NumberOf1BitsTest, description) {
     testing::internal::CaptureStdout();

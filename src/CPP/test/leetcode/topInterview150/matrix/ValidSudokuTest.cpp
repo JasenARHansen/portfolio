@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_VALID_SUDOKU_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/matrix/ValidSudoku.cpp"
+#include "../../../../code/leetcode/topInterview150/matrix/ValidSudoku.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ValidSudokuTest, description) {
     testing::internal::CaptureStdout();

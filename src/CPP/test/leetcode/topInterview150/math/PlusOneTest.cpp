@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_PLUS_ONE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/math/PlusOne.cpp"
+#include "../../../../code/leetcode/topInterview150/math/PlusOne.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PlusOneTest, description) {
     testing::internal::CaptureStdout();

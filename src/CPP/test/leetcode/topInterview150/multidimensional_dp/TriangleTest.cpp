@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_TRIANGLE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/multidimensional_dp/Triangle.cpp"
+#include "../../../../code/leetcode/topInterview150/multidimensional_dp/Triangle.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(TriangleTest, description) {
     testing::internal::CaptureStdout();

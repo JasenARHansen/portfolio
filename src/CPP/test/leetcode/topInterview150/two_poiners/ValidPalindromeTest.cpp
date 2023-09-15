@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_VALID_PALINDROME_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/two_poiners/ValidPalindrome.cpp"
+#include "../../../../code/leetcode/topInterview150/two_poiners/ValidPalindrome.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ValidPalindromeTest, description) {
     testing::internal::CaptureStdout();

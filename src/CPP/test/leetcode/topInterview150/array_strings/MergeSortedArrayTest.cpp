@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MERGE_SORTED_ARRAY_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/MergeSortedArray.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/MergeSortedArray.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MergeSortedArrayTest, description) {
     testing::internal::CaptureStdout();

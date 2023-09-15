@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_WORD_SEARCH_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/backtracking/WordSearch.cpp"
+#include "../../../../code/leetcode/topInterview150/backtracking/WordSearch.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(WordSearchTest, description) {
     testing::internal::CaptureStdout();

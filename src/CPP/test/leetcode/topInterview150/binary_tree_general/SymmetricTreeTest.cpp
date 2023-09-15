@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SYMMETRIC_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/SymmetricTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/SymmetricTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SymmetricTreeTest, description) {
     testing::internal::CaptureStdout();

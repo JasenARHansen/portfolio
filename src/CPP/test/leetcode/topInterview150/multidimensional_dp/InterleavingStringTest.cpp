@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_INTERLEAVING_STRING_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/multidimensional_dp/InterleavingString.cpp"
+#include "../../../../code/leetcode/topInterview150/multidimensional_dp/InterleavingString.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(InterleavingStringTest, description) {
     testing::internal::CaptureStdout();

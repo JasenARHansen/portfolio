@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_GENERATE_PARENTHESES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/backtracking/GenerateParentheses.cpp"
+#include "../../../../code/leetcode/topInterview150/backtracking/GenerateParentheses.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(GenerateParenthesesTest, description) {
     testing::internal::CaptureStdout();

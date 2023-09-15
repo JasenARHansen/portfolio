@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_VALIDATE_BINARY_SEARCH_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_search_tree/ValidateBinarySearchTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_search_tree/ValidateBinarySearchTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ValidateBinarySearchTreeTest, description) {
     testing::internal::CaptureStdout();

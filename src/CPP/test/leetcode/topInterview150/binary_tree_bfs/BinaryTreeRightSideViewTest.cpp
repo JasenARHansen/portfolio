@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BINARY_TREE_RIGHT_SIDE_VIEW_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeRightSideView.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeRightSideView.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BinaryTreeRightSideViewTest, description) {
     testing::internal::CaptureStdout();

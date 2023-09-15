@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_EVALUATE_REVERSE_POLISH_NOTATION_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/stack/EvaluateReversePolishNotation.cpp"
+#include "../../../../code/leetcode/topInterview150/stack/EvaluateReversePolishNotation.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(EvaluateReversePolishNotationTest, description) {
     testing::internal::CaptureStdout();

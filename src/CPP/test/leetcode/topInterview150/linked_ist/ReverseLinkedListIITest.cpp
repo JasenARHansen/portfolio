@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REVERSE_LINKED_LIST_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/ReverseLinkedListII.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/ReverseLinkedListII.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ReverseLinkedListIITest, description) {
     testing::internal::CaptureStdout();

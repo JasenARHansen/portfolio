@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REMOVE_DUPLICATES_FROM_SORTED_ARRAY_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/MajorityElement.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/MajorityElement.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MajorityElementTest, description) {
     testing::internal::CaptureStdout();

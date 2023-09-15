@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MINIMUM_NUMBER_OF_ARROWS_TO_BURST_BALLOONS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/intervals/MinimumNumberOfArrowsToBurstBalloons.cpp"
+#include "../../../../code/leetcode/topInterview150/intervals/MinimumNumberOfArrowsToBurstBalloons.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimumNumberOfArrowsToBurstBalloonsTest, description) {
     testing::internal::CaptureStdout();

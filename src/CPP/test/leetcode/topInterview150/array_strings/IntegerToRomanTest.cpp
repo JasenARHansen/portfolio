@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_INTEGER_TO_ROMAN_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/IntegerToRoman.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/IntegerToRoman.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(IntegerToRomanTest, description) {
     testing::internal::CaptureStdout();

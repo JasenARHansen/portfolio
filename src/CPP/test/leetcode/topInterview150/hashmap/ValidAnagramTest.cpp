@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_VALID_ANAGRAM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/ValidAnagram.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/ValidAnagram.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ValidAnagramTest, description) {
     testing::internal::CaptureStdout();

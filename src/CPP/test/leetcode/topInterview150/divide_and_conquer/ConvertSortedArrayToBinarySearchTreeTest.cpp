@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_CONVERT_SORTED_ARRAY_TO_BINARY_SEARCH_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/divide_and_conquer/ConvertSortedArrayToBinarySearchTree.cpp"
+#include "../../../../code/leetcode/topInterview150/divide_and_conquer/ConvertSortedArrayToBinarySearchTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ConvertSortedArrayToBinarySearchTreeTest, description) {
     testing::internal::CaptureStdout();

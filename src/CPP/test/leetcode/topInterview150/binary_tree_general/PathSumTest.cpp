@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_PATH_SUM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/PathSum.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/PathSum.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PathSumTest, description) {
     testing::internal::CaptureStdout();

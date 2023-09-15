@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BINARY_TREE_ZIGZAG_LEVEL_ORDER_TRAVERSAL_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeZigzagLevelOrderTraversal.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeZigzagLevelOrderTraversal.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BinaryTreeZigzagLevelOrderTraversalTest, description) {
     testing::internal::CaptureStdout();

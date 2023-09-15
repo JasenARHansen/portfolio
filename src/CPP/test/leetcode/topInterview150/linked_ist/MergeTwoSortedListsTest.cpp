@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ADD_TWO_NUMBERS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/MergeTwoSortedLists.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/MergeTwoSortedLists.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MergeTwoSortedListsTest, description) {
     testing::internal::CaptureStdout();

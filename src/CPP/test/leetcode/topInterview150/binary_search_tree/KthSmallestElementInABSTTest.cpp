@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_KTH_SMALLEST_ELEMENT_IN_BST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_search_tree/KthSmallestElementInABST.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_search_tree/KthSmallestElementInABST.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(KthSmallestElementInABSTTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_CLIMBING_STAIRS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/1d_dp/ClimbingStairs.cpp"
+#include "../../../../code/leetcode/topInterview150/1d_dp/ClimbingStairs.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ClimbingStairsTest, description) {
     testing::internal::CaptureStdout();

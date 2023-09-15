@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_PALINDROME_NUMBER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/math/PalindromeNumber.cpp"
+#include "../../../../code/leetcode/topInterview150/math/PalindromeNumber.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PalindromeNumberTest, description) {
     testing::internal::CaptureStdout();

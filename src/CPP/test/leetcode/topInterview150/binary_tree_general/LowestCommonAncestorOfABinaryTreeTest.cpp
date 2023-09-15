@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LOWEST_COMMON_ANCESTOR_OF_A_BINARY_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/LowestCommonAncestorOfABinaryTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/LowestCommonAncestorOfABinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LowestCommonAncestorOfABinaryTreeTest, description) {
     testing::internal::CaptureStdout();

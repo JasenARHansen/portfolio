@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MINIMUM_ABSOLUTE_DIFFERENCE_IN_BST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_search_tree/MinimumAbsoluteDifferenceInBST.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_search_tree/MinimumAbsoluteDifferenceInBST.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimumAbsoluteDifferenceInBSTTest, description) {
     testing::internal::CaptureStdout();

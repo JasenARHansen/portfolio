@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_PARTITION_LIST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/PartitionList.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/PartitionList.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(PartitionListTest, description) {
     testing::internal::CaptureStdout();

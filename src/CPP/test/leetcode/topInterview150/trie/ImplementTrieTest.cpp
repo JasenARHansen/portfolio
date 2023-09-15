@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_IMPLEMENT_TRIE_PREFIX_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/trie/ImplementTrie.cpp"
+#include "../../../../code/leetcode/topInterview150/trie/ImplementTrie.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ImplementTrieTest, description) {
     testing::internal::CaptureStdout();

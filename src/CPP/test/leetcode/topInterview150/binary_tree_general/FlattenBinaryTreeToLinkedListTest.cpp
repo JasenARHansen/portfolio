@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_FLATTEN_BINARY_TREE_TO_LINKED_LIST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/FlattenBinaryTreeToLinkedList.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/FlattenBinaryTreeToLinkedList.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(FlattenBinaryTreeToLinkedListTest, description) {
     testing::internal::CaptureStdout();

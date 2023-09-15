@@ -73,6 +73,7 @@ public:
         CloneGraphNode *result = nullptr;
         if (!values.empty()) {
             vector<CloneGraphNode *> graph;
+            graph.reserve(values.size());
             auto index = 1;
             for (auto node: values) {
                 graph.push_back(new CloneGraphNode(index++));
@@ -108,6 +109,7 @@ public:
                 }
             }
             vector<long> keys;
+            keys.reserve(graph.size());
             for (const auto &key: graph) {
                 keys.push_back(key.first);
             }
@@ -167,6 +169,7 @@ public:
                 }
             }
             vector<long> keys;
+            keys.reserve(graph.size());
             for (const auto &key: graph) {
                 keys.push_back(key.first);
             }

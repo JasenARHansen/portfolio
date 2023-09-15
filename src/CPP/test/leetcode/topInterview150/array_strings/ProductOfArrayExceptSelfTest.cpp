@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_PRODUCT_OF_ARRAY_EXCEPT_SELF_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/ProductOfArrayExceptSelf.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/ProductOfArrayExceptSelf.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ProductOfArrayExceptSelfTest, description) {
     testing::internal::CaptureStdout();

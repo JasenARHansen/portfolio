@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LONGEST_CONSECUTIVE_SEQUENCE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/LongestConsecutiveSequence.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/LongestConsecutiveSequence.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LongestConsecutiveSequenceTest, description) {
     testing::internal::CaptureStdout();

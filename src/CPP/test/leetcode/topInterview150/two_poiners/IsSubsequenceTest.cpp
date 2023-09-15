@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_IS_SUBSEQUENCE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/two_poiners/IsSubsequence.cpp"
+#include "../../../../code/leetcode/topInterview150/two_poiners/IsSubsequence.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(IsSubsequenceTest, description) {
     testing::internal::CaptureStdout();

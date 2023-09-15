@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SUMMARY_RANGES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/intervals/SummaryRanges.cpp"
+#include "../../../../code/leetcode/topInterview150/intervals/SummaryRanges.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SummaryRangesTest, description) {
     testing::internal::CaptureStdout();

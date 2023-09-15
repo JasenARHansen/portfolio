@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_VALID_PARENTHESES_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/stack/ValidParentheses.cpp"
+#include "../../../../code/leetcode/topInterview150/stack/ValidParentheses.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ValidParenthesesTest, description) {
     testing::internal::CaptureStdout();

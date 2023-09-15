@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SUM_ROOT_TO_LEAF_NUMBERS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/SumRootToLeafNumbers.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/SumRootToLeafNumbers.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SumRootToLeafNumbersTest, description) {
     testing::internal::CaptureStdout();
@@ -12,7 +12,7 @@ TEST(SumRootToLeafNumbersTest, description) {
 
 TEST(SumRootToLeafNumbersTest, sumNumbers_1) {
     auto expected = 25;
-    vector<string> values{"1", "2", "3"};
+    vector <string> values{"1", "2", "3"};
     auto root = SumRootToLeafNumbers::deserializeTree(values);
     auto result = SumRootToLeafNumbers::sumNumbers(root);
     EXPECT_EQ(expected, result);
@@ -21,7 +21,7 @@ TEST(SumRootToLeafNumbersTest, sumNumbers_1) {
 
 TEST(SumRootToLeafNumbersTest, sumNumbers_2) {
     auto expected = 1026;
-    vector<string> values{"4", "9", "0", "5", "1"};
+    vector <string> values{"4", "9", "0", "5", "1"};
     auto root = SumRootToLeafNumbers::deserializeTree(values);
     auto result = SumRootToLeafNumbers::sumNumbers(root);
     EXPECT_EQ(expected, result);

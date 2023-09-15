@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_COIN_CHANGE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/1d_dp/CoinChange.cpp"
+#include "../../../../code/leetcode/topInterview150/1d_dp/CoinChange.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CoinChangeTest, description) {
     testing::internal::CaptureStdout();

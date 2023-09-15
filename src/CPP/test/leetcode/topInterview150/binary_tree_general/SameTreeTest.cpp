@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SAME_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/SameTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/SameTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SameTreeTest, description) {
     testing::internal::CaptureStdout();

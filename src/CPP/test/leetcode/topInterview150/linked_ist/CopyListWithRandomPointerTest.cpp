@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_COPY_LIST_WITH_RANDOM_POINTER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/CopyListWithRandomPointer.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/CopyListWithRandomPointer.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CopyListWithRandomPointerTest, description) {
     testing::internal::CaptureStdout();

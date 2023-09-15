@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_AVERAGE_OF_LEVELS_IN_BINARY_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/AverageOfLevelsInBinaryTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/AverageOfLevelsInBinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(AverageOfLevelsInBinaryTreeTest, description) {
     testing::internal::CaptureStdout();

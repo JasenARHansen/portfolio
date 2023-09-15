@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_H_INDEX_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/H_Index.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/H_Index.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(H_IndexTest, description) {
     testing::internal::CaptureStdout();

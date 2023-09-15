@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LINKED_LIST_CYCLE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/LinkedListCycle.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/LinkedListCycle.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LinkedListCycleTest, description) {
     testing::internal::CaptureStdout();

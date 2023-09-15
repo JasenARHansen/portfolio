@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MINIMUM_PATH_SUM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/multidimensional_dp/MinimumPathSum.cpp"
+#include "../../../../code/leetcode/topInterview150/multidimensional_dp/MinimumPathSum.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MinimumPathSumTest, description) {
     testing::internal::CaptureStdout();

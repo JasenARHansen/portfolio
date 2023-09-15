@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_JUMP_GAME_II_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/JumpGameII.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/JumpGameII.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(JumpGameIITest, description) {
     testing::internal::CaptureStdout();

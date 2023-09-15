@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REVERSE_BITS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/bit_manipulation/ReverseBits.cpp"
+#include "../../../../code/leetcode/topInterview150/bit_manipulation/ReverseBits.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ReverseBitsTest, description) {
     testing::internal::CaptureStdout();

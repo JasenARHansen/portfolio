@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_BINARY_TREE_LEVEL_ORDER_TRAVERSAL_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeLevelOrderTraversal.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeLevelOrderTraversal.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BinaryTreeLevelOrderTraversalTest, description) {
     testing::internal::CaptureStdout();

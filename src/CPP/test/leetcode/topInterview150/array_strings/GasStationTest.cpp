@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_GAS_STATION_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/GasStation.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/GasStation.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(GasStationTest, description) {
     testing::internal::CaptureStdout();

@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_TEXT_JUSTIFICATION_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/TextJustification.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/TextJustification.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(TextJustificationTest, description) {
     testing::internal::CaptureStdout();

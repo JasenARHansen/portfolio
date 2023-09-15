@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ZIGZAG_CONVERSION_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/ZigzagConversion.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/ZigzagConversion.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ZigzagConversionTest, description) {
     testing::internal::CaptureStdout();

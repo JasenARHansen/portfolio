@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SINGLE_NUMBER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/bit_manipulation/SingleNumber.cpp"
+#include "../../../../code/leetcode/topInterview150/bit_manipulation/SingleNumber.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SingleNumberTest, description) {
     testing::internal::CaptureStdout();

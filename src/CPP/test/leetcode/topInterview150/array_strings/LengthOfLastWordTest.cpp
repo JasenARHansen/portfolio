@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LENGTH_OF_LAST_WORD_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/LengthOfLastWord.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/LengthOfLastWord.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LengthOfLastWordTest, description) {
     testing::internal::CaptureStdout();

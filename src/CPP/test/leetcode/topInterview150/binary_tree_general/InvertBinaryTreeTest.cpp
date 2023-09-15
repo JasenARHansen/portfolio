@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_INVERT_BINARY_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/InvertBinaryTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/InvertBinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(InvertBinaryTreeTest, description) {
     testing::internal::CaptureStdout();

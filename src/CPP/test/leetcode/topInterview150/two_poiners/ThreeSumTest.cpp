@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_THREE_SUM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/two_poiners/ThreeSum.cpp"
+#include "../../../../code/leetcode/topInterview150/two_poiners/ThreeSum.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(ThreeSumTest, description) {
     testing::internal::CaptureStdout();

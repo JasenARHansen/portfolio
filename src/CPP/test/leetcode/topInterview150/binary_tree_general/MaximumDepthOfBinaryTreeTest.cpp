@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_MAXIMUM_DEPTH_OF_BINARY_TREE_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/binary_tree_general/MaximumDepthOfBinaryTree.cpp"
+#include "../../../../code/leetcode/topInterview150/binary_tree_general/MaximumDepthOfBinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(MaximumDepthOfBinaryTreeTest, description) {
     testing::internal::CaptureStdout();

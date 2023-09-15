@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_ISOMORPHIC_STRINGS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/IsomorphicStrings.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/IsomorphicStrings.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(IsomorphicStringsTest, description) {
     testing::internal::CaptureStdout();

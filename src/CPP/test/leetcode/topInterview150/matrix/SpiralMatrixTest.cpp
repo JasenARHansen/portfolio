@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SPIRAL_ORDER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/matrix/SpiralMatrix.cpp"
+#include "../../../../code/leetcode/topInterview150/matrix/SpiralMatrix.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SpiralMatrixTest, description) {
     testing::internal::CaptureStdout();

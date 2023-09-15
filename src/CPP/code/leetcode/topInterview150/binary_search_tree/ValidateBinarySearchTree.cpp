@@ -91,13 +91,22 @@ public:
     }
 
     static void deleteTree(ValidateBinarySearchTreeNode **head) {
-        if ((*head)->left != nullptr) {
-            deleteTree(&(*head)->left);
+        auto current = *head;
+        if (current != nullptr) {
+            queue<ValidateBinarySearchTreeNode *> working;
+            working.push(current);
+            while (!working.empty()) {
+                current = working.front();
+                working.pop();
+                if (current->left != nullptr) {
+                    working.push(current->left);
+                }
+                if (current->right != nullptr) {
+                    working.push(current->right);
+                }
+                delete current;
+            }
         }
-        if ((*head)->right != nullptr) {
-            deleteTree(&(*head)->right);
-        }
-        delete *head;
         *head = nullptr;
     }
 

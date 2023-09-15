@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_INSERT_INTERVAL_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/intervals/InsertInterval.cpp"
+#include "../../../../code/leetcode/topInterview150/intervals/InsertInterval.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(InsertIntervalTest, description) {
     testing::internal::CaptureStdout();

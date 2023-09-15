@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_SQRT_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/math/Sqrt.cpp"
+#include "../../../../code/leetcode/topInterview150/math/Sqrt.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(SqrtTest, description) {
     testing::internal::CaptureStdout();

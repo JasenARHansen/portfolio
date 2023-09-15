@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_HAPPY_NUMBER_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/HappyNumber.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/HappyNumber.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(HappyNumberTest, description) {
     testing::internal::CaptureStdout();

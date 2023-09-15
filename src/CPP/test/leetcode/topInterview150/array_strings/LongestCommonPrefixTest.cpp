@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_LONGEST_COMMON_PREFIX_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/array_strings/LongestCommonPrefix.cpp"
+#include "../../../../code/leetcode/topInterview150/array_strings/LongestCommonPrefix.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LongestCommonPrefixTest, description) {
     testing::internal::CaptureStdout();

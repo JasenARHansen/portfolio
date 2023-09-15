@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_CLONE_GRAPH_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/graph_general/CloneGraph.cpp"
+#include "../../../../code/leetcode/topInterview150/graph_general/CloneGraph.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(CloneGraphTest, description) {
     testing::internal::CaptureStdout();

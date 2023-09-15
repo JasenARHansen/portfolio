@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_TWO_SUM_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/hashmap/TwoSum.cpp"
+#include "../../../../code/leetcode/topInterview150/hashmap/TwoSum.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(TwoSumTest, description) {
     testing::internal::CaptureStdout();

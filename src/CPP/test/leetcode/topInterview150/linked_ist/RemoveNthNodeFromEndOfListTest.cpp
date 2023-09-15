@@ -2,7 +2,7 @@
 #define LEETCODE_TOP_INTERVIEW_150_REMOVE_NTH_NODE_FROM_END_OF_LIST_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../code/leetcode/topInterview150/linked_ist/RemoveNthNodeFromEndOfList.cpp"
+#include "../../../../code/leetcode/topInterview150/linked_ist/RemoveNthNodeFromEndOfList.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(RemoveNthNodeFromEndOfListTest, description) {
     testing::internal::CaptureStdout();
