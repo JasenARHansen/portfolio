@@ -15,14 +15,14 @@ public:
     }
 
     static int binarySearchRecursive(const vector<int> &input, int value) {
-        return binarySearchRecursive(input, 0, (int)input.size() - 1, value);
+        return binarySearchRecursive(input, 0, (int) input.size() - 1, value);
     }
 
     static int binarySearch(const vector<int> &input, int value) {
         auto result = 0;
         if (!input.empty()) {
             auto left = 0;
-            auto right = (int)input.size() - 1;
+            auto right = (int) input.size() - 1;
             int middle;
             while (left <= right) {
                 middle = (right + left) / 2;

@@ -65,27 +65,11 @@ public:
         }
     }
 
-    [[nodiscard]] int getRow() const {
-        return this->row_internal;
-    }
-
-    [[nodiscard]] int getColumn() const {
-        return this->column_internal;
-    }
-
-    vector<vector<int>> getCells() {
-        vector<vector<int>> result;
-        for (auto row: this->map_internal) {
-            serializeColumn(result, row.first, row.second);
-        }
-        return result;
-    }
-
     SparseMatrix transpose() {
         SparseMatrix result = SparseMatrix(this->column_internal, this->row_internal);
         for (const auto &row: this->map_internal) {
-            for (auto col: row.second) {
-                result.put(col.first, row.first, col.second);
+            for (auto column: row.second) {
+                result.put(column.first, row.first, column.second);
             }
         }
         return result;
@@ -106,6 +90,24 @@ public:
                         result.put(row, column, multiplied);
                     }
                 }
+            }
+        }
+        return result;
+    }
+
+    [[nodiscard]] int getRow() const {
+        return this->row_internal;
+    }
+
+    [[nodiscard]] int getColumn() const {
+        return this->column_internal;
+    }
+
+    vector<vector<int>> getCells() {
+        vector<vector<int>> result;
+        for (const auto &row: this->map_internal) {
+            for (const auto &column: row.second) {
+                serializeCell(result, row.first, column.first, column.second);
             }
         }
         return result;
@@ -178,12 +180,6 @@ private:
         result.append(to_string(cell[2]));
         result.append("}");
         return result;
-    }
-
-    static void serializeColumn(vector<vector<int>> &result, int row, map<int, int> &map) {
-        for (auto column: map) {
-            serializeCell(result, row, column.first, column.second);
-        }
     }
 
     static void serializeCell(vector<vector<int>> &result, int row, int column, int data) {

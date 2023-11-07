@@ -5,7 +5,8 @@
 #include <cassert>
 #include <cmath>
 #include <vector>
-#include <set>
+#include <unordered_set>
+#include <queue>
 
 using namespace std;
 
@@ -50,18 +51,24 @@ public:
     static int getMaximumEatenDishCount(int n, const vector<int> &d, int k) {
         assert(1 <= n);
         assert(n <= 5 * pow(10, 5));
+        assert(!d.empty());
+        assert(d.size() <= 5 * pow(10, 5));
+        assert(d.size() == n);
         assert(1 <= k);
         assert(k <= n);
         int result = 0;
-        set<int> eaten;
+        unordered_set<int> eaten;
+        queue<int> order;
         for (int dish: d) {
             assert(1 <= dish);
             assert(dish <= pow(10, 6));
             auto insertResult = eaten.insert(dish);
             if (insertResult.second) {
+                order.push(dish);
                 result++;
                 if (eaten.size() > k) {
-                    eaten.erase(eaten.begin());
+                    eaten.erase(order.front());
+                    order.pop();
                 }
             }
         }

@@ -11,7 +11,7 @@ class DirectorOfPhotography {
 public:
     static void description() {
         cout << R"(Director of Photography (Chapter 2)
-    Note: Chapter 1 is an easier version of this puzzle. The only difference is a smaller constraint on NN.
+    Note: Chapter 1 is an easier version of this puzzle. The only difference is a smaller constraint on N.
     A photography set consists of N cells in a row, numbered from 1 to N in order, and can be represented by a string C of length N. Each cell i is one of the following types (indicated by Ci, the Ith character of C):
         If Ci = “P”, it is allowed to contain a photographer
         If Ci = “A”, it is allowed to contain an actor
