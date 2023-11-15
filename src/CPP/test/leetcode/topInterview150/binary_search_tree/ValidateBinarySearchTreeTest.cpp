@@ -11,7 +11,7 @@ TEST(ValidateBinarySearchTreeTest, description) {
 }
 
 TEST(ValidateBinarySearchTreeTest, isValidBST_1) {
-    bool expected = true;
+    auto expected = true;
     vector<string> values{"2", "1", "3"};
     auto root = ValidateBinarySearchTree::deserializeTree(values);
     auto result = ValidateBinarySearchTree::isValidBST(root);

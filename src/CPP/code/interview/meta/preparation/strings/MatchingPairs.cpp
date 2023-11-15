@@ -21,7 +21,7 @@ Signature
 
 Input
     s and t are strings of length N
-    N is between 2 and 1,000,000
+    N is between 2 and 1, 000, 000
 
 Output
     Return an integer denoting the maximum number of matching pairs

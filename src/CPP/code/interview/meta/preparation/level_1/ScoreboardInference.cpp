@@ -18,8 +18,8 @@ public:
     The scoreboard does not display the number of problems in the contest, nor their point values. Using the information available, you would like to determine the minimum possible number of problems in the contest.
 
     Constraints
-        1 ≤ N ≤ 500,000
-        1 ≤ Si ≤ 1,000,000,000
+        1 ≤ N ≤ 500, 000
+        1 ≤ Si ≤ 1, 000, 000, 000
 
     Sample test case #1
         N = 6
@@ -37,7 +37,7 @@ public:
         Expected Return Value = 4
 
     Sample Explanation
-        In the first case, it's possible that there are as few as 4 problems in the contest, for example with point values[1,1,2,2]. The 6 competitors could have solved the following subsets of problems:
+        In the first case, it's possible that there are as few as 4 problems in the contest, for example with point values[1, 1, 2, 2]. The 6 competitors could have solved the following subsets of problems:
             Problem 1 (1 point)
             Problem 3 (2 points)
             Problems 2 and 3 (1+2=3 points)
@@ -45,8 +45,8 @@ public:
             Problems 2, 3, and 4 (1+2+2=5points)
             All 4 problems (1+1+2+2=61+1+2+2=6 points)
         It is impossible for all 6 competitors to have achieved their scores if there are fewer than 4 problems.
-        In the second case, one optimal set of point values is [1,1,2]].
-        In the third case, one optimal set of point values is [2,2,2,2].)" << endl;
+        In the second case, one optimal set of point values is [1, 1, 2]].
+        In the third case, one optimal set of point values is [2, 2, 2, 2].)" << endl;
     }
 
     static int getMinProblemCount(int n, const vector<int> &s) {

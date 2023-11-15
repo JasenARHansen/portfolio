@@ -17,7 +17,7 @@ public:
     Given two integer arrays gas and cost, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1. If there exists a solution, it is guaranteed to be unique
 
     Example 1:
-        Input: gas = [1,2,3,4,5], cost = [3,4,5,1,2]
+        Input: gas = [1, 2, 3, 4, 5], cost = [3, 4, 5, 1, 2]
         Output: 3
         Explanation:
             Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
@@ -29,7 +29,7 @@ public:
             Therefore, return 3 as the starting index.
 
     Example 2:
-        Input: gas = [2,3,4], cost = [3,4,3]
+        Input: gas = [2, 3, 4], cost = [3, 4, 3]
         Output: -1
         Explanation:
             You can't start at station 0 or 1, as there is not enough gas to travel to the next station.

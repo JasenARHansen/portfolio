@@ -16,8 +16,8 @@ public:
     A region is captured by flipping all 'O's into 'X's in that surrounded region.
 
     Example 1:
-        Input: board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
-        Output: [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+        Input: board = [["X", "X", "X", "X"], ["X", "O", "O", "X"], ["X", "X", "O", "X"], ["X", "O", "X", "X"]]
+        Output: [["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "O", "X", "X"]]
         Explanation:
             Notice that an 'O' should not be flipped if:
             - It is on the border, or

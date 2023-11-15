@@ -40,8 +40,8 @@ public:
         The given node will always be the first node with val = 1. You must return the copy of the given node as a reference to the cloned graph.
 
     Example 1:
-        Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
-        Output: [[2,4],[1,3],[2,4],[1,3]]
+        Input: adjList = [[2, 4], [1, 3], [2, 4], [1, 3]]
+        Output: [[2, 4], [1, 3], [2, 4], [1, 3]]
         Explanation:
             There are 4 nodes in the graph.
             1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).

@@ -29,8 +29,8 @@ public:
     Input
         In some languages, arr is an Nx3 array where arr[i] is a length-3 array that contains the side lengths of the ith triangle. In other languages, arr is a list of structs/objects that each represent a single triangle with side lengths a, b, and c.
         It's guaranteed that all triplets of side lengths represent real triangles.
-        All side lengths are in the range [1, 1,000,000,000]
-        1 ≤ N ≤ 1,000,000
+        All side lengths are in the range [1, 1, 000, 000, 000]
+        1 ≤ N ≤ 1, 000, 000
 
     Output
         Return the number of distinct triangles in the list.

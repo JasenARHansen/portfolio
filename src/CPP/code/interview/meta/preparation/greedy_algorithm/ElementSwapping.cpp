@@ -21,7 +21,7 @@ public:
 
     Input
         n is in the range [1, 1000].
-        Each element of arr is in the range [1, 1,000,000].
+        Each element of arr is in the range [1, 1, 000, 000].
         k is in the range [1, 1000].
 
     Output

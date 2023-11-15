@@ -37,16 +37,16 @@ public:
     Your code will only be given the head of the original linked list.
 
     Example 1:
-        Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
-        Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
+        Input: head = [[7, null], [13, 0], [11, 4], [10, 2], [1, 0]]
+        Output: [[7, null], [13, 0], [11, 4], [10, 2], [1, 0]]
 
     Example 2:
-        Input: head = [[1,1],[2,1]]
-        Output: [[1,1],[2,1]]
+        Input: head = [[1, 1], [2, 1]]
+        Output: [[1, 1], [2, 1]]
 
     Example 3:
-        Input: head = [[3,null],[3,0],[3,null]]
-        Output: [[3,null],[3,0],[3,null]]
+        Input: head = [[3, null], [3, 0], [3, null]]
+        Output: [[3, null], [3, 0], [3, null]]
 
     Constraints:
         0 ≤ n ≤ 1000

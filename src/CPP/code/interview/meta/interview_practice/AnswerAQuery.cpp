@@ -24,8 +24,8 @@ public:
 
     Input
         A list of Q queries, formatted as [type, index] where type is either 1 or 2, and index is <= N
-        1 <= N <= 1,000,000,000
-        1 <= Q <= 500,000
+        1 <= N <= 1, 000, 000, 000
+        1 <= Q <= 500, 000
 
     Output
         Return an array containing the results of all GET queries. The result of queries[i] is the smallest index that contains a true value that is greater than or equal to i, or -1 if no index satisfies those conditions.

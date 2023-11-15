@@ -18,7 +18,7 @@ public:
         int minLengthSubstring(String s, String t)
 
     Input
-        s and t are non-empty strings that contain less than 1,000,000 characters each
+        s and t are non-empty strings that contain less than 1, 000, 000 characters each
 
     Output
         Return the minimum length of the substring of s. If it is not possible, return -1
@@ -70,7 +70,7 @@ public:
                         sMap.at(s.at(endIndex))++;
                         endIndex++;
                     }
-                    // All characters found.  If the substring is shorter than previous,update result
+                    // All characters found.  If the substring is shorter than previous, update result
                     if ((endIndex < s.size()) && ((endIndex - index) < result)) {
                         result = endIndex - index;
                     }

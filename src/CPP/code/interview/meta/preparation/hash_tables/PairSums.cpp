@@ -19,10 +19,10 @@ public:
         int numberOfWays(int[] arr, int k)
 
     Input
-        n is in the range [1, 100,000].
+        n is in the range [1, 100, 000].
 
-    Each value arr[i] is in the range [1, 1,000,000,000].
-        k is in the range [1, 1,000,000,000].
+    Each value arr[i] is in the range [1, 1, 000, 000, 000].
+        k is in the range [1, 1, 000, 000, 000].
 
     Output
         Return the number of different pairs of elements which sum to k.

@@ -20,7 +20,7 @@ public:
 
     Input
         1.0 < growthRate < 2.0 for all growth rates
-        1 <= N <= 1,000
+        1 <= N <= 1, 000
 
     Output
         Return the number of full days it will take before we have a total of 1 billion users across all N apps.

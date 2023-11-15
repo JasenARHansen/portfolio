@@ -20,7 +20,7 @@ public:
 
     Constraints
         1 ≤ N ≤ 50
-        1 ≤ Ri ≤ 1,000,000,000
+        1 ≤ Ri ≤ 1, 000, 000, 000
 
     Sample test case #1
         N = 5

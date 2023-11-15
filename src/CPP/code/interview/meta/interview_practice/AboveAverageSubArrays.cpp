@@ -18,8 +18,8 @@ Signature
     Subarray[] aboveAverageSubArrays(int[] A)
 
 Input
-    1 ≤ N ≤ 2,000
-    1 ≤ A[i] ≤ 1,000,000
+    1 ≤ N ≤ 2, 000
+    1 ≤ A[i] ≤ 1, 000, 000
     Output
     A Subarray is an object with two integer fields, left and right, defining the range that a given subarray covers. Return a list of all above-average sub-arrays sorted as explained above.
 

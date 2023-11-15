@@ -11,7 +11,7 @@ TEST(ReverseToMakeEqualTest, description) {
 }
 
 TEST(ReverseToMakeEqualTest, areTheyEqual_1) {
-    bool expected = true;
+    auto expected = true;
     vector<int> arrayA{1, 2, 3, 4};
     vector<int> arrayB{1, 4, 3, 2};
     auto result = ReverseToMakeEqual::areTheyEqual(arrayA, arrayB);
@@ -19,7 +19,7 @@ TEST(ReverseToMakeEqualTest, areTheyEqual_1) {
 }
 
 TEST(ReverseToMakeEqualTest, areTheyEqual_2) {
-    bool expected = false;
+    auto expected = false;
     vector<int> arrayA{1, 2, 3, 4};
     vector<int> arrayB{1, 4, 3, 3};
     auto result = ReverseToMakeEqual::areTheyEqual(arrayA, arrayB);

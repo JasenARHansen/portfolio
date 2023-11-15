@@ -19,8 +19,8 @@ public:
 
     Input
         1 ≤ |denominations| ≤ 100
-        1 ≤ denominations[i] ≤ 10,000
-        1 ≤ targetMoney ≤ 1,000,000
+        1 ≤ denominations[i] ≤ 10, 000
+        1 ≤ targetMoney ≤ 1, 000, 000
 
     Output
         Return true if it's possible to receive exactly targetMoney given the available denominations, and false if not.

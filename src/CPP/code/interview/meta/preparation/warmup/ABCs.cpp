@@ -13,7 +13,7 @@ public:
     Given three integers AA, BB, and CC, determine their sum.
     Your task is to implement the function getSum(A, B, C) which returns the sum A+B+CA+B+C.
     Constraints
-    1≤A,B,C≤1001≤A,B,C≤100
+    1≤A, B, C≤1001≤A, B, C≤100
 
     Sample test case #1
         A = 1

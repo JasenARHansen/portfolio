@@ -23,7 +23,7 @@ public:
         bool balancedSplitExists(int[] arr)
 
     Input
-        All integers in array are in the range [0, 1,000,000,000].
+        All integers in array are in the range [0, 1, 000, 000, 000].
 
     Output
         Return true if such a split is possible, and false otherwise.

@@ -21,7 +21,7 @@ public:
 
     Input
         S contains only lower-case alphabetic characters
-        1 <= |S| <= 10,000
+        1 <= |S| <= 10, 000
 
     Output
         Return string R, the encrypted version of S.

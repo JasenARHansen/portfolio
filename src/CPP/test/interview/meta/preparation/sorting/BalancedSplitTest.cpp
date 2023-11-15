@@ -11,14 +11,14 @@ TEST(BalancedSplitTest, description) {
 }
 
 TEST(BalancedSplitTest, balancedSplitExists_1) {
-    bool expected = true;
+    auto expected = true;
     vector<int> arr{1, 5, 7, 1};
     auto result = BalancedSplit::balancedSplitExists(arr);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BalancedSplitTest, balancedSplitExists_2) {
-    bool expected = false;
+    auto expected = false;
     vector<int> arr{12, 7, 6, 7, 6};
     auto result = BalancedSplit::balancedSplitExists(arr);
     EXPECT_EQ(expected, result);

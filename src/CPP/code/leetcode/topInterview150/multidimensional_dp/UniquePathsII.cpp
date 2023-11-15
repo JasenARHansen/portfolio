@@ -18,7 +18,7 @@ public:
     The testcases are generated so that the answer will be less than or equal to 2 * 10^9.
 
     Example 1:
-        Input: obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+        Input: obstacleGrid = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
         Output: 2
         Explanation:
             There is one obstacle in the middle of the 3x3 grid above.
@@ -27,7 +27,7 @@ public:
             2. Down -> Down -> Right -> Right
 
     Example 2:
-        Input: obstacleGrid = [[0,1],[0,0]]
+        Input: obstacleGrid = [[0, 1], [0, 0]]
         Output: 1
 
     Constraints:

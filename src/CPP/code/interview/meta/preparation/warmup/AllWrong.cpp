@@ -18,7 +18,7 @@ public:
 
     Constraints
         1 ≤ N ≤ 100
-        Ci∈{'A','B'}
+        Ci∈{'A', 'B'}
     Sample test case #1
         N = 3
         C = ABA
