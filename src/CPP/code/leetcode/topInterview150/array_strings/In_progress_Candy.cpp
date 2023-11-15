@@ -20,13 +20,13 @@ public:
     Return the minimum number of candies you need to have to distribute the candies to the children.
 
     Example 1:
-        Input: ratings = [1,0,2]
+        Input: ratings = [1, 0, 2]
         Output: 5
         Explanation:
             You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
 
     Example 2:
-        Input: ratings = [1,2,2]
+        Input: ratings = [1, 2, 2]
         Output: 4
         Explanation:
             You can allocate to the first, second and third child with 1, 2, 1 candies respectively.

@@ -19,8 +19,8 @@ public:
         string rotationalCipher(string input, int rotationFactor)
 
     Input
-        1 ≤ |input| ≤ 1,000,000
-        0 ≤ rotationFactor ≤ 1,000,000
+        1 ≤ |input| ≤ 1, 000, 000
+        0 ≤ rotationFactor ≤ 1, 000, 000
 
     Output
         Return the result of rotating input a number of times equal to rotationFactor.

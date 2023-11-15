@@ -11,28 +11,28 @@ TEST(BalanceBracketsTest, description) {
 }
 
 TEST(BalanceBracketsTest, BalanceBracketsExists_1) {
-    bool expected = true;
+    auto expected = true;
     auto s = "{[()]}";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BalanceBracketsTest, BalanceBracketsExists_2) {
-    bool expected = true;
+    auto expected = true;
     auto s = "{[()]}";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BalanceBracketsTest, BalanceBracketsExists_3) {
-    bool expected = false;
+    auto expected = false;
     auto s = "{(})";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
 TEST(BalanceBracketsTest, BalanceBracketsExists_4) {
-    bool expected = false;
+    auto expected = false;
     auto s = ")";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);

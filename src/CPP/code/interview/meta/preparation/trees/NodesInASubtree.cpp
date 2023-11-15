@@ -39,7 +39,7 @@ public:
         A pointer to the root node, an array list containing Q queries of type [u, c], and a string s
 
     Constraints
-        N and Q are the integers between 1 and 1,000,000
+        N and Q are the integers between 1 and 1, 000, 000
         u is a unique integer between 1 and N
         s is of the length of N, containing only lowercase letters
         c is a lowercase letter contained in string s

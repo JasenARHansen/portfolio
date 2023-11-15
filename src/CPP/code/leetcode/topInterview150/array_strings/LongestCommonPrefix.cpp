@@ -15,11 +15,11 @@ public:
     If there is no common prefix, return an empty string "".
 
     Example 1:
-    Input: strings = ["flower","flow","flight"]
+    Input: strings = ["flower", "flow", "flight"]
         Output: "fl"
 
     Example 2:
-        Input: strings = ["dog","racecar","car"]
+        Input: strings = ["dog", "racecar", "car"]
         Output: ""
         Explanation:
             There is no common prefix among the input strings.

@@ -21,7 +21,7 @@ public:
     A photograph consists of a photographer, an actor, and a backdrop, such that each of them is placed in a valid cell, and such that the actor is between the photographer and the backdrop. Such a photograph is considered artistic if the distance between the photographer and the actor is between X and Y cells (inclusive), and the distance between the actor and the backdrop is also between X and Y cells (inclusive). The distance between cells i and j is ∣i−j∣ (the absolute value of the difference between their indices).
     Determine the number of different artistic photographs which could potentially be taken at the set. Two photographs are considered different if they involve a different photographer cell, actor cell, and/or backdrop cell.
     Constraints
-        1 ≤ N ≤ 300,000
+        1 ≤ N ≤ 300, 000
         1 ≤ X ≤ Y ≤ N
 
     Sample test case #1

@@ -21,9 +21,9 @@ Signature
     int maxCandies(int[] arr, int K)
 
 Input
-    1 ≤ N ≤ 10,000
-    1 ≤ k ≤ 10,000
-    1 ≤ arr[i] ≤ 1,000,000,000
+    1 ≤ N ≤ 10, 000
+    1 ≤ k ≤ 10, 000
+    1 ≤ arr[i] ≤ 1, 000, 000, 000
 
 Output
     A single integer, the maximum number of candies you can eat in k minutes.

@@ -22,8 +22,8 @@ public:
         int[] findMedian(int[] arr)
 
     Input
-        n is in the range [1, 1,000,000].
-        Each value arr[i] is in the range [1, 1,000,000].
+        n is in the range [1, 1, 000, 000].
+        Each value arr[i] is in the range [1, 1, 000, 000].
 
     Output
         Return a list of n integers output[0..(n-1)], as described above.

@@ -20,8 +20,8 @@ public:
     Please take care to write a solution which runs within the time limit.
 
     Constraints
-        3 ≤ N ≤ 50,000,000
-        1 ≤ M ≤ 1,000
+        3 ≤ N ≤ 50, 000, 000
+        1 ≤ M ≤ 1, 000
         1 ≤ Ci ≤ N
 
     Sample test case #1
@@ -37,8 +37,8 @@ public:
         Expected Return Value = 11
 
     Sample Explanation
-        In the first case, there are 3 integers on the lock, and the sequence of integers to be selected is [1,2,3]. One optimal way to enter the code is: select 1 → rotate to 2 (1 second) → select 2 → rotate to 3 (1 second) → select 3. The total time taken is 1+1=2 seconds.
-        In the second case, the lock consists of the integers 1 through 10, and the sequence to be selected is [9,4,4,8]. One optimal way to enter the code is: rotate from 1 backwards to 9 (2 seconds) → select 9 → rotate forwards to 4 (5 seconds) → select 4 twice → rotate forwards to 8 (4 seconds) → select 8. The total time taken is 2+5+4=1 seconds.)"
+        In the first case, there are 3 integers on the lock, and the sequence of integers to be selected is [1, 2, 3]. One optimal way to enter the code is: select 1 → rotate to 2 (1 second) → select 2 → rotate to 3 (1 second) → select 3. The total time taken is 1+1=2 seconds.
+        In the second case, the lock consists of the integers 1 through 10, and the sequence to be selected is [9, 4, 4, 8]. One optimal way to enter the code is: rotate from 1 backwards to 9 (2 seconds) → select 9 → rotate forwards to 4 (5 seconds) → select 4 twice → rotate forwards to 8 (4 seconds) → select 8. The total time taken is 2+5+4=1 seconds.)"
              << endl;
     }
 

@@ -11,7 +11,7 @@ TEST(ChangeInAForeignCurrencyTest, description) {
 }
 
 TEST(ChangeInAForeignCurrencyTest, canGetExactChange_1) {
-    bool expected = false;
+    auto expected = false;
     vector<int> denominations{5, 10, 25, 100, 200};
     auto targetMoney = 94;
     auto result = ChangeInAForeignCurrency::canGetExactChange(targetMoney, denominations);
@@ -19,7 +19,7 @@ TEST(ChangeInAForeignCurrencyTest, canGetExactChange_1) {
 }
 
 TEST(ChangeInAForeignCurrencyTest, canGetExactChange_2) {
-    bool expected = true;
+    auto expected = true;
     vector<int> denominations{4, 17, 29};
     auto targetMoney = 75;
     auto result = ChangeInAForeignCurrency::canGetExactChange(targetMoney, denominations);

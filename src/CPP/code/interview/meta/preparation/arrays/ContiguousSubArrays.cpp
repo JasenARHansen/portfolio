@@ -18,8 +18,8 @@ public:
     Signature
      int[] countSubArrays(int[] array)
     Input
-        Array arr is a non-empty list of unique integers that range between 1 to 1,000,000,000
-        Size N is between 1 and 1,000,000
+        Array arr is a non-empty list of unique integers that range between 1 to 1, 000, 000, 000
+        Size N is between 1 and 1, 000, 000
     Output
      An array where each index i contains an integer denoting the maximum number of contiguous sub-arrays of arr[i]
     Example:

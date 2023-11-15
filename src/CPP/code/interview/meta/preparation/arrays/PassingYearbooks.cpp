@@ -20,7 +20,7 @@ public:
         int[] findSignatureCounts(int[] arr)
 
     Input
-        n is in the range [1, 100,000].
+        n is in the range [1, 100, 000].
         Each value arr[i] is in the range [1, n], and all values in arr[i] are distinct.
         Output
         Return a list of n integers output, as described above.

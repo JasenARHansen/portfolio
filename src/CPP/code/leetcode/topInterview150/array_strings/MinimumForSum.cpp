@@ -18,17 +18,17 @@ public:
     Given an array of positive integers nums and a positive integer target, return the minimum number of elements whose sum is greater than or equal to target. If there is possible combination, return 0 instead.
 
     Example 1:
-        Input: target = 7, nums = [2,3,1,2,4,3]
+        Input: target = 7, nums = [2, 3, 1, 2, 4, 3]
         Output: 2
         Explanation:
             The 4 + 3 has the minimal number of values that is over teh target.
 
     Example 2:
-        Input: target = 4, nums = [1,4,4]
+        Input: target = 4, nums = [1, 4, 4]
         Output: 1
 
     Example 3:
-        Input: target = 11, nums = [1,1,1,1,1,1,1,1]
+        Input: target = 11, nums = [1, 1, 1, 1, 1, 1, 1, 1]
         Output: 0
 
     Constraints:

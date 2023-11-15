@@ -36,7 +36,7 @@ public:
     Sample Explanation
         In the first case, the uniform integers between 75 and 300 are 77, 88, 99, 111, and 222.
         In the second case, all 99 single-digit integers between 11 and 99 (inclusive) are uniform.
-        In the third case, the single integer under consideration (999,999,999,999) is uniform.)" << endl;
+        In the third case, the single integer under consideration (999, 999, 999, 999) is uniform.)" << endl;
     }
 
     static int getUniformIntegerCountInInterval(long long A, long long B) {

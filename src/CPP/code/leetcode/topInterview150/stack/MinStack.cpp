@@ -25,10 +25,10 @@ public:
 
     Example 1:
         Input
-            ["MinStack","push","push","push","getMin","pop","top","getMin"]
-            [[],[-2],[0],[-3],[],[],[],[]]
+            ["MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin"]
+            [[], [-2], [0], [-3], [], [], [], []]
         Output
-            [null,null,null,null,-3,null,0,-2]
+            [null, null, null, null, -3, null, 0, -2]
         Explanation
             MinStack minStack = new MinStack();
             minStack.push(-2);

@@ -11,13 +11,13 @@ class Battleship {
 public:
     static void description() {
         cout << R"(Battleship
-    You're playing Battleship on a grid of cells with R rows and C columns. There are 0 or more battleships on the grid, each occupying a single distinct cell. The cell in the Ith row from the top and Jth column from the left either contains a battleship (Gi,j=1G) or doesn't (Gi,j=0).
+    You're playing Battleship on a grid of cells with R rows and C columns. There are 0 or more battleships on the grid, each occupying a single distinct cell. The cell in the Ith row from the top and Jth column from the left either contains a battleship (Gi, j=1G) or doesn't (Gi, j=0).
     You're going to fire a single shot at a random cell in the grid. You'll choose this cell uniformly at random from the R∗CR∗C possible cells. You're interested in the probability that the cell hit by your shot contains a battleship.
     Your task is to implement the function getHitProbability(R, C, G) which returns this probability.
     Note: Your return value must have an absolute or relative error of at most 10−6 to be considered correct.
     Constraints
         1 ≤ R, C ≤ 100
-        0 ≤ Gi,j ≤ 10
+        0 ≤ Gi, j ≤ 10
 
     Sample test case #1
         R = 2

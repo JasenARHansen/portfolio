@@ -16,7 +16,7 @@ public:
     Signature
         bool areTheyEqual(int[] arr_a, int[] arr_b)
     Input
-        All integers in array are in the range [0, 1,000,000,000].
+        All integers in array are in the range [0, 1, 000, 000, 000].
     Output
         Return true if B can be made equal to A, return false otherwise.
     Example
