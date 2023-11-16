@@ -6,17 +6,18 @@
 
 using namespace std;
 
-struct StackNode {
-    int data;
-    int min;
-    int max;
-    StackNode *next;
-
-    explicit StackNode(int data) : data(data), next(nullptr), min(0), max(0) {}
-};
 
 class Stack {
 private:
+    struct StackNode {
+        int data;
+        int min;
+        int max;
+        StackNode *next;
+
+        explicit StackNode(int data) : data(data), next(nullptr), min(0), max(0) {}
+    };
+
     StackNode *top;
     int stackSize;
 

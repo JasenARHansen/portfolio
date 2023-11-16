@@ -6,20 +6,20 @@
 
 using namespace std;
 
-struct StackNode {
-    int data;
-    StackNode *next;
-
-    explicit StackNode(int data) : data(data), next(nullptr) {}
-};
-
-class Stack {
+class QueueFromStack {
 private:
+    struct StackNode {
+        int data;
+        StackNode *next;
+
+        explicit StackNode(int data) : data(data), next(nullptr) {}
+    };
+
     StackNode *topNode;
     int stackSize;
 
 public:
-    explicit Stack() : topNode(nullptr), stackSize(0) {}
+    explicit QueueFromStack() : topNode(nullptr), stackSize(0) {}
 
     void push(int data) {
         auto *entry = new StackNode(data);
@@ -106,8 +106,8 @@ public:
 
 class QueueFromStackSlowPop {
 private:
-    Stack storage;
-    Stack bucketStorage;
+    QueueFromStack storage;
+    QueueFromStack bucketStorage;
 
 public:
     static void description() {
@@ -175,8 +175,8 @@ public:
 
 class QueueFromStackSlowInsert {
 private:
-    Stack storage;
-    Stack bucketStorage;
+    QueueFromStack storage;
+    QueueFromStack bucketStorage;
 
 public:
     static void description() {

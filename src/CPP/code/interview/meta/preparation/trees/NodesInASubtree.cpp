@@ -8,19 +8,19 @@
 
 using namespace std;
 
-class Node {
+class NodesInASubtreeNode {
 public:
     int val;
-    vector<Node *> children;
+    vector<NodesInASubtreeNode *> children;
 
-    Node() : val(0), children(vector<Node *>()) {}
+    NodesInASubtreeNode() : val(0), children(vector<NodesInASubtreeNode *>()) {}
 
-    explicit Node(int val) : val(val), children(vector<Node *>()) {}
+    explicit NodesInASubtreeNode(int val) : val(val), children(vector<NodesInASubtreeNode *>()) {}
 
-    Node(int val, vector<Node *> children) : val(val), children(std::move(children)) {}
+    NodesInASubtreeNode(int val, vector<NodesInASubtreeNode *> children) : val(val), children(std::move(children)) {}
 };
 
-struct Query {
+struct NodesInASubtreeQuery {
     int u;
     char c;
 };
@@ -63,10 +63,10 @@ public:
              << endl;
     }
 
-    static void deleteTree(Node **head) {
+    static void deleteTree(NodesInASubtreeNode **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<Node *> working;
+            queue<NodesInASubtreeNode *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -80,7 +80,8 @@ public:
         *head = nullptr;
     }
 
-    static vector<int> countOfNodes(Node *root, const vector<Query> &queries, const string &s) {
+    static vector<int>
+    countOfNodes(NodesInASubtreeNode *root, const vector<NodesInASubtreeQuery> &queries, const string &s) {
         vector<int> result{};
         for (auto query: queries) {
             auto working = findNode(root, query.u);
@@ -90,10 +91,10 @@ public:
     }
 
 private:
-    static Node *findNode(Node *root, int value) {
-        Node *result = nullptr;
+    static NodesInASubtreeNode *findNode(NodesInASubtreeNode *root, int value) {
+        NodesInASubtreeNode *result = nullptr;
         if (root != nullptr) {
-            queue<Node *> processing;
+            queue<NodesInASubtreeNode *> processing;
             processing.push(root);
             while (!processing.empty()) {
                 if (processing.front()->val == value) {
@@ -109,10 +110,10 @@ private:
         return result;
     }
 
-    static int getCount(Node *node, char value, const string &s) {
+    static int getCount(NodesInASubtreeNode *node, char value, const string &s) {
         auto result = 0;
         if (node != nullptr) {
-            queue<Node *> processing;
+            queue<NodesInASubtreeNode *> processing;
             processing.push(node);
             int index;
             while (!processing.empty()) {
