@@ -73,8 +73,8 @@ Function Description:
         set<Node *> seen;
         bool result = false;
         auto working = head;
-        while (working != nullptr){
-            if (seen.count(working)){
+        while (working != nullptr) {
+            if (seen.count(working)) {
                 result = true;
                 break;
             }

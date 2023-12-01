@@ -89,7 +89,7 @@ public:
         for (auto value: a) {
             minHeapForUpper.push(value);
             // Input is not sorted so rebalance
-            while(!maxHeapForSmaller.empty() && (maxHeapForSmaller.top() > minHeapForUpper.top())){
+            while (!maxHeapForSmaller.empty() && (maxHeapForSmaller.top() > minHeapForUpper.top())) {
                 minHeapForUpper.push(maxHeapForSmaller.top());
                 maxHeapForSmaller.pop();
             }
@@ -99,7 +99,7 @@ public:
             }
 
             if (maxHeapForSmaller.size() == minHeapForUpper.size()) {
-                result.push_back(((double)maxHeapForSmaller.top() + minHeapForUpper.top()) / 2);
+                result.push_back(((double) maxHeapForSmaller.top() + minHeapForUpper.top()) / 2);
             } else {
                 result.push_back(minHeapForUpper.top());
             }

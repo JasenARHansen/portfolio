@@ -1,8 +1,8 @@
-#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACK_BALANCED_BRACKETS_TEST
-#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACK_BALANCED_BRACKETS_TEST
+#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_BALANCED_BRACKETS_TEST
+#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_BALANCED_BRACKETS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/hackerrank/prepare/dataStructures/stack/LargestRectangle.cpp"  // NOLINT : Ignore .cpp import
+#include "../../../../../code/hackerrank/prepare/dataStructures/stacksAndQueue/LargestRectangle.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(LargestRectangleTest, description) {
     testing::internal::CaptureStdout();

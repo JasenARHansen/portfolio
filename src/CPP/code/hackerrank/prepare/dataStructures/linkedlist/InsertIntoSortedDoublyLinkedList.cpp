@@ -119,14 +119,13 @@ public:
                 working->next = insert;
                 insert->prev = working;
             }
-            // Path 2: working->data > data: not end of list
+                // Path 2: working->data > data: not end of list
             else {
                 insert->prev = working->prev;
                 insert->next = working;
                 if (working->prev == nullptr) {
                     result = insert;
-                }
-                else{
+                } else {
                     working->prev->next = insert;
                 }
                 working->prev = insert;

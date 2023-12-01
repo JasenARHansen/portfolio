@@ -67,11 +67,11 @@ public:
         for (auto start = 0; start < h.size(); start++) {
             minHeight = h.at(start);
             for (auto stop = start; stop < h.size(); stop++) {
-                if (minHeight > h.at(stop)){
+                if (minHeight > h.at(stop)) {
                     minHeight = h.at(stop);
                 }
-                localArea =minHeight * (stop - start + 1);
-                if (localArea > result){
+                localArea = minHeight * (stop - start + 1);
+                if (localArea > result) {
                     result = localArea;
                 }
             }

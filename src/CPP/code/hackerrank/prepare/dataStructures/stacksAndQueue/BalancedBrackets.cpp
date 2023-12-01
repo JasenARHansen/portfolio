@@ -67,7 +67,7 @@ public:
         The string {{[[(())]]}} meets both criteria for being a balanced string.)" << endl;
     }
 
-    static string isBalanced(const string& s) {
+    static string isBalanced(const string &s) {
         string result = "NO";
         stack<char> base;
         for (auto character: s) {
@@ -99,7 +99,7 @@ public:
                     break;
             }
         }
-        if (base.empty()){
+        if (base.empty()) {
             result = "YES";
         }
         return result;

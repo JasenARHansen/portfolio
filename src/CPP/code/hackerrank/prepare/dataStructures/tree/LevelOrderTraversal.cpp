@@ -36,7 +36,7 @@ public:
             void levelOrder(Node * root) {}
 
     Constraints:
-        1 ≤ nodes in tree  ≤ 500
+        1 ≤ nodes in tree ≤ 500
 
     Output Format:
             Print the values in a single line separated by a space.

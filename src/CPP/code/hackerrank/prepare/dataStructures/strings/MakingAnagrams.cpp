@@ -31,20 +31,19 @@ public:
         Delete e from a and f from b so that the remaining strings are and which are anagrams.
         This takes 2 character deletions.
 
-Function Description:
-
-Complete the makeAnagram function in the editor below.
-    makeAnagram has the following parameter(s):
-        string a: a string
-        string b: another string
-    Returns:
-        int: the minimum total characters that must be deleted
-    Input Format:
-        The first line contains a single string, a.
-        The second line contains a single string, b.
-    Constraints:
-        1 ≤ |a|, |b| ≤ 10^4
-        The strings a and b consist of lowercase English alphabetic letters, ascii[a-z].
+    Function Description:
+        Complete the makeAnagram function in the editor below.
+            makeAnagram has the following parameter(s):
+                string a: a string
+                string b: another string
+            Returns:
+                int: the minimum total characters that must be deleted
+            Input Format:
+                The first line contains a single string, a.
+                The second line contains a single string, b.
+            Constraints:
+                1 ≤ |a|, |b| ≤ 10^4
+                The strings a and b consist of lowercase English alphabetic letters, ascii[a-z].
 
     Sample Input:
         cde
@@ -61,39 +60,39 @@ Complete the makeAnagram function in the editor below.
         It takes 4 deletions to make both strings anagrams.)" << endl;
     }
 
-    static int makeAnagram(const string& a, const string& b){
+    static int makeAnagram(const string &a, const string &b) {
         auto result = 0;
         map<char, int> countA = processString(a);
         map<char, int> countB = processString(b);
         set<char> keys;
         // Retrieve all keys
-        for(std::map<char, int>::iterator it = countA.begin(); it != countA.end(); ++it) {
+        for (std::map<char, int>::iterator it = countA.begin(); it != countA.end(); ++it) {
             keys.insert(it->first);
         }
-        for(std::map<char, int>::iterator it = countB.begin(); it != countB.end(); ++it) {
+        for (std::map<char, int>::iterator it = countB.begin(); it != countB.end(); ++it) {
             keys.insert(it->first);
         }
-        for (auto key: keys){
+        for (auto key: keys) {
             auto aCount = 0;
-            if(countA.count(key)){
+            if (countA.count(key)) {
                 aCount = countA.at(key);
             }
             auto bCount = 0;
-            if(countB.count(key)){
+            if (countB.count(key)) {
                 bCount = countB.at(key);
             }
             result += abs(aCount - bCount);
         }
         return result;
     }
+
 private:
-    static map<char, int> processString(const string& input){
+    static map<char, int> processString(const string &input) {
         map<char, int> result;
-        for(char character : input){
-            if(result.count(character)){
+        for (char character: input) {
+            if (result.count(character)) {
                 result.at(character)++;
-            }
-            else{
+            } else {
                 result[character] = 1;
             }
         }

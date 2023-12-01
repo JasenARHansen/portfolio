@@ -252,6 +252,7 @@ public:
                 this->adjacent.insert(neighbour);
             }
         };
+
         int weight;
         map<int, GraphNode *> nodes;
     };
@@ -408,9 +409,11 @@ public:
                 this->adjacent.insert(neighbour);
             }
         };
+
         int weight;
         map<int, GraphNode *> nodes;
     };
 
 };
+
 #pragma clang diagnostic pop

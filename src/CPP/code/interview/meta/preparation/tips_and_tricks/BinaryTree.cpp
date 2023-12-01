@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
@@ -33,14 +34,14 @@ public:
         min()
         max())" << endl;
     }
-    void insert(int data){
+
+    void insert(int data) {
         if (this->root == nullptr) {
             this->root = new BinaryTreeNode(data);
-        }
-        else{
+        } else {
             auto working = this->root;
-            if (true){
-                
+            if (true) {
+
             }
         }
     }
@@ -141,7 +142,7 @@ public:
         return data;
     }
 
-    BinaryTreeNode *deserializeTree(vector<string> values) {
+    static BinaryTreeNode *deserializeTree(vector<string> values) {
         BinaryTreeNode *root = nullptr;
         if (!values.empty()) {
             queue<BinaryTreeNode *> nodes;

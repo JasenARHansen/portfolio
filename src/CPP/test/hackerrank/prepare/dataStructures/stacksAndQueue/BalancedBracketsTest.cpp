@@ -1,8 +1,8 @@
-#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACK_BALANCED_BRACKETS_TEST
-#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACK_BALANCED_BRACKETS_TEST
+#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_BALANCED_BRACKETS_TEST
+#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_BALANCED_BRACKETS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/hackerrank/prepare/dataStructures/stack/BalancedBrackets.cpp"  // NOLINT : Ignore .cpp import
+#include "../../../../../code/hackerrank/prepare/dataStructures/stacksAndQueue/BalancedBrackets.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(BalancedBracketsTest, description) {
     testing::internal::CaptureStdout();

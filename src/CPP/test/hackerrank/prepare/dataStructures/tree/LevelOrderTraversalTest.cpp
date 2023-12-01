@@ -10,13 +10,13 @@ TEST(LevelOrderTraversalTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(LevelOrderTraversalTest, readUserInput_1) {
-    LevelOrderTraversal::Node *n1 = new LevelOrderTraversal::Node(1);
-    LevelOrderTraversal::Node *n2 = new LevelOrderTraversal::Node(2);
-    LevelOrderTraversal::Node *n3 = new LevelOrderTraversal::Node(3);
-    LevelOrderTraversal::Node *n4 = new LevelOrderTraversal::Node(4);
-    LevelOrderTraversal::Node *n5 = new LevelOrderTraversal::Node(5);
-    LevelOrderTraversal::Node *n6 = new LevelOrderTraversal::Node(6);
+TEST(LevelOrderTraversalTest, levelOrder_1) {
+    auto *n1 = new LevelOrderTraversal::Node(1);
+    auto *n2 = new LevelOrderTraversal::Node(2);
+    auto *n3 = new LevelOrderTraversal::Node(3);
+    auto *n4 = new LevelOrderTraversal::Node(4);
+    auto *n5 = new LevelOrderTraversal::Node(5);
+    auto *n6 = new LevelOrderTraversal::Node(6);
     n1->right = n2;
     n2->right = n5;
     n5->left = n3;

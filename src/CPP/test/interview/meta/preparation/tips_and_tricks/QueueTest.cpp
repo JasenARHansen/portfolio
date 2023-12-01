@@ -29,7 +29,7 @@ TEST(QueueTest, enqueue) {
 }
 
 TEST(QueueTest, front) {
-    auto expected ="{5, 10}";
+    auto expected = "{5, 10}";
     Queue queue;
     auto data = 5;
     queue.enqueue(data);
