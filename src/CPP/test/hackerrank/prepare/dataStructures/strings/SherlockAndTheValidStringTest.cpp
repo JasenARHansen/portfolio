@@ -59,4 +59,12 @@ TEST(SherlockAndTheValidStringTest, isValid_7) {
     EXPECT_EQ(expected, result);
 }
 
+TEST(SherlockAndTheValidStringTest, isValid_8) {
+    auto expected = "YES";
+    auto s = "aabbc";
+    auto result = SherlockAndTheValidString::isValid(s);
+    EXPECT_EQ(expected, result);
+}
+
+
 #endif

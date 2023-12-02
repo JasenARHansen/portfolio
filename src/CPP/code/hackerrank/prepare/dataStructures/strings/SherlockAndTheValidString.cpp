@@ -103,15 +103,20 @@ public:
         if (countGroups.size() == 1) {
             result = "YES";
         } else if (countGroups.size() == 2) {
-            vector<int> keys;
-            // Retrieve all values
-            keys.reserve(countGroups.size());
-            for (auto const &element: countGroups) {
-                keys.push_back(element.first);
-            }
-            if (abs(keys[0] - keys[1]) == 1) {
-                if (countGroups[max(keys[0], keys[1])] == 1) {
-                    result = "YES";
+            if (countGroups.count(1) && (countGroups.at(1) == 1)) {
+                result = "YES";
+
+            } else {
+                vector<int> keys;
+                // Retrieve all values
+                keys.reserve(countGroups.size());
+                for (auto const &element: countGroups) {
+                    keys.push_back(element.first);
+                }
+                if (abs(keys[0] - keys[1]) == 1) {
+                    if (countGroups[max(keys[0], keys[1])] == 1) {
+                        result = "YES";
+                    }
                 }
             }
         }
