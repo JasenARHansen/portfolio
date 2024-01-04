@@ -12,21 +12,21 @@ using namespace std;
 class InsertInterval {
 public:
     static void description() {
-        cout << R"(57. Insert Interval
-    You are given an array of non-overlapping intervals intervals where intervals[i] = [startI, endI] represent the start and the end of the ith interval and intervals is sorted in ascending order by startI. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
-    Insert newInterval into intervals such that intervals is still sorted in ascending order by startI and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+        cout << R"(57: Insert Interval
+    You are given an array of non-overlapping intervals intervals where intervals[i] = [startI, endI]
+     represent the start and the end of the ith interval and intervals is sorted in ascending order by startI.
+    You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
+    Insert newInterval into intervals such that intervals is still sorted in ascending order by startI and
+     intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
     Return intervals after the insertion.
-
     Example 1:
         Input: intervals = [[1, 3], [6, 9]], newInterval = [2, 5]
         Output: [[1, 5], [6, 9]]
-
     Example 2:
         Input: intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]], newInterval = [4, 8]
         Output: [[1, 2], [3, 10], [12, 16]]
         Explanation:
             Because the new interval [4, 8] overlaps with [3, 5], [6, 7], [8, 10].
-
     Constraints:
         0 ≤ intervals.length ≤ 10^4
         intervals[i].length == 2
@@ -84,22 +84,22 @@ private:
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
         auto overlap = false;
-        // case 1.  result[index][0] ≤ processing[0] ≤ result[index][1]
+        // case 1:  result[index][0] ≤ processing[0] ≤ result[index][1]
         if ((interval1[0] <= interval2[0]) &&
             (interval2[0] <= interval1[1])) {
             overlap = true;
         }
-            // case 2.  interval1[0] ≤ interval2[1] ≤ interval1[1]
+            // case 2:  interval1[0] ≤ interval2[1] ≤ interval1[1]
         else if ((interval1[0] <= interval2[1]) &&
                  (interval2[1] <= interval1[1])) {
             overlap = true;
         }
-            // case 3.  interval2[0] ≤ interval1[0] ≤ interval2[1]
+            // case 3:  interval2[0] ≤ interval1[0] ≤ interval2[1]
         else if ((interval2[0] <= interval1[0]) &&
                  (interval1[0] <= interval2[1])) {
             overlap = true;
         }
-            // case 3.  interval2[0] ≤ interval1[1] ≤ interval2[1]
+            // case 4:  interval2[0] ≤ interval1[1] ≤ interval2[1]
         else if ((interval2[0] <= interval1[1]) &&
                  (interval1[1] <= interval2[1])) {
             overlap = true;

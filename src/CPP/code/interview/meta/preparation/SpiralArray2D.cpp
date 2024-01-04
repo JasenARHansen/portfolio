@@ -13,14 +13,12 @@ public:
     Find the pattern and complete the function:
         int[][] spiral(int n);
     where n is the size of the 2D array.
-
     Example 1:
         Input: 3
         Output:
             123
             894
             765
-
     Example 2:
         Input: 4
         Output:
@@ -28,7 +26,6 @@ public:
             12 13 14 05
             11 16 15 06
             10 09 08 07
-
     Example 3:
         Input: 8
         Output:

@@ -9,19 +9,14 @@
 using namespace std;
 
 class Section7Static {
-
 private:
-
     static int count;
-
 public:
-
     static const int MAXIMUM = 100;
 
     Section7Static();
 
     static int getCount();
-
 };
 
 #endif

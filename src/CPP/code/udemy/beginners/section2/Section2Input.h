@@ -11,11 +11,8 @@ using namespace std;
 
 class Section2Input {
 public:
-
     static void input();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

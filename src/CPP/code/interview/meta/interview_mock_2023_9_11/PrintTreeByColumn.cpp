@@ -29,7 +29,6 @@ public:
     static void description() {
         cout << R"(Question 2:
     Given the root of a binary tree containing integers, print each column from left to right, and within each column print the values from top to bottom.
-
         6
        / \
       3   4
@@ -39,10 +38,8 @@ public:
       2   8
      / \
     9   7
-
     Output:
             5, 9, 3, 2, 6, 1, 7, 4, 8, 0
-
         5
        / \
       1   8
@@ -52,7 +49,6 @@ public:
       2
        \
         7
-
     Output:
         6, 1, 2, 5, 9, 7, 8, 4)" << endl;
     }

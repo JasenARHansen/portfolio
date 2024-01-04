@@ -13,7 +13,7 @@ private:
     stack<int> value;
 public:
     static void description() {
-        cout << R"(155. Min Stack
+        cout << R"(155: Min Stack
     Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
     Implement the MinStack class:
         MinStack() initializes the stack object.
@@ -22,14 +22,13 @@ public:
         int top() gets the top element of the stack.
         int getMin() retrieves the minimum element in the stack.
     You must implement a solution with O(1) time complexity for each function.
-
     Example 1:
-        Input
+        Input:
             ["MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin"]
             [[], [-2], [0], [-3], [], [], [], []]
-        Output
+        Output:
             [null, null, null, null, -3, null, 0, -2]
-        Explanation
+        Explanation:
             MinStack minStack = new MinStack();
             minStack.push(-2);
             minStack.push(0);
@@ -38,7 +37,6 @@ public:
             minStack.pop();
             minStack.top();    // return 0
             minStack.getMin(); // return -2
-
     Constraints:
         -2^31 ≤ val ≤ 2^31 - 1
         Methods pop, top and getMin operations will always be called on non-empty stacks.

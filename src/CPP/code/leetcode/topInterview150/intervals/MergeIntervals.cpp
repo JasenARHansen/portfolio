@@ -12,21 +12,19 @@ using namespace std;
 class MergeIntervals {
 public:
     static void description() {
-        cout << R"(56. Merge Intervals
-    Given an array of intervals where intervals[i] = [startI, endI], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
-
+        cout << R"(56: Merge Intervals
+    Given an array of intervals where intervals[i] = [startI, endI], merge all overlapping intervals, and
+     return an array of the non-overlapping intervals that cover all the intervals in the input.
     Example 1:
         Input: intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
         Output: [[1, 6], [8, 10], [15, 18]]
         Explanation:
             Since intervals [1, 3] and [2, 6] overlap, merge them into [1, 6].
-
     Example 2:
         Input: intervals = [[1, 4], [4, 5]]
         Output: [[1, 5]]
         Explanation:
             Intervals [1, 4] and [4, 5] are considered overlapping.
-
     Constraints:
         1 ≤ intervals.length ≤ 10^4
         intervals[i].length == 2
@@ -111,13 +109,13 @@ private:
 
     static bool detect(const vector<int> &interval1, const vector<int> &interval2) {
         auto overlap = false;
-        // case 1.  result[index][0] ≤ processing[0] ≤ result[index][1]
+        // case 1:  result[index][0] ≤ processing[0] ≤ result[index][1]
         if (((interval1[0] <= interval2[0]) && (interval2[0] <= interval1[1])) ||
-            // case 2.  interval1[0] ≤ interval2[1] ≤ interval1[1]
+            // case 2:  interval1[0] ≤ interval2[1] ≤ interval1[1]
             ((interval1[0] <= interval2[1]) && (interval2[1] <= interval1[1])) ||
-            // case 3.  interval2[0] ≤ interval1[0] ≤ interval2[1]
+            // case 3:  interval2[0] ≤ interval1[0] ≤ interval2[1]
             ((interval2[0] <= interval1[0]) && (interval1[0] <= interval2[1])) ||
-            // case 3.  interval2[0] ≤ interval1[1] ≤ interval2[1]
+            // case 4:  interval2[0] ≤ interval1[1] ≤ interval2[1]
             ((interval2[0] <= interval1[1]) && (interval1[1] <= interval2[1]))) {
             overlap = true;
         }

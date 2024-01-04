@@ -13,9 +13,7 @@ public:
     static string hello();
 
     static void helloOut();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

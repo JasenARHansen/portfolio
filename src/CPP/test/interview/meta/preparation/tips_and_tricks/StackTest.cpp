@@ -134,5 +134,4 @@ TEST(StackTest, max_fail) {
     EXPECT_THROW(stack.max(), runtime_error);
 }
 
-
 #endif

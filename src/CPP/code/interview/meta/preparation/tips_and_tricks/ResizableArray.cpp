@@ -62,7 +62,6 @@ private:
             size = this->count + minimumIncrease;
         } else {
             size = this->count * 2;
-
         }
         int *replacement = new int[size];
         memcpy(replacement, this->items, this->count * sizeof(int));

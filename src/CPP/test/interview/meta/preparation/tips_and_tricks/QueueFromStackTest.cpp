@@ -112,5 +112,4 @@ TEST(QueueFromStackSlowInsertTest, back) {
     EXPECT_EQ(2, data);
 }
 
-
 #endif

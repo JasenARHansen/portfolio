@@ -13,6 +13,5 @@ public:
     static string menuSelection(int selection);
 };
 
-
 #endif
 #pragma clang diagnostic pop

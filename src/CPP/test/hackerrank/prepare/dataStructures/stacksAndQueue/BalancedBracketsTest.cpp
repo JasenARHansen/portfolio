@@ -108,8 +108,6 @@ TEST(BalancedBracketsTest, isBalanced_5) {
         auto result = BalancedBrackets::isBalanced(input.at(i));
         EXPECT_EQ(expected.at(i), result);
     }
-
 }
-
 
 #endif

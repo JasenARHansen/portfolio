@@ -30,7 +30,6 @@ public:
         cout << R"(Question 3:
     Given a binary tree containing integers, print the average value at each level of the tree.
     Input:
-
         4
        / \
       7   9
@@ -40,7 +39,6 @@ public:
           6
          /
         2
-
     Output:
             [4, 8, 6, 6, 2])" << endl;
     }

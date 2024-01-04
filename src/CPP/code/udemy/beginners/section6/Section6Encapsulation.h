@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 class Section6Encapsulation {
 private:
     string name;
@@ -16,13 +15,10 @@ private:
     [[nodiscard]] const string &getName() const;
 
 public:
-
     Section6Encapsulation();
 
     string getInfo();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

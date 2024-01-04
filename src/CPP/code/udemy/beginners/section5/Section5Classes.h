@@ -11,7 +11,6 @@ using namespace std;
 class Section5Classes {
 private:
     string name;
-
 public:
     Section5Classes();
 
@@ -29,7 +28,6 @@ public:
 
     static void deleteArray(Section5Classes **pClasses);
 };
-
 
 #endif
 #pragma clang diagnostic pop

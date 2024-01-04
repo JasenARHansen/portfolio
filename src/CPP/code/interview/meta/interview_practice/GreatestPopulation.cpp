@@ -7,8 +7,6 @@
 #include <queue>
 
 using namespace std;
-
-
 struct Person {
     int birth;
     int death;

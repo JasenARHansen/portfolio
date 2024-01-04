@@ -13,7 +13,6 @@ private:
     string name;
     bool mood;
     int age;
-
 public:
     Section4Classes();
 
@@ -36,9 +35,7 @@ public:
     void setName(const string &name);
 
     [[nodiscard]] int getAge() const;
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

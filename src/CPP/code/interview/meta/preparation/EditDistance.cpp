@@ -17,7 +17,6 @@ public:
         Inserting one character anywhere in the word (including at the beginning and end)
         Removing one character
         Replacing one character
-
     Examples:
         OneEditApart("cat", "dog") = false
         OneEditApart("cat", "cats") = true

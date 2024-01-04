@@ -12,7 +12,6 @@ using namespace std;
 
 class Section2Types {
 public:
-
     static void integerType();
 
     static void floatType();
@@ -22,9 +21,7 @@ public:
     static void charType();
 
     static void wcharType();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

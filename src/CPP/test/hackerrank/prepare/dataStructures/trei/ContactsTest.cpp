@@ -47,5 +47,4 @@ TEST(ContactsTest, readUserInput_2) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif

@@ -9,11 +9,8 @@
 using namespace std;
 
 class Section7TwosComplement {
-
 public:
-
     static int performTwosComplement(int input);
-
 };
 
 #endif

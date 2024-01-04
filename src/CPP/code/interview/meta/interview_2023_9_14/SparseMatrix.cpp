@@ -8,32 +8,32 @@
 using namespace std;
 
 class SparseMatrix {
-
 public:
     static void description() {
         cout << R"(SparseMatrix
-    Design and implement a Class called "SparseMatrix", which is defined as a VERY big matrix of floats with mostly ZEROs
-
-    NOTE: The matrix is too big to fit in to the memory if you store every single entry value. You are not expected to introduce a non-sparse matrix representation in transpose(), multiply() or as class variables
-
+    Design and implement a Class called "SparseMatrix", which is defined as a VERY big matrix of
+     floats with mostly ZEROs
+    NOTE: The matrix is too big to fit in to the memory if you store every single entry value.
+          You are not expected to introduce a non-sparse matrix representation in transpose(),
+     multiply() or as class variables
     Implement the constructor which takes in the dimension of the matrix, but not any values
-
     Implement the following methods
-
     * put - override an entry given a coordinate and a value
-
-    * transpose - return a new instance of SparseMatrix that is a "diagonal flip" of itself. Here is an example of matrix transpose:
+    * transpose - return a new instance of SparseMatrix that is a "diagonal flip" of itself.
+    Here is an example of matrix transpose:
         1 0 0  => 1 3
         3 0 6     0 0
                   0 6
-    * multiply - input is another SparseMatrix instance (called "other"), return a new SparseMatrix instance as a multiplication between "this" and "other". Here is an example of matrix multiplication:
+    * multiply - input is another SparseMatrix instance (called "other"), return a new SparseMatrix instance
+     as a multiplication between "this" and "other".
+     Here is an example of matrix multiplication:
         2by3 x 3by3 => 2by3 matrix
         1 2 3  x a b c  ->   [1a+2d+3g  1b+2e+3h 1c+2f+3i]
         4 5 6    d e f       [4a+5d+6g  ...      ...     ]
                  g h i
-
-    For each method you implement, comment on their runtime complexities. Assuming the dimension of the matrix you represent is A by B, and that of the "other" matrix in multiplication is "B by C".)"
-             << endl;
+    For each method you implement, comment on their runtime complexities.
+    Assuming the dimension of the matrix you represent is A by B, and that of the "other" matrix in
+     multiplication is "B by C".)" << endl;
     }
 
     SparseMatrix(int row, int column) : row_internal(row), column_internal(column) {}
@@ -189,5 +189,3 @@ private:
 };
 
 #pragma clang diagnostic pop
-
-

@@ -6,53 +6,40 @@
 
 using namespace std;
 
-
 class FibonacciNumbers {
-
 public:
     static void description() {
         cout << R"(Recursion: Fibonacci Numbers:
     The Fibonacci Sequence
     The Fibonacci sequence appears in nature all around us, in the arrangement of seeds in a sunflower and the
      spiral of a nautilus for example.
-
     The Fibonacci sequence begins with fibonacci(0) = 0 and fibonacci(1) = 1 as its first and second terms.
     After these first two elements, each subsequent element is equal to the sum of the previous two elements.
-
     Programmatically:
         fibonacci(0) = 0
         fibonacci(1) = 1
         fibonacci(n) = fibonacci(n - 1) + fibonacci(n - 2)
         Given n, return the nth number in the sequence.
-
     Example:
         n = 5
         The Fibonacci sequence to 6 is [0, 1, 1, 2, 3, 5, 8].
         With zero-based indexing, fs[5] = 5.
-
     Function Description:
         Complete the recursive function fibonacci in the editor below.
-
         fibonacci has the following parameter(s):
             int n: the index of the sequence to return
-
     Returns:
         int: the nth element in the Fibonacci sequence
-
     Input Format:
         The integer n.
-
     Constraints:
         1 < n ≤ 30
-
     Sample Input:
         STDIN   Function
         -----   --------
         3       n = 3
-
     Sample Output:
         2
-
     Explanation:
         The Fibonacci sequence begins as follows:
             fibonacci(0) = 0
@@ -62,7 +49,6 @@ public:
             fibonacci(4) = 2 + 3 = 5
             fibonacci(5) = 3 + 5 = 8
             ...
-
     In the sequence above, fibonacci(3) is 2.)" << endl;
     }
 
@@ -86,7 +72,6 @@ private:
             return first + second;
         }
     }
-
 };
 
 #pragma clang diagnostic pop

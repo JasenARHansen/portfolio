@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 class Stack {
 private:
     struct StackNode {
@@ -20,7 +19,6 @@ private:
 
     StackNode *top;
     int stackSize;
-
 public:
     explicit Stack() : top(nullptr), stackSize(0) {}
 

@@ -10,12 +10,9 @@ using namespace std;
 
 class Section5References {
 private:
-
 public:
-
     static void reassign(int &value, int newValue);
 };
-
 
 #endif
 #pragma clang diagnostic pop

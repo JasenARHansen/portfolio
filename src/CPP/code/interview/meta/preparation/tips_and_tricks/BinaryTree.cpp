@@ -20,7 +20,6 @@ class BinaryTree {
 private:
     BinaryTreeNode *root;
     int treeSize;
-
 public:
     explicit BinaryTree() : root(nullptr), treeSize(0) {}
 
@@ -41,7 +40,6 @@ public:
         } else {
             auto working = this->root;
             if (true) {
-
             }
         }
     }
@@ -209,7 +207,6 @@ public:
     [[nodiscard]] int size() const {
         return this->treeSize;
     }
-
 };
 
 #pragma clang diagnostic pop

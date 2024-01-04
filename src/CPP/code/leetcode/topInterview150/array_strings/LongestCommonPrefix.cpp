@@ -10,20 +10,17 @@ using namespace std;
 class LongestCommonPrefix {
 public:
     static void description() {
-        cout << R"(14. Longest Common Prefix
+        cout << R"(14: Longest Common Prefix
     Write a function to find the longest common prefix string amongst an array of strings.
     If there is no common prefix, return an empty string "".
-
     Example 1:
     Input: strings = ["flower", "flow", "flight"]
         Output: "fl"
-
     Example 2:
         Input: strings = ["dog", "racecar", "car"]
         Output: ""
         Explanation:
             There is no common prefix among the input strings.
-
     Constraints:
         1 ≤ strings.length ≤ 200
         0 ≤ strings[i].length ≤ 200

@@ -12,26 +12,24 @@ using namespace std;
 class Candy {
 public:
     static void description() {
-        cout << R"(135. Candy
-    There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings.
+        cout << R"(135: Candy
+    There are n children standing in a line.
+    Each child is assigned a rating value given in the integer array ratings.
     You are giving candies to these children subjected to the following requirements:
         Each child must have at least one candy.
         Children with a higher rating get more candies than their neighbors.
     Return the minimum number of candies you need to have to distribute the candies to the children.
-
     Example 1:
         Input: ratings = [1, 0, 2]
         Output: 5
         Explanation:
             You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
-
     Example 2:
         Input: ratings = [1, 2, 2]
         Output: 4
         Explanation:
             You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
             The third child gets 1 candy because it satisfies the above two conditions.
-
     Constraints:
         n == ratings.length
         1 ≤ n ≤ 2 * 10^4
@@ -64,9 +62,11 @@ public:
                 index += offset;
             }
         }
-        // 3 regions to process defined by index 0 to left index. left index to right index, right index to end point:
+        // 3 regions to process defined by index 0 to left index.
+        // left index to right index, right index to end point:
         //     !---!------!---!
-        // find the left side to start processing.  This is the first non '1' value, after a '1' has been found.
+        // find the left side to start processing.
+        // This is the first non '1' value, after a '1' has been found.
         auto leftIndex = 1;
         while (leftIndex < ratings.size()) {
             if (candies[leftIndex] == 1) {
@@ -80,7 +80,8 @@ public:
             }
             leftIndex++;
         }
-        // find the right side to start processing.  This is the first non '1' value, after a '1' has been found.
+        // find the right side to start processing.
+        // This is the first non '1' value, after a '1' has been found.
         auto rightIndex = ratings.size() - 1;
         while (0 < rightIndex) {
             if (candies[rightIndex] == 1) {
@@ -95,11 +96,8 @@ public:
             rightIndex--;
         }
         // process left section
-
         // process right section
-
         // process middle section
-
         auto tempIndex = leftIndex;
         while (leftIndex < rightIndex) {
             while ((tempIndex < rightIndex) && (-1 == candies[tempIndex])) {

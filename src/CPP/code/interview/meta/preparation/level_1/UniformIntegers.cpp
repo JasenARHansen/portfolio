@@ -11,29 +11,25 @@ class UniformIntegers {
 public:
     static void description() {
         cout << R"(Uniform Integers
-    A positive integer is considered uniform if all of its digits are equal. For example, 222 is uniform, while 223 is not.
+    A positive integer is considered uniform if all of its digits are equal.
+    For example, 222 is uniform, while 223 is not.
     Given two positive integers A and B, determine the number of uniform integers between A and B, inclusive.
     Please take care to write a solution which runs within the time limit.
-
-    Constraints
+    Constraints:
         1 ≤ A ≤ B ≤ 10^12
-
     Sample test case #1
         A = 75
         B = 300
         Expected Return Value = 5
-
     Sample test case #2
         A = 1
         B = 9
         Expected Return Value = 9
-
     Sample test case #3
     A = 999999999999
     B = 999999999999
     Expected Return Value = 1
-
-    Sample Explanation
+    Sample Explanation:
         In the first case, the uniform integers between 75 and 300 are 77, 88, 99, 111, and 222.
         In the second case, all 99 single-digit integers between 11 and 99 (inclusive) are uniform.
         In the third case, the single integer under consideration (999, 999, 999, 999) is uniform.)" << endl;
@@ -60,7 +56,8 @@ public:
                     break;
                 }
             }
-            // if index == stringA.size() the number is uniform.  In char at index n+1 < char at index n, then less
+            // if index == stringA.size() the number is uniform.
+            // In char at index n+1 < char at index n, then less
             if ((index == stringA.size()) || (stringA.at(index) < firstChar)) {
                 uniformOrLessA = true;
             }
@@ -79,7 +76,8 @@ public:
                     break;
                 }
             }
-            // if index == stringB.size() the number is uniform.  In char at index n+1 > char at index n, then more
+            // if index == stringB.size() the number is uniform.
+            // In char at index n+1 > char at index n, then more
             if ((index == stringB.size()) || (stringB.at(index) > firstChar)) {
                 uniformOrMoreB = true;
             }
@@ -89,7 +87,8 @@ public:
             }
             result = right - left + 1;
         } else {
-            // A to end of that digit range.  Ex, if A is 10, the digit range would end at 99
+            // A to end of that digit range.
+            // Ex, if A is 10, the digit range would end at 99
             bool uniformOrLessA = false;
             char firstChar = stringA.at(0);
             int index = 1;
@@ -100,7 +99,8 @@ public:
                     break;
                 }
             }
-            // if index == stringA.size() the number is uniform.  In char at index n+1 < char at index n, then less
+            // if index == stringA.size() the number is uniform.
+            // In char at index n+1 < char at index n, then less
             if ((index == stringA.size()) || (stringA.at(index) < firstChar)) {
                 uniformOrLessA = true;
             }
@@ -108,7 +108,8 @@ public:
             if (uniformOrLessA) {
                 result++;
             }
-            // B to end of that digit range.  Ex, if B is 100, the digit range would end at 999
+            // B to end of that digit range.
+            // Ex, if B is 100, the digit range would end at 999
             bool uniformOrMoreB = false;
             firstChar = stringB.at(0);
             index = 1;
@@ -119,7 +120,8 @@ public:
                     break;
                 }
             }
-            // if index == stringB.size() the number is uniform.  In char at index n+1 > char at index n, then more
+            // if index == stringB.size() the number is uniform.
+            // In char at index n+1 > char at index n, then more
             if ((index == stringB.size()) || (stringB.at(index) > firstChar)) {
                 uniformOrMoreB = true;
             }

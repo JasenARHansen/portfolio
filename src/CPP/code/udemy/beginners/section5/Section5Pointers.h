@@ -10,9 +10,7 @@ using namespace std;
 
 class Section5Pointers {
 private:
-
 public:
-
     static void pointerDemo();
 
     static void doubleDouble(double *pValue);
@@ -21,7 +19,6 @@ public:
 
     static void reverseCharArray(int size, char *pChar);
 };
-
 
 #endif
 #pragma clang diagnostic pop

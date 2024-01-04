@@ -19,6 +19,5 @@ public:
     static void fruit();
 };
 
-
 #endif
 #pragma clang diagnostic pop

@@ -6,7 +6,6 @@
 /*
     Aristos C++ interview question
 */
-
 #include <chrono>
 #include <thread>
 #include <stdexcept>
@@ -19,13 +18,11 @@
 using Time = std::chrono::steady_clock;
 using float_sec = std::chrono::duration<float>;
 using time_point = std::chrono::time_point<Time, float_sec>;
-
 enum Status {
     Valid,
     NoChange,
     Error,
 };
-
 struct VoltageSensorReading {
     Status status;
     double voltage;
@@ -47,7 +44,6 @@ int randRange(int min, int max) {
 
 VoltageSensorReading getVoltageReading() {
     VoltageSensorReading ret;
-
     int i = randInt();
     switch (i % 3) {
         case 0:
@@ -67,33 +63,28 @@ VoltageSensorReading getVoltageReading() {
         default:
             throw std::runtime_error("not possible - programming error");
     }
-
     ret.timestamp = Time::now();
     return ret;
 }
-
 /* DO NOT EDIT ABOVE THIS LINE ----------------------------------------------------------------------------- */
-
 /*
-    You are given this function to use. DO NOT IMPLEMENT.
-
+    You are given this function to use.
+    DO NOT IMPLEMENT.
     VoltageSensorReading getVoltageReading();
-
-    This function blocks for 0-1 seconds. It returns only when:
-        1. The sensor value changes.
-        2. There is a read error.
-        3. 1 second timeout.
+    This function blocks for 0-1 seconds.
+    It returns only when:
+        1: The sensor value changes.
+        2: There is a read error.
+        3: 1 second timeout.
 */
-
-
 /*
-    Design a class that lets us read the values from a voltage sensor. The library
-    will be used by other programmers in their code. Expect it to be used in a
-    multi-threaded program. Use the provided low-level function getVoltageReading().
+    Design a class that lets us read the values from a voltage sensor.
+    The library will be used by other programmers in their code.
+    Expect it to be used in a multi-threaded program.
+    Use the provided low-level function getVoltageReading().
 */
 class Sensor {
 public:
-
     // constructor initializing thread
     Sensor() {
         continuation_token.store(true);
@@ -107,10 +98,12 @@ public:
         myThread.join();
     }
 
-    // TODO: Implement this.
-    // Part 1. Read the most recent valid sensor reading. Do not block.
+    // Implement this.
+    // Part 1: Read the most recent valid sensor reading
+    // Do not block.
     double GetReading() {
-        // If there is no history there is no valid reading.  Wait for history to be available.
+        // If there is no history there is no valid reading.
+        // Wait for history to be available.
         while (history.empty()) {
             usleep(Sensor::interval);
         }
@@ -121,14 +114,18 @@ public:
         return data;
     }
 
-    // TODO: Implement this.
-    // Part 2. Read the sensor reading nearest to any provided timestamp. Do not block.
+    // Implement this.
+    // Part 2: Read the sensor reading nearest to any provided timestamp.
+    // Do not block.
     double GetReadingAtTime(time_point t) {
         double result = 0;
         dataLock.lock();
-        // Edge case 1: The provided timestamp is greater than the current time.  Return 0
-        // Edge case 2: There is no stored data.  Return 0
-        // Edge case 3: The provided timestamp is older than the oldest stored data.  Return 0
+        // Edge case 1: The provided timestamp is greater than the current time.
+        //              Return 0
+        // Edge case 2: There is no stored data.
+        //              Return 0
+        // Edge case 3: The provided timestamp is older than the oldest stored data.
+        //              Return 0
         // If none of the above, perform binary search
         if (!((Time::now() < t) || (history.empty()) || (t < history.at(0).first))) {
             // find the first element that is smaller than the target
@@ -190,13 +187,11 @@ private:
             dataLock.unlock();
         }
     }
-
 };
-
 /*
 int main() {
     srand(time(nullptr));
-    // TODO: write any debug code or tests here
+    // write any debug code or tests here
     auto s = Sensor();
     auto reading = s.GetReading();
     if (reading == 0) {

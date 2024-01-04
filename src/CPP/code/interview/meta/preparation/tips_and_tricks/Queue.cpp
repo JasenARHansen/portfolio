@@ -21,7 +21,6 @@ private:
     QueueNode *frontPointer;
     QueueNode *backPointer;
     int queueSize;
-
 public:
     explicit Queue() : frontPointer(nullptr), backPointer(nullptr), queueSize(0) {}
 
@@ -33,8 +32,8 @@ public:
         front() : Returns a reference to the first element of the queue.\
         back() :Returns a reference to the last element of the queue.
         size(): Returns the size of the queue.
-        empty() : Returns whether the queue is empty. It return true if the queue is empty otherwise returns false.)"
-             << endl;
+        empty() : Returns whether the queue is empty.
+        It return true if the queue is empty otherwise returns false.)" << endl;
     }
 
     void enqueue(int data) {
@@ -45,7 +44,6 @@ public:
         } else {
             this->backPointer->next = entry;
             this->backPointer = entry;
-
         }
         this->queueSize++;
     }
@@ -94,7 +92,6 @@ public:
         if (this->size() == 0) {
             result = true;
         } else {
-
             result = false;
         }
         return result;
@@ -102,7 +99,6 @@ public:
 
     string toString() {
         string result = "{";
-
         if (!this->empty()) {
             auto working = this->frontPointer;
             while (working != nullptr) {

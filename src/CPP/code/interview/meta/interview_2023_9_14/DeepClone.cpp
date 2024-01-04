@@ -81,13 +81,11 @@ public:
           Data data_;
           std::vector<V*> edges_;
         };
-
         class G {
          public:
           ~G() { ... }
           std::vector<V*> vertices_;
         };
-
         void clone(G& G1, G* G2) {
           // Your code here})" << endl;
     }
@@ -97,7 +95,6 @@ public:
             // clone vec and add it to G2.vertices_
             G2->vertices_.push_back(cloneV(vec));
         }
-
     }
 
 private:

@@ -11,13 +11,10 @@ using namespace std;
 
 class Section2Arrays {
 public:
-
     static void arrays();
 
     static void arraysMultiDimensional();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

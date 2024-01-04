@@ -6,9 +6,7 @@
 #include "gtest/gtest.h"
 #include "../../../code/interview/tesla/Tesla_2023_12_1.cpp"  // NOLINT : Ignore .cpp import
 
-
 TEST(Tesla_Interview_2023_12_1_Test, temp_1) {
-
     srand(time(nullptr));
     auto s = Sensor();
     auto reading = s.GetReading();
@@ -19,7 +17,6 @@ TEST(Tesla_Interview_2023_12_1_Test, temp_1) {
     auto readingInRange = s.GetReadingAtTime(testTime);
     EXPECT_NE(0, readingInRange);
 }
-
 
 #endif
 #pragma clang diagnostic pop

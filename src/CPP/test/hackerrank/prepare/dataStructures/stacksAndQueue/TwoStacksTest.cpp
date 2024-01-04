@@ -44,5 +44,4 @@ TEST(TwoStacksTest, has_cycle_2) {
     EXPECT_EQ(expected.at(1), result);
 }
 
-
 #endif

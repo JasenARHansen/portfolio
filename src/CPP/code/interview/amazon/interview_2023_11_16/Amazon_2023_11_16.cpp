@@ -8,9 +8,7 @@
 
 using namespace std;
 
-
 class Amazon_Interview_2023_11_16 {
-
 public:
     static void description() {
         cout << R"(Is there a box that fits?
@@ -87,7 +85,6 @@ public:
         }
         return nullptr;
     }
-
 };
 
 #pragma clang diagnostic pop

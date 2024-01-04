@@ -1,5 +1,4 @@
 #include "Section5Classes.h"
-
 #include <utility>
 
 Section5Classes::Section5Classes() {

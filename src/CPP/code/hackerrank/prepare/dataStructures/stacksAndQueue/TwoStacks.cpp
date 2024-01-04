@@ -6,9 +6,7 @@
 
 using namespace std;
 
-
 class TwoStacks {
-
 public:
     static void description() {
         cout << R"(Queues: A Tale of Two Stacks:
@@ -16,17 +14,15 @@ public:
      the oldest elements to be removed from the front and new elements to be added to the rear.
     This is called a First-In-First-Out (FIFO) data structure because the first element added to the queue
      (i.e., the one that has been waiting the longest) is always the first one to be removed.
-
     A basic queue has the following operations:\
         Enqueue: add a new element to the end of the queue.
         Dequeue: remove the element from the front of the queue and return it.
-
-    In this challenge, you must first implement a queue using two stacks. Then process q queries, where each
+    In this challenge, you must first implement a queue using two stacks.
+    Then process q queries, where each
      query is one of the following 3 types:
         1 x: Enqueue element x into the end of the queue.
         2: Dequeue the element at the front of the queue.
         3: Print the element at the front of the queue.
-
     For example, a series of queries might be as follows:
         Query type  Lifo        Fifo        Output
         1 35        {35}        {35}
@@ -34,25 +30,21 @@ public:
         3                                   35
         2           {15}        {15}
         3                                   15
-
     Function Description:
-        Complete the put, pop, and peek methods in the editor below. They must perform the actions as described above.
-
+        Complete the put, pop, and peek methods in the editor below.
+    They must perform the actions as described above.
     Input Format:
         The first line contains a single integer, q, the number of queries.
         Each of the next q lines contains a single query in the form described in the problem statement above.
         All queries start with an integer denoting the query type, but only query 1 is followed by an additional
          space-separated value, x, denoting the value to be enqueued.
-
     Constraints:
         1 ≤ q ≤ 10^5
         1 ≤ type ≤ 3
         1 ≤ |x| ≤ 10^9
         It is guaranteed that a valid answer always exists for each query of types 2 and 3.
-
     Output Format:
         For each query of type 3, return the value of the element at the front of the fifo queue on a new line.
-
     Sample Input:
         10
         1 42
@@ -65,11 +57,9 @@ public:
         1 78
         2
         2
-
     Sample Output:
         14
         14
-
     Explanation:
         Query type  Lifo                Fifo            Output
         1 42        {42}                {42}
@@ -85,7 +75,6 @@ public:
     }
 
     class MyQueue {
-
     public:
         stack<int> stack_newest_on_top, stack_oldest_on_top;
 
@@ -113,7 +102,6 @@ public:
             return this->stack_oldest_on_top.top();
         }
     };
-
 };
 
 #pragma clang diagnostic pop

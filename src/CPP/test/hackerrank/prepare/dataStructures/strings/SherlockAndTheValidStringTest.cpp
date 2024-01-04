@@ -66,5 +66,4 @@ TEST(SherlockAndTheValidStringTest, isValid_8) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif

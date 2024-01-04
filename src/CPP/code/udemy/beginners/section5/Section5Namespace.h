@@ -8,13 +8,10 @@
 #include <iomanip>
 
 using namespace std;
-
 namespace jsn {
-
     class Section5Namespace {
     private:
         string name;
-
     public:
         Section5Namespace();
 
@@ -24,8 +21,6 @@ namespace jsn {
 
         static void deleteObject(Section5Namespace **pClasses);
     };
-
 }
-
 #endif
 #pragma clang diagnostic pop

@@ -5,7 +5,6 @@
 #include <vector>
 
 using namespace std;
-
 struct Query {
     int type;  // 1 = set, 2 = Get
     int index;
@@ -15,22 +14,27 @@ class AnswerAQuery {
 public:
     static void description() {
         cout << R"(Answer a Query
-    Imagine a length-N array of booleans, initially all false. Over time, some values are set to true, and at various points in time you would like to find the location of the nearest true to the right of given indices.
-    You will receive Q queries, each of which has a type and a value. SET queries have type = 1 and GET queries have type = 2.
-    When you receive a SET query, the value of the query denotes an index in the array that is set to true. Note that these indices start at 1. When you receive a GET query, you must return the smallest index that contains a true value that is greater than or equal to the given index, or -1 if no such index exists.
-
-    Signature
+    Imagine a length-N array of booleans, initially all false.
+    Over time, some values are set to true, and at various points in time you would like to find the
+     location of the nearest true to the right of given
+     indices.
+    You will receive Q queries, each of which has a type and a value.
+    SET queries have type = 1 and GET queries have type = 2.
+    When you receive a SET query, the value of the query denotes an index in the array that is set to true.
+     Note that these indices start at 1.
+     When you receive a GET query, you must return the smallest index that contains a true value that is
+      greater than or equal to the given index, or -1 if no such index exists.
+    Signature:
         int[] answerQueries(ArrayList<Query> queries, int N)
-
-    Input
+    Input:
         A list of Q queries, formatted as [type, index] where type is either 1 or 2, and index is <= N
         1 <= N <= 1, 000, 000, 000
         1 <= Q <= 500, 000
-
-    Output
-        Return an array containing the results of all GET queries. The result of queries[i] is the smallest index that contains a true value that is greater than or equal to i, or -1 if no index satisfies those conditions.
-
-    Example
+    Output:
+        Return an array containing the results of all GET queries.
+        The result of queries[i] is the smallest index that contains a true value that is greater than or
+         equal to i, or -1 if no index satisfies those conditions.
+    Example:
         N = 5
         Q = 5
         queries = [[2, 3], [1, 2], [2, 1], [2, 3], [2, 2]]

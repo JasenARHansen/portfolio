@@ -17,7 +17,6 @@ private:
 
     StackNode *topNode;
     int stackSize;
-
 public:
     explicit QueueFromStack() : topNode(nullptr), stackSize(0) {}
 
@@ -75,7 +74,6 @@ public:
         if (this->size() == 0) {
             result = true;
         } else {
-
             result = false;
         }
         return result;
@@ -108,7 +106,6 @@ class QueueFromStackSlowPop {
 private:
     QueueFromStack storage;
     QueueFromStack bucketStorage;
-
 public:
     static void description() {
         cout << R"(Question: Queue from Stack
@@ -162,7 +159,6 @@ public:
         if (this->size() == 0) {
             result = true;
         } else {
-
             result = false;
         }
         return result;
@@ -177,7 +173,6 @@ class QueueFromStackSlowInsert {
 private:
     QueueFromStack storage;
     QueueFromStack bucketStorage;
-
 public:
     static void description() {
         cout << R"(Question: Queue from Stack
@@ -231,7 +226,6 @@ public:
         if (this->size() == 0) {
             result = true;
         } else {
-
             result = false;
         }
         return result;

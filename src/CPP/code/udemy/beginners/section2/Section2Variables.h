@@ -13,9 +13,7 @@ public:
     static string numAnimals();
 
     static void numAnimalsOut();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

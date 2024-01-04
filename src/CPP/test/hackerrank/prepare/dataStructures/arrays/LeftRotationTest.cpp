@@ -36,7 +36,6 @@ TEST(LeftRotationTest, rotLeft_3) {
     EXPECT_EQ(expected, result);
 }
 
-
 TEST(LeftRotationTest, rotLeft_4) {
     vector<int> expected{87, 97, 33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60};
     vector<int> a{33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};

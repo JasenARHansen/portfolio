@@ -12,8 +12,10 @@ public:
     static void description() {
         cout << R"(We're going to make our own Contacts application!
     The application must perform two types of operations:
-        1. add name, where name is a string denoting a contact name. This must store name as a new contact in the application.
-        2. find partial, where partial is a string denoting a partial name to search the application for. It must count the number of contacts starting with partial and print the count on a new line.
+        1: add name, where name is a string denoting a contact name.
+            This must store name as a new contact in the application.
+        2: find partial, where partial is a string denoting a partial name to search the application for.
+            It must count the number of contacts starting with partial and print the count on a new line.
     Given n sequential add and find operations, perform each operation in order.
     Example:
         Operations are requested as follows:
@@ -24,9 +26,12 @@ public:
             add edwina
             find edw
             find a
-        Three add operations include the names 'ed', 'eddie', and 'edward'. Next, 'find ed' matches all 3 names.
-        Note that it matches and counts the entire name 'ed'. Next, add 'edwina' and then find 'edw'. 2 names
-         match: 'edward' and 'edwina'. In the final operation, there are 0 names that start with 'a'.
+        Three add operations include the names 'ed', 'eddie', and 'edward'.
+        Next, 'find ed' matches all 3 names.
+        Note that it matches and counts the entire name 'ed'.
+        Next, add 'edwina' and then find 'edw'.
+        2 names match: 'edward' and 'edwina'.
+        In the final operation, there are 0 names that start with 'a'.
         Return the array [3, 2, 0].
     Function Description:
         Complete the contacts function below.
@@ -37,7 +42,7 @@ public:
     Input Format:
         The first line contains a single integer, n, the number of operations to perform (the size of queries[]).
         Each of the following n lines contains a string, queries[i].
-    Constraints
+    Constraints:
         1 ≤ n ≤ 10^5
         1 ≤ length of name ≤ 21
         1 ≤ length of partial ≤ 21
@@ -57,9 +62,10 @@ public:
     Explanation:
         Add a contact named hack.
         Add a contact named hackerrank.
-        Find the number of contact names beginning with hac. Both name start with hac, add  to the return array.
-        Find the number of contact names beginning with hak. neither name starts with hak, add  to the return array.)"
-             << endl;
+        Find the number of contact names beginning with hac.
+        Both name start with hac, add  to the return array.
+        Find the number of contact names beginning with hak.
+        Neither name starts with hak, add 0 to the return array.)" << endl;
     }
 
     Contacts() {
@@ -119,7 +125,6 @@ private:
     };
 
     class ContactTrei {
-
     public:
         ContactTrei() {
             this->node = new ContactsNode();

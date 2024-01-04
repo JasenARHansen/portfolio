@@ -11,7 +11,6 @@ using namespace std;
 
 class Section2Logic {
 public:
-
     static void ifStatement();
 
     static void ifElseStatement();
@@ -27,9 +26,7 @@ public:
     static void doWhileLoop();
 
     static void forLoop();
-
 };
-
 
 #endif
 #pragma clang diagnostic pop

@@ -12,12 +12,10 @@ public:
         cout << R"(Question 2: Look and Say
     Implement a function that outputs the Look and Say sequence:
         https://en.wikipedia.org/wiki/Look-and-say_sequence
-
     Example 1:
         Input: 1
         Output:
             1
-
     Example 2:
         Input: 4
         Output:
@@ -25,7 +23,6 @@ public:
             11
             21
             1211
-
     Example 3:
         Input: 10
         Output:
