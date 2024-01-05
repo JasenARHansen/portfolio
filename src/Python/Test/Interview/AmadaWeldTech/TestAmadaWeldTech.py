@@ -35,7 +35,7 @@ class TestFile(unittest.TestCase):
         )
 
 
-# noinspection SpellCheckingInspection
+# noinspection SpellCheckingInspection,PyUnresolvedReferences
 class TestValidatePageAccess(unittest.TestCase):
     """Test the elements visible at the root of the file."""
 
