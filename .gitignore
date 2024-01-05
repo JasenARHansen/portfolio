@@ -5,6 +5,9 @@ cmake-build-debug
 /out
 portfolio.iml
 
+# Pyc Files
+*.pyc
+
 # From CTCI
 # Compiled Object files
 *.slo
