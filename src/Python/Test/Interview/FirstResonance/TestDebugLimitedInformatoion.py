@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import unittest
+import io
+import unittest.mock
 
 import src.Python.Code.Interview.FirstResonance.DebugLimitedInformation as baseFile
 from src.Python.Code.Interview.FirstResonance.DebugLimitedInformation import DebugLimitedInformation
@@ -43,6 +44,11 @@ class TestDebugLimitedInformation(unittest.TestCase):
         my_class = DebugLimitedInformation()
         self.assertIsNotNone(my_class)
 
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_get_description_stdout(self, mock_stdout):
+        DebugLimitedInformation.get_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
+
     def test_get_description(self) -> None:
         """Nothing defined"""
-        DebugLimitedInformation.get_description()
+        self.assert_get_description_stdout()

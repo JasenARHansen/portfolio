@@ -5,7 +5,7 @@ class Epiris(object):
     """Epiris main class."""
 
     @staticmethod
-    def get_description_alphabetical():
+    def sort_alphabetical_description():
         print("""
               sort_alphabetical:
                 Given a string, sort it in decreasing order based on the
@@ -22,7 +22,7 @@ class Epiris(object):
                   output: dddccbbaaa""")
 
     @staticmethod
-    def get_description_numeric():
+    def sort_numeric_description():
         print("""
               sort_numeric:
                 Given a string, sort it in decreasing order based on the
@@ -39,7 +39,7 @@ class Epiris(object):
                   output: aaadddbbcc""")
 
     @staticmethod
-    def get_description_alphabetical_numeric():
+    def sort_alphabetical_numeric_description():
         print("""
               sort_alphabetical_numeric:
                 Given a string, sort it in decreasing order based on the
@@ -56,7 +56,7 @@ class Epiris(object):
                   output: dddcccbbaaa""")
 
     @staticmethod
-    def get_description_numeric_alphabetical():
+    def sort_numeric_alphabetical_description():
         print("""
               sort_numeric_alphabetical:
                 Given a string, sort it in decreasing order based on the

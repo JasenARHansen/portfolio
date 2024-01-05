@@ -714,7 +714,7 @@ class AIM(object):
         return output_dictionary
 
     @staticmethod
-    def find_irregular_help():
+    def find_irregular_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                irregular quadrilaterals that can be formed from those points.
               Irregular quadrilateral are defined a four-sided shape where no sides are equal in length and no
@@ -732,7 +732,7 @@ class AIM(object):
         return results["irregular"]
 
     @staticmethod
-    def find_kite_help():
+    def find_kite_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                kite quadrilaterals that can be formed from those points.
               Kites are defined as having 4 sides, formed with 4 points. Two pairs of adjacent sides are of
@@ -749,7 +749,7 @@ class AIM(object):
         return results["kite"]
 
     @staticmethod
-    def find_isosceles_trapezoid_help():
+    def find_isosceles_trapezoid_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                isosceles trapezoid quadrilaterals that can be formed from those points.
               Isosceles trapezoid are defined as having 4 sides, formed with 4 points. Two sides are parallel and
@@ -766,7 +766,7 @@ class AIM(object):
         return results["isosceles_trapezoid"]
 
     @staticmethod
-    def find_trapezoid_help():
+    def find_trapezoid_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                trapezoid quadrilaterals that can be formed from those points.
               Trapezoid are defined as having 4 sides, formed with 4 points. Two sides are parallel, but the other
@@ -783,7 +783,7 @@ class AIM(object):
         return results["trapezoid"]
 
     @staticmethod
-    def find_parallelogram_help():
+    def find_parallelogram_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                parallelograms that can be formed from those points.
               Parallelograms are defined as having 4 sides, formed with 4 points. Opposite sides are parallel,
@@ -800,7 +800,7 @@ class AIM(object):
         return results["parallelogram"]
 
     @staticmethod
-    def find_rhombus_help():
+    def find_rhombus_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct
                rhombuses that can be formed from those points.
               Rhombuses are defined as having a special type of parallelogram in which all four sides are the
@@ -817,7 +817,7 @@ class AIM(object):
         return results["rhombus"]
 
     @staticmethod
-    def find_rectangle_help():
+    def find_rectangle_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct rectangles
                that can be formed from those points.
               Rectangles are defined as having 4 sides, formed with 4 points. Four internal right angles,
@@ -835,7 +835,7 @@ class AIM(object):
         return results["rectangle"]
 
     @staticmethod
-    def find_square_help():
+    def find_square_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct squares
                that can be formed from those points.
               Squares are defined as having 4 sides, formed with 4 points. Four sides of equal length, four
@@ -860,7 +860,7 @@ class AIM(object):
         return results["square"]
 
     @staticmethod
-    def find_triangle_help():
+    def find_triangle_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Write a function triangle that takes in a set of tuples, where each tuple (x, y) represents
@@ -939,7 +939,7 @@ class AIM(object):
         return output_dictionary
 
     @staticmethod
-    def find_triangle_scalene_help():
+    def find_triangle_scalene_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Scalene triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
@@ -956,7 +956,7 @@ class AIM(object):
         return results["scalene"]
 
     @staticmethod
-    def find_triangle_acute_help():
+    def find_triangle_acute_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Acute triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
@@ -973,7 +973,7 @@ class AIM(object):
         return results["acute"]
 
     @staticmethod
-    def find_triangle_obtuse_help():
+    def find_triangle_obtuse_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Obtuse triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
@@ -990,7 +990,7 @@ class AIM(object):
         return results["obtuse"]
 
     @staticmethod
-    def find_triangle_right_help():
+    def find_triangle_right_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Right triangles are defined as having 3 sides, formed with 3 non collinear points. The 3 sides do not
@@ -1007,7 +1007,7 @@ class AIM(object):
         return results["right"]
 
     @staticmethod
-    def find_triangle_isosceles_help():
+    def find_triangle_isosceles_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Isosceles triangles are defined as having 3 sides, formed with 3 non collinear points. 2 sides must
@@ -1024,7 +1024,7 @@ class AIM(object):
         return results["isosceles"]
 
     @staticmethod
-    def help_find_triangle_equilateral():
+    def find_triangle_equilateral_description():
         print("""              Given a set of distinct points in the x-y plane, find the number of distinct triangles
                that can be formed from those points.
               Equilateral triangles are defined as having 3 sides, formed with 3 non collinear points. All 3 sides

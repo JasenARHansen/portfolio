@@ -2,8 +2,8 @@
 
 import unittest
 
-import src.Python.Code.Challenge.PowersOfBase as baseFile
-from src.Python.Code.Challenge.PowersOfBase import PowersOfBase
+import src.Python.Code.Challenge.HackerRank.PowersOfBase as baseFile
+from src.Python.Code.Challenge.HackerRank.PowersOfBase import PowersOfBase
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection

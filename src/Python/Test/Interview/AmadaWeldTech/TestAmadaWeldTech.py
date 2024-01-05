@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+import io
 import os
-import unittest
-
+import unittest.mock
+import shutil
 import src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
 from src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech import AmadaWeldTech
 
@@ -38,8 +39,45 @@ class TestFile(unittest.TestCase):
 class TestValidatePageAccess(unittest.TestCase):
     """Test the elements visible at the root of the file."""
 
+    @classmethod
+    def setUpClass(cls):
+        cls.directory_list = {"data"}
+        # Dynamically generate a file to ./data/data.txt as a default file
+        input_file = os.path.dirname(os.path.abspath(__file__))
+        input_file = os.path.join(input_file, list(cls.directory_list)[0])
+        input_file = os.path.join(input_file, "data.txt")
+        # Check whether the specified path exists or not. If not, create it
+        if not os.path.exists(os.path.dirname(input_file)):
+            # Create a new directory because it does not exist
+            os.makedirs(os.path.dirname(input_file))
+        # Generate default data file
+        default_data = ["1. This is my interview.", "2. I did very well!", "3. I will definitely get the job!!"]
+        output = open(input_file, 'w+')
+        for data in default_data:
+            output.write(f"{data}\n")
+        output.close()
+
+    @classmethod
+    def tearDownClass(cls):
+        # Making a variable in case I want to keep the directories during a test to troubleshoot.
+        delete_directories = True
+        if delete_directories:
+            for directory in cls.directory_list:
+                target = os.path.dirname(os.path.abspath(__file__))
+                target = os.path.join(target, directory)
+                shutil.rmtree(target)
+
     def setUp(self):
         self.directory_base = f"{os.path.dirname(os.path.abspath(__file__))}"
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_get_description_stdout(self, mock_stdout):
+        AmadaWeldTech.get_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
+
+    def test_get_description(self) -> None:
+        """Nothing defined"""
+        self.assert_get_description_stdout()
 
     def test_init(self) -> None:
         """Assert init creates an object.
@@ -50,6 +88,8 @@ class TestValidatePageAccess(unittest.TestCase):
     def test_init_filename(self) -> None:
         """Assert init creates an object.
         """
+        target = "data"
+        self.directory_list.add(target)
         my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
         self.assertIsNotNone(my_class)
 
@@ -74,12 +114,16 @@ class TestValidatePageAccess(unittest.TestCase):
     def test_reverse_character_filename(self) -> None:
         """Reverse characters, and output file.
         """
+        target = "data"
+        self.directory_list.add(target)
         my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
         my_class.reverse_characters()
 
     def test_reverse_reverse_characters_filename_directory_does_not_exist(self) -> None:
         """Reverse lines and characters output file.
         """
+        target = "d1"
+        self.directory_list.add(target)
         my_class = AmadaWeldTech(input_file=self.directory_base + r'\d1\d\data1.txt')
         my_class.reverse_characters()
 
@@ -104,6 +148,8 @@ class TestValidatePageAccess(unittest.TestCase):
     def test_reverse_lines_filename(self) -> None:
         """Reverse lines, and output file.
         """
+        target = "data"
+        self.directory_list.add(target)
         my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
         my_class.reverse_lines()
 
@@ -146,6 +192,8 @@ class TestValidatePageAccess(unittest.TestCase):
     def test_rotate_lines_filename(self) -> None:
         """rotate lines, and output file.
         """
+        target = "data"
+        self.directory_list.add(target)
         my_class = AmadaWeldTech(input_file=self.directory_base + r'\data\data1.txt')
         my_class.rotate_lines()
 

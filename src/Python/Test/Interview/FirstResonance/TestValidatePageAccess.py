@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import unittest
+import io
+import unittest.mock
 
 import src.Python.Code.Interview.FirstResonance.ValidatePageAccess as baseFile
 from src.Python.Code.Interview.FirstResonance.ValidatePageAccess import ValidatePageAccess
@@ -43,6 +44,11 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class = ValidatePageAccess()
         self.assertIsNotNone(my_class)
 
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_sort_alphabetical_description_stdout(self, mock_stdout):
+        ValidatePageAccess.get_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
+
     def test_get_description(self) -> None:
         """Nothing defined"""
-        ValidatePageAccess.get_description()
+        self.assert_sort_alphabetical_description_stdout()

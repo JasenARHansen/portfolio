@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import unittest
+import io
+import unittest.mock
 
 import src.Python.Code.Interview.Epiris.Epiris as baseFile
 from src.Python.Code.Interview.Epiris.Epiris import Epiris
@@ -44,180 +45,230 @@ class TestValidatePageAccess(unittest.TestCase):
         my_class = Epiris()
         self.assertIsNotNone(my_class)
 
-    def test_get_description_alphabetical(self) -> None:
-        """Nothing defined"""
-        Epiris.get_description_alphabetical()
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_sort_alphabetical_description_stdout(self, mock_stdout):
+        Epiris.sort_alphabetical_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
 
-    def test_get_description_numeric(self) -> None:
+    def test_sort_alphabetical_description(self) -> None:
         """Nothing defined"""
-        Epiris.get_description_numeric()
+        self.assert_sort_alphabetical_description_stdout()
 
-    def test_get_description_alphabetical_numeric(self) -> None:
-        """Nothing defined"""
-        Epiris.get_description_alphabetical_numeric()
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_sort_numeric_description_stdout(self, mock_stdout):
+        Epiris.sort_numeric_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
 
-    def test_get_description_numeric_alphabetical(self) -> None:
+    def test_sort_numeric_description(self) -> None:
         """Nothing defined"""
-        Epiris.get_description_numeric_alphabetical()
+        self.assert_sort_numeric_description_stdout()
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_sort_alphabetical_numeric_description_stdout(self, mock_stdout):
+        Epiris.sort_alphabetical_numeric_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
+
+    def test_sort_alphabetical_numeric_description_numeric(self) -> None:
+        """Nothing defined"""
+        self.assert_sort_alphabetical_numeric_description_stdout()
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_sort_numeric_alphabetical_description_stdout(self, mock_stdout):
+        Epiris.sort_numeric_alphabetical_description()
+        self.assertIsNotNone(mock_stdout.getvalue())
+
+    def test_sort_numeric_alphabetical_description(self) -> None:
+        """Nothing defined"""
+        self.assert_sort_numeric_alphabetical_description_stdout()
 
     def test_output_sort_alphabetical_1(self) -> None:
         """Nothing defined"""
+        expected = "nnbaaa"
         word = "banana"
         reverse = True
-        print(f"alphabetical: word = {word} reversed = {reverse} result = {Epiris.sort_alphabetical(value=word)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_2(self) -> None:
         """Nothing defined"""
+        expected = "aaabnn"
         word = "banana"
         reverse = False
-        print(f"alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_3(self) -> None:
         """Nothing defined"""
+        expected = "tree"
         word = "tree"
         reverse = True
-        print(f"alphabetical: word = {word} reversed = {reverse} result = {Epiris.sort_alphabetical(value=word)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_4(self) -> None:
         """Nothing defined"""
+        expected = "eert"
         word = "tree"
         reverse = False
-        print(f"alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_5(self) -> None:
         """Nothing defined"""
+        expected = "dddccbbaaa"
         word = "abcdabcdad"
         reverse = True
-        print(f"alphabetical: word = {word} reversed = {reverse} result = {Epiris.sort_alphabetical(value=word)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_6(self) -> None:
         """Nothing defined"""
+        expected = "aaabbccddd"
         word = "abcdabcdad"
         reverse = False
-        print(f"alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_1(self) -> None:
         """Nothing defined"""
+        expected = "aaannb"
         word = "banana"
         reverse = True
-        print(f"numeric: word = {word} reversed = {reverse} result = {Epiris.sort_numeric(value=word)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_2(self) -> None:
         """Nothing defined"""
+        expected = "bnnaaa"
         word = "banana"
         reverse = False
-        print(f"numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_3(self) -> None:
         """Nothing defined"""
+        expected = "eetr"
         word = "tree"
         reverse = True
-        print(f"numeric: word = {word} reversed = {reverse} result = {Epiris.sort_numeric(value=word)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_4(self) -> None:
         """Nothing defined"""
+        expected = "tree"
         word = "tree"
         reverse = False
-        print(f"numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_5(self) -> None:
         """Nothing defined"""
+        expected = "aaadddbbcc"
         word = "abcdabcdad"
         reverse = True
-        print(f"numeric: word = {word} reversed = {reverse} result = {Epiris.sort_numeric(value=word)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_6(self) -> None:
         """Nothing defined"""
+        expected = "bbccaaaddd"
         word = "abcdabcdad"
         reverse = False
-        print(f"numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_1(self) -> None:
         """Nothing defined"""
+        expected = "nnbaaa"
         word = "banana"
         reverse = True
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_2(self) -> None:
         """Nothing defined"""
+        expected = "aaabnn"
         word = "banana"
         reverse = False
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_3(self) -> None:
         """Nothing defined"""
+        expected = "tree"
         word = "tree"
         reverse = True
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_4(self) -> None:
         """Nothing defined"""
+        expected = "eert"
         word = "tree"
         reverse = False
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_5(self) -> None:
         """Nothing defined"""
+        expected = "dddcccbbaaa"
         word = "abcdabcdadc"
         reverse = True
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_alphabetical_numeric_6(self) -> None:
         """Nothing defined"""
+        expected = "aaabbcccddd"
         word = "abcdabcdadc"
         reverse = False
-        print(f"alphabetical_numeric: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)}")
+        result = Epiris.sort_alphabetical_numeric(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_1(self) -> None:
         """Nothing defined"""
+        expected = "aaannb"
         word = "banana"
         reverse = True
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_2(self) -> None:
         """Nothing defined"""
+        expected = "bnnaaa"
         word = "banana"
         reverse = False
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_3(self) -> None:
         """Nothing defined"""
+        expected = "eetr"
         word = "tree"
         reverse = True
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_4(self) -> None:
         """Nothing defined"""
+        expected = "rtee"
         word = "tree"
         reverse = False
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_5(self) -> None:
         """Nothing defined"""
+        expected = "dddaaaccbb"
         word = "abcdabcdad"
         reverse = True
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
 
     def test_output_sort_numeric_alphabetical_6(self) -> None:
         """Nothing defined"""
+        expected = "bbccaaaddd"
         word = "abcdabcdad"
         reverse = False
-        print(f"numeric_alphabetical: word = {word} reversed = {reverse} result ="
-              f" {Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)}")
+        result = Epiris.sort_numeric_alphabetical(value=word, reverse=reverse)
+        self.assertEqual(expected, result)
