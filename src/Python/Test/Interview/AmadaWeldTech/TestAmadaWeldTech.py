@@ -2,8 +2,9 @@
 
 import io
 import os
-import unittest.mock
 import shutil
+import unittest.mock
+
 import src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech as baseFile
 from src.Python.Code.Interview.AmadaWeldTech.AmadaWeldTech import AmadaWeldTech
 

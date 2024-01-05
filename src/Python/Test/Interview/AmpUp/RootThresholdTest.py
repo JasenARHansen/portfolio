@@ -18,7 +18,7 @@ class TestRootThreshold(unittest.TestCase):
         """Get class description"""
         self.assert_description_stdout()
 
-    def test_numDevices_1(self) -> None:
+    def test_numDevices(self) -> None:
         """Execute numDevices"""
         expected = 3
         status_query = "STOPPED"

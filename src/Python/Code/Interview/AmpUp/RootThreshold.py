@@ -89,28 +89,26 @@ class RootThreshold(object):
         date = dateStr.split("-")
         target_year = int(date[1])
         target_month = int(date[0])
-        url = "https://jsonmock.hackerrank.com/api/iot_devices/search?status=<statusQuery>&page=<pageNumber>"
-        url = url.replace("<statusQuery>", statusQuery)
-        url_stored = url
+        template = "https://jsonmock.hackerrank.com/api/iot_devices/search?status=<statusQuery>&page=<pageNumber>"
+        template = template.replace("<statusQuery>", statusQuery)
         page = 0
         while True:
-            url = url_stored.replace("<pageNumber>", str(page))
+            url = template.replace("<pageNumber>", str(page))
             page += 1
             response = requests.get(url)
-            data = response.json()
-            if len(data["data"]) == 0:
+            json = response.json()
+            if len(json['data']) == 0:
                 # no data on page
                 break
             else:
-                # data returned
-                subData = data["data"]
-                for element in subData:
+                # process data returned
+                for element in json['data']:
                     timestamp = element['timestamp']
                     # Data is stored with too much precision so truncating last 3 digits
                     timestamp = int(timestamp / 1000)
                     dt_object = datetime.fromtimestamp(timestamp)
                     if target_year == dt_object.year and target_month == dt_object.month:
-                        operatingThreshold = element["operatingParams"]["rootThreshold"]
+                        operatingThreshold = element['operatingParams']['rootThreshold']
                         if operatingThreshold > threshold:
                             total += 1
         return total

@@ -28,7 +28,7 @@ class ProfitAnalysis(object):
         long_int: the sum of a contiguous subarray of size at most k that has the largest sum
     Constraints:
         1 ≤ n ≤ 2 * 10^5
-        -109 ≤ pnl[i] ≤ 109
+        -10^9 ≤ pnl[i] ≤ 10^9
         1 ≤ k ≤ n
     Input Format For Custom Testing:
         The first line contains an integer, n, denoting the number of elements in pnl.
@@ -39,7 +39,7 @@ class ProfitAnalysis(object):
             STDIN         FUNCTION
             -----         --------
             7        →    pnl[] size n = 7
-            4        →    pnl = [4, 3, -2, 9, -4, 2, 7, 6]
+            4        →    pnl = [4, 3, -2, 9, -4, 2, 7]
             3
             -2
             9
@@ -52,13 +52,14 @@ class ProfitAnalysis(object):
     Explanation:
         Given n = 7, pnl = [4, 3, -2, 9, -4, 2, 7], k = 6.
         We can select the subarray [3, -2, 9, -4, 2, 7] with sum = 15 and size 6 which is equal to k = 6.
-    Hence, the answer is 15. It can be shown that the answer cannot be greater than 15.
+    Hence, the answer is 15.
+    It can be shown that the answer cannot be greater than 15.
     Sample Case 1:
         Sample Input For Custom Testing
         STDIN         FUNCTION
         -----         --------
         8        →    pnl[] size n = 8  
-        2        →    pnl = [5, -7, 8, -6, 4, 1, -9, 5]
+        2        →    pnl = [2, 5, -7, 8, -6, 4, 1, -9]
         5
         -7
         8
@@ -72,23 +73,24 @@ class ProfitAnalysis(object):
     Explanation:
         Given n = 8, pnl = [2, 5, -7, 8, -6, 4, 1, -9] , k = 5.
         We can select the subarray [2, 5, -7, 8] with sum = 8 and size 4 which is less than k = 5.
-    Hence, the answer is 8. It can be shown that the answer cannot be greater than 8.""")
+    Hence, the answer is 8.
+    It can be shown that the answer cannot be greater than 8.""")
 
     @staticmethod
     def getMaxProfit(pnl, k: int):
         """getMaxProfit."""
-        maxProfit = pnl[0]
-        if pnl[0] <= 0:
-            maxProfit = 0
+        maxProfit = 0
         length = len(pnl)
         for start in range(0, length):
-            currentProfit = 0
-            for offset in range(0, k):
-                index = start + offset
-                if index < length:
-                    currentProfit += pnl[index]
-                    if currentProfit > maxProfit:
-                        maxProfit = currentProfit
-                else:
-                    break
+            # If start value is greater than 0 process, otherwise skip
+            if pnl[start] > 0:
+                currentProfit = pnl[start]
+                for offset in range(1, k):
+                    index = start + offset
+                    if index < length:
+                        currentProfit += pnl[index]
+                        if currentProfit > maxProfit:
+                            maxProfit = currentProfit
+                    else:
+                        break
         return maxProfit

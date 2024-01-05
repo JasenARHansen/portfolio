@@ -22,9 +22,6 @@ class TestProfitAnalysis(unittest.TestCase):
         """Execute getMaxProfit"""
         expected = 8
         pnl = [-3, 4, 3, -2, 2, 5]
-        n = 6
-        if n < len(pnl):
-            pnl = pnl[0:n]
         k = 4
         result = ProfitAnalysis.getMaxProfit(pnl=pnl, k=k)
         self.assertEqual(expected, result)
@@ -32,10 +29,7 @@ class TestProfitAnalysis(unittest.TestCase):
     def test_getMaxProfit_2(self) -> None:
         """Execute getMaxProfit"""
         expected = 15
-        pnl = [4, 3, -2, 9, -4, 2, 7, 6]
-        n = 7
-        if n < len(pnl):
-            pnl = pnl[0:n]
+        pnl = [4, 3, -2, 9, -4, 2, 7]
         k = 6
         result = ProfitAnalysis.getMaxProfit(pnl=pnl, k=k)
         self.assertEqual(expected, result)
@@ -43,10 +37,7 @@ class TestProfitAnalysis(unittest.TestCase):
     def test_getMaxProfit_3(self) -> None:
         """Execute getMaxProfit"""
         expected = 8
-        pnl = [5, -7, 8, -6, 4, 1, -9, 5]
-        n = 8
-        if n < len(pnl):
-            pnl = pnl[0:n]
+        pnl = [2, 5, -7, 8, -6, 4, 1, -9]
         k = 5
         result = ProfitAnalysis.getMaxProfit(pnl=pnl, k=k)
         self.assertEqual(expected, result)
@@ -55,9 +46,6 @@ class TestProfitAnalysis(unittest.TestCase):
         """Execute getMaxProfit"""
         expected = 0
         pnl = [-7, -5, -8, -6, -7]
-        n = 5
-        if n < len(pnl):
-            pnl = pnl[0:n]
         k = 3
         result = ProfitAnalysis.getMaxProfit(pnl=pnl, k=k)
         self.assertEqual(expected, result)
