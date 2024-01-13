@@ -127,5 +127,25 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_12) {
     EXPECT_EQ(expected, result);
 }
 
+TEST(Snap_Interview_2024_1_12_Test, isPathExists_13) {
+    auto expected = true;
+    vector<string> words = {"aaba", "abaa", "abba", "bbba", "bbbb", "aaaa", "cccc", "aaca"};
+    auto a = "aaaa";
+    auto b = "bbbb";
+    auto pathFinder = new WordPathFinder(words);
+    auto result = pathFinder->isPathExists(a, b);
+    EXPECT_EQ(expected, result);
+}
+
+TEST(Snap_Interview_2024_1_12_Test, isPathExists_14) {
+    auto expected = true;
+    vector<string> words = {"aaba", "abaa", "abba", "bbba", "bbbb", "aaaa", "cccc", "aaca"};
+    auto a = "aaaa";
+    auto b = "bbbb";
+    auto pathFinder = WordPathFinder(words);
+    auto result = pathFinder.isPathExists(a, b);
+    EXPECT_EQ(expected, result);
+}
+
 #endif
 #pragma clang diagnostic pop

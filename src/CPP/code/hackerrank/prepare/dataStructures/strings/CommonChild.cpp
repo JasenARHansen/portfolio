@@ -65,6 +65,7 @@ public:
     }
 
     static int commonChild(const string &s1, const string &s2) {
+        // TODO: Implement
         auto result = 0;
         int s1pointer, s2pointer, localChildLength;
         for (auto s1Start = 0; s1Start < s1.size(); s1Start++) {
