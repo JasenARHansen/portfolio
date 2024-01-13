@@ -11,7 +11,7 @@ TEST(FizzBuzzTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FizzBuzzTest, fizzBuzz_1){
+TEST(FizzBuzzTest, fizzBuzz_1) {
     auto expected = "1\n"
                     "2\n"
                     "Fizz\n"
@@ -32,5 +32,6 @@ TEST(FizzBuzzTest, fizzBuzz_1){
     FizzBuzz::fizzBuzz(input);
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
+
 #endif
 #pragma clang diagnostic pop

@@ -6,7 +6,7 @@
 #include "gtest/gtest.h"
 #include "../../../code/interview/tesla/Tesla_2023_12_1.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Tesla_Interview_2023_12_1_Test, temp_1) {
+TEST(Tesla_Interview_2023_12_1_Test, GetReadingAtTime_1) {
     srand(time(nullptr));
     auto s = Sensor();
     auto reading = s.GetReading();

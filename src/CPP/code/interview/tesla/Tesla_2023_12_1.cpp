@@ -1,8 +1,8 @@
 #pragma clang diagnostic push
-#pragma ide diagnostic ignored "cppcoreguidelines-pro-type-member-init"
-#pragma ide diagnostic ignored "cert-msc51-cpp"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+#pragma ide diagnostic ignored "cppcoreguidelines-pro-type-member-init"
 #pragma ide diagnostic ignored "cert-msc50-cpp"
+#pragma ide diagnostic ignored "cert-msc51-cpp"
 /*
     Aristos C++ interview question
 */
@@ -61,6 +61,7 @@ VoltageSensorReading getVoltageReading() {
             ret.voltage = double(randInt());
             break;
         default:
+            ret.status = Error; // Not technically necessary since an exception is thrown but clears warnings
             throw std::runtime_error("not possible - programming error");
     }
     ret.timestamp = Time::now();
@@ -80,7 +81,7 @@ VoltageSensorReading getVoltageReading() {
 /*
     Design a class that lets us read the values from a voltage sensor.
     The library will be used by other programmers in their code.
-    Expect it to be used in a multi-threaded program.
+    Expect it to be used in a multithreaded program.
     Use the provided low-level function getVoltageReading().
 */
 class Sensor {
@@ -169,7 +170,7 @@ private:
                 dataLock.lock();
                 if (data.status == Valid) {
                     history.emplace_back(data.timestamp, data.voltage);
-                } else if (!history.empty() && (data.status == NoChange)) {
+                } else if (!history.empty()) {
                     // Edge case 1: If the history is empty we do not want to store 0 on an initial
                     //   NoChange so skip
                     // Edge case 2: If the history is not empty we do not want to store 0 on NoChange
