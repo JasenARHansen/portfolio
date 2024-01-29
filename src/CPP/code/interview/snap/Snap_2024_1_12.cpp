@@ -67,17 +67,17 @@ public:
         // Check length equality
         if (a.length() != b.length()) { return false; }
         // Processed set: Words processed so to prevent reprocessing
-        set<string> processed = {a};
+        set<string> processed;
+        // Push initial word into processed so it will not be processed an extra time
+        processed.insert(a);
         // Candidates stack: Words that might be part of the path to the target
         queue<string> candidates;
-        // True is returned if the target word is found in the initial candidate list processing
-        if (processCandidate(a, b, &candidates, &processed)) { return true; }
+        // Push initial word into candidates for processing
+        candidates.push(a);
         // While candidates is not empty, process subsequent candidates
         while (!candidates.empty()) {
-            auto candidate = candidates.front();
-            candidates.pop();
-            // True is returned if the target word is found in the subsequent candidate list processing
-            if (processCandidate(candidate, b, &candidates, &processed)) { return true; }
+            // True is returned if the target word is found in the candidate list processing
+            if (processCandidate(b, &candidates, &processed)) { return true; }
         }
         // No path found
         return false;
@@ -113,20 +113,21 @@ private:
         return true;
     }
 
-    bool processCandidate(const string &source, const string &target, queue<string> *candidates,
-                          set<string> *processed) {
-        // Iterate over all words that have the same length as the source
-        for (const string &word: data.at((int) source.length())) {
+    bool processCandidate(const string &target, queue<string> *candidates, set<string> *processed) {
+        auto candidate = candidates->front();
+        candidates->pop();
+        // Iterate over all words that have the same length as the candidate
+        for (const string &word: data.at((int) candidate.length())) {
             // Verify that the word has not been examined
             if (!processed->count(word)) {
                 // Find all unprocessed words that are single edits from the source
-                if (oneEdit(source, word)) {
+                if (oneEdit(candidate, word)) {
                     // Test to see if target found
                     if (word == target) { return true; }
-                    // Add word to processed so it does not get reprocessed
-                    processed->insert(word);
                     // Add word to candidates so it will be evaluated
                     candidates->push(word);
+                    // Add word to processed so it does not get reprocessed
+                    processed->insert(candidate);
                 }
             }
         }
