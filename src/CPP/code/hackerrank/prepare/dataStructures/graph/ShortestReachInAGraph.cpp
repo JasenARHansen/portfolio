@@ -18,12 +18,12 @@ public:
 
     class Graph {
     private:
-        struct GraphNode {
+        struct Node {
             set<int> adjacent;
 
-            explicit GraphNode() {}
+            explicit Node() = default;
 
-            set<int> getAdjacent() const {
+            [[nodiscard]] set<int> getAdjacent() const {
                 return this->adjacent;
             }
 
@@ -32,11 +32,11 @@ public:
             }
         };
 
-        map<int, GraphNode *> nodes;
+        map<int, Node *> nodes;
     public:
-        Graph(int n) {
+        explicit Graph(int n) {
             for (auto i = 0; i < n; i++) {
-                GraphNode *node = new GraphNode();
+                auto *node = new Node();
                 this->nodes[i] = node;
             }
         }
@@ -83,6 +83,7 @@ public:
                 }
             }
             vector<int> process{};
+            process.reserve(this->nodes.size());
             for (auto i = 0; i < this->nodes.size(); i++) {
                 process.push_back(i);
             }
@@ -159,9 +160,9 @@ public:
 
     class Graph {
     public:
-        Graph(int n) : weight(6) {
+        explicit Graph(int n) : weight(6) {
             for (auto i = 0; i < n; i++) {
-                GraphNode *node = new GraphNode();
+                auto *node = new Node();
                 this->nodes[i + 1] = node;
             }
         }
@@ -228,12 +229,12 @@ public:
         }
 
     private:
-        struct GraphNode {
+        struct Node {
             set<int> adjacent;
 
-            explicit GraphNode() {}
+            explicit Node() = default;
 
-            set<int> getAdjacent() const {
+            [[nodiscard]] set<int> getAdjacent() const {
                 return this->adjacent;
             }
 
@@ -243,7 +244,7 @@ public:
         };
 
         int weight;
-        map<int, GraphNode *> nodes;
+        map<int, Node *> nodes;
     };
 };
 
@@ -308,9 +309,9 @@ public:
 
     class Graph {
     public:
-        Graph(int n) : weight(6) {
+        explicit Graph(int n) : weight(6) {
             for (auto i = 0; i < n; i++) {
-                GraphNode *node = new GraphNode();
+                auto *node = new Node();
                 this->nodes[i + 1] = node;
             }
         }
@@ -378,12 +379,12 @@ public:
         }
 
     private:
-        struct GraphNode {
+        struct Node {
             set<int> adjacent;
 
-            explicit GraphNode() {}
+            explicit Node() = default;
 
-            set<int> getAdjacent() const {
+            [[nodiscard]] set<int> getAdjacent() const {
                 return this->adjacent;
             }
 
@@ -393,7 +394,7 @@ public:
         };
 
         int weight;
-        map<int, GraphNode *> nodes;
+        map<int, Node *> nodes;
     };
 };
 

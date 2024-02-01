@@ -8,17 +8,17 @@
 
 using namespace std;
 
-struct BinaryTreeNode {
-    int data;
-    BinaryTreeNode *left;
-    BinaryTreeNode *right;
-
-    explicit BinaryTreeNode(int data) : data(data), left(nullptr), right(nullptr) {}
-};
-
 class BinaryTree {
 private:
-    BinaryTreeNode *root;
+    struct Node {
+        int data;
+        Node *left;
+        Node *right;
+
+        explicit Node(int data) : data(data), left(nullptr), right(nullptr) {}
+    };
+
+    Node *root;
     int treeSize;
 public:
     explicit BinaryTree() : root(nullptr), treeSize(0) {}
@@ -36,8 +36,9 @@ public:
 
     void insert(int data) {
         if (this->root == nullptr) {
-            this->root = new BinaryTreeNode(data);
+            this->root = new Node(data);
         } else {
+            // TODO: finish
             auto working = this->root;
             if (true) {
             }
@@ -47,9 +48,9 @@ public:
     vector<string> serializeTree() {
         vector<string> data;
         if (this->root != nullptr) {
-            queue<BinaryTreeNode *> nodes;
-            vector<BinaryTreeNode *> levelA;
-            vector<BinaryTreeNode *> levelB;
+            queue<Node *> nodes;
+            vector<Node *> levelA;
+            vector<Node *> levelB;
             levelA.push_back(this->root);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
@@ -140,40 +141,40 @@ public:
         return data;
     }
 
-    static BinaryTreeNode *deserializeTree(vector<string> values) {
-        BinaryTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<BinaryTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new BinaryTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new BinaryTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new BinaryTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                BinaryTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new BinaryTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new BinaryTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -187,7 +188,7 @@ public:
     void deleteTree() {
         auto current = this->root;
         if (current != nullptr) {
-            queue<BinaryTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();

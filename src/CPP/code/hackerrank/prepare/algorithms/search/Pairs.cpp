@@ -90,7 +90,7 @@ public:
         Explaining using index values for: [1, 3, 1, 3, 1]: [1, 0], [4, 0], [1, 2], [4, 2], [1, 4], [4, 4].)" << endl;
     }
 
-    static int pairs(int k, const vector<int>& arr) {
+    static int pairs(int k, const vector<int> &arr) {
         auto result = 0;
         set<int> processed(arr.begin(), arr.end());
         for (auto itr: processed) {
@@ -101,7 +101,7 @@ public:
         return result;
     }
 
-    static int pairs_non_unique(int k, const vector<int>& arr) {
+    static int pairs_non_unique(int k, const vector<int> &arr) {
         auto result = 0;
         map<int, int> data;
         for (auto value: arr) {

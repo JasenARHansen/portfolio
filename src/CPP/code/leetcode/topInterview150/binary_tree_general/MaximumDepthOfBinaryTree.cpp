@@ -8,20 +8,20 @@
 
 using namespace std;
 
-struct MaximumDepthOfBinaryTreeNode {
-    int val;
-    MaximumDepthOfBinaryTreeNode *left;
-    MaximumDepthOfBinaryTreeNode *right;
-
-    MaximumDepthOfBinaryTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit MaximumDepthOfBinaryTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    MaximumDepthOfBinaryTreeNode(int x, MaximumDepthOfBinaryTreeNode *left, MaximumDepthOfBinaryTreeNode *right) : val(
-            x), left(left), right(right) {}
-};
-
 class MaximumDepthOfBinaryTree {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(104: Maximum Depth of Binary Tree
@@ -39,40 +39,40 @@ public:
         -100 ≤ AddTwoNumbersListNode.val ≤ 100)" << endl;
     }
 
-    static MaximumDepthOfBinaryTreeNode *deserializeTree(vector<string> values) {
-        MaximumDepthOfBinaryTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<MaximumDepthOfBinaryTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                MaximumDepthOfBinaryTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new MaximumDepthOfBinaryTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -83,10 +83,10 @@ public:
         return root;
     }
 
-    static void deleteTree(MaximumDepthOfBinaryTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<MaximumDepthOfBinaryTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -103,7 +103,7 @@ public:
         *head = nullptr;
     }
 
-    static int maxDepth(MaximumDepthOfBinaryTreeNode *root) {
+    static int maxDepth(Node *root) {
         auto result = 0;
         if (root != nullptr) {
             result = 1;

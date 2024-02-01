@@ -7,23 +7,24 @@
 
 using namespace std;
 
-class NumberOfVisibleNodesNode {
-public:
-    int data;
-    NumberOfVisibleNodesNode *left;
-    NumberOfVisibleNodesNode *right;
-
-    NumberOfVisibleNodesNode() : data(0), left(nullptr), right(nullptr) {}
-
-    explicit NumberOfVisibleNodesNode(int data) : data(data), left(nullptr), right(nullptr) {}
-
-    NumberOfVisibleNodesNode(int data, NumberOfVisibleNodesNode *left,
-                             NumberOfVisibleNodesNode *right) : data(data),
-                                                                left(left),
-                                                                right(right) {}
-};
-
 class NumberOfVisibleNodes {
+private:
+    class Node {
+    public:
+        int data;
+        Node *left;
+        Node *right;
+
+        Node() : data(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int data) : data(data), left(nullptr), right(nullptr) {}
+
+        Node(int data, Node *left,
+             Node *right) : data(data),
+                            left(left),
+                            right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(Number of Visible Nodes
@@ -50,40 +51,40 @@ public:
     output = 4)" << endl;
     }
 
-    static NumberOfVisibleNodesNode *deserializeTree(vector<string> values) {
-        NumberOfVisibleNodesNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<NumberOfVisibleNodesNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new NumberOfVisibleNodesNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new NumberOfVisibleNodesNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new NumberOfVisibleNodesNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                NumberOfVisibleNodesNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new NumberOfVisibleNodesNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new NumberOfVisibleNodesNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -94,10 +95,10 @@ public:
         return root;
     }
 
-    static void deleteTree(NumberOfVisibleNodesNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<NumberOfVisibleNodesNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -114,11 +115,11 @@ public:
         *head = nullptr;
     }
 
-    static int visibleNodes(NumberOfVisibleNodesNode *root) {
+    static int visibleNodes(Node *root) {
         int result = 0;
         if (root != nullptr) {
-            queue<NumberOfVisibleNodesNode *> oddLevel;
-            queue<NumberOfVisibleNodesNode *> evenLevel;
+            queue<Node *> oddLevel;
+            queue<Node *> evenLevel;
             oddLevel.push(root);
             while (!oddLevel.empty() || !evenLevel.empty()) {
                 if (oddLevel.empty()) {

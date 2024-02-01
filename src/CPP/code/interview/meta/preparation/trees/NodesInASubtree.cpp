@@ -8,25 +8,25 @@
 
 using namespace std;
 
-class NodesInASubtreeNode {
-public:
-    int val;
-    vector<NodesInASubtreeNode *> children;
-
-    NodesInASubtreeNode() : val(0), children(vector<NodesInASubtreeNode *>()) {}
-
-    explicit NodesInASubtreeNode(int val) : val(val), children(vector<NodesInASubtreeNode *>()) {}
-
-    NodesInASubtreeNode(int val, vector<NodesInASubtreeNode *> children) : val(val), children(std::move(children)) {}
-};
-
-struct NodesInASubtreeQuery {
-    int u;
-    char c;
-};
-
 class NodesInASubtree {
 public:
+    class Node {
+    public:
+        int val;
+        vector<Node *> children;
+
+        Node() : val(0), children(vector<Node *>()) {}
+
+        explicit Node(int val) : val(val), children(vector<Node *>()) {}
+
+        Node(int val, vector<Node *> children) : val(val), children(std::move(children)) {}
+    };
+
+    struct Query {
+        int u;
+        char c;
+    };
+
     static void description() {
         cout << R"(Nodes in a Subtree
     You are given a tree that contains N nodes, each containing an integer u which corresponds to
@@ -59,10 +59,10 @@ public:
          containing 'a' is 2.)" << endl;
     }
 
-    static void deleteTree(NodesInASubtreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<NodesInASubtreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -77,7 +77,7 @@ public:
     }
 
     static vector<int>
-    countOfNodes(NodesInASubtreeNode *root, const vector<NodesInASubtreeQuery> &queries, const string &s) {
+    countOfNodes(Node *root, const vector<Query> &queries, const string &s) {
         vector<int> result{};
         for (auto query: queries) {
             auto working = findNode(root, query.u);
@@ -87,10 +87,10 @@ public:
     }
 
 private:
-    static NodesInASubtreeNode *findNode(NodesInASubtreeNode *root, int value) {
-        NodesInASubtreeNode *result = nullptr;
+    static Node *findNode(Node *root, int value) {
+        Node *result = nullptr;
         if (root != nullptr) {
-            queue<NodesInASubtreeNode *> processing;
+            queue<Node *> processing;
             processing.push(root);
             while (!processing.empty()) {
                 if (processing.front()->val == value) {
@@ -106,10 +106,10 @@ private:
         return result;
     }
 
-    static int getCount(NodesInASubtreeNode *node, char value, const string &s) {
+    static int getCount(Node *node, char value, const string &s) {
         auto result = 0;
         if (node != nullptr) {
-            queue<NodesInASubtreeNode *> processing;
+            queue<Node *> processing;
             processing.push(node);
             int index;
             while (!processing.empty()) {

@@ -9,20 +9,21 @@
 
 using namespace std;
 
-struct SumRootToLeafNumbersTreeNode {
-    int val;
-    SumRootToLeafNumbersTreeNode *left;
-    SumRootToLeafNumbersTreeNode *right;
-
-    SumRootToLeafNumbersTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit SumRootToLeafNumbersTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    SumRootToLeafNumbersTreeNode(int x, SumRootToLeafNumbersTreeNode *left, SumRootToLeafNumbersTreeNode *right) : val(
-            x), left(left), right(right) {}
-};
 
 class SumRootToLeafNumbers {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(129: Sum Root to Leaf Numbers
@@ -53,40 +54,40 @@ public:
         The depth of the tree will not exceed 10.)" << endl;
     }
 
-    static SumRootToLeafNumbersTreeNode *deserializeTree(vector<string> values) {
-        SumRootToLeafNumbersTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<SumRootToLeafNumbersTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                SumRootToLeafNumbersTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new SumRootToLeafNumbersTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -97,10 +98,10 @@ public:
         return root;
     }
 
-    static void deleteTree(SumRootToLeafNumbersTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<SumRootToLeafNumbersTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -117,7 +118,7 @@ public:
         *head = nullptr;
     }
 
-    static int sumNumbers(SumRootToLeafNumbersTreeNode *root) {
+    static int sumNumbers(Node *root) {
         int result = 0;
         auto numbers = traverseTree(root);
         for (auto digits: numbers) {
@@ -131,7 +132,7 @@ public:
     }
 
 private:
-    static vector<vector<int>> traverseTree(SumRootToLeafNumbersTreeNode *node) {
+    static vector<vector<int>> traverseTree(Node *node) {
         vector<vector<int>> result;
         if (node != nullptr) {
             if ((node->left == nullptr) && (node->right == nullptr)) {

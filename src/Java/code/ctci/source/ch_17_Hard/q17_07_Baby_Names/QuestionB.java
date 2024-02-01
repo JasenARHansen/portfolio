@@ -25,7 +25,7 @@ public class QuestionB {
         return graph;
     }
 
-    public static int getComponentFrequency(GraphNode node) {
+    public static int getComponentFrequency(Node node) {
     /* Do depth-first search to find the total frequency of this
     component, and mark each node as visited. */
         if (node.isVisited()) {
@@ -33,7 +33,7 @@ public class QuestionB {
         }
         node.setIsVisited(true);
         int sum = node.getFrequency();
-        for (GraphNode child : node.getNeighbors()) {
+        for (Node child : node.getNeighbors()) {
             sum += getComponentFrequency(child);
         }
         return sum;
@@ -43,7 +43,7 @@ public class QuestionB {
     /* Do DFS of each component. If a node has been visited before,
     then its component has already been computed. */
         HashMap<String, Integer> rootNames = new HashMap<>();
-        for (GraphNode node : graph.getNodes()) {
+        for (Node node : graph.getNodes()) {
             if (!node.isVisited()) {
                 int frequency = getComponentFrequency(node);
                 String name = node.getName();

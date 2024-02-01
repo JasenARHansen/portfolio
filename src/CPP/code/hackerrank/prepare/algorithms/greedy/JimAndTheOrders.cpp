@@ -88,18 +88,18 @@ public:
      time must be listed by ascending order number.)" << endl;
     }
 
-    static vector<int> jimOrders(const vector<vector<int>>& orders) {
+    static vector<int> jimOrders(const vector<vector<int>> &orders) {
         vector<int> result;
         map<int, vector<int>> data;
-        for (auto order = 0; order < orders.size(); order++){
+        for (auto order = 0; order < orders.size(); order++) {
             auto time = orders[order][0] + orders[order][1];
-            if (!data.count(time)){
+            if (!data.count(time)) {
                 data[time] = {};
             }
             data.at(time).push_back(order + 1);
         }
-        for (const auto& entry : data){
-            for (auto customer : entry.second){
+        for (const auto &entry: data) {
+            for (auto customer: entry.second) {
                 result.push_back(customer);
             }
         }

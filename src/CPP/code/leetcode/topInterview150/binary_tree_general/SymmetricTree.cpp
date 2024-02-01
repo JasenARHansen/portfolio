@@ -8,19 +8,21 @@
 
 using namespace std;
 
-struct SymmetricTreeNode {
-    int val;
-    SymmetricTreeNode *left;
-    SymmetricTreeNode *right;
-
-    SymmetricTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit SymmetricTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    SymmetricTreeNode(int x, SymmetricTreeNode *left, SymmetricTreeNode *right) : val(x), left(left), right(right) {}
-};
 
 class SymmetricTree {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(101: Symmetric Tree
@@ -38,40 +40,40 @@ public:
         Could you solve it both recursively and iteratively?)" << endl;
     }
 
-    static SymmetricTreeNode *deserializeTree(vector<string> values) {
-        SymmetricTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<SymmetricTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new SymmetricTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new SymmetricTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new SymmetricTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                SymmetricTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new SymmetricTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new SymmetricTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -82,10 +84,10 @@ public:
         return root;
     }
 
-    static void deleteTree(SymmetricTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<SymmetricTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -102,7 +104,7 @@ public:
         *head = nullptr;
     }
 
-    static bool isSymmetric(SymmetricTreeNode *root) {
+    static bool isSymmetric(Node *root) {
         if (root == nullptr) {
             return true;
         }
@@ -110,7 +112,7 @@ public:
     }
 
 private:
-    static bool isSymmetric(SymmetricTreeNode *treeA, SymmetricTreeNode *treeB) {
+    static bool isSymmetric(Node *treeA, Node *treeB) {
         if ((treeA == nullptr) && (treeB == nullptr)) {
             return true;
         } else if ((treeA == nullptr) || (treeB == nullptr)) {

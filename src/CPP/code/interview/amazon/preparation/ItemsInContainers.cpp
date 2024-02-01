@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -84,33 +85,73 @@ public:
             There are 2 items between these compartments.)" << endl;
     }
 
-    static vector<int> numberOfItems(string s, vector<int> startIndices, vector<int> endIndices) {
+    static vector<int> numberOfItems1(const string &s, const vector<int> &startIndices, const vector<int> &endIndices) {
         vector<int> result;
+        // Verify that the number of start indices matches the number of end indices
         if (startIndices.size() == endIndices.size()) {
+            // Iterate over each pair of indices
             for (auto index = 0; index < startIndices.size(); index++) {
                 auto total = 0;
                 auto count = 0;
                 auto first = false;
                 auto innerIndex = startIndices.at(index) - 1;
                 if (endIndices.at(index) <= s.size()) {
+                    // Process all characters until end index
                     while (innerIndex < endIndices.at(index)) {
-                        if (s.at(innerIndex) == '|') {
+                        // When border is detected, determine action
+                        if (s.at(innerIndex) == border) {
+                            // If a previous start border has been detected, store the current count
                             if (first) {
                                 total += count;
                             }
-                            count = 0;
+                            // Indicate that we have found a start border
                             first = true;
-                        } else if ((s.at(innerIndex) == '*') and first) {
+                            // Reset current  count to 0
+                            count = 0;
+                        } else if ((s.at(innerIndex) == item) and first) {
+                            // If a start index has been discovered increment current count
                             count++;
                         }
                         innerIndex++;
                     }
                 }
+                // Store total between indices
                 result.push_back(total);
             }
         }
         return result;
     }
+
+    static vector<int> numberOfItems2(const string &s, const vector<int> &startIndices, const vector<int> &endIndices) {
+        // Make a running total of items seen at borders and then based on query, find the
+        // difference between the end points
+        vector<int> result;
+        map<int, int> totals;
+        auto count = 0;
+        for (auto index = 0; index < s.size(); index++) {
+            if (s.at(index) == border) {
+                totals[index] = count;
+            } else {
+                count++;
+            }
+        }
+        for (auto index = 0; index < startIndices.size(); index++) {
+            count = 0;
+            if ((startIndices.at(index) < endIndices.at(index)) and (totals.size() >= 2)) {
+                // Find first candle
+                auto lower = totals.lower_bound(startIndices.at(index) - 1);
+                // find second candle.  Upper bound returns value AFTER query item so prev() is needed
+                auto upper = prev(totals.upper_bound(endIndices.at(index) - 1));
+                count = max(0, upper->second - lower->second);
+            }
+            result.push_back(count);
+        }
+        return result;
+    }
+
+private:
+    static char const border = '|';
+    static char const item = '*';
 };
 
 #pragma clang diagnostic pop

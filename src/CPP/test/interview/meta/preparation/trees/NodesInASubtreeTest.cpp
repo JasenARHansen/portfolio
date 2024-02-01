@@ -12,11 +12,11 @@ TEST(NodesInASubtreeTest, description) {
 
 TEST(NodesInASubtreeTest, visibleNodes_1) {
     vector<int> expected{2};
-    vector<NodesInASubtreeQuery> queries{{1, 'a'}};
+    vector<NodesInASubtree::Query> queries{{1, 'a'}};
     auto s = "aba";
-    auto *root = new NodesInASubtreeNode(1);
-    root->children.push_back(new NodesInASubtreeNode(2));
-    root->children.push_back(new NodesInASubtreeNode(3));
+    auto *root = new NodesInASubtree::Node(1);
+    root->children.push_back(new NodesInASubtree::Node(2));
+    root->children.push_back(new NodesInASubtree::Node(3));
     auto result = NodesInASubtree::countOfNodes(root, queries, s);
     EXPECT_EQ(expected, result);
     NodesInASubtree::deleteTree(&root);
@@ -24,17 +24,17 @@ TEST(NodesInASubtreeTest, visibleNodes_1) {
 
 TEST(NodesInASubtreeTest, visibleNodes_2) {
     vector<int> expected{4, 1, 2};
-    vector<NodesInASubtreeQuery> queries{{1, 'a'},
-                                         {2, 'b'},
-                                         {3, 'a'}};
+    vector<NodesInASubtree::Query> queries{{1, 'a'},
+                                           {2, 'b'},
+                                           {3, 'a'}};
     auto s = "abaacab";
-    auto *root = new NodesInASubtreeNode(1);
-    root->children.push_back(new NodesInASubtreeNode(2));
-    root->children.push_back(new NodesInASubtreeNode(3));
-    root->children.push_back(new NodesInASubtreeNode(7));
-    root->children[0]->children.push_back(new NodesInASubtreeNode(4));
-    root->children[0]->children.push_back(new NodesInASubtreeNode(5));
-    root->children[1]->children.push_back(new NodesInASubtreeNode(6));
+    auto *root = new NodesInASubtree::Node(1);
+    root->children.push_back(new NodesInASubtree::Node(2));
+    root->children.push_back(new NodesInASubtree::Node(3));
+    root->children.push_back(new NodesInASubtree::Node(7));
+    root->children[0]->children.push_back(new NodesInASubtree::Node(4));
+    root->children[0]->children.push_back(new NodesInASubtree::Node(5));
+    root->children[1]->children.push_back(new NodesInASubtree::Node(6));
     auto result = NodesInASubtree::countOfNodes(root, queries, s);
     EXPECT_EQ(expected, result);
     NodesInASubtree::deleteTree(&root);

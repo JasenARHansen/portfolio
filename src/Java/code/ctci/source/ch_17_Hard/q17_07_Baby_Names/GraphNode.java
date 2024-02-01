@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 @SuppressWarnings("UnusedReturnValue")
-public class GraphNode {
+public class Node {
     private final int frequency;
-    private final HashMap<String, GraphNode> map;
+    private final HashMap<String, Node> map;
     private final String name;
-    private final ArrayList<GraphNode> neighbors;
+    private final ArrayList<Node> neighbors;
     private boolean visited = false;
 
-    public GraphNode(String nm, int freq) {
+    public Node(String nm, int freq) {
         name = nm;
         frequency = freq;
         neighbors = new ArrayList<>();
         map = new HashMap<>();
     }
 
-    public boolean addNeighbor(GraphNode node) {
+    public boolean addNeighbor(Node node) {
         if (map.containsKey(node.getName())) {
             return false;
         }
@@ -35,7 +35,7 @@ public class GraphNode {
         return frequency;
     }
 
-    public ArrayList<GraphNode> getNeighbors() {
+    public ArrayList<Node> getNeighbors() {
         return neighbors;
     }
 

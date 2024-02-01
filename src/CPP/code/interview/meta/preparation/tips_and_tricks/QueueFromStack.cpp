@@ -8,20 +8,20 @@ using namespace std;
 
 class QueueFromStack {
 private:
-    struct StackNode {
+    struct Node {
         int data;
-        StackNode *next;
+        Node *next;
 
-        explicit StackNode(int data) : data(data), next(nullptr) {}
+        explicit Node(int data) : data(data), next(nullptr) {}
     };
 
-    StackNode *topNode;
+    Node *topNode;
     int stackSize;
 public:
     explicit QueueFromStack() : topNode(nullptr), stackSize(0) {}
 
     void push(int data) {
-        auto *entry = new StackNode(data);
+        auto *entry = new Node(data);
         entry->next = this->topNode;
         this->topNode = entry;
         this->stackSize++;
@@ -38,8 +38,8 @@ public:
         }
     }
 
-    StackNode *popNode() {
-        StackNode *result;
+    Node *popNode() {
+        Node *result;
         if (this->topNode != nullptr) {
             result = this->topNode;
             this->topNode = result->next;
@@ -51,7 +51,7 @@ public:
         return result;
     }
 
-    void pushNode(StackNode *data) {
+    void pushNode(Node *data) {
         if (data != nullptr) {
             data->next = this->topNode;
             this->topNode = data;

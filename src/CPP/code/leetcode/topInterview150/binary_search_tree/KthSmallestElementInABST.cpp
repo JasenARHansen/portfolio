@@ -10,20 +10,21 @@
 
 using namespace std;
 
-struct KthSmallestElementInABSTNode {
-    int val;
-    KthSmallestElementInABSTNode *left;
-    KthSmallestElementInABSTNode *right;
-
-    KthSmallestElementInABSTNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit KthSmallestElementInABSTNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    KthSmallestElementInABSTNode(int x, KthSmallestElementInABSTNode *left, KthSmallestElementInABSTNode *right) : val(
-            x), left(left), right(right) {}
-};
 
 class KthSmallestElementInABST {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(230: Kth Smallest Element in a BST
@@ -45,40 +46,40 @@ public:
     }
 
 
-    static KthSmallestElementInABSTNode *deserializeTree(vector<string> values) {
-        KthSmallestElementInABSTNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<KthSmallestElementInABSTNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new KthSmallestElementInABSTNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                KthSmallestElementInABSTNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new KthSmallestElementInABSTNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new KthSmallestElementInABSTNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -89,10 +90,10 @@ public:
         return root;
     }
 
-    static void deleteTree(KthSmallestElementInABSTNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<KthSmallestElementInABSTNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -109,7 +110,7 @@ public:
         *head = nullptr;
     }
 
-    static int kthSmallest(KthSmallestElementInABSTNode *root, int k) {
+    static int kthSmallest(Node *root, int k) {
         assert(1 <= k);
         assert(k <= pow(10, 4));
         auto result = INT_MAX;
@@ -122,7 +123,7 @@ public:
     }
 
 private:
-    static void inorderTraversal(KthSmallestElementInABSTNode *root, vector<int> &inorder) {
+    static void inorderTraversal(Node *root, vector<int> &inorder) {
         if (root->left != nullptr) {
             inorderTraversal(root->left, inorder);
         }
@@ -132,16 +133,16 @@ private:
         }
     }
 
-    static void insertNode(KthSmallestElementInABSTNode *head, int value) {
+    static void insertNode(Node *head, int value) {
         if (value < head->val) {
             if (head->left == nullptr) {
-                head->left = new KthSmallestElementInABSTNode(value);
+                head->left = new Node(value);
             } else {
                 insertNode(head->left, value);
             }
         } else {
             if (head->right == nullptr) {
-                head->right = new KthSmallestElementInABSTNode(value);
+                head->right = new Node(value);
             } else {
                 insertNode(head->right, value);
             }

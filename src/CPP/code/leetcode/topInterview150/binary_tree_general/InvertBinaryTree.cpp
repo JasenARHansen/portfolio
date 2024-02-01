@@ -9,20 +9,22 @@
 
 using namespace std;
 
-struct InvertBinaryTreeNode {
-    int val;
-    InvertBinaryTreeNode *left;
-    InvertBinaryTreeNode *right;
-
-    InvertBinaryTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit InvertBinaryTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    InvertBinaryTreeNode(int x, InvertBinaryTreeNode *left, InvertBinaryTreeNode *right) : val(x), left(left),
-                                                                                           right(right) {}
-};
 
 class InvertBinaryTree {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left),
+                                               right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(226: Invert Binary Tree
@@ -41,40 +43,40 @@ public:
         -100 ≤ AddTwoNumbersListNode.val ≤ 100)" << endl;
     }
 
-    static InvertBinaryTreeNode *deserializeTree(vector<string> values) {
-        InvertBinaryTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<InvertBinaryTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new InvertBinaryTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new InvertBinaryTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new InvertBinaryTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                InvertBinaryTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new InvertBinaryTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new InvertBinaryTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -85,12 +87,12 @@ public:
         return root;
     }
 
-    static vector<string> serializeTree(InvertBinaryTreeNode *head) {
+    static vector<string> serializeTree(Node *head) {
         vector<string> data;
         if (head != nullptr) {
-            queue<InvertBinaryTreeNode *> nodes;
-            vector<InvertBinaryTreeNode *> levelA;
-            vector<InvertBinaryTreeNode *> levelB;
+            queue<Node *> nodes;
+            vector<Node *> levelA;
+            vector<Node *> levelB;
             levelA.push_back(head);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
@@ -181,10 +183,10 @@ public:
         return data;
     }
 
-    static void deleteTree(InvertBinaryTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<InvertBinaryTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -201,10 +203,10 @@ public:
         *head = nullptr;
     }
 
-    static InvertBinaryTreeNode *invertTree(InvertBinaryTreeNode *root) {
-        InvertBinaryTreeNode *result = nullptr;
+    static Node *invertTree(Node *root) {
+        Node *result = nullptr;
         if (root != nullptr) {
-            result = new InvertBinaryTreeNode(root->val);
+            result = new Node(root->val);
             result->left = invertTree(root->right);
             result->right = invertTree(root->left);
         }

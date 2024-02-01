@@ -9,14 +9,15 @@
 
 using namespace std;
 
-struct AddTwoNumbersListNode {
-    int data;
-    AddTwoNumbersListNode *next;
-
-    explicit AddTwoNumbersListNode(int x) : data(x), next(nullptr) {}
-};
-
 class ReverseOperations {
+private:
+    struct Node {
+        int data;
+        Node *next;
+
+        explicit Node(int x) : data(x), next(nullptr) {}
+    };
+
 public:
     static void description() {
         cout << R"(Reverse Operations
@@ -46,9 +47,9 @@ public:
             [1, 8, 2, 9, 16, 12])" << endl;
     }
 
-    static vector<int> serializeList(AddTwoNumbersListNode *head) {
+    static vector<int> serializeList(Node *head) {
         vector<int> result;
-        AddTwoNumbersListNode *working = head;
+        Node *working = head;
         while (working != nullptr) {
             result.push_back(working->data);
             working = working->next;
@@ -56,28 +57,28 @@ public:
         return result;
     }
 
-    static AddTwoNumbersListNode *deserializeList(const vector<int> &numbers) {
+    static Node *deserializeList(const vector<int> &numbers) {
         assert(numbers.size() <= 500);
-        AddTwoNumbersListNode *result = nullptr;
+        Node *result = nullptr;
         if (!numbers.empty()) {
             assert(-100 <= numbers[0]);
             assert(numbers[0] <= 100);
-            auto current = new AddTwoNumbersListNode(numbers[0]);
+            auto current = new Node(numbers[0]);
             result = current;
             for (int index = 1; index < numbers.size(); index++) {
                 assert(-100 <= numbers[index]);
                 assert(numbers[index] <= 100);
-                current->next = new AddTwoNumbersListNode(numbers[index]);
+                current->next = new Node(numbers[index]);
                 current = current->next;
             }
         }
         return result;
     }
 
-    static void deleteList(AddTwoNumbersListNode **head) {
+    static void deleteList(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            AddTwoNumbersListNode *next;
+            Node *next;
             while (current->next != nullptr) {
                 next = current->next;
                 delete current;
@@ -87,11 +88,11 @@ public:
         }
     }
 
-    static AddTwoNumbersListNode *reverse(AddTwoNumbersListNode *head) {
-        AddTwoNumbersListNode *result = copyList(head);
-        stack<AddTwoNumbersListNode *> evens;
-        AddTwoNumbersListNode *working = result;
-        AddTwoNumbersListNode *last = nullptr;
+    static Node *reverse(Node *head) {
+        Node *result = copyList(head);
+        stack<Node *> evens;
+        Node *working = result;
+        Node *last = nullptr;
         while (working != nullptr) {
             // Odd value found, advance list
             if (working->data % 2) {
@@ -116,8 +117,8 @@ public:
 
 private:
     static void
-    processesEvens(AddTwoNumbersListNode **result, AddTwoNumbersListNode **working, AddTwoNumbersListNode **last,
-                   stack<AddTwoNumbersListNode *> &evens) {
+    processesEvens(Node **result, Node **working, Node **last,
+                   stack<Node *> &evens) {
         // working is either nullptr or odd, so reverse evens section
         while (!evens.empty()) {
             // if the last was never set the list begins with evens values and the start point will be reset
@@ -139,15 +140,15 @@ private:
         }
     }
 
-    static AddTwoNumbersListNode *copyList(AddTwoNumbersListNode *head) {
-        AddTwoNumbersListNode *working = head;
-        AddTwoNumbersListNode *result = nullptr;
+    static Node *copyList(Node *head) {
+        Node *working = head;
+        Node *result = nullptr;
         if (head != nullptr) {
-            result = new AddTwoNumbersListNode(working->data);
+            result = new Node(working->data);
         }
-        AddTwoNumbersListNode *copy = result;
+        Node *copy = result;
         while (working->next != nullptr) {
-            copy->next = new AddTwoNumbersListNode(working->next->data);
+            copy->next = new Node(working->next->data);
             working = working->next;
             copy = copy->next;
         }

@@ -11,23 +11,21 @@
 
 using namespace std;
 
-class ConvertSortedArrayToBinarySearchTreeNode {
-public:
-    int val;
-    ConvertSortedArrayToBinarySearchTreeNode *left;
-    ConvertSortedArrayToBinarySearchTreeNode *right;
-
-    ConvertSortedArrayToBinarySearchTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit ConvertSortedArrayToBinarySearchTreeNode(int val) : val(val), left(nullptr), right(nullptr) {}
-
-    ConvertSortedArrayToBinarySearchTreeNode(int val, ConvertSortedArrayToBinarySearchTreeNode *left,
-                                             ConvertSortedArrayToBinarySearchTreeNode *right) : val(val),
-                                                                                                left(left),
-                                                                                                right(right) {}
-};
-
 class ConvertSortedArrayToBinarySearchTree {
+private:
+    class Node {
+    public:
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int val) : val(val), left(nullptr), right(nullptr) {}
+
+        Node(int val, Node *left, Node *right) : val(val), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(108: Convert Sorted Array to Binary Search Tree
@@ -49,40 +47,40 @@ public:
         nums is sorted in a strictly increasing order.)" << endl;
     }
 
-    static ConvertSortedArrayToBinarySearchTreeNode *deserializeTree(vector<string> values) {
-        ConvertSortedArrayToBinarySearchTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<ConvertSortedArrayToBinarySearchTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new ConvertSortedArrayToBinarySearchTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new ConvertSortedArrayToBinarySearchTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new ConvertSortedArrayToBinarySearchTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                ConvertSortedArrayToBinarySearchTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new ConvertSortedArrayToBinarySearchTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new ConvertSortedArrayToBinarySearchTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -93,12 +91,12 @@ public:
         return root;
     }
 
-    static vector<string> serializeTree(ConvertSortedArrayToBinarySearchTreeNode *head) {
+    static vector<string> serializeTree(Node *head) {
         vector<string> data;
         if (head != nullptr) {
-            queue<ConvertSortedArrayToBinarySearchTreeNode *> nodes;
-            vector<ConvertSortedArrayToBinarySearchTreeNode *> levelA;
-            vector<ConvertSortedArrayToBinarySearchTreeNode *> levelB;
+            queue<Node *> nodes;
+            vector<Node *> levelA;
+            vector<Node *> levelB;
             levelA.push_back(head);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
@@ -189,10 +187,10 @@ public:
         return data;
     }
 
-    static void deleteTree(ConvertSortedArrayToBinarySearchTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<ConvertSortedArrayToBinarySearchTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -209,22 +207,22 @@ public:
         *head = nullptr;
     }
 
-    static ConvertSortedArrayToBinarySearchTreeNode *sortedArrayToBST(vector<int> &nums) {
+    static Node *sortedArrayToBST(vector<int> &nums) {
         assert (!nums.empty());
         assert (nums.size() <= pow(10, 4));
-        ConvertSortedArrayToBinarySearchTreeNode *result = sortedArrayToBST(nums, 0, (int) nums.size() - 1);
+        Node *result = sortedArrayToBST(nums, 0, (int) nums.size() - 1);
         return result;
     }
 
 private:
-    static ConvertSortedArrayToBinarySearchTreeNode *
+    static Node *
     sortedArrayToBST(vector<int> &nums, int leftIndex, int rightIndex) {
-        ConvertSortedArrayToBinarySearchTreeNode *result = nullptr;
+        Node *result = nullptr;
         if (0 <= (rightIndex - leftIndex)) {
             int midpoint = leftIndex + (rightIndex - leftIndex + 1) / 2;
             assert(-pow(10, 4) <= nums.at(midpoint));
             assert(nums.at(midpoint) <= pow(10, 4));
-            result = new ConvertSortedArrayToBinarySearchTreeNode(nums.at(midpoint));
+            result = new Node(nums.at(midpoint));
             result->left = sortedArrayToBST(nums, leftIndex, midpoint - 1);
             result->right = sortedArrayToBST(nums, midpoint + 1, rightIndex);
         }

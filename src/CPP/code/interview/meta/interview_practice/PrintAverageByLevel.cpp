@@ -8,23 +8,21 @@
 
 using namespace std;
 
-class PrintAverageByLevelTreeNode {
-public:
-    int val;
-    PrintAverageByLevelTreeNode *left;
-    PrintAverageByLevelTreeNode *right;
-
-    PrintAverageByLevelTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit PrintAverageByLevelTreeNode(int val) : val(val), left(nullptr), right(nullptr) {}
-
-    PrintAverageByLevelTreeNode(int val, PrintAverageByLevelTreeNode *left,
-                                PrintAverageByLevelTreeNode *right) : val(val),
-                                                                      left(left),
-                                                                      right(right) {}
-};
-
 class PrintAverageByLevel {
+private:
+    class Node {
+    public:
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int val) : val(val), left(nullptr), right(nullptr) {}
+
+        Node(int val, Node *left, Node *right) : val(val), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(Question 3:
@@ -43,40 +41,40 @@ public:
             [4, 8, 6, 6, 2])" << endl;
     }
 
-    static PrintAverageByLevelTreeNode *deserialize(vector<string> values) {
-        PrintAverageByLevelTreeNode *root = nullptr;
+    static Node *deserialize(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<PrintAverageByLevelTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new PrintAverageByLevelTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new PrintAverageByLevelTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new PrintAverageByLevelTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                PrintAverageByLevelTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new PrintAverageByLevelTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new PrintAverageByLevelTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -87,10 +85,10 @@ public:
         return root;
     }
 
-    static void deleteTree(PrintAverageByLevelTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<PrintAverageByLevelTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -107,11 +105,11 @@ public:
         *head = nullptr;
     }
 
-    static vector<int> averageByLevel(PrintAverageByLevelTreeNode *input) {
+    static vector<int> averageByLevel(Node *input) {
         vector<int> result;
         if (input != nullptr) {
-            queue<PrintAverageByLevelTreeNode *> evenLevel;
-            queue<PrintAverageByLevelTreeNode *> oddLevel;
+            queue<Node *> evenLevel;
+            queue<Node *> oddLevel;
             auto odd = true;
             int sum;
             int count;

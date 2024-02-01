@@ -11,19 +11,20 @@
 
 using namespace std;
 
-class CloneGraphNode {
-public:
-    int val;
-    vector<CloneGraphNode *> neighbors;
-
-    CloneGraphNode() : val(0), neighbors(vector<CloneGraphNode *>()) {}
-
-    explicit CloneGraphNode(int val) : val(val), neighbors(vector<CloneGraphNode *>()) {}
-
-    CloneGraphNode(int val, vector<CloneGraphNode *> neighbors) : val(val), neighbors(std::move(neighbors)) {}
-};
-
 class CloneGraph {
+private:
+    class Node {
+    public:
+        int val;
+        vector<Node *> neighbors;
+
+        Node() : val(0), neighbors(vector<Node *>()) {}
+
+        explicit Node(int val) : val(val), neighbors(vector<Node *>()) {}
+
+        Node(int val, vector<Node *> neighbors) : val(val), neighbors(std::move(neighbors)) {}
+    };
+
 public:
     static void description() {
         cout << R"(133: Clone Graph
@@ -70,14 +71,14 @@ public:
         The Graph is connected and all nodes can be visited starting from the given node.)" << endl;
     }
 
-    static CloneGraphNode *deserializeGraph(const vector<vector<int>> &values) {
-        CloneGraphNode *result = nullptr;
+    static Node *deserializeGraph(const vector<vector<int>> &values) {
+        Node *result = nullptr;
         if (!values.empty()) {
-            vector<CloneGraphNode *> graph;
+            vector<Node *> graph;
             graph.reserve(values.size());
             auto index = 1;
             for (auto node: values) {
-                graph.push_back(new CloneGraphNode(index++));
+                graph.push_back(new Node(index++));
             }
             index = 0;
             for (const auto &node: values) {
@@ -91,14 +92,14 @@ public:
         return result;
     }
 
-    static vector<vector<int>> serializeGraph(CloneGraphNode *head) {
+    static vector<vector<int>> serializeGraph(Node *head) {
         vector<vector<int>> data;
         if (head != nullptr) {
-            unordered_map<int, vector<CloneGraphNode *>> graph;
-            queue<CloneGraphNode *> processing;
+            unordered_map<int, vector<Node *>> graph;
+            queue<Node *> processing;
             processing.push(head);
             graph[head->val] = head->neighbors;
-            CloneGraphNode *working;
+            Node *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
@@ -126,14 +127,14 @@ public:
         return data;
     }
 
-    static void deleteGraph(CloneGraphNode **head) {
+    static void deleteGraph(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            unordered_set<CloneGraphNode *> toDelete;
-            queue<CloneGraphNode *> processing;
+            unordered_set<Node *> toDelete;
+            queue<Node *> processing;
             processing.push(current);
             toDelete.insert(current);
-            CloneGraphNode *working;
+            Node *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
@@ -149,18 +150,18 @@ public:
         *head = nullptr;
     }
 
-    static CloneGraphNode *cloneGraph(CloneGraphNode *node) {
-        CloneGraphNode *result = nullptr;
+    static Node *cloneGraph(Node *node) {
+        Node *result = nullptr;
         if (node != nullptr) {
-            unordered_map<int, CloneGraphNode *> graph;
-            unordered_map<int, vector<CloneGraphNode *>> graphNeighbors;
-            queue<CloneGraphNode *> processing;
+            unordered_map<int, Node *> graph;
+            unordered_map<int, vector<Node *>> graphNeighbors;
+            queue<Node *> processing;
             processing.push(node);
-            CloneGraphNode *working;
+            Node *working;
             while (!processing.empty()) {
                 working = processing.front();
                 processing.pop();
-                graph[working->val] = new CloneGraphNode(working->val);
+                graph[working->val] = new Node(working->val);
                 graphNeighbors[working->val] = working->neighbors;
                 for (auto neighbor: working->neighbors) {
                     if (!graphNeighbors.count(neighbor->val)) {

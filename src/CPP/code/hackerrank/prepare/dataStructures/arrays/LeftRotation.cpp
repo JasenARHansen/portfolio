@@ -11,24 +11,27 @@ using namespace std;
 class LeftRotation {
 public:
     static void description() {
-        cout << R"(Arrays: Left Rotation:
-    A left rotation operation on an array shifts each of the array's elements 1 unit to the left.
-    For example, if 2 left rotations are performed on array [1, 2, 3, 4, 5], then the array would become
-     [3, 4, 5, 1, 2].
+        cout << R"(Arrays: Left Rotation
+    A left rotation operation on an array os size n shifts each of the array's elements 1 unit to the left.
+    Given an integer, d, rotate the array that many steps left and return the result.
+    Example:
+        d = 2
+        arr = [1, 2, 3, 4, 5]
+        After 2 rotations arr' = [3, 4, 5, 1, 2]
     Note that the lowest index item moves to the highest index in a rotation.
     This is called a circular array.
-    Given an array a of n integers and a number, d, perform d left rotations on the array.
     Return the updated array to be printed as a single line of space-separated integers.
     Function Description:
-        Complete the function rotLeft in the editor below.
-        rotLeft has the following parameter(s):
-            int a[n]: the array to rotate
-            int d: the number of rotations
+        Complete the function rotateLeft in the editor below.
+        rotateLeft has the following parameter(s):
+            int d: the amount to rotate by
+            int arr[n]: the array to rotate
     Returns:
         int a'[n]: the rotated array
     Input Format:
-        The first line contains two space-separated integers n and d, the size of a and the number of left rotations.
-        The second line contains n space-separated integers, each an a[i].
+        The first line contains two space-separated integers that denote n, the number of integers, and d,
+         the number of left rotations to perform.
+        The second line contains space-separated integers that describe arr[].
     Constraints:
         1 ≤ n ≤ 10^5
         1 ≤ d ≤ n
@@ -43,17 +46,22 @@ public:
         [1, 2, 3, 4, 5] -> [2, 3, 4, 5, 1] -> [3, 4, 5, 1, 2] -> [4, 5, 1, 2, 3] -> [5, 1, 2, 3, 4])" << endl;
     }
 
-    static vector<int> rotLeft(vector<int> a, int d) {
+    static vector<int> rotateLeft(int d, vector<int> arr) {
+        vector<int> result;
         if (d < 0) {
-            d = a.size() - abs(d) % a.size();
+            d = arr.size() - abs(d) % arr.size();
         } else {
-            d = d % a.size();
+            d = d % arr.size();
         }
-        for (auto i = 0; i < d; i++) {
-            a.push_back(a.at(0));
-            a.erase(a.begin());
+        // add portion from right of rotation to result
+        for (auto it = arr.begin() + d; it != arr.end(); ++it) {
+            result.push_back(*it);
         }
-        return a;
+        // add rotated values to end of result
+        for (auto it = arr.begin(); it != arr.begin() + d; ++it) {
+            result.push_back(*it);
+        }
+        return result;
     }
 };
 

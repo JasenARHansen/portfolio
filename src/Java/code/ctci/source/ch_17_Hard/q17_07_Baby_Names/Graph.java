@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class Graph {
-    private final HashMap<String, GraphNode> map;
-    private final ArrayList<GraphNode> nodes;
+    private final HashMap<String, Node> map;
+    private final ArrayList<Node> nodes;
 
     public Graph() {
         map = new HashMap<>();
@@ -14,29 +14,29 @@ public class Graph {
     }
 
     public void addEdge(String startName, String endName) {
-        GraphNode start = getNode(startName);
-        GraphNode end = getNode(endName);
+        Node start = getNode(startName);
+        Node end = getNode(endName);
         if (start != null && end != null) {
             start.addNeighbor(end);
             end.addNeighbor(start);
         }
     }
 
-    private GraphNode getNode(String name) {
+    private Node getNode(String name) {
         return map.get(name);
     }
 
-    public GraphNode createNode(String name, int freq) {
+    public Node createNode(String name, int freq) {
         if (map.containsKey(name)) {
             return getNode(name);
         }
-        GraphNode node = new GraphNode(name, freq);
+        Node node = new Node(name, freq);
         nodes.add(node);
         map.put(name, node);
         return node;
     }
 
-    public ArrayList<GraphNode> getNodes() {
+    public ArrayList<Node> getNodes() {
         return nodes;
     }
 

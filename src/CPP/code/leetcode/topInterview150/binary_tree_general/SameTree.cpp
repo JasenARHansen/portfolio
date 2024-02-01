@@ -8,19 +8,20 @@
 
 using namespace std;
 
-struct SameTreeNode {
-    int val;
-    SameTreeNode *left;
-    SameTreeNode *right;
-
-    SameTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit SameTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    SameTreeNode(int x, SameTreeNode *left, SameTreeNode *right) : val(x), left(left), right(right) {}
-};
-
 class SameTree {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(100: Same Tree
@@ -40,40 +41,40 @@ public:
         -10^4 ≤ AddTwoNumbersListNode.val ≤ 10^4)" << endl;
     }
 
-    static SameTreeNode *deserializeTree(vector<string> values) {
-        SameTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<SameTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new SameTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new SameTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new SameTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                SameTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new SameTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new SameTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -84,10 +85,10 @@ public:
         return root;
     }
 
-    static void deleteTree(SameTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<SameTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -104,7 +105,7 @@ public:
         *head = nullptr;
     }
 
-    static bool isSameTree(SameTreeNode *p, SameTreeNode *q) {
+    static bool isSameTree(Node *p, Node *q) {
         auto result = false;
         if ((p == nullptr) && (q == nullptr)) {
             result = true;

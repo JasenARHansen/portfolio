@@ -8,16 +8,16 @@ using namespace std;
 
 class Stack {
 private:
-    struct StackNode {
+    struct Node {
         int data;
         int min;
         int max;
-        StackNode *next;
+        Node *next;
 
-        explicit StackNode(int data) : data(data), next(nullptr), min(0), max(0) {}
+        explicit Node(int data) : data(data), next(nullptr), min(0), max(0) {}
     };
 
-    StackNode *top;
+    Node *top;
     int stackSize;
 public:
     explicit Stack() : top(nullptr), stackSize(0) {}
@@ -34,7 +34,7 @@ public:
     }
 
     void push(int data) {
-        auto *entry = new StackNode(data);
+        auto *entry = new Node(data);
         if (this->stackSize == 0) {
             entry->min = data;
             entry->max = data;

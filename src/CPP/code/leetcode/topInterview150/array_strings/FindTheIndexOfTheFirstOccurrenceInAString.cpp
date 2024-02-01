@@ -38,7 +38,6 @@ public:
             return result;
         }
         for (auto index = 0; index <= haystack.size() - needle.size(); index++) {
-            auto foo = haystack.substr(index, needle.size());
             if (needle == haystack.substr(index, needle.size())) {
                 result = index;
                 break;

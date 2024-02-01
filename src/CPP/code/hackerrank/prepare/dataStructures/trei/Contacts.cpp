@@ -91,12 +91,12 @@ public:
     }
 
 private:
-    struct ContactsNode {
+    struct Node {
         int count;
         bool end;
-        unordered_map<char, ContactsNode *> children;
+        unordered_map<char, Node *> children;
 
-        explicit ContactsNode() : count(0), end(false) {}
+        explicit Node() : count(0), end(false) {}
 
         void setEnd() {
             this->end = true;
@@ -114,12 +114,12 @@ private:
             return this->children.find(child) != this->children.end();
         }
 
-        ContactsNode *getChild(char child) {
+        Node *getChild(char child) {
             return this->children.at(child);
         }
 
         void insert(char child) {
-            auto *result = new ContactsNode();
+            auto *result = new Node();
             this->children[child] = result;
         }
     };
@@ -127,11 +127,11 @@ private:
     class ContactTrei {
     public:
         ContactTrei() {
-            this->node = new ContactsNode();
+            this->node = new Node();
         };
 
         void add(string child) {
-            ContactsNode *working = this->node;
+            Node *working = this->node;
             working->incrementCount();
             auto index = 0;
             char character;
@@ -149,7 +149,7 @@ private:
 
         int find(string child) {
             auto result = 0;
-            ContactsNode *working = this->node;
+            Node *working = this->node;
             working->incrementCount();
             auto index = 0;
             char character;
@@ -168,7 +168,7 @@ private:
         }
 
     private:
-        ContactsNode *node;
+        Node *node;
     };
 
     ContactTrei trei;

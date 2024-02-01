@@ -8,27 +8,28 @@
 
 using namespace std;
 
-class CountCompleteTreeNodesTreeNode {
-public:
-    int val;
-    CountCompleteTreeNodesTreeNode *left;
-    CountCompleteTreeNodesTreeNode *right;
-    CountCompleteTreeNodesTreeNode *next;
-
-    CountCompleteTreeNodesTreeNode() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
-
-    explicit CountCompleteTreeNodesTreeNode(int val) : val(val), left(nullptr), right(nullptr),
-                                                       next(nullptr) {}
-
-    CountCompleteTreeNodesTreeNode(int val, CountCompleteTreeNodesTreeNode *left,
-                                   CountCompleteTreeNodesTreeNode *right,
-                                   CountCompleteTreeNodesTreeNode *next) : val(val),
-                                                                           left(left),
-                                                                           right(right),
-                                                                           next(next) {}
-};
-
 class CountCompleteTreeNodes {
+private:
+    class Node {
+    public:
+        int val;
+        Node *left;
+        Node *right;
+        Node *next;
+
+        Node() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
+
+        explicit Node(int val) : val(val), left(nullptr), right(nullptr),
+                                 next(nullptr) {}
+
+        Node(int val, Node *left,
+             Node *right,
+             Node *next) : val(val),
+                           left(left),
+                           right(right),
+                           next(next) {}
+    };
+
 public:
     static void description() {
         cout << R"(222: Count Complete Tree Nodes
@@ -52,40 +53,40 @@ public:
         The tree is guaranteed to be complete.)" << endl;
     }
 
-    static CountCompleteTreeNodesTreeNode *deserializeTree(vector<string> values) {
-        CountCompleteTreeNodesTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<CountCompleteTreeNodesTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new CountCompleteTreeNodesTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new CountCompleteTreeNodesTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new CountCompleteTreeNodesTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                CountCompleteTreeNodesTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new CountCompleteTreeNodesTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new CountCompleteTreeNodesTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -96,10 +97,10 @@ public:
         return root;
     }
 
-    static void deleteTree(CountCompleteTreeNodesTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<CountCompleteTreeNodesTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -116,7 +117,7 @@ public:
         *head = nullptr;
     }
 
-    static int countNodes(CountCompleteTreeNodesTreeNode *root) {
+    static int countNodes(Node *root) {
         int result = 0;
         if (root != nullptr) {
             result = 1;

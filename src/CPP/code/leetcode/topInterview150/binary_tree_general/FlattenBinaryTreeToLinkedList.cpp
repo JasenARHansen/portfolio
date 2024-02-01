@@ -9,21 +9,22 @@
 
 using namespace std;
 
-struct FlattenBinaryTreeToLinkedListTreeNode {
-    int val;
-    FlattenBinaryTreeToLinkedListTreeNode *left;
-    FlattenBinaryTreeToLinkedListTreeNode *right;
-
-    FlattenBinaryTreeToLinkedListTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit FlattenBinaryTreeToLinkedListTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    FlattenBinaryTreeToLinkedListTreeNode(int x, FlattenBinaryTreeToLinkedListTreeNode *left,
-                                          FlattenBinaryTreeToLinkedListTreeNode *right) : val(x), left(left),
-                                                                                          right(right) {}
-};
-
 class FlattenBinaryTreeToLinkedList {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left,
+             Node *right) : val(x), left(left),
+                            right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(114: Flatten Binary Tree to Linked List
@@ -46,40 +47,40 @@ public:
         Can you flatten the tree in-place (with O(1) extra space)?)" << endl;
     }
 
-    static FlattenBinaryTreeToLinkedListTreeNode *deserializeTree(vector<string> values) {
-        FlattenBinaryTreeToLinkedListTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<FlattenBinaryTreeToLinkedListTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                FlattenBinaryTreeToLinkedListTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new FlattenBinaryTreeToLinkedListTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -90,12 +91,12 @@ public:
         return root;
     }
 
-    static vector<string> serializeTree(FlattenBinaryTreeToLinkedListTreeNode *head) {
+    static vector<string> serializeTree(Node *head) {
         vector<string> data;
         if (head != nullptr) {
-            queue<FlattenBinaryTreeToLinkedListTreeNode *> nodes;
-            vector<FlattenBinaryTreeToLinkedListTreeNode *> levelA;
-            vector<FlattenBinaryTreeToLinkedListTreeNode *> levelB;
+            queue<Node *> nodes;
+            vector<Node *> levelA;
+            vector<Node *> levelB;
             levelA.push_back(head);
             if (levelA[0]->left != nullptr) {
                 levelB.push_back(levelA[0]->left);
@@ -186,10 +187,10 @@ public:
         return data;
     }
 
-    static void deleteTree(FlattenBinaryTreeToLinkedListTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<FlattenBinaryTreeToLinkedListTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -206,9 +207,9 @@ public:
         *head = nullptr;
     }
 
-    static void flatten(FlattenBinaryTreeToLinkedListTreeNode *root) {
+    static void flatten(Node *root) {
         if (root != nullptr) {
-            stack<FlattenBinaryTreeToLinkedListTreeNode *> branches;
+            stack<Node *> branches;
             if (root->right != nullptr) {
                 branches.push(root->right);
             }

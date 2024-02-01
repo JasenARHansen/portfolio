@@ -9,21 +9,20 @@
 
 using namespace std;
 
-struct LowestCommonAncestorOfABinaryTreeTreeNode {
-    int val;
-    LowestCommonAncestorOfABinaryTreeTreeNode *left;
-    LowestCommonAncestorOfABinaryTreeTreeNode *right;
-
-    LowestCommonAncestorOfABinaryTreeTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit LowestCommonAncestorOfABinaryTreeTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    LowestCommonAncestorOfABinaryTreeTreeNode(int x, LowestCommonAncestorOfABinaryTreeTreeNode *left,
-                                              LowestCommonAncestorOfABinaryTreeTreeNode *right) : val(
-            x), left(left), right(right) {}
-};
-
 class LowestCommonAncestorOfABinaryTree {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(236: Lowest Common Ancestor of a Binary Tree
@@ -52,40 +51,40 @@ public:
         p and q will exist in the tree.)" << endl;
     }
 
-    static LowestCommonAncestorOfABinaryTreeTreeNode *deserializeTree(vector<string> values) {
-        LowestCommonAncestorOfABinaryTreeTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<LowestCommonAncestorOfABinaryTreeTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new LowestCommonAncestorOfABinaryTreeTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new LowestCommonAncestorOfABinaryTreeTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new LowestCommonAncestorOfABinaryTreeTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                LowestCommonAncestorOfABinaryTreeTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new LowestCommonAncestorOfABinaryTreeTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new LowestCommonAncestorOfABinaryTreeTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -96,10 +95,10 @@ public:
         return root;
     }
 
-    static void deleteTree(LowestCommonAncestorOfABinaryTreeTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<LowestCommonAncestorOfABinaryTreeTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -116,9 +115,9 @@ public:
         *head = nullptr;
     }
 
-    static LowestCommonAncestorOfABinaryTreeTreeNode *
-    findNode(LowestCommonAncestorOfABinaryTreeTreeNode *node, int target) {
-        LowestCommonAncestorOfABinaryTreeTreeNode *result = nullptr;
+    static Node *
+    findNode(Node *node, int target) {
+        Node *result = nullptr;
         if (node != nullptr) {
             if (node->val == target) {
                 result = node;
@@ -132,10 +131,10 @@ public:
         return result;
     }
 
-    static LowestCommonAncestorOfABinaryTreeTreeNode *
-    lowestCommonAncestor(LowestCommonAncestorOfABinaryTreeTreeNode *root, LowestCommonAncestorOfABinaryTreeTreeNode *p,
-                         LowestCommonAncestorOfABinaryTreeTreeNode *q) {
-        LowestCommonAncestorOfABinaryTreeTreeNode *result = nullptr;
+    static Node *
+    lowestCommonAncestor(Node *root, Node *p,
+                         Node *q) {
+        Node *result = nullptr;
         if (root != nullptr) {
             auto pathP = findPath(root, p);
             reverse(pathP.begin(), pathP.end());
@@ -153,9 +152,9 @@ public:
     }
 
 private:
-    static vector<LowestCommonAncestorOfABinaryTreeTreeNode *>
-    findPath(LowestCommonAncestorOfABinaryTreeTreeNode *node, LowestCommonAncestorOfABinaryTreeTreeNode *target) {
-        vector<LowestCommonAncestorOfABinaryTreeTreeNode *> result;
+    static vector<Node *>
+    findPath(Node *node, Node *target) {
+        vector<Node *> result;
         if (node != nullptr) {
             if (node->val == target->val) {
                 result.push_back(target);

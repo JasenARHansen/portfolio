@@ -7,19 +7,19 @@
 
 using namespace std;
 
-struct QueueNode {
-    int data;
-    int min;
-    int max;
-    QueueNode *next;
-
-    explicit QueueNode(int data) : data(data), next(nullptr), min(0), max(0) {}
-};
-
 class Queue {
 private:
-    QueueNode *frontPointer;
-    QueueNode *backPointer;
+    struct Node {
+        int data;
+        int min;
+        int max;
+        Node *next;
+
+        explicit Node(int data) : data(data), next(nullptr), min(0), max(0) {}
+    };
+
+    Node *frontPointer;
+    Node *backPointer;
     int queueSize;
 public:
     explicit Queue() : frontPointer(nullptr), backPointer(nullptr), queueSize(0) {}
@@ -37,7 +37,7 @@ public:
     }
 
     void enqueue(int data) {
-        auto *entry = new QueueNode(data);
+        auto *entry = new Node(data);
         if (this->empty()) {
             this->frontPointer = entry;
             this->backPointer = entry;

@@ -4,11 +4,11 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_general/PopulatingNextRightPointersInEachNodeII.cpp"  // NOLINT : Ignore .cpp import
 
-vector<string> serialized(PopulatingNextRightPointersInEachNodeIITreeNode *root) {
+vector<string> serialized(PopulatingNextRightPointersInEachNodeII::Node *root) {
     vector<string> result;
     if (root != nullptr) {
-        vector<PopulatingNextRightPointersInEachNodeIITreeNode *> oddRow;
-        vector<PopulatingNextRightPointersInEachNodeIITreeNode *> evenRow;
+        vector<PopulatingNextRightPointersInEachNodeII::Node *> oddRow;
+        vector<PopulatingNextRightPointersInEachNodeII::Node *> evenRow;
         oddRow.push_back(root);
         while (!oddRow.empty() || !evenRow.empty()) {
             if (!oddRow.empty()) {
@@ -20,7 +20,7 @@ vector<string> serialized(PopulatingNextRightPointersInEachNodeIITreeNode *root)
                         evenRow.push_back(node->right);
                     }
                 }
-                PopulatingNextRightPointersInEachNodeIITreeNode *current = oddRow[0];
+                PopulatingNextRightPointersInEachNodeII::Node *current = oddRow[0];
                 while (current->next != nullptr) {
                     result.push_back(to_string(current->val));
                     current = current->next;
@@ -37,7 +37,7 @@ vector<string> serialized(PopulatingNextRightPointersInEachNodeIITreeNode *root)
                         oddRow.push_back(node->right);
                     }
                 }
-                PopulatingNextRightPointersInEachNodeIITreeNode *current = evenRow[0];
+                PopulatingNextRightPointersInEachNodeII::Node *current = evenRow[0];
                 while (current->next != nullptr) {
                     result.push_back(to_string(current->val));
                     current = current->next;

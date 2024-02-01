@@ -8,19 +8,21 @@
 
 using namespace std;
 
-struct PathSumTreeNode {
-    int val;
-    PathSumTreeNode *left;
-    PathSumTreeNode *right;
-
-    PathSumTreeNode() : val(0), left(nullptr), right(nullptr) {}
-
-    explicit PathSumTreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
-    PathSumTreeNode(int x, PathSumTreeNode *left, PathSumTreeNode *right) : val(x), left(left), right(right) {}
-};
 
 class PathSum {
+private:
+    struct Node {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node() : val(0), left(nullptr), right(nullptr) {}
+
+        explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
+    };
+
 public:
     static void description() {
         cout << R"(112: Path Sum
@@ -51,40 +53,40 @@ public:
         -1000 ≤ targetSum ≤ 1000)" << endl;
     }
 
-    static PathSumTreeNode *deserializeTree(vector<string> values) {
-        PathSumTreeNode *root = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
         if (!values.empty()) {
-            queue<PathSumTreeNode *> nodes;
+            queue<Node *> nodes;
             auto index = 0;
             if (values[index] != "null") {
-                root = new PathSumTreeNode(stoi(values[index]));
+                root = new Node(stoi(values[index]));
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->left = new PathSumTreeNode(stoi(values[index]));
+                        root->left = new Node(stoi(values[index]));
                         nodes.push(root->left);
                     }
                 }
                 index++;
                 if (index < values.size()) {
                     if (values[index] != "null") {
-                        root->right = new PathSumTreeNode(stoi(values[index]));
+                        root->right = new Node(stoi(values[index]));
                         nodes.push(root->right);
                     }
                 }
                 index++;
-                PathSumTreeNode *temp;
+                Node *temp;
                 while (index < values.size()) {
                     temp = nodes.front();
                     nodes.pop();
                     if (values[index] != "null") {
-                        temp->left = new PathSumTreeNode(stoi(values[index]));
+                        temp->left = new Node(stoi(values[index]));
                         nodes.push(temp->left);
                     }
                     index++;
                     if (index < values.size()) {
                         if (values[index] != "null") {
-                            temp->right = new PathSumTreeNode(stoi(values[index]));
+                            temp->right = new Node(stoi(values[index]));
                             nodes.push(temp->right);
                         }
                     }
@@ -95,10 +97,10 @@ public:
         return root;
     }
 
-    static void deleteTree(PathSumTreeNode **head) {
+    static void deleteTree(Node **head) {
         auto current = *head;
         if (current != nullptr) {
-            queue<PathSumTreeNode *> working;
+            queue<Node *> working;
             working.push(current);
             while (!working.empty()) {
                 current = working.front();
@@ -115,7 +117,7 @@ public:
         *head = nullptr;
     }
 
-    static bool hasPathSum(PathSumTreeNode *root, int targetSum) {
+    static bool hasPathSum(Node *root, int targetSum) {
         bool result = false;
         bool left = false;
         bool right = false;

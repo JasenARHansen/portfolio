@@ -3,7 +3,7 @@ package Java.code.ctci.source.ch_03_Stacks_and_Queues.introduction;
 import java.util.EmptyStackException;
 
 public class MyStack<T> {
-    private StackNode<T> top;
+    private Node<T> top;
 
     public boolean isEmpty() {
         return top == null;
@@ -22,16 +22,16 @@ public class MyStack<T> {
     }
 
     public void push(T item) {
-        StackNode<T> t = new StackNode<>(item);
+        Node<T> t = new Node<>(item);
         t.next = top;
         top = t;
     }
 
-    private static class StackNode<T> {
+    private static class Node<T> {
         private final T data;
-        private StackNode<T> next;
+        private Node<T> next;
 
-        public StackNode(T data) {
+        public Node(T data) {
             this.data = data;
         }
 
