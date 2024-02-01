@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 class KthSmallestElementInABST {
 private:
     struct Node {
@@ -44,7 +43,6 @@ public:
         If the BST is modified often (i.e., we can do insert and delete operations) and you need to find
          the kth smallest frequently, how would you optimize?)" << endl;
     }
-
 
     static Node *deserializeTree(vector<string> values) {
         Node *root = nullptr;

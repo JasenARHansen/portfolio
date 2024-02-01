@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 class PathSum {
 private:
     struct Node {

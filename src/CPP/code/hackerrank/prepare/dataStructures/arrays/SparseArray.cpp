@@ -55,7 +55,6 @@ public:
         0
     Explanation 1:
         Here, "aba" occurs twice, in the first and third string. The string "xzxb" occurs once in the fourth string, and "ab" does not occur at all.
-
     Sample Input 2:
         3
         def

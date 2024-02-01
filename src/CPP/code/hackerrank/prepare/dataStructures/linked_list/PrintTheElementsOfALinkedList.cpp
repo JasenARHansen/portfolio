@@ -66,19 +66,21 @@ public:
         return result;
     }
 
-    static vector<int> getlist(Node *list) {
-        vector<int> result;
-        auto working = list;
-        while (working != nullptr) {
-            result.push_back(working->data);
-            working = working->next;
+    static void deleteList(Node **head) {
+        auto current = *head;
+        Node *next;
+        while (current != nullptr) {
+            next = current->next;
+            delete current;
+            current = next;
         }
-        return result;
+        *head = nullptr;
     }
 
     static void printLinkedList(Node *head) {
         Node *working = head;
         while (working != nullptr) {
+            cout << working->data << endl;
             working = working->next;
         }
     }

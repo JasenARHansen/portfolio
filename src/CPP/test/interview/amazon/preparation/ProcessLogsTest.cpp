@@ -40,5 +40,4 @@ TEST(ProcessLogs_Test, processLogs_3) {
     }
 }
 
-
 #endif

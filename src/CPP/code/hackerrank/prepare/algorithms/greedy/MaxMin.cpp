@@ -97,7 +97,6 @@ Function Description:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

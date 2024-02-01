@@ -88,7 +88,6 @@ public:
         }
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

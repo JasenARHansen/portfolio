@@ -11,7 +11,6 @@ using namespace std;
 
 class WordPathFinder {
 public:
-
     static void description() {
         cout << R"(WordPathFinder:
     Given a list of words construct WordPathFinder.
@@ -47,7 +46,6 @@ public:
         result: false
     Explanation:
         While the word 'cab' is only a single edit away from the word 'cat', the word 'cab' is not in the data set.
-
     Tester: Vijayakumar Santha Manoharan (vijay@snapchat.com))" << endl;
     }
 

@@ -94,6 +94,5 @@ TEST(ArrayManipulationTest, arrayManipulation2_4) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif
 #pragma clang diagnostic pop

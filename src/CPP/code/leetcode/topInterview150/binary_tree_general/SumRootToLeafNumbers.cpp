@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 class SumRootToLeafNumbers {
 private:
     struct Node {

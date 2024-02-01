@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 class MinimumAbsoluteDifferenceInBST {
 private:
     struct Node {

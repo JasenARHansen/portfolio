@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 class SymmetricTree {
 private:
     struct Node {
