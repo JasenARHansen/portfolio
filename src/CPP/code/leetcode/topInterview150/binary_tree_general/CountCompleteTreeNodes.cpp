@@ -19,15 +19,9 @@ private:
 
         Node() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
 
-        explicit Node(int val) : val(val), left(nullptr), right(nullptr),
-                                 next(nullptr) {}
+        explicit Node(int val) : val(val), left(nullptr), right(nullptr), next(nullptr) {}
 
-        Node(int val, Node *left,
-             Node *right,
-             Node *next) : val(val),
-                           left(left),
-                           right(right),
-                           next(next) {}
+        Node(int val, Node *left, Node *right, Node *next) : val(val), left(left), right(right), next(next) {}
     };
 
 public:
@@ -49,7 +43,7 @@ public:
         Output: 1
     Constraints:
         The number of nodes in the tree is in the range [0, 5 * 10^4].
-        0 ≤ AddTwoNumbersListNode.val ≤ 5 * 10^4
+        0 ≤ Node.val ≤ 5 * 10^4
         The tree is guaranteed to be complete.)" << endl;
     }
 

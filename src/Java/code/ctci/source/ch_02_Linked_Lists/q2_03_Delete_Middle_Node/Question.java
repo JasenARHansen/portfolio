@@ -12,7 +12,7 @@ public class Question {
         System.out.println(head.printForward());
     }
 
-    public static boolean deleteNode(LinkedListNode n) {
+    public static boolean removeDuplicates(LinkedListNode n) {
         if (n == null || n.next == null) {
             return false; // Failure
         }

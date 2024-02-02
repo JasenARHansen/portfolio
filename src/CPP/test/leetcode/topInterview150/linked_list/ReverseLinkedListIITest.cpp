@@ -71,7 +71,7 @@ TEST(ReverseLinkedListIITest, reverseBetween_fail_3) {
 }
 
 TEST(ReverseLinkedListIITest, reverseBetween_fail_4) {
-    // AddTwoNumbersListNode.val ≤ 500
+    // Node.val ≤ 500
     auto size = 500 + 1;
     vector<int> values{size};
     EXPECT_EXIT(ReverseLinkedListII::deserializeList(values), ::testing::ExitedWithCode(3), "");

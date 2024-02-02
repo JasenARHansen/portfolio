@@ -20,9 +20,7 @@ private:
 
         explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
 
-        Node(int x, Node *left,
-             Node *right) : val(x), left(left),
-                            right(right) {}
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
     };
 
 public:
@@ -42,7 +40,7 @@ public:
         Output: [0]
     Constraints:
         The number of nodes in the tree is in the range [0, 2000].
-        -100 ≤ AddTwoNumbersListNode.val ≤ 100
+        -100 ≤ Node.val ≤ 100
     Follow up:
         Can you flatten the tree in-place (with O(1) extra space)?)" << endl;
     }

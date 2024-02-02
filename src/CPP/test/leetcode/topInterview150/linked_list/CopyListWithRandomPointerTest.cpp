@@ -64,14 +64,14 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_fail_1) {
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_2) {
-    // -10^4 ≤ AddTwoNumbersListNode.val
+    // -10^4 ≤ Node.val
     auto size = (int) -pow(10, 4) - 1;
     vector<pair<int, string>> values{{size, "null"}};
     EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(CopyListWithRandomPointerTest, copyRandomList_fail_3) {
-    // AddTwoNumbersListNode.val ≤ 10^4
+    // Node.val ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<pair<int, string>> values{{size, "null"}};
     EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");

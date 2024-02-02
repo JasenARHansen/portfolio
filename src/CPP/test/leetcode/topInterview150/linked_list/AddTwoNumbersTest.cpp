@@ -67,14 +67,14 @@ TEST(AddTwoNumbersTest, addTwoNumbers_fail_2) {
 }
 
 TEST(AddTwoNumbersTest, addTwoNumbers_fail_3) {
-    // 0 ≤ AddTwoNumbersListNode.val
+    // 0 ≤ Node.val
     auto size = 0 - 1;
     vector<int> values{size};
     EXPECT_EXIT(AddTwoNumbers::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(AddTwoNumbersTest, addTwoNumbers_fail_4) {
-    // AddTwoNumbersListNode.val ≤ 9
+    // Node.val ≤ 9
     auto size = 9 + 1;
     vector<int> values{size};
     EXPECT_EXIT(AddTwoNumbers::deserializeList(values), ::testing::ExitedWithCode(3), "");

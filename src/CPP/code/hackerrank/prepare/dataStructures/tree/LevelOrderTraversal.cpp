@@ -9,10 +9,20 @@
 using namespace std;
 
 class LevelOrderTraversal {
+private:
+    class Node {
+    public:
+        int data;
+        Node *left;
+        Node *right;
+
+        explicit Node(int d) : data(d), left(nullptr), right(nullptr) {}
+    };
+
 public:
     static void description() {
-        cout << R"(Given a pointer to the root of a binary tree, you need to print the level order
-     traversal of this tree.
+        cout << R"(Tree: Level Order Traversal
+    Given a pointer to the root of a binary tree, you need to print the level order traversal of this tree.
     In level-order traversal, nodes are visited level by level from left to right.
     Complete the function levelOrder and print the values in a single line separated by a space.
     For example:
@@ -51,18 +61,69 @@ public:
         Level Order Traversal: 1 -> 2 -> 5 -> 3 -> 6 -> 4.)" << endl;
     }
 
-    class Node {
-    public:
-        int data;
-        Node *left;
-        Node *right;
-
-        explicit Node(int d) {
-            data = d;
-            left = nullptr;
-            right = nullptr;
+    static Node *deserializeTree(vector<string> values) {
+        Node *root = nullptr;
+        if (!values.empty()) {
+            queue<Node *> nodes;
+            auto index = 0;
+            if (values[index] != "null") {
+                root = new Node(stoi(values[index]));
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->left = new Node(stoi(values[index]));
+                        nodes.push(root->left);
+                    }
+                }
+                index++;
+                if (index < values.size()) {
+                    if (values[index] != "null") {
+                        root->right = new Node(stoi(values[index]));
+                        nodes.push(root->right);
+                    }
+                }
+                index++;
+                Node *temp;
+                while (index < values.size()) {
+                    temp = nodes.front();
+                    nodes.pop();
+                    if (values[index] != "null") {
+                        temp->left = new Node(stoi(values[index]));
+                        nodes.push(temp->left);
+                    }
+                    index++;
+                    if (index < values.size()) {
+                        if (values[index] != "null") {
+                            temp->right = new Node(stoi(values[index]));
+                            nodes.push(temp->right);
+                        }
+                    }
+                    index++;
+                }
+            }
         }
-    };
+        return root;
+    }
+
+    static void deleteTree(Node **head) {
+        auto current = *head;
+        if (current != nullptr) {
+            queue<Node *> working;
+            working.push(current);
+            while (!working.empty()) {
+                current = working.front();
+                working.pop();
+                if (current->left != nullptr) {
+                    working.push(current->left);
+                }
+                if (current->right != nullptr) {
+                    working.push(current->right);
+                }
+                delete current;
+            }
+        }
+        *head = nullptr;
+    }
 
     static void levelOrder(Node *root) {
         queue<Node *> order;

@@ -49,7 +49,7 @@ public:
             There is no cycle in the linked list.
     Constraints:
         The number of the nodes in the list is in the range [0, 10^4].
-        -10^5 ≤ AddTwoNumbersListNode.val ≤ 10^5
+        -10^5 ≤ Node.val ≤ 10^5
         pos is -1 or a valid index in the linked-list.
     Follow up:
         Can you solve it using O(1) (i.e: constant) memory?)" << endl;

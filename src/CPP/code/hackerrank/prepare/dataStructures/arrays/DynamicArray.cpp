@@ -90,7 +90,7 @@ public:
         vector<int> result;
         vector<vector<int>> dynamicArray(n, vector<int>());
         auto lastAnswer = 0;
-        auto idx = 0;
+        int idx;
         for (auto query: queries) {
             switch (query.at(0)) {
                 case 1:

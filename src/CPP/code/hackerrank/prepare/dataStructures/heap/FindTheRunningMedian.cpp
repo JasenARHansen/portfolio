@@ -71,13 +71,13 @@ public:
         list = {3, 4, 5, 7, 8, 12}, median = (5 + 7)/2 = 6.0)" << endl;
     }
 
-    static vector<double> runningMedian(vector<int> a) {
+    static vector<double> runningMedian(const vector<int> &a) {
         priority_queue<int> maxHeapForSmaller;
         priority_queue<int, vector<int>, greater<>> minHeapForUpper;
         vector<double> result;
         for (auto value: a) {
             minHeapForUpper.push(value);
-            // Input is not sorted so rebalance
+            // Input is not sorted so re-balance
             while (!maxHeapForSmaller.empty() && (maxHeapForSmaller.top() > minHeapForUpper.top())) {
                 minHeapForUpper.push(maxHeapForSmaller.top());
                 maxHeapForSmaller.pop();

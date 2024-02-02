@@ -78,14 +78,14 @@ TEST(PartitionListTest, partition_fail_1) {
 }
 
 TEST(PartitionListTest, partition_fail_2) {
-    // -100 ≤ AddTwoNumbersListNode.val
+    // -100 ≤ Node.val
     auto size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(PartitionList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(PartitionListTest, partition_fail_3) {
-    // AddTwoNumbersListNode.val ≤ 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(PartitionList::deserializeList(values), ::testing::ExitedWithCode(3), "");

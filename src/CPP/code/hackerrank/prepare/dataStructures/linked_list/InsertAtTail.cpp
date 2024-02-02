@@ -38,7 +38,7 @@ public:
             The next n lines contain an integer each, the value that needs to be inserted at tail.
     Constraints:
         1 ≤ n ≤ 1000
-        1 ≤ listi ≤ 1000
+        1 ≤ list|i| ≤ 1000
     Sample Input:
         n = 5
         sequential data values = 141 302 164 530 474

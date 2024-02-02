@@ -68,7 +68,7 @@ public:
             STDIN         Function
             -----         --------
             *|*|*|    →   s = "*|*|*|"
-            1         →   startIndices[] size n = 1 
+            1         →   startIndices[] size n = 1
             1         →   startIndices = 1
             1         →   endIndices[] size n = 1
             6         →   endIndices = 6

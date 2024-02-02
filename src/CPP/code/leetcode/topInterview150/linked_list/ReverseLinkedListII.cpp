@@ -34,7 +34,7 @@ public:
     Constraints:
         The number of nodes in the list is n.
         1 ≤ n ≤ 500
-        -500 ≤ ReverseLinkedListIINode.val ≤ 500
+        -500 ≤ Node.val ≤ 500
         1 ≤ left ≤ right ≤ n)" << endl;
     }
 

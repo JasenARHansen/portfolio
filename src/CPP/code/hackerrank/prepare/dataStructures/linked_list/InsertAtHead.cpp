@@ -28,14 +28,14 @@ public:
     Function Description:
         Complete the function insertNodeAtHead in the editor below.
         insertNodeAtHead has the following parameter(s):
-            SinglyLinkedListNode llist: a reference to the head of a list
+            SinglyLinkedListNode list: a reference to the head of a list
             data: the value to insert in the data field of the new node
     Input Format:
         The first line contains an integer n, the number of elements to be inserted at the head of the list.
     The next n lines contain an integer each, the elements to be inserted, one per function call.
     Constraints:
         1 ≤ n ≤ 1000
-        1 ≤ listi ≤ 1000
+        1 ≤ list|i| ≤ 1000
     Sample Input:
         5
         383
@@ -95,9 +95,9 @@ public:
         return result;
     }
 
-    static Node *insertNodeAtHead(Node *llist, int data) {
+    static Node *insertNodeAtHead(Node *list, int data) {
         auto *result = new Node(data);
-        result->next = llist;
+        result->next = list;
         return result;
     }
 };

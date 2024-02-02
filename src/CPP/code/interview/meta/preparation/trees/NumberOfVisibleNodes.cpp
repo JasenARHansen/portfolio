@@ -19,10 +19,7 @@ private:
 
         explicit Node(int data) : data(data), left(nullptr), right(nullptr) {}
 
-        Node(int data, Node *left,
-             Node *right) : data(data),
-                            left(left),
-                            right(right) {}
+        Node(int data, Node *left, Node *right) : data(data), left(left), right(right) {}
     };
 
 public:

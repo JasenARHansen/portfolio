@@ -26,7 +26,7 @@ public:
     The values are separated by a space.
     For example, "sender_user_id recipient_user_id amount_of_transaction".
     Users that perform an excessive amount of transactions might be abusing the service so you have been tasked
-     to identify the users that have a number of transactions over a threshold. 
+     to identify the users that have a number of transactions over a threshold.
     The list of user ids should be ordered in ascending numeric value.
     Example:
         logs = ["88 99 200", "88 99 300", "99 32 100",  12 12 15"]

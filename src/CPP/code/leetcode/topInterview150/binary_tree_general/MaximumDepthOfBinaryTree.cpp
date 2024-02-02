@@ -36,7 +36,7 @@ public:
         Output: 2
     Constraints:
         The number of nodes in the tree is in the range [0, 10^4].
-        -100 ≤ AddTwoNumbersListNode.val ≤ 100)" << endl;
+        -100 ≤ Node.val ≤ 100)" << endl;
     }
 
     static Node *deserializeTree(vector<string> values) {

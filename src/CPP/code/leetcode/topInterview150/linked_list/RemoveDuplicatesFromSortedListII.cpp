@@ -36,7 +36,7 @@ public:
         Output: [2, 3]
     Constraints:
         The number of nodes in the list is in the range [0, 300].
-        -100 ≤ RemoveDuplicatesFromSortedListIINode.val ≤ 100
+        -100 ≤ Node.val ≤ 100
         The list is guaranteed to be sorted in ascending order.)" << endl;
     }
 

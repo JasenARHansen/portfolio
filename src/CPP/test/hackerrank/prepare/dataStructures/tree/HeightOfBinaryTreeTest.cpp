@@ -12,40 +12,20 @@ TEST(HeightOfBinaryTreeTest, description) {
 
 TEST(HeightOfBinaryTreeTest, height_1) {
     auto expected = 2;
-    auto *n1 = new HeightOfBinaryTree::Node(4);
-    auto *n2 = new HeightOfBinaryTree::Node(2);
-    auto *n3 = new HeightOfBinaryTree::Node(6);
-    auto *n4 = new HeightOfBinaryTree::Node(1);
-    auto *n5 = new HeightOfBinaryTree::Node(3);
-    auto *n6 = new HeightOfBinaryTree::Node(5);
-    auto *n7 = new HeightOfBinaryTree::Node(7);
-    n1->left = n2;
-    n1->right = n3;
-    n2->left = n4;
-    n2->right = n5;
-    n3->left = n6;
-    n3->right = n7;
-    auto result = HeightOfBinaryTree::height(n1);
+    vector<string> values{"4", "2", "6", "1", "3", "5", "7"};
+    auto root = HeightOfBinaryTree::deserializeTree(values);
+    auto result = HeightOfBinaryTree::height(root);
     EXPECT_EQ(expected, result);
+    HeightOfBinaryTree::deleteTree(&root);
 }
 
 TEST(HeightOfBinaryTreeTest, height_2) {
     auto expected = 3;
-    auto *n1 = new HeightOfBinaryTree::Node(3);
-    auto *n2 = new HeightOfBinaryTree::Node(2);
-    auto *n3 = new HeightOfBinaryTree::Node(5);
-    auto *n4 = new HeightOfBinaryTree::Node(1);
-    auto *n5 = new HeightOfBinaryTree::Node(4);
-    auto *n6 = new HeightOfBinaryTree::Node(5);
-    auto *n7 = new HeightOfBinaryTree::Node(7);
-    n1->left = n2;
-    n1->right = n3;
-    n2->left = n4;
-    n3->left = n5;
-    n3->right = n6;
-    n6->right = n7;
-    auto result = HeightOfBinaryTree::height(n1);
+    vector<string> values{"3", "2", "5", "1", "null", "4", "6", "null", "null", "null", "null", "null", "7"};
+    auto root = HeightOfBinaryTree::deserializeTree(values);
+    auto result = HeightOfBinaryTree::height(root);
     EXPECT_EQ(expected, result);
+    HeightOfBinaryTree::deleteTree(&root);
 }
 
 #endif

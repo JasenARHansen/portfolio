@@ -97,13 +97,13 @@ public:
         2)" << endl;
     }
 
-    static vector<int> matchingStrings(const vector<string> &stringList, vector<string> queries) {
+    static vector<int> matchingStrings(const vector<string> &stringList, const vector<string> &queries) {
         vector<int> result;
         map<string, int> data;
-        for (auto element: stringList) {
+        for (const auto &element: stringList) {
             data[element]++;
         }
-        for (auto query: queries) {
+        for (const auto &query: queries) {
             if (data.count(query)) {
                 result.push_back(data.at(query));
             } else {

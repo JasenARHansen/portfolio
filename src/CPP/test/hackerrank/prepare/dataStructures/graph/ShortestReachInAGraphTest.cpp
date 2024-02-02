@@ -69,7 +69,7 @@ TEST(ShortestReachInAGraphBidirectionalEdgesTest, shortest_reach_4) {
 }
 
 TEST(ShortestReachInAGraphTest, shortest_reach_raw) {
-    vector<int> expected{6, 6, -1};
+    auto expected = "6 6 -1 ";
     int n = 4;
     // Create a graph of size n where each edge weight is 6:
     GraphRequiresOffsets::Graph graph(n);
@@ -92,14 +92,16 @@ TEST(ShortestReachInAGraphTest, shortest_reach_raw) {
     graph.add_edge(u, v);
     int startId = 1;
     startId--;
-    // Find shortest reach from node s
+    // Find the shortest reach from node s
     vector<int> distances = graph.shortest_reach(startId);
+    string result;
     for (int i = 0; i < distances.size(); i++) {
         if (i != startId) {
-            cout << distances[i] << " ";
+            result += to_string(distances[i]);
+            result += " ";
         }
     }
-    cout << endl;
+    EXPECT_EQ(expected, result);
 }
 
 #endif

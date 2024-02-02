@@ -66,14 +66,14 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_1) {
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_2) {
-    // 0 ≤ AddTwoNumbersListNode.val
+    // 0 ≤ Node.val
     auto size = 0 - 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_3) {
-    // AddTwoNumbersListNode.val ≤ 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserializeList(values), ::testing::ExitedWithCode(3), "");

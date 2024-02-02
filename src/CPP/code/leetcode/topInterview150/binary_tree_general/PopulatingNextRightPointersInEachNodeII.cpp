@@ -49,7 +49,7 @@ public:
         Output: []
     Constraints:
         The number of nodes in the tree is in the range [0, 6000].
-        -100 ≤ AddTwoNumbersListNode.val ≤ 100
+        -100 ≤ Node.val ≤ 100
     Follow-up:
         You may only use constant extra space.
         The recursive approach is fine.

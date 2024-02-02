@@ -19,9 +19,7 @@ private:
 
         explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
 
-        Node(int x, Node *left,
-             Node *right) : val(x), left(left),
-                            right(right) {}
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
     };
 
 public:
@@ -37,7 +35,7 @@ public:
         Output: 1
     Constraints:
         The number of nodes in the tree is in the range [2, 10^4].
-        0 ≤ AddTwoNumbersListNode.val ≤ 10^5
+        0 ≤ Node.val ≤ 10^5
     Note: This question is the same as 783: https://leetcode.com/problems/minimum-distance-between-bst-nodes/)" << endl;
     }
 

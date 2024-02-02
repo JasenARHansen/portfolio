@@ -7,14 +7,15 @@
 
 using namespace std;
 
-struct Node {
-    int data;
-    Node *next;
-
-    explicit Node(int x) : data(x), next(nullptr) {}
-};
-
 class PrintTheElementsOfALinkedList {
+private:
+    struct Node {
+        int data;
+        Node *next;
+
+        explicit Node(int x) : data(x), next(nullptr) {}
+    };
+
 public:
     static void description() {
         cout << R"(Linked List: Print the Elements of a Linked List

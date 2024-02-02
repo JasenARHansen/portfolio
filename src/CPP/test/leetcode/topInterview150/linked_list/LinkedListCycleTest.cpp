@@ -59,7 +59,7 @@ TEST(LinkedListCycleTest, hasCycle_fail_1) {
 }
 
 TEST(LinkedListCycleTest, hasCycle_fail_2) {
-    // -10^5 ≤ AddTwoNumbersListNode.val
+    // -10^5 ≤ Node.val
     auto size = (int) -pow(10, 5) - 1;
     vector<int> values{size};
     auto pos = 0;
@@ -67,7 +67,7 @@ TEST(LinkedListCycleTest, hasCycle_fail_2) {
 }
 
 TEST(LinkedListCycleTest, hasCycle_fail_3) {
-    // AddTwoNumbersListNode.val ≤ 10^5
+    // Node.val ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<int> values{size};
     auto pos = 0;

@@ -19,8 +19,7 @@ private:
 
         explicit Node(int x) : val(x), left(nullptr), right(nullptr) {}
 
-        Node(int x, Node *left,
-             Node *right) : val(x), left(left), right(right) {}
+        Node(int x, Node *left, Node *right) : val(x), left(left), right(right) {}
     };
 
 public:
@@ -39,7 +38,7 @@ public:
         Output: [3.00000, 14.50000, 11.00000]
     Constraints:
         The number of nodes in the tree is in the range [1, 10^4].
-        -2^31 ≤ AddTwoNumbersListNode.val ≤ 2^31 - 1)" << endl;
+        -2^31 ≤ Node.val ≤ 2^31 - 1)" << endl;
     }
 
     static Node *deserializeTree(vector<string> values) {

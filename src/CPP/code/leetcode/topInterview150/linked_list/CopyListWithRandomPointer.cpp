@@ -40,7 +40,7 @@ public:
     Return the head of the copied linked list.
     The linked list is represented in the input/output as a list of n nodes.
     Each node is represented as a pair of [val, random_index] where:
-        val: an integer representing AddTwoNumbersListNode.val
+        val: an integer representing Node.val
         random_index: the index of the node (range from 0 to n-1) that the random pointer points to,
          or null if it does not point to any node.
     Your code will only be given the head of the original linked list.
@@ -55,7 +55,7 @@ public:
         Output: [[3, null], [3, 0], [3, null]]
     Constraints:
         0 ≤ n ≤ 1000
-        -10^4 ≤ AddTwoNumbersListNode.val ≤ 10^4
+        -10^4 ≤ Node.val ≤ 10^4
         AddTwoNumbersListNode.random is null or is pointing to some node in the linked list.)" << endl;
     }
 

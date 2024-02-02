@@ -96,14 +96,14 @@ TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_1) {
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_2) {
-    // -100 ≤ AddTwoNumbersListNode.val
+    // -100 ≤ Node.val
     auto size = -100 - 1;
     vector<int> values{size};
     EXPECT_EXIT(MergeTwoSortedLists::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
 TEST(MergeTwoSortedListsTest, mergeTwoLists_fail_3) {
-    // AddTwoNumbersListNode.val ≤ 100
+    // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(MergeTwoSortedLists::deserializeList(values), ::testing::ExitedWithCode(3), "");
