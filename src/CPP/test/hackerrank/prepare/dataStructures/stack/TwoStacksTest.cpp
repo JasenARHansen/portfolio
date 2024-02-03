@@ -1,8 +1,8 @@
-#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_TWO_STACKS_TEST
-#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_AND_QUEUE_TWO_STACKS_TEST
+#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_TWO_STACKS_TEST
+#define HACKERRANK_PREPARE_DATA_STRUCTURES_STACKS_TWO_STACKS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/hackerrank/prepare/dataStructures/stacksAndQueue/TwoStacks.cpp"  // NOLINT : Ignore .cpp import
+#include "../../../../../code/hackerrank/prepare/dataStructures/stack/TwoStacks.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(TwoStacksTest, description) {
     testing::internal::CaptureStdout();

@@ -66,7 +66,7 @@ public:
         if (a.length() != b.length()) { return false; }
         // Processed set: Words processed so to prevent reprocessing
         set<string> processed;
-        // Push initial word into processed so it will not be processed an extra time
+        // Push initial word into processed, so it will not be processed an extra time
         processed.insert(a);
         // Candidates stack: Words that might be part of the path to the target
         queue<string> candidates;
