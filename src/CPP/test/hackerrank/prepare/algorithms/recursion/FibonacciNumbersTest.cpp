@@ -1,8 +1,8 @@
-#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_RECURSION_AND_BACKTRACKING_FIBONACCI_NUMBERS_TEST
-#define HACKERRANK_PREPARE_DATA_STRUCTURES_RECURSION_AND_BACKTRACKING_FIBONACCI_NUMBERS_TEST
+#ifndef HACKERRANK_PREPARE_DATA_STRUCTURES_RECURSION_FIBONACCI_NUMBERS_TEST
+#define HACKERRANK_PREPARE_DATA_STRUCTURES_RECURSION_FIBONACCI_NUMBERS_TEST
 
 #include "gtest/gtest.h"
-#include "../../../../../code/hackerrank/prepare/dataStructures/recursionAndBacktracking/FibonacciNumbers.cpp"  // NOLINT : Ignore .cpp import
+#include "../../../../../code/hackerrank/prepare/algorithms/recursion/FibonacciNumbers.cpp"  // NOLINT : Ignore .cpp import
 
 TEST(FibonacciNumbersTest, description) {
     testing::internal::CaptureStdout();

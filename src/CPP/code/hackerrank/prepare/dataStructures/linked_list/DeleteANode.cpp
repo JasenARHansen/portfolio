@@ -27,9 +27,9 @@ public:
     The list may be empty after you delete the node.
     In that case, return a null value.
     Example:
-        list = 0 -> 1 -> 2 -> 3
+        list = 0 → 1 → 2 → 3
         position = 2
-        After removing the node at position 2, list' = 0 -> 1 -> 3.
+        After removing the node at position 2, list' = 0 → 1 → 3.
     Function Description:
         Complete the deleteNode function in the editor below.
         removeDuplicates has the following parameters:
@@ -58,8 +58,8 @@ public:
     Sample Output:
         20 6 2 7 4 15 9
     Explanation:
-        The original list is 20 -> 6 -> 2 -> 19 -> 7 -> 4 -> 15 -> 9.
-        After deleting the node at position , the list is 20 -> 6 -> 2 -> 7 -> 4 -> 15 -> 9.)" << endl;
+        The original list is 20 → 6 → 2 → 19 → 7 → 4 → 15 → 9.
+        After deleting the node at position , the list is 20 → 6 → 2 → 7 → 4 → 15 → 9.)" << endl;
     }
 
     static Node *createList(vector<int> data) {

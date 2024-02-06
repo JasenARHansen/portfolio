@@ -35,7 +35,7 @@ public:
            3    6
             \
              4
-    For the above tree, the level order traversal is 1 -> 2 -> 5 -> 3 -> 6 -> 4.
+    For the above tree, the level order traversal is 1 → 2 → 5 → 3 → 6 → 4.
     Input Format:
         You are given a function,
             void levelOrder(Node * root) {}
@@ -58,7 +58,7 @@ public:
     Explanation:
         We need to print the nodes level by level.
         We process each level from left to right.
-        Level Order Traversal: 1 -> 2 -> 5 -> 3 -> 6 -> 4.)" << endl;
+        Level Order Traversal: 1 → 2 → 5 → 3 → 6 → 4.)" << endl;
     }
 
     static Node *deserializeTree(vector<string> values) {

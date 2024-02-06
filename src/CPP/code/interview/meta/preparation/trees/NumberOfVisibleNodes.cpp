@@ -38,7 +38,7 @@ public:
     Output:
         An int representing the number of visible nodes.
     Example:
-            8  <------ root
+            8          ← root
            / \
          3    10
         / \     \

@@ -24,7 +24,7 @@ public:
         b = bat
         result: true
     Explanation:
-        cat -> bat
+        cat → bat
     Example 2:
         words = {car, cat, cot, dog, bat, bee, card, care, far, ear, cot, dot}
         a = cat
@@ -38,7 +38,7 @@ public:
         b = dog
         result: true
     Explanation:
-        cat -> cot -> dot -> dog
+        cat → cot → dot → dog
     Example 4:
         words = {car, cat, cot, dog, bat, bee, card, care, far, ear, cot, dot}
         a = cat

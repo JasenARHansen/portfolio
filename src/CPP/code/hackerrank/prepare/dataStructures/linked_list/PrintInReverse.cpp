@@ -27,7 +27,7 @@ public:
     If the given list is empty, do not print anything.
     Example:
         head* refers to the linked list with data values
-        1 -> 2 -> 3 -> NULL
+        1 → 2 → 3 → NULL
     Print the following:
         3
         2
@@ -82,7 +82,7 @@ public:
     There are three test cases.
     There are no blank lines between test case output.
     The first linked list has 5 elements:
-        16 -> 12 -> 4 -> 2 -> 5 -> NULL
+        16 → 12 → 4 → 2 → 5 → NULL
     Printing this in reverse order produces:
         5
         2
@@ -90,13 +90,13 @@ public:
         12
         16
     The second linked list has 3 elements:
-        7 -> 3 -> 9 -> NULL
+        7 → 3 → 9 → NULL
     Printing this in reverse order produces:
         9
         3
         7
     The third linked list has 5 elements:
-        5 -> 1 -> 18 -> 3 -> 13 -> NULL
+        5 → 1 → 18 → 3 → 13 → NULL
     Printing this in reverse order produces:
         13
         3

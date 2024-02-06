@@ -27,7 +27,7 @@ public:
     Count backwards from the tail node.
     The tail is at position 0, its parent is at 1 and so on.
     Example:
-        head refers to 3 -> 2 -> 1 -> 0 -> NULL
+        head refers to 3 → 2 → 1 → 0 → NULL
         positionFromTail = 2
         Each of the data values matches its distance from the tail.
         The value 2 is at the desired position.
@@ -64,7 +64,7 @@ public:
     Explanation:
         In the first case, there is one element in linked list with a value of 1.
         The last (only) element contains 1.
-        In the second case, the list is 3 -> 2 -> 1 -> NULL
+        In the second case, the list is 3 → 2 → 1 → NULL
         The element with position of 2 from tail contains 3.)" << endl;
     }
 

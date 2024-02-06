@@ -74,10 +74,10 @@ public:
         5
     Explanation 0:
         Initially:
-        A = [3, 4, 7, 6, 5]<-TOP
+        A = [3, 4, 7, 6, 5] ← TOP
         After 1 iteration (divide by 2, the 1st prime number):
-        A1 = [5, 7, 3]<-TOP
-        B1 = [6, 4]<-TOP
+        A1 = [5, 7, 3] ← TOP
+        B1 = [6, 4] ← TOP
         Move B1 elements to answers.
         answers = [4, 6]
         All iterations are complete, so move A1 elements to answers.
@@ -93,15 +93,15 @@ public:
         3
     Explanation 1:
         Initially:
-        A = [3, 3, 4, 4, 9]<-TOP
+        A = [3, 3, 4, 4, 9] ← TOP
         After 1st iteration (divide by 2):
-        A1 = [9, 3, 3]<-TOP
-        B1 = [4, 4]<-TOP
+        A1 = [9, 3, 3] ← TOP
+        B1 = [4, 4] ← TOP
         Move B1 to answers.
         answers = [4, 4]
         After 2nd iteration (divide by 3):
-        A2 = []<- TOP
-        B2 = [3, 3, 9]<-TOP
+        A2 = [] ←  TOP
+        B2 = [3, 3, 9] ← TOP
         Move B2 elements to answers.
         answers = [4, 4, 9, 3, 3]
         There are no values remaining in A2.)" << endl;

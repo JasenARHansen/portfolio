@@ -45,7 +45,7 @@ public:
             possibleFlip.emplace_back(row.size(), 0);
         }
         // If it is on the border it can not flip, so edge rows and columns are skipped
-        // Check ranges per rows 1 -> size - 2 since the 'O' on the edges can not be changed
+        // Check ranges per rows 1 → size - 2 since the 'O' on the edges can not be changed
         for (auto row = 1; row < board.size() - 1; row++) {
             int startIndex = 0;
             int stopIndex = 0;
@@ -72,7 +72,7 @@ public:
                 }
             }
         }
-        // Check ranges per columns 1 -> size - 2 since the 'O' on the edges can not be changed
+        // Check ranges per columns 1 → size - 2 since the 'O' on the edges can not be changed
         for (auto column = 1; column < board[0].size() - 1; column++) {
             int startIndex = 0;
             int stopIndex = 0;

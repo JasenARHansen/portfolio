@@ -45,11 +45,11 @@ public:
         4
     Explanation:
         The characters marked IN LOWER CASE are the ones that can be deleted so that the string does not have matching adjacent characters.
-            Aaaa -> A (3 deletions)
-            Bbbbb -> B (4 deletions)
-            ABABABAB -> ABABABAB (0 deletions)
-            BABABA -> BABABA (0 deletions)
-            AaaBbb -> AB (4 deletions))" << endl;
+            Aaaa → A (3 deletions)
+            Bbbbb → B (4 deletions)
+            ABABABAB → ABABABAB (0 deletions)
+            BABABA → BABABA (0 deletions)
+            AaaBbb → AB (4 deletions))" << endl;
     }
 
     static string ltrim(const string &s) {

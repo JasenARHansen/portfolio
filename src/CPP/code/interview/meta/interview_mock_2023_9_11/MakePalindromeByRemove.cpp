@@ -12,11 +12,11 @@ public:
     static void description() {
         cout << R"(Question 1:
     Given a string S consisting of lowercase English characters determine if you can make it a palindrome by removing at most 1 character.
-        mom --> True # mom --> mom
-        tacocats --> True # tacocats → tacocat
-        racercar --> True # racercar --> racecar, racrcar
-        baaba --> True # baaba → baab
-        abaab --> True # abaab → baab
+        mom → True # mom → mom
+        tacocats → True # tacocats → tacocat
+        racercar → True # racercar → racecar, racrcar
+        baaba → True # baaba → baab
+        abaab → True # abaab → baab
         abcd → False
         btnnure → False
     Inputs must have at least 1 character

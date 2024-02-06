@@ -46,7 +46,7 @@ public:
         An illustration of the test case follows.
               |   x
               v x x
-              x x x   <-
+              x x x   ←
             x x x x
           x x x x x
           1 2 3 4 5)" << endl;

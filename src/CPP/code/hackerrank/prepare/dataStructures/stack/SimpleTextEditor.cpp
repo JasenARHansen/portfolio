@@ -129,7 +129,6 @@ private:
                 performOperation(data, inverseOperations->top(), inverseOperations, result);
                 inverseOperations->pop();
                 inverseOperations->pop();
-
                 break;
             default:
                 break;

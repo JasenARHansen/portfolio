@@ -102,7 +102,8 @@ public:
 class ShortestReachInAGraphUnidirectionalEdges {
 public:
     static void description() {
-        cout << R"(Consider an undirected graph consisting of n nodes where each node is labeled from 1 to n and the
+        cout << R"( Graphs: Shortest Reach in a Graph Unidirectional Edges
+    Consider an undirected graph consisting of n nodes where each node is labeled from 1 to n and the
      edge between any two nodes is always of length 6.
     We define node s to be the starting position for a BFS.
     Given a graph, determine the distances from the start node to each of its descendants and return the list

@@ -27,8 +27,8 @@ public:
     Delete nodes and return a sorted list with each distinct value in the original list.
     The given head pointer may be null indicating that the list is empty.
     Example:
-        head refers to the first node in the list 1 -> 2 -> 2 -> 3 -> 3 -> 3 -> NULL
-        Remove 1 of the 2 data values and return pointing to the revised list 1 -> 2 -> 3 -> NULL
+        head refers to the first node in the list 1 → 2 → 2 → 3 → 3 → 3 → NULL
+        Remove 1 of the 2 data values and return pointing to the revised list 1 → 2 → 3 → NULL
     Function Description:
         Complete the removeDuplicates function in the editor below.
         removeDuplicates has the following parameter:
@@ -57,8 +57,8 @@ public:
     Sample Output:
         1 2 3 4
     Explanation:
-        The initial linked list is:1 -> 2 -> 2 -> 3 -> 4 -> NULL
-        The final linked list is: 1 -> 2 -> 3 -> 4 -> NULL)" << endl;
+        The initial linked list is:1 → 2 → 2 → 3 → 4 → NULL
+        The final linked list is: 1 → 2 → 3 → 4 → NULL)" << endl;
     }
 
     static Node *createList(vector<int> data) {

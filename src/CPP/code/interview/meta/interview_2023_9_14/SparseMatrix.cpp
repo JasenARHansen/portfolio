@@ -28,7 +28,7 @@ public:
      as a multiplication between "this" and "other".
      Here is an example of matrix multiplication:
         2by3 x 3by3 => 2by3 matrix
-        1 2 3  x a b c  ->   [1a+2d+3g  1b+2e+3h 1c+2f+3i]
+        1 2 3  x a b c  →    [1a+2d+3g  1b+2e+3h 1c+2f+3i]
         4 5 6    d e f       [4a+5d+6g  ...      ...     ]
                  g h i
     For each method you implement, comment on their runtime complexities.

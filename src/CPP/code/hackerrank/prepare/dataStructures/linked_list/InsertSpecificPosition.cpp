@@ -25,11 +25,11 @@ public:
     A position of 0 indicates head, a position of 1 indicates one node away from the head and so on.
     The head pointer given may be null meaning that the initial list is empty.
     Example:
-        head refers to the first node in the list 1 -> 2 -> 3
+        head refers to the first node in the list 1 → 2 → 3
         data = 4
         position = 2
         Insert a node at position 2 with data = 4.
-        The new list is 1 -> 2 -> 4 -> 3
+        The new list is 1 → 2 → 4 → 3
     Function Description:
         Complete the function insertNodeAtPosition in the editor below.
         It must return a reference to the head node of your finished list.
@@ -58,9 +58,9 @@ public:
     Sample Output:
         16 13 1 7
     Explanation:
-        The initial linked list is 16 -> 13 -> 7.
+        The initial linked list is 16 → 13 → 7.
         Insert at the position 2 which currently has 7 in it.
-        The updated linked list is 16 -> 13 -> 1 -> 7.)" << endl;
+        The updated linked list is 16 → 13 → 1 → 7.)" << endl;
     }
 
     static Node *createList(vector<int> data) {

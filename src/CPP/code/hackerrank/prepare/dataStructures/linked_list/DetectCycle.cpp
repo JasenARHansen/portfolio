@@ -22,7 +22,7 @@ public:
         cout << R"(Linked Lists: Detect a Cycle
     A linked list is said to contain a cycle if any node is visited more than once while traversing the list.
     For example, in the following graph there is a cycle formed when node 5 points back to node 3:
-     1 -> 2 -> 3 -> 4 -> 5 -> 3.
+     1 → 2 → 3 → 4 → 5 → 3.
 Function Description:
     Complete the function has_cycle in the editor below.
         It must return a boolean true if the graph contains a cycle, or false.
@@ -38,8 +38,8 @@ Function Description:
             1 ≤ list size ≤ 100
     Sample Input:
         The following linked lists are passed as arguments to your function:
-            1 -> null.
-            1 -> 2 -> 3 -> 2.
+            1 → null.
+            1 → 2 → 3 → 2.
     Sample Output:
         0
         1

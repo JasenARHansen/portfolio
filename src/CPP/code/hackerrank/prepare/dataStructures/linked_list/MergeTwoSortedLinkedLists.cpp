@@ -25,9 +25,9 @@ public:
     Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list.
     Either head pointer may be null meaning that the corresponding list is empty.
     Example:
-        headA refers to 1 -> 3 -> 7 -> NULL
-        headB refers to 1 -> 2 -> NULL
-        The new list is 1 -> 1 -> 2 -> 3 -> 7 -> NULL
+        headA refers to 1 → 3 → 7 → NULL
+        headB refers to 1 → 2 → NULL
+        The new list is 1 → 1 → 2 → 3 → 7 → NULL
     Function Description:
         Complete the mergeLists function in the editor below.
         mergeLists has the following parameters:
@@ -58,9 +58,9 @@ public:
     Sample Output:
         1 2 3 3 4
     Explanation:
-        The first linked list is: 1 -> 2 -> 3 -> NULL
-        The second linked list is: 3 -> 4 -> NULL
-        Hence, the merged linked list is: 1 -> 2 -> 4 -> 3 -> 4 -> NULL)" << endl;
+        The first linked list is: 1 → 2 → 3 → NULL
+        The second linked list is: 3 → 4 → NULL
+        Hence, the merged linked list is: 1 → 2 → 4 → 3 → 4 → NULL)" << endl;
     }
 
     static Node *createList(vector<int> data) {

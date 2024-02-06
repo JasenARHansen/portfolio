@@ -35,7 +35,7 @@ public:
            3    6
             \
              4
-    Top View: 1 -> 2 -> 5 -> 6
+    Top View: 1 → 2 → 5 → 6
     Complete the function topView and print the resulting values on a single line separated by space.
     Input Format:
         Our test code passes the root node of a binary tree to the inOrder function.

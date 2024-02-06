@@ -24,10 +24,10 @@ public:
     Given a reference to the head of a doubly-linked list and an integer, data, create a new
      DoublyLinkedListNode object having data value data and insert it at the proper location to maintain the sort.
     Example:
-    head refers to the list 1 <-> 2 <-> 4 -> NULL
+    head refers to the list 1 ↔ 2 ↔ 4 → NULL
     data = 3
     Return a reference to the new list:
-        1 <-> 2 <-> 3 <-> 4 -> NULL.
+        1 ↔ 2 ↔ 3 ↔ 4 → NULL.
     Function Description:
         Complete the sortedInsert function in the editor below.
             sortedInsert has two parameters:
@@ -60,9 +60,9 @@ public:
         1 3 4 5 10
     Explanation:
         The initial doubly linked list is:
-            1 <-> 3 <-> 4 <-> 10 -> NULL.
+            1 ↔ 3 ↔ 4 ↔ 10 → NULL.
         The doubly linked list after insertion is:
-            1 <-> 3 <-> 4 <-> 5 <-> 10 -> NULL)" << endl;
+            1 ↔ 3 ↔ 4 ↔ 5 ↔ 10 → NULL)" << endl;
     }
 
     static Node *createList(vector<int> data) {

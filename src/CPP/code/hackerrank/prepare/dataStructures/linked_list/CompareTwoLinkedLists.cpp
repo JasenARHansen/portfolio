@@ -27,8 +27,8 @@ public:
     If all data attributes are equal and the lists are the same length, return 1.
     Otherwise, return 0.
     Example:
-        list1 1 -> 2 -> 3 -> NULL
-        list2 1 -> 2 -> 3 -> 4 -> NULL
+        list1 1 → 2 → 3 → NULL
+        list2 1 → 2 → 3 → 4 → NULL
         The two lists have equal data attributes for the first 3 nodes.
         list2 is longer, though, so the lists are not equal.
         Return 0.
@@ -42,7 +42,7 @@ public:
     Input Format:
         The first line contains an integer t, the number of test cases.
         Each of the test cases has the following format:
-        The first line contains an integern, the number of nodes in the first linked list.
+        The first line contains an integer n, the number of nodes in the first linked list.
         Each of the next n lines contains an integer, each a value for a data attribute.
         The next line contains an integer m, the number of nodes in the second linked list.
         Each of the next m lines contains an integer, each a value for a data attribute.
@@ -74,8 +74,8 @@ public:
         1
     Explanation:
         There are 2 test cases, each with a pair of linked lists.
-        In the first case, linked lists are: 1 -> 2 -> NULL and 1 -> NULL
-        In the second case, linked lists are: 1 -> 2 -> NULL and 1 -> 2 -> NULL)" << endl;
+        In the first case, linked lists are: 1 → 2 → NULL and 1 → NULL
+        In the second case, linked lists are: 1 → 2 → NULL and 1 → 2 → NULL)" << endl;
     }
 
     static Node *createList(vector<int> data) {

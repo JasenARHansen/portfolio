@@ -53,9 +53,9 @@ public:
         4 3 2 1
     Explanation:
         The initial doubly linked list is:
-            1 <-> 2 <-> 3 <-> 4 -> NULL.
+            1 ↔ 2 ↔ 3 ↔ 4 → NULL.
         The reversed doubly linked list is:
-            4 <-> 3 <-> 2 <-> 1 -> NULL.)" << endl;
+            4 ↔ 3 ↔ 2 ↔ 1 → NULL.)" << endl;
     }
 
     static Node *createList(vector<int> data) {

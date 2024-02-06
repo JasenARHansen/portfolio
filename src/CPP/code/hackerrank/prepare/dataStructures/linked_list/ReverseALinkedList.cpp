@@ -27,9 +27,9 @@ public:
      order is reversed.
     The head pointer given may be null meaning that the initial list is empty.
     Example:
-        head references the list 1 -> 2 -> 3 -> NULL
+        head references the list 1 → 2 → 3 → NULL
         Manipulate the pointers of each node in place and return head, now referencing the head of the list
-         3 -> 2 -> 1 -> NULL
+         3 → 2 → 1 → NULL
     Function Description:
         Complete the reverse function in the editor below.
         reverse has the following parameter:
@@ -57,9 +57,9 @@ public:
         5 4 3 2 1
     Explanation:
         The initial linked list is:
-            1 -> 2 -> 3 -> 4 -> 5 -> NULL
+            1 → 2 → 3 → 4 → 5 → NULL
         The reversed linked list is:
-            5 -> 4 -> 3 -> 2 -> 1 -> NULL.)" << endl;
+            5 → 4 → 3 → 2 → 1 → NULL.)" << endl;
     }
 
     static Node *createList(vector<int> data) {

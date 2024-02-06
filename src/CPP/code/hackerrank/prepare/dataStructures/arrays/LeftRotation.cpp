@@ -43,7 +43,7 @@ public:
         5 1 2 3 4
     Explanation:
         When we perform d = 4 left rotations, the array undergoes the following sequence of changes:
-        [1, 2, 3, 4, 5] -> [2, 3, 4, 5, 1] -> [3, 4, 5, 1, 2] -> [4, 5, 1, 2, 3] -> [5, 1, 2, 3, 4])" << endl;
+        [1, 2, 3, 4, 5] → [2, 3, 4, 5, 1] → [3, 4, 5, 1, 2] → [4, 5, 1, 2, 3] → [5, 1, 2, 3, 4])" << endl;
     }
 
     static vector<int> rotateLeft(int d, vector<int> arr) {

@@ -12,10 +12,11 @@ TEST(SimpleTextEditorTest, description) {
 
 TEST(SimpleTextEditorTest, SimpleTextEditor_1) {
     vector<string> expected{"f", "g", "d"};
-    vector<string> operations{"1, abcde","1 fg", "3 6", "2 5", "4", "3 7", "4", "3 4"};
+    vector<string> operations{"1, abcde", "1 fg", "3 6", "2 5", "4", "3 7", "4", "3 4"};
     auto result = SimpleTextEditor::textEdits(operations);
     EXPECT_EQ(expected, result);
 }
+
 TEST(SimpleTextEditorTest, SimpleTextEditor_2) {
     vector<string> expected{"c", "y", "a"};
     vector<string> operations{"1 abc", "3 3", "2 3", "1 xy", "3 2", "4", "4", "3 1"};

@@ -10,7 +10,8 @@ using namespace std;
 class Contacts {
 public:
     static void description() {
-        cout << R"(We're going to make our own Contacts application!
+        cout << R"(Treis: Contacts
+    We're going to make our own Contacts application!
     The application must perform two types of operations:
         1: add name, where name is a string denoting a contact name.
             This must store name as a new contact in the application.
@@ -68,19 +69,12 @@ public:
         Neither name starts with hak, add 0 to the return array.)" << endl;
     }
 
-    Contacts() {
-        trei = ContactTrei();
-    }
-
-    vector<int> readUserInput(istream &std_input) {
+    static vector<int> contacts(const vector<vector<string>> &queries) {
+        auto trei = ContactTrei();
         vector<int> results;
-        int count;
-        std_input >> count;
-        string command;
-        string word;
-        for (int i = 0; i < count; i++) {
-            std_input >> command;
-            std_input >> word;
+        for (vector<string> query: queries) {
+            string command = query.at(0);
+            string word = query.at(1);
             if (command == "add") {
                 trei.add(word);
             } else if (command == "find") {
@@ -171,7 +165,6 @@ private:
         Node *node;
     };
 
-    ContactTrei trei;
 };
 
 #pragma clang diagnostic pop

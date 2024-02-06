@@ -10,40 +10,26 @@ TEST(ContactsTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ContactsTest, readUserInput_1) {
+TEST(ContactsTest, contacts_1) {
     vector<int> expected{2, 0};
-    vector<string> inputs{"4",
-                          "add hack",
-                          "add hackerrank",
-                          "find hac",
-                          "find hak"};
-    string testInput;
-    for (const auto &input: inputs) {
-        testInput.append(input).append(" ");
-    }
-    stringstream fakeInput(testInput);
-    Contacts contacts = Contacts();
-    auto result = contacts.readUserInput(fakeInput);
+    vector<vector<string>> queries{{"add",  "hack"},
+                                   {"add",  "hackerrank"},
+                                   {"find", "hac"},
+                                   {"find", "hak"}};
+    auto result = Contacts::contacts(queries);
     EXPECT_EQ(expected, result);
 }
 
-TEST(ContactsTest, readUserInput_2) {
+TEST(ContactsTest, contacts_2) {
     vector<int> expected{3, 2, 0};
-    vector<string> inputs{"7",
-                          "add ed",
-                          "add eddie",
-                          "add edward",
-                          "find ed",
-                          "add edwina",
-                          "find edw",
-                          "find a"};
-    string testInput;
-    for (const auto &input: inputs) {
-        testInput.append(input).append(" ");
-    }
-    stringstream fakeInput(testInput);
-    Contacts contacts = Contacts();
-    auto result = contacts.readUserInput(fakeInput);
+    vector<vector<string>> queries{{"add",  "ed"},
+                                   {"add",  "eddie"},
+                                   {"add",  "edward"},
+                                   {"find", "ed"},
+                                   {"add",  "edwina"},
+                                   {"find", "edw"},
+                                   {"find", "a"}};
+    auto result = Contacts::contacts(queries);
     EXPECT_EQ(expected, result);
 }
 

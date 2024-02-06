@@ -6,10 +6,10 @@
 
 using namespace std;
 
-class TwoStacks {
+class QueueUsingTwoStacks {
 public:
     static void description() {
-        cout << R"(Stacks: A Tale of Two Stacks
+        cout << R"(Queues: Queue using Two Stacks
     A queue is an abstract data type that maintains the order in which elements were added to it, allowing
      the oldest elements to be removed from the front and new elements to be added to the rear.
     This is called a First-In-First-Out (FIFO) data structure because the first element added to the queue
@@ -45,21 +45,34 @@ public:
     Output Format:
         For each query of type 3, return the value of the element at the front of the fifo queue on a new line.
     Sample Input:
-        10
-        1 42
-        2
-        1 14
-        3
-        1 28
-        3
-        1 60
-        1 78
-        2
-        2
+        STDIN   Function
+        -----   --------
+        10      q = 10 (number of queries)
+        1 42    1st query, enqueue 42
+        2       dequeue front element
+        1 14    enqueue 42
+        3       print the front element
+        1 28    enqueue 28
+        3       print the front element
+        1 60    enqueue 60
+        1 78    enqueue 78
+        2       dequeue front element
+        2       dequeue front element
     Sample Output:
         14
         14
     Explanation:
+    Perform the following sequence of actions:
+        1. Enqueue 42; queue = {42}.
+        2. Dequeue the value at the head of the queue, 42; queue = {}.
+        3. Enqueue 14; queue = {14}.
+        4. Print the value at the head of the queue, 14; queue = {14}.
+        5. Enqueue 28; queue = {14, 28}.
+        6. Print the value at the head of the queue, 14; queue = {14, 28}.
+        7. Enqueue 60; queue = {14, 28, 60}.
+        8. Enqueue 78; queue = {14, 28, 60, 78}.
+        9. Dequeue the value at the head of the queue, 14; queue = {28, 60, 78}.
+        10. Dequeue the value at the head of the queue, 28; queue = {60, 78}.
         Query type  Lifo                Fifo            Output
         1 42        {42}                {42}
         2           {}                  {}
@@ -73,15 +86,49 @@ public:
         2           {60, 78}            {78, 60})" << endl;
     }
 
+    static vector<int> queueOperations(const vector<string> &operations) {
+        vector<int> result;
+        auto queue = MyQueue();
+        for (const auto &operation: operations) {
+            vector<int> op;
+            string line;
+            stringstream ss(operation);
+            while (getline(ss, line, ' ')) {
+                op.push_back(stoi(line));
+            }
+            switch (op.at(0)) {
+                case 1:
+                    // 1 x: Enqueue element x into the end of the queue.
+                    queue.enqueue(op.at(1));
+                    break;
+                case 2:
+                    // 2: Dequeue the element at the front of the queue.
+                    queue.dequeue();
+                    break;
+                case 3:
+                    // 3: Print the element at the front of the queue.
+                    result.push_back(queue.front());
+                    break;
+                default:
+                    break;
+            }
+        }
+        return result;
+    }
+
+private:
     class MyQueue {
-    public:
+
+    private:
         stack<int> stack_newest_on_top, stack_oldest_on_top;
 
-        void push(int x) {
+    public:
+
+        void enqueue(int x) {
             this->stack_newest_on_top.push(x);
         }
 
-        void pop() {
+        void dequeue() {
             if (this->stack_oldest_on_top.empty()) {
                 while (!this->stack_newest_on_top.empty()) {
                     this->stack_oldest_on_top.push(this->stack_newest_on_top.top());
@@ -101,6 +148,7 @@ public:
             return this->stack_oldest_on_top.top();
         }
     };
+
 };
 
 #pragma clang diagnostic pop
