@@ -65,5 +65,4 @@ TEST(HuffmanDecodingTest, height_4) {
     HuffmanDecoding::deleteTree(&root);
 }
 
-
 #endif

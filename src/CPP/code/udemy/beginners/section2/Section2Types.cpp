@@ -1,4 +1,9 @@
 #include "Section2Types.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 void Section2Types::integerType() {
     int value = 1234;

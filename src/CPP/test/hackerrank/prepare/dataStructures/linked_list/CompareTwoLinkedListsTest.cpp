@@ -58,7 +58,6 @@ TEST(CompareTwoLinkedListsTest, compare_lists_4) {
     CompareTwoLinkedLists::deleteList(&head2);
 }
 
-
 TEST(CompareTwoLinkedListsTest, compare_lists_5) {
     auto expected = false;
     vector<int> source1{1};
@@ -70,6 +69,5 @@ TEST(CompareTwoLinkedListsTest, compare_lists_5) {
     CompareTwoLinkedLists::deleteList(&head1);
     CompareTwoLinkedLists::deleteList(&head2);
 }
-
 
 #endif

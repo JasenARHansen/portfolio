@@ -48,13 +48,14 @@ public:
     Sample Output 1:
         0
     Explanation:
-        (1, 3) and (3, 1) could have been valid, if there wasn't a big skyscraper with height 1000 between them.)" << endl;
+        (1, 3) and (3, 1) could have been valid, if there wasn't a big skyscraper with height 1000 between them.)"
+             << endl;
     }
 
-    static unsigned long long  solve(const vector<int>& arr) {
+    static unsigned long long solve(const vector<int> &arr) {
         unsigned long long result = 0;
-        stack<pair<int,int>> heights;
-        for (int height : arr) {
+        stack<pair<int, int>> heights;
+        for (int height: arr) {
             // If stack is empty, add height
             // If index height is less than stack height, add height
             if (heights.empty() or (height < heights.top().first)) {
@@ -68,8 +69,7 @@ public:
                 // If stack height is equal to index height, add index to height list
                 if ((!heights.empty()) and (heights.top().first == height)) {
                     heights.top().second++;
-                }
-                else{
+                } else {
                     // If index height is lower than stack height, add height
                     heights.emplace(height, 1);
                 }

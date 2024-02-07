@@ -66,7 +66,7 @@ public:
                 if ((stopIndex - startIndex) == 0) {
                     result.push_back(to_string(uniques[startIndex]));
                 } else {
-                    result.push_back(to_string(uniques[startIndex]) + " → " + to_string(uniques[stopIndex]));
+                    result.push_back(to_string(uniques[startIndex]) + " -> " + to_string(uniques[stopIndex]));
                 }
                 startIndex = index;
                 stopIndex = index;
@@ -75,7 +75,7 @@ public:
         if (startIndex == stopIndex) {
             result.push_back(to_string(uniques[startIndex]));
         } else {
-            result.push_back(to_string(uniques[startIndex]) + " → " + to_string(uniques[stopIndex]));
+            result.push_back(to_string(uniques[startIndex]) + " -> " + to_string(uniques[stopIndex]));
         }
         return result;
     }

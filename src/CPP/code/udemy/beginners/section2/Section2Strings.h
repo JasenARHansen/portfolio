@@ -4,7 +4,6 @@
 #define UDEMY_BEGINNERS_2_STRINGS_H
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 

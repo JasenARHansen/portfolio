@@ -65,7 +65,6 @@ Explanation:
                 case 2:
                     // "2 v" - Delete the element v from the heap.
                     minHeap.erase(op.at(1));
-
                     break;
                 case 3:
                     // "3" - Print the minimum of all the elements in the heap.

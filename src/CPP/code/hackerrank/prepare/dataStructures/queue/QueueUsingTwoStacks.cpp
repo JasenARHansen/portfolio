@@ -118,12 +118,9 @@ public:
 
 private:
     class MyQueue {
-
     private:
         stack<int> stack_newest_on_top, stack_oldest_on_top;
-
     public:
-
         void enqueue(int x) {
             this->stack_newest_on_top.push(x);
         }
@@ -148,7 +145,6 @@ private:
             return this->stack_oldest_on_top.top();
         }
     };
-
 };
 
 #pragma clang diagnostic pop

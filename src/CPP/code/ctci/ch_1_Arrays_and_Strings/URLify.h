@@ -3,11 +3,7 @@
 #ifndef CTCI_CH_1_ARRAYS_AND_STRINGS_URLIFY
 #define CTCI_CH_1_ARRAYS_AND_STRINGS_URLIFY
 
-#include <iostream>
 #include <string>
-#include <vector>
-#include <bitset>
-#include <algorithm>
 
 using namespace std;
 

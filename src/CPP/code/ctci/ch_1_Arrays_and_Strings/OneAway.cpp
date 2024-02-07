@@ -1,6 +1,6 @@
 #include "OneAway.h"
-
-using namespace std;
+#include <cstdlib>
+#include <iostream>
 
 void OneAway::description() {
     cout << R"(Arrays and Strings: One Away
@@ -34,7 +34,7 @@ bool OneAway::isOneAway(const string &left, const string &right) {
         // Only add or delete available
         // Advance until first difference
         auto index = 0;
-        while ((index < min(left.size(), right.size())) and (left.at(index) == right.at(index))) {
+        while ((index < min((int) left.size(), (int) right.size())) and (left.at(index) == right.at(index))) {
             index++;
         }
         auto leftIndex = index;

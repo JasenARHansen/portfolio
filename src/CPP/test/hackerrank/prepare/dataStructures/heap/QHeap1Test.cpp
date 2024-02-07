@@ -17,5 +17,4 @@ TEST(QHeap1Test, processQueries_1) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif

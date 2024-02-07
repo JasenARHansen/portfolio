@@ -5,7 +5,6 @@
 #define UDEMY_BEGINNERS_6_INHERITANCE_H
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 
@@ -32,8 +31,6 @@ public:
     explicit Section6Inheritance(int id);
 
     static string getAction();
-
-    int getId();
 };
 
 #endif

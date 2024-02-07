@@ -21,5 +21,4 @@ TEST(InsertionTest, insert_1) {
     Insertion::deleteTree(&root);
 }
 
-
 #endif

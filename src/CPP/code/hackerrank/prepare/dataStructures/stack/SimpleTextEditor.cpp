@@ -88,7 +88,6 @@ public:
                Currently, the 1st character is a.)" << endl;
     }
 
-
     static vector<string> textEdits(const vector<string> &operations) {
         vector<string> result;
         stack<vector<string>> inverseOperations;

@@ -4,7 +4,6 @@
 #define UDEMY_BEGINNERS_5_POINTERS_H
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 

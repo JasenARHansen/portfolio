@@ -10,7 +10,6 @@
 using namespace std;
 
 class HuffmanDecoding {
-
 private:
     class Node {
     public:
@@ -49,7 +48,6 @@ public:
     B will go on the right.
     Repeat until the tree is complete, then fill in the 1's and 0's for the edges.
     The finished graph looks like:
-
                  φ.11
                0/   \1
               A.5    φ.6

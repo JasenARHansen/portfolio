@@ -1,4 +1,5 @@
 #include "Section2Strings.h"
+#include <iostream>
 
 string Section2Strings::hello() {
     string text1 = "Hello ";

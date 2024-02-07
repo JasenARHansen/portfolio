@@ -1,6 +1,7 @@
 #include "CheckPermutation.h"
-
-using namespace std;
+#include <algorithm>
+#include <iostream>
+#include <vector>
 
 void CheckPermutation::description() {
     cout << R"(Arrays and Strings: Check Permutation

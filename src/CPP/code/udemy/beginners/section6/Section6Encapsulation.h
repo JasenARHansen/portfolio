@@ -4,7 +4,6 @@
 #define UDEMY_BEGINNERS_6_ENCAPSULATION_H
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 

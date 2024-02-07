@@ -100,7 +100,6 @@ Sample Output:
         result.push_back(prev(totals.end())->first);
         return result;
     }
-
 };
 
 #pragma clang diagnostic pop

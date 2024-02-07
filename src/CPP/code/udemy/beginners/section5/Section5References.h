@@ -3,11 +3,6 @@
 #ifndef UDEMY_BEGINNERS_5_REFERENCES_H
 #define UDEMY_BEGINNERS_5_REFERENCES_H
 
-#include <string>
-#include <iostream>
-
-using namespace std;
-
 class Section5References {
 private:
 public:

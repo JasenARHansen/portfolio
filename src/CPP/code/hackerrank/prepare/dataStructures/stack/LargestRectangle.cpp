@@ -84,7 +84,6 @@ public:
         }
         return result;
     }
-
     /*
     // This code does collapse the stack as expected and passes all my test cases, but it fails some automated
      tests and I do not know why

@@ -126,7 +126,6 @@ public:
         }
         return (int) result;
     }
-
 };
 
 #pragma clang diagnostic pop

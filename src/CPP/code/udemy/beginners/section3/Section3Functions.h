@@ -4,7 +4,6 @@
 #define UDEMY_BEGINNERS_3_FUNCTIONS_H
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 

@@ -164,7 +164,6 @@ private:
     private:
         Node *node;
     };
-
 };
 
 #pragma clang diagnostic pop

@@ -4,8 +4,6 @@
 #define UDEMY_BEGINNERS_5_NAMESPACE_H
 
 #include <string>
-#include <iostream>
-#include <iomanip>
 
 using namespace std;
 namespace jsn {

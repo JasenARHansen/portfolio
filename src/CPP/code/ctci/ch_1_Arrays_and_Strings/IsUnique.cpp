@@ -1,6 +1,8 @@
 #include "IsUnique.h"
-
-using namespace std;
+#include <algorithm>
+#include <bitset>
+#include <iostream>
+#include <vector>
 
 void IsUnique::description() {
     cout << R"(Arrays and Strings: Is Unique

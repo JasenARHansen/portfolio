@@ -21,7 +21,3 @@ Section6Inheritance::Section6Inheritance(int id) : Section6SubClass(id) {}
 string Section6Inheritance::getAction() {
     return "Section6Inheritance action.";
 }
-
-int Section6Inheritance::getId() {
-    return Section6SubClass::getId();
-}

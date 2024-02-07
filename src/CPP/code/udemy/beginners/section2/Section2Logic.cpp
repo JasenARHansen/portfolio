@@ -1,10 +1,14 @@
-#include "Section2Logic.h"
-
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "LoopDoesntUseConditionVariableInspection"
 #pragma ide diagnostic ignored "UnreachableCode"
 #pragma ide diagnostic ignored "ConstantConditionsOC"
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
+
+#include "Section2Logic.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 void Section2Logic::ifStatement() {
     string password = "hello";

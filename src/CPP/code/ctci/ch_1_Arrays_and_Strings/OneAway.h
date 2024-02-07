@@ -3,9 +3,7 @@
 #ifndef CTCI_CH_1_ARRAYS_AND_STRINGS_ONE_AWAY
 #define CTCI_CH_1_ARRAYS_AND_STRINGS_ONE_AWAY
 
-#include <iostream>
 #include <string>
-#include <cstdlib>
 
 using namespace std;
 
@@ -13,7 +11,7 @@ class OneAway {
 public:
     static void description();
 
-    static bool isOneAway(const string &left, const string & right);
+    static bool isOneAway(const string &left, const string &right);
 };
 
 #endif

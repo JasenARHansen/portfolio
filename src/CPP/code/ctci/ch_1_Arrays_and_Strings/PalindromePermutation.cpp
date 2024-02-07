@@ -1,6 +1,7 @@
 #include "PalindromePermutation.h"
-
-using namespace std;
+#include <algorithm>
+#include <iostream>
+#include <vector>
 
 void PalindromePermutation::description() {
     cout << R"(Arrays and Strings: Palindrome Permutation
@@ -34,4 +35,3 @@ bool PalindromePermutation::isPalindromePermutation(string input) {
     }
     return result;
 }
-

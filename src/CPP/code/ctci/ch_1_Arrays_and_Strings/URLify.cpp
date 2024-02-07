@@ -1,5 +1,4 @@
 #include "URLify.h"
-
 #include <iostream>
 
 void URLify::description() {

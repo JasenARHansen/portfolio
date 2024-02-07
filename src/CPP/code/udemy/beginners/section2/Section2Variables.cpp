@@ -1,4 +1,5 @@
 #include "Section2Variables.h"
+#include <iostream>
 
 string Section2Variables::numAnimals() {
     int numberCats = 5;

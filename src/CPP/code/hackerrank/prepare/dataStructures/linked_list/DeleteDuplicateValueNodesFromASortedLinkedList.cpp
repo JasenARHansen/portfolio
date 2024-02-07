@@ -67,7 +67,7 @@ public:
             result = new Node(data.at(0));
             auto working = result;
             auto index = 1;
-            while (index < data.size()) {
+            while (index < (int) data.size()) {
                 Node *next = new Node(data.at(index));
                 working->next = next;
                 working = next;

@@ -1,5 +1,4 @@
 #include "StringCompression.h"
-
 #include <iostream>
 #include <string>
 
@@ -50,7 +49,7 @@ string StringCompression::decompress(const string &input) {
             index--;
             count--;
             string number = input.substr(start, count);
-            auto append = string( stoi(number), last);
+            auto append = string(stoi(number), last);
             result.append(append);
         } else {
             last = input.at(index);

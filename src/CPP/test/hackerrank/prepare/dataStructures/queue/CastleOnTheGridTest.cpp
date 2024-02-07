@@ -302,5 +302,4 @@ TEST(CastleOnTheGridTest, minimumMovesGraph_5) {
     EXPECT_EQ(expected, result);
 }
 
-
 #endif

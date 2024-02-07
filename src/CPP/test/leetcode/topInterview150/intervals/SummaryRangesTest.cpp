@@ -11,14 +11,14 @@ TEST(SummaryRangesTest, description) {
 }
 
 TEST(SummaryRangesTest, summaryRanges_1) {
-    vector<string> expected{"0->2", "4->5", "7"};
+    vector<string> expected{"0 -> 2", "4 -> 5", "7"};
     vector<int> nums{0, 1, 2, 4, 5, 7};
     auto result = SummaryRanges::summaryRanges(nums);
     EXPECT_EQ(expected, result);
 }
 
 TEST(SummaryRangesTest, summaryRanges_2) {
-    vector<string> expected{"0", "2->4", "6", "8->9"};
+    vector<string> expected{"0", "2 -> 4", "6", "8 -> 9"};
     vector<int> nums{0, 2, 3, 4, 6, 8, 9};
     auto result = SummaryRanges::summaryRanges(nums);
     EXPECT_EQ(expected, result);

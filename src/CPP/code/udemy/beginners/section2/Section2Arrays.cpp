@@ -2,6 +2,11 @@
 #pragma ide diagnostic ignored "bugprone-sizeof-container"
 
 #include "Section2Arrays.h"
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
 
 void Section2Arrays::arrays() {
     cout << "Array with individual assignments" << endl;
