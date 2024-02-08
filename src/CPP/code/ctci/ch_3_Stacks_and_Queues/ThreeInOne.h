@@ -3,7 +3,6 @@
 #ifndef CTCI_CH_3_STACKS_AND_QUEUES_THREE_IN_ONE
 #define CTCI_CH_3_STACKS_AND_QUEUES_THREE_IN_ONE
 
-#include <string>
 #include <vector>
 
 using namespace std;
