@@ -1,13 +1,13 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef CTCI_CH_4_TREES_AND_GRAPHS_LIST_OF_DEPTHS
-#define CTCI_CH_4_TREES_AND_GRAPHS_LIST_OF_DEPTHS
+#ifndef CTCI_CH_4_TREES_AND_GRAPHS_CHECK_SUBTREE
+#define CTCI_CH_4_TREES_AND_GRAPHS_CHECK_SUBTREE
 
 #include <vector>
 
 using namespace std;
 
-class ListOfDepths {
+class CheckSubtree {
 private:
     struct Node {
         int data;
@@ -24,7 +24,10 @@ public:
 
     static void deleteTree(Node **head);
 
-    static vector<vector<int>> getListOfDepths(Node *node);
+    static bool isSubtreeByData(Node *tree1, Node *tree2);
+
+    static bool isSubtreeByNode(Node *tree1, Node *tree2);
+
 };
 
 #endif

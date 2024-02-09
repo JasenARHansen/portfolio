@@ -10,7 +10,7 @@ TEST(MinimalTreeTest, description) {
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MinimalTreeTest, MinimalTree_1) {
+TEST(MinimalTreeTest, generateMinimalTree_1) {
     vector<int> expected{3, 1, 5, 0, 2, 4, 6};
     vector<int> data{0, 1, 2, 3, 4, 5, 6};
     auto tree = MinimalTree::generateMinimalTree(data);

@@ -3,9 +3,7 @@
 #ifndef CTCI_CH_4_TREES_AND_GRAPHS_SUCCESSOR
 #define CTCI_CH_4_TREES_AND_GRAPHS_SUCCESSOR
 
-#include <set>
 #include <vector>
-#include <map>
 
 using namespace std;
 

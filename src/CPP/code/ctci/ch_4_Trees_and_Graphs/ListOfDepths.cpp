@@ -1,10 +1,8 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#pragma ide diagnostic ignored "misc-no-recursion"
 
 #include "ListOfDepths.h"
 #include <iostream>
-#include <map>
 #include <queue>
 
 using namespace std;

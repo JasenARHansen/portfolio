@@ -1,20 +1,24 @@
 #pragma clang diagnostic push
+#pragma ide diagnostic ignored "misc-no-recursion"
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
-#include "Successor.h"
+#include "PathsWithSum.h"
 #include <iostream>
 #include <queue>
+#include<numeric>
 
 using namespace std;
 
-void Successor::description() {
-    cout << R"(Trees and Graphs: Successor
-    Write an algorithm to find the "next" node (i.e., in-order successor) of a given node in a
-     binary search tree.
-    You may assume that each node has a link to its parent.)" << endl;
+void PathsWithSum::description() {
+    cout << R"(Trees and Graphs: Paths with Sum
+    You are given a binary tree in which each node contains an integer value (which might be
+     positive or negative).
+    Design an algorithm to count the number of paths that sum to a given value.
+    The path does not need to start or end at the root or a leaf, but it must go downwards
+     (traveling only from parent nodes to child nodes).)" << endl;
 }
 
-Successor::Node *Successor::generateBSTree(const vector<int> &data) {
+PathsWithSum::Node *PathsWithSum::generateBSTree(const vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -44,7 +48,7 @@ Successor::Node *Successor::generateBSTree(const vector<int> &data) {
     return head;
 }
 
-void Successor::deleteTree(Node **node) {
+void PathsWithSum::deleteTree(Node **node) {
     if (*node != nullptr) {
         queue<Node *> nodes;
         nodes.emplace(*node);
@@ -64,30 +68,31 @@ void Successor::deleteTree(Node **node) {
     }
 }
 
-Successor::Node *Successor::inorderSuccessor(Node *node) {
-    // The inorder successor would be the left most node of the right child or the parent if there is no left child
-    Node *result;
-    if (node->rightChild != nullptr) {
-        result = node->rightChild;
-        while (result->leftChild != nullptr) {
-            result = result->leftChild;
+int PathsWithSum::pathsWithSum(Node *root, int target) {
+    vector<int> path;
+
+    return pathsWithSum(root, target, path);
+}
+
+int PathsWithSum::pathsWithSum(Node *node, int target, vector<int> path) {
+    auto result = 0;
+    if (node != nullptr){
+        path.push_back(node->data);
+        auto sum = accumulate(path.begin(),path.end(),0);
+        while ((!path.empty()) and (sum > target)){
+            path.erase(path.begin());
+            sum = accumulate(path.begin(),path.end(),0);
         }
-    } else {
-        result = node->parent;
+        if (sum == target){
+            result++;
+        }
+        if (node->leftChild != nullptr){
+            result += pathsWithSum(node->leftChild, target, path);
+        }
+        if (node->rightChild != nullptr){
+            result += pathsWithSum(node->rightChild, target, path);
+        }
     }
     return result;
 }
-
-Successor::Node *Successor::inorderSuccessor(Node *root, int data) {
-    Node *working = root;
-    while ((working != nullptr) and (working->data != data)) {
-        if (working->data > data) {
-            working = working->leftChild;
-        } else {
-            working = working->rightChild;
-        }
-    }
-    return inorderSuccessor(working);
-}
-
 #pragma clang diagnostic pop

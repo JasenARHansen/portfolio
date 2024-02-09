@@ -3,9 +3,7 @@
 #ifndef CTCI_CH_4_TREES_AND_GRAPHS_VALIDATE_BST
 #define CTCI_CH_4_TREES_AND_GRAPHS_VALIDATE_BST
 
-#include <set>
 #include <vector>
-#include <map>
 
 using namespace std;
 

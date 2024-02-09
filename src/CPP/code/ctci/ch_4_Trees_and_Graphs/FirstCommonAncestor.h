@@ -1,13 +1,13 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#ifndef CTCI_CH_4_TREES_AND_GRAPHS_LIST_OF_DEPTHS
-#define CTCI_CH_4_TREES_AND_GRAPHS_LIST_OF_DEPTHS
+#ifndef CTCI_CH_4_TREES_AND_GRAPHS_FIRST_COMMON_ANCESTOR
+#define CTCI_CH_4_TREES_AND_GRAPHS_FIRST_COMMON_ANCESTOR
 
 #include <vector>
 
 using namespace std;
 
-class ListOfDepths {
+class FirstCommonAncestor {
 private:
     struct Node {
         int data;
@@ -24,7 +24,10 @@ public:
 
     static void deleteTree(Node **head);
 
-    static vector<vector<int>> getListOfDepths(Node *node);
+    static Node *firstCommonAncestor(Node *head, Node *node1, Node *node2);
+
+private:
+    static bool treeContains(Node *head, Node *target);
 };
 
 #endif
