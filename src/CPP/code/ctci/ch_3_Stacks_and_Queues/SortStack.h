@@ -17,7 +17,7 @@ public:
 
     void pop();
 
-    [[nodiscard]] int peek() ;
+    [[nodiscard]] int peek();
 
     [[nodiscard]] bool empty() const;
 

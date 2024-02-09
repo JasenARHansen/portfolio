@@ -115,4 +115,5 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_6) {
     EXPECT_EQ(expected, result);
     RouteBetweenNodes::deleteGraph(&graph);
 }
+
 #endif

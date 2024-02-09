@@ -17,7 +17,7 @@ public:
 
     void pop();
 
-    [[nodiscard]] int front() ;
+    [[nodiscard]] int front();
 
     [[nodiscard]] bool empty() const;
 

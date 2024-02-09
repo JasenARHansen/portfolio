@@ -42,11 +42,11 @@ public:
 
     AnimalShelter();
 
-    void enqueue(string type, const string& name);
+    void enqueue(string type, const string &name);
 
-    void enqueueCat(const string& name);
+    void enqueueCat(const string &name);
 
-    void enqueueDog(const string& name);
+    void enqueueDog(const string &name);
 
     string dequeue();
 

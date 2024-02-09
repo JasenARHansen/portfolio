@@ -34,5 +34,4 @@ TEST(ThreeInOneTest, isPermutation_1) {
 
 }
 
-
 #endif

@@ -3,8 +3,6 @@
 #ifndef CTCI_CH_3_STACKS_AND_QUEUES_STACK_MIN
 #define CTCI_CH_3_STACKS_AND_QUEUES_STACK_MIN
 
-#include <string>
-#include <vector>
 #include <stack>
 
 using namespace std;

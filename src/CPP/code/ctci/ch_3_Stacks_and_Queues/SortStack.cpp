@@ -12,11 +12,11 @@ void SortStack::description() {
 SortStack::SortStack() = default;
 
 void SortStack::push(int value) {
-    while (!this->large.empty() and (this->large.top() < value)){
+    while (!this->large.empty() and (this->large.top() < value)) {
         this->small.push(this->large.top());
         this->large.pop();
     }
-    while (!this->small.empty() and (this->small.top() > value)){
+    while (!this->small.empty() and (this->small.top() > value)) {
         this->large.push(this->small.top());
         this->small.pop();
     }
@@ -24,22 +24,22 @@ void SortStack::push(int value) {
 }
 
 void SortStack::pop() {
-    while (!this->small.empty()){
+    while (!this->small.empty()) {
         this->large.push(this->small.top());
         this->small.pop();
     }
-    if (!this->large.empty()){
+    if (!this->large.empty()) {
         this->large.pop();
     }
 }
 
 int SortStack::peek() {
     auto result = 0;
-    while (!this->small.empty()){
+    while (!this->small.empty()) {
         this->large.push(this->small.top());
         this->small.pop();
     }
-    if (!this->large.empty()){
+    if (!this->large.empty()) {
         result = this->large.top();
     }
     return result;
@@ -50,5 +50,5 @@ bool SortStack::empty() const {
 }
 
 int SortStack::size() const {
-    return ((int)this->small.size() + (int)this->large.size());
+    return ((int) this->small.size() + (int) this->large.size());
 }

@@ -9,7 +9,7 @@ void MyQueue::description() {
 MyQueue::MyQueue() = default;
 
 void MyQueue::push(int value) {
-    while (!this->large.empty()){
+    while (!this->large.empty()) {
         this->small.push(this->large.top());
         this->large.pop();
     }
@@ -17,22 +17,22 @@ void MyQueue::push(int value) {
 }
 
 void MyQueue::pop() {
-    while (!this->small.empty()){
+    while (!this->small.empty()) {
         this->large.push(this->small.top());
         this->small.pop();
     }
-    if (!this->large.empty()){
+    if (!this->large.empty()) {
         this->large.pop();
     }
 }
 
 int MyQueue::front() {
     auto result = 0;
-    while (!this->small.empty()){
+    while (!this->small.empty()) {
         this->large.push(this->small.top());
         this->small.pop();
     }
-    if (!this->large.empty()){
+    if (!this->large.empty()) {
         result = this->large.top();
     }
     return result;
@@ -43,5 +43,5 @@ bool MyQueue::empty() const {
 }
 
 int MyQueue::size() const {
-    return ((int)this->small.size() + (int)this->large.size());
+    return ((int) this->small.size() + (int) this->large.size());
 }

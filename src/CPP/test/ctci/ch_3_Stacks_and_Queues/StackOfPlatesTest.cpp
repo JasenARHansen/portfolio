@@ -52,7 +52,6 @@ TEST(StackOfPlatesTest, StackOfPlates_2) {
     EXPECT_EQ(stackMax - 2, stacks.top());
 }
 
-
 TEST(StackOfPlatesTest, StackOfPlates_3) {
     auto stackMax = 1;
     auto stacks = StackOfPlates(stackMax);
