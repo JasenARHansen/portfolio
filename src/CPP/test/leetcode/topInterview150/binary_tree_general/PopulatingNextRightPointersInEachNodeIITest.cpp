@@ -51,13 +51,13 @@ vector<string> serialized(PopulatingNextRightPointersInEachNodeII::Node *root) {
     return result;
 }
 
-TEST(PopulatingNextRightPointersInEachNodeIITest, description) {
+TEST(LeetCode_PopulatingNextRightPointersInEachNodeIITest, description) {
     testing::internal::CaptureStdout();
     PopulatingNextRightPointersInEachNodeII::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PopulatingNextRightPointersInEachNodeIITest, connect_1) {
+TEST(LeetCode_PopulatingNextRightPointersInEachNodeIITest, connect_1) {
     vector<string> expected{"1", "#", "2", "3", "#", "4", "5", "7", "#"};
     vector<string> values{"1", "2", "3", "4", "5", "null", "7"};
     auto root = PopulatingNextRightPointersInEachNodeII::deserializeTree(values);
@@ -68,7 +68,7 @@ TEST(PopulatingNextRightPointersInEachNodeIITest, connect_1) {
     PopulatingNextRightPointersInEachNodeII::deleteTree(&result);
 }
 
-TEST(PopulatingNextRightPointersInEachNodeIITest, connect_2) {
+TEST(LeetCode_PopulatingNextRightPointersInEachNodeIITest, connect_2) {
     vector<string> expected{};
     vector<string> values{};
     auto root = PopulatingNextRightPointersInEachNodeII::deserializeTree(values);

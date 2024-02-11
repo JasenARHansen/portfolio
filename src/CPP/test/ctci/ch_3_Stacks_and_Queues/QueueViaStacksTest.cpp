@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/QueueViaStacks.h"
 
-TEST(MyQueueTest, description) {
+using namespace ctci;
+TEST(CtCI_MyQueueTest, description) {
     testing::internal::CaptureStdout();
     MyQueue::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MyQueueTest, MyQueue_1) {
+TEST(CtCI_MyQueueTest, methods_1) {
     auto queue = MyQueue();
     EXPECT_TRUE(queue.empty());
     queue.push(2);

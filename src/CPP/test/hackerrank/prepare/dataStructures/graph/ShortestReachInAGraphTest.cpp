@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/graph/ShortestReachInAGraph.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ShortestReachInAGraphUnidirectionalEdgesTest, description) {
+TEST(HackerRank_ShortestReachInAGraphUnidirectionalEdgesTest, description) {
     testing::internal::CaptureStdout();
     ShortestReachInAGraphUnidirectionalEdges::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_1) {
+TEST(HackerRank_ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_1) {
     vector<int> expected{6, 12, 18, 6, -1};
     auto n = 6;
     auto weight = 6;
@@ -25,7 +25,7 @@ TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_2) {
+TEST(HackerRank_ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_2) {
     vector<int> expected{6, 6, -1};
     auto n = 4;
     auto weight = 6;
@@ -39,7 +39,7 @@ TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_3) {
+TEST(HackerRank_ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_3) {
     vector<int> expected{12, 6};
     auto n = 3;
     auto weight = 6;
@@ -52,7 +52,7 @@ TEST(ShortestReachInAGraphUnidirectionalEdgesTest, shortest_reach_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ShortestReachInAGraphBidirectionalEdgesTest, shortest_reach_4) {
+TEST(HackerRank_ShortestReachInAGraphBidirectionalEdgesTest, shortest_reach_4) {
     vector<int> expected{6, 12, 18, 6, -1, 24};
     auto n = 7;
     auto weight = 6;
@@ -68,7 +68,7 @@ TEST(ShortestReachInAGraphBidirectionalEdgesTest, shortest_reach_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ShortestReachInAGraphTest, shortest_reach_raw) {
+TEST(HackerRank_ShortestReachInAGraphTest, shortest_reach_raw) {
     auto expected = "6 6 -1 ";
     int n = 4;
     // Create a graph of size n where each edge weight is 6:

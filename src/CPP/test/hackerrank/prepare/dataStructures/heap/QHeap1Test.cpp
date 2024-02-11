@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/heap/QHeap1.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(QHeap1Test, description) {
+TEST(HackerRank_QHeap1Test, description) {
     testing::internal::CaptureStdout();
     QHeap1::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(QHeap1Test, processQueries_1) {
+TEST(HackerRank_QHeap1Test, processQueries_1) {
     vector<int> expected{4, 9};
     vector<string> operations{"1 4", "1 9", "3", "2 4", "3"};
     auto result = QHeap1::processQueries(operations);

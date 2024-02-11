@@ -5,16 +5,15 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class URLify {
+    public:
+        static void description();
 
-class URLify {
-public:
-    static void description();
+        static std::string urlify(const std::string &input);
 
-    static string urlify(const string &input);
-
-    static void urlifyInPlace(string *input);
-};
-
+        static void urlifyInPlace(std::string *input);
+    };
+}
 #pragma clang diagnostic pop
 #endif

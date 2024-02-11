@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/strings/MatchingPairs.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MatchingPairsTest, description) {
+TEST(Interview_MatchingPairsTest, description) {
     testing::internal::CaptureStdout();
     MatchingPairs::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MatchingPairsTest, matchingPairs_1) {
+TEST(Interview_MatchingPairsTest, matchingPairs_1) {
     auto expected = 4;
     auto s = "abcd";
     auto t = "adcb";
@@ -18,7 +18,7 @@ TEST(MatchingPairsTest, matchingPairs_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MatchingPairsTest, matchingPairs_2) {
+TEST(Interview_MatchingPairsTest, matchingPairs_2) {
     auto expected = 3;
     auto s = "mno";
     auto t = "mno";
@@ -26,7 +26,7 @@ TEST(MatchingPairsTest, matchingPairs_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MatchingPairsTest, matchingPairs_fail_1) {
+TEST(Interview_MatchingPairsTest, matchingPairs_fail_1) {
     // 2 ≤ s.length
     auto size = 0;
     string s(size, ' ');
@@ -34,7 +34,7 @@ TEST(MatchingPairsTest, matchingPairs_fail_1) {
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MatchingPairsTest, matchingPairs_fail_2) {
+TEST(Interview_MatchingPairsTest, matchingPairs_fail_2) {
     // s.length ≤ 1,000,000
     auto size = (int) pow(10, 6) + 1;
     string s(size, ' ');
@@ -42,7 +42,7 @@ TEST(MatchingPairsTest, matchingPairs_fail_2) {
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MatchingPairsTest, matchingPairs_fail_3) {
+TEST(Interview_MatchingPairsTest, matchingPairs_fail_3) {
     // 2 ≤ s.length
     auto size = 0;
     string s(size, ' ');
@@ -50,7 +50,7 @@ TEST(MatchingPairsTest, matchingPairs_fail_3) {
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MatchingPairsTest, matchingPairs_fail_4) {
+TEST(Interview_MatchingPairsTest, matchingPairs_fail_4) {
     // s.length ≤ 1,000,000
     auto size = (int) pow(10, 6) + 1;
     string s(size, ' ');
@@ -58,7 +58,7 @@ TEST(MatchingPairsTest, matchingPairs_fail_4) {
     EXPECT_EXIT(MatchingPairs::matchingPairs(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MatchingPairsTest, matchingPairs_fail_5) {
+TEST(Interview_MatchingPairsTest, matchingPairs_fail_5) {
     // s.length ≤ 1,000,000
     auto size = 5;
     string s(size, ' ');

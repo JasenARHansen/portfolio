@@ -4,17 +4,17 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/Insert_Delete_GetRandom_O_1.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Insert_Delete_GetRandom_O_1Test, description) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, description) {
     testing::internal::CaptureStdout();
     RandomizedSet::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, RandomizedSet) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, RandomizedSet) {
     EXPECT_NO_THROW(RandomizedSet());
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, insert_1) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, insert_1) {
     auto expected = true;
     auto randomizedSet = RandomizedSet();
     auto value = 0;
@@ -22,7 +22,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, insert_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, insert_2) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, insert_2) {
     auto expected = false;
     auto randomizedSet = RandomizedSet();
     auto value = 0;
@@ -31,7 +31,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, insert_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, remove_1) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, remove_1) {
     auto expected = true;
     auto randomizedSet = RandomizedSet();
     auto value = 0;
@@ -40,7 +40,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, remove_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, remove_2) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, remove_2) {
     auto expected = false;
     auto randomizedSet = RandomizedSet();
     auto value = 0;
@@ -48,7 +48,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, remove_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, getRandom_1) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, getRandom_1) {
     auto value = 0;
     auto expected = value;
     auto randomizedSet = RandomizedSet();
@@ -57,7 +57,7 @@ TEST(Insert_Delete_GetRandom_O_1Test, getRandom_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Insert_Delete_GetRandom_O_1Test, getRandom_2) {
+TEST(LeetCode_Insert_Delete_GetRandom_O_1Test, getRandom_2) {
     vector<int> data{1, 2, 3, 4, 5};
     auto randomizedSet = RandomizedSet();
     for (auto value: data) {

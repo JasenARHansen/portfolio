@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/backtracking/WordSearch.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(WordSearchTest, description) {
+TEST(LeetCode_WordSearchTest, description) {
     testing::internal::CaptureStdout();
     WordSearch::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(WordSearchTest, exist_1) {
+TEST(LeetCode_WordSearchTest, exist_1) {
     auto expected = true;
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
@@ -20,7 +20,7 @@ TEST(WordSearchTest, exist_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordSearchTest, exist_2) {
+TEST(LeetCode_WordSearchTest, exist_2) {
     auto expected = true;
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
@@ -30,7 +30,7 @@ TEST(WordSearchTest, exist_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordSearchTest, exist_3) {
+TEST(LeetCode_WordSearchTest, exist_3) {
     auto expected = false;
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
@@ -40,7 +40,7 @@ TEST(WordSearchTest, exist_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(AddBinaryTest, exist_fail_1) {
+TEST(LeetCode_AddBinaryTest, exist_fail_1) {
     // 1 ≤ board.length
     auto size = 1 - 1;
     vector<vector<char>> board(size);
@@ -48,7 +48,7 @@ TEST(AddBinaryTest, exist_fail_1) {
     EXPECT_EXIT(WordSearch::exist(board, word), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, exist_fail_2) {
+TEST(LeetCode_AddBinaryTest, exist_fail_2) {
     // board.length  ≤ 6
     auto size = 6 + 1;
     vector<vector<char>> board(size);
@@ -56,7 +56,7 @@ TEST(AddBinaryTest, exist_fail_2) {
     EXPECT_EXIT(WordSearch::exist(board, word), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, exist_fail_3) {
+TEST(LeetCode_AddBinaryTest, exist_fail_3) {
     // 1 ≤ board[i].length
     auto size = 1 - 1;
     vector<vector<char>> board{vector<char>(size)};
@@ -64,7 +64,7 @@ TEST(AddBinaryTest, exist_fail_3) {
     EXPECT_EXIT(WordSearch::exist(board, word), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, exist_fail_4) {
+TEST(LeetCode_AddBinaryTest, exist_fail_4) {
     // board[i].length ≤ 6
     auto size = 6 + 1;
     vector<vector<char>> board{vector<char>(size)};
@@ -72,7 +72,7 @@ TEST(AddBinaryTest, exist_fail_4) {
     EXPECT_EXIT(WordSearch::exist(board, word), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, exist_fail_5) {
+TEST(LeetCode_AddBinaryTest, exist_fail_5) {
     // 1 ≤ word.length
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},
@@ -82,7 +82,7 @@ TEST(AddBinaryTest, exist_fail_5) {
     EXPECT_EXIT(WordSearch::exist(board, word), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, exist_fail_6) {
+TEST(LeetCode_AddBinaryTest, exist_fail_6) {
     // word.length ≤ 15
     vector<vector<char>> board = {{'A', 'B', 'C', 'E'},
                                   {'S', 'F', 'C', 'S'},

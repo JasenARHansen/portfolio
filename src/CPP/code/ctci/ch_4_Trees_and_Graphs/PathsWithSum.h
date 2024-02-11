@@ -5,32 +5,30 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class PathsWithSum {
+    private:
+        struct Node {
+            int data;
+            Node *parent;
+            Node *leftChild;
+            Node *rightChild;
 
-class PathsWithSum {
-private:
-    struct Node {
-        int data;
-        Node *parent;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), parent(nullptr), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), parent(nullptr), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateBSTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static int pathsWithSum(Node *root, int data);
+
+    private:
+        static int pathsWithSum(Node *root, int data, std::vector<int> path);
     };
-
-public:
-    static void description();
-
-    static Node *generateBSTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static int pathsWithSum(Node *root, int data);
-
-private:
-    static int pathsWithSum(Node *root, int data, vector<int> path);
-
-};
-
+}
 #endif
 #pragma clang diagnostic pop

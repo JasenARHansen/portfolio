@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/DeleteDuplicateValueNodesFromASortedLinkedList.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, description) {
+TEST(HackerRank_DeleteDuplicateValueNodesFromASortedLinkedListTest, description) {
     testing::internal::CaptureStdout();
     DeleteDuplicateValueNodesFromASortedLinkedList::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_1) {
+TEST(HackerRank_DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_1) {
     vector<int> expected{1, 2, 3};
     vector<int> source{1, 2, 2, 3, 3, 3};
     auto list = DeleteDuplicateValueNodesFromASortedLinkedList::createList(source);
@@ -20,7 +20,7 @@ TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_1) {
     DeleteDuplicateValueNodesFromASortedLinkedList::deleteList(&updatedList);
 }
 
-TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_2) {
+TEST(HackerRank_DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_2) {
     vector<int> expected{1, 2, 3, 4};
     vector<int> source{1, 2, 2, 3, 4};
     auto list = DeleteDuplicateValueNodesFromASortedLinkedList::createList(source);
@@ -30,7 +30,7 @@ TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_2) {
     DeleteDuplicateValueNodesFromASortedLinkedList::deleteList(&updatedList);
 }
 
-TEST(DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_3) {
+TEST(HackerRank_DeleteDuplicateValueNodesFromASortedLinkedListTest, removeDuplicates_3) {
     vector<int> expected{};
     vector<int> source{};
     auto list = DeleteDuplicateValueNodesFromASortedLinkedList::createList(source);

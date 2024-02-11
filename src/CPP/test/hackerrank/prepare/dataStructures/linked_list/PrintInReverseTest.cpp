@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/PrintInReverse.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PrintInReverseTest, description) {
+TEST(HackerRank_PrintInReverseTest, description) {
     testing::internal::CaptureStdout();
     PrintInReverse::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PrintInReverseTest, reversePrint_1) {
+TEST(HackerRank_PrintInReverseTest, reversePrint_1) {
     auto expected = "3\n"
                     "2\n"
                     "1\n";
@@ -22,7 +22,7 @@ TEST(PrintInReverseTest, reversePrint_1) {
     PrintInReverse::deleteList(&list);
 }
 
-TEST(PrintInReverseTest, reversePrint_2) {
+TEST(HackerRank_PrintInReverseTest, reversePrint_2) {
     auto expected = "5\n"
                     "2\n"
                     "4\n"
@@ -36,7 +36,7 @@ TEST(PrintInReverseTest, reversePrint_2) {
     PrintInReverse::deleteList(&list);
 }
 
-TEST(PrintInReverseTest, reversePrint_3) {
+TEST(HackerRank_PrintInReverseTest, reversePrint_3) {
     auto expected = "9\n"
                     "3\n"
                     "7\n";
@@ -48,7 +48,7 @@ TEST(PrintInReverseTest, reversePrint_3) {
     PrintInReverse::deleteList(&list);
 }
 
-TEST(PrintInReverseTest, reversePrint_4) {
+TEST(HackerRank_PrintInReverseTest, reversePrint_4) {
     auto expected = "13\n"
                     "3\n"
                     "18\n"

@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5References.h"
 
-TEST(Section5ReferencesTest, reassign) {
+TEST(Udemy_Section5ReferencesTest, reassign) {
     auto result = 5;
     auto expected = 10;
     Section5References::reassign(result, expected);

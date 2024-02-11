@@ -1,16 +1,18 @@
 #include "ZeroMatrix.h"
 #include <iostream>
 
+using namespace ctci;
+
 void ZeroMatrix::description() {
-    cout << R"(Arrays and Strings: Zero Matrix
+    std::cout << R"(Arrays and Strings: Zero Matrix
     Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column
-     are set to 0.)" << endl;
+     are set to 0.)" << std::endl;
 }
 
-vector<vector<int>> ZeroMatrix::zeroMatrix(vector<vector<int>> matrix) {
-    vector<vector<int>> result;
-    vector<int> zeroRow;
-    vector<int> zeroColumn;
+std::vector<std::vector<int>> ZeroMatrix::zeroMatrix(std::vector<std::vector<int>> matrix) {
+    std::vector<std::vector<int>> result;
+    std::vector<int> zeroRow;
+    std::vector<int> zeroColumn;
     for (auto row = 0; row < (int) matrix.size(); row++) {
         result.emplace_back();
         for (auto column = 0; column < matrix.at(0).size(); column++) {
@@ -36,9 +38,9 @@ vector<vector<int>> ZeroMatrix::zeroMatrix(vector<vector<int>> matrix) {
     return result;
 }
 
-void ZeroMatrix::zeroMatrixInPlace(vector<vector<int>> *matrix) {
-    vector<int> zeroRow;
-    vector<int> zeroColumn;
+void ZeroMatrix::zeroMatrixInPlace(std::vector<std::vector<int>> *matrix) {
+    std::vector<int> zeroRow;
+    std::vector<int> zeroColumn;
     for (auto row = 0; row < (int) matrix->size(); row++) {
         for (auto column = 0; column < matrix->at(0).size(); column++) {
             if (matrix->operator[](row)[column] == 0) {

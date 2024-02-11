@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/MergeSortedArray.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MergeSortedArrayTest, description) {
+TEST(LeetCode_MergeSortedArrayTest, description) {
     testing::internal::CaptureStdout();
     MergeSortedArray::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MergeSortedArrayTest, merge_1) {
+TEST(LeetCode_MergeSortedArrayTest, merge_1) {
     vector<int> expected{1, 2, 2, 3, 5, 6};
     vector<int> nums1{1, 2, 3, 0, 0, 0};
     auto m = 3;
@@ -22,7 +22,7 @@ TEST(MergeSortedArrayTest, merge_1) {
     }
 }
 
-TEST(MergeSortedArrayTest, merge2_) {
+TEST(LeetCode_MergeSortedArrayTest, merge2_) {
     vector<int> expected{1};
     vector<int> nums1{1};
     auto m = 1;
@@ -34,7 +34,7 @@ TEST(MergeSortedArrayTest, merge2_) {
     }
 }
 
-TEST(MergeSortedArrayTest, merge_3) {
+TEST(LeetCode_MergeSortedArrayTest, merge_3) {
     vector<int> expected{1};
     vector<int> nums1{0};
     auto m = 0;
@@ -46,7 +46,7 @@ TEST(MergeSortedArrayTest, merge_3) {
     }
 }
 
-TEST(MergeSortedArrayTest, merge_fail_1) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_1) {
     // nums1.length == m + n
     vector<int> nums1{1, 2, 3, 0, 0, 0, 0};
     auto m = 3;
@@ -55,7 +55,7 @@ TEST(MergeSortedArrayTest, merge_fail_1) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_2) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_2) {
     // nums2.length == n
     vector<int> expected{1, 2, 3, 0, 0, 0};
     vector<int> nums1{1, 2, 3, 0, 0, 0};
@@ -65,8 +65,8 @@ TEST(MergeSortedArrayTest, merge_fail_2) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_3) {
-    // TEST(MergeSortedArrayTest, merge_fail_4) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_3) {
+    // TEST(LeetCode_MergeSortedArrayTest, merge_fail_4) {
     auto m = 0;
     auto n = 0;
     vector<int> nums1(m + n);
@@ -74,7 +74,7 @@ TEST(MergeSortedArrayTest, merge_fail_3) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_4) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_4) {
     // n ≤ 200
     auto m = 3;
     auto n = 201;
@@ -83,7 +83,7 @@ TEST(MergeSortedArrayTest, merge_fail_4) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_5) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_5) {
     // 1 ≤ m + n
     auto m = 0;
     auto n = 0;
@@ -92,7 +92,7 @@ TEST(MergeSortedArrayTest, merge_fail_5) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_6) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_6) {
     // m + n ≤ 200
     auto m = 100;
     auto n = 101;
@@ -101,7 +101,7 @@ TEST(MergeSortedArrayTest, merge_fail_6) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_7) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_7) {
     // -10^9 ≤ nums1[i]
     auto value = (int) -pow(10, 9) - 1;
     vector<int> nums1{value, 2, 3, 0, 0, 0};
@@ -111,7 +111,7 @@ TEST(MergeSortedArrayTest, merge_fail_7) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_8) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_8) {
     // -10^9 ≤ nums2[i]
     vector<int> nums1{1, 2, 3, 0, 0, 0};
     auto m = 3;
@@ -121,7 +121,7 @@ TEST(MergeSortedArrayTest, merge_fail_8) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_9) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_9) {
     // nums1[i] ≤ 10^9
     auto value = (int) pow(10, 9) + 1;
     vector<int> nums1{1, 2, value, 0, 0, 0};
@@ -131,7 +131,7 @@ TEST(MergeSortedArrayTest, merge_fail_9) {
     EXPECT_EXIT(MergeSortedArray::merge(nums1, m, nums2, n), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MergeSortedArrayTest, merge_fail_10) {
+TEST(LeetCode_MergeSortedArrayTest, merge_fail_10) {
     // nums2[j] ≤ 10^9
     vector<int> nums1{1, 2, 3, 0, 0, 0};
     auto m = 3;

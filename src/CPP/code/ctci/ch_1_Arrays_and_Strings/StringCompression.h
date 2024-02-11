@@ -5,16 +5,15 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class StringCompression {
+    public:
+        static void description();
 
-class StringCompression {
-public:
-    static void description();
+        static std::string compress(const std::string &input);
 
-    static string compress(const string &input);
-
-    static string decompress(const string &input);
-};
-
+        static std::string decompress(const std::string &input);
+    };
+}
 #endif
 #pragma clang diagnostic pop

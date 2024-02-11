@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/strings/MinimumLengthSubstrings.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MinimumLengthSubstringsTest, description) {
+TEST(Interview_MinimumLengthSubstringsTest, description) {
     testing::internal::CaptureStdout();
     MinimumLengthSubstrings::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MinimumLengthSubstringsTest, minLengthSubstring_1) {
+TEST(Interview_MinimumLengthSubstringsTest, minLengthSubstring_1) {
     auto expected = 5;
     auto s = "dcbefebce";
     auto t = "fd";
@@ -18,7 +18,7 @@ TEST(MinimumLengthSubstringsTest, minLengthSubstring_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MinimumLengthSubstringsTest, minLengthSubstring_2) {
+TEST(Interview_MinimumLengthSubstringsTest, minLengthSubstring_2) {
     auto expected = -1;
     auto s = "bfbeadbcbcbfeaaeefcddcccbbbfaaafdbebedddf";
     auto t = "cbccfafebccdccebdd";

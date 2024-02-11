@@ -8,18 +8,18 @@
 #include <queue>
 #include <ctime>
 
-using namespace std;
+using namespace ctci;
 
 void RandomNode::description() {
-    cout << R"(Trees and Graphs: Random Node
+    std::cout << R"(Trees and Graphs: Random Node
     You are implementing a binary tree class from scratch which, in addition to insert, find,
      and delete, has a method getRandomNode() which returns a random node from the tree.
     All nodes should be equally likely to be chosen.
     Design and implement an algorithm for getRandomNode, and explain how you would implement
-     the rest of the methods.)" << endl;
+     the rest of the methods.)" << std::endl;
 }
 
-void RandomNode::generateBSTree(const vector<int> &data) {
+void RandomNode::generateBSTree(const std::vector<int> &data) {
     this->root = nullptr;
     if (!data.empty()) {
         for (auto element: data) {
@@ -56,7 +56,7 @@ void RandomNode::insert(int data) {
 
 void RandomNode::deleteTree() {
     if (this->root != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(this->root);
         Node *working;
         while (!nodes.empty()) {
@@ -101,6 +101,5 @@ RandomNode::Node *RandomNode::getRandomNode() {
     }
     return result;
 }
-
 
 #pragma clang diagnostic pop

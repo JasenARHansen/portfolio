@@ -6,16 +6,16 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void CheckBalanced::description() {
-    cout << R"(Trees and Graphs: Check Balanced
+    std::cout << R"(Trees and Graphs: Check Balanced
     Implement a function to check if a binary tree is balanced.
     For the purposes of this question, a balanced tree is defined to be a tree such that the heights of
-     the two subtrees of any node never differ by more than one.)" << endl;
+     the two subtrees of any node never differ by more than one.)" << std::endl;
 }
 
-CheckBalanced::Node *CheckBalanced::generateBSTree(const vector<int> &data) {
+CheckBalanced::Node *CheckBalanced::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -45,7 +45,7 @@ CheckBalanced::Node *CheckBalanced::generateBSTree(const vector<int> &data) {
 
 void CheckBalanced::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -67,8 +67,8 @@ bool CheckBalanced::checkBalanced(Node *node) {
     return checkBalancedHelper(node).first;
 }
 
-pair<bool, int> CheckBalanced::checkBalancedHelper(Node *node) {
-    pair<bool, int> result = {false, 0};
+std::pair<bool, int> CheckBalanced::checkBalancedHelper(Node *node) {
+    std::pair<bool, int> result = {false, 0};
     if (node == nullptr) {
         result.first = true;
     } else {
@@ -76,7 +76,7 @@ pair<bool, int> CheckBalanced::checkBalancedHelper(Node *node) {
         if (left.first) {
             auto right = checkBalancedHelper(node->rightChild);
             if (right.first and (abs(left.second - right.second) < 2)) {
-                result = {true, max(left.second, right.second) + 1};
+                result = {true, std::max(left.second, right.second) + 1};
             }
         }
     }

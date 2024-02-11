@@ -4,15 +4,16 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_2_Linked_Lists/DeleteMiddleNode.h"
 
-TEST(DeleteMiddleNodeTest, description) {
+using namespace ctci;
+TEST(CtCI_DeleteMiddleNodeTest, description) {
     testing::internal::CaptureStdout();
     DeleteMiddleNode::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(DeleteMiddleNodeTest, deleteMiddleNodeByValue_1) {
-    vector<int> expected{0, 1, 2, 4, 5, 6};
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
+TEST(CtCI_DeleteMiddleNodeTest, deleteMiddleNodeByValue_1) {
+    std::vector<int> expected{0, 1, 2, 4, 5, 6};
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
     auto value = 3;
     auto list = DeleteMiddleNode::generateList(data);
     DeleteMiddleNode::deleteMiddleNodeByValue(list, value);
@@ -21,9 +22,9 @@ TEST(DeleteMiddleNodeTest, deleteMiddleNodeByValue_1) {
     DeleteMiddleNode::deleteList(&list);
 }
 
-TEST(DeleteMiddleNodeTest, deleteMiddleNodeByIndex_1) {
-    vector<int> expected{0, 1, 2, 4, 5, 6};
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
+TEST(CtCI_DeleteMiddleNodeTest, deleteMiddleNodeByIndex_1) {
+    std::vector<int> expected{0, 1, 2, 4, 5, 6};
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
     auto index = 3;
     auto list = DeleteMiddleNode::generateList(data);
     DeleteMiddleNode::deleteMiddleNodeByIndex(list, index);

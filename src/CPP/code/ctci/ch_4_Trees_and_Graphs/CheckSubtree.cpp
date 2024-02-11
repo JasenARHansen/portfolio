@@ -5,17 +5,17 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void CheckSubtree::description() {
-    cout << R"(Trees and Graphs: Check Subtree
+    std::cout << R"(Trees and Graphs: Check Subtree
     T1 and T2 are two very large binary trees, with T1 much bigger than T2.
     Create an algorithm to determine if T2 is a subtree of T1.
     A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2.
-    That is, if you cut off the tree at node n, the two trees would be identical.)" << endl;
+    That is, if you cut off the tree at node n, the two trees would be identical.)" << std::endl;
 }
 
-CheckSubtree::Node *CheckSubtree::generateBSTree(const vector<int> &data) {
+CheckSubtree::Node *CheckSubtree::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -45,7 +45,7 @@ CheckSubtree::Node *CheckSubtree::generateBSTree(const vector<int> &data) {
 
 void CheckSubtree::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -69,7 +69,7 @@ bool CheckSubtree::isSubtreeByData(Node *tree1, Node *tree2) {
         if (tree2 == nullptr) {
             result = true;
         } else {
-            queue<Node *> queueTree1;
+            std::queue<Node *> queueTree1;
             queueTree1.push(tree1);
             Node *nodeTree1;
             while (!queueTree1.empty()) {
@@ -77,9 +77,9 @@ bool CheckSubtree::isSubtreeByData(Node *tree1, Node *tree2) {
                 queueTree1.pop();
                 if (nodeTree1->data == tree2->data) {
                     result = true;
-                    queue<Node *> queueBase;
+                    std::queue<Node *> queueBase;
                     queueBase.push(nodeTree1);
-                    queue<Node *> queueTree2;
+                    std::queue<Node *> queueTree2;
                     queueTree2.push(tree2);
                     Node *nodeBase;
                     Node *nodeTree2;
@@ -126,7 +126,7 @@ bool CheckSubtree::isSubtreeByNode(Node *tree1, Node *tree2) {
         if (tree2 == nullptr) {
             result = true;
         } else {
-            queue<Node *> queue;
+            std::queue<Node *> queue;
             queue.push(tree1);
             Node *node;
             while (!queue.empty()) {

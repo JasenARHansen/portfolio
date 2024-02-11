@@ -5,28 +5,27 @@
 
 #include <stack>
 
-using namespace std;
+namespace ctci {
+    class SortStack {
+    public:
+        static void description();
 
-class SortStack {
-public:
-    static void description();
+        SortStack();
 
-    SortStack();
+        void push(int value);
 
-    void push(int value);
+        void pop();
 
-    void pop();
+        [[nodiscard]] int peek();
 
-    [[nodiscard]] int peek();
+        [[nodiscard]] bool empty() const;
 
-    [[nodiscard]] bool empty() const;
+        [[nodiscard]] int size() const;
 
-    [[nodiscard]] int size() const;
-
-private:
-    stack<int> small;
-    stack<int> large;
-};
-
+    private:
+        std::stack<int> small;
+        std::stack<int> large;
+    };
+}
 #endif
 #pragma clang diagnostic pop

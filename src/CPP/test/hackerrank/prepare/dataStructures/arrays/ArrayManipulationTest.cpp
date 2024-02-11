@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/arrays/ArrayManipulation.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ArrayManipulationTest, description) {
+TEST(HackerRank_ArrayManipulationTest, description) {
     testing::internal::CaptureStdout();
     ArrayManipulation::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ArrayManipulationTest, arrayManipulation_1) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation_1) {
     long expected = 10;
     auto n = 10;
     vector<vector<int>> queries{{1, 5, 3},
@@ -22,7 +22,7 @@ TEST(ArrayManipulationTest, arrayManipulation_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation_2) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation_2) {
     long expected = 200;
     auto n = 5;
     vector<vector<int>> queries{{1, 2, 100},
@@ -32,7 +32,7 @@ TEST(ArrayManipulationTest, arrayManipulation_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation_3) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation_3) {
     long expected = 200;
     auto n = 5;
     vector<vector<int>> queries{{1, 2, 100},
@@ -42,7 +42,7 @@ TEST(ArrayManipulationTest, arrayManipulation_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation_4) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation_4) {
     long expected = 31;
     auto n = 10;
     vector<vector<int>> queries{{2, 6, 8},
@@ -53,7 +53,7 @@ TEST(ArrayManipulationTest, arrayManipulation_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation2_1) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation2_1) {
     long expected = 10;
     auto n = 10;
     vector<vector<int>> queries{{1, 5, 3},
@@ -63,7 +63,7 @@ TEST(ArrayManipulationTest, arrayManipulation2_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation2_2) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation2_2) {
     long expected = 200;
     auto n = 5;
     vector<vector<int>> queries{{1, 2, 100},
@@ -73,7 +73,7 @@ TEST(ArrayManipulationTest, arrayManipulation2_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation2_3) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation2_3) {
     long expected = 200;
     auto n = 5;
     vector<vector<int>> queries{{1, 2, 100},
@@ -83,7 +83,7 @@ TEST(ArrayManipulationTest, arrayManipulation2_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArrayManipulationTest, arrayManipulation2_4) {
+TEST(HackerRank_ArrayManipulationTest, arrayManipulation2_4) {
     long expected = 31;
     auto n = 10;
     vector<vector<int>> queries{{2, 6, 8},

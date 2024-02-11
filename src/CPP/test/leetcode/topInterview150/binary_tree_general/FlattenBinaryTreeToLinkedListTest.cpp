@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_general/FlattenBinaryTreeToLinkedList.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(FlattenBinaryTreeToLinkedListTest, description) {
+TEST(LeetCode_FlattenBinaryTreeToLinkedListTest, description) {
     testing::internal::CaptureStdout();
     FlattenBinaryTreeToLinkedList::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, flatten_1) {
+TEST(LeetCode_FlattenBinaryTreeToLinkedListTest, flatten_1) {
     vector<string> expected{"1", "null", "2", "null", "3", "null", "4", "null", "5", "null", "6"};
     vector<string> values{"1", "2", "5", "3", "4", "null", "6"};
     auto root = FlattenBinaryTreeToLinkedList::deserializeTree(values);
@@ -20,7 +20,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, flatten_1) {
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, flatten_2) {
+TEST(LeetCode_FlattenBinaryTreeToLinkedListTest, flatten_2) {
     vector<string> expected{};
     vector<string> values{};
     auto root = FlattenBinaryTreeToLinkedList::deserializeTree(values);
@@ -30,7 +30,7 @@ TEST(FlattenBinaryTreeToLinkedListTest, flatten_2) {
     FlattenBinaryTreeToLinkedList::deleteTree(&root);
 }
 
-TEST(FlattenBinaryTreeToLinkedListTest, flatten_3) {
+TEST(LeetCode_FlattenBinaryTreeToLinkedListTest, flatten_3) {
     vector<string> expected{"0"};
     vector<string> values{"0"};
     auto root = FlattenBinaryTreeToLinkedList::deserializeTree(values);

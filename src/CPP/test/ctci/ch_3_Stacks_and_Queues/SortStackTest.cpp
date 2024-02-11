@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/SortStack.h"
 
-TEST(SortStackTest, description) {
+using namespace ctci;
+TEST(CtCI_SortStackTest, description) {
     testing::internal::CaptureStdout();
     SortStack::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SortStackTest, SortStack_1) {
+TEST(CtCI_SortStackTest, methods_1) {
     auto stack = SortStack();
     EXPECT_TRUE(stack.empty());
     stack.push(2);

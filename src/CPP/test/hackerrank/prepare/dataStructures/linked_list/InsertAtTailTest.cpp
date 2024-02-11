@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/InsertAtTail.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(InsertAtTailTest, description) {
+TEST(HackerRank_InsertAtTailTest, description) {
     testing::internal::CaptureStdout();
     InsertAtTail::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_1) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_1) {
     vector<int> expected{141};
     vector<int> source{};
     auto head = InsertAtTail::createList(source);
@@ -21,7 +21,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_1) {
     InsertAtTail::deleteList(&updatedList);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_2) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_2) {
     vector<int> expected{141, 302};
     vector<int> source{141};
     auto head = InsertAtTail::createList(source);
@@ -32,7 +32,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_2) {
     InsertAtTail::deleteList(&head);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_3) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_3) {
     vector<int> expected{141, 302, 164};
     vector<int> source{141, 302};
     auto head = InsertAtTail::createList(source);
@@ -43,7 +43,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_3) {
     InsertAtTail::deleteList(&head);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_4) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_4) {
     vector<int> expected{141, 302, 164, 530};
     vector<int> source{141, 302, 164};
     auto head = InsertAtTail::createList(source);
@@ -54,7 +54,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_4) {
     InsertAtTail::deleteList(&head);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_5) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_5) {
     vector<int> expected{141, 302, 164, 530, 474};
     vector<int> source{141, 302, 164, 530};
     auto head = InsertAtTail::createList(source);
@@ -65,7 +65,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_5) {
     InsertAtTail::deleteList(&head);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_6) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_6) {
     vector<int> expected{236};
     vector<int> source{};
     auto head = InsertAtTail::createList(source);
@@ -76,7 +76,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_6) {
     InsertAtTail::deleteList(&updatedList);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_7) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_7) {
     vector<int> expected{236, 326};
     vector<int> source{236};
     auto head = InsertAtTail::createList(source);
@@ -87,7 +87,7 @@ TEST(InsertAtTailTest, insertNodeAtTail_7) {
     InsertAtTail::deleteList(&head);
 }
 
-TEST(InsertAtTailTest, insertNodeAtTail_8) {
+TEST(HackerRank_InsertAtTailTest, insertNodeAtTail_8) {
     vector<int> expected{236, 326, 937};
     vector<int> source{236, 326};
     auto head = InsertAtTail::createList(source);

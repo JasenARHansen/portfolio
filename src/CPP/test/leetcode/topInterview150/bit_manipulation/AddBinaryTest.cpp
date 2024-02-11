@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/bit_manipulation/AddBinary.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(AddBinaryTest, description) {
+TEST(LeetCode_AddBinaryTest, description) {
     testing::internal::CaptureStdout();
     AddBinary::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(AddBinaryTest, addBinary_1) {
+TEST(LeetCode_AddBinaryTest, addBinary_1) {
     auto expected = "100";
     auto a = "11";
     auto b = "1";
@@ -18,7 +18,7 @@ TEST(AddBinaryTest, addBinary_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(AddBinaryTest, addBinary_2) {
+TEST(LeetCode_AddBinaryTest, addBinary_2) {
     auto expected = "10101";
     auto a = "1010";
     auto b = "1011";
@@ -26,7 +26,7 @@ TEST(AddBinaryTest, addBinary_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(AddBinaryTest, addBinary_3) {
+TEST(LeetCode_AddBinaryTest, addBinary_3) {
     auto expected = "100";
     auto a = "1";
     auto b = "11";
@@ -34,7 +34,7 @@ TEST(AddBinaryTest, addBinary_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(AddBinaryTest, addBinary_fail_1) {
+TEST(LeetCode_AddBinaryTest, addBinary_fail_1) {
     // 1 ≤ a.length
     auto size = 1 - 1;
     string a(size, ' ');
@@ -42,7 +42,7 @@ TEST(AddBinaryTest, addBinary_fail_1) {
     EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, addBinary_fail_2) {
+TEST(LeetCode_AddBinaryTest, addBinary_fail_2) {
     // b.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string a(size, ' ');
@@ -50,7 +50,7 @@ TEST(AddBinaryTest, addBinary_fail_2) {
     EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, addBinary_fail_3) {
+TEST(LeetCode_AddBinaryTest, addBinary_fail_3) {
     // 1 ≤ b.length
     auto size = 1 - 1;
     auto a = "11";
@@ -58,7 +58,7 @@ TEST(AddBinaryTest, addBinary_fail_3) {
     EXPECT_EXIT(AddBinary::addBinary(a, b), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(AddBinaryTest, addBinary_fail_4) {
+TEST(LeetCode_AddBinaryTest, addBinary_fail_4) {
     // b.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto a = "11";

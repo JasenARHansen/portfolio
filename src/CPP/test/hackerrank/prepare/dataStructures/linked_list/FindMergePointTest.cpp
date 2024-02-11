@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/FindMergePoint.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(FindMergePointTest, description) {
+TEST(HackerRank_FindMergePointTest, description) {
     testing::internal::CaptureStdout();
     FindMergePoint::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FindMergePointTest, findMergeNode_1) {
+TEST(HackerRank_FindMergePointTest, findMergeNode_1) {
     auto expected = 2;
     vector<int> source1{1, 2, 3};
     vector<int> source2{1};
@@ -22,7 +22,7 @@ TEST(FindMergePointTest, findMergeNode_1) {
     FindMergePoint::deleteList(&head1, &head2);
 }
 
-TEST(FindMergePointTest, findMergeNode_2) {
+TEST(HackerRank_FindMergePointTest, findMergeNode_2) {
     auto expected = 3;
     vector<int> source1{1, 2, 3};
     vector<int> source2{1};

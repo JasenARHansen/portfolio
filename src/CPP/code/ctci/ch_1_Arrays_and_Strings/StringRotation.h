@@ -5,16 +5,15 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class StringRotation {
+    public:
+        static void description();
 
-class StringRotation {
-public:
-    static void description();
+        static std::string rotate(const std::string &input, int spaces);
 
-    static string rotate(const string &input, int spaces);
-
-    static bool isRotation(const string &s1, const string &s2);
-};
-
+        static bool isRotation(const std::string &s1, const std::string &s2);
+    };
+}
 #pragma clang diagnostic pop
 #endif

@@ -2,15 +2,15 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void RouteBetweenNodes::description() {
-    cout << R"(Trees and Graphs: Route Between Nodes
-    Given a directed graph, design an algorithm to find out whether there is a route between two nodes.)" << endl;
+    std::cout << R"(Trees and Graphs: Route Between Nodes
+    Given a directed graph, design an algorithm to find out whether there is a route between two nodes.)" << std::endl;
 }
 
 RouteBetweenNodes::GraphDirected *
-RouteBetweenNodes::generateGraph(const vector<int> &data, const vector<pair<int, int>> &edges) {
+RouteBetweenNodes::generateGraph(const std::vector<int> &data, const std::vector<std::pair<int, int>> &edges) {
     auto *graph = new GraphDirected();
     if (!data.empty()) {
         Node *working;
@@ -37,8 +37,8 @@ void RouteBetweenNodes::deleteGraph(GraphDirected **graph) {
 
 bool RouteBetweenNodes::routeBetweenNodes(GraphDirected *graph, int value1, int value2) {
     auto result = false;
-    queue<Node *> traverse;
-    set<Node *> seen;
+    std::queue<Node *> traverse;
+    std::set<Node *> seen;
     // A directed graph has 1 way edges, that means the path from node1 → node2 is different from node2 → node1
     // path: node1 → node2
     traverse.emplace(graph->nodes.at(value1));
@@ -62,8 +62,8 @@ bool RouteBetweenNodes::routeBetweenNodes(GraphDirected *graph, int value1, int 
 
 bool RouteBetweenNodes::routeBetweenNodes(GraphDirected *graph, Node *node1, Node *node2) {
     auto result = false;
-    queue<Node *> traverse;
-    set<Node *> seen;
+    std::queue<Node *> traverse;
+    std::set<Node *> seen;
     // A directed graph has 1 way edges, that means the path from node1 → node2 is different from node2 → node1
     // path: node1 → node2
     traverse.emplace(graph->nodes.at(node1->data));

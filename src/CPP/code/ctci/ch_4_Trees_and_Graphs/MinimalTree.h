@@ -5,27 +5,26 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class MinimalTree {
+    private:
+        struct Node {
+            int data;
+            Node *leftChild;
+            Node *rightChild;
 
-class MinimalTree {
-private:
-    struct Node {
-        int data;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateMinimalTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static std::vector<int> getLevelOrder(Node *node);
     };
-
-public:
-    static void description();
-
-    static Node *generateMinimalTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static vector<int> getLevelOrder(Node *node);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

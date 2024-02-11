@@ -5,33 +5,32 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class RandomNode {
+    private:
+        struct Node {
+            int data;
+            int size;
+            Node *leftChild;
+            Node *rightChild;
 
-class RandomNode {
-private:
-    struct Node {
-        int data;
-        int size;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), size(1), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), size(1), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        void generateBSTree(const std::vector<int> &data);
+
+        void insert(int data);
+
+        void deleteTree();
+
+        Node *getRandomNode();
+
+    private:
+        Node *root;
     };
-
-public:
-    static void description();
-
-    void generateBSTree(const vector<int> &data);
-
-    void insert(int data);
-
-    void deleteTree();
-
-    Node *getRandomNode();
-
-private:
-    Node *root;
-};
-
+}
 #endif
 #pragma clang diagnostic pop

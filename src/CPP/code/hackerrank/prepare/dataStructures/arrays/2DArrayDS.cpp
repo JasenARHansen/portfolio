@@ -83,7 +83,6 @@ public:
             002 024 244 440
              0   0   2   0
             001 012 124 240
-
         The hourglass with the maximum sum (19) is:
             2 4 4
               2

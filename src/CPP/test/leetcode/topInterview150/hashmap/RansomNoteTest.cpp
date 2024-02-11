@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/hashmap/RansomNote.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(RansomNoteTest, description) {
+TEST(LeetCode_RansomNoteTest, description) {
     testing::internal::CaptureStdout();
     RansomNote::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RansomNoteTest, canConstruct_1) {
+TEST(LeetCode_RansomNoteTest, canConstruct_1) {
     auto expected = false;
     auto ransomNote = "a";
     auto magazine = "b";
@@ -18,7 +18,7 @@ TEST(RansomNoteTest, canConstruct_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(RansomNoteTest, canConstruct_2) {
+TEST(LeetCode_RansomNoteTest, canConstruct_2) {
     auto expected = false;
     auto ransomNote = "aa";
     auto magazine = "ab";
@@ -26,7 +26,7 @@ TEST(RansomNoteTest, canConstruct_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(RansomNoteTest, canConstruct_3) {
+TEST(LeetCode_RansomNoteTest, canConstruct_3) {
     auto expected = true;
     auto ransomNote = "aa";
     auto magazine = "aab";
@@ -34,7 +34,7 @@ TEST(RansomNoteTest, canConstruct_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(RansomNoteTest, canConstruct_fail_1) {
+TEST(LeetCode_RansomNoteTest, canConstruct_fail_1) {
     // 1 ≤ ransomNote.length
     auto size = 1 - 1;
     string ransomNote(size, ' ');
@@ -42,7 +42,7 @@ TEST(RansomNoteTest, canConstruct_fail_1) {
     EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RansomNoteTest, canConstruct_fail_2) {
+TEST(LeetCode_RansomNoteTest, canConstruct_fail_2) {
     // magazine.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     string ransomNote(size, ' ');
@@ -50,7 +50,7 @@ TEST(RansomNoteTest, canConstruct_fail_2) {
     EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RansomNoteTest, canConstruct_fail_3) {
+TEST(LeetCode_RansomNoteTest, canConstruct_fail_3) {
     // 1 ≤ magazine.length
     auto size = 1 - 1;
     auto ransomNote = "aa";
@@ -58,7 +58,7 @@ TEST(RansomNoteTest, canConstruct_fail_3) {
     EXPECT_EXIT(RansomNote::canConstruct(ransomNote, magazine), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RansomNoteTest, canConstruct_fail_4) {
+TEST(LeetCode_RansomNoteTest, canConstruct_fail_4) {
     // magazine.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     auto ransomNote = "aa";

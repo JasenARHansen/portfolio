@@ -1,8 +1,10 @@
 #include "SumLists.h"
 #include <iostream>
 
+using namespace ctci;
+
 void SumLists::description() {
-    cout << R"(Linked Lists: Sum Lists
+    std::cout << R"(Linked Lists: Sum Lists
     You have two numbers represented by a linked list, where each node contains a single digit.
     The digits are stored in reverse order, such that the Vs digit is at the head of the list.
     Write a function that adds the two numbers and returns the sum as a linked list.
@@ -18,10 +20,10 @@ void SumLists::description() {
         Input: (6 → 1 → 7) + (2 → 9 → 5).
                 That is, 617 + 295.
         Output: 9 → 1 → 2
-                That is, 912)" << endl;
+                That is, 912)" << std::endl;
 }
 
-SumLists::Node *SumLists::generateList(vector<int> data) {
+SumLists::Node *SumLists::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -45,8 +47,8 @@ void SumLists::deleteList(Node **head) {
     *head = nullptr;
 }
 
-vector<int> SumLists::getList(Node *head) {
-    vector<int> result;
+std::vector<int> SumLists::getList(Node *head) {
+    std::vector<int> result;
     auto current = head;
     while (current != nullptr) {
         result.push_back(current->data);

@@ -4,27 +4,27 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/math/Sqrt.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SqrtTest, description) {
+TEST(LeetCode_SqrtTest, description) {
     testing::internal::CaptureStdout();
     Sqrt::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SqrtTest, mySqrt_1) {
+TEST(LeetCode_SqrtTest, mySqrt_1) {
     auto expected = 2;
     auto x = 4;
     auto result = Sqrt::mySqrt(x);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SqrtTest, mySqrt_2) {
+TEST(LeetCode_SqrtTest, mySqrt_2) {
     auto expected = 2;
     auto x = 8;
     auto result = Sqrt::mySqrt(x);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SqrtTest, mySqrt_fail_1) {
+TEST(LeetCode_SqrtTest, mySqrt_fail_1) {
     // 0 ≤ x
     auto x = 0 - 1;
     EXPECT_EXIT(Sqrt::mySqrt(x), ::testing::ExitedWithCode(3), "");

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/ReverseDoublyLinkedList.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ReverseDoublyLinkedListTest, description) {
+TEST(HackerRank_ReverseDoublyLinkedListTest, description) {
     testing::internal::CaptureStdout();
     ReverseDoublyLinkedList::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ReverseDoublyLinkedListTest, reverse_1) {
+TEST(HackerRank_ReverseDoublyLinkedListTest, reverse_1) {
     vector<int> expected{4, 3, 2, 1};
     vector<int> source{1, 2, 3, 4};
     auto list = ReverseDoublyLinkedList::createList(source);
@@ -20,7 +20,7 @@ TEST(ReverseDoublyLinkedListTest, reverse_1) {
     ReverseDoublyLinkedList::deleteList(&list);
 }
 
-TEST(ReverseDoublyLinkedListTest, reverse_2) {
+TEST(HackerRank_ReverseDoublyLinkedListTest, reverse_2) {
     vector<int> expected{};
     vector<int> source{};
     auto list = ReverseDoublyLinkedList::createList(source);
@@ -30,7 +30,7 @@ TEST(ReverseDoublyLinkedListTest, reverse_2) {
     ReverseDoublyLinkedList::deleteList(&list);
 }
 
-TEST(ReverseDoublyLinkedListTest, reverse_3) {
+TEST(HackerRank_ReverseDoublyLinkedListTest, reverse_3) {
     vector<int> expected{1};
     vector<int> source{1};
     auto list = ReverseDoublyLinkedList::createList(source);

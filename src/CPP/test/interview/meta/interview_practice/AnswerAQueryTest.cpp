@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/interview_practice/AnswerAQuery.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PracticeInterviewFirstTest, description) {
+TEST(Interview_PracticeInterviewFirstTest, description) {
     testing::internal::CaptureStdout();
     AnswerAQuery::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(AnswerAQueryTest, answerQueries_1) {
+TEST(Interview_AnswerAQueryTest, answerQueries_1) {
     vector<int> expected{-1, 2, -1, 2};
     vector<Query> queries = {{2, 3},
                              {1, 2},

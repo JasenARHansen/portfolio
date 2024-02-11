@@ -4,41 +4,41 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/ReverseWordsInAString.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ReverseWordsInAStringTest, description) {
+TEST(LeetCode_ReverseWordsInAStringTest, description) {
     testing::internal::CaptureStdout();
     ReverseWordsInAString::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ReverseWordsInAStringTest, reverseWords_1) {
+TEST(LeetCode_ReverseWordsInAStringTest, reverseWords_1) {
     auto expected = "blue is sky the";
     auto s = "the sky is blue";
     auto result = ReverseWordsInAString::reverseWords(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(ReverseWordsInAStringTest, reverseWords_2) {
+TEST(LeetCode_ReverseWordsInAStringTest, reverseWords_2) {
     auto expected = "world hello";
     auto s = "  hello world  ";
     auto result = ReverseWordsInAString::reverseWords(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(ReverseWordsInAStringTest, reverseWords_3) {
+TEST(LeetCode_ReverseWordsInAStringTest, reverseWords_3) {
     auto expected = "example good a";
     auto s = "a good   example";
     auto result = ReverseWordsInAString::reverseWords(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(ReverseWordsInAStringTest, reverseWords_fail_1) {
+TEST(LeetCode_ReverseWordsInAStringTest, reverseWords_fail_1) {
     // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, 0);
     EXPECT_EXIT(ReverseWordsInAString::reverseWords(s), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ReverseWordsInAStringTest, reverseWords_fail_2) {
+TEST(LeetCode_ReverseWordsInAStringTest, reverseWords_fail_2) {
     // s.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string s(size, ' ');

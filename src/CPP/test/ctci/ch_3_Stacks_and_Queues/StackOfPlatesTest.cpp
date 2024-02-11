@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/StackOfPlates.h"
 
-TEST(StackOfPlatesTest, description) {
+using namespace ctci;
+TEST(CtCI_StackOfPlatesTest, description) {
     testing::internal::CaptureStdout();
     StackOfPlates::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(StackOfPlatesTest, StackOfPlates_1) {
+TEST(CtCI_StackOfPlatesTest, StackOfPlates_1) {
     auto stacks = StackOfPlates();
     auto numberStacks = 3;
     auto stackMax = 10;
@@ -31,7 +32,7 @@ TEST(StackOfPlatesTest, StackOfPlates_1) {
     EXPECT_EQ(stackMax - 2, stacks.top());
 }
 
-TEST(StackOfPlatesTest, StackOfPlates_2) {
+TEST(CtCI_StackOfPlatesTest, StackOfPlates_2) {
     auto stackMax = 3;
     auto stacks = StackOfPlates(stackMax);
     auto numberStacks = 3;
@@ -52,7 +53,7 @@ TEST(StackOfPlatesTest, StackOfPlates_2) {
     EXPECT_EQ(stackMax - 2, stacks.top());
 }
 
-TEST(StackOfPlatesTest, StackOfPlates_3) {
+TEST(CtCI_StackOfPlatesTest, StackOfPlates_3) {
     auto stackMax = 1;
     auto stacks = StackOfPlates(stackMax);
     auto numberStacks = 3;

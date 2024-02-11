@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/amazon/preparation/ItemsInContainers.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ItemsInContainers_Test, description) {
+TEST(Interview_ItemsInContainers_Test, description) {
     testing::internal::CaptureStdout();
     ItemsInContainers::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ItemsInContainers_Test, numberOfItems1_1) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems1_1) {
     vector<int> expected{2, 3};
     string s = "|**|*|*";
     vector<int> startIndices{1, 1};
@@ -22,7 +22,7 @@ TEST(ItemsInContainers_Test, numberOfItems1_1) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems1_2) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems1_2) {
     vector<int> expected{0};
     string s = "*|*|";
     vector<int> startIndices{1};
@@ -34,7 +34,7 @@ TEST(ItemsInContainers_Test, numberOfItems1_2) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems1_3) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems1_3) {
     vector<int> expected{2};
     string s = "*|*|*|";
     vector<int> startIndices{1};
@@ -46,7 +46,7 @@ TEST(ItemsInContainers_Test, numberOfItems1_3) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems1_4) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems1_4) {
     vector<int> expected{0};
     string s = "********";
     vector<int> startIndices{1};
@@ -58,7 +58,7 @@ TEST(ItemsInContainers_Test, numberOfItems1_4) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems1_5) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems1_5) {
     vector<int> expected{0};
     string s = "|||||||||";
     vector<int> startIndices{1};
@@ -70,7 +70,7 @@ TEST(ItemsInContainers_Test, numberOfItems1_5) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems2_1) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems2_1) {
     vector<int> expected{2, 3};
     string s = "|**|*|*";
     vector<int> startIndices{1, 1};
@@ -82,7 +82,7 @@ TEST(ItemsInContainers_Test, numberOfItems2_1) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems2_2) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems2_2) {
     vector<int> expected{0};
     string s = "*|*|";
     vector<int> startIndices{1};
@@ -94,7 +94,7 @@ TEST(ItemsInContainers_Test, numberOfItems2_2) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems2_3) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems2_3) {
     vector<int> expected{2};
     string s = "*|*|*|";
     vector<int> startIndices{1};
@@ -106,7 +106,7 @@ TEST(ItemsInContainers_Test, numberOfItems2_3) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems2_4) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems2_4) {
     vector<int> expected{0};
     string s = "********";
     vector<int> startIndices{1};
@@ -118,7 +118,7 @@ TEST(ItemsInContainers_Test, numberOfItems2_4) {
     }
 }
 
-TEST(ItemsInContainers_Test, numberOfItems2_5) {
+TEST(Interview_ItemsInContainers_Test, numberOfItems2_5) {
     vector<int> expected{0};
     string s = "|||||||||";
     vector<int> startIndices{1};

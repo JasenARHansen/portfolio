@@ -7,13 +7,11 @@
 #include <vector>
 #include <map>
 
-using namespace std;
-
 class BuildOrder {
 private:
     struct Node {
         char data;
-        set<Node *> dependencies;
+        std::set<Node *> dependencies;
 
         explicit Node() = default;
 
@@ -29,17 +27,18 @@ private:
         // This graph does not allow for duplicate data values
         explicit GraphDirected() = default;
 
-        map<char, Node *> nodes;
+        std::map<char, Node *> nodes;
     };
 
 public:
     static void description();
 
-    static GraphDirected *generateGraph(const vector<char> &data, const vector<pair<char, char>> &dependencies);
+    static GraphDirected *
+    generateGraph(const std::vector<char> &data, const std::vector<std::pair<char, char>> &dependencies);
 
     static void deleteGraph(GraphDirected **graph);
 
-    static vector<char> buildOrder(GraphDirected *graph);
+    static std::vector<char> buildOrder(GraphDirected *graph);
 };
 
 #endif

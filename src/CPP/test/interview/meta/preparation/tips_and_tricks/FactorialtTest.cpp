@@ -4,20 +4,20 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/tips_and_tricks/Factorial.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(FactorialTest, description) {
+TEST(Interview_FactorialTest, description) {
     testing::internal::CaptureStdout();
     Factorial::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FactorialTest, factorial) {
+TEST(Interview_FactorialTest, factorial) {
     auto expected = 120;
     auto base = 5;
     auto result = Factorial::factorial(base);
     EXPECT_EQ(expected, result);
 }
 
-TEST(FactorialTest, factorialRecursion) {
+TEST(Interview_FactorialTest, factorialRecursion) {
     auto expected = 120;
     auto base = 5;
     auto result = Factorial::factorialRecursion(base);

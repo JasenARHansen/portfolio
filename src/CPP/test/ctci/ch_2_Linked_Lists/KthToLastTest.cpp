@@ -4,15 +4,16 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_2_Linked_Lists/KthToLast.h"
 
-TEST(KthToLastTest, description) {
+using namespace ctci;
+TEST(CtCI_KthToLastTest, description) {
     testing::internal::CaptureStdout();
     KthToLast::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(KthToLastTest, KthToLast_1) {
+TEST(CtCI_KthToLastTest, kthToLast_1) {
     auto expected = 3;
-    vector<int> data{1, 2, 3, 4, 5, 6};
+    std::vector<int> data{1, 2, 3, 4, 5, 6};
     auto k = 3;
     auto list = KthToLast::generateList(data);
     auto result = KthToLast::kthToLast(list, k);
@@ -20,9 +21,9 @@ TEST(KthToLastTest, KthToLast_1) {
     KthToLast::deleteList(&list);
 }
 
-TEST(KthToLastTest, KthToLastBrute_1) {
+TEST(CtCI_KthToLastTest, kthToLastBrute_1) {
     auto expected = 3;
-    vector<int> data{1, 2, 3, 4, 5, 6};
+    std::vector<int> data{1, 2, 3, 4, 5, 6};
     auto k = 3;
     auto list = KthToLast::generateList(data);
     auto result = KthToLast::kthToLastRecursive(list, k);

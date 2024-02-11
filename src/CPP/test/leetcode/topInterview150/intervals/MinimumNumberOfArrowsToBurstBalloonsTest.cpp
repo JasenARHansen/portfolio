@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/intervals/MinimumNumberOfArrowsToBurstBalloons.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, description) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, description) {
     testing::internal::CaptureStdout();
     MinimumNumberOfArrowsToBurstBalloons::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_1) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_1) {
     auto expected = 2;
     vector<vector<int>> points{{10, 16},
                                {2,  8},
@@ -20,7 +20,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_2) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_2) {
     auto expected = 4;
     vector<vector<int>> points{{1, 2},
                                {3, 4},
@@ -30,7 +30,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_3) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_3) {
     auto expected = 2;
     vector<vector<int>> points{{1, 2},
                                {2, 3},
@@ -40,7 +40,7 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_4) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_4) {
     auto expected = 2;
     vector<vector<int>> points{{9, 12},
                                {1, 10},
@@ -53,14 +53,14 @@ TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_1) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_1) {
     // 1 ≤ points.length
     auto size = 1 - 1;
     vector<vector<int>> points(size);
     EXPECT_EXIT(MinimumNumberOfArrowsToBurstBalloons::findMinArrowShots(points), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_2) {
+TEST(LeetCode_MinimumNumberOfArrowsToBurstBalloonsTest, findMinArrowShots_fail_2) {
     // points.length ≤ 10^5
     auto size = (int) pow(10, 5) + 1;
     vector<vector<int>> points(size);

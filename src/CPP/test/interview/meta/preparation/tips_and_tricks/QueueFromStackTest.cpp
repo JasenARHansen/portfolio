@@ -4,20 +4,20 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/tips_and_tricks/QueueFromStack.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(QueueFromStackSlowPopTest, description) {
+TEST(Interview_QueueFromStackSlowPopTest, description) {
     testing::internal::CaptureStdout();
     QueueFromStackSlowPop::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(QueueFromStackSlowPopTest, constructor) {
+TEST(Interview_QueueFromStackSlowPopTest, constructor) {
     auto expected = "{}";
     QueueFromStackSlowPop queueFromStackSlowPop;
     auto result = queueFromStackSlowPop.toString();
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowPopTest, push) {
+TEST(Interview_QueueFromStackSlowPopTest, push) {
     auto expected = "{2, 1}";
     QueueFromStackSlowPop queueFromStackSlowPop;
     queueFromStackSlowPop.push(1);
@@ -26,7 +26,7 @@ TEST(QueueFromStackSlowPopTest, push) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowPopTest, pop) {
+TEST(Interview_QueueFromStackSlowPopTest, pop) {
     auto expected = "{2}";
     QueueFromStackSlowPop queueFromStackSlowPop;
     queueFromStackSlowPop.push(1);
@@ -36,7 +36,7 @@ TEST(QueueFromStackSlowPopTest, pop) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowPopTest, front) {
+TEST(Interview_QueueFromStackSlowPopTest, front) {
     auto expected = "{2, 1}";
     QueueFromStackSlowPop queueFromStackSlowPop;
     queueFromStackSlowPop.push(1);
@@ -47,7 +47,7 @@ TEST(QueueFromStackSlowPopTest, front) {
     EXPECT_EQ(1, data);
 }
 
-TEST(QueueFromStackSlowPopTest, back) {
+TEST(Interview_QueueFromStackSlowPopTest, back) {
     auto expected = "{2, 1}";
     QueueFromStackSlowPop queueFromStackSlowPop;
     queueFromStackSlowPop.push(1);
@@ -58,20 +58,20 @@ TEST(QueueFromStackSlowPopTest, back) {
     EXPECT_EQ(2, data);
 }
 
-TEST(QueueFromStackSlowInsertTest, description) {
+TEST(Interview_QueueFromStackSlowInsertTest, description) {
     testing::internal::CaptureStdout();
     QueueFromStackSlowInsert::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(QueueFromStackSlowInsertTest, constructor) {
+TEST(Interview_QueueFromStackSlowInsertTest, constructor) {
     auto expected = "{}";
     QueueFromStackSlowInsert queueFromStackSlowInsert;
     auto result = queueFromStackSlowInsert.toString();
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowInsertTest, push) {
+TEST(Interview_QueueFromStackSlowInsertTest, push) {
     auto expected = "{1, 2}";
     QueueFromStackSlowInsert queueFromStackSlowInsert;
     queueFromStackSlowInsert.push(1);
@@ -80,7 +80,7 @@ TEST(QueueFromStackSlowInsertTest, push) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowInsertTest, pop) {
+TEST(Interview_QueueFromStackSlowInsertTest, pop) {
     auto expected = "{2}";
     QueueFromStackSlowInsert queueFromStackSlowInsert;
     queueFromStackSlowInsert.push(1);
@@ -90,7 +90,7 @@ TEST(QueueFromStackSlowInsertTest, pop) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueFromStackSlowInsertTest, front) {
+TEST(Interview_QueueFromStackSlowInsertTest, front) {
     auto expected = "{1, 2}";
     QueueFromStackSlowInsert queueFromStackSlowInsert;
     queueFromStackSlowInsert.push(1);
@@ -101,7 +101,7 @@ TEST(QueueFromStackSlowInsertTest, front) {
     EXPECT_EQ(1, data);
 }
 
-TEST(QueueFromStackSlowInsertTest, back) {
+TEST(Interview_QueueFromStackSlowInsertTest, back) {
     auto expected = "{1, 2}";
     QueueFromStackSlowInsert queueFromStackSlowInsert;
     queueFromStackSlowInsert.push(1);

@@ -4,14 +4,15 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_2_Linked_Lists/LoopDetection.h"
 
-TEST(LoopDetectionTest, description) {
+using namespace ctci;
+TEST(CtCI_LoopDetectionTest, description) {
     testing::internal::CaptureStdout();
     LoopDetection::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(LoopDetectionTest, LoopDetectionByValue_1) {
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
+TEST(CtCI_LoopDetectionTest, detectCycle_1) {
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
     auto value = 3;
     auto list = LoopDetection::generateList(data);
     LoopDetection::generateCycle(list, value);
@@ -21,8 +22,8 @@ TEST(LoopDetectionTest, LoopDetectionByValue_1) {
     LoopDetection::deleteList(&list);
 }
 
-TEST(LoopDetectionTest, LoopDetectionByValue_2) {
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
+TEST(CtCI_LoopDetectionTest, detectCycle_2) {
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
     auto value = (int) data.size() + 1;
     auto list = LoopDetection::generateList(data);
     LoopDetection::generateCycle(list, value);

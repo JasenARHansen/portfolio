@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/MergeTwoSortedLinkedLists.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MergeTwoSortedLinkedListsTest, description) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, description) {
     testing::internal::CaptureStdout();
     MergeTwoSortedLinkedLists::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MergeTwoSortedLinkedListsTest, mergeLists_1) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, mergeLists_1) {
     vector<int> expected{1, 1, 2, 3, 7};
     vector<int> source1{1, 3, 7};
     vector<int> source2{1, 2};
@@ -22,7 +22,7 @@ TEST(MergeTwoSortedLinkedListsTest, mergeLists_1) {
     MergeTwoSortedLinkedLists::deleteList(&updatedList);
 }
 
-TEST(MergeTwoSortedLinkedListsTest, mergeLists_2) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, mergeLists_2) {
     vector<int> expected{};
     vector<int> source1{};
     vector<int> source2{};
@@ -34,7 +34,7 @@ TEST(MergeTwoSortedLinkedListsTest, mergeLists_2) {
     MergeTwoSortedLinkedLists::deleteList(&updatedList);
 }
 
-TEST(MergeTwoSortedLinkedListsTest, mergeLists_3) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, mergeLists_3) {
     vector<int> expected{1, 2, 3, 3, 4};
     vector<int> source1{1, 2, 3};
     vector<int> source2{3, 4};
@@ -46,7 +46,7 @@ TEST(MergeTwoSortedLinkedListsTest, mergeLists_3) {
     MergeTwoSortedLinkedLists::deleteList(&updatedList);
 }
 
-TEST(MergeTwoSortedLinkedListsTest, mergeLists_4) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, mergeLists_4) {
     vector<int> expected{1, 2, 3};
     vector<int> source1{1, 2, 3};
     vector<int> source2{};
@@ -58,7 +58,7 @@ TEST(MergeTwoSortedLinkedListsTest, mergeLists_4) {
     MergeTwoSortedLinkedLists::deleteList(&updatedList);
 }
 
-TEST(MergeTwoSortedLinkedListsTest, mergeLists_5) {
+TEST(HackerRank_MergeTwoSortedLinkedListsTest, mergeLists_5) {
     vector<int> expected{1, 2, 3};
     vector<int> source1{};
     vector<int> source2{1, 2, 3};

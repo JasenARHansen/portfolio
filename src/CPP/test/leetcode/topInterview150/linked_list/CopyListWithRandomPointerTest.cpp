@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/linked_list/CopyListWithRandomPointer.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CopyListWithRandomPointerTest, description) {
+TEST(LeetCode_CopyListWithRandomPointerTest, description) {
     testing::internal::CaptureStdout();
     CopyListWithRandomPointer::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_1) {
     vector<pair<int, string>> expected{{7,  "null"},
                                        {13, "0"},
                                        {11, "4"},
@@ -27,7 +27,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_1) {
     CopyListWithRandomPointer::deleteList(&copy);
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_2) {
     vector<pair<int, string>> expected{{1, "1"},
                                        {2, "1"}};
     auto head = CopyListWithRandomPointer::deserializeListRandomPointer(expected);
@@ -41,7 +41,7 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_2) {
     CopyListWithRandomPointer::deleteList(&copy);
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_3) {
     vector<pair<int, string>> expected{{3, "null"},
                                        {3, "0"},
                                        {3, "null"}};
@@ -56,21 +56,21 @@ TEST(CopyListWithRandomPointerTest, copyRandomList_3) {
     CopyListWithRandomPointer::deleteList(&copy);
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_fail_1) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_fail_1) {
     // n ≤ 1000
     auto size = 1000 + 1;
     vector<pair<int, string>> values(size);
     EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_fail_2) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_fail_2) {
     // -10^4 ≤ Node.val
     auto size = (int) -pow(10, 4) - 1;
     vector<pair<int, string>> values{{size, "null"}};
     EXPECT_EXIT(CopyListWithRandomPointer::deserializeListRandomPointer(values), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(CopyListWithRandomPointerTest, copyRandomList_fail_3) {
+TEST(LeetCode_CopyListWithRandomPointerTest, copyRandomList_fail_3) {
     // Node.val ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<pair<int, string>> values{{size, "null"}};

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/tree/HuffmanDecoding.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(HuffmanDecodingTest, description) {
+TEST(HackerRank_HuffmanDecodingTest, description) {
     testing::internal::CaptureStdout();
     HuffmanDecoding::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(HuffmanDecodingTest, height_1) {
+TEST(HackerRank_HuffmanDecodingTest, height_1) {
     auto expectedEncrypted = "01101110100010101101110";
     auto sourceDecode = "ABRACADABRA\n";
     auto source = "ABRACADABRA";
@@ -23,7 +23,7 @@ TEST(HuffmanDecodingTest, height_1) {
     HuffmanDecoding::deleteTree(&root);
 }
 
-TEST(HuffmanDecodingTest, height_2) {
+TEST(HackerRank_HuffmanDecodingTest, height_2) {
     auto expectedEncrypted = "1001011";
     auto sourceDecode = "ABACA\n";
     auto source = "ABACA";
@@ -36,7 +36,7 @@ TEST(HuffmanDecodingTest, height_2) {
     HuffmanDecoding::deleteTree(&root);
 }
 
-TEST(HuffmanDecodingTest, height_3) {
+TEST(HackerRank_HuffmanDecodingTest, height_3) {
     auto expectedEncrypted = "001000110110011110000101011101110101101011001111000";
     auto sourceDecode = "Rumpelstiltskin\n";
     auto source = "Rumpelstiltskin";
@@ -49,7 +49,7 @@ TEST(HuffmanDecodingTest, height_3) {
     HuffmanDecoding::deleteTree(&root);
 }
 
-TEST(HuffmanDecodingTest, height_4) {
+TEST(HackerRank_HuffmanDecodingTest, height_4) {
     auto expectedEncrypted = "111100010101000100110111101000000110100010010101011101100100000"
                              "011110111110011011101101111100110111010100110111010110010000001"
                              "111011111001101110110001001010101111011111001101110010000001110"

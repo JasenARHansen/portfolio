@@ -7,18 +7,18 @@
 #include <queue>
 #include<numeric>
 
-using namespace std;
+using namespace ctci;
 
 void PathsWithSum::description() {
-    cout << R"(Trees and Graphs: Paths with Sum
+    std::cout << R"(Trees and Graphs: Paths with Sum
     You are given a binary tree in which each node contains an integer value (which might be
      positive or negative).
     Design an algorithm to count the number of paths that sum to a given value.
     The path does not need to start or end at the root or a leaf, but it must go downwards
-     (traveling only from parent nodes to child nodes).)" << endl;
+     (traveling only from parent nodes to child nodes).)" << std::endl;
 }
 
-PathsWithSum::Node *PathsWithSum::generateBSTree(const vector<int> &data) {
+PathsWithSum::Node *PathsWithSum::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -50,7 +50,7 @@ PathsWithSum::Node *PathsWithSum::generateBSTree(const vector<int> &data) {
 
 void PathsWithSum::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -69,30 +69,30 @@ void PathsWithSum::deleteTree(Node **node) {
 }
 
 int PathsWithSum::pathsWithSum(Node *root, int target) {
-    vector<int> path;
-
+    std::vector<int> path;
     return pathsWithSum(root, target, path);
 }
 
-int PathsWithSum::pathsWithSum(Node *node, int target, vector<int> path) {
+int PathsWithSum::pathsWithSum(Node *node, int target, std::vector<int> path) {
     auto result = 0;
-    if (node != nullptr){
+    if (node != nullptr) {
         path.push_back(node->data);
-        auto sum = accumulate(path.begin(),path.end(),0);
-        while ((!path.empty()) and (sum > target)){
+        auto sum = accumulate(path.begin(), path.end(), 0);
+        while ((!path.empty()) and (sum > target)) {
             path.erase(path.begin());
-            sum = accumulate(path.begin(),path.end(),0);
+            sum = accumulate(path.begin(), path.end(), 0);
         }
-        if (sum == target){
+        if (sum == target) {
             result++;
         }
-        if (node->leftChild != nullptr){
+        if (node->leftChild != nullptr) {
             result += pathsWithSum(node->leftChild, target, path);
         }
-        if (node->rightChild != nullptr){
+        if (node->rightChild != nullptr) {
             result += pathsWithSum(node->rightChild, target, path);
         }
     }
     return result;
 }
+
 #pragma clang diagnostic pop

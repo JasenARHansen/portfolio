@@ -6,16 +6,15 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class RotateMatrix {
+    public:
+        static void description();
 
-class RotateMatrix {
-public:
-    static void description();
+        static std::vector<std::vector<int>> rotateMatrix(std::vector<std::vector<int>> matrix);
 
-    static vector<vector<int>> rotateMatrix(vector<vector<int>> matrix);
-
-    static void rotateMatrixInPlace(vector<vector<int>> *matrix);
-};
-
+        static void rotateMatrixInPlace(std::vector<std::vector<int>> *matrix);
+    };
+}
 #endif
 #pragma clang diagnostic pop

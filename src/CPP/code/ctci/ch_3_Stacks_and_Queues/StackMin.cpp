@@ -1,9 +1,11 @@
 #include "StackMin.h"
 #include <iostream>
 
+using namespace ctci;
+
 void StackMin::description() {
-    cout << R"(Stacks and Queues: Three in One
-    Describe how you could use a single array to implement three stacks.)" << endl;
+    std::cout << R"(Stacks and Queues: Three in One
+    Describe how you could use a single array to implement three stacks.)" << std::endl;
 }
 
 StackMin::StackMin() = default;
@@ -12,7 +14,7 @@ void StackMin::push(int value) {
     if (this->stack.empty()) {
         this->stack.emplace(value, value);
     } else {
-        this->stack.emplace(min(this->stack.top().first, value), value);
+        this->stack.emplace(std::min(this->stack.top().first, value), value);
     }
 }
 

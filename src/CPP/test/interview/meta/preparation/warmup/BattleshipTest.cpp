@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/warmup/Battleship.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(BattleshipTest, description) {
+TEST(Interview_BattleshipTest, description) {
     testing::internal::CaptureStdout();
     Battleship::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(BattleshipTest, getHitProbability_1) {
+TEST(Interview_BattleshipTest, getHitProbability_1) {
     auto expected = 0.50000000;
     auto r = 2;
     auto c = 3;
@@ -20,7 +20,7 @@ TEST(BattleshipTest, getHitProbability_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(BattleshipTest, getHitProbability_2) {
+TEST(Interview_BattleshipTest, getHitProbability_2) {
     auto expected = 1.00000000;
     auto r = 2;
     auto c = 2;
@@ -30,7 +30,7 @@ TEST(BattleshipTest, getHitProbability_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(BattleshipTest, getHitProbability_fail_1) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_1) {
     // 1 ≤ r
     auto r = 1 - 1;
     auto c = 3;
@@ -39,7 +39,7 @@ TEST(BattleshipTest, getHitProbability_fail_1) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_2) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_2) {
     // r ≤ 100
     auto r = 100 + 1;
     auto c = 3;
@@ -48,7 +48,7 @@ TEST(BattleshipTest, getHitProbability_fail_2) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_3) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_3) {
     // 1 ≤ c
     auto r = 3;
     auto c = 1 - 1;
@@ -57,7 +57,7 @@ TEST(BattleshipTest, getHitProbability_fail_3) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_4) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_4) {
     // c ≤ 100
     auto r = 3;
     auto c = 100 + 1;
@@ -66,7 +66,7 @@ TEST(BattleshipTest, getHitProbability_fail_4) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_5) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_5) {
     // 1 ≤ g.length
     auto r = 3;
     auto c = 3;
@@ -75,7 +75,7 @@ TEST(BattleshipTest, getHitProbability_fail_5) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_6) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_6) {
     // g.length ≤ 100
     auto r = 3;
     auto c = 3;
@@ -84,7 +84,7 @@ TEST(BattleshipTest, getHitProbability_fail_6) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_7) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_7) {
     // 1 ≤ g[i].length
     auto r = 3;
     auto c = 3;
@@ -93,7 +93,7 @@ TEST(BattleshipTest, getHitProbability_fail_7) {
     EXPECT_EXIT(Battleship::getHitProbability(r, c, g), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(BattleshipTest, getHitProbability_fail_8) {
+TEST(Interview_BattleshipTest, getHitProbability_fail_8) {
     // g[i].length ≤ 100
     auto r = 3;
     auto c = 3;

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_search_tree/KthSmallestElementInABST.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(KthSmallestElementInABSTTest, description) {
+TEST(LeetCode_KthSmallestElementInABSTTest, description) {
     testing::internal::CaptureStdout();
     KthSmallestElementInABST::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(KthSmallestElementInABSTTest, kthSmallest_1) {
+TEST(LeetCode_KthSmallestElementInABSTTest, kthSmallest_1) {
     auto expected = 1;
     vector<string> values{"3", "1", "4", "null", "2"};
     auto root = KthSmallestElementInABST::deserializeTree(values);
@@ -20,7 +20,7 @@ TEST(KthSmallestElementInABSTTest, kthSmallest_1) {
     KthSmallestElementInABST::deleteTree(&root);
 }
 
-TEST(KthSmallestElementInABSTTest, kthSmallest_2) {
+TEST(LeetCode_KthSmallestElementInABSTTest, kthSmallest_2) {
     auto expected = 3;
     vector<string> values{"5", "3", "6", "2", "4", "null", "null", "1"};
     auto root = KthSmallestElementInABST::deserializeTree(values);
@@ -30,7 +30,7 @@ TEST(KthSmallestElementInABSTTest, kthSmallest_2) {
     KthSmallestElementInABST::deleteTree(&root);
 }
 
-TEST(KthSmallestElementInABSTTest, kthSmallest_fail_1) {
+TEST(LeetCode_KthSmallestElementInABSTTest, kthSmallest_fail_1) {
     // 1 ≤ k
     vector<string> values{"5", "3", "6", "2", "4", "null", "null", "1"};
     auto root = KthSmallestElementInABST::deserializeTree(values);
@@ -39,7 +39,7 @@ TEST(KthSmallestElementInABSTTest, kthSmallest_fail_1) {
     KthSmallestElementInABST::deleteTree(&root);
 }
 
-TEST(KthSmallestElementInABSTTest, kthSmallest_fail_2) {
+TEST(LeetCode_KthSmallestElementInABSTTest, kthSmallest_fail_2) {
     // n ≤ 10^4
     vector<string> values{"5", "3", "6", "2", "4", "null", "null", "1"};
     auto root = KthSmallestElementInABST::deserializeTree(values);

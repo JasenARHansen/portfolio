@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/arrays/2DArrayDS.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Arrays2DDSTest, description) {
+TEST(HackerRank_Arrays2DDSTest, description) {
     testing::internal::CaptureStdout();
     Arrays2DDS::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(Arrays2DDSTest, hourglassSum_1) {
+TEST(HackerRank_Arrays2DDSTest, hourglassSum_1) {
     int expected = 7;
     vector<vector<int>> arr{
             {1, 1, 1, 0, 0, 0},
@@ -26,7 +26,7 @@ TEST(Arrays2DDSTest, hourglassSum_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Arrays2DDSTest, hourglassSum_2) {
+TEST(HackerRank_Arrays2DDSTest, hourglassSum_2) {
     int expected = 28;
     vector<vector<int>> arr{
             {-9, -9, -9, 1,  1, 1},
@@ -40,7 +40,7 @@ TEST(Arrays2DDSTest, hourglassSum_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Arrays2DDSTest, hourglassSum_3) {
+TEST(HackerRank_Arrays2DDSTest, hourglassSum_3) {
     int expected = 19;
     vector<vector<int>> arr{
             {1, 1, 1, 0, 0, 0},
@@ -54,7 +54,7 @@ TEST(Arrays2DDSTest, hourglassSum_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Arrays2DDSTest, hourglassSum_4) {
+TEST(HackerRank_Arrays2DDSTest, hourglassSum_4) {
     int expected = 13;
     vector<vector<int>> arr{
             {1, 1, 1,  0,  0,  0},
@@ -68,7 +68,7 @@ TEST(Arrays2DDSTest, hourglassSum_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Arrays2DDSTest, hourglassSum_5) {
+TEST(HackerRank_Arrays2DDSTest, hourglassSum_5) {
     int expected = -6;
     vector<vector<int>> arr{
             {-1, -1, 0,  -9, -2, -2},

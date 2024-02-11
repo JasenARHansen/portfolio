@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeLevelOrderTraversal.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(BinaryTreeLevelOrderTraversalTest, description) {
+TEST(LeetCode_BinaryTreeLevelOrderTraversalTest, description) {
     testing::internal::CaptureStdout();
     BinaryTreeLevelOrderTraversal::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_1) {
+TEST(LeetCode_BinaryTreeLevelOrderTraversalTest, levelOrder_1) {
     vector<vector<int>> expected{{3},
                                  {9,  20},
                                  {15, 7}};
@@ -21,7 +21,7 @@ TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_1) {
     BinaryTreeLevelOrderTraversal::deleteTree(&root);
 }
 
-TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_2) {
+TEST(LeetCode_BinaryTreeLevelOrderTraversalTest, levelOrder_2) {
     vector<vector<int>> expected{{1}};
     vector<string> values{"1"};
     auto root = BinaryTreeLevelOrderTraversal::deserializeTree(values);
@@ -30,7 +30,7 @@ TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_2) {
     BinaryTreeLevelOrderTraversal::deleteTree(&root);
 }
 
-TEST(BinaryTreeLevelOrderTraversalTest, levelOrder_3) {
+TEST(LeetCode_BinaryTreeLevelOrderTraversalTest, levelOrder_3) {
     vector<vector<int>> expected{};
     vector<string> values{};
     auto root = BinaryTreeLevelOrderTraversal::deserializeTree(values);

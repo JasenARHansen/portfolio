@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/trees/NumberOfVisibleNodes.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(NumberOfVisibleNodesTest, description) {
+TEST(Interview_NumberOfVisibleNodesTest, description) {
     testing::internal::CaptureStdout();
     NumberOfVisibleNodes::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(NumberOfVisibleNodesTest, visibleNodes_1) {
+TEST(Interview_NumberOfVisibleNodesTest, visibleNodes_1) {
     auto expected = 4;
     vector<string> values{"8", "3", "10", "1", "6", "null", "14", "null", "null", "4", "7", "13"};
     auto root = NumberOfVisibleNodes::deserializeTree(values);
@@ -19,7 +19,7 @@ TEST(NumberOfVisibleNodesTest, visibleNodes_1) {
     NumberOfVisibleNodes::deleteTree(&root);
 }
 
-TEST(NumberOfVisibleNodesTest, visibleNodes_2) {
+TEST(Interview_NumberOfVisibleNodesTest, visibleNodes_2) {
     auto expected = 5;
     vector<string> values{"10", "8", "15", "4", "null", "14", "16", "null", "5", "null", "null", "null", "null", "null",
                           "6"};

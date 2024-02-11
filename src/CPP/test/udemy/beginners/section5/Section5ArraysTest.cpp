@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Arrays.h"
 
-TEST(Section5ArraysTest, incrementArrayPointer) {
+TEST(Udemy_Section5ArraysTest, incrementArrayPointer) {
     int expected[]{2, 3, 4};
     int result[]{1, 2, 3};
     int size = sizeof(result) / sizeof(result[0]);

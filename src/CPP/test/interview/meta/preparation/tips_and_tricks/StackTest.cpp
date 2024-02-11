@@ -4,20 +4,20 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/tips_and_tricks/Stack.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(StackTest, description) {
+TEST(Interview_StackTest, description) {
     testing::internal::CaptureStdout();
     Stack::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(StackTest, constructor_1) {
+TEST(Interview_StackTest, constructor_1) {
     auto expected = "{}";
     Stack stack;
     auto result = stack.toString();
     EXPECT_EQ(expected, result);
 }
 
-TEST(StackTest, push) {
+TEST(Interview_StackTest, push) {
     auto expected = "{10}";
     Stack stack;
     auto data = 10;
@@ -26,7 +26,7 @@ TEST(StackTest, push) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(StackTest, peek) {
+TEST(Interview_StackTest, peek) {
     auto expected = "{10}";
     Stack stack;
     auto data = 10;
@@ -37,7 +37,7 @@ TEST(StackTest, peek) {
     EXPECT_EQ(data, peek);
 }
 
-TEST(StackTest, pop) {
+TEST(Interview_StackTest, pop) {
     auto expected = "{}";
     Stack stack;
     auto data = 10;
@@ -47,7 +47,7 @@ TEST(StackTest, pop) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(StackTest, size) {
+TEST(Interview_StackTest, size) {
     auto expected = "{10}";
     Stack stack;
     auto data = 10;
@@ -58,7 +58,7 @@ TEST(StackTest, size) {
     EXPECT_EQ(1, size);
 }
 
-TEST(StackTest, max_1) {
+TEST(Interview_StackTest, max_1) {
     auto expected = "{5, 10}";
     Stack stack;
     auto data = 10;
@@ -71,7 +71,7 @@ TEST(StackTest, max_1) {
     EXPECT_EQ(10, max);
 }
 
-TEST(StackTest, max_2) {
+TEST(Interview_StackTest, max_2) {
     auto expected = "{10, 5}";
     Stack stack;
     auto data = 5;
@@ -84,7 +84,7 @@ TEST(StackTest, max_2) {
     EXPECT_EQ(10, max);
 }
 
-TEST(StackTest, min_1) {
+TEST(Interview_StackTest, min_1) {
     auto expected = "{5, 10}";
     Stack stack;
     auto data = 10;
@@ -97,7 +97,7 @@ TEST(StackTest, min_1) {
     EXPECT_EQ(5, min);
 }
 
-TEST(StackTest, min_2) {
+TEST(Interview_StackTest, min_2) {
     auto expected = "{10, 5}";
     Stack stack;
     auto data = 5;
@@ -110,25 +110,25 @@ TEST(StackTest, min_2) {
     EXPECT_EQ(5, min);
 }
 
-TEST(StackTest, pop_fail) {
+TEST(Interview_StackTest, pop_fail) {
     // Stack empty
     Stack stack;
     EXPECT_THROW(stack.pop(), runtime_error);
 }
 
-TEST(StackTest, peek_fail) {
+TEST(Interview_StackTest, peek_fail) {
     // Stack empty
     Stack stack;
     EXPECT_THROW(stack.peek(), runtime_error);
 }
 
-TEST(StackTest, min_fail) {
+TEST(Interview_StackTest, min_fail) {
     // Stack empty
     Stack stack;
     EXPECT_THROW(stack.min(), runtime_error);
 }
 
-TEST(StackTest, max_fail) {
+TEST(Interview_StackTest, max_fail) {
     // Stack empty
     Stack stack;
     EXPECT_THROW(stack.max(), runtime_error);

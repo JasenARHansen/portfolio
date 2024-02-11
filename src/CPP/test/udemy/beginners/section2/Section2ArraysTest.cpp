@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section2/Section2Arrays.h"
 
-TEST(Section2ArraysTest, arrays) {
+TEST(Udemy_Section2ArraysTest, arrays) {
     auto expected = "Array with individual assignments\n"
                     "First array size: 12\n"
                     "First array element size: 4\n"
@@ -35,7 +35,7 @@ TEST(Section2ArraysTest, arrays) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2ArraysTest, arraysMultiDimensional) {
+TEST(Udemy_Section2ArraysTest, arraysMultiDimensional) {
     auto expected = "Animals array size: 192\n"
                     "Animals row size: 96\n"
                     "Animal size: 32\n"

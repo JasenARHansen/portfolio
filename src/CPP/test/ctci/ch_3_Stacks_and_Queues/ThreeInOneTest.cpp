@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/ThreeInOne.h"
 
-TEST(ThreeInOneTest, description) {
+using namespace ctci;
+TEST(CtCI_ThreeInOneTest, description) {
     testing::internal::CaptureStdout();
     ThreeInOne::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ThreeInOneTest, isPermutation_1) {
+TEST(CtCI_ThreeInOneTest, isPermutation_1) {
     auto stacks = ThreeInOne();
     EXPECT_TRUE(stacks.empty(0));
     EXPECT_TRUE(stacks.empty(1));
@@ -31,7 +32,6 @@ TEST(ThreeInOneTest, isPermutation_1) {
     EXPECT_EQ(2, stacks.top(0));
     EXPECT_EQ(5, stacks.top(1));
     EXPECT_EQ(11, stacks.top(2));
-
 }
 
 #endif

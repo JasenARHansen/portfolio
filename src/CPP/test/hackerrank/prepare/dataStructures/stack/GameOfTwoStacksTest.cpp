@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/stack/GameOfTwoStacks.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(GameOfTwoStacksTest, description) {
+TEST(HackerRank_GameOfTwoStacksTest, description) {
     testing::internal::CaptureStdout();
     GameOfTwoStacks::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_1) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_1) {
     int expected = 4;
     auto maxSum = 12;
     vector<int> a{1, 2, 3, 4, 5};
@@ -19,7 +19,7 @@ TEST(GameOfTwoStacksTest, twoStacks_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_2) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_2) {
     int expected = 4;
     auto maxSum = 12;
     vector<int> a{4, 2, 4, 6, 1};
@@ -28,7 +28,7 @@ TEST(GameOfTwoStacksTest, twoStacks_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_3) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_3) {
     int expected = 0;
     auto maxSum = 12;
     vector<int> a{};
@@ -37,7 +37,7 @@ TEST(GameOfTwoStacksTest, twoStacks_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_4) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_4) {
     int expected = 3;
     auto maxSum = 12;
     vector<int> a{2, 1, 8, 5};
@@ -46,7 +46,7 @@ TEST(GameOfTwoStacksTest, twoStacks_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_5) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_5) {
     int expected = 3;
     auto maxSum = 12;
     vector<int> a{};
@@ -55,7 +55,7 @@ TEST(GameOfTwoStacksTest, twoStacks_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_6) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_6) {
     int expected = 6;
     auto maxSum = 12;
     vector<int> a{1, 2, 3};
@@ -64,7 +64,7 @@ TEST(GameOfTwoStacksTest, twoStacks_6) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_7) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_7) {
     int expected = 5;
     auto maxSum = 12;
     vector<int> a{1, 2};
@@ -73,7 +73,7 @@ TEST(GameOfTwoStacksTest, twoStacks_7) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_8) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_8) {
     int expected = 5;
     auto maxSum = 12;
     vector<int> a{1, 2, 3};
@@ -82,7 +82,7 @@ TEST(GameOfTwoStacksTest, twoStacks_8) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_9) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_9) {
     int expected = 4;
     auto maxSum = 12;
     vector<int> a{1, 2};
@@ -91,7 +91,7 @@ TEST(GameOfTwoStacksTest, twoStacks_9) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_10) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_10) {
     vector<int> expected = {4, 6, 1, 6, 1, 6, 6, 8, 7, 8};
     vector<int> maxSum = {12, 62, 5, 55, 13, 67, 64, 73, 58, 92};
     vector<vector<int>> a{{1,  2},
@@ -120,7 +120,7 @@ TEST(GameOfTwoStacksTest, twoStacks_10) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_11) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_11) {
     vector<int> expected = {8, 2, 8, 13, 1, 5, 10, 4};
     vector<int> maxSum = {87, 16, 67, 65, 11, 46, 75, 29};
     vector<vector<int>> a{{10, 12, 15, 3,  19, 12, 13, 12, 15, 1,  18, 18},
@@ -145,7 +145,7 @@ TEST(GameOfTwoStacksTest, twoStacks_11) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_12) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_12) {
     vector<int> expected = {10, 7, 4, 5, 8, 6, 10, 4, 9, 7};
     vector<int> maxSum = {94, 71, 25, 31, 90, 55, 75, 39, 76, 58};
     vector<vector<int>> a{{0,  8,  18, 13, 7,  15},
@@ -174,7 +174,7 @@ TEST(GameOfTwoStacksTest, twoStacks_12) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_13) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_13) {
     vector<int> expected = {2, 13, 5, 11, 3, 3, 6, 5, 7, 5};
     vector<int> maxSum = {13, 79, 32, 88, 16, 32, 60, 33, 75, 31};
     vector<vector<int>> a{{7,  6,  14, 8,  16, 15, 3,  7,  15, 1,  13, 15, 1,  0,  9,  4,  16, 10, 15, 16, 8,  2,  9,  6,  4,  14, 9,  8,  19, 5,  0,  6,  11},
@@ -203,7 +203,7 @@ TEST(GameOfTwoStacksTest, twoStacks_13) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_14) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_14) {
     vector<int> expected = {3, 7, 14, 14, 8, 0, 8, 5, 2, 11, 9};
     vector<int> maxSum = {34, 37, 100, 94, 70, 7, 81, 19, 26, 77, 60};
     vector<vector<int>> a{{8,  19, 6,  6,  14, 8,  18, 5,  15, 18, 4,  6,  11, 6,  11, 11, 15, 0,  12, 12, 14, 19, 11, 14, 17, 19, 6,  19, 5,  6,  12, 5,  5,  10, 12, 12, 19, 2, 17, 6, 0, 13, 12, 3, 11},
@@ -234,7 +234,7 @@ TEST(GameOfTwoStacksTest, twoStacks_14) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_15) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_15) {
     vector<int> expected = {32, 13, 11, 34, 36, 26, 50, 22, 23, 28};
     vector<int> maxSum = {12, 5, 5, 13, 17, 14, 23, 8, 42, 31};
     vector<vector<int>> a{{1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0},
@@ -263,7 +263,7 @@ TEST(GameOfTwoStacksTest, twoStacks_15) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_16) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_16) {
     vector<int> expected = {62, 35, 39, 24, 38, 22, 26, 40, 67, 30};
     vector<int> maxSum = {41, 37, 16, 17, 15, 11, 46, 25, 29, 44};
     vector<vector<int>> a{{0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0},
@@ -292,7 +292,7 @@ TEST(GameOfTwoStacksTest, twoStacks_16) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_17) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_17) {
     vector<int> expected = {39, 42, 53, 35, 10, 48, 21, 58, 15, 42};
     vector<int> maxSum = {21, 25, 31, 40, 5, 25, 39, 26, 8, 13};
     vector<vector<int>> a{{0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},
@@ -321,7 +321,7 @@ TEST(GameOfTwoStacksTest, twoStacks_17) {
     }
 }
 
-TEST(GameOfTwoStacksTest, twoStacks_1x) {
+TEST(HackerRank_GameOfTwoStacksTest, twoStacks_1x) {
     vector<int> expected = {0};
     vector<int> maxSum = {62};
     vector<vector<int>> a{{},

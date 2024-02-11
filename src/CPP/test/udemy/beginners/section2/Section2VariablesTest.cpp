@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section2/Section2Variables.h"
 
-TEST(Section2VariablesTest, numAnimals) {
+TEST(Udemy_Section2VariablesTest, numAnimals) {
     auto expected = "Number of cats: 5\n"
                     "Number of dogs: 7\n"
                     "Total number of animals: 12\n"
@@ -14,7 +14,7 @@ TEST(Section2VariablesTest, numAnimals) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Section2VariablesTest, numAnimalsOut) {
+TEST(Udemy_Section2VariablesTest, numAnimalsOut) {
     auto expected = "Number of cats: 5\n"
                     "Number of dogs: 7\n"
                     "Total number of animals: 12\n"

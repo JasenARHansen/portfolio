@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/matrix/RotateImage.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(RotateImageTest, description) {
+TEST(LeetCode_RotateImageTest, description) {
     testing::internal::CaptureStdout();
     RotateImage::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RotateImageTest, rotate_1) {
+TEST(LeetCode_RotateImageTest, rotate_1) {
     vector<vector<int>> expected{{7, 4, 1},
                                  {8, 5, 2},
                                  {9, 6, 3}};
@@ -21,7 +21,7 @@ TEST(RotateImageTest, rotate_1) {
     EXPECT_EQ(expected, matrix);
 }
 
-TEST(RotateImageTest, rotate_2) {
+TEST(LeetCode_RotateImageTest, rotate_2) {
     vector<vector<int>> expected{{15, 13, 2,  5},
                                  {14, 3,  4,  1},
                                  {12, 6,  8,  9},
@@ -34,35 +34,35 @@ TEST(RotateImageTest, rotate_2) {
     EXPECT_EQ(expected, matrix);
 }
 
-TEST(RotateImageTest, rotate_fail_1) {
+TEST(LeetCode_RotateImageTest, rotate_fail_1) {
     // 1 ≤ matrix.length
     auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RotateImageTest, rotate_fail_2) {
+TEST(LeetCode_RotateImageTest, rotate_fail_2) {
     // matrix.length ≤ 20
     auto size = 10 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RotateImageTest, rotate_fail_3) {
+TEST(LeetCode_RotateImageTest, rotate_fail_3) {
     // matrix.length ==  matrix[i].length
     auto size = 1;
     vector<vector<int>> matrix{vector<int>(size), vector<int>(size)};
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RotateImageTest, rotate_fail_4) {
+TEST(LeetCode_RotateImageTest, rotate_fail_4) {
     // 0 ≤ matrix[i].length
     auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(RotateImage::rotate(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RotateImageTest, rotate_fail_5) {
+TEST(LeetCode_RotateImageTest, rotate_fail_5) {
     // matrix[i].length ≤ 20
     auto size = 20;
     vector<vector<int>> matrix(size);

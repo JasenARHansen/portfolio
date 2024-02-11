@@ -4,62 +4,62 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/strings/SherlockAndTheValidString.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SherlockAndTheValidStringTest, description) {
+TEST(HackerRank_SherlockAndTheValidStringTest, description) {
     testing::internal::CaptureStdout();
     SherlockAndTheValidString::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_1) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_1) {
     auto expected = "YES";
     auto s = "abc";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_2) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_2) {
     auto expected = "YES";
     auto s = "abcc";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_3) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_3) {
     auto expected = "NO";
     auto s = "abccc";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_4) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_4) {
     auto expected = "NO";
     auto s = "aabbcd";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_5) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_5) {
     auto expected = "YES";
     auto s = "abcdefghhgfedecba";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_6) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_6) {
     auto expected = "NO";
     auto s = "aabbccddeefghi";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_7) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_7) {
     auto expected = "YES";
     auto s = "abcdefghhgfedecba";
     auto result = SherlockAndTheValidString::isValid(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(SherlockAndTheValidStringTest, isValid_8) {
+TEST(HackerRank_SherlockAndTheValidStringTest, isValid_8) {
     auto expected = "YES";
     auto s = "aabbc";
     auto result = SherlockAndTheValidString::isValid(s);

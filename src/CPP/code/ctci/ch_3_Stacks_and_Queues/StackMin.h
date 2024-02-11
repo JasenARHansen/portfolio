@@ -5,29 +5,28 @@
 
 #include <stack>
 
-using namespace std;
+namespace ctci {
+    class StackMin {
+    public:
+        static void description();
 
-class StackMin {
-public:
-    static void description();
+        StackMin();
 
-    StackMin();
+        void push(int value);
 
-    void push(int value);
+        void pop();
 
-    void pop();
+        [[nodiscard]] int top() const;
 
-    [[nodiscard]] int top() const;
+        [[nodiscard]] int minimum() const;
 
-    [[nodiscard]] int minimum() const;
+        [[nodiscard]] bool empty() const;
 
-    [[nodiscard]] bool empty() const;
+        [[nodiscard]] bool size() const;
 
-    [[nodiscard]] bool size() const;
-
-private:
-    stack<pair<int, int>> stack;
-};
-
+    private:
+        std::stack<std::pair<int, int>> stack;
+    };
+}
 #endif
 #pragma clang diagnostic pop

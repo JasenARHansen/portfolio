@@ -2,14 +2,16 @@
 #include <iostream>
 #include <set>
 
+using namespace ctci;
+
 void RemoveDuplicates::description() {
-    cout << R"(Linked Lists: Remove Duplicates
+    std::cout << R"(Linked Lists: Remove Duplicates
     Write code to remove duplicates from an unsorted linked list.
     Follow Up:
-        How would you solve this problem if a temporary buffer is not allowed?)" << endl;
+        How would you solve this problem if a temporary buffer is not allowed?)" << std::endl;
 }
 
-RemoveDuplicates::Node *RemoveDuplicates::generateList(vector<int> data) {
+RemoveDuplicates::Node *RemoveDuplicates::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -33,8 +35,8 @@ void RemoveDuplicates::deleteList(Node **head) {
     *head = nullptr;
 }
 
-vector<int> RemoveDuplicates::getList(Node *head) {
-    vector<int> result;
+std::vector<int> RemoveDuplicates::getList(Node *head) {
+    std::vector<int> result;
     auto current = head;
     while (current != nullptr) {
         result.push_back(current->data);
@@ -45,7 +47,7 @@ vector<int> RemoveDuplicates::getList(Node *head) {
 
 void RemoveDuplicates::removeDuplicates(Node *head) {
     if (head != nullptr) {
-        set<int> seen;
+        std::set<int> seen;
         auto current = head;
         seen.insert(current->data);
         while (current->next != nullptr) {

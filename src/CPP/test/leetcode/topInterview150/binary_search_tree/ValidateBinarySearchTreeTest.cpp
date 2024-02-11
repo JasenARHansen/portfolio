@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_search_tree/ValidateBinarySearchTree.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ValidateBinarySearchTreeTest, description) {
+TEST(LeetCode_ValidateBinarySearchTreeTest, description) {
     testing::internal::CaptureStdout();
     ValidateBinarySearchTree::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ValidateBinarySearchTreeTest, isValidBST_1) {
+TEST(LeetCode_ValidateBinarySearchTreeTest, isValidBST_1) {
     auto expected = true;
     vector<string> values{"2", "1", "3"};
     auto root = ValidateBinarySearchTree::deserializeTree(values);
@@ -19,7 +19,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_1) {
     ValidateBinarySearchTree::deleteTree(&root);
 }
 
-TEST(ValidateBinarySearchTreeTest, isValidBST_2) {
+TEST(LeetCode_ValidateBinarySearchTreeTest, isValidBST_2) {
     auto expected = false;
     vector<string> values{"5", "1", "4", "null", "null", "3", "6"};
     auto root = ValidateBinarySearchTree::deserializeTree(values);
@@ -28,7 +28,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_2) {
     ValidateBinarySearchTree::deleteTree(&root);
 }
 
-TEST(ValidateBinarySearchTreeTest, isValidBST_3) {
+TEST(LeetCode_ValidateBinarySearchTreeTest, isValidBST_3) {
     auto expected = false;
     vector<string> values{"2", "2", "2"};
     auto root = ValidateBinarySearchTree::deserializeTree(values);
@@ -37,7 +37,7 @@ TEST(ValidateBinarySearchTreeTest, isValidBST_3) {
     ValidateBinarySearchTree::deleteTree(&root);
 }
 
-TEST(ValidateBinarySearchTreeTest, isValidBST_4) {
+TEST(LeetCode_ValidateBinarySearchTreeTest, isValidBST_4) {
     auto expected = true;
     vector<string> values{"2147483647"};
     auto root = ValidateBinarySearchTree::deserializeTree(values);

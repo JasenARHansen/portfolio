@@ -1,16 +1,18 @@
 #include "DeleteMiddleNode.h"
 #include <iostream>
 
+using namespace ctci;
+
 void DeleteMiddleNode::description() {
-    cout << R"(Linked Lists: Delete Middle Node
+    std::cout << R"(Linked Lists: Delete Middle Node
     Implement an algorithm to delete a node in the middle (i.e., any node but the first and last
      node, not necessarily the exact middle) of a singly linked list, given only access to that node.
     Example:
         Input: the node c from the linked list a → b → c → d → e → f
-        Result: nothing is returned, but the new linked list looks like a → b → d → e → f)" << endl;
+        Result: nothing is returned, but the new linked list looks like a → b → d → e → f)" << std::endl;
 }
 
-DeleteMiddleNode::Node *DeleteMiddleNode::generateList(vector<int> data) {
+DeleteMiddleNode::Node *DeleteMiddleNode::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -34,8 +36,8 @@ void DeleteMiddleNode::deleteList(Node **head) {
     *head = nullptr;
 }
 
-vector<int> DeleteMiddleNode::getList(Node *head) {
-    vector<int> result;
+std::vector<int> DeleteMiddleNode::getList(Node *head) {
+    std::vector<int> result;
     auto current = head;
     while (current != nullptr) {
         result.push_back(current->data);

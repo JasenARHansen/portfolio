@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Pointers.h"
 
-TEST(Section5PointersTest, demo) {
+TEST(Udemy_Section5PointersTest, pointerDemo) {
     testing::internal::CaptureStdout();
     Section5Pointers::pointerDemo();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(Section5PointersTest, doubleDouble) {
+TEST(Udemy_Section5PointersTest, doubleDouble) {
     auto output = "Retrieving the double value from pointer value: 1.234\n"
                   "The doubled value from pointer value: 2.468\n";
     auto result = 1.234;
@@ -21,7 +21,7 @@ TEST(Section5PointersTest, doubleDouble) {
     EXPECT_EQ(output, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section5PointersTest, printAllString) {
+TEST(Udemy_Section5PointersTest, printAllString) {
     auto output = "First: first and Last: third\n"
                   "Using index counter\n"
                   "Element: 0 is: first\n"
@@ -38,7 +38,7 @@ TEST(Section5PointersTest, printAllString) {
     EXPECT_EQ(output, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section5PointersTest, reverseCharArray) {
+TEST(Udemy_Section5PointersTest, reverseCharArray) {
     char expected[]{'o', 'l', 'l', 'e', 'h'};
     char result[]{'h', 'e', 'l', 'l', 'o'};
     int size = sizeof(result) / sizeof(result[0]);

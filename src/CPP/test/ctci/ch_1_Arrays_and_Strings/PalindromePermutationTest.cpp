@@ -4,15 +4,16 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_1_Arrays_and_Strings/PalindromePermutation.h"
 
-TEST(PalindromePermutationTest, description) {
+using namespace ctci;
+TEST(CtCI_PalindromePermutationTest, description) {
     testing::internal::CaptureStdout();
     PalindromePermutation::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PalindromePermutationTest, PalindromePermutation_1) {
-    vector<bool> expected = {true, true, false, true, false, true};
-    vector<string> source{
+TEST(CtCI_PalindromePermutationTest, isPalindromePermutation_1) {
+    std::vector<bool> expected = {true, true, false, true, false, true};
+    std::vector<std::string> source{
             "",
             "a",
             "ab",

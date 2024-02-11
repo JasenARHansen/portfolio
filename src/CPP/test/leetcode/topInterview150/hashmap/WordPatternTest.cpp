@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/hashmap/WordPattern.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(WordPatternTest, description) {
+TEST(LeetCode_WordPatternTest, description) {
     testing::internal::CaptureStdout();
     WordPattern::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(WordPatternTest, wordPattern_1) {
+TEST(LeetCode_WordPatternTest, wordPattern_1) {
     auto expected = true;
     auto pattern = "abba";
     auto s = "dog cat cat dog";
@@ -18,7 +18,7 @@ TEST(WordPatternTest, wordPattern_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordPatternTest, wordPattern_2) {
+TEST(LeetCode_WordPatternTest, wordPattern_2) {
     auto expected = false;
     auto pattern = "abba";
     auto s = "dog cat cat fish";
@@ -26,7 +26,7 @@ TEST(WordPatternTest, wordPattern_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordPatternTest, wordPattern_3) {
+TEST(LeetCode_WordPatternTest, wordPattern_3) {
     auto expected = false;
     auto pattern = "aaaa";
     auto s = "dog cat cat dog";
@@ -34,7 +34,7 @@ TEST(WordPatternTest, wordPattern_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordPatternTest, wordPattern_4) {
+TEST(LeetCode_WordPatternTest, wordPattern_4) {
     auto expected = false;
     auto pattern = "abba";
     auto s = "dog dog dog dog";
@@ -42,7 +42,7 @@ TEST(WordPatternTest, wordPattern_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordPatternTest, wordPattern_5) {
+TEST(LeetCode_WordPatternTest, wordPattern_5) {
     auto expected = false;
     auto pattern = "aba";
     auto s = "cat cat cat dog";
@@ -50,7 +50,7 @@ TEST(WordPatternTest, wordPattern_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(WordPatternTest, wordPattern_fail_1) {
+TEST(LeetCode_WordPatternTest, wordPattern_fail_1) {
     // 1 ≤ pattern.length
     auto size = 1 - 1;
     string pattern(size, ' ');
@@ -58,7 +58,7 @@ TEST(WordPatternTest, wordPattern_fail_1) {
     EXPECT_EXIT(WordPattern::wordPattern(pattern, s), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(WordPatternTest, wordPattern_fail_2) {
+TEST(LeetCode_WordPatternTest, wordPattern_fail_2) {
     // pattern.length ≤ 300
     auto size = 300 + 1;
     string pattern(size, ' ');
@@ -66,7 +66,7 @@ TEST(WordPatternTest, wordPattern_fail_2) {
     EXPECT_EXIT(WordPattern::wordPattern(pattern, s), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(WordPatternTest, wordPattern_fail_3) {
+TEST(LeetCode_WordPatternTest, wordPattern_fail_3) {
     // 1 ≤ s.length
     auto size = 1 - 1;
     auto pattern = "abba";
@@ -74,7 +74,7 @@ TEST(WordPatternTest, wordPattern_fail_3) {
     EXPECT_EXIT(WordPattern::wordPattern(pattern, s), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(WordPatternTest, wordPattern_fail_4) {
+TEST(LeetCode_WordPatternTest, wordPattern_fail_4) {
     // s.length ≤ 3000
     auto size = 3000 + 1;
     auto pattern = "abba";

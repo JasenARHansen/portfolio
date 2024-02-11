@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section3/Section3Functions.h"
 
-TEST(Section3FunctionsTest, menuSelection) {
+TEST(Udemy_Section3FunctionsTest, menuSelection) {
     string expected[]{"Invalid option, quitting.",
                       "Adding a record.",
                       "Deleting a record.",

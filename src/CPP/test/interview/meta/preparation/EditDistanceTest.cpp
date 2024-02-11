@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/preparation/EditDistance.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(EditDistanceTest, description) {
+TEST(Interview_EditDistanceTest, description) {
     testing::internal::CaptureStdout();
     EditDistance::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(EditDistanceTest, oneEditApart_1) {
+TEST(Interview_EditDistanceTest, oneEditApart_1) {
     auto expected = false;
     auto s1 = "cat";
     auto s2 = "dog";
@@ -18,7 +18,7 @@ TEST(EditDistanceTest, oneEditApart_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(EditDistanceTest, oneEditApart_2) {
+TEST(Interview_EditDistanceTest, oneEditApart_2) {
     auto expected = true;
     auto s1 = "cat";
     auto s2 = "cats";
@@ -26,7 +26,7 @@ TEST(EditDistanceTest, oneEditApart_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(EditDistanceTest, oneEditApart_3) {
+TEST(Interview_EditDistanceTest, oneEditApart_3) {
     auto expected = true;
     auto s1 = "cat";
     auto s2 = "cut";
@@ -34,7 +34,7 @@ TEST(EditDistanceTest, oneEditApart_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(EditDistanceTest, oneEditApart_4) {
+TEST(Interview_EditDistanceTest, oneEditApart_4) {
     auto expected = true;
     auto s1 = "cat";
     auto s2 = "cast";
@@ -42,7 +42,7 @@ TEST(EditDistanceTest, oneEditApart_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(EditDistanceTest, oneEditApart_5) {
+TEST(Interview_EditDistanceTest, oneEditApart_5) {
     auto expected = true;
     auto s1 = "cat";
     auto s2 = "at";
@@ -50,7 +50,7 @@ TEST(EditDistanceTest, oneEditApart_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(EditDistanceTest, oneEditApart_6) {
+TEST(Interview_EditDistanceTest, oneEditApart_6) {
     auto expected = false;
     auto s1 = "cat";
     auto s2 = "act";

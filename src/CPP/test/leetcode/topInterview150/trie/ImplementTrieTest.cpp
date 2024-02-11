@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/trie/ImplementTrie.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ImplementTrieTest, description) {
+TEST(LeetCode_ImplementTrieTest, description) {
     testing::internal::CaptureStdout();
     Trie::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ImplementTrieTest, climbStairs_1) {
+TEST(LeetCode_ImplementTrieTest, climbStairs_1) {
     Trie *trie = new Trie();
     trie->insert("apple");
     auto result = trie->search("apple");

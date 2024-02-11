@@ -4,34 +4,34 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/recursion/EncryptedWords.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(EncryptedWordsTest, description) {
+TEST(Interview_EncryptedWordsTest, description) {
     testing::internal::CaptureStdout();
     EncryptedWords::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(EncryptedWordsTest, findEncryptedWord_1) {
+TEST(Interview_EncryptedWordsTest, findEncryptedWord_1) {
     auto expected = "bac";
     auto s = "abc";
     auto result = EncryptedWords::findEncryptedWord(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(EncryptedWordsTest, findEncryptedWord_2) {
+TEST(Interview_EncryptedWordsTest, findEncryptedWord_2) {
     auto expected = "bacd";
     auto s = "abcd";
     auto result = EncryptedWords::findEncryptedWord(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(EncryptedWordsTest, findEncryptedWord_3) {
+TEST(Interview_EncryptedWordsTest, findEncryptedWord_3) {
     auto expected = "xbacbca";
     auto s = "abcxcba";
     auto result = EncryptedWords::findEncryptedWord(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(EncryptedWordsTest, findEncryptedWord_4) {
+TEST(Interview_EncryptedWordsTest, findEncryptedWord_4) {
     auto expected = "eafcobok";
     auto s = "facebook";
     auto result = EncryptedWords::findEncryptedWord(s);

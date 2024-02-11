@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/trei/Contacts.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ContactsTest, description) {
+TEST(HackerRank_ContactsTest, description) {
     testing::internal::CaptureStdout();
     Contacts::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ContactsTest, contacts_1) {
+TEST(HackerRank_ContactsTest, contacts_1) {
     vector<int> expected{2, 0};
     vector<vector<string>> queries{{"add",  "hack"},
                                    {"add",  "hackerrank"},
@@ -20,7 +20,7 @@ TEST(ContactsTest, contacts_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ContactsTest, contacts_2) {
+TEST(HackerRank_ContactsTest, contacts_2) {
     vector<int> expected{3, 2, 0};
     vector<vector<string>> queries{{"add",  "ed"},
                                    {"add",  "eddie"},

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/recursion/ChangeInAForeignCurrency.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ChangeInAForeignCurrencyTest, description) {
+TEST(Interview_ChangeInAForeignCurrencyTest, description) {
     testing::internal::CaptureStdout();
     ChangeInAForeignCurrency::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ChangeInAForeignCurrencyTest, canGetExactChange_1) {
+TEST(Interview_ChangeInAForeignCurrencyTest, canGetExactChange_1) {
     auto expected = false;
     vector<int> denominations{5, 10, 25, 100, 200};
     auto targetMoney = 94;
@@ -18,7 +18,7 @@ TEST(ChangeInAForeignCurrencyTest, canGetExactChange_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ChangeInAForeignCurrencyTest, canGetExactChange_2) {
+TEST(Interview_ChangeInAForeignCurrencyTest, canGetExactChange_2) {
     auto expected = true;
     vector<int> denominations{4, 17, 29};
     auto targetMoney = 75;

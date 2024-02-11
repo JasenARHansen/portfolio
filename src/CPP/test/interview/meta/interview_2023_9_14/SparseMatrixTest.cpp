@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/interview_2023_9_14/SparseMatrix.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SparseMatrixTest, description) {
+TEST(Interview_SparseMatrixTest, description) {
     testing::internal::CaptureStdout();
     SparseMatrix::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SparseMatrixTest, constructor_1) {
+TEST(Interview_SparseMatrixTest, constructor_1) {
     auto expected = "(2, 3, {})";
     auto row = 2;
     auto column = 3;
@@ -20,7 +20,7 @@ TEST(SparseMatrixTest, constructor_1) {
     auto bar = sparseMatrix.getCells();
 }
 
-TEST(SparseMatrixTest, constructor_2) {
+TEST(Interview_SparseMatrixTest, constructor_2) {
     auto expected = "(2, 3, {{0, 0, 1}, {1, 0, 3}, {1, 2, 6}})";
     auto row = 2;
     auto column = 3;
@@ -32,7 +32,7 @@ TEST(SparseMatrixTest, constructor_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, put) {
+TEST(Interview_SparseMatrixTest, put) {
     auto expected = "(2, 3, {{0, 0, 1}, {1, 0, 3}, {1, 2, 6}})";
     auto row = 2;
     auto column = 3;
@@ -45,7 +45,7 @@ TEST(SparseMatrixTest, put) {
     auto bar = sparseMatrix.getCells();
 }
 
-TEST(SparseMatrixTest, put_erase) {
+TEST(Interview_SparseMatrixTest, put_erase) {
     auto expected = "(2, 3, {{1, 0, 3}, {1, 2, 6}})";
     auto row = 2;
     auto column = 3;
@@ -59,7 +59,7 @@ TEST(SparseMatrixTest, put_erase) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, put_zero) {
+TEST(Interview_SparseMatrixTest, put_zero) {
     auto expected = "(2, 3, {{0, 0, 1}, {1, 0, 3}, {1, 2, 6}})";
     auto row = 2;
     auto column = 3;
@@ -72,7 +72,7 @@ TEST(SparseMatrixTest, put_zero) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, transpose) {
+TEST(Interview_SparseMatrixTest, transpose) {
     auto expected = "(3, 2, {{0, 0, 1}, {0, 1, 3}, {2, 1, 6}})";
     auto row = 2;
     auto column = 3;
@@ -85,7 +85,7 @@ TEST(SparseMatrixTest, transpose) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, multiply) {
+TEST(Interview_SparseMatrixTest, multiply) {
     auto expected = "(3, 2, {{0, 0, 1}, {0, 1, 2}, {0, 2, 3}, {1, 0, 3}, {1, 1, 6}, {1, 2, 9}})";
     auto row = 2;
     auto column = 3;
@@ -108,7 +108,7 @@ TEST(SparseMatrixTest, multiply) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, getRow) {
+TEST(Interview_SparseMatrixTest, getRow) {
     auto expected = 2;
     auto row = 2;
     auto column = 3;
@@ -117,7 +117,7 @@ TEST(SparseMatrixTest, getRow) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, getColumn) {
+TEST(Interview_SparseMatrixTest, getColumn) {
     auto expected = 3;
     auto row = 2;
     auto column = 3;
@@ -126,7 +126,7 @@ TEST(SparseMatrixTest, getColumn) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, getCells) {
+TEST(Interview_SparseMatrixTest, getCells) {
     vector<vector<int>> expected{{0, 0, 1},
                                  {1, 0, 3},
                                  {1, 2, 6}};
@@ -140,7 +140,7 @@ TEST(SparseMatrixTest, getCells) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseMatrixTest, put_fail_1) {
+TEST(Interview_SparseMatrixTest, put_fail_1) {
     // 0 < row
     auto row = 2;
     auto column = 3;
@@ -149,7 +149,7 @@ TEST(SparseMatrixTest, put_fail_1) {
     EXPECT_THROW(sparseMatrix.put(size, 0, 1), runtime_error);
 }
 
-TEST(SparseMatrixTest, put_fail_2) {
+TEST(Interview_SparseMatrixTest, put_fail_2) {
     // row < Max Row
     auto row = 2;
     auto column = 3;
@@ -158,7 +158,7 @@ TEST(SparseMatrixTest, put_fail_2) {
     EXPECT_THROW(sparseMatrix.put(size, 0, 1), runtime_error);
 }
 
-TEST(SparseMatrixTest, put_fail_3) {
+TEST(Interview_SparseMatrixTest, put_fail_3) {
     // 0 < row
     auto row = 2;
     auto column = 3;
@@ -167,7 +167,7 @@ TEST(SparseMatrixTest, put_fail_3) {
     EXPECT_THROW(sparseMatrix.put(0, size, 1), runtime_error);
 }
 
-TEST(SparseMatrixTest, put_fail_4) {
+TEST(Interview_SparseMatrixTest, put_fail_4) {
     // row < Max Row
     auto row = 2;
     auto column = 3;
@@ -176,7 +176,7 @@ TEST(SparseMatrixTest, put_fail_4) {
     EXPECT_THROW(sparseMatrix.put(0, size, 1), runtime_error);
 }
 
-TEST(SparseMatrixTest, multiply_fail_1) {
+TEST(Interview_SparseMatrixTest, multiply_fail_1) {
     // row < Max Row
     auto row = 1;
     auto column = 1;

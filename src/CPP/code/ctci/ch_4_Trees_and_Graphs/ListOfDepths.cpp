@@ -5,15 +5,15 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void ListOfDepths::description() {
-    cout << R"(Trees and Graphs: List of Depths
+    std::cout << R"(Trees and Graphs: List of Depths
     Given a binary tree, design an algorithm which creates a linked list of all the nodes
-     at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).)" << endl;
+     at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).)" << std::endl;
 }
 
-ListOfDepths::Node *ListOfDepths::generateBSTree(const vector<int> &data) {
+ListOfDepths::Node *ListOfDepths::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -43,7 +43,7 @@ ListOfDepths::Node *ListOfDepths::generateBSTree(const vector<int> &data) {
 
 void ListOfDepths::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -61,12 +61,12 @@ void ListOfDepths::deleteTree(Node **node) {
     }
 }
 
-vector<vector<int>> ListOfDepths::getListOfDepths(Node *node) {
-    vector<vector<int>> result;
+std::vector<std::vector<int>> ListOfDepths::getListOfDepths(Node *node) {
+    std::vector<std::vector<int>> result;
     if (node != nullptr) {
-        queue<pair<int, Node *>> processing;
+        std::queue<std::pair<int, Node *>> processing;
         processing.emplace(0, node);
-        pair<int, Node *> working;
+        std::pair<int, Node *> working;
         while (!processing.empty()) {
             working = processing.front();
             processing.pop();

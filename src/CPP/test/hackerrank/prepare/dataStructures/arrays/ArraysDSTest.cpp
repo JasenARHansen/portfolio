@@ -6,20 +6,20 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/arrays/ArraysDS.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ArraysDSTest, description) {
+TEST(HackerRank_ArraysDSTest, description) {
     testing::internal::CaptureStdout();
     ArraysDS::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ArraysDSTest, reverseArray_1) {
+TEST(HackerRank_ArraysDSTest, reverseArray_1) {
     vector<int> expected{3, 2, 1};
     vector<int> a{1, 2, 3};
     auto result = ArraysDS::reverseArray(a);
     EXPECT_EQ(expected, result);
 }
 
-TEST(ArraysDSTest, reverseArray_2) {
+TEST(HackerRank_ArraysDSTest, reverseArray_2) {
     vector<int> expected{2, 3, 4, 1};
     vector<int> a{1, 4, 3, 2};
     auto result = ArraysDS::reverseArray(a);

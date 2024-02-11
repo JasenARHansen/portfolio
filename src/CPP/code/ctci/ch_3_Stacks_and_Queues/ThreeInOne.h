@@ -5,27 +5,26 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class ThreeInOne {
+    public:
+        static void description();
 
-class ThreeInOne {
-public:
-    static void description();
+        ThreeInOne();
 
-    ThreeInOne();
+        void push(int stack, int value);
 
-    void push(int stack, int value);
+        void pop(int stack);
 
-    void pop(int stack);
+        [[nodiscard]] int top(int stack) const;
 
-    [[nodiscard]] int top(int stack) const;
+        [[nodiscard]] bool empty(int stack) const;
 
-    [[nodiscard]] bool empty(int stack) const;
-
-private:
-    const int numOfStack = 3;
-    vector<int> stacks;
-    vector<int> elementsInUse;
-};
-
+    private:
+        const int numOfStack = 3;
+        std::vector<int> stacks;
+        std::vector<int> elementsInUse;
+    };
+}
 #endif
 #pragma clang diagnostic pop

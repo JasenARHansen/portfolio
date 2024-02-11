@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section4/Section4Classes.h"
 
-TEST(Section4ClassesTest, section4Classes) {
+TEST(Udemy_Section4ClassesTest, constructor_1) {
     string expected[]{"Smokey",
                       "Hisssss",
                       "Meeeeow",
@@ -19,7 +19,7 @@ TEST(Section4ClassesTest, section4Classes) {
     EXPECT_EQ(expected[3], cat.move());
 }
 
-TEST(Section4ClassesTest, Section4ClassesName) {
+TEST(Udemy_Section4ClassesTest, constructor_2) {
     string expected[]{"Smokey",
                       "Hisssss",
                       "Meeeeow",
@@ -33,7 +33,7 @@ TEST(Section4ClassesTest, Section4ClassesName) {
     EXPECT_EQ(expected[3], cat.move());
 }
 
-TEST(Section4ClassesTest, Section4ClassesInitilizationList) {
+TEST(Udemy_Section4ClassesTest, constructor_3) {
     string expected[]{"Smokey",
                       "Hisssss",
                       "Meeeeow",

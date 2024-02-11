@@ -5,13 +5,13 @@
 #include "gtest/gtest.h"
 #include "../../../code/hackerrank/SampleTest/FizzBuzz.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(FizzBuzzTest, description) {
+TEST(HackerRank_FizzBuzzTest, description) {
     testing::internal::CaptureStdout();
     FizzBuzz::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FizzBuzzTest, fizzBuzz_1) {
+TEST(HackerRank_FizzBuzzTest, fizzBuzz_1) {
     auto expected = "1\n"
                     "2\n"
                     "Fizz\n"

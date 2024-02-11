@@ -5,7 +5,7 @@
 #include "gtest/gtest.h"
 #include "../../../code/interview/snap/Snap_2024_1_12.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_1) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_1) {
     auto expected = true;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -15,7 +15,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_2) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_2) {
     auto expected = true;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -25,7 +25,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_3) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_3) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -35,7 +35,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_4) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_4) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -45,7 +45,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_5) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_5) {
     auto expected = true;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -55,7 +55,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_6) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_6) {
     auto expected = true;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -65,7 +65,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_6) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_7) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_7) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -75,7 +75,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_7) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_8) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_8) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -85,7 +85,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_8) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_9) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_9) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -95,7 +95,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_9) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_10) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_10) {
     auto expected = false;
     set<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
     auto a = "cat";
@@ -105,7 +105,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_10) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_11) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_11) {
     auto expected = true;
     vector<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot", "car",
                             "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
@@ -116,7 +116,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_11) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_12) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_12) {
     auto expected = true;
     vector<string> words = {"car", "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot", "car",
                             "cat", "cot", "dog", "bat", "bee", "card", "care", "far", "ear", "cot", "dot"};
@@ -127,7 +127,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_12) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_13) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_13) {
     auto expected = true;
     vector<string> words = {"aaba", "abaa", "abba", "bbba", "bbbb", "aaaa", "cccc", "aaca"};
     auto a = "aaaa";
@@ -137,7 +137,7 @@ TEST(Snap_Interview_2024_1_12_Test, isPathExists_13) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Snap_Interview_2024_1_12_Test, isPathExists_14) {
+TEST(Interview_Snap_Interview_2024_1_12_Test, isPathExists_14) {
     auto expected = true;
     vector<string> words = {"aaba", "abaa", "abba", "bbba", "bbbb", "aaaa", "cccc", "aaca"};
     auto a = "aaaa";

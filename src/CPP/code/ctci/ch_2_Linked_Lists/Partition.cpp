@@ -1,11 +1,13 @@
-#include "Partition.h"
-#include <iostream>
-
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "NullDereference"
 
+#include "Partition.h"
+#include <iostream>
+
+using namespace ctci;
+
 void Partition::description() {
-    cout << R"(Linked Lists: Partition
+    std::cout << R"(Linked Lists: Partition
     Write code to partition a linked list around a value x, such that all nodes less than x come
      before all nodes greater than or equal to x.
     If x is contained within the list, the values of x only need to be after the elements less
@@ -14,10 +16,10 @@ void Partition::description() {
      appear between the left and right partitions.
     Example:
         Input: 3 → 5 → 8 → 5 → 10 → 2 → 1 [partition = 5]
-        Output: 3 → 1 → 2 → 10 → 5 → 5 → 8)" << endl;
+        Output: 3 → 1 → 2 → 10 → 5 → 5 → 8)" << std::endl;
 }
 
-Partition::Node *Partition::generateList(vector<int> data) {
+Partition::Node *Partition::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -41,8 +43,8 @@ void Partition::deleteList(Node **head) {
     *head = nullptr;
 }
 
-vector<int> Partition::getList(Node *head) {
-    vector<int> result;
+std::vector<int> Partition::getList(Node *head) {
+    std::vector<int> result;
     auto current = head;
     while (current != nullptr) {
         result.push_back(current->data);

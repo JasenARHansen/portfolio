@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../code/leetcode/CanMakePalindromeFromSubstring.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CanMakePalindromeFromSubstring_Test, description) {
+TEST(LeetCode_CanMakePalindromeFromSubstring_Test, description) {
     testing::internal::CaptureStdout();
     CanMakePalindromeFromSubstring::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CanMakePalindromeFromSubstring_Test, canMakePaliQueries_1) {
+TEST(LeetCode_CanMakePalindromeFromSubstring_Test, canMakePaliQueries_1) {
     vector<bool> expected{true, false, false, true, true};
     string s = "abcda";
     vector<vector<int>> queries{{3, 3, 0},
@@ -25,7 +25,7 @@ TEST(CanMakePalindromeFromSubstring_Test, canMakePaliQueries_1) {
     }
 }
 
-TEST(CanMakePalindromeFromSubstring_Test, canMakePaliQueries_2) {
+TEST(LeetCode_CanMakePalindromeFromSubstring_Test, canMakePaliQueries_2) {
     vector<bool> expected{false, true};
     string s = "lyb";
     vector<vector<int>> queries{{0, 1, 0},

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/graph_general/in_progress_EvaluateDivision.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(EvaluateDivisionTest, description) {
+TEST(LeetCode_EvaluateDivisionTest, description) {
     testing::internal::CaptureStdout();
     EvaluateDivision::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(EvaluateDivisionTest, calcEquation_1) {
+TEST(LeetCode_EvaluateDivisionTest, calcEquation_1) {
     vector<double> expected{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
 //    vector<vector<string>> equations{{"a", "b"},
 //                                     {"b", "c"}};
@@ -24,7 +24,7 @@ TEST(EvaluateDivisionTest, calcEquation_1) {
 //    EXPECT_EQ(expected, result);
 }
 
-TEST(EvaluateDivisionTest, calcEquation_2) {
+TEST(LeetCode_EvaluateDivisionTest, calcEquation_2) {
     vector<double> expected{360.00000, 0.00833};
     vector<vector<string>> equations{{"x1", "x2"},
                                      {"x2", "x3"},

@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Const.h"
 
-TEST(Section5ConstTest, reassign) {
+TEST(Udemy_Section5ConstTest, setName) {
     auto expected = "Jasen";
     Section5Const person;
     person.setName(expected);

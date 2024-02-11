@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/preparation/SpiralArray2D.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SpiralArray2dTest, description) {
+TEST(Interview_SpiralArray2dTest, description) {
     testing::internal::CaptureStdout();
     SpiralArray2D::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SpiralArray2dTest, spiral_1) {
+TEST(Interview_SpiralArray2dTest, spiral_1) {
     vector<vector<int>> expected = {{1, 2, 3},
                                     {8, 9, 4},
                                     {7, 6, 5}};
@@ -23,7 +23,7 @@ TEST(SpiralArray2dTest, spiral_1) {
     }
 }
 
-TEST(SpiralArray2dTest, spiral_2) {
+TEST(Interview_SpiralArray2dTest, spiral_2) {
     vector<vector<int>> expected = {{01, 02, 03, 4},
                                     {12, 13, 14, 5},
                                     {11, 16, 15, 6},
@@ -35,7 +35,7 @@ TEST(SpiralArray2dTest, spiral_2) {
     }
 }
 
-TEST(SpiralArray2dTest, spiral_3) {
+TEST(Interview_SpiralArray2dTest, spiral_3) {
     vector<vector<int>> expected = {{1,  2,  3,  4,  5,  6,  7,  8},
                                     {28, 29, 30, 31, 32, 33, 34, 9},
                                     {27, 48, 49, 50, 51, 52, 35, 10},

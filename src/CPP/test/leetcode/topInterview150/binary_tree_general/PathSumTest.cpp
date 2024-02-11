@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_general/PathSum.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PathSumTest, description) {
+TEST(LeetCode_PathSumTest, description) {
     testing::internal::CaptureStdout();
     PathSum::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PathSumTest, hasPathSum_1) {
+TEST(LeetCode_PathSumTest, hasPathSum_1) {
     auto expected = true;
     vector<string> values{"5", "4", "8", "11", "null", "13", "4", "7", "2", "null", "null", "null", "1"};
     int targetSum = 22;
@@ -20,7 +20,7 @@ TEST(PathSumTest, hasPathSum_1) {
     PathSum::deleteTree(&root);
 }
 
-TEST(PathSumTest, hasPathSum_2) {
+TEST(LeetCode_PathSumTest, hasPathSum_2) {
     auto expected = false;
     vector<string> values{"1", "2", "3"};
     int targetSum = 5;
@@ -30,7 +30,7 @@ TEST(PathSumTest, hasPathSum_2) {
     PathSum::deleteTree(&root);
 }
 
-TEST(PathSumTest, hasPathSum_3) {
+TEST(LeetCode_PathSumTest, hasPathSum_3) {
     auto expected = false;
     vector<string> values{};
     int targetSum = 0;

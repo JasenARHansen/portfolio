@@ -5,27 +5,26 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class ListOfDepths {
+    private:
+        struct Node {
+            int data;
+            Node *leftChild;
+            Node *rightChild;
 
-class ListOfDepths {
-private:
-    struct Node {
-        int data;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateBSTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static std::vector<std::vector<int>> getListOfDepths(Node *node);
     };
-
-public:
-    static void description();
-
-    static Node *generateBSTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static vector<vector<int>> getListOfDepths(Node *node);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

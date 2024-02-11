@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/hashmap/ValidAnagram.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ValidAnagramTest, description) {
+TEST(LeetCode_ValidAnagramTest, description) {
     testing::internal::CaptureStdout();
     ValidAnagram::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ValidAnagramTest, isAnagram_1) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_1) {
     auto expected = true;
     auto s = "anagram";
     auto t = "nagaram";
@@ -18,7 +18,7 @@ TEST(ValidAnagramTest, isAnagram_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidAnagramTest, isAnagram_2) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_2) {
     auto expected = false;
     auto s = "rat";
     auto t = "car";
@@ -26,7 +26,7 @@ TEST(ValidAnagramTest, isAnagram_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidAnagramTest, isAnagram_3) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_3) {
     auto expected = false;
     auto s = "cart";
     auto t = "car";
@@ -34,7 +34,7 @@ TEST(ValidAnagramTest, isAnagram_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidAnagramTest, isAnagram_fail_1) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_fail_1) {
     // 1 ≤ s.length
     auto size = 1 - 1;
     string s(size, ' ');
@@ -42,7 +42,7 @@ TEST(ValidAnagramTest, isAnagram_fail_1) {
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidAnagramTest, isAnagram_fail_2) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_fail_2) {
     // s.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
@@ -50,7 +50,7 @@ TEST(ValidAnagramTest, isAnagram_fail_2) {
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidAnagramTest, isAnagram_fail_3) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_fail_3) {
     // 1 ≤ t.length
     auto size = 1 - 1;
     auto s = "anagram";
@@ -58,7 +58,7 @@ TEST(ValidAnagramTest, isAnagram_fail_3) {
     EXPECT_EXIT(ValidAnagram::isAnagram(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidAnagramTest, isAnagram_fail_4) {
+TEST(LeetCode_ValidAnagramTest, isAnagram_fail_4) {
     // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     auto s = "anagram";

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/hashmap/IsomorphicStrings.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(IsomorphicStringsTest, description) {
+TEST(LeetCode_IsomorphicStringsTest, description) {
     testing::internal::CaptureStdout();
     IsomorphicStrings::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_1) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_1) {
     auto expected = true;
     auto s = "egg";
     auto t = "add";
@@ -18,7 +18,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_2) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_2) {
     auto expected = false;
     auto s = "foo";
     auto t = "bar";
@@ -26,7 +26,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_3) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_3) {
     auto expected = true;
     auto s = "paper";
     auto t = "title";
@@ -34,7 +34,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_4) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_4) {
     auto expected = true;
     auto s = "a";
     auto t = "a";
@@ -42,7 +42,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_5) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_5) {
     auto expected = false;
     auto s = "bbbaaaba";
     auto t = "aaabbbba";
@@ -50,7 +50,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_fail_1) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_fail_1) {
     // 1 ≤ IsomorphicStrings.length
     auto size = 1 - 1;
     string s(size, ' ');
@@ -58,7 +58,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_1) {
     EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_fail_2) {
     // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     string s(size, ' ');
@@ -66,7 +66,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_2) {
     EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_fail_3) {
     // 1 ≤ t.length
     auto size = 1 - 1;
     auto s = "aa";
@@ -74,7 +74,7 @@ TEST(IsomorphicStringsTest, isIsomorphic_fail_3) {
     EXPECT_EXIT(IsomorphicStrings::isIsomorphic(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(IsomorphicStringsTest, isIsomorphic_fail_4) {
+TEST(LeetCode_IsomorphicStringsTest, isIsomorphic_fail_4) {
     // t.length ≤ 5 * 10^4
     auto size = 5 * (int) pow(10, 4) + 1;
     auto s = "aa";

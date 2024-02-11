@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/sorting/CountingTriangles.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CountingTrianglesTest, description) {
+TEST(Interview_CountingTrianglesTest, description) {
     testing::internal::CaptureStdout();
     CountingTriangles::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CountingTrianglesTest, countDistinctTriangles_1) {
+TEST(Interview_CountingTrianglesTest, countDistinctTriangles_1) {
     auto expected = 2;
     vector<sides> arr{{2, 2, 3},
                       {3, 2, 2},
@@ -19,7 +19,7 @@ TEST(CountingTrianglesTest, countDistinctTriangles_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(CountingTrianglesTest, countDistinctTriangles_2) {
+TEST(Interview_CountingTrianglesTest, countDistinctTriangles_2) {
     auto expected = 3;
     vector<sides> arr{{8,   4,   6},
                       {100, 101, 102},
@@ -28,7 +28,7 @@ TEST(CountingTrianglesTest, countDistinctTriangles_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(CountingTrianglesTest, countDistinctTriangles_3) {
+TEST(Interview_CountingTrianglesTest, countDistinctTriangles_3) {
     auto expected = 1;
     vector<sides> arr{{5, 8, 9},
                       {5, 9, 8},
@@ -40,14 +40,14 @@ TEST(CountingTrianglesTest, countDistinctTriangles_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(CountingTrianglesTest, CountingTriangles_fail_1) {
+TEST(Interview_CountingTrianglesTest, error_1) {
     // 1 ≤ arr.size()
     auto size = 1 - 1;
     vector<sides> arr(size);
     EXPECT_EXIT(CountingTriangles::countDistinctTriangles(arr), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(CountingTrianglesTest, CountingTriangles_fail_2) {
+TEST(Interview_CountingTrianglesTest, error_2) {
     // arr.size() ≤ 1,000,000,000
     auto size = (int) pow(10, 6) + 1;
     vector<sides> arr(size);

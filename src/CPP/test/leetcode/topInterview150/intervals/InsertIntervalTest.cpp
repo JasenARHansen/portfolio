@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/intervals/InsertInterval.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(InsertIntervalTest, description) {
+TEST(LeetCode_InsertIntervalTest, description) {
     testing::internal::CaptureStdout();
     InsertInterval::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(InsertIntervalTest, insert_1) {
+TEST(LeetCode_InsertIntervalTest, insert_1) {
     vector<vector<int>> expected{{1, 5},
                                  {6, 9}};
     vector<vector<int>> intervals{{1, 3},
@@ -20,7 +20,7 @@ TEST(InsertIntervalTest, insert_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InsertIntervalTest, insert_2) {
+TEST(LeetCode_InsertIntervalTest, insert_2) {
     vector<vector<int>> expected{{1,  2},
                                  {3,  10},
                                  {12, 16}};
@@ -34,7 +34,7 @@ TEST(InsertIntervalTest, insert_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InsertIntervalTest, insert_3) {
+TEST(LeetCode_InsertIntervalTest, insert_3) {
     vector<vector<int>> expected{{0, 10}};
     vector<vector<int>> intervals{{2, 5},
                                   {6, 7},
@@ -44,7 +44,7 @@ TEST(InsertIntervalTest, insert_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InsertIntervalTest, insert_4) {
+TEST(LeetCode_InsertIntervalTest, insert_4) {
     vector<vector<int>> expected{{1, 7}};
     vector<vector<int>> intervals{{1, 5}};
     vector<int> newInterval{2, 7};
@@ -52,7 +52,7 @@ TEST(InsertIntervalTest, insert_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InsertIntervalTest, insert_fail_1) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_1) {
     // intervals.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<vector<int>> intervals(size);
@@ -60,7 +60,7 @@ TEST(InsertIntervalTest, insert_fail_1) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_2) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_2) {
     // intervals[i].length == 2
     auto size = 2 - 1;
     vector<vector<int>> intervals{vector<int>(size)};
@@ -68,7 +68,7 @@ TEST(InsertIntervalTest, insert_fail_2) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_3) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_3) {
     // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 5);
@@ -77,7 +77,7 @@ TEST(InsertIntervalTest, insert_fail_3) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_4) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_4) {
     // startI ≤ 10^5
     auto startI = (int) pow(10, 5) + 1;
     auto endI = (int) pow(10, 5);
@@ -86,7 +86,7 @@ TEST(InsertIntervalTest, insert_fail_4) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_5) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_5) {
     // 0 ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = 0 - 1;
@@ -95,7 +95,7 @@ TEST(InsertIntervalTest, insert_fail_5) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_6) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_6) {
     // endI ≤ 10^5
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) + 1;
@@ -104,7 +104,7 @@ TEST(InsertIntervalTest, insert_fail_6) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_7) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_7) {
     // startI ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) - 1;
@@ -113,7 +113,7 @@ TEST(InsertIntervalTest, insert_fail_7) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_8) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_8) {
     // newInterval.length == 2
     vector<vector<int>> intervals{};
     auto size = 2 - 1;
@@ -121,7 +121,7 @@ TEST(InsertIntervalTest, insert_fail_8) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_9) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_9) {
     // 0 ≤ startI
     auto startI = 0 - 1;
     auto endI = (int) pow(10, 5);
@@ -130,7 +130,7 @@ TEST(InsertIntervalTest, insert_fail_9) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_10) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_10) {
     // startI ≤ 10^5
     auto startI = (int) pow(10, 5) + 1;
     auto endI = (int) pow(10, 5);
@@ -139,7 +139,7 @@ TEST(InsertIntervalTest, insert_fail_10) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_11) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_11) {
     // 0 ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = 0 - 1;
@@ -148,7 +148,7 @@ TEST(InsertIntervalTest, insert_fail_11) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_13) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_13) {
     // endI ≤ 10^5
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) + 1;
@@ -157,7 +157,7 @@ TEST(InsertIntervalTest, insert_fail_13) {
     EXPECT_EXIT(InsertInterval::insert(intervals, newInterval), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InsertIntervalTest, insert_fail_14) {
+TEST(LeetCode_InsertIntervalTest, insert_fail_14) {
     // startI ≤ endI
     auto startI = (int) pow(10, 5);
     auto endI = (int) pow(10, 5) - 1;

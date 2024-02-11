@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/disjoint_set/ComponentsInAGraph.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ComponentsInAGraphTest, description) {
+TEST(HackerRank_ComponentsInAGraphTest, description) {
     testing::internal::CaptureStdout();
     ComponentsInAGraph::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ComponentsInAGraphTest, componentsInGraph_1) {
+TEST(HackerRank_ComponentsInAGraphTest, componentsInGraph_1) {
     vector<int> expected{2, 3};
     vector<vector<int>> gb{{1, 5},
                            {1, 6},
@@ -19,7 +19,7 @@ TEST(ComponentsInAGraphTest, componentsInGraph_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ComponentsInAGraphTest, componentsInGraph_2) {
+TEST(HackerRank_ComponentsInAGraphTest, componentsInGraph_2) {
     vector<int> expected{11, 11};
     vector<vector<int>> gb{{1, 17},
                            {5, 13},

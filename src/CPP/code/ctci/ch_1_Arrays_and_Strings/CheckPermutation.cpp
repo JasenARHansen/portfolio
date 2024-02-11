@@ -3,12 +3,14 @@
 #include <iostream>
 #include <vector>
 
+using namespace ctci;
+
 void CheckPermutation::description() {
-    cout << R"(Arrays and Strings: Check Permutation
-    Given two strings, write a method to decide if one is a permutation of the other.)" << endl;
+    std::cout << R"(Arrays and Strings: Check Permutation
+    Given two strings, write a method to decide if one is a permutation of the other.)" << std::endl;
 }
 
-bool CheckPermutation::isPermutation(string first, string second) {
+bool CheckPermutation::isPermutation(std::string first, std::string second) {
     auto result = true;
     if (first.length() != second.length()) {
         result = false;
@@ -24,12 +26,12 @@ bool CheckPermutation::isPermutation(string first, string second) {
     return result;
 }
 
-bool CheckPermutation::isPermutationCount(const string &first, const string &second) {
+bool CheckPermutation::isPermutationCount(const std::string &first, const std::string &second) {
     if (first.length() != second.length())
         return false;
     // ASCII char set is 128
     auto charSetSize = 128;
-    vector<int> count(charSetSize, 0);
+    std::vector<int> count(charSetSize, 0);
     for (int index = 0; index < first.length(); index++) {
         count[first[index]]++;
     }

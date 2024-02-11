@@ -4,13 +4,15 @@
 #include "KthToLast.h"
 #include <iostream>
 
+using namespace ctci;
+
 void KthToLast::description() {
-    cout << R"(Linked Lists: Return Kth to Last:
+    std::cout << R"(Linked Lists: Return Kth to Last:
     Implement an algorithm to find the kth to last element of a singly linked list.
-    Note: Assume the list is long enough to return a valid value)" << endl;
+    Note: Assume the list is long enough to return a valid value)" << std::endl;
 }
 
-KthToLast::Node *KthToLast::generateList(vector<int> data) {
+KthToLast::Node *KthToLast::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -51,8 +53,8 @@ int KthToLast::kthToLastRecursive(Node *head, int k) {
     return kthToLastRecursiveHelper(head, k).first;
 }
 
-pair<int, int> KthToLast::kthToLastRecursiveHelper(Node *node, int k) {
-    auto result = make_pair(0, 0);
+std::pair<int, int> KthToLast::kthToLastRecursiveHelper(Node *node, int k) {
+    auto result = std::make_pair(0, 0);
     if (node->next == nullptr) {
         result.first = 0;
     } else {

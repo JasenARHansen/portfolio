@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/GetNodeValue.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(GetNodeValueTest, description) {
+TEST(HackerRank_GetNodeValueTest, description) {
     testing::internal::CaptureStdout();
     GetNodeValue::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(GetNodeValueTest, getNode_1) {
+TEST(HackerRank_GetNodeValueTest, getNode_1) {
     auto expected = 2;
     vector<int> source{3, 2, 1, 0};
     auto list = GetNodeValue::createList(source);
@@ -20,7 +20,7 @@ TEST(GetNodeValueTest, getNode_1) {
     GetNodeValue::deleteList(&list);
 }
 
-TEST(GetNodeValueTest, getNode_2) {
+TEST(HackerRank_GetNodeValueTest, getNode_2) {
     auto expected = 1;
     vector<int> source{1};
     auto list = GetNodeValue::createList(source);
@@ -30,7 +30,7 @@ TEST(GetNodeValueTest, getNode_2) {
     GetNodeValue::deleteList(&list);
 }
 
-TEST(GetNodeValueTest, getNode_3) {
+TEST(HackerRank_GetNodeValueTest, getNode_3) {
     auto expected = 3;
     vector<int> source{3, 2, 1};
     auto list = GetNodeValue::createList(source);

@@ -4,27 +4,27 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/tips_and_tricks/ResizableArray.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ResizableArrayTest, description) {
+TEST(Interview_ResizableArrayTest, description) {
     testing::internal::CaptureStdout();
     ResizableArray::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ResizableArrayTest, initial) {
+TEST(Interview_ResizableArrayTest, initial) {
     string expected = "[]";
     auto test = ResizableArray();
     auto result = test.print();
     EXPECT_EQ(expected, result);
 }
 
-TEST(ResizableArrayTest, size_1) {
+TEST(Interview_ResizableArrayTest, size_1) {
     int expected = 0;
     auto test = ResizableArray();
     auto result = test.size();
     EXPECT_EQ(expected, result);
 }
 
-TEST(ResizableArrayTest, set_1) {
+TEST(Interview_ResizableArrayTest, set_1) {
     int expected = 1;
     string expectedString = "[5]";
     auto test = ResizableArray();
@@ -35,7 +35,7 @@ TEST(ResizableArrayTest, set_1) {
     EXPECT_EQ(expectedString, resultString);
 }
 
-TEST(ResizableArrayTest, set_2) {
+TEST(Interview_ResizableArrayTest, set_2) {
     int expected = 6;
     string expectedString = "[0, 0, 0, 0, 5]";
     auto test = ResizableArray();
@@ -46,7 +46,7 @@ TEST(ResizableArrayTest, set_2) {
     EXPECT_EQ(expectedString, resultString);
 }
 
-TEST(ResizableArrayTest, set_3) {
+TEST(Interview_ResizableArrayTest, set_3) {
     int expected = 6;
     string expectedString = "[0, 0, 5, 5, 0]";
     auto test = ResizableArray();

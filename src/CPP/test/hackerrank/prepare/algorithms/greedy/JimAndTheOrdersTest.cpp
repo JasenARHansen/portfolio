@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/algorithms/greedy/JimAndTheOrders.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(JimAndTheOrdersTest, description) {
+TEST(HackerRank_JimAndTheOrdersTest, description) {
     testing::internal::CaptureStdout();
     JimAndTheOrders::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(JimAndTheOrdersTest, jimOrders_1) {
+TEST(HackerRank_JimAndTheOrdersTest, jimOrders_1) {
     vector<int> expected{4, 5, 3, 1, 2};
     vector<vector<int>> order{{8, 3},
                               {5, 6},
@@ -23,7 +23,7 @@ TEST(JimAndTheOrdersTest, jimOrders_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(JimAndTheOrdersTest, jimOrders_2) {
+TEST(HackerRank_JimAndTheOrdersTest, jimOrders_2) {
     vector<int> expected{1, 2, 3};
     vector<vector<int>> order{{1, 3},
                               {2, 3},
@@ -32,7 +32,7 @@ TEST(JimAndTheOrdersTest, jimOrders_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(JimAndTheOrdersTest, jimOrders_3) {
+TEST(HackerRank_JimAndTheOrdersTest, jimOrders_3) {
     vector<int> expected{4, 2, 5, 1, 3};
     vector<vector<int>> order{{8, 1},
                               {4, 2},
@@ -43,7 +43,7 @@ TEST(JimAndTheOrdersTest, jimOrders_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(JimAndTheOrdersTest, jimOrders_4) {
+TEST(HackerRank_JimAndTheOrdersTest, jimOrders_4) {
     vector<int> expected{1, 2, 3, 4, 5};
     vector<vector<int>> order{{8, 1},
                               {7, 2},

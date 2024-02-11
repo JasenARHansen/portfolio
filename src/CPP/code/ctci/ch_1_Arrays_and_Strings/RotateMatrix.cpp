@@ -1,8 +1,10 @@
 #include "RotateMatrix.h"
 #include <iostream>
 
+using namespace ctci;
+
 void RotateMatrix::description() {
-    cout << R"(Arrays and Strings: Rotate Matrix
+    std::cout << R"(Arrays and Strings: Rotate Matrix
     Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write
      a method to rotate the image by 90 degrees.
     Can you do this in place?
@@ -12,11 +14,11 @@ void RotateMatrix::description() {
              [3, 4]]
         Then the rotated array becomes:
             [[3, 1],
-             [4, 2]])" << endl;
+             [4, 2]])" << std::endl;
 }
 
-vector<vector<int>> RotateMatrix::rotateMatrix(vector<vector<int>> matrix) {
-    vector<vector<int>> result;
+std::vector<std::vector<int>> RotateMatrix::rotateMatrix(std::vector<std::vector<int>> matrix) {
+    std::vector<std::vector<int>> result;
     for (auto column = 0; column < (int) matrix.at(0).size(); column++) {
         result.emplace_back();
         for (auto row = (int) matrix.size() - 1; row >= 0; row--) {
@@ -26,7 +28,7 @@ vector<vector<int>> RotateMatrix::rotateMatrix(vector<vector<int>> matrix) {
     return result;
 }
 
-void RotateMatrix::rotateMatrixInPlace(vector<vector<int>> *matrix) {
+void RotateMatrix::rotateMatrixInPlace(std::vector<std::vector<int>> *matrix) {
     int storage;
     for (int shell = 0; shell < (matrix->size() + 1) / 2; shell++) {
         // Top

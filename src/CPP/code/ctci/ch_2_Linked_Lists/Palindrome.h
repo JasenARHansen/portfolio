@@ -5,33 +5,32 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class Palindrome {
+    private:
+        struct Node {
+            char data = 0;
+            Node *next = nullptr;
 
-class Palindrome {
-private:
-    struct Node {
-        char data = 0;
-        Node *next = nullptr;
+            explicit Node(char c) : data(c), next(nullptr) {}
+        };
 
-        explicit Node(char c) : data(c), next(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateList(std::vector<char> data);
+
+        static void deleteList(Node **head);
+
+        static bool isPalindrome(Node *head);
+
+        static bool isPalindromeRecursive(Node *head);
+
+    private:
+        static std::pair<int, Palindrome::Node *> reverse(Node *head);
+
+        static bool isPalindromeRecursive(Node *left, Node *right);
     };
-
-public:
-    static void description();
-
-    static Node *generateList(vector<char> data);
-
-    static void deleteList(Node **head);
-
-    static bool isPalindrome(Node *head);
-
-    static bool isPalindromeRecursive(Node *head);
-
-private:
-    static pair<int, Palindrome::Node *> reverse(Node *head);
-
-    static bool isPalindromeRecursive(Node *left, Node *right);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

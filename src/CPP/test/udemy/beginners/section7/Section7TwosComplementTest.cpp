@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section7/Section7TwosComplement.h"
 
-TEST(Section7TwosComplementTest, performTwosComplement) {
+TEST(Udemy_Section7TwosComplementTest, performTwosComplement) {
     auto expectedOutput = "input = 5 as bits: 00000000000000000000000000000101\n"
                           "1's Complement: 11111111111111111111111111111010\n"
                           "2's Complement: 11111111111111111111111111111011\n";

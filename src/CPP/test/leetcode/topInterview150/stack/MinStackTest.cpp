@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/stack/MinStack.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MinStackTest, description) {
+TEST(LeetCode_MinStackTest, description) {
     testing::internal::CaptureStdout();
     MinStack::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MinStackTest, MinStack_1) {
+TEST(LeetCode_MinStackTest, methods_1) {
     vector<int> expected{1, 2, 2, 1, 1, 1};
     auto myStack = MinStack();
     myStack.push(expected[0]);
@@ -26,7 +26,7 @@ TEST(MinStackTest, MinStack_1) {
     EXPECT_EQ(expected[0], result);
 }
 
-TEST(MinStackTest, MinStack_2) {
+TEST(LeetCode_MinStackTest, methods_2) {
     vector<int> expected{1, 2, 2, 1, 1, 1};
     auto myStack = new MinStack();
     myStack->push(expected[0]);

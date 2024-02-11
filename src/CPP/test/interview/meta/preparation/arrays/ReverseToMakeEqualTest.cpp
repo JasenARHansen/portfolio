@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/arrays/ReverseToMakeEqual.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ReverseToMakeEqualTest, description) {
+TEST(Interview_ReverseToMakeEqualTest, description) {
     testing::internal::CaptureStdout();
     ReverseToMakeEqual::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ReverseToMakeEqualTest, areTheyEqual_1) {
+TEST(Interview_ReverseToMakeEqualTest, areTheyEqual_1) {
     auto expected = true;
     vector<int> arrayA{1, 2, 3, 4};
     vector<int> arrayB{1, 4, 3, 2};
@@ -18,7 +18,7 @@ TEST(ReverseToMakeEqualTest, areTheyEqual_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ReverseToMakeEqualTest, areTheyEqual_2) {
+TEST(Interview_ReverseToMakeEqualTest, areTheyEqual_2) {
     auto expected = false;
     vector<int> arrayA{1, 2, 3, 4};
     vector<int> arrayB{1, 4, 3, 3};
@@ -26,7 +26,7 @@ TEST(ReverseToMakeEqualTest, areTheyEqual_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ReverseToMakeEqualTest, climbStairs_fail_1) {
+TEST(Interview_ReverseToMakeEqualTest, climbStairs_fail_1) {
     // All integers in array are in the range [0, 1,000,000,000].
     auto size = 0 - 1;
     vector<int> arrayA{size};
@@ -34,7 +34,7 @@ TEST(ReverseToMakeEqualTest, climbStairs_fail_1) {
     EXPECT_EXIT(ReverseToMakeEqual::areTheyEqual(arrayA, arrayB), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ReverseToMakeEqualTest, climbStairs_fail_2) {
+TEST(Interview_ReverseToMakeEqualTest, climbStairs_fail_2) {
     // All integers in array are in the range [0, 1,000,000,000].
     auto size = (int) pow(10, 9) + 1;
     vector<int> arrayA{size};

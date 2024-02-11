@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section5/Section5Classes.h"
 
-TEST(Section5ClassesTest, newDelete) {
+TEST(Udemy_Section5ClassesTest, newDelete) {
     auto expected = "Jasen";
     auto person = new Section5Classes(expected);
     auto result = person->getName();
@@ -15,7 +15,7 @@ TEST(Section5ClassesTest, newDelete) {
     EXPECT_EQ(nullptr, person);
 }
 
-TEST(Section5ClassesTest, createObject) {
+TEST(Udemy_Section5ClassesTest, createObject) {
     auto expected = "Default";
     auto result = Section5Classes::createObject();
     EXPECT_EQ(expected, result->getName());
@@ -23,7 +23,7 @@ TEST(Section5ClassesTest, createObject) {
     EXPECT_EQ(nullptr, result);
 }
 
-TEST(Section5ClassesTest, createArray) {
+TEST(Udemy_Section5ClassesTest, createArray) {
     auto expected = "Default";
     auto size = 3;
     auto result = Section5Classes::createArray(size);

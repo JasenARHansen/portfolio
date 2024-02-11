@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/two_poiners/IsSubsequence.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(IsSubsequenceTest, description) {
+TEST(LeetCode_IsSubsequenceTest, description) {
     testing::internal::CaptureStdout();
     IsSubsequence::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(IsSubsequenceTest, isSubsequence_1) {
+TEST(LeetCode_IsSubsequenceTest, isSubsequence_1) {
     auto expected = true;
     auto s = "abc";
     auto t = "ahbgdc";
@@ -18,7 +18,7 @@ TEST(IsSubsequenceTest, isSubsequence_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsSubsequenceTest, isSubsequence_2) {
+TEST(LeetCode_IsSubsequenceTest, isSubsequence_2) {
     auto expected = false;
     auto s = "axc";
     auto t = "ahbgdc";
@@ -26,7 +26,7 @@ TEST(IsSubsequenceTest, isSubsequence_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(IsSubsequenceTest, isSubsequence_fail_1) {
+TEST(LeetCode_IsSubsequenceTest, isSubsequence_fail_1) {
     // s.length ≤ 100
     auto size = 100 + 1;
     string s(size, ' ');
@@ -34,7 +34,7 @@ TEST(IsSubsequenceTest, isSubsequence_fail_1) {
     EXPECT_EXIT(IsSubsequence::isSubsequence(s, t), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(IsSubsequenceTest, isSubsequence_fail_2) {
+TEST(LeetCode_IsSubsequenceTest, isSubsequence_fail_2) {
     // t.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto s = "ahbgdc";

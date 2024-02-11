@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section6/Section6Inheritance.h"
 
-TEST(Section6InheritanceTest, Inheritance) {
+TEST(Udemy_Section6InheritanceTest, inheritance) {
     string expected[]{"Section6Base action.",
                       "Section6Inheritance action."};
     auto result1 = Section6Base::getAction();
@@ -15,7 +15,7 @@ TEST(Section6InheritanceTest, Inheritance) {
     EXPECT_EQ(expected[1], result3);
 }
 
-TEST(Section6InheritanceTest, constructors) {
+TEST(Udemy_Section6InheritanceTest, constructors) {
     auto expected = 10;
     Section6Base section6Base(expected);
     auto result1 = section6Base.getId();

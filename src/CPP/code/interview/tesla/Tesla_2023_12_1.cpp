@@ -102,7 +102,7 @@ public:
     // Implement this.
     // Part 1: Read the most recent valid sensor reading
     // Do not block.
-    double GetReading() {
+    double getReading() {
         // If there is no history there is no valid reading.
         // Wait for history to be available.
         while (history.empty()) {
@@ -118,7 +118,7 @@ public:
     // Implement this.
     // Part 2: Read the sensor reading nearest to any provided timestamp.
     // Do not block.
-    double GetReadingAtTime(time_point t) {
+    double getReadingAtTime(time_point t) {
         double result = 0;
         dataLock.lock();
         // Edge case 1: The provided timestamp is greater than the current time.

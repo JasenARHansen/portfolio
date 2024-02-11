@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/strings/MakingAnagrams.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MakingAnagramsTest, description) {
+TEST(HackerRank_MakingAnagramsTest, description) {
     testing::internal::CaptureStdout();
     MakingAnagrams::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MakingAnagramsTest, makeAnagram_1) {
+TEST(HackerRank_MakingAnagramsTest, makeAnagram_1) {
     auto expected = 2;
     auto a = "cde";
     auto b = "dcf";
@@ -18,7 +18,7 @@ TEST(MakingAnagramsTest, makeAnagram_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MakingAnagramsTest, makeAnagram_2) {
+TEST(HackerRank_MakingAnagramsTest, makeAnagram_2) {
     auto expected = 4;
     auto a = "cde";
     auto b = "abc";
@@ -26,7 +26,7 @@ TEST(MakingAnagramsTest, makeAnagram_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MakingAnagramsTest, makeAnagram_3) {
+TEST(HackerRank_MakingAnagramsTest, makeAnagram_3) {
     auto expected = 30;
     auto a = "fcrxzwscanmligyxyvym";
     auto b = "jxwtrhvujlmrpdoqbisbwhmgpmeoke";
@@ -34,7 +34,7 @@ TEST(MakingAnagramsTest, makeAnagram_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MakingAnagramsTest, makeAnagram_4) {
+TEST(HackerRank_MakingAnagramsTest, makeAnagram_4) {
     auto expected = 2;
     auto a = "showman";
     auto b = "woman";

@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/StackMin.h"
 
-TEST(StackMinTest, description) {
+using namespace ctci;
+TEST(CtCI_StackMinTest, description) {
     testing::internal::CaptureStdout();
     StackMin::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(StackMinTest, isPermutation_1) {
+TEST(CtCI_StackMinTest, minimum_1) {
     auto stacks = StackMin();
     EXPECT_TRUE(stacks.empty());
     stacks.push(2);

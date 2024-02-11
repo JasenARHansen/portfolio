@@ -5,32 +5,31 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class ValidateBST {
+    private:
+        struct Node {
+            int data;
+            Node *leftChild;
+            Node *rightChild;
 
-class ValidateBST {
-private:
-    struct Node {
-        int data;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateMinimalTree(const std::vector<int> &data);
+
+        static Node *generateBSTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static bool validateBST(Node *node);
+
+    private:
+        static bool validateBSTHelper(Node *node);
     };
-
-public:
-    static void description();
-
-    static Node *generateMinimalTree(const vector<int> &data);
-
-    static Node *generateBSTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static bool validateBST(Node *node);
-
-private:
-    static bool validateBSTHelper(Node *node);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

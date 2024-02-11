@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/PrintTheElementsOfALinkedList.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PrintTheElementsOfALinkedListTest, description) {
+TEST(HackerRank_PrintTheElementsOfALinkedListTest, description) {
     testing::internal::CaptureStdout();
     PrintTheElementsOfALinkedList::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PrintTheElementsOfALinkedListTest, printLinkedList_1) {
+TEST(HackerRank_PrintTheElementsOfALinkedListTest, printLinkedList_1) {
     auto expected = "1\n"
                     "2\n"
                     "4\n";
@@ -22,7 +22,7 @@ TEST(PrintTheElementsOfALinkedListTest, printLinkedList_1) {
     PrintTheElementsOfALinkedList::deleteList(&head);
 }
 
-TEST(PrintTheElementsOfALinkedListTest, printLinkedList_2) {
+TEST(HackerRank_PrintTheElementsOfALinkedListTest, printLinkedList_2) {
     auto expected = "16\n"
                     "13\n";
     vector<int> source{16, 13};
@@ -33,7 +33,7 @@ TEST(PrintTheElementsOfALinkedListTest, printLinkedList_2) {
     PrintTheElementsOfALinkedList::deleteList(&head);
 }
 
-TEST(PrintTheElementsOfALinkedListTest, printLinkedList_3) {
+TEST(HackerRank_PrintTheElementsOfALinkedListTest, printLinkedList_3) {
     auto expected = "17\n"
                     "19\n"
                     "5\n"

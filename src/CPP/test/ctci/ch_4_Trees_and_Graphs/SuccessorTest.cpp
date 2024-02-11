@@ -4,15 +4,16 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_4_Trees_and_Graphs/Successor.h"
 
-TEST(SuccessorTest, description) {
+using namespace ctci;
+TEST(CtCI_SuccessorTest, description) {
     testing::internal::CaptureStdout();
     Successor::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SuccessorTest, inorderSuccessor_1) {
+TEST(CtCI_SuccessorTest, inorderSuccessor_1) {
     auto expected = 2;
-    vector<int> data{3, 1, 5, 0, 2, 4, 6};
+    std::vector<int> data{3, 1, 5, 0, 2, 4, 6};
     auto tree = Successor::generateBSTree(data);
     auto successor = Successor::inorderSuccessor(tree, 1);
     auto result = successor->data;
@@ -20,9 +21,9 @@ TEST(SuccessorTest, inorderSuccessor_1) {
     Successor::deleteTree(&tree);
 }
 
-TEST(SuccessorTest, inorderSuccessor_2) {
+TEST(CtCI_SuccessorTest, inorderSuccessor_2) {
     auto expected = 2;
-    vector<int> data{3, 1, 5, 0, 2, 4, 6};
+    std::vector<int> data{3, 1, 5, 0, 2, 4, 6};
     auto tree = Successor::generateBSTree(data);
     auto successor = Successor::inorderSuccessor(tree->leftChild);
     auto result = successor->data;

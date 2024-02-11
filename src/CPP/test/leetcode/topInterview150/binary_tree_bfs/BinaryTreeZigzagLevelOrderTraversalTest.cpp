@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_bfs/BinaryTreeZigzagLevelOrderTraversal.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(BinaryTreeZigzagLevelOrderTraversalTest, description) {
+TEST(LeetCode_BinaryTreeZigzagLevelOrderTraversalTest, description) {
     testing::internal::CaptureStdout();
     BinaryTreeZigzagLevelOrderTraversal::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_1) {
+TEST(LeetCode_BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_1) {
     vector<vector<int>> expected{{3},
                                  {20, 9},
                                  {15, 7}};
@@ -21,7 +21,7 @@ TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_1) {
     BinaryTreeZigzagLevelOrderTraversal::deleteTree(&root);
 }
 
-TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_2) {
+TEST(LeetCode_BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_2) {
     vector<vector<int>> expected{{1}};
     vector<string> values{"1"};
     auto root = BinaryTreeZigzagLevelOrderTraversal::deserializeTree(values);
@@ -30,7 +30,7 @@ TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_2) {
     BinaryTreeZigzagLevelOrderTraversal::deleteTree(&root);
 }
 
-TEST(BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_3) {
+TEST(LeetCode_BinaryTreeZigzagLevelOrderTraversalTest, zigzagLevelOrder_3) {
     vector<vector<int>> expected{};
     vector<string> values{};
     auto root = BinaryTreeZigzagLevelOrderTraversal::deserializeTree(values);

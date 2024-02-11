@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/matrix/SetMatrixZeroes.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SetMatrixZeroesTest, description) {
+TEST(LeetCode_SetMatrixZeroesTest, description) {
     testing::internal::CaptureStdout();
     SetMatrixZeroes::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_1) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_1) {
     vector<vector<int>> expected{{1, 0, 1},
                                  {0, 0, 0},
                                  {1, 0, 1}};
@@ -21,7 +21,7 @@ TEST(SetMatrixZeroesTest, setZeroes_1) {
     EXPECT_EQ(expected, matrix);
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_2) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_2) {
     vector<vector<int>> expected{{0, 0, 0, 0},
                                  {0, 4, 5, 0},
                                  {0, 3, 1, 0}};
@@ -32,28 +32,28 @@ TEST(SetMatrixZeroesTest, setZeroes_2) {
     EXPECT_EQ(expected, matrix);
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_fail_1) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_fail_1) {
     // 1 ≤ matrix.length
     auto size = 1 - 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_fail_2) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_fail_2) {
     // matrix.length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> matrix(size);
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_fail_3) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_fail_3) {
     // 1 ≤ matrix[i].length
     auto size = 1 - 1;
     vector<vector<int>> matrix{vector<int>(size)};
     EXPECT_EXIT(SetMatrixZeroes::setZeroes(matrix), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SetMatrixZeroesTest, setZeroes_fail_4) {
+TEST(LeetCode_SetMatrixZeroesTest, setZeroes_fail_4) {
     // matrix[i].length ≤ 200
     auto size = 200 + 1;
     vector<vector<int>> matrix{vector<int>(size)};

@@ -5,30 +5,29 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class Successor {
+    private:
+        struct Node {
+            int data;
+            Node *parent;
+            Node *leftChild;
+            Node *rightChild;
 
-class Successor {
-private:
-    struct Node {
-        int data;
-        Node *parent;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), parent(nullptr), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), parent(nullptr), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateBSTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static Node *inorderSuccessor(Node *node);
+
+        static Node *inorderSuccessor(Node *root, int data);
     };
-
-public:
-    static void description();
-
-    static Node *generateBSTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static Node *inorderSuccessor(Node *node);
-
-    static Node *inorderSuccessor(Node *root, int data);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

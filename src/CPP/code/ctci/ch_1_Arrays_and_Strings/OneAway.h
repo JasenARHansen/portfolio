@@ -5,14 +5,13 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class OneAway {
+    public:
+        static void description();
 
-class OneAway {
-public:
-    static void description();
-
-    static bool isOneAway(const string &left, const string &right);
-};
-
+        static bool isOneAway(const std::string &left, const std::string &right);
+    };
+}
 #endif
 #pragma clang diagnostic pop

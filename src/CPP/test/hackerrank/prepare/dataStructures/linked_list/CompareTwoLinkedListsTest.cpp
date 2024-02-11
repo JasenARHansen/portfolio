@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/CompareTwoLinkedLists.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CompareTwoLinkedListsTest, description) {
+TEST(HackerRank_CompareTwoLinkedListsTest, description) {
     testing::internal::CaptureStdout();
     CompareTwoLinkedLists::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CompareTwoLinkedListsTest, compare_lists_1) {
+TEST(HackerRank_CompareTwoLinkedListsTest, compare_lists_1) {
     auto expected = false;
     vector<int> source1{1, 2, 3};
     vector<int> source2{1, 2, 3, 4};
@@ -22,7 +22,7 @@ TEST(CompareTwoLinkedListsTest, compare_lists_1) {
     CompareTwoLinkedLists::deleteList(&head2);
 }
 
-TEST(CompareTwoLinkedListsTest, compare_lists_2) {
+TEST(HackerRank_CompareTwoLinkedListsTest, compare_lists_2) {
     auto expected = false;
     vector<int> source1{1, 2};
     vector<int> source2{1};
@@ -34,7 +34,7 @@ TEST(CompareTwoLinkedListsTest, compare_lists_2) {
     CompareTwoLinkedLists::deleteList(&head2);
 }
 
-TEST(CompareTwoLinkedListsTest, compare_lists_3) {
+TEST(HackerRank_CompareTwoLinkedListsTest, compare_lists_3) {
     auto expected = true;
     vector<int> source1{1, 2};
     vector<int> source2{1, 2};
@@ -46,7 +46,7 @@ TEST(CompareTwoLinkedListsTest, compare_lists_3) {
     CompareTwoLinkedLists::deleteList(&head2);
 }
 
-TEST(CompareTwoLinkedListsTest, compare_lists_4) {
+TEST(HackerRank_CompareTwoLinkedListsTest, compare_lists_4) {
     auto expected = true;
     vector<int> source1{};
     vector<int> source2{};
@@ -58,7 +58,7 @@ TEST(CompareTwoLinkedListsTest, compare_lists_4) {
     CompareTwoLinkedLists::deleteList(&head2);
 }
 
-TEST(CompareTwoLinkedListsTest, compare_lists_5) {
+TEST(HackerRank_CompareTwoLinkedListsTest, compare_lists_5) {
     auto expected = false;
     vector<int> source1{1};
     vector<int> source2{};

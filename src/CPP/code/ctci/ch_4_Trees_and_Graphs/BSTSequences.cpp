@@ -7,10 +7,8 @@
 #include <queue>
 #include <algorithm>
 
-using namespace std;
-
 void BSTSequences::description() {
-    cout << R"(Trees and Graphs: BST Sequences
+    std::cout << R"(Trees and Graphs: BST Sequences
     A binary search tree was created by traversing through an array from left to right and
      inserting each element.
     Given a binary search tree with distinct elements, print all possible arrays that could
@@ -19,10 +17,10 @@ void BSTSequences::description() {
                / \
               1   3
     Input:
-    Output: {2, 1, 3},{2, 3, 1})" << endl;
+    Output: {2, 1, 3},{2, 3, 1})" << std::endl;
 }
 
-BSTSequences::Node *BSTSequences::generateBSTree(const vector<int> &data) {
+BSTSequences::Node *BSTSequences::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -52,7 +50,7 @@ BSTSequences::Node *BSTSequences::generateBSTree(const vector<int> &data) {
 
 void BSTSequences::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -70,8 +68,8 @@ void BSTSequences::deleteTree(Node **node) {
     }
 }
 
-vector<vector<int>> BSTSequences::findAllSequences(Node *node) {
-    vector<vector<int>> result{{}};
+std::vector<std::vector<int>> BSTSequences::findAllSequences(Node *node) {
+    std::vector<std::vector<int>> result{{}};
     if (node != nullptr) {
         result.clear();
         auto left = findAllSequences(node->leftChild);
@@ -89,16 +87,16 @@ vector<vector<int>> BSTSequences::findAllSequences(Node *node) {
     return result;
 }
 
-vector<vector<int>> BSTSequences::generatePermutations(vector<int> first, vector<int> second) {
+std::vector<std::vector<int>> BSTSequences::generatePermutations(std::vector<int> first, std::vector<int> second) {
     // Vector of all permutations generated
-    vector<vector<int>> permutations;
+    std::vector<std::vector<int>> permutations;
     // Indicators of what strings are in the spot
-    vector<int> counters(first.size(), 0);
+    std::vector<int> counters(first.size(), 0);
     counters.insert(counters.end(), second.size(), 1);
     do {
         size_t index1 = 0;
         size_t index2 = 0;
-        vector<int> permutation;
+        std::vector<int> permutation;
         permutation.reserve(counters.size());
         for (int index: counters) {
             permutation.push_back((index == 0) ? first[index1++] : second[index2++]);

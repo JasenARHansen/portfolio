@@ -4,20 +4,20 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/tips_and_tricks/Queue.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(QueueTest, description) {
+TEST(Interview_QueueTest, description) {
     testing::internal::CaptureStdout();
     Queue::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(QueueTest, constructor_1) {
+TEST(Interview_QueueTest, constructor_1) {
     auto expected = "{}";
     Queue queue;
     auto result = queue.toString();
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueTest, enqueue) {
+TEST(Interview_QueueTest, enqueue) {
     auto expected = "{5, 10}";
     Queue queue;
     auto data = 5;
@@ -28,7 +28,7 @@ TEST(QueueTest, enqueue) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueTest, front) {
+TEST(Interview_QueueTest, front) {
     auto expected = "{5, 10}";
     Queue queue;
     auto data = 5;
@@ -41,7 +41,7 @@ TEST(QueueTest, front) {
     EXPECT_EQ(5, front);
 }
 
-TEST(QueueTest, back) {
+TEST(Interview_QueueTest, back) {
     auto expected = "{5, 10}";
     Queue queue;
     auto data = 5;
@@ -54,7 +54,7 @@ TEST(QueueTest, back) {
     EXPECT_EQ(10, back);
 }
 
-TEST(QueueTest, dequeue) {
+TEST(Interview_QueueTest, dequeue) {
     auto expected = "{10}";
     Queue queue;
     auto data = 5;
@@ -66,7 +66,7 @@ TEST(QueueTest, dequeue) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(QueueTest, size) {
+TEST(Interview_QueueTest, size) {
     auto expected = "{10}";
     Queue queue;
     auto data = 10;
@@ -77,19 +77,19 @@ TEST(QueueTest, size) {
     EXPECT_EQ(1, size);
 }
 
-TEST(QueueTest, dequeue_fail) {
+TEST(Interview_QueueTest, dequeue_fail) {
     // Queue empty
     Queue queue;
     EXPECT_THROW(queue.dequeue(), runtime_error);
 }
 
-TEST(QueueTest, front_fail) {
+TEST(Interview_QueueTest, front_fail) {
     // Queue empty
     Queue queue;
     EXPECT_THROW(queue.front(), runtime_error);
 }
 
-TEST(QueueTest, back_fail) {
+TEST(Interview_QueueTest, back_fail) {
     // Queue empty
     Queue queue;
     EXPECT_THROW(queue.back(), runtime_error);

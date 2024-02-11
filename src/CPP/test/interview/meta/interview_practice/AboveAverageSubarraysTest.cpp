@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/interview_practice/AboveAverageSubArrays.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(AboveAverageSubArraysTest, description) {
+TEST(Interview_AboveAverageSubArraysTest, description) {
     testing::internal::CaptureStdout();
     AboveAverageSubArrays::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(AboveAverageSubArraysTest, aboveAverageSubArrays_1) {
+TEST(Interview_AboveAverageSubArraysTest, aboveAverageSubArrays_1) {
     vector<vector<int>> expected{{1, 2},
                                  {1, 3},
                                  {2, 2}};

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/trees/NodesInASubtree.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(NodesInASubtreeTest, description) {
+TEST(Interview_NodesInASubtreeTest, description) {
     testing::internal::CaptureStdout();
     NodesInASubtree::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(NodesInASubtreeTest, visibleNodes_1) {
+TEST(Interview_NodesInASubtreeTest, visibleNodes_1) {
     vector<int> expected{2};
     vector<NodesInASubtree::Query> queries{{1, 'a'}};
     auto s = "aba";
@@ -22,7 +22,7 @@ TEST(NodesInASubtreeTest, visibleNodes_1) {
     NodesInASubtree::deleteTree(&root);
 }
 
-TEST(NodesInASubtreeTest, visibleNodes_2) {
+TEST(Interview_NodesInASubtreeTest, visibleNodes_2) {
     vector<int> expected{4, 1, 2};
     vector<NodesInASubtree::Query> queries{{1, 'a'},
                                            {2, 'b'},

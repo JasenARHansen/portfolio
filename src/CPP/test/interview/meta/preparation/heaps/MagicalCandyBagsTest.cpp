@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/heaps/MagicalCandyBags.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(MagicalCandyBagsTest, description) {
+TEST(Interview_MagicalCandyBagsTest, description) {
     testing::internal::CaptureStdout();
     MagicalCandyBags::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_1) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_1) {
     auto expected = 14;
     vector<int> arr{2, 1, 7, 4, 2};
     auto k = 3;
@@ -18,7 +18,7 @@ TEST(MagicalCandyBagsTest, maxCandies_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_2) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_2) {
     auto expected = 228;
     vector<int> arr{19, 78, 76, 72, 48, 8, 24, 74, 29};
     auto k = 3;
@@ -26,7 +26,7 @@ TEST(MagicalCandyBagsTest, maxCandies_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_1) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_1) {
     // 1 ≤ arr.length
     int size = 1 - 1;
     vector<int> arr(size);
@@ -34,7 +34,7 @@ TEST(MagicalCandyBagsTest, maxCandies_fail_1) {
     EXPECT_EXIT(MagicalCandyBags::maxCandies(arr, k), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_2) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_2) {
     // 1 ≤ arr.length
     int size = (int) pow(10, 5) + 1;
     vector<int> arr(size);
@@ -42,21 +42,21 @@ TEST(MagicalCandyBagsTest, maxCandies_fail_2) {
     EXPECT_EXIT(MagicalCandyBags::maxCandies(arr, k), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_3) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_3) {
     // 1 ≤ k
     vector<int> arr{2, 1, 7, 4, 2};
     auto k = 1 - 1;
     EXPECT_EXIT(MagicalCandyBags::maxCandies(arr, k), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_4) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_4) {
     // k ≤ 10,000
     vector<int> arr{2, 1, 7, 4, 2};
     auto k = (int) pow(10, 5) + 1;
     EXPECT_EXIT(MagicalCandyBags::maxCandies(arr, k), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_5) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_5) {
     // 1 ≤ arr[i]
     int size = 1 - 1;
     vector<int> arr{size, 1, 7, 4, 2};
@@ -64,7 +64,7 @@ TEST(MagicalCandyBagsTest, maxCandies_fail_5) {
     EXPECT_EXIT(MagicalCandyBags::maxCandies(arr, k), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(MagicalCandyBagsTest, maxCandies_fail_6) {
+TEST(Interview_MagicalCandyBagsTest, maxCandies_fail_6) {
     // 1 ≤ arr[i]
     int size = (int) pow(10, 9) + 1;
     vector<int> arr{size, 1, 7, 4, 2};

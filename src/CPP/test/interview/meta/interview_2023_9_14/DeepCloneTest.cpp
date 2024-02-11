@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/interview_2023_9_14/DeepClone.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(DeepCloneTest, description) {
+TEST(Interview_DeepCloneTest, description) {
     testing::internal::CaptureStdout();
     DeepClone::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(DeepCloneTest, clone_1) {
+TEST(Interview_DeepCloneTest, clone_1) {
     G g1 = G();
     V v0 = V(Data(0));
     V v1 = V(Data(1));

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/matrix/ValidSudoku.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ValidSudokuTest, description) {
+TEST(LeetCode_ValidSudokuTest, description) {
     testing::internal::CaptureStdout();
     ValidSudoku::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ValidSudokuTest, isValidSudoku_1) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_1) {
     auto expected = true;
     vector<vector<char>> board{{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
                                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
@@ -25,7 +25,7 @@ TEST(ValidSudokuTest, isValidSudoku_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidSudokuTest, isValidSudoku_2) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_2) {
     // column 4 is bad
     auto expected = false;
     vector<vector<char>> board{{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -41,7 +41,7 @@ TEST(ValidSudokuTest, isValidSudoku_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidSudokuTest, isValidSudoku_3) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_3) {
     // row 4 is bad
     auto expected = false;
     vector<vector<char>> board{{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -57,7 +57,7 @@ TEST(ValidSudokuTest, isValidSudoku_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidSudokuTest, isValidSudoku_4) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_4) {
     // matrix[1][1] is bad
     auto expected = false;
     vector<vector<char>> board{{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -73,28 +73,28 @@ TEST(ValidSudokuTest, isValidSudoku_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(ValidSudokuTest, isValidSudoku_fail_1) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_fail_1) {
     // board.length == 9
     auto size = 9 - 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(ValidSudoku::isValidSudoku(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidSudokuTest, isValidSudoku_fail_2) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_fail_2) {
     // board.length == 9
     auto size = 9 + 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(ValidSudoku::isValidSudoku(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidSudokuTest, isValidSudoku_fail_3) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_fail_3) {
     // board.length == 9
     auto size = 9 - 1;
     vector<vector<char>> board{vector<char>(size)};
     EXPECT_EXIT(ValidSudoku::isValidSudoku(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(ValidSudokuTest, isValidSudoku_fail_4) {
+TEST(LeetCode_ValidSudokuTest, isValidSudoku_fail_4) {
     // board.length == 9
     auto size = 9 + 1;
     vector<vector<char>> board{vector<char>(size)};

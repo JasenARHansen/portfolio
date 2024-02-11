@@ -2,8 +2,10 @@
 #include <iostream>
 #include <set>
 
+using namespace ctci;
+
 void LoopDetection::description() {
-    cout << R"(Linked Lists: Loop Detection
+    std::cout << R"(Linked Lists: Loop Detection
     Given a circular linked list, implement an algorithm that returns the node at the beginning
      of the loop.
     Definition:
@@ -12,10 +14,10 @@ void LoopDetection::description() {
     Example:
         Input: A → 8 → C → D → E → C [the same C as earlier]
         Output: C
-        Result: nothing is returned, but the new linked list looks like a → b → d → e → f)" << endl;
+        Result: nothing is returned, but the new linked list looks like a → b → d → e → f)" << std::endl;
 }
 
-LoopDetection::Node *LoopDetection::generateList(vector<int> data) {
+LoopDetection::Node *LoopDetection::generateList(std::vector<int> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -50,7 +52,7 @@ void LoopDetection::breakCycle(Node *head) {
     if (head != nullptr) {
         auto current = head;
         Node *next;
-        set<Node *> seen;
+        std::set<Node *> seen;
         while ((current->next != nullptr) and (!seen.count(current->next))) {
             seen.insert(current);
             next = current->next;
@@ -76,7 +78,7 @@ LoopDetection::Node *LoopDetection::detectCycle(Node *head) {
     if (head != nullptr) {
         auto current = head;
         Node *next;
-        set<Node *> seen;
+        std::set<Node *> seen;
         while ((current->next != nullptr) and (!seen.count(current->next))) {
             seen.insert(current);
             next = current->next;

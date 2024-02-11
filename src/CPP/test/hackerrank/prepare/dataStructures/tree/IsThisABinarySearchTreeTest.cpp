@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/tree/IsThisABinarySearchTree.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(IsThisABinarySearchTreeTest, description) {
+TEST(HackerRank_IsThisABinarySearchTreeTest, description) {
     testing::internal::CaptureStdout();
     IsThisABinarySearchTree::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(IsThisABinarySearchTreeTest, preOrder_1) {
+TEST(HackerRank_IsThisABinarySearchTreeTest, preOrder_1) {
     auto expected = false;
     vector<string> values{"3", "5", "2", "1", "4", "6",};
     auto root = IsThisABinarySearchTree::deserializeTree(values);
@@ -19,7 +19,7 @@ TEST(IsThisABinarySearchTreeTest, preOrder_1) {
     IsThisABinarySearchTree::deleteTree(&root);
 }
 
-TEST(IsThisABinarySearchTreeTest, preOrder_2) {
+TEST(HackerRank_IsThisABinarySearchTreeTest, preOrder_2) {
     auto expected = true;
     vector<string> values{"4", "2", "6", "1", "3", "5", "7"};
     auto root = IsThisABinarySearchTree::deserializeTree(values);

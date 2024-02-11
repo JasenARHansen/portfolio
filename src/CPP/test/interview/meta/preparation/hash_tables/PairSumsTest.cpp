@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/hash_tables/PairSums.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PairSumsTest, description) {
+TEST(Interview_PairSumsTest, description) {
     testing::internal::CaptureStdout();
     PairSums::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PairSumsTest, findMaxProduct_1) {
+TEST(Interview_PairSumsTest, findMaxProduct_1) {
     int expected = 2;
     vector<int> arr{1, 2, 3, 4, 3};
     auto k = 6;
@@ -18,7 +18,7 @@ TEST(PairSumsTest, findMaxProduct_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(PairSumsTest, findMaxProduct_2) {
+TEST(Interview_PairSumsTest, findMaxProduct_2) {
     int expected = 4;
     vector<int> arr{1, 5, 3, 3, 3};
     auto k = 6;

@@ -4,15 +4,16 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_2_Linked_Lists/RemoveDuplicates.h"
 
-TEST(RemoveDuplicatesTest, description) {
+using namespace ctci;
+TEST(CtCI_RemoveDuplicatesTest, description) {
     testing::internal::CaptureStdout();
     RemoveDuplicates::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RemoveDuplicatesTest, removeDuplicates_1) {
-    vector<int> expected{1, 2, 3, 4, 5};
-    vector<int> data{1, 2, 3, 3, 4, 1, 5, 1};
+TEST(CtCI_RemoveDuplicatesTest, removeDuplicates_1) {
+    std::vector<int> expected{1, 2, 3, 4, 5};
+    std::vector<int> data{1, 2, 3, 3, 4, 1, 5, 1};
     auto list = RemoveDuplicates::generateList(data);
     RemoveDuplicates::removeDuplicates(list);
     auto result = RemoveDuplicates::getList(list);
@@ -20,9 +21,9 @@ TEST(RemoveDuplicatesTest, removeDuplicates_1) {
     RemoveDuplicates::deleteList(&list);
 }
 
-TEST(RemoveDuplicatesTest, removeDuplicatesBrute_1) {
-    vector<int> expected{1, 2, 3, 4, 5};
-    vector<int> data{1, 2, 3, 3, 4, 1, 5, 1};
+TEST(CtCI_RemoveDuplicatesTest, removeDuplicatesBrute_1) {
+    std::vector<int> expected{1, 2, 3, 4, 5};
+    std::vector<int> data{1, 2, 3, 3, 4, 1, 5, 1};
     auto list = RemoveDuplicates::generateList(data);
     RemoveDuplicates::removeDuplicatesBrute(list);
     auto result = RemoveDuplicates::getList(list);

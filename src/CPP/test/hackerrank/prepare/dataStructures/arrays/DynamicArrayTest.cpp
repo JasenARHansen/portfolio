@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/arrays/DynamicArray.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(DynamicArrayTest, description) {
+TEST(HackerRank_DynamicArrayTest, description) {
     testing::internal::CaptureStdout();
     DynamicArray::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(DynamicArrayTest, dynamicArray_1) {
+TEST(HackerRank_DynamicArrayTest, dynamicArray_1) {
     vector<int> expected{7, 3};
     int n = 2;
     vector<vector<int>> queries{{1, 0, 5},

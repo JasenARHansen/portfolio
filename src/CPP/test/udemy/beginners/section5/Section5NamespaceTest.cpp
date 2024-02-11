@@ -5,7 +5,7 @@
 #include "../../../../code/udemy/beginners/section5/Section5Classes.h"
 #include "../../../../code/udemy/beginners/section5/Section5Namespace.h"
 
-TEST(Section5NamespaceTest, getName) {
+TEST(Udemy_Section5NamespaceTest, getName) {
     auto expected1 = "Default";
     auto result1 = Section5Classes::createObject();
     EXPECT_EQ(expected1, result1->getName());

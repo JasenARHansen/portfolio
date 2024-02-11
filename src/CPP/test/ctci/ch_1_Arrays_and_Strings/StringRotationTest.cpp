@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_1_Arrays_and_Strings/StringRotation.h"
 
-TEST(StringRotationTest, description) {
+using namespace ctci;
+TEST(CtCI_StringRotationTest, description) {
     testing::internal::CaptureStdout();
     StringRotation::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(StringRotationTest, isRotation_1) {
+TEST(CtCI_StringRotationTest, isRotation_1) {
     auto expected = true;
     auto s1 = "waterbottle";
     auto s2 = "erbottlewat";
@@ -18,7 +19,7 @@ TEST(StringRotationTest, isRotation_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(StringRotationTest, rotate_1) {
+TEST(CtCI_StringRotationTest, rotate_1) {
     auto expected = "erbottlewat";
     auto s1 = "waterbottle";
     auto spaces = 3;

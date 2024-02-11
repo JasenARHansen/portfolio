@@ -4,12 +4,14 @@
 #include "Palindrome.h"
 #include <iostream>
 
+using namespace ctci;
+
 void Palindrome::description() {
-    cout << R"(Linked Lists: Palindrome
-    Implement a function to check if a linked list is a palindrome.)" << endl;
+    std::cout << R"(Linked Lists: Palindrome
+    Implement a function to check if a linked list is a palindrome.)" << std::endl;
 }
 
-Palindrome::Node *Palindrome::generateList(vector<char> data) {
+Palindrome::Node *Palindrome::generateList(std::vector<char> data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -71,7 +73,7 @@ bool Palindrome::isPalindromeRecursive(Node *left, Node *right) {
     return result;
 }
 
-pair<int, Palindrome::Node *> Palindrome::reverse(Node *head) {
+std::pair<int, Palindrome::Node *> Palindrome::reverse(Node *head) {
     auto current = head;
     Node *root = new Node(0);
     auto reversed = root;

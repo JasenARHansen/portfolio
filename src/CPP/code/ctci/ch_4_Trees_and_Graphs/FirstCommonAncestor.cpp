@@ -7,16 +7,16 @@
 #include <map>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void FirstCommonAncestor::description() {
-    cout << R"(Trees and Graphs: First Common Ancestor
+    std::cout << R"(Trees and Graphs: First Common Ancestor
     Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree.
     Avoid storing additional nodes in a data structure.
-    Note: This is not necessarily a binary search tree.)" << endl;
+    Note: This is not necessarily a binary search tree.)" << std::endl;
 }
 
-FirstCommonAncestor::Node *FirstCommonAncestor::generateBSTree(const vector<int> &data) {
+FirstCommonAncestor::Node *FirstCommonAncestor::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -46,7 +46,7 @@ FirstCommonAncestor::Node *FirstCommonAncestor::generateBSTree(const vector<int>
 
 void FirstCommonAncestor::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -96,7 +96,7 @@ bool FirstCommonAncestor::treeContains(Node *head, Node *target) {
     bool result = false;
     if ((head != nullptr) and (target != nullptr)) {
         Node *working = head;
-        queue<Node *> processing;
+        std::queue<Node *> processing;
         processing.push(working);
         while (!processing.empty()) {
             working = processing.front();

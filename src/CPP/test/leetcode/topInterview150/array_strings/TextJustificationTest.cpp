@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/TextJustification.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(TextJustificationTest, description) {
+TEST(LeetCode_TextJustificationTest, description) {
     testing::internal::CaptureStdout();
     TextJustification::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(TextJustificationTest, fullJustify_1) {
+TEST(LeetCode_TextJustificationTest, fullJustify_1) {
     vector<string> expected{"This    is    an", "example  of text", "justification.  "};
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};
     auto maxWidth = 16;
@@ -21,7 +21,7 @@ TEST(TextJustificationTest, fullJustify_1) {
     }
 }
 
-TEST(TextJustificationTest, fullJustify_2) {
+TEST(LeetCode_TextJustificationTest, fullJustify_2) {
     vector<string> expected{"What   must   be",
                             "acknowledgment  ",
                             "shall be        "};
@@ -34,7 +34,7 @@ TEST(TextJustificationTest, fullJustify_2) {
     }
 }
 
-TEST(TextJustificationTest, fullJustify_3) {
+TEST(LeetCode_TextJustificationTest, fullJustify_3) {
     vector<string> expected{"Science  is  what we",
                             "understand      well",
                             "enough to explain to",
@@ -52,7 +52,7 @@ TEST(TextJustificationTest, fullJustify_3) {
     }
 }
 
-TEST(TextJustificationTest, fullJustify_fail_1) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_1) {
     // 1 ≤ words.length;
     auto size = 1 - 1;
     vector<string> words(size);
@@ -60,7 +60,7 @@ TEST(TextJustificationTest, fullJustify_fail_1) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_2) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_2) {
     // words.length ≤ 300
     auto size = 300 + 1;
     vector<string> words(size);
@@ -68,7 +68,7 @@ TEST(TextJustificationTest, fullJustify_fail_2) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_3) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_3) {
     // 1 ≤ words[i].length
     auto size = 1 - 1;
     string word(size, ' ');
@@ -77,7 +77,7 @@ TEST(TextJustificationTest, fullJustify_fail_3) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_4) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_4) {
     // words[i].length ≤ 20
     auto size = 20 + 1;
     string word(size, ' ');
@@ -86,7 +86,7 @@ TEST(TextJustificationTest, fullJustify_fail_4) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_5) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_5) {
     // words[i].length ≤ maxWidth
     auto size = 20;
     string word(size, ' ');
@@ -95,7 +95,7 @@ TEST(TextJustificationTest, fullJustify_fail_5) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_6) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_6) {
     // 1 ≤ maxWidth
     auto size = 1 - 1;
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};
@@ -103,7 +103,7 @@ TEST(TextJustificationTest, fullJustify_fail_6) {
     EXPECT_EXIT(TextJustification::fullJustify(words, maxWidth), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TextJustificationTest, fullJustify_fail_7) {
+TEST(LeetCode_TextJustificationTest, fullJustify_fail_7) {
     // maxWidth ≤ 100
     auto size = 100 + 1;
     vector<string> words{"This", "is", "an", "example", "of", "text", "justification."};

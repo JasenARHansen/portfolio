@@ -4,34 +4,34 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/stacks/BalanceBrackets.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(BalanceBracketsTest, description) {
+TEST(Interview_BalanceBracketsTest, description) {
     testing::internal::CaptureStdout();
     BalanceBrackets::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(BalanceBracketsTest, BalanceBracketsExists_1) {
+TEST(Interview_BalanceBracketsTest, isBalanced_1) {
     auto expected = true;
     auto s = "{[()]}";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalanceBracketsTest, BalanceBracketsExists_2) {
+TEST(Interview_BalanceBracketsTest, isBalanced_2) {
     auto expected = true;
     auto s = "{[()]}";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalanceBracketsTest, BalanceBracketsExists_3) {
+TEST(Interview_BalanceBracketsTest, isBalanced_3) {
     auto expected = false;
     auto s = "{(})";
     auto result = BalanceBrackets::isBalanced(s);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalanceBracketsTest, BalanceBracketsExists_4) {
+TEST(Interview_BalanceBracketsTest, isBalanced_4) {
     auto expected = false;
     auto s = ")";
     auto result = BalanceBrackets::isBalanced(s);

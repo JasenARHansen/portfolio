@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section2/Section2Types.h"
 
-TEST(Section2TypesTest, integerType) {
+TEST(Udemy_Section2TypesTest, integerType) {
     auto expected = "Int value: 1234\n"
                     "Size of Int: 4\n"
                     "Max in value is: 2147483647\n"
@@ -20,7 +20,7 @@ TEST(Section2TypesTest, integerType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2TypesTest, floatType) {
+TEST(Udemy_Section2TypesTest, floatType) {
     auto expected = "Float value: 123.457\n"
                     "Size of Float: 4\n"
                     "Float value precision: 123.45678710937500000000\n"
@@ -35,7 +35,7 @@ TEST(Section2TypesTest, floatType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2TypesTest, boolType) {
+TEST(Udemy_Section2TypesTest, boolType) {
     auto expected = "Bool True value: 1\n"
                     "Bool False value: 0\n"
                     "Size of Bool: 1\n";
@@ -44,7 +44,7 @@ TEST(Section2TypesTest, boolType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2TypesTest, charType) {
+TEST(Udemy_Section2TypesTest, charType) {
     auto expected = "Char number value: 106\n"
                     "Char character value: j\n"
                     "Size of Char: 1\n";
@@ -53,7 +53,7 @@ TEST(Section2TypesTest, charType) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2TypesTest, wcharType) {
+TEST(Udemy_Section2TypesTest, wcharType) {
     auto expected = "Wchar_t number value: 106\n"
                     "Wchar_t character value: j\n"
                     "Size of Wchar_t: 2\n";

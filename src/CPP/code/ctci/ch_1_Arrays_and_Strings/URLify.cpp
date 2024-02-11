@@ -1,18 +1,20 @@
 #include "URLify.h"
 #include <iostream>
 
+using namespace ctci;
+
 void URLify::description() {
-    cout << R"(Arrays and Strings: URLify
+    std::cout << R"(Arrays and Strings: URLify
     Write a method to replace all spaces in a string with '%20'.
     You may assume that the string has sufficient space at the end to hold the additional characters,
      and that you are given the "true" length of the string.
     (Note: If implementing in Java, please use a character array so that you can perform this operation in place.)
     Example:
         Input: "Mr John Smith"
-        Output: "Mr%20John%20Smith")" << endl;
+        Output: "Mr%20John%20Smith")" << std::endl;
 }
 
-string URLify::urlify(const string &input) {
+std::string URLify::urlify(const std::string &input) {
     auto result = input;
     auto replacement = "%20";
     for (auto index = 0; index < result.size(); index++) {
@@ -24,7 +26,7 @@ string URLify::urlify(const string &input) {
     return result;
 }
 
-void URLify::urlifyInPlace(string *input) {
+void URLify::urlifyInPlace(std::string *input) {
     auto replacement = "%20";
     for (auto index = 0; index < input->size(); index++) {
         if (input->at(index) == ' ') {

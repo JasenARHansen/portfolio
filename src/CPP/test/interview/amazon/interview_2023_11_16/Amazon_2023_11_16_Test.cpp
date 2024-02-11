@@ -4,35 +4,35 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/amazon/interview_2023_11_16/Amazon_2023_11_16.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Amazon_Interview_2023_11_16_Test, description) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, description) {
     testing::internal::CaptureStdout();
     Amazon_Interview_2023_11_16::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, Box_1) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, constructorBox_1) {
     vector<int> dimensions{1, 2, 3};
     auto *box = new Amazon_Interview_2023_11_16::Box(dimensions);
     EXPECT_NE(nullptr, box);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, Box_2) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, constructorBox_2) {
     vector<int> dimensions{1, 2};
     EXPECT_EXIT(new Amazon_Interview_2023_11_16::Box(dimensions), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, Item_1) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, constructorItem_1) {
     vector<int> dimensions{1, 2, 3};
     auto *item = new Amazon_Interview_2023_11_16::Item(dimensions);
     EXPECT_NE(nullptr, item);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, Item_2) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, constructorItem_2) {
     vector<int> dimensions{1, 2};
     EXPECT_EXIT(new Amazon_Interview_2023_11_16::Item(dimensions), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, isThereABox_unsorted_1) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, isThereABox_unsorted_1) {
     auto expected = true;
     auto *box1 = new Amazon_Interview_2023_11_16::Box(1, 3, 3);
     auto *box2 = new Amazon_Interview_2023_11_16::Box(4, 2, 3);
@@ -45,7 +45,7 @@ TEST(Amazon_Interview_2023_11_16_Test, isThereABox_unsorted_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_1) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, isThereABox_sorted_1) {
     auto expected = false;
     vector<Amazon_Interview_2023_11_16::Box *> boxes{};
     Amazon_Interview_2023_11_16::sortBoxes(boxes);
@@ -54,7 +54,7 @@ TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_2) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, isThereABox_sorted_2) {
     auto expected = true;
     auto *box1 = new Amazon_Interview_2023_11_16::Box(1, 3, 3);
     auto *box2 = new Amazon_Interview_2023_11_16::Box(4, 2, 3);
@@ -68,7 +68,7 @@ TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_3) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, isThereABox_sorted_3) {
     auto expected = false;
     auto *box1 = new Amazon_Interview_2023_11_16::Box(1, 3, 3);
     auto *box2 = new Amazon_Interview_2023_11_16::Box(4, 2, 3);
@@ -82,7 +82,7 @@ TEST(Amazon_Interview_2023_11_16_Test, isThereABox_sorted_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, getBestBox_1) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, getBestBox_1) {
     auto expected = nullptr;
     vector<Amazon_Interview_2023_11_16::Box *> boxes{};
     Amazon_Interview_2023_11_16::sortBoxes(boxes);
@@ -91,7 +91,7 @@ TEST(Amazon_Interview_2023_11_16_Test, getBestBox_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, getBestBox_2) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, getBestBox_2) {
     auto *box1 = new Amazon_Interview_2023_11_16::Box(1, 3, 3);
     auto *box2 = new Amazon_Interview_2023_11_16::Box(4, 2, 3);
     auto *box3 = new Amazon_Interview_2023_11_16::Box(8, 8, 8);
@@ -105,7 +105,7 @@ TEST(Amazon_Interview_2023_11_16_Test, getBestBox_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(Amazon_Interview_2023_11_16_Test, getBestBox_3) {
+TEST(Interview_Amazon_Interview_2023_11_16_Test, getBestBox_3) {
     auto *box1 = new Amazon_Interview_2023_11_16::Box(1, 3, 3);
     auto *box2 = new Amazon_Interview_2023_11_16::Box(4, 2, 3);
     auto *box3 = new Amazon_Interview_2023_11_16::Box(8, 8, 8);

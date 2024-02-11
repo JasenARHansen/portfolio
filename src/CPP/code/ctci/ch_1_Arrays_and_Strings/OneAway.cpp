@@ -2,8 +2,10 @@
 #include <cstdlib>
 #include <iostream>
 
+using namespace ctci;
+
 void OneAway::description() {
-    cout << R"(Arrays and Strings: One Away
+    std::cout << R"(Arrays and Strings: One Away
     There are three types of edits that can be performed on strings:
         insert a character
         remove a character
@@ -13,10 +15,10 @@ void OneAway::description() {
         pale, bale -> true
         pale, pales -> true
         pales , pale -> true
-        pale, bake -> false)" << endl;
+        pale, bake -> false)" << std::endl;
 }
 
-bool OneAway::isOneAway(const string &left, const string &right) {
+bool OneAway::isOneAway(const std::string &left, const std::string &right) {
     auto result = true;
     if (left.size() == right.size()) {
         // Only 1 replace possible
@@ -34,7 +36,7 @@ bool OneAway::isOneAway(const string &left, const string &right) {
         // Only add or delete available
         // Advance until first difference
         auto index = 0;
-        while ((index < min((int) left.size(), (int) right.size())) and (left.at(index) == right.at(index))) {
+        while ((index < std::min((int) left.size(), (int) right.size())) and (left.at(index) == right.at(index))) {
             index++;
         }
         auto leftIndex = index;

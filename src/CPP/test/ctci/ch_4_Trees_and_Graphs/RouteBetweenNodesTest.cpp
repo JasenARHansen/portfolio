@@ -4,23 +4,24 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_4_Trees_and_Graphs/RouteBetweenNodes.h"
 
-TEST(RouteBetweenNodesTest, description) {
+using namespace ctci;
+TEST(CtCI_RouteBetweenNodesTest, description) {
     testing::internal::CaptureStdout();
     RouteBetweenNodes::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_1) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_1) {
     auto expected = true;
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {1, 2},
-                                 {2, 0},
-                                 {2, 3},
-                                 {3, 2},
-                                 {4, 6},
-                                 {5, 4},
-                                 {6, 5}};
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {1, 2},
+                                           {2, 0},
+                                           {2, 3},
+                                           {3, 2},
+                                           {4, 6},
+                                           {5, 4},
+                                           {6, 5}};
     auto value1 = 0;
     auto value2 = 3;
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
@@ -29,13 +30,13 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_1) {
     RouteBetweenNodes::deleteGraph(&graph);
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_2) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_2) {
     auto expected = false;
-    vector<int> data{0, 1, 2, 3};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {1, 2},
-                                 {2, 0},
-                                 {3, 2}};
+    std::vector<int> data{0, 1, 2, 3};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {1, 2},
+                                           {2, 0},
+                                           {3, 2}};
     auto value1 = 0;
     auto value2 = 3;
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
@@ -44,17 +45,17 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_2) {
     RouteBetweenNodes::deleteGraph(&graph);
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_3) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_3) {
     auto expected = false;
-    vector<int> data{0, 1, 2, 3, 4, 5};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {0, 4},
-                                 {0, 5},
-                                 {1, 3},
-                                 {1, 4},
-                                 {2, 1},
-                                 {3, 2},
-                                 {3, 4}};
+    std::vector<int> data{0, 1, 2, 3, 4, 5};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {0, 4},
+                                           {0, 5},
+                                           {1, 3},
+                                           {1, 4},
+                                           {2, 1},
+                                           {3, 2},
+                                           {3, 4}};
     auto value1 = 4;
     auto value2 = 3;
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
@@ -63,17 +64,17 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_3) {
     RouteBetweenNodes::deleteGraph(&graph);
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_4) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_4) {
     auto expected = true;
-    vector<int> data{0, 1, 2, 3, 4, 5, 6};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {1, 2},
-                                 {2, 0},
-                                 {2, 3},
-                                 {3, 2},
-                                 {4, 6},
-                                 {5, 4},
-                                 {6, 5}};
+    std::vector<int> data{0, 1, 2, 3, 4, 5, 6};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {1, 2},
+                                           {2, 0},
+                                           {2, 3},
+                                           {3, 2},
+                                           {4, 6},
+                                           {5, 4},
+                                           {6, 5}};
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
     auto node1 = graph->nodes.at(0);
     auto node2 = graph->nodes.at(3);
@@ -82,13 +83,13 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_4) {
     RouteBetweenNodes::deleteGraph(&graph);
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_5) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_5) {
     auto expected = false;
-    vector<int> data{0, 1, 2, 3};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {1, 2},
-                                 {2, 0},
-                                 {3, 2}};
+    std::vector<int> data{0, 1, 2, 3};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {1, 2},
+                                           {2, 0},
+                                           {3, 2}};
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
     auto node1 = graph->nodes.at(0);
     auto node2 = graph->nodes.at(3);
@@ -97,17 +98,17 @@ TEST(RouteBetweenNodesTest, routeBetweenNodes_5) {
     RouteBetweenNodes::deleteGraph(&graph);
 }
 
-TEST(RouteBetweenNodesTest, routeBetweenNodes_6) {
+TEST(CtCI_RouteBetweenNodesTest, routeBetweenNodes_6) {
     auto expected = false;
-    vector<int> data{0, 1, 2, 3, 4, 5};
-    vector<pair<int, int>> edges{{0, 1},
-                                 {0, 4},
-                                 {0, 5},
-                                 {1, 3},
-                                 {1, 4},
-                                 {2, 1},
-                                 {3, 2},
-                                 {3, 4}};
+    std::vector<int> data{0, 1, 2, 3, 4, 5};
+    std::vector<std::pair<int, int>> edges{{0, 1},
+                                           {0, 4},
+                                           {0, 5},
+                                           {1, 3},
+                                           {1, 4},
+                                           {2, 1},
+                                           {3, 2},
+                                           {3, 4}};
     auto graph = RouteBetweenNodes::generateGraph(data, edges);
     auto node1 = graph->nodes.at(4);
     auto node2 = graph->nodes.at(3);

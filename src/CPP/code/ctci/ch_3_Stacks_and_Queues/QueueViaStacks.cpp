@@ -1,9 +1,11 @@
 #include "QueueViaStacks.h"
 #include <iostream>
 
+using namespace ctci;
+
 void MyQueue::description() {
-    cout << R"(Stacks and Queues: Queue via Stacks
-    Implement a MyQueue class which implements a queue using two stacks.)" << endl;
+    std::cout << R"(Stacks and Queues: Queue via Stacks
+    Implement a MyQueue class which implements a queue using two stacks.)" << std::endl;
 }
 
 MyQueue::MyQueue() = default;

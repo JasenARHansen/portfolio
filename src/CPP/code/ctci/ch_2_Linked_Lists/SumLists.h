@@ -5,33 +5,32 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class SumLists {
+    private:
+        struct Node {
+            int data = 0;
+            Node *next = nullptr;
 
-class SumLists {
-private:
-    struct Node {
-        int data = 0;
-        Node *next = nullptr;
+            explicit Node(int x) : data(x), next(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), next(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateList(std::vector<int> data);
+
+        static std::vector<int> getList(Node *head);
+
+        static void deleteList(Node **head);
+
+        static Node *sumReverseOrder(Node *addend1, Node *addend2);
+
+        static Node *sumRForwardOrder(Node *addend1, Node *addend2);
+
+    private:
+        static Node *reverse(Node *head);
     };
-
-public:
-    static void description();
-
-    static Node *generateList(vector<int> data);
-
-    static vector<int> getList(Node *head);
-
-    static void deleteList(Node **head);
-
-    static Node *sumReverseOrder(Node *addend1, Node *addend2);
-
-    static Node *sumRForwardOrder(Node *addend1, Node *addend2);
-
-private:
-    static Node *reverse(Node *head);
-};
-
+}
 #endif
 #pragma clang diagnostic pop

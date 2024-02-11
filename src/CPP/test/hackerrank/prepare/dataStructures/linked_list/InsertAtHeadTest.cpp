@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/InsertAtHead.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(InsertAtHeadTest, description) {
+TEST(HackerRank_InsertAtHeadTest, description) {
     testing::internal::CaptureStdout();
     InsertAtHead::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_1) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_1) {
     vector<int> expected{383};
     vector<int> source{};
     auto list = InsertAtHead::createList(source);
@@ -21,7 +21,7 @@ TEST(InsertAtHeadTest, insertNodeAtHead_1) {
     InsertAtHead::deleteList(&updatedList);
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_2) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_2) {
     vector<int> expected{484, 383};
     vector<int> source{383};
     auto list = InsertAtHead::createList(source);
@@ -32,7 +32,7 @@ TEST(InsertAtHeadTest, insertNodeAtHead_2) {
     InsertAtHead::deleteList(&updatedList);
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_3) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_3) {
     vector<int> expected{392, 484, 383};
     vector<int> source{484, 383};
     auto list = InsertAtHead::createList(source);
@@ -43,7 +43,7 @@ TEST(InsertAtHeadTest, insertNodeAtHead_3) {
     InsertAtHead::deleteList(&updatedList);
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_4) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_4) {
     vector<int> expected{975, 392, 484, 383};
     vector<int> source{392, 484, 383};
     auto list = InsertAtHead::createList(source);
@@ -54,7 +54,7 @@ TEST(InsertAtHeadTest, insertNodeAtHead_4) {
     InsertAtHead::deleteList(&updatedList);
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_5) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_5) {
     vector<int> expected{321, 975, 392, 484, 383};
     vector<int> source{975, 392, 484, 383};
     auto list = InsertAtHead::createList(source);
@@ -65,7 +65,7 @@ TEST(InsertAtHeadTest, insertNodeAtHead_5) {
     InsertAtHead::deleteList(&updatedList);
 }
 
-TEST(InsertAtHeadTest, insertNodeAtHead_6) {
+TEST(HackerRank_InsertAtHeadTest, insertNodeAtHead_6) {
     vector<int> expected{236};
     vector<int> source{};
     auto list = InsertAtHead::createList(source);

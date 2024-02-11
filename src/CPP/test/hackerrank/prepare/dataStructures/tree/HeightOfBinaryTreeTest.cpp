@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/tree/HeightOfBinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(HeightOfBinaryTreeTest, description) {
+TEST(HackerRank_HeightOfBinaryTreeTest, description) {
     testing::internal::CaptureStdout();
     HeightOfBinaryTree::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(HeightOfBinaryTreeTest, height_1) {
+TEST(HackerRank_HeightOfBinaryTreeTest, height_1) {
     auto expected = 2;
     vector<string> values{"4", "2", "6", "1", "3", "5", "7"};
     auto root = HeightOfBinaryTree::deserializeTree(values);
@@ -19,7 +19,7 @@ TEST(HeightOfBinaryTreeTest, height_1) {
     HeightOfBinaryTree::deleteTree(&root);
 }
 
-TEST(HeightOfBinaryTreeTest, height_2) {
+TEST(HackerRank_HeightOfBinaryTreeTest, height_2) {
     auto expected = 3;
     vector<string> values{"3", "2", "5", "1", "null", "4", "6", "null", "null", "null", "null", "null", "7"};
     auto root = HeightOfBinaryTree::deserializeTree(values);

@@ -6,15 +6,15 @@
 #include "gtest/gtest.h"
 #include "../../../code/interview/tesla/Tesla_2023_12_1.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(Tesla_Interview_2023_12_1_Test, GetReadingAtTime_1) {
+TEST(Interview_Tesla_Interview_2023_12_1_Test, getReadingAtTime_1) {
     srand(time(nullptr));
     auto s = Sensor();
-    auto reading = s.GetReading();
+    auto reading = s.getReading();
     EXPECT_NE(0, reading);
     sleep(4);
     auto testTime = Time::now();
     sleep(6);
-    auto readingInRange = s.GetReadingAtTime(testTime);
+    auto readingInRange = s.getReadingAtTime(testTime);
     EXPECT_NE(0, readingInRange);
 }
 

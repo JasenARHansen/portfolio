@@ -5,14 +5,13 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class PalindromePermutation {
+    public:
+        static void description();
 
-class PalindromePermutation {
-public:
-    static void description();
-
-    static bool isPalindromePermutation(string input);
-};
-
+        static bool isPalindromePermutation(std::string input);
+    };
+}
 #endif
 #pragma clang diagnostic pop

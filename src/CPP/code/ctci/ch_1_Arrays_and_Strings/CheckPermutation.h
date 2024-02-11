@@ -5,16 +5,15 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class CheckPermutation {
+    public:
+        static void description();
 
-class CheckPermutation {
-public:
-    static void description();
+        static bool isPermutation(std::string first, std::string second);
 
-    static bool isPermutation(string first, string second);
-
-    static bool isPermutationCount(const string &first, const string &second);
-};
-
+        static bool isPermutationCount(const std::string &first, const std::string &second);
+    };
+}
 #endif
 #pragma clang diagnostic pop

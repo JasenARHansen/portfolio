@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/DeleteANode.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(DeleteANodeTest, description) {
+TEST(HackerRank_DeleteANodeTest, description) {
     testing::internal::CaptureStdout();
     DeleteANode::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(DeleteANodeTest, deleteNode_1) {
+TEST(HackerRank_DeleteANodeTest, deleteNode_1) {
     vector<int> expected{0, 1, 3};
     vector<int> source{0, 1, 2, 3};
     auto list = DeleteANode::createList(source);
@@ -21,7 +21,7 @@ TEST(DeleteANodeTest, deleteNode_1) {
     DeleteANode::deleteList(&updatedList);
 }
 
-TEST(DeleteANodeTest, deleteNode_2) {
+TEST(HackerRank_DeleteANodeTest, deleteNode_2) {
     vector<int> expected{20, 6, 2, 7, 4, 15, 9};
     vector<int> source{20, 6, 2, 19, 7, 4, 15, 9};
     auto list = DeleteANode::createList(source);
@@ -32,7 +32,7 @@ TEST(DeleteANodeTest, deleteNode_2) {
     DeleteANode::deleteList(&updatedList);
 }
 
-TEST(DeleteANodeTest, deleteNode_3) {
+TEST(HackerRank_DeleteANodeTest, deleteNode_3) {
     vector<int> expected{};
     vector<int> source{20};
     auto list = DeleteANode::createList(source);
@@ -43,7 +43,7 @@ TEST(DeleteANodeTest, deleteNode_3) {
     DeleteANode::deleteList(&updatedList);
 }
 
-TEST(DeleteANodeTest, deleteNode_4) {
+TEST(HackerRank_DeleteANodeTest, deleteNode_4) {
     vector<int> expected{11, 2, 9};
     vector<int> source{11, 9, 2, 9};
     auto list = DeleteANode::createList(source);

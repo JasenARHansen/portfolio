@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section6/Section6Encapsulation.h"
 
-TEST(Section6EncapsulationTest, Encapsulation) {
+TEST(Udemy_Section6EncapsulationTest, encapsulation) {
     string expected = "Info: name = Default";
     Section6Encapsulation base;
     auto result = base.getInfo();

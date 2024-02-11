@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/linked_list/RemoveNthNodeFromEndOfList.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(RemoveNthNodeFromEndOfListTest, description) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, description) {
     testing::internal::CaptureStdout();
     RemoveNthNodeFromEndOfList::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_1) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_1) {
     vector<int> expected{1, 2, 3, 5};
     vector<int> headValues{1, 2, 3, 4, 5};
     auto n = 2;
@@ -22,7 +22,7 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_1) {
     RemoveNthNodeFromEndOfList::deleteList(&values);
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_2) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_2) {
     vector<int> expected{};
     vector<int> headValues{1};
     auto n = 1;
@@ -34,7 +34,7 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_2) {
     RemoveNthNodeFromEndOfList::deleteList(&values);
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_3) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_3) {
     vector<int> expected{1};
     vector<int> headValues{1, 2};
     auto n = 1;
@@ -46,7 +46,7 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_3) {
     RemoveNthNodeFromEndOfList::deleteList(&values);
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
     vector<int> expected{2};
     vector<int> headValues{1, 2};
     auto n = 2;
@@ -58,28 +58,28 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_4) {
     RemoveNthNodeFromEndOfList::deleteList(&values);
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_1) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_1) {
     // sz ≤ 30
     auto size = 30 + 1;
     vector<int> values(size);
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_2) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_2) {
     // 0 ≤ Node.val
     auto size = 0 - 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_3) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_3) {
     // Node.val ≤ 100
     auto size = 100 + 1;
     vector<int> values{size};
     EXPECT_EXIT(RemoveNthNodeFromEndOfList::deserializeList(values), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
     // 1 ≤ n
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RemoveNthNodeFromEndOfList::deserializeList(headValues);
@@ -88,7 +88,7 @@ TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_4) {
     RemoveNthNodeFromEndOfList::deleteList(&head);
 }
 
-TEST(RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_5) {
+TEST(LeetCode_RemoveNthNodeFromEndOfListTest, removeNthFromEnd_fail_5) {
     // n ≤ sz
     vector<int> headValues{1, 2, 3, 4, 5};
     auto head = RemoveNthNodeFromEndOfList::deserializeList(headValues);

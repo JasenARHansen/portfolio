@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/coderpad/HelloWorld.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(HelloWorldTest, hello_eq) {
+TEST(Interview_HelloWorldTest, hello_eq) {
     auto expected = "Hello, World!\n";
     testing::internal::CaptureStdout();
     HelloWorld::helloWorld();

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/graph_general/CloneGraph.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CloneGraphTest, description) {
+TEST(LeetCode_CloneGraphTest, description) {
     testing::internal::CaptureStdout();
     CloneGraph::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CloneGraphTest, cloneGraph_1) {
+TEST(LeetCode_CloneGraphTest, cloneGraph_1) {
     vector<vector<int>> expected{{2, 4},
                                  {1, 3},
                                  {2, 4},
@@ -30,7 +30,7 @@ TEST(CloneGraphTest, cloneGraph_1) {
     CloneGraph::deleteGraph(&clone);
 }
 
-TEST(CloneGraphTest, cloneGraph_2) {
+TEST(LeetCode_CloneGraphTest, cloneGraph_2) {
     vector<vector<int>> expected{{}};
     vector<vector<int>> input{{}};
     auto head = CloneGraph::deserializeGraph(input);
@@ -44,7 +44,7 @@ TEST(CloneGraphTest, cloneGraph_2) {
     CloneGraph::deleteGraph(&clone);
 }
 
-TEST(CloneGraphTest, cloneGraph_3) {
+TEST(LeetCode_CloneGraphTest, cloneGraph_3) {
     vector<vector<int>> expected{};
     vector<vector<int>> input{};
     auto head = CloneGraph::deserializeGraph(input);

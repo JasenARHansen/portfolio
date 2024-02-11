@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/linked_list/InsertSpecificPosition.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(InsertSpecificPositionTest, description) {
+TEST(HackerRank_InsertSpecificPositionTest, description) {
     testing::internal::CaptureStdout();
     InsertSpecificPosition::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(InsertSpecificPositionTest, insertNodeAtPosition_1) {
+TEST(HackerRank_InsertSpecificPositionTest, insertNodeAtPosition_1) {
     vector<int> expected{1, 2, 4, 3};
     vector<int> source{1, 2, 3};
     auto list = InsertSpecificPosition::createList(source);
@@ -22,7 +22,7 @@ TEST(InsertSpecificPositionTest, insertNodeAtPosition_1) {
     InsertSpecificPosition::deleteList(&list);
 }
 
-TEST(InsertSpecificPositionTest, insertNodeAtPosition_2) {
+TEST(HackerRank_InsertSpecificPositionTest, insertNodeAtPosition_2) {
     vector<int> expected{1};
     vector<int> source{};
     auto list = InsertSpecificPosition::createList(source);
@@ -34,7 +34,7 @@ TEST(InsertSpecificPositionTest, insertNodeAtPosition_2) {
     InsertSpecificPosition::deleteList(&list);
 }
 
-TEST(InsertSpecificPositionTest, insertNodeAtPosition_3) {
+TEST(HackerRank_InsertSpecificPositionTest, insertNodeAtPosition_3) {
     vector<int> expected{1, 2, 3, 4};
     vector<int> source{1, 2, 3};
     auto list = InsertSpecificPosition::createList(source);
@@ -46,7 +46,7 @@ TEST(InsertSpecificPositionTest, insertNodeAtPosition_3) {
     InsertSpecificPosition::deleteList(&list);
 }
 
-TEST(InsertSpecificPositionTest, insertNodeAtPosition_4) {
+TEST(HackerRank_InsertSpecificPositionTest, insertNodeAtPosition_4) {
     vector<int> expected{16, 13, 1, 7};
     vector<int> source{16, 13, 7};
     auto list = InsertSpecificPosition::createList(source);

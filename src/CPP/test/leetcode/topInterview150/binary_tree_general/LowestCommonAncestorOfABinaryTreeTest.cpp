@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_general/LowestCommonAncestorOfABinaryTree.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(LowestCommonAncestorOfABinaryTreeTest, description) {
+TEST(LeetCode_LowestCommonAncestorOfABinaryTreeTest, description) {
     testing::internal::CaptureStdout();
     LowestCommonAncestorOfABinaryTree::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_1) {
+TEST(LeetCode_LowestCommonAncestorOfABinaryTreeTest, sumNumbers_1) {
     vector<string> values{"3", "5", "1", "6", "2", "0", "8", "null", "null", "7", "4"};
     auto expectedVal = 3;
     auto pVal = 5;
@@ -24,7 +24,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_1) {
     LowestCommonAncestorOfABinaryTree::deleteTree(&root);
 }
 
-TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_2) {
+TEST(LeetCode_LowestCommonAncestorOfABinaryTreeTest, sumNumbers_2) {
     vector<string> values{"3", "5", "1", "6", "2", "0", "8", "null", "null", "7", "4"};
     auto expectedVal = 5;
     auto pVal = 5;
@@ -38,7 +38,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_2) {
     LowestCommonAncestorOfABinaryTree::deleteTree(&root);
 }
 
-TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_3) {
+TEST(LeetCode_LowestCommonAncestorOfABinaryTreeTest, sumNumbers_3) {
     vector<string> values{"1", "2"};
     auto expectedVal = 1;
     auto pVal = 1;
@@ -52,7 +52,7 @@ TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_3) {
     LowestCommonAncestorOfABinaryTree::deleteTree(&root);
 }
 
-TEST(LowestCommonAncestorOfABinaryTreeTest, sumNumbers_4) {
+TEST(LeetCode_LowestCommonAncestorOfABinaryTreeTest, sumNumbers_4) {
     vector<string> values{"1", "2", "3"};
     auto expectedVal = 1;
     auto pVal = 2;

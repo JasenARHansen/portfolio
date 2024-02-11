@@ -1,14 +1,16 @@
 #include "ThreeInOne.h"
 #include <iostream>
 
+using namespace ctci;
+
 void ThreeInOne::description() {
-    cout << R"(Stacks and Queues: Three in One
-    Describe how you could use a single array to implement three stacks.)" << endl;
+    std::cout << R"(Stacks and Queues: Three in One
+    Describe how you could use a single array to implement three stacks.)" << std::endl;
 }
 
 ThreeInOne::ThreeInOne() {
-    this->stacks = vector<int>();
-    this->elementsInUse = vector<int>(3, 0);
+    this->stacks = std::vector<int>();
+    this->elementsInUse = std::vector<int>(3, 0);
 }
 
 void ThreeInOne::push(int stack, int value) {

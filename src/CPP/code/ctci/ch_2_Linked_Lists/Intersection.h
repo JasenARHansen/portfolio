@@ -5,27 +5,25 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class Intersection {
+    private:
+        struct Node {
+            int data = 0;
+            Node *next = nullptr;
 
-class Intersection {
-private:
-    struct Node {
-        int data = 0;
-        Node *next = nullptr;
+            explicit Node(int x) : data(x), next(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), next(nullptr) {}
+    public:
+        static void description();
+
+        static std::pair<Node *, Node *> generateList(std::vector<int> data1, std::vector<int> data2);
+
+        static void deleteList(Node **head1, Node **head2);
+
+        static Node *intersection(Node *head1, Node *head2);
     };
-
-public:
-    static void description();
-
-    static pair<Node *, Node *> generateList(vector<int> data1, vector<int> data2);
-
-    static void deleteList(Node **head1, Node **head2);
-
-    static Node *intersection(Node *head1, Node *head2);
-
-};
-
+}
 #endif
 #pragma clang diagnostic pop

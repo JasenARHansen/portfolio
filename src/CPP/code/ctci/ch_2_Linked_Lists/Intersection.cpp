@@ -1,20 +1,23 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "NullDereference"
+
 #include "Intersection.h"
 #include <iostream>
 #include <set>
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "NullDereference"
+using namespace ctci;
 
 void Intersection::description() {
-    cout << R"(Linked Lists: Intersection
+    std::cout << R"(Linked Lists: Intersection
     Given two (singly) linked lists, determine if the two lists intersect.
     Return the intersecting node.
     Note that the intersection is defined based on reference, not value.
     That is, if the kth node of the first linked list is the exact same node (by reference) as the j t h
-     node of the second linked list, then they are intersecting.)" << endl;
+     node of the second linked list, then they are intersecting.)" << std::endl;
 }
 
-pair<Intersection::Node *, Intersection::Node *> Intersection::generateList(vector<int> data1, vector<int> data2) {
+std::pair<Intersection::Node *, Intersection::Node *>
+Intersection::generateList(std::vector<int> data1, std::vector<int> data2) {
     Node *head1 = nullptr;
     Node *head2 = nullptr;
     if (!data1.empty() and !data2.empty()) {
@@ -24,7 +27,7 @@ pair<Intersection::Node *, Intersection::Node *> Intersection::generateList(vect
         auto current1 = head1;
         auto current2 = head2;
         index++;
-        for (; index < min((int) data1.size(), (int) data2.size()); index++) {
+        for (; index < std::min((int) data1.size(), (int) data2.size()); index++) {
             current1->next = new Node(data1.at(index));
             current2->next = new Node(data2.at(index));
             current1 = current1->next;
@@ -67,7 +70,7 @@ pair<Intersection::Node *, Intersection::Node *> Intersection::generateList(vect
 }
 
 void Intersection::deleteList(Node **head1, Node **head2) {
-    set<Node *> seen;
+    std::set<Node *> seen;
     auto current = *head1;
     Node *next;
     while (current != nullptr) {
@@ -92,7 +95,7 @@ void Intersection::deleteList(Node **head1, Node **head2) {
 
 Intersection::Node *Intersection::intersection(Node *head1, Node *head2) {
     Node *result = nullptr;
-    set<Node *> seen;
+    std::set<Node *> seen;
     auto current = head1;
     Node *next;
     while (current != nullptr) {

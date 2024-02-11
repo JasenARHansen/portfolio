@@ -6,13 +6,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/arrays/SparseArray.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SparseArrayTest, description) {
+TEST(HackerRank_SparseArrayTest, description) {
     testing::internal::CaptureStdout();
     SparseArray::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SparseArrayTest, matchingStrings_1) {
+TEST(HackerRank_SparseArrayTest, matchingStrings_1) {
     vector<int> expected{2, 1, 0};
     vector<string> stringList{"ab", "ab", "abc"};
     vector<string> queries{"ab", "abc", "bc"};
@@ -20,7 +20,7 @@ TEST(SparseArrayTest, matchingStrings_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseArrayTest, matchingStrings_2) {
+TEST(HackerRank_SparseArrayTest, matchingStrings_2) {
     vector<int> expected{2, 1, 0};
     vector<string> stringList{"aba", "baba", "aba", "xzxb"};
     vector<string> queries{"aba", "xzxb", "ab"};
@@ -28,7 +28,7 @@ TEST(SparseArrayTest, matchingStrings_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseArrayTest, matchingStrings_3) {
+TEST(HackerRank_SparseArrayTest, matchingStrings_3) {
     vector<int> expected{1, 0, 1};
     vector<string> stringList{"def", "de", "fgh"};
     vector<string> queries{"de", "lmn", "fgh"};
@@ -36,7 +36,7 @@ TEST(SparseArrayTest, matchingStrings_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(SparseArrayTest, matchingStrings_4) {
+TEST(HackerRank_SparseArrayTest, matchingStrings_4) {
     vector<int> expected{1, 3, 4, 3, 2};
     vector<string> stringList{"abcde", "sdaklfj", "asdjf", "na", "basdn", "sdaklfj", "asdjf", "na", "asdjf", "na",
                               "basdn", "sdaklfj", "asdjf"};

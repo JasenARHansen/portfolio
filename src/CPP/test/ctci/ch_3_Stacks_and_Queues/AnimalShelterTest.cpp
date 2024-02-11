@@ -4,13 +4,14 @@
 #include "gtest/gtest.h"
 #include "../../../code/ctci/ch_3_Stacks_and_Queues/AnimalShelter.h"
 
-TEST(AnimalShelterTest, description) {
+using namespace ctci;
+TEST(CtCI_AnimalShelterTest, description) {
     testing::internal::CaptureStdout();
     AnimalShelter::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(AnimalShelterTest, AnimalShelter_1) {
+TEST(CtCI_AnimalShelterTest, methods_1) {
     auto cat1 = "Smokey";
     auto cat2 = "Bandit";
     auto dog = "Fred";

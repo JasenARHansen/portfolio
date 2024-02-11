@@ -6,25 +6,25 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void ValidateBST::description() {
-    cout << R"(Trees and Graphs: Check Balanced
+    std::cout << R"(Trees and Graphs: Check Balanced
     Implement a function to check if a binary tree is balanced.
     For the purposes of this question, a balanced tree is defined to be a tree such that the heights of
-     the two subtrees of any node never differ by more than one.)" << endl;
+     the two subtrees of any node never differ by more than one.)" << std::endl;
 }
 
-ValidateBST::Node *ValidateBST::generateMinimalTree(const vector<int> &data) {
+ValidateBST::Node *ValidateBST::generateMinimalTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         auto middle = ((int) data.size()) / 2;
         head = new Node(data.at(middle));
-        vector<int> left = {data.begin(), data.begin() + middle};
+        std::vector<int> left = {data.begin(), data.begin() + middle};
         if (!left.empty()) {
             head->leftChild = generateMinimalTree(left);
         }
-        vector<int> right = {data.begin() + middle + 1, data.end()};
+        std::vector<int> right = {data.begin() + middle + 1, data.end()};
         if (!right.empty()) {
             head->rightChild = generateMinimalTree(right);
         }
@@ -32,7 +32,7 @@ ValidateBST::Node *ValidateBST::generateMinimalTree(const vector<int> &data) {
     return head;
 }
 
-ValidateBST::Node *ValidateBST::generateBSTree(const vector<int> &data) {
+ValidateBST::Node *ValidateBST::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -62,7 +62,7 @@ ValidateBST::Node *ValidateBST::generateBSTree(const vector<int> &data) {
 
 void ValidateBST::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {

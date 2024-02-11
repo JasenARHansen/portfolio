@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/meta/interview_practice/GreatestPopulation.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(GreatestPopulationTest, description) {
+TEST(Interview_GreatestPopulationTest, description) {
     testing::internal::CaptureStdout();
     GreatestPopulation::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(GreatestPopulationTest, findGreatestPopulation_1) {
+TEST(Interview_GreatestPopulationTest, findGreatestPopulation_1) {
     int expected = 1803;
     vector<Person> people{{2000, 2010},
                           {1975, 2005},

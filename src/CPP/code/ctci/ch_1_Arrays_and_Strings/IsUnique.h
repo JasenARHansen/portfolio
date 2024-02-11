@@ -5,18 +5,17 @@
 
 #include <string>
 
-using namespace std;
+namespace ctci {
+    class IsUnique {
+    public:
+        static void description();
 
-class IsUnique {
-public:
-    static void description();
+        static bool isUniqueChars(const std::string &str);
 
-    static bool isUniqueChars(const string &str);
+        static bool isUniqueCharsBitvector(const std::string &str);
 
-    static bool isUniqueCharsBitvector(const string &str);
-
-    static bool isUniqueCharsNoDs(string str);
-};
-
+        static bool isUniqueCharsNoDs(std::string str);
+    };
+}
 #endif
 #pragma clang diagnostic pop

@@ -4,41 +4,41 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/stack/BalancedBrackets.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(BalancedBracketsTest, description) {
+TEST(HackerRank_BalancedBracketsTest, description) {
     testing::internal::CaptureStdout();
     BalancedBrackets::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(BalancedBracketsTest, isBalanced_1) {
+TEST(HackerRank_BalancedBracketsTest, isBalanced_1) {
     auto expected = "YES";
     auto input = "{[()]}";
     auto result = BalancedBrackets::isBalanced(input);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalancedBracketsTest, isBalanced_2) {
+TEST(HackerRank_BalancedBracketsTest, isBalanced_2) {
     auto expected = "NO";
     auto input = "{[(])}";
     auto result = BalancedBrackets::isBalanced(input);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalancedBracketsTest, isBalanced_3) {
+TEST(HackerRank_BalancedBracketsTest, isBalanced_3) {
     auto expected = "YES";
     auto input = "{{[[(())]]}}";
     auto result = BalancedBrackets::isBalanced(input);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalancedBracketsTest, isBalanced_4) {
+TEST(HackerRank_BalancedBracketsTest, isBalanced_4) {
     auto expected = "YES";
     auto input = "{{[[a(())]]}}";
     auto result = BalancedBrackets::isBalanced(input);
     EXPECT_EQ(expected, result);
 }
 
-TEST(BalancedBracketsTest, isBalanced_5) {
+TEST(HackerRank_BalancedBracketsTest, isBalanced_5) {
     vector<string> expected{"YES", "YES", "NO", "NO", "NO", "NO", "YES", "YES", "YES", "NO", "YES", "YES", "YES", "YES",
                             "NO", "NO", "YES", "YES", "YES", "NO", "NO", "NO", "YES", "YES", "YES", "YES", "NO", "YES",
                             "NO", "NO", "NO", "NO", "YES", "NO", "NO", "NO", "YES", "NO", "YES", "NO", "NO", "YES",

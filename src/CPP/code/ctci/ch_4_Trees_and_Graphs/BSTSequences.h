@@ -5,8 +5,6 @@
 
 #include <vector>
 
-using namespace std;
-
 class BSTSequences {
 private:
     struct Node {
@@ -20,14 +18,14 @@ private:
 public:
     static void description();
 
-    static Node *generateBSTree(const vector<int> &data);
+    static Node *generateBSTree(const std::vector<int> &data);
 
     static void deleteTree(Node **head);
 
-    static vector<vector<int>> findAllSequences(Node *node);
+    static std::vector<std::vector<int>> findAllSequences(Node *node);
 
 private:
-    static vector<vector<int>> generatePermutations(vector<int> first, vector<int> second);
+    static std::vector<std::vector<int>> generatePermutations(std::vector<int> first, std::vector<int> second);
 };
 
 #endif

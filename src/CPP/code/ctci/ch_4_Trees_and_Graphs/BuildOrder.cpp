@@ -3,10 +3,8 @@
 #include <queue>
 #include <algorithm>
 
-using namespace std;
-
 void BuildOrder::description() {
-    cout << R"(Trees and Graphs: Build Order
+    std::cout << R"(Trees and Graphs: Build Order
     You are given a list of projects and a list of dependencies (which is a list of pairs of
      projects, where the second project is dependent on the first project).
     All of a project's dependencies must be built before the project is.
@@ -33,12 +31,11 @@ void BuildOrder::description() {
                 f  a
                    a  d
                       d  c
-
-    )" << endl;
+    )" << std::endl;
 }
 
 BuildOrder::GraphDirected *
-BuildOrder::generateGraph(const vector<char> &data, const vector<pair<char, char>> &dependencies) {
+BuildOrder::generateGraph(const std::vector<char> &data, const std::vector<std::pair<char, char>> &dependencies) {
     auto *graph = new GraphDirected();
     if (!data.empty()) {
         Node *working;
@@ -63,10 +60,10 @@ void BuildOrder::deleteGraph(GraphDirected **graph) {
     }
 }
 
-vector<char> BuildOrder::buildOrder(GraphDirected *graph) {
-    vector<char> result;
-    map<char, vector<char>> dependencies;
-    queue<char> process;
+std::vector<char> BuildOrder::buildOrder(GraphDirected *graph) {
+    std::vector<char> result;
+    std::map<char, std::vector<char>> dependencies;
+    std::queue<char> process;
     for (auto node: graph->nodes) {
         dependencies[node.first] = {};
         for (auto dependency: node.second->dependencies) {
@@ -76,7 +73,7 @@ vector<char> BuildOrder::buildOrder(GraphDirected *graph) {
     auto continueProcessing = true;
     while (continueProcessing) {
         continueProcessing = false;
-        for (const auto& node: dependencies) {
+        for (const auto &node: dependencies) {
             if (node.second.empty()) {
                 process.push(node.first);
             }
@@ -85,7 +82,7 @@ vector<char> BuildOrder::buildOrder(GraphDirected *graph) {
             continueProcessing = true;
             while (!process.empty()) {
                 result.push_back(process.front());
-                for (const auto& node: dependencies) {
+                for (const auto &node: dependencies) {
                     dependencies.at(node.first).erase(
                             remove(dependencies.at(node.first).begin(), dependencies.at(node.first).end(),
                                    process.front()), dependencies.at(node.first).end());

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/array_strings/FindTheIndexOfTheFirstOccurrenceInAString.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, description) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, description) {
     testing::internal::CaptureStdout();
     FindTheIndexOfTheFirstOccurrenceInAString::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_1) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_1) {
     auto expected = 0;
     auto haystack = "sadbutsad";
     auto needle = "sad";
@@ -18,7 +18,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_2) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_2) {
     auto expected = -1;
     auto haystack = "leetcode";
     auto needle = "leeto";
@@ -26,7 +26,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_3) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_3) {
     auto expected = 0;
     auto haystack = "leetcode";
     auto needle = "leetcode";
@@ -34,7 +34,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_4) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_4) {
     auto expected = 9;
     auto haystack = "I am not sad";
     auto needle = "sad";
@@ -42,7 +42,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_1) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_1) {
     // 1 ≤ haystack.length
     auto size = 1 - 1;
     string haystack(size, 0);
@@ -51,7 +51,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_1) {
                 "");
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_2) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_2) {
     // haystack.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     string haystack(size, 0);
@@ -60,7 +60,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_2) {
                 "");
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_3) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_3) {
     // 1 ≤ needle.length
     auto size = 1 - 1;
     auto haystack = "leetcode";
@@ -69,7 +69,7 @@ TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_3) {
                 "");
 }
 
-TEST(FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_4) {
+TEST(LeetCode_FindTheIndexOfTheFirstOccurrenceInAStringTest, stringstr_fail_4) {
     // needle.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     auto haystack = "leetcode";

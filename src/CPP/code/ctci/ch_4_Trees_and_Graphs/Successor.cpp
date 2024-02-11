@@ -5,16 +5,16 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void Successor::description() {
-    cout << R"(Trees and Graphs: Successor
+    std::cout << R"(Trees and Graphs: Successor
     Write an algorithm to find the "next" node (i.e., in-order successor) of a given node in a
      binary search tree.
-    You may assume that each node has a link to its parent.)" << endl;
+    You may assume that each node has a link to its parent.)" << std::endl;
 }
 
-Successor::Node *Successor::generateBSTree(const vector<int> &data) {
+Successor::Node *Successor::generateBSTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         head = new Node(data.at(0));
@@ -46,7 +46,7 @@ Successor::Node *Successor::generateBSTree(const vector<int> &data) {
 
 void Successor::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {

@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../code/leetcode/PlatesBetweenCandles.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(PlatesBetweenCandles_Test, description) {
+TEST(LeetCode_PlatesBetweenCandles_Test, description) {
     testing::internal::CaptureStdout();
     PlatesBetweenCandles::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_1) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_1) {
     vector<int> expected{2};
     string s = "||**||**|*";
     vector<vector<int>> queries{{3, 8}};
@@ -21,7 +21,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_1) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_2) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_2) {
     vector<int> expected{2, 3};
     string s = "**|**|***|";
     vector<vector<int>> queries{{2, 5},
@@ -33,7 +33,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_2) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_3) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_3) {
     vector<int> expected{9, 0, 0, 0, 0};
     string s = "***|**|*****|**||**|*|";
     vector<vector<int>> queries{{1,  17},
@@ -48,7 +48,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_3) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_4) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_4) {
     vector<int> expected{2, 3};
     string s = "|**|*|*";
     vector<vector<int>> queries{{0, 4},
@@ -60,7 +60,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_4) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_5) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_5) {
     vector<int> expected{0};
     string s = "*|*|";
     vector<vector<int>> queries{{0, 2}};
@@ -71,7 +71,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_5) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_6) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_6) {
     vector<int> expected{2};
     string s = "*|*|*|";
     vector<vector<int>> queries{{0, 5}};
@@ -82,7 +82,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_6) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_7) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_7) {
     vector<int> expected{0};
     string s = "********";
     vector<vector<int>> queries{{0, 5}};
@@ -93,7 +93,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_7) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_8) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_8) {
     vector<int> expected{0};
     string s = "|||||||||";
     vector<vector<int>> queries{{0, 5}};
@@ -104,7 +104,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_8) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_9) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles1_9) {
     vector<int> expected{0};
     string s = "|*|*";
     vector<vector<int>> queries{{3, 3}};
@@ -115,7 +115,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles1_9) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_1) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_1) {
     vector<int> expected{2};
     string s = "||**||**|*";
     vector<vector<int>> queries{{3, 8}};
@@ -126,7 +126,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_1) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_2) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_2) {
     vector<int> expected{2, 3};
     string s = "**|**|***|";
     vector<vector<int>> queries{{2, 5},
@@ -138,7 +138,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_2) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_3) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_3) {
     vector<int> expected{9, 0, 0, 0, 0};
     string s = "***|**|*****|**||**|*|";
     vector<vector<int>> queries{{1,  17},
@@ -153,7 +153,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_3) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_4) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_4) {
     vector<int> expected{2, 3};
     string s = "|**|*|*";
     vector<vector<int>> queries{{0, 4},
@@ -165,7 +165,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_4) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_5) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_5) {
     vector<int> expected{0};
     string s = "*|*|";
     vector<vector<int>> queries{{0, 2}};
@@ -176,7 +176,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_5) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_6) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_6) {
     vector<int> expected{2};
     string s = "*|*|*|";
     vector<vector<int>> queries{{0, 5}};
@@ -187,7 +187,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_6) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_7) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_7) {
     vector<int> expected{0};
     string s = "********";
     vector<vector<int>> queries{{0, 5}};
@@ -198,7 +198,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_7) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_8) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_8) {
     vector<int> expected{0};
     string s = "|||||||||";
     vector<vector<int>> queries{{0, 5}};
@@ -209,7 +209,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_8) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_9) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles2_9) {
     vector<int> expected{0};
     string s = "|*|*";
     vector<vector<int>> queries{{3, 3}};
@@ -220,7 +220,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles2_9) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_1) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_1) {
     vector<int> expected{2};
     string s = "||**||**|*";
     vector<vector<int>> queries{{3, 8}};
@@ -231,7 +231,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_1) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_2) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_2) {
     vector<int> expected{2, 3};
     string s = "**|**|***|";
     vector<vector<int>> queries{{2, 5},
@@ -243,7 +243,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_2) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_3) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_3) {
     vector<int> expected{9, 0, 0, 0, 0};
     string s = "***|**|*****|**||**|*|";
     vector<vector<int>> queries{{1,  17},
@@ -258,7 +258,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_3) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_4) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_4) {
     vector<int> expected{2, 3};
     string s = "|**|*|*";
     vector<vector<int>> queries{{0, 4},
@@ -270,7 +270,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_4) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_5) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_5) {
     vector<int> expected{0};
     string s = "*|*|";
     vector<vector<int>> queries{{0, 2}};
@@ -281,7 +281,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_5) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_6) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_6) {
     vector<int> expected{2};
     string s = "*|*|*|";
     vector<vector<int>> queries{{0, 5}};
@@ -292,7 +292,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_6) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_7) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_7) {
     vector<int> expected{0};
     string s = "********";
     vector<vector<int>> queries{{0, 5}};
@@ -303,7 +303,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_7) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_8) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_8) {
     vector<int> expected{0};
     string s = "|||||||||";
     vector<vector<int>> queries{{0, 5}};
@@ -314,7 +314,7 @@ TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_8) {
     }
 }
 
-TEST(PlatesBetweenCandles_Test, platesBetweenCandles3_9) {
+TEST(LeetCode_PlatesBetweenCandles_Test, platesBetweenCandles3_9) {
     vector<int> expected{0};
     string s = "|*|*";
     vector<vector<int>> queries{{3, 3}};

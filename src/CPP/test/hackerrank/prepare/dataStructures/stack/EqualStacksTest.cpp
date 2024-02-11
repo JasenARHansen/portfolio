@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/stack/EqualStacks.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(EqualStacksTest, description) {
+TEST(HackerRank_EqualStacksTest, description) {
     testing::internal::CaptureStdout();
     EqualStacks::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(EqualStacksTest, equalStacks_1) {
+TEST(HackerRank_EqualStacksTest, equalStacks_1) {
     int expected = 5;
     vector<int> h1{3, 2, 1, 1, 1};
     vector<int> h2{4, 3, 2};

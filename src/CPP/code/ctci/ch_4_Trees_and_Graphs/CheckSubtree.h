@@ -5,30 +5,28 @@
 
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class CheckSubtree {
+    private:
+        struct Node {
+            int data;
+            Node *leftChild;
+            Node *rightChild;
 
-class CheckSubtree {
-private:
-    struct Node {
-        int data;
-        Node *leftChild;
-        Node *rightChild;
+            explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+        };
 
-        explicit Node(int x) : data(x), leftChild(nullptr), rightChild(nullptr) {}
+    public:
+        static void description();
+
+        static Node *generateBSTree(const std::vector<int> &data);
+
+        static void deleteTree(Node **head);
+
+        static bool isSubtreeByData(Node *tree1, Node *tree2);
+
+        static bool isSubtreeByNode(Node *tree1, Node *tree2);
     };
-
-public:
-    static void description();
-
-    static Node *generateBSTree(const vector<int> &data);
-
-    static void deleteTree(Node **head);
-
-    static bool isSubtreeByData(Node *tree1, Node *tree2);
-
-    static bool isSubtreeByNode(Node *tree1, Node *tree2);
-
-};
-
+}
 #endif
 #pragma clang diagnostic pop

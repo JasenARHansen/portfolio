@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/multidimensional_dp/InterleavingString.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(InterleavingStringTest, description) {
+TEST(LeetCode_InterleavingStringTest, description) {
     testing::internal::CaptureStdout();
     InterleavingString::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(InterleavingStringTest, isInterleave_1) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_1) {
     auto expected = true;
     auto s1 = "aabcc";
     auto s2 = "dbbca";
@@ -19,7 +19,7 @@ TEST(InterleavingStringTest, isInterleave_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2) {
     auto expected = false;
     string s1 = "aabcc";
     string s2 = "dbbca";
@@ -28,7 +28,7 @@ TEST(InterleavingStringTest, isInterleave_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_3) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_3) {
     auto expected = false;
     string s1;
     string s2;
@@ -37,7 +37,7 @@ TEST(InterleavingStringTest, isInterleave_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_4) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_4) {
     auto expected = true;
     string s1;
     string s2;
@@ -46,7 +46,7 @@ TEST(InterleavingStringTest, isInterleave_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_5) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_5) {
     auto expected = true;
     string s1 = "cbcccbabbccbbcccbbbcabbbabcababbbbbbaccaccbabbaacbaabbbc";
     string s2 = "abcbbcaababccacbaaaccbabaabbaaabcbababbcccbbabbbcbbb";
@@ -55,7 +55,7 @@ TEST(InterleavingStringTest, isInterleave_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_fail_1) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_fail_1) {
     // s1.length ≤ 100
     auto size = 100 + 1;
     string s1(size, ' ');
@@ -64,7 +64,7 @@ TEST(InterleavingStringTest, isInterleave_fail_1) {
     EXPECT_EXIT(InterleavingString::isInterleave(s1, s2, s3), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InterleavingStringTest, isInterleave_fail_2) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_fail_2) {
     // s2.length ≤ 100
     auto size = 100 + 1;
     string s1 = "aabcc";
@@ -73,7 +73,7 @@ TEST(InterleavingStringTest, isInterleave_fail_2) {
     EXPECT_EXIT(InterleavingString::isInterleave(s1, s2, s3), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InterleavingStringTest, isInterleave_fail_3) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_fail_3) {
     // s3.length ≤ 200
     auto size = 200 + 1;
     string s1 = "aabcc";
@@ -82,7 +82,7 @@ TEST(InterleavingStringTest, isInterleave_fail_3) {
     EXPECT_EXIT(InterleavingString::isInterleave(s1, s2, s3), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InterleavingStringTest, isInterleave_2_1) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_1) {
     auto expected = true;
     string s1 = "aabcc";
     string s2 = "dbbca";
@@ -91,7 +91,7 @@ TEST(InterleavingStringTest, isInterleave_2_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2_2) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_2) {
     auto expected = false;
     string s1 = "aabcc";
     string s2 = "dbbca";
@@ -100,7 +100,7 @@ TEST(InterleavingStringTest, isInterleave_2_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2_3) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_3) {
     auto expected = false;
     string s1;
     string s2;
@@ -109,7 +109,7 @@ TEST(InterleavingStringTest, isInterleave_2_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2_4) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_4) {
     auto expected = true;
     string s1;
     string s2;
@@ -118,7 +118,7 @@ TEST(InterleavingStringTest, isInterleave_2_4) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2_5) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_5) {
     auto expected = true;
     string s1 = "cbcccbabbccbbcccbbbcabbbabcababbbbbbaccaccbabbaacbaabbbc";
     string s2 = "abcbbcaababccacbaaaccbabaabbaaabcbababbcccbbabbbcbbb";
@@ -127,7 +127,7 @@ TEST(InterleavingStringTest, isInterleave_2_5) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(InterleavingStringTest, isInterleave_2_fail_1) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_fail_1) {
     // s1.length ≤ 100
     auto size = 100 + 1;
     string s1(size, ' ');
@@ -136,7 +136,7 @@ TEST(InterleavingStringTest, isInterleave_2_fail_1) {
     EXPECT_EXIT(InterleavingString::isInterleave_2(s1, s2, s3), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InterleavingStringTest, isInterleave_2_fail_2) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_fail_2) {
     // s2.length ≤ 100
     auto size = 100 + 1;
     string s1 = "aabcc";
@@ -145,7 +145,7 @@ TEST(InterleavingStringTest, isInterleave_2_fail_2) {
     EXPECT_EXIT(InterleavingString::isInterleave_2(s1, s2, s3), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(InterleavingStringTest, isInterleave_2_fail_3) {
+TEST(LeetCode_InterleavingStringTest, isInterleave_2_fail_3) {
     // s3.length ≤ 200
     auto size = 200 + 1;
     string s1 = "aabcc";

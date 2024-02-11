@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/binary_tree_general/CountCompleteTreeNodes.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(CountCompleteTreeNodesTest, description) {
+TEST(LeetCode_CountCompleteTreeNodesTest, description) {
     testing::internal::CaptureStdout();
     CountCompleteTreeNodes::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(CountCompleteTreeNodesTest, countNodes_1) {
+TEST(LeetCode_CountCompleteTreeNodesTest, countNodes_1) {
     auto expected = 6;
     vector<string> values{"1", "2", "3", "4", "5", "6"};
     auto root = CountCompleteTreeNodes::deserializeTree(values);
@@ -19,7 +19,7 @@ TEST(CountCompleteTreeNodesTest, countNodes_1) {
     CountCompleteTreeNodes::deleteTree(&root);
 }
 
-TEST(CountCompleteTreeNodesTest, countNodes_2) {
+TEST(LeetCode_CountCompleteTreeNodesTest, countNodes_2) {
     auto expected = 0;
     vector<string> values{};
     auto root = CountCompleteTreeNodes::deserializeTree(values);

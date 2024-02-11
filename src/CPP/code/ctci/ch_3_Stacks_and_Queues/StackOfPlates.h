@@ -6,32 +6,31 @@
 #include <vector>
 #include <stack>
 
-using namespace std;
+namespace ctci {
+    class StackOfPlates {
+    public:
+        static void description();
 
-class StackOfPlates {
-public:
-    static void description();
+        StackOfPlates();
 
-    StackOfPlates();
+        explicit StackOfPlates(int stackMaximum);
 
-    explicit StackOfPlates(int stackMaximum);
+        void push(int value);
 
-    void push(int value);
+        void pop();
 
-    void pop();
+        void pop(int stack);
 
-    void pop(int stack);
+        [[nodiscard]] int top() const;
 
-    [[nodiscard]] int top() const;
+        [[nodiscard]] bool empty() const;
 
-    [[nodiscard]] bool empty() const;
+        [[nodiscard]] int size() const;
 
-    [[nodiscard]] int size() const;
-
-private:
-    int stackMax = 10;
-    vector<stack<int>> stacks;
-};
-
+    private:
+        int stackMax = 10;
+        std::vector<std::stack<int>> stacks;
+    };
+}
 #endif
 #pragma clang diagnostic pop

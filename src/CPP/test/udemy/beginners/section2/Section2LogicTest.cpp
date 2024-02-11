@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../../../../code/udemy/beginners/section2/Section2Logic.h"
 
-TEST(Section2LogicTest, conditions) {
+TEST(Udemy_Section2LogicTest, conditions) {
     auto expected = "Condition 1 true.\n"
                     "Condition 2 false.\n"
                     "Condition 3 true.\n"
@@ -18,7 +18,7 @@ TEST(Section2LogicTest, conditions) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2LogicTest, whileLoop) {
+TEST(Udemy_Section2LogicTest, whileLoop) {
     auto expected = "Infinite while loop with break.\n"
                     "Infinite while loop over.\n"
                     "While loop execution 1\n"
@@ -30,7 +30,7 @@ TEST(Section2LogicTest, whileLoop) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2LogicTest, doWhileLoop) {
+TEST(Udemy_Section2LogicTest, doWhileLoop) {
     auto expected = "Do while loop with condition already met\n"
                     "Do while loop execution 1\n"
                     "Do while loop execution 2\n"
@@ -40,7 +40,7 @@ TEST(Section2LogicTest, doWhileLoop) {
     EXPECT_EQ(expected, testing::internal::GetCapturedStdout());
 }
 
-TEST(Section2LogicTest, forLoop) {
+TEST(Udemy_Section2LogicTest, forLoop) {
     auto expected = "For loop no inputs with a break\n"
                     "For loop with a break, only counter defined execution 0\n"
                     "For loop increment in loop execution 1\n"

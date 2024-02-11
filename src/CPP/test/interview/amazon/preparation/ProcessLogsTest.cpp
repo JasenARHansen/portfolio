@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/interview/amazon/preparation/ProcessLogs.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(ProcessLogs_Test, description) {
+TEST(Interview_ProcessLogs_Test, description) {
     testing::internal::CaptureStdout();
     ProcessLogs::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(ProcessLogs_Test, processLogs_1) {
+TEST(Interview_ProcessLogs_Test, processLogs_1) {
     vector<string> expected = {"88", "99"};
     vector<string> logs = {"88 99 200", "88 99 300", "99 32 100", "12 12 15"};
     auto threshold = 2;
@@ -20,7 +20,7 @@ TEST(ProcessLogs_Test, processLogs_1) {
     }
 }
 
-TEST(ProcessLogs_Test, processLogs_2) {
+TEST(Interview_ProcessLogs_Test, processLogs_2) {
     vector<string> expected = {"1", "2"};
     vector<string> logs = {"1 2 50", "1 7 70", "1 3 20", "2 2 17"};
     auto threshold = 2;
@@ -30,7 +30,7 @@ TEST(ProcessLogs_Test, processLogs_2) {
     }
 }
 
-TEST(ProcessLogs_Test, processLogs_3) {
+TEST(Interview_ProcessLogs_Test, processLogs_3) {
     vector<string> expected = {"7"};
     vector<string> logs = {"9 7 50", "22 7 20", "33 7 50", "22 7 30"};
     auto threshold = 3;

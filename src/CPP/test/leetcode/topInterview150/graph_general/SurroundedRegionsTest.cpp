@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/graph_general/SurroundedRegions.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(SurroundedRegionsTest, description) {
+TEST(LeetCode_SurroundedRegionsTest, description) {
     testing::internal::CaptureStdout();
     SurroundedRegions::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(SurroundedRegionsTest, solve_1) {
+TEST(LeetCode_SurroundedRegionsTest, solve_1) {
     vector<vector<char>> expected{{'X', 'X', 'X', 'X'},
                                   {'X', 'X', 'X', 'X'},
                                   {'X', 'X', 'X', 'X'},
@@ -26,7 +26,7 @@ TEST(SurroundedRegionsTest, solve_1) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_2) {
+TEST(LeetCode_SurroundedRegionsTest, solve_2) {
     vector<vector<char>> expected{{'X'}};
     vector<vector<char>> board{{'X'}};
     SurroundedRegions::solve(board);
@@ -36,7 +36,7 @@ TEST(SurroundedRegionsTest, solve_2) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_3) {
+TEST(LeetCode_SurroundedRegionsTest, solve_3) {
     vector<vector<char>> expected{{'O', 'X', 'X', 'O', 'X'},
                                   {'X', 'X', 'X', 'X', 'O'},
                                   {'X', 'X', 'X', 'O', 'X'},
@@ -54,7 +54,7 @@ TEST(SurroundedRegionsTest, solve_3) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_4) {
+TEST(LeetCode_SurroundedRegionsTest, solve_4) {
     vector<vector<char>> expected{{'X', 'X', 'X', 'X', 'X'},
                                   {'X', 'X', 'X', 'X', 'X'},
                                   {'X', 'X', 'X', 'X', 'X'},
@@ -72,7 +72,7 @@ TEST(SurroundedRegionsTest, solve_4) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_5) {
+TEST(LeetCode_SurroundedRegionsTest, solve_5) {
     vector<vector<char>> expected{{'O', 'X', 'O', 'O', 'X', 'X'},
                                   {'O', 'X', 'X', 'X', 'O', 'X'},
                                   {'X', 'O', 'O', 'X', 'O', 'O'},
@@ -92,7 +92,7 @@ TEST(SurroundedRegionsTest, solve_5) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_6) {
+TEST(LeetCode_SurroundedRegionsTest, solve_6) {
     vector<vector<char>> expected{{'X', 'O', 'X', 'O', 'X', 'O', 'O', 'O', 'X', 'O'},
                                   {'X', 'O', 'O', 'X', 'X', 'X', 'O', 'O', 'O', 'X'},
                                   {'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'X', 'X'},
@@ -120,28 +120,28 @@ TEST(SurroundedRegionsTest, solve_6) {
     }
 }
 
-TEST(SurroundedRegionsTest, solve_fail_1) {
+TEST(LeetCode_SurroundedRegionsTest, solve_fail_1) {
     // 1 ≤ board.length
     auto size = 1 - 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SurroundedRegionsTest, solve_fail_2) {
+TEST(LeetCode_SurroundedRegionsTest, solve_fail_2) {
     // board.length ≤ 200
     auto size = 200 + 1;
     vector<vector<char>> board(size);
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SurroundedRegionsTest, solve_fail_3) {
+TEST(LeetCode_SurroundedRegionsTest, solve_fail_3) {
     // 1 ≤ board{i].length
     auto size = 1 - 1;
     vector<vector<char>> board{vector<char>(size)};
     EXPECT_EXIT(SurroundedRegions::solve(board), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(SurroundedRegionsTest, solve_fail_4) {
+TEST(LeetCode_SurroundedRegionsTest, solve_fail_4) {
     // board{i].length ≤ 200
     auto size = 200 + 1;
     vector<vector<char>> board{vector<char>(size)};

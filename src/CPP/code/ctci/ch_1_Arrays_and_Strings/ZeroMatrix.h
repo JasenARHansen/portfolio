@@ -6,18 +6,15 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+namespace ctci {
+    class ZeroMatrix {
+    public:
+        static void description();
 
-class ZeroMatrix {
-public:
-    static void description();
+        static std::vector<std::vector<int>> zeroMatrix(std::vector<std::vector<int>> matrix);
 
-    static vector<vector<int>> zeroMatrix(vector<vector<int>> matrix);
-
-    static void zeroMatrixInPlace(vector<vector<int>> *matrix);
-
-private:
-};
-
+        static void zeroMatrixInPlace(std::vector<std::vector<int>> *matrix);
+    };
+}
 #endif
 #pragma clang diagnostic pop

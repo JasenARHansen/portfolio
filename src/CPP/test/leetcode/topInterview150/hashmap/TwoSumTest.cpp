@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../code/leetcode/topInterview150/hashmap/TwoSum.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(TwoSumTest, description) {
+TEST(LeetCode_TwoSumTest, description) {
     testing::internal::CaptureStdout();
     TwoSum::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(TwoSumTest, twoSum_1) {
+TEST(LeetCode_TwoSumTest, twoSum_1) {
     vector<int> expected{0, 1};
     vector<int> nums{2, 7, 11, 15};
     auto target = 9;
@@ -18,7 +18,7 @@ TEST(TwoSumTest, twoSum_1) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(TwoSumTest, twoSum_2) {
+TEST(LeetCode_TwoSumTest, twoSum_2) {
     vector<int> expected{1, 2};
     vector<int> nums{3, 2, 4};
     auto target = 6;
@@ -26,7 +26,7 @@ TEST(TwoSumTest, twoSum_2) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(TwoSumTest, twoSum_3) {
+TEST(LeetCode_TwoSumTest, twoSum_3) {
     vector<int> expected{0, 1};
     vector<int> nums{3, 3};
     auto target = 6;
@@ -34,7 +34,7 @@ TEST(TwoSumTest, twoSum_3) {
     EXPECT_EQ(expected, result);
 }
 
-TEST(TwoSumTest, twoSum_fail_1) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_1) {
     // 2 ≤ nums.length
     auto size = 2 - 1;
     vector<int> nums(size);
@@ -42,7 +42,7 @@ TEST(TwoSumTest, twoSum_fail_1) {
     EXPECT_EXIT(TwoSum::twoSum(nums, target), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TwoSumTest, twoSum_fail_2) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_2) {
     // nums.length ≤ 10^4
     auto size = (int) pow(10, 4) + 1;
     vector<int> nums(size);
@@ -50,7 +50,7 @@ TEST(TwoSumTest, twoSum_fail_2) {
     EXPECT_EXIT(TwoSum::twoSum(nums, target), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TwoSumTest, twoSum_fail_3) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_3) {
     // -10^9 ≤ nums[i]
     auto size = (int) -pow(10, 9) - 1;
     vector<int> nums{2, size};
@@ -58,7 +58,7 @@ TEST(TwoSumTest, twoSum_fail_3) {
     EXPECT_EXIT(TwoSum::twoSum(nums, target), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TwoSumTest, twoSum_fail_4) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_4) {
     // nums[i] ≤ 10^9
     auto size = (int) pow(10, 9) + 1;
     vector<int> nums{2, size};
@@ -66,14 +66,14 @@ TEST(TwoSumTest, twoSum_fail_4) {
     EXPECT_EXIT(TwoSum::twoSum(nums, target), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TwoSumTest, twoSum_fail_5) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_5) {
     // -10^9 ≤ target
     vector<int> nums{2, 7, 11, 15};
     auto target = (int) -pow(10, 9) - 1;
     EXPECT_EXIT(TwoSum::twoSum(nums, target), ::testing::ExitedWithCode(3), "");
 }
 
-TEST(TwoSumTest, twoSum_fail_6) {
+TEST(LeetCode_TwoSumTest, twoSum_fail_6) {
     // target ≤ 10^9
     vector<int> nums{2, 7, 11, 15};
     auto target = (int) pow(10, 9) + 1;

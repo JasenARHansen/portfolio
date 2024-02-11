@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/hackerrank/prepare/dataStructures/tree/LevelOrderTraversal.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(LevelOrderTraversalTest, description) {
+TEST(HackerRank_LevelOrderTraversalTest, description) {
     testing::internal::CaptureStdout();
     LevelOrderTraversal::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(LevelOrderTraversalTest, levelOrder_1) {
+TEST(HackerRank_LevelOrderTraversalTest, levelOrder_1) {
     auto expected = "1 2 5 3 6 4\n";
     vector<string> values{"1", "null", "2", "null", "5", "3", "6", "null", "4"};
     auto root = LevelOrderTraversal::deserializeTree(values);

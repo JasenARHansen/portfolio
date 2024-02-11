@@ -4,13 +4,13 @@
 #include "gtest/gtest.h"
 #include "../../../../../code/interview/meta/preparation/queues/QueueRemovals.cpp"  // NOLINT : Ignore .cpp import
 
-TEST(QueueRemovalsTest, description) {
+TEST(Interview_QueueRemovalsTest, description) {
     testing::internal::CaptureStdout();
     QueueRemovals::description();
     EXPECT_NE("", testing::internal::GetCapturedStdout());
 }
 
-TEST(QueueRemovalsTest, findPositions_1) {
+TEST(Interview_QueueRemovalsTest, findPositions_1) {
     vector<int> expected{5, 6, 4, 1, 2};
     vector<int> arr{1, 2, 2, 3, 4, 5};
     auto x = 5;

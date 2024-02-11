@@ -5,24 +5,24 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
+using namespace ctci;
 
 void MinimalTree::description() {
-    cout << R"(Trees and Graphs: Minimal Tree
+    std::cout << R"(Trees and Graphs: Minimal Tree
     Given a sorted (increasing order) array with unique integer elements, write an algorithm to create
-     a binary search tree with minimal height.)" << endl;
+     a binary search tree with minimal height.)" << std::endl;
 }
 
-MinimalTree::Node *MinimalTree::generateMinimalTree(const vector<int> &data) {
+MinimalTree::Node *MinimalTree::generateMinimalTree(const std::vector<int> &data) {
     Node *head = nullptr;
     if (!data.empty()) {
         auto middle = ((int) data.size()) / 2;
         head = new Node(data.at(middle));
-        vector<int> left = {data.begin(), data.begin() + middle};
+        std::vector<int> left = {data.begin(), data.begin() + middle};
         if (!left.empty()) {
             head->leftChild = generateMinimalTree(left);
         }
-        vector<int> right = {data.begin() + middle + 1, data.end()};
+        std::vector<int> right = {data.begin() + middle + 1, data.end()};
         if (!right.empty()) {
             head->rightChild = generateMinimalTree(right);
         }
@@ -32,7 +32,7 @@ MinimalTree::Node *MinimalTree::generateMinimalTree(const vector<int> &data) {
 
 void MinimalTree::deleteTree(Node **node) {
     if (*node != nullptr) {
-        queue<Node *> nodes;
+        std::queue<Node *> nodes;
         nodes.emplace(*node);
         Node *working;
         while (!nodes.empty()) {
@@ -50,10 +50,10 @@ void MinimalTree::deleteTree(Node **node) {
     }
 }
 
-vector<int> MinimalTree::getLevelOrder(Node *node) {
-    vector<int> result;
+std::vector<int> MinimalTree::getLevelOrder(Node *node) {
+    std::vector<int> result;
     if (node != nullptr) {
-        queue<Node *> processing;
+        std::queue<Node *> processing;
         processing.push(node);
         Node *working;
         while (!processing.empty()) {
