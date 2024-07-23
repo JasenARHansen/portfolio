@@ -13,7 +13,6 @@ TEST(CtCI_BinaryToStringTest, description) {
 }
 
 TEST(CtCI_BinaryToStringTest, binaryToString_1) {
-    std::string foo;
     std::vector<std::string> expected = {"ERROR", "ERROR", "1", "0", "ERROR", "0.1"};
     std::vector<double> data = {2, -1, 1, 0, 0.72, 0.5};
     EXPECT_EQ(expected.size(), data.size());

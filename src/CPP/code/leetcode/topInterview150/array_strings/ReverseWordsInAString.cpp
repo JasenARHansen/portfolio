@@ -60,7 +60,6 @@ public:
             } else {
                 result.append(" ");
             }
-            string foo = s.substr(left + 1, right - left);
             result.append(s.substr(left + 1, right - left));
             index = left;
         }

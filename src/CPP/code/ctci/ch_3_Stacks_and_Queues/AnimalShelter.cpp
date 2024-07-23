@@ -1,7 +1,6 @@
 #include "AnimalShelter.h"
 #include <iostream>
 #include <algorithm>
-#include <utility>
 
 using namespace ctci;
 

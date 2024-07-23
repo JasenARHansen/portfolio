@@ -6,7 +6,6 @@
 
 #include <string>
 #include <queue>
-#include <utility>
 
 namespace ctci {
     class AnimalShelter {

@@ -10,7 +10,7 @@ void BinaryToString::description() {
      binary representation.
     If the number cannot be represented accurately in binary with at most 32 characters,
      print "ERROR.
-    Note: This is a human readable binary number, not the bit representation the machine uses.")" << std::endl;
+    Note: This is a human readable binary number, not the bit representation the machine uses.)" << std::endl;
 }
 
 std::string BinaryToString::binaryToString(double value) {

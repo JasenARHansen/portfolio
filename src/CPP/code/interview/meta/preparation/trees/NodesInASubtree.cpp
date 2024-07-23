@@ -2,7 +2,6 @@
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 
 #include <iostream>
-#include <utility>
 #include <vector>
 #include <queue>
 

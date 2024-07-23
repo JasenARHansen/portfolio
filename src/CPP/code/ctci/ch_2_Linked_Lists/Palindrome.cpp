@@ -39,7 +39,6 @@ bool Palindrome::isPalindrome(Node *head) {
     auto data = reverse(head);
     auto reversed = data.second;
     auto result = true;
-    int foo = data.first / 2;
     for (auto index = 0; index < data.first / 2; index++) {
         if (head->data != reversed->data) {
             result = false;
