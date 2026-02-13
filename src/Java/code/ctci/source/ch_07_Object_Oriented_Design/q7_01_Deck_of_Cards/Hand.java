@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class Hand<T extends Card> {
     protected final ArrayList<T> cards = new ArrayList<>();
 
-    public void addCard(T card) {
-        cards.add(card);
+    public void addCard(T Card) {
+        cards.add(Card);
     }
 
     public void print() {
-        for (Card card : cards) {
-            card.print();
+        for (Card Card : cards) {
+            Card.print();
         }
     }
 
-    public int score() {
-        int score = 0;
-        for (T card : cards) {
-            score += card.value();
+    public int points() {
+        int points = 0;
+        for (T Card : cards) {
+            points += Card.value();
         }
-        return score;
+        return points;
     }
 }

@@ -18,9 +18,9 @@ public class SuitTests {
     @Test
     public void BlackJackHand() {
         printTestHeader(name.getMethodName());
-        Suit suit = Suit.Club;
-        int result = suit.getValue();
+        Suit Suit = Suit.Club;
+        int result = Suit.getValue();
         assertEquals(0, result);
-        System.out.format("\tSuit %s has value %d\n", suit, result);
+        System.out.format("\tSuit %s has value %d\n", Suit, result);
     }
 }

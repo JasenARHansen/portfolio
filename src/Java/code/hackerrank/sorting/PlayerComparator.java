@@ -11,19 +11,19 @@ public class PlayerComparator implements Comparator<Player> {
       : a string.
       : an integer.
   Given an array of
-  Player objects, write a comparator that sorts them in order of decreasing score.
-  If or more players have the same score, sort those players alphabetically ascending by name.
+  Player objects, write a comparator that sorts them in order of decreasing points.
+  If or more players have the same points, sort those players alphabetically ascending by name.
   To do this, you must create a Checker class that implements the Comparator interface, then
    write an int compare(Player a, Player b) method implementing the Comparator.compare(T o1, T o2)
    method.
   In short, when sorting in ascending order, a comparator function returns if , if , and if.
   Declare a Checker class that implements the comparator method as described.
-  It should sort first descending by score, then ascending by name.
+  It should sort first descending by points, then ascending by name.
   The code stub reads the input, creates a list of Player objects, uses your method to sort
    the data, and prints it out properly.
   Example
   Sort the list as.
-  Sort first descending by score, then ascending by name.
+  Sort first descending by points, then ascending by name.
   Input Format
    The first line contains an integer, the number of players.
    Each of the next lines contains a player's and, a string and an integer.
@@ -48,13 +48,13 @@ public class PlayerComparator implements Comparator<Player> {
     aakansha 75
     heraldo 50
   Explanation
-  The players are first sorted descending by score, then ascending by name. */
+  The players are first sorted descending by points, then ascending by name. */
 
     @Override
     public int compare(Player a, Player b) {
-        if (b.score() > a.score()) {
+        if (b.points() > a.points()) {
             return 1;
-        } else if (b.score() == a.score()) {
+        } else if (b.points() == a.points()) {
             return a.name().compareTo(b.name());
         } else {
             return -1;

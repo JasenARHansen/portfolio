@@ -28,10 +28,10 @@ public class ComparatorTests {
         Arrays.sort(player, checker);
         for (int index = 0; index < player.length; index++) {
             System.out.format(
-                    "\tAfter sorting, player %d is %s with a score of  %d.\n",
-                    index, player[index].name(), expected[index].score());
+                    "\tAfter sorting, player %d is %s with a points of  %d.\n",
+                    index, player[index].name(), expected[index].points());
             assertEquals(expected[index].name(), player[index].name());
-            assertEquals(expected[index].score(), player[index].score());
+            assertEquals(expected[index].points(), player[index].points());
         }
     }
 
@@ -56,10 +56,10 @@ public class ComparatorTests {
         Arrays.sort(player, checker);
         for (int index = 0; index < player.length; index++) {
             System.out.format(
-                    "\tAfter sorting, player %d is %s with a score of  %d.\n",
-                    index, player[index].name(), expected[index].score());
+                    "\tAfter sorting, player %d is %s with a points of  %d.\n",
+                    index, player[index].name(), expected[index].points());
             assertEquals(expected[index].name(), player[index].name());
-            assertEquals(expected[index].score(), player[index].score());
+            assertEquals(expected[index].points(), player[index].points());
         }
     }
 
@@ -83,10 +83,10 @@ public class ComparatorTests {
         Arrays.sort(player, checker);
         for (int index = 0; index < player.length; index++) {
             System.out.format(
-                    "\tAfter sorting, player %d is %s with a score of  %d.\n",
-                    index, player[index].name(), expected[index].score());
+                    "\tAfter sorting, player %d is %s with a points of  %d.\n",
+                    index, player[index].name(), expected[index].points());
             assertEquals(expected[index].name(), player[index].name());
-            assertEquals(expected[index].score(), player[index].score());
+            assertEquals(expected[index].points(), player[index].points());
         }
     }
 }

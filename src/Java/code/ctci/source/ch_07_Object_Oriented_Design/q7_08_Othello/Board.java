@@ -87,7 +87,7 @@ public class Board {
         if (flipped < 0) {
             return false;
         }
-        /* flip the piece, and update the score. */
+        /* flip the piece, and update the points. */
         board[row][column] = new Piece(color);
         updateScore(color, flipped + 1);
         return true;

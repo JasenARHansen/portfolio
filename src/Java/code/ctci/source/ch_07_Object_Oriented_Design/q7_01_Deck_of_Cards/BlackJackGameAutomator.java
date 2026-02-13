@@ -44,11 +44,11 @@ public class BlackJackGameAutomator {
         for (int i = 0; i < hands.length; i++) {
             BlackJackHand hand = hands[i];
             if (!hand.busted()) {
-                if (hand.score() > winningScore) {
-                    winningScore = hand.score();
+                if (hand.points() > winningScore) {
+                    winningScore = hand.points();
                     winners.clear();
                     winners.add(i);
-                } else if (hand.score() == winningScore) {
+                } else if (hand.points() == winningScore) {
                     winners.add(i);
                 }
             }
@@ -60,9 +60,9 @@ public class BlackJackGameAutomator {
         ArrayList<BlackJackCard> cards = new ArrayList<>();
         for (int i = 1; i <= 13; i++) {
             for (int j = 0; j <= 3; j++) {
-                Suit suit = Suit.getSuitFromValue(j);
-                BlackJackCard card = new BlackJackCard(i, suit);
-                cards.add(card);
+                Suit Suit = Suit.getSuitFromValue(j);
+                BlackJackCard Card = new BlackJackCard(i, Suit);
+                cards.add(Card);
             }
         }
         deck = new Deck<>();
@@ -80,12 +80,12 @@ public class BlackJackGameAutomator {
     }
 
     public boolean playHand(BlackJackHand hand) {
-        while (hand.score() < HIT_UNTIL) {
-            BlackJackCard card = deck.dealCard();
-            if (card == null) {
+        while (hand.points() < HIT_UNTIL) {
+            BlackJackCard Card = deck.dealCard();
+            if (Card == null) {
                 return false;
             }
-            hand.addCard(card);
+            hand.addCard(Card);
         }
         return true;
     }
@@ -97,7 +97,7 @@ public class BlackJackGameAutomator {
 
     public void printHandsAndScore() {
         for (int i = 0; i < hands.length; i++) {
-            System.out.print("Hand " + i + " (" + hands[i].score() + "): ");
+            System.out.print("Hand " + i + " (" + hands[i].points() + "): ");
             hands[i].print();
             System.out.println();
         }

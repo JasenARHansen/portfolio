@@ -20,9 +20,9 @@ public class BlackJackCard extends Card {
     public int value() {
         if (isAce()) { // Ace
             return 1;
-        } else if (isFaceCard()) { // Face card
+        } else if (isFaceCard()) { // Face Card
             return 10;
-        } else { // Number card
+        } else { // Number Card
             return faceValue;
         }
     }

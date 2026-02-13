@@ -7,18 +7,18 @@ public class BlackJackHand extends Hand<BlackJackCard> {
     }
 
     public boolean busted() {
-        return score() > 21;
+        return points() > 21;
     }
 
-    public int score() {
+    public int points() {
         ArrayList<Integer> scores = possibleScores();
         int maxUnder = Integer.MIN_VALUE;
         int minOver = Integer.MAX_VALUE;
-        for (int score : scores) {
-            if (score > 21 && score < minOver) {
-                minOver = score;
-            } else if (score <= 21 && score > maxUnder) {
-                maxUnder = score;
+        for (int points : scores) {
+            if (points > 21 && points < minOver) {
+                minOver = points;
+            } else if (points <= 21 && points > maxUnder) {
+                maxUnder = points;
             }
         }
         return maxUnder == Integer.MIN_VALUE ? minOver : maxUnder;
@@ -29,28 +29,28 @@ public class BlackJackHand extends Hand<BlackJackCard> {
         if (cards.size() == 0) {
             return scores;
         }
-        for (BlackJackCard card : cards) {
-            addCardToScoreList(card, scores);
+        for (BlackJackCard Card : cards) {
+            addCardToScoreList(Card, scores);
         }
         return scores;
     }
 
-    private void addCardToScoreList(BlackJackCard card, ArrayList<Integer> scores) {
+    private void addCardToScoreList(BlackJackCard Card, ArrayList<Integer> scores) {
         if (scores.size() == 0) {
             scores.add(0);
         }
         int length = scores.size();
         for (int i = 0; i < length; i++) {
-            int score = scores.get(i);
-            scores.set(i, score + card.minValue());
-            if (card.minValue() != card.maxValue()) {
-                scores.add(score + card.maxValue());
+            int points = scores.get(i);
+            scores.set(i, points + Card.minValue());
+            if (Card.minValue() != Card.maxValue()) {
+                scores.add(points + Card.maxValue());
             }
         }
     }
 
     public boolean is21() {
-        return score() == 21;
+        return points() == 21;
     }
 
     public boolean isBlackJack() {

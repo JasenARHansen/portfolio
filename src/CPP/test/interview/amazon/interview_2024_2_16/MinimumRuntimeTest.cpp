@@ -32,4 +32,5 @@ TEST(Interview_Amazon_Interview_2024_2_16_MinimumRuntime_Test, calculateRuntime_
     auto result = MinimumRuntime::calculateRuntimeTimeline(tasks);
     EXPECT_EQ(expected, result);
 }
+
 #endif

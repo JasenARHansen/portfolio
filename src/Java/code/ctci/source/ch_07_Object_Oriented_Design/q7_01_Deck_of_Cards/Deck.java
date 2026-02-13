@@ -7,7 +7,7 @@ import java.util.ArrayList;
 @SuppressWarnings({"SpellCheckingInspection", "unchecked", "unused"})
 public class Deck<T extends Card> {
     private ArrayList<T> cards;
-    private int dealtIndex = 0; // marks first undealt card
+    private int dealtIndex = 0; // marks first undealt Card
 
     public Deck() {
     }
@@ -19,9 +19,9 @@ public class Deck<T extends Card> {
         T[] hand = (T[]) new Card[number];
         int count = 0;
         while (count < number) {
-            T card = dealCard();
-            if (card != null) {
-                hand[count] = card;
+            T Card = dealCard();
+            if (Card != null) {
+                hand[count] = Card;
                 count++;
             }
         }
@@ -36,15 +36,15 @@ public class Deck<T extends Card> {
         if (remainingCards() == 0) {
             return null;
         }
-        T card = cards.get(dealtIndex);
-        card.markUnavailable();
+        T Card = cards.get(dealtIndex);
+        Card.markUnavailable();
         dealtIndex++;
-        return card;
+        return Card;
     }
 
     public void print() {
-        for (Card card : cards) {
-            card.print();
+        for (Card Card : cards) {
+            Card.print();
         }
     }
 

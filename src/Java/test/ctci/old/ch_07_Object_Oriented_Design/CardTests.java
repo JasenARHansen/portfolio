@@ -20,30 +20,30 @@ public class CardTests {
     @Test
     public void Card() {
         printTestHeader(name.getMethodName());
-        Suit suit = Suit.Club;
+        Suit Suit = Suit.Club;
         int value = 11;
-        Card card = new Card(suit, value);
-        assertNotNull(card);
+        Card Card = new Card(Suit, value);
+        assertNotNull(Card);
     }
 
     @Test
     public void getSuit() {
         printTestHeader(name.getMethodName());
-        Suit suit = Suit.Club;
+        Suit Suit = Suit.Club;
         int value = 11;
-        Card card = new Card(suit, value);
-        Suit result = card.suit();
-        assertEquals(suit, result);
+        Card Card = new Card(Suit, value);
+        Suit result = Card.Suit();
+        assertEquals(Suit, result);
         System.out.format("\tgetSuit %s\n", result);
     }
 
     @Test
     public void getValue() {
         printTestHeader(name.getMethodName());
-        Suit suit = Suit.Club;
+        Suit Suit = Suit.Club;
         int value = 11;
-        Card card = new Card(suit, value);
-        int result = card.value();
+        Card Card = new Card(Suit, value);
+        int result = Card.value();
         assertEquals(value, result);
         System.out.format("\tgetValue %d\n", result);
     }
