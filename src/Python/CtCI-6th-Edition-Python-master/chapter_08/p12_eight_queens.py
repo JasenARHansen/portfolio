@@ -3,7 +3,6 @@ import unittest
 
 
 def position_is_valid(row, col, board):
-
     # Check if there are any queens in the rows above this position
     for cur_row in range(row):
         if board[cur_row][col] == "Q":

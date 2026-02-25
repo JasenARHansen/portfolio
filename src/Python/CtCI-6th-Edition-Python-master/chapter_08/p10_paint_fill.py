@@ -4,11 +4,11 @@ from typing import List
 
 def flood_fill(screen: List[List[int]], i: int, j: int, color: int, new_color: int):
     if (
-        i < 0
-        or i >= len(screen)
-        or j < 0
-        or j >= len(screen[0])
-        or screen[i][j] != color
+            i < 0
+            or i >= len(screen)
+            or j < 0
+            or j >= len(screen[0])
+            or screen[i][j] != color
     ):
         return
     screen[i][j] = new_color
@@ -19,7 +19,7 @@ def flood_fill(screen: List[List[int]], i: int, j: int, color: int, new_color: i
 
 
 def paint_fill(
-    screen: List[List[int]], r: int, c: int, new_color: int
+        screen: List[List[int]], r: int, c: int, new_color: int
 ) -> List[List[int]]:
     if not screen:
         return None

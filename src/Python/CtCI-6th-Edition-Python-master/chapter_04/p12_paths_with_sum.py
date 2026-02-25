@@ -1,5 +1,6 @@
 from chapter_04.binary_tree import BinaryTree
 
+
 # Brute Force O(NlogN)
 
 
@@ -13,9 +14,9 @@ def _count_sum_paths(node, target_sum):
     if not node:
         return 0
     return (
-        pathsfrom(node, target_sum)
-        + _count_sum_paths(node.left, target_sum)
-        + _count_sum_paths(node.right, target_sum)
+            pathsfrom(node, target_sum)
+            + _count_sum_paths(node.left, target_sum)
+            + _count_sum_paths(node.right, target_sum)
     )
 
 
@@ -27,7 +28,7 @@ def pathsfrom(node, target_sum):
     if target_sum == 0:
         counter += 1
     return (
-        counter + pathsfrom(node.left, target_sum) + pathsfrom(node.right, target_sum)
+            counter + pathsfrom(node.left, target_sum) + pathsfrom(node.right, target_sum)
     )
 
 

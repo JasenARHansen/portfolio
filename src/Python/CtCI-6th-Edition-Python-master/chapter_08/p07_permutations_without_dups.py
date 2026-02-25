@@ -40,7 +40,7 @@ def get_perms_inner_2(prefix, remainder, result):
     length = len(remainder)
     for i in range(length):
         before = remainder[:i]
-        after = remainder[i + 1 :]
+        after = remainder[i + 1:]
         c = remainder[i]
         get_perms_inner_2(prefix + c, before + after, result)
 

@@ -63,7 +63,7 @@ class NumericLinkedList(LinkedList):
     def numeric_value(self):
         number = 0
         for place, node in enumerate(self):
-            number += node.value * 10**place
+            number += node.value * 10 ** place
         return number
 
 
@@ -102,8 +102,8 @@ def test_linked_list_addition(linked_list_summing_function, a, b, expected):
     ll_result = linked_list_summing_function(ll_a, ll_b)
     assert ll_result.values() == expected
     assert (
-        ll_a.numeric_value() + ll_b.numeric_value()
-        == NumericLinkedList(expected).numeric_value()
+            ll_a.numeric_value() + ll_b.numeric_value()
+            == NumericLinkedList(expected).numeric_value()
     )
 
     ll_result_reverse = linked_list_summing_function(ll_b, ll_a)

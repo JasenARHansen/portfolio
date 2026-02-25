@@ -51,7 +51,7 @@ def find_bst_sequences_backtracking(bst):
             return
 
         for i in range(len(choices)):
-            nextchoices = choices[:i] + choices[i + 1 :]
+            nextchoices = choices[:i] + choices[i + 1:]
             if choices[i].left:
                 nextchoices += [choices[i].left]
             if choices[i].right:

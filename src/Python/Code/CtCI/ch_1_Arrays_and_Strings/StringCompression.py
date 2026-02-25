@@ -1,4 +1,3 @@
-
 class StringCompression(object):
     @staticmethod
     def get_description():
@@ -8,7 +7,6 @@ class StringCompression(object):
     If the "compressed" string would not become smaller than the original string, your method should return
     the original string.
     You can assume the string has only uppercase and lowercase letters (a - z).""")
-
 
     @staticmethod
     def compress(base: str) -> str:
@@ -20,7 +18,7 @@ class StringCompression(object):
         counter = 0
         while char_list:
             if char_list[0] == last:
-                counter+=1
+                counter += 1
                 char_list.pop(0)
             else:
                 if counter != 0:

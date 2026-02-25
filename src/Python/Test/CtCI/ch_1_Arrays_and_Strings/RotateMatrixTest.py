@@ -76,7 +76,6 @@ class TestRotateMatrix(unittest.TestCase):
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
 
-
     def test_RotateMatrixInPlace(self) -> None:
         """Nothing defined"""
         test_cases = [
@@ -103,6 +102,7 @@ class TestRotateMatrix(unittest.TestCase):
             result = RotateMatrix.rotate_matrix_in_place(matrix=test_matrix)
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
+
 
 if __name__ == "__main__":
     unittest.main()

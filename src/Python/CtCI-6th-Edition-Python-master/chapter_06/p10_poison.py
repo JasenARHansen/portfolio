@@ -12,7 +12,7 @@ class _TestStrip:
 
 class World:
     def __init__(
-        self, num_test_strips: int, num_bottles: int, poisoned_bottle_num: int
+            self, num_test_strips: int, num_bottles: int, poisoned_bottle_num: int
     ) -> None:
         self._num_test_strips = num_test_strips
         self._test_strips = [_TestStrip() for i in range(num_test_strips)]
@@ -47,8 +47,8 @@ class World:
         res: List[int] = []
         for test_strip_num, test_strip in enumerate(self._test_strips):
             if (
-                test_strip.has_poison
-                and self.day - test_strip.day_poisoned >= DAYS_FOR_RESULT
+                    test_strip.has_poison
+                    and self.day - test_strip.day_poisoned >= DAYS_FOR_RESULT
             ):
                 res.append(test_strip_num)
         return res

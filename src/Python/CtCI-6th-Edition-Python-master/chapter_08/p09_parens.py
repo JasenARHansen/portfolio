@@ -13,7 +13,7 @@ def next_permutation(arr):
         j -= 1
     arr[i - 1], arr[j] = arr[j], arr[i - 1]
 
-    arr[i:] = arr[len(arr) - 1 : i - 1 : -1]
+    arr[i:] = arr[len(arr) - 1: i - 1: -1]
     return True
 
 
@@ -39,7 +39,7 @@ def generate_parentheses_permutations_brute_force(number_of_pairs):
 
 def generate_parentheses_permutations_recursive_1(n):
     def helper(
-        open_parentheses_remaining, closed_parentheses_remaining, current_string
+            open_parentheses_remaining, closed_parentheses_remaining, current_string
     ):
         if len(current_string) == n * 2:
             result.append(current_string)

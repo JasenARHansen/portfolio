@@ -33,19 +33,20 @@ class TestFile(unittest.TestCase):
             f" {found_not_expected}",
         )
 
+
 # noinspection SpellCheckingInspection,DuplicatedCode
 class TestHadrian(unittest.TestCase):
 
     def test_init(self) -> None:
         my_class = Hadrian()
         self.assertIsNotNone(my_class)
-        
+
     def test_generate_board(self) -> None:
         """Test description message"""
-        board = Hadrian.generate_board(rows= 6, cols= 8)
+        board = Hadrian.generate_board(rows=6, cols=8)
         self.assertIsNotNone(board)
 
-    def test_traverse_step_count(self) -> None:
+    def test_traverse_step_count_v1(self) -> None:
         """Test description message"""
         # start_row: int, start_col: int, stop_row: int, stop_col: int, board_rows: int, board_cols
         test_cases = {
@@ -53,11 +54,12 @@ class TestHadrian(unittest.TestCase):
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_count(start_row=start_row, start_col=start_col, stop_row=stop_row, stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
+            result = Hadrian.traverse_step_count_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
+                                                    stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
 
-    def test_traverse_step_path(self) -> None:
+    def test_traverse_step_path_v1(self) -> None:
         """Test description message"""
         # start_row: int, start_col: int, stop_row: int, stop_col: int, board_rows: int, board_cols
         test_cases = {
@@ -65,8 +67,33 @@ class TestHadrian(unittest.TestCase):
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_path(start_row=start_row, start_col=start_col, stop_row=stop_row, stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
+            result = Hadrian.traverse_step_path_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
+                                                   stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, len(result))
 
+    def test_traverse_step_count_v2(self) -> None:
+        """Test description message"""
+        # start_row: int, start_col: int, stop_row: int, stop_col: int, board_rows: int, board_cols
+        test_cases = {
+            (2, 3, 4, 6, 6, 8, 3)
+        }
 
+        for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
+            result = Hadrian.traverse_step_count_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
+                                                    stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
+            self.assertIsNotNone(result)
+            self.assertEqual(expected, result)
+
+    def test_traverse_step_path_v2(self) -> None:
+        """Test description message"""
+        # start_row: int, start_col: int, stop_row: int, stop_col: int, board_rows: int, board_cols
+        test_cases = {
+            (2, 3, 4, 6, 6, 8, 4)
+        }
+
+        for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
+            result = Hadrian.traverse_step_path_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
+                                                   stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
+            self.assertIsNotNone(result)
+            self.assertEqual(expected, len(result))

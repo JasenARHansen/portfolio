@@ -60,7 +60,7 @@ def calculate(s):
                 op_stack.push(x)
             else:
                 while (
-                    not op_stack.is_empty() and priority[x] <= priority[op_stack.peek()]
+                        not op_stack.is_empty() and priority[x] <= priority[op_stack.peek()]
                 ):
                     res = collapse(num_stack.pop(), num_stack.pop(), op_stack.pop())
                     num_stack.push(res)

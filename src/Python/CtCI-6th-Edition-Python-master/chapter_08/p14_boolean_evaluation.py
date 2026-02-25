@@ -17,7 +17,7 @@ def count_ways(exp: str, result: bool, memo) -> int:
     ways = 0
     for i in range(1, len(exp), 2):
         left = exp[:i]
-        right = exp[i + 1 :]
+        right = exp[i + 1:]
 
         left_true = count_ways(left, True, memo)
         left_false = count_ways(left, False, memo)
@@ -29,9 +29,9 @@ def count_ways(exp: str, result: bool, memo) -> int:
         total_true = 0
         if exp[i] == "|":
             total_true = (
-                left_true * right_true
-                + left_false * right_true
-                + left_true * right_false
+                    left_true * right_true
+                    + left_false * right_true
+                    + left_true * right_false
             )
         elif exp[i] == "&":
             total_true = left_true * right_true

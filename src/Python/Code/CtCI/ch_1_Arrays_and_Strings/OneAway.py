@@ -13,13 +13,11 @@ class OneAway(object):
         pales , pale -> true
         pale, bake -> false""")
 
-
-
     @staticmethod
     def is_one_away(base: str, test: str) -> bool:
         if base == test:
             return True
-        if abs(len(base) - len (test)) > 1:
+        if abs(len(base) - len(test)) > 1:
             return False
         edited = False
         base_list = list(base)

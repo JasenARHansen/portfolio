@@ -6,9 +6,9 @@ class ComparableTreeNode(Node):
         if not isinstance(other, ComparableTreeNode):
             return False
         return (
-            self.key == other.key
-            and self.left == other.left
-            and self.right == other.right
+                self.key == other.key
+                and self.left == other.left
+                and self.right == other.right
         )
 
 

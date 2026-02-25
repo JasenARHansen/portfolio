@@ -20,9 +20,9 @@ def contains_subwords(word, is_original_word, mapping):
         right = word[i:]
 
         if (
-            (left in mapping)
-            and (mapping[left] is True)
-            and (contains_subwords(right, False, mapping))
+                (left in mapping)
+                and (mapping[left] is True)
+                and (contains_subwords(right, False, mapping))
         ):
             return True
 

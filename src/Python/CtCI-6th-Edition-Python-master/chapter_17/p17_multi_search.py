@@ -29,7 +29,7 @@ class Trie:
             if letter in node.children.keys():
                 node = node.children[letter]
                 if node.is_word:
-                    res.append(word[0 : i + 1])
+                    res.append(word[0: i + 1])
             else:
                 break
         return res

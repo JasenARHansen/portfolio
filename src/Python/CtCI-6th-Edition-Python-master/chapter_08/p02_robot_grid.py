@@ -17,9 +17,9 @@ def is_path(maze, row, col, path):
 
     # if there's a path from the start to here, add my location
     if (
-        is_at_origin
-        or is_path(maze, row, col - 1, path)
-        or is_path(maze, row - 1, col, path)
+            is_at_origin
+            or is_path(maze, row, col - 1, path)
+            or is_path(maze, row - 1, col, path)
     ):
         point = (row, col)
         path.append(point)
@@ -54,9 +54,9 @@ def is_path_memoized(maze, row, col, path, failed_points):
 
     # If there's a path from start to my current location, add my location
     if (
-        is_at_origin
-        or is_path_memoized(maze, row, col - 1, path, failed_points)
-        or is_path_memoized(maze, row - 1, col, path, failed_points)
+            is_at_origin
+            or is_path_memoized(maze, row, col - 1, path, failed_points)
+            or is_path_memoized(maze, row - 1, col, path, failed_points)
     ):
         path.append(point)
         return True

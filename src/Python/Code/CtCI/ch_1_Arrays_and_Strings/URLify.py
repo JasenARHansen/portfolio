@@ -15,5 +15,5 @@ class URLify(object):
         stripped_text = to_url.strip()
         old_value = " "
         new_value = "%20"
-        result =  stripped_text.replace(old_value, new_value)
+        result = stripped_text.replace(old_value, new_value)
         return result

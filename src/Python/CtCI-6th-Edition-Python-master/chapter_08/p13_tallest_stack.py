@@ -10,9 +10,9 @@ def tallest_stack(boxes):
             return reduce(lambda x, y: x + y.height, cur_stack, 0)
 
         if (
-            cur_stack[-1].height > boxes[cur_box_idx].height
-            and cur_stack[-1].width > boxes[cur_box_idx].width
-            and cur_stack[-1].depth > boxes[cur_box_idx].depth
+                cur_stack[-1].height > boxes[cur_box_idx].height
+                and cur_stack[-1].width > boxes[cur_box_idx].width
+                and cur_stack[-1].depth > boxes[cur_box_idx].depth
         ):
             return tallest_for_bottom(cur_stack + [boxes[cur_box_idx]], cur_box_idx + 1)
 

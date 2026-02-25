@@ -9,7 +9,6 @@ def string_rotation(s1, s2):
 
 
 class Test(unittest.TestCase):
-
     test_cases = [
         ("waterbottle", "erbottlewat", True),
         ("foo", "bar", False),

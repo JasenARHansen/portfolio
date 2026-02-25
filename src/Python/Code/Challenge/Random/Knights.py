@@ -1,10 +1,11 @@
 import random
 
+
 class Knights(object):
     @staticmethod
     def get_description():
         print("""Knights
-    Given NxN chessboard, determine if all spots can be navigated to with a
+    Given NxN board, determine if all spots can be navigated to with a
      knight without duplicating squares.
     Note: This gets slow with larger numbers so    
     """)
@@ -31,29 +32,31 @@ class Knights(object):
             print(formatted_row)
 
     @staticmethod
-    def generate_chessboard(size: int) -> list:
-        """Generate empty chesboard"""
+    def generate_board(size: int) -> list:
+        """Generate empty board"""
         # Creates N rows, each containing M instances of None
         return [[None for _ in range(size)] for _ in range(size)]
 
     @staticmethod
-    def test_space(row: int, column: int, chessboard: list) -> bool:
+    def test_space(row: int, column: int, board: list) -> bool:
         """test if spot is valid and un visited"""
-        if 0 <= row < len(chessboard) and 0 <= column < len(chessboard) and chessboard[row][column] is None:
+        if 0 <= row < len(board) and 0 <= column < len(board) and board[row][column] is None:
             # Valid spot
             return True
         return False
 
     @staticmethod
-    def move_knight(visited: int, row: int, column: int, chessboard: list) -> bool:
+    def move_knight(visited: int, row: int, column: int, board: list) -> bool:
         """place knight"""
-        if Knights.test_space(row=row, column=column, chessboard=chessboard):
+        if Knights.test_space(row=row, column=column, board=board):
             visited += 1
-            chessboard[row][column] = visited
+            board[row][column] = visited
         else:
             return False
-        if visited == len(chessboard) ** 2:
-            Knights.print_grid_with_padding(grid=chessboard)
+        if visited == len(board) ** 2:
+            Knights.print_grid_with_padding(grid=board)
+            data = [(row, column)]
+            (True, True, data)
             return True
 
         # If there is more than 1 path, it is boring to always find the same one,
@@ -67,46 +70,45 @@ class Knights(object):
             match select:
                 case 0:
                     # Row + 2, Column + 1
-                    if Knights.move_knight(visited=visited, row=row + 2, column=column + 1, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row + 2, column=column + 1, board=board):
                         result = True
                 case 1:
                     # Row + 2, Column - 1
-                    if Knights.move_knight(visited=visited, row=row + 2, column=column - 1, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row + 2, column=column - 1, board=board):
                         result = True
                 case 2:
                     # Row - 2, Column + 1
-                    if Knights.move_knight(visited=visited, row=row - 2, column=column + 1, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row - 2, column=column + 1, board=board):
                         result = True
                 case 3:
                     # Row - 2, Column - 1
-                    if Knights.move_knight(visited=visited, row=row - 2, column=column - 1, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row - 2, column=column - 1, board=board):
                         result = True
                 case 4:
                     # Row + 1, Column + 2
-                    if Knights.move_knight(visited=visited, row=row + 1, column=column + 2, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row + 1, column=column + 2, board=board):
                         result = True
                 case 5:
                     # Row + 1, Column - 2
-                    if Knights.move_knight(visited=visited, row=row + 1, column=column - 2, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row + 1, column=column - 2, board=board):
                         result = True
                 case 6:
                     # Row - 1, Column + 2
-                    if Knights.move_knight(visited=visited, row=row - 1, column=column + 2, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row - 1, column=column + 2, board=board):
                         result = True
                 case 7:
                     # Row - 1, Column - 2
-                    if Knights.move_knight(visited=visited, row=row - 1, column=column - 2, chessboard=chessboard):
+                    if Knights.move_knight(visited=visited, row=row - 1, column=column - 2, board=board):
                         result = True
-                case _:
-                    None
 
         if not result:
-            chessboard[row][column] = None
+            board[row][column] = None
         return result
 
     @staticmethod
     def find_path(size: int, start_row: int, start_column: int) -> list:
-        chesboard = Knights.generate_chessboard(size=size)
-        if Knights.move_knight(visited=0, row=start_row, column=start_column, chessboard=chesboard):
-            return True 
-        return False
+        # This will be revisited later and implemented
+        board = Knights.generate_board(size=size)
+        if Knights.move_knight(visited=0, row=start_row, column=start_column, board=board):
+            return []
+        return []

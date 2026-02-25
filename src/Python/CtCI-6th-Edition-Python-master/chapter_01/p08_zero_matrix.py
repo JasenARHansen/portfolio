@@ -35,7 +35,6 @@ def zero_matrix_pythonic(matrix):
 
 
 class Test(unittest.TestCase):
-
     test_cases = [
         (
             [

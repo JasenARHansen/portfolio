@@ -54,7 +54,7 @@ def get_subsets_c(_set):
         for i in range(len(remaining_set)):
             if current_set + [remaining_set[i]] not in subsets:
                 subsets.append(current_set + [remaining_set[i]])
-                recurse(current_set + [remaining_set[i]], remaining_set[i + 1 :])
+                recurse(current_set + [remaining_set[i]], remaining_set[i + 1:])
 
     recurse([], _set)
     return subsets

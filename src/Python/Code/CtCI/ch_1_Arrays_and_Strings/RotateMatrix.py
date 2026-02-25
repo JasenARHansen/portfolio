@@ -42,4 +42,3 @@ class RotateMatrix(object):
                 # Not Implemented yet
 
         return matrix
-

@@ -1,6 +1,7 @@
 import unittest
 from collections import deque
 
+
 # VISUAL OF TEST GRAPH:
 
 # A -- B
@@ -72,7 +73,6 @@ def is_route_bidirectional(graph, start, end):
 
 
 class Test(unittest.TestCase):
-
     graph = {
         "A": ["B", "C"],
         "B": ["D"],

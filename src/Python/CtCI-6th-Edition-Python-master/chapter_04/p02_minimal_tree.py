@@ -23,8 +23,8 @@ def array_to_binary_tree(array, start, end):
     if start > end:
         return None
     mid = (
-        start + end
-    ) // 2  # This must be floor division, otherwise you get a slice error
+                  start + end
+          ) // 2  # This must be floor division, otherwise you get a slice error
     # TypeError: list indices must be integers or slices, not float
     root = Node(array[mid])
     root.left = array_to_binary_tree(array, start, mid - 1)
