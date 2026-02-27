@@ -7,7 +7,7 @@ class Knights(object):
         print("""Knights
     Given NxN board, determine if all spots can be navigated to with a
      knight without duplicating squares.
-    Note: This gets slow with larger numbers so    
+    Note: This gets slow with larger numbers for N
     """)
 
     @staticmethod
@@ -70,7 +70,7 @@ class Knights(object):
             return True, [target]
 
         # If there is more than 1 path, it is boring to always find the same one,
-        # so I am adding randomness tro the order
+        # so I am adding randomness to the order of processing
         order = list(range(8))
         random.shuffle(order)
         result = False

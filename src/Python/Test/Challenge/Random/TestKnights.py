@@ -61,6 +61,7 @@ class TestKnights(unittest.TestCase):
             result = Knights.path_exists(size=size, start_row=start_row, start_column=start_column)
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
+            self.assertIsNotNone(mock_stdout.getvalue())
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_find_path(self, mock_stdout) -> None:
@@ -77,6 +78,7 @@ class TestKnights(unittest.TestCase):
                 self.assertTrue(expected, result)
             else:
                 self.assertFalse(expected, result)
+            self.assertIsNotNone(mock_stdout.getvalue())
 
 
 if __name__ == "__main__":
