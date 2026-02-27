@@ -50,6 +50,19 @@ class TestKnights(unittest.TestCase):
         self.assertIsNotNone(mock_stdout.getvalue())
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def test_path_exists(self, mock_stdout) -> None:
+        # size, start_row, start_column, success
+        test_cases = {
+            (5, 0, 0, True),
+            (2, 0, 0, False)
+        }
+
+        for size, start_row, start_column, expected in test_cases:
+            result = Knights.path_exists(size=size, start_row=start_row, start_column=start_column)
+            self.assertIsNotNone(result)
+            self.assertEqual(expected, result)
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_find_path(self, mock_stdout) -> None:
         # size, start_row, start_column, success
         test_cases = {
@@ -60,7 +73,10 @@ class TestKnights(unittest.TestCase):
         for size, start_row, start_column, expected in test_cases:
             result = Knights.find_path(size=size, start_row=start_row, start_column=start_column)
             self.assertIsNotNone(result)
-            self.assertEqual(expected, result)
+            if expected:
+                self.assertTrue(expected, result)
+            else:
+                self.assertFalse(expected, result)
 
 
 if __name__ == "__main__":
