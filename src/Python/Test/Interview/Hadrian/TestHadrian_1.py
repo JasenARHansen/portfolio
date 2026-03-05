@@ -3,8 +3,8 @@
 import unittest.mock
 
 # noinspection PyPep8Naming
-import src.Python.Code.Interview.Hadrian.Hadrian as baseFile
-from src.Python.Code.Interview.Hadrian.Hadrian import Hadrian
+import src.Python.Code.Interview.Hadrian.Hadrian_1 as baseFile
+from src.Python.Code.Interview.Hadrian.Hadrian_1 import Hadrian
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection
