@@ -6,7 +6,7 @@ import unittest.mock
 from src.Python.Code.Challenge.HackerRank.SampleTest.FizzBuzz import FizzBuzz
 
 
-class TestSampleTest(unittest.TestCase):
+class TestFizzBuzz(unittest.TestCase):
     """Test the elements visible at the root of the file."""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)

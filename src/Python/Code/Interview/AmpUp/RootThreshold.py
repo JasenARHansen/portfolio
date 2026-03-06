@@ -93,8 +93,8 @@ class RootThreshold(object):
         template = template.replace("<statusQuery>", statusQuery)
         page = 0
         while True:
-            url = template.replace("<pageNumber>", str(page))
             page += 1
+            url = template.replace("<pageNumber>", str(page))
             response = requests.get(url)
             json = response.json()
             if len(json['data']) == 0:

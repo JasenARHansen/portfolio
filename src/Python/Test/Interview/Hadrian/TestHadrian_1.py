@@ -4,7 +4,7 @@ import unittest.mock
 
 # noinspection PyPep8Naming
 import src.Python.Code.Interview.Hadrian.Hadrian_1 as baseFile
-from src.Python.Code.Interview.Hadrian.Hadrian_1 import Hadrian
+from src.Python.Code.Interview.Hadrian.Hadrian_1 import Hadrian_1
 
 
 # noinspection DuplicatedCode, SpellCheckingInspection
@@ -16,8 +16,8 @@ class TestFile(unittest.TestCase):
         classes, constants, and root methods.
         """
         items_found = dir(baseFile)
-        items_found = [x for x in items_found if "_" not in x]
-        _test_data = ['Hadrian']
+        items_found = [x for x in items_found if "__" not in x]
+        _test_data = ["Hadrian_1"]
         expected_not_found = [x for x in _test_data if x not in items_found]
         found_not_expected = [x for x in items_found if x not in _test_data]
         self.assertEqual(
@@ -38,23 +38,26 @@ class TestFile(unittest.TestCase):
 class TestHadrian(unittest.TestCase):
 
     def test_init(self) -> None:
-        my_class = Hadrian()
+        my_class = Hadrian_1()
         self.assertIsNotNone(my_class)
 
     def test_generate_board(self) -> None:
         """Test description message"""
-        board = Hadrian.generate_board(rows=6, cols=8)
+        board = Hadrian_1.generate_board(rows=6, cols=8)
         self.assertIsNotNone(board)
 
     def test_traverse_step_count_v1(self) -> None:
         """Test description message"""
         # start_row: int, start_col: int, stop_row: int, stop_col: int, board_rows: int, board_cols
         test_cases = {
-            (2, 3, 4, 6, 6, 8, 3)
+            (2,
+              3,
+                4,
+                  6, 6, 8, 3)
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_count_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
+            result = Hadrian_1.traverse_step_count_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
                                                     stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
@@ -67,7 +70,7 @@ class TestHadrian(unittest.TestCase):
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_path_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
+            result = Hadrian_1.traverse_step_path_v1(start_row=start_row, start_col=start_col, stop_row=stop_row,
                                                    stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, len(result))
@@ -80,7 +83,7 @@ class TestHadrian(unittest.TestCase):
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_count_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
+            result = Hadrian_1.traverse_step_count_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
                                                     stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, result)
@@ -93,7 +96,7 @@ class TestHadrian(unittest.TestCase):
         }
 
         for start_row, start_col, stop_row, stop_col, board_rows, board_cols, expected in test_cases:
-            result = Hadrian.traverse_step_path_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
+            result = Hadrian_1.traverse_step_path_v2(start_row=start_row, start_col=start_col, stop_row=stop_row,
                                                    stop_col=stop_col, board_rows=board_rows, board_cols=board_cols)
             self.assertIsNotNone(result)
             self.assertEqual(expected, len(result))
